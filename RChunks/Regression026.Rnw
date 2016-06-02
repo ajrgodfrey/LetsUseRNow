@@ -1,0 +1,4 @@
+<<QuadAddPoints>>= 
+plot(Ozone~Wind, data=airquality) 
+points(airquality$Wind[!is.na(airquality$Ozone)], fitted(Ozone.poly2), col=2) 
+@ 

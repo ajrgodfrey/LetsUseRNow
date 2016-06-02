@@ -1,0 +1,7 @@
+<<FilterExample, fig=TRUE>>= 
+plot(Nile) 
+for(i in 1:4){ 
+w=4*i-1 # choose the window (3, 7,11,15) 
+lines( (start(Nile)[1]):end(Nile)[1], filter(Nile, rep(1/w, w), sides=1), col=i+2) 
+} 
+@ 

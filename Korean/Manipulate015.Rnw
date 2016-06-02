@@ -1,0 +1,5 @@
+An explanation of this command is given in Section~\ref{DataFromPackages}. This data set has its own help page that can be viewed by typing \code{?airquality} at the \R{} prompt. 
+ 
+ 
+We can ask for the rows of this data that match specified details using subscripting. Various operators exist for numerical comparisons; the simplest of which are \Roperator{<} and  \Roperator{>}. 
+For the purposes of brevity in our examples that follow, we use the \Rcmd{nrow} command to show how many observations in the data meet the specified conditions. The following commands extract hte number of days where the wind speed was less than ten miles per hour and then the temperature was less than $60\deg$F. 

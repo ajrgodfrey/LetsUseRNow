@@ -1,0 +1,5 @@
+<<SolveLinearSet>>= 
+A 
+b=c(5,7) 
+solve(A,b) 
+@ 

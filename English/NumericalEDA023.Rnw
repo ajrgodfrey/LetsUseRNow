@@ -1,0 +1,1 @@
+We now know that there are missing \Robject{Ozone} observations in each month. We can add a fourth argument to the command which will be passed on to the function mentioned in the third argument. 

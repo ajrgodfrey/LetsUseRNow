@@ -1,0 +1,3 @@
+<<TApply1>>= 
+tapply(Wind, Month, mean) 
+@ 

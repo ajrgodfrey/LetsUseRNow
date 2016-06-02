@@ -1,0 +1,3 @@
+<<ExtractSampleN>>= 
+airquality %>% sample_n(4) 
+@ 

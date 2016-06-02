@@ -1,0 +1,3 @@
+This does the job very nicely. We could ask for other quantities such as the minimum, maximum, or standard deviation within each month by referring to the relevant \R{} command in the third argument. 
+ 
+If we had multiple response variables of interest, we would need to repeat the command for each one. If we had more than one way of asking for the grouping though, the \Rcmd{tapply} command is very useful indeed. The air quality data doesn't have a second factor we can use for this illustration, so I've created a second variable which asks if the day of the month is in the second half of the month. See what happens. 

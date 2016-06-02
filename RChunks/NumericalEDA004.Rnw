@@ -1,0 +1,3 @@
+<<CheckData>>= 
+class(airquality) 
+@ 

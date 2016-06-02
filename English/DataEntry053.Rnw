@@ -1,0 +1,8 @@
+ 
+Notice that as well as the result we wanted, \R{} has also printed the levels of the \Robject{Names} variable. This is because this variable has been determined to be a factor. 
+ 
+ 
+ 
+\section{Appropriate data labelling} 
+ 
+The construction of our first data.frame is slightly flawed. If the \Robject{MyFirstDF} data was going to be for all those beings I am in contact with, the details should be related to the individual concerned. In this situation, allowing the \Robject{Names} object to be data rather than a label was probably not the wisest move. Let's say that we want the year and month of birth for the individuals in the example, and that they should form a new \Rclass{data.frame}. 

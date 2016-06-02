@@ -1,0 +1,1 @@
+is the list of the squares of the first ten natural numbers. We can obtain the numbers from 1 to 10 faster by issuing 

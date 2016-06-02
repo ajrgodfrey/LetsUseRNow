@@ -1,0 +1,3 @@
+ 
+ 
+We use the \Rcmd{order} command to work with data that are non-numeric vectors, as well as data in \Rclass{matrix} or \Rclass{data.frame} format. For example, we first sort the names of the people, the dog and the cat found in my home. 

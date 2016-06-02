@@ -1,0 +1,6 @@
+ 
+This chapter explains how to use \R{} as a scientific calculator, including its use of trigonometric functions. We'll also plot some of the functions for illustrative purposes.  
+ 
+\section{Trigonometric functions} 
+ 
+\R{} has a series of commands that all perform quite similarly. The only real issue is to find out what actual commands get what we want. First of all, we need to know how \R{} will work with degrees or radians. 

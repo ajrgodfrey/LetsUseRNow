@@ -1,0 +1,1 @@
+to gain access to the commands just listed. We will also make use of the \Rpkg{dplyr} data structure called a \Rclass{tbl\_df} instead of the common \Rclass{data.frame} using: 

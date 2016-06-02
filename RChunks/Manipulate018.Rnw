@@ -1,0 +1,3 @@
+<<GrabRows3>>= 
+nrow(airquality[airquality$Temp==69,]) 
+@ 

@@ -1,0 +1,124 @@
+\chapter{LURN\ldots{} To Work \R{} Blind}
+\label{BlindUse}
+
+OK. Cards on the table here. I am blind. Many people know this and perhaps that's why you've obtained this document in the first place. I use \R{} as my software of preference because I find it the most useful tool available to me; partly because I am blind, partly because of the work I do as a lecturer. I have used other packages like SAS and SPlus with almost as much success, Minitab and SPSS with differing levels of success (mostly depending on the version of that software), and have tried a number of other options with little or no success.
+
+I do use Microsoft EXCEL at times, but not for doing the tasks described in this document. I do not regard EXCEL as statistical software but do use it to do some basic calculations and for editing large data sets. To this extent, EXCEL is just an example of a spreadsheet application and has no advantage or disadvantage over any other spreadsheet application. They are therefore all as equally useful/useless to me.
+
+My software experiences have all been gained as a blind person. I had some useful vision for handling print while I was an undergraduate but I found using low-vision software was slower than operating as a blind person. Some of what follows might prove useful to people using software which enlarges the screen's contents but I have had little opportunity to test any low-vision software applications. I would, of course, be interested in learning how anyone using low-vision software gets on using \R{} but the first two users I have worked with were running \R{} quite easily. The low-vision user of \R{} can choose whether operating as a sighted or blind user is better for them so reading through this chapter may prove important if they are to make the best choice.
+
+The material that follows in this chapter has been tested by blind users of \R{} on all three operating systems mentioned here. I am grateful to the organizers of the second Summer University of the ICCHP, held in the Czech Republic from 29 July to 3 August 2011. This gave me an opportunity to showcase \R{} to a wide audience of blind students from many European countries, and to verify the usefulness of the software on platforms other than Windows.
+
+If you're a sighted user of \R{} and want to know how your blind student is going to get on, you need to talk to them. It might help to read on, but it is going to be much more use if the blind student solves as many of their problems themselves --- perhaps with your supervision and assistance.
+
+\section{Screen readers}
+
+Blind people use screen reading software to listen to what gets printed on the screen. Screen readers are good at processing text and generally less useful when a picture or graph needs to be described. I use a product known as JAWS, but other commercial screen readers should work equally well with \R{}; I also test the usefulness of \R{} with one open source screen reader called NVDA. JAWS is a Windows application. Few blind people are serious MacIntosh users, but some are taking up Linux as their operating system of choice. The screen reader in many Linux distributions is called ORCA, and Macintosh users have VoiceOver as part of the standard operating system.
+
+This document assumes the blind user has a good working knowledge of their screen reader and operating system. Most of us know where to find help with our screen reader problems, and in any case the solution I have for using \R{} as a blind person requires little more than the basic knowledge for either screen reader or the Windows operating system.
+
+
+\section{\R{} and braille displays}
+
+A braille display provides the blind user with information in refreshable braille. The equipment that gets connected to the user's computer is certainly not cheap but can make access to otherwise printed information available to the blind user so that there can be little confusion about the syntax of commands or output. Many blind programmers I have spoken with, swear by their braille display for giving them true access to the printed word. Sound from screen readers is wonderful, but there are opportunities to make mistakes when relying on sound alone.
+
+At the 2011 Summer University I was able to see how students using a braille display could use \R{}. The results were very pleasing indeed. The Windows users with braille displays relied on their screen reader to provide the information to the user via the braille display and as the screen readers were working well with \R{} already, the access was further improved with braille. 
+
+A Linux user at the Summer University was able to make use of his braille display without explicitly using a screen reader. The interesting aspect to this discovery was that this means \R{} is available to the deaf-blind user as well.
+
+I still need to learn how well the braille display would work with \R{} on a Mac, but expect the experiment would show similarly pleasing outcomes.
+
+\section{Setting up \R{} as a blind Windows user}
+
+Most \R{} users install the software and run it as the default installation allows. The main file that is executed is called ``rgui.exe" but in spite of its name, little of \R{}'s use is found within the graphical user interface (GUI). Most \R{} users operate by either typing commands one at a time or by executing a whole bunch of commands together. In either case, the commands are all generated by typing standard text somewhere. Standard text is of course totally accessible to the blind user.
+
+The standard \R{} application window is not accessible to the blind user. We can hear a command being typed in but can't hear what gets returned. This behaviour is somewhat strange as the sighted user sees what appears to be plain text on screen. Unfortunately it's not plain text and it's also not easy to explain. Please send an email if you want a more detailed explanation of the phenomenon. The most reassuring thing about the way a screen reader interacts with the ``rgui.exe" application is that when you try to close the application using \code{ALT+F4}, JAWS will actually speak the dialogue perfectly well. It is in fact the only dialogue that works this well.
+
+Obviously, it's not all bad news. \R{} does come with a terminal window system and this is accessible; it's actually what the Linux user gets anyway! This terminal has the look and feel of a standard command prompt window that many users will be familiar with. This window is where all text is entered and where all non-graphical output will be printed. Your screen reader will speak the contents of the terminal window as output is added.
+
+The default installation of \R{} places a shortcut on the desktop. Once you've installed \R{} in the default way, you will need to edit this shortcut's properties. Find it, hit ``ALT+Enter" and make sure you are on the dialogue box that is for the target file. The full path is given here and the last element is ``rgui.exe". Change this last bit to read ``rterm.exe" and hit OK.
+
+Test it now. The shortcut should run \R{} in a terminal window which looks like a DOS window. You will hear an introduction message about \R{} and ultimately the prompt which is a greater than symbol. To get out of \R{}, we need to type \code{q()} and answer a question about saving the workspace. This should all be heard if things are going correctly. Note: your answer needs to be followed by hitting the enter key.
+
+Change in software is inevitable and \R{} does undergo changes all the time. When version 2.10.0 came out the standard functionality of \R{}'s help was fundamentally altered. In version 2.9.2 and before, typing \code{?Mean} would open an internet browser with the help page. This was very readable by screen reader software. In version 2.10.0, this default behaviour changed. In version 2.10.1 however the developers fixed the problem. We expect this problem not to arise again, but just in case here is the solution.
+
+If for some reason, the help functionality doesn't work as we suggest, you can force the html help pages to be displayed by performing the following task.
+You will need to find the folder where \R{} was installed. It should be in the ``Program Files" folder if you installed using the default settings when you installed \R{}. We are looking for a file called \file{Rprofile.site}; it is in the ``etc" folder. Open this file in your favourite text editor. We are looking for a line that contains the text \code{options(help\_type="html")}. If there is a hash or number sign (call it what you will) at the beginning of the line, it will stop the command from being executed. Remove the character so that the line starts with \code{options}. Save the file.
+
+If you've changed the shortcut on the desktop and checked the options for html help, then open \R{} and type \code{?mean}. You should be able to see full html style help complete with the ability to link to other help pages.
+
+\subsection{Solution for the problem of the screen reader losing focus}
+
+I have encountered a problem where the screen reader loses focus when using the terminal window. This happened under both Windows Vista and Windows 7 using the JAWS screen reader. For more than two years, my only solution was to use the original RGui form of \R{}, and learn to redirect your output to an external file. See Sections~\ref{GettingTheMost} and~\ref{TextSink} which present a way of gaining access to the output. It is still a good idea to look at the suggested material, but a solution has come to hand.
+
+In January 2014, Dr Robert Erhardt (Assistant Professor of Mathematics at Wake Forest University) contacted me with a solution. His suggestion is to hit the \code{ALT} key when the focus gets lost. I've tested this with  JAWS~14 and NVDA with  R~3.0.2 running under Windows~7 and it worked for me. 
+
+\subsection{Super fast default installation of \R{}}
+
+In May 2014 I learnt how to install \R{} from a command line. Having downloaded the installation file, I created a batch file with the single line \code{R-3.1.0-win.exe /silent} that I put in the same folder. This single line is what could be typed in at a command prompt to get \R{} installed silently. Usin a batch file means that when the next version of \R{} comes out, I will only need to change the version number in the filename.
+
+
+
+\section{Setting up \R{} as a blind Mac user}
+
+If you're reading this section I assume you know how to work using a Mac. The following instructions were provided to me by Bram Duvigneau%%%
+(a blind Mac user himself) at the Summer University in 2011, who had read this document and then given me some pointers to share. 
+
+Like Windows users, Mac users will find the screen reader for Mac works better if you use the terminal version of \R{} instead of the GUI version. Having obtained the installer for the Mac from CRAN, follow the following steps: \begin{enumerate}
+\item Install \R{} using the .pkg installer package you downloaded. 
+\item Ignore the shortcut that is put in \file{/Applications/R}, as this is the GUI version.
+\item Launch Terminal: press \code{cmd+shift+u} in Finder and open the Terminal application.
+\item Enter \code{R} (Note this is a capital R) to start the terminal version of \R{}.
+\end{enumerate}
+
+\section{Setting up \R{} as a blind Linux user}
+
+If you're reading this section I assume you know how to work in Linux. This means you know how you will obtain the installer for \R{} yourself. Further I assume you know how your screen reader works.
+
+Once you've downloaded the installer and installed \R{}, you should be able to run it by typing ``\code{R}" at the command prompt. Pretty simple really.
+
+Many installations of Linux offer the user the opportunity to install directly so that the download step is not explicitly required.
+
+I have witnessed (first-hand) a blind Linux user operate \R{} without the speech synthesis turned on. His comfort in Linux with a braille display alone was sufficient. 
+
+There are a number of reasons why I'd like to be using Linux and \R{} one day. Chief among these is the ability to set up each \R{} script file as an executable file that will run without needing to actually open \R{} itself.
+
+Linux users have a much greater range of options available to them for improving the accessibility of any software. Re-direction of output from an \R{} session is an example.
+
+\section{Getting the most out of the \R{} window}\label{GettingTheMost}
+
+In this case I actually mean getting anything out of \R{}! Windows users of screen readers will find it difficult to copy and paste any output from \R{} for insertion into a document. The solution is to create a text file that contains the output from the current session.
+
+Use of the \Rcmd{sink} command is explained in Section~\ref{TextSink}. For the blind user, this text file can be the means by which we gain access to \R{} output as it is created, albeit in a different window. Better ways of working do exist. This suggestion is great for users who must work interactively with an open \R{} session. Improved functionality for doing this is discussed in Section~\ref{CreateCopyConsole}, but if a blind user can move to working with \R{} in batch mode (one way or another) life will get even easier.
+
+Once the sink is in place, the blind user opens the text file that is being created (and continuously updated) in their preferred browser. After a set of commands that would normally print output in the terminal/console window have been issued, the blind user only needs to refresh the browser so that the latest output appears.
+
+The result is that the output appears in the sink file if the command was successfully issued. Warning and error messages are printed in the terminal window and are read aloud by the screen reader. Users of the \R{} console window will need to review the screen to see why nothing was added to the sink file.
+
+
+
+\section{More advanced ways of running \R{} programs}
+
+Sometimes we will want to run a series of commands. Typing out lots of commands can prove tedious and to be honest no sighted \R{} user does it by issuing commands via the command line one at a time.
+
+\R{} does have its own script window that the GUI version uses. In that window users edit the set of commands they want to run. Sometimes it's easier to obtain the code we want from another \R{} program we used before, or by copying commands from an alternate source. \R{} users often share programs and re-run them locally. Opening a \R{} program in the script window of the GUI version of \R{}, is an option available to the blind user but the outputs from running commands all gets pumped into the main console window where the screen reader may not be able to read it all.
+
+The most advanced users of \R{} who have large jobs to run will run them on another computer, and it is from this approach that my favourite method of running my \R{} programs was developed.
+
+All necessary commands are typed up in a standard text file. \R{} command files are often given the single capital letter R as their extension but they are just plain text files, editable in any text editor program you choose.
+
+For the moment, assume a valid set of commands has been placed in the file \file{testing.R} and this file has been placed in your working directory. You can see how the sighted \R{} user runs batch jobs and the use of multiple working directories in Chapter~\ref{GoodIdeas} on what I think are good ideas.
+
+My first approach uses what the geeks call ``piping". We pipe our set of commands into \R{} and pipe out all output to a text file. This is done using a batch file.
+Batch files are just text files themselves, with commands that are issued in a DOS window, sometimes known as the command prompt. All we need to do is create a new text file and give it the name we want. This text file will have just one command in it which will look something like
+\begin{verbatim}
+"c:\program files\r\r-3.0.2\i386\bin\rterm.exe" --no-save < testing.R > testing.Rout
+\end{verbatim}
+You'll need to edit this command to suit your installation, especially the full path to the executable file which will also depend on your operating system.
+
+When you save this file, it can be called whatever you like but needs to have the \code{bat} extension. I tend to keep the files together with the same name so would recommend \file{testing.bat}Just clicking on it in windows explorer runs the file, its single command, and therefore the commands in the \file{testing.R} file. All output is then printed in the \file{testing.Rout} file including the commands you issued. The output file is just plain text and can be opened in a text editor or browser.
+
+It's certainly not essential that you come to grips with using the batch file approach to run \R{} in the background. It is fairly essential that you are comfortable writing up the \R{} commands in a text file and pulling them into \R{} using the \Rcmd{source} command if you intend doing more than just simple jobs. 
+
+For the time-being, my recommendation is to run \R{} using the terminal window until you gain some confidence in its operation. Come back to the batch file approach once you know that \R{} is going to do what you need done.
+

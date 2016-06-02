@@ -1,0 +1,3 @@
+ Note that the \Rcmd{pt} command required us to think about the degrees of freedom and that the upper tail area was important to us. We now see that the null hypothesis is rejected as the $p$-value is very small. 
+ 
+These calculations are fine, but there is a quicker way! The \Rcmd{t.test} command does it all for us --- both confidence interval and hypothesis test. 

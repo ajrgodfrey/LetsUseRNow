@@ -1,0 +1,3 @@
+<<Quartiles>>= 
+fivenum(Ozone) 
+@ 

@@ -1,0 +1,9 @@
+ 
+This chapter is all about finding confidence intervals and performing hypothesis tests. While many textbooks separate these activities there is little point doing so when it comes time to using \R{} as both are done at the same time in the majority of cases. 
+ 
+ 
+\section{Confidence intervals and hypothesis tests for the mean of one population} 
+ 
+The \Rpackage{datasets} package contains a set of annual precipitation values (in inches) for 70 U.S. cities. If we could assume this set to be a random sample (and we will even if it is not true), then we can find a confidence interval for the mean annual precipitation for U.S. cities on the whole. 
+ 
+You could use a manual approach to find the 95\% confidence interval for the population mean ($\mu$) yourself using the \Rcmd{mean}, \Rcmd{sd}, \Rcmd{length}, and \Rcmd{qt} commands as follows:  

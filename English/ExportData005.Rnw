@@ -1,0 +1,1 @@
+If \R{} had created rownames for the \Rclass{data.frame}, I might not want to include them. A simple additional argument is all that is required. 

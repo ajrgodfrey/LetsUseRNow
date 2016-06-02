@@ -1,0 +1,6 @@
+<<CreatePattern>>= 
+Week = rep(1:4, each=5) 
+Week 
+Day = rep(c("Mon", "Tue", "Wed", "Thu", "Fri"), times=4) 
+Day 
+@ 

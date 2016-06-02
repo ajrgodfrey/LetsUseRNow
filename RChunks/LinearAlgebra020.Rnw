@@ -1,0 +1,4 @@
+<<MatrixMult>>= 
+A%*%B 
+B%*%A 
+@ 

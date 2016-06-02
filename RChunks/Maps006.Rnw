@@ -1,0 +1,5 @@
+<<WholeNZ, fig.height=7, fig.width=5>>= 
+map("nzHires", ylim=c(-48,-34), xlim=c(166,179), fill=T, col=3) 
+box() 
+polygon(x=c(172, 179, 179, 172), y=c(-42,-42, -39,-39), border=1, lty=2) 
+@ 

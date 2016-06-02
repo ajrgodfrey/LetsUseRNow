@@ -1,0 +1,8 @@
+<<XYZContour>>= 
+xUnique=((0:100)-50)/10 
+yUnique=((0:100)-50)/10 
+x=rep(xUnique, 101) 
+y=rep(yUnique, each=101) 
+z=matrix(0.75*x^2 + 0.5*y^2-0.4*x*y+x-y-1, nrow=101) 
+contour(xUnique, yUnique, z) 
+@ 

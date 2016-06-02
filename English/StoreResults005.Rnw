@@ -1,0 +1,12 @@
+ 
+It should be fairly obvious what each command does so the only one that really needs further explanation is the \Rcmd{savePlot} command. The first argument is the intended filename for our graph. The filename may need some further explanation. It is in several parts --- \code{$.\backslash\backslash$figures$\backslash\backslash$HistRandValsStandNorm.eps} has a path, a filename and the extension. 
+ 
+The \code{$.\backslash\backslash$figures$\backslash\backslash$} is the path that shows \R{} to save the file in a subfolder off the current working directory. I've called the file \code{HistRandValsStandNorm.eps} because I want to use \LaTeX{} to compile these notes into a presentable document. 
+Note that I have explicitly stated the extension in the complete filename to be the same as the second argument for the entire command, ``eps" in this instance. You can change this to suit other file types that you might need using \code{find/replace} techniques in your script files. Other file types available include ``jpg", ``bmp", and ``pdf". See the help on the \Rcmd{savePlot} command for a complete listing. 
+ 
+The \Rcmd{x11} command can be replaced by a number of others which are all aliased with one another. The example above doesn't supply any arguments to this command, but width and height quantities can be supplied. The default size is 7$\times$7 inches but apparently this doesn't always behave properly under the Windows operating system. You might be advised to re-run the code above with the first command replaced by \code{x11(7,5)} or similar, changing the second number to alter the aspect ratio of the resulting figure window. Once you get the size you want for certain types of graphs you're bound to look back to your old code and replicate the same size graph windows every time. A boxplot is a key example where the default window size is often inappropriate. 
+ 
+\section{Saving output in a text file}\label{TextSink} 
+ 
+One simple way to redirect the output from the main \R{} window is to use the \Rcmd{sink} command. In this case, you will type in or execute commands as per normal but not see any of the output as this is appended to a separate text file. Try the following code on for size. 
+ 

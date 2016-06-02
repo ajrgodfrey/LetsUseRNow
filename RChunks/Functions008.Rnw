@@ -1,0 +1,5 @@
+<<MySine3>>= 
+MySine3 <- function(x){ return(sin(x)) 
+print(x)} 
+MySine3(pi/2) 
+@ 

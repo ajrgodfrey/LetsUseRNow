@@ -1,0 +1,364 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>16 LURN... To create maps</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html,2,next --> 
+<meta name="src" content="LURNBlind.tex"> 
+<meta name="date" content="2016-06-01 18:12:00"> 
+<link rel="stylesheet" type="text/css" href="LURNBlind.css"> 
+</head><body 
+>
+   <!--l. 3--><div class="crosslinks"><p class="noindent">[<a 
+href="LURNBlindch17.html" >next</a>] [<a 
+href="LURNBlindch15.html" >prev</a>] [<a 
+href="LURNBlindch15.html#tailLURNBlindch15.html" >prev-tail</a>] [<a 
+href="#tailLURNBlindch16.html">tail</a>] [<a 
+href="LURNBlind.html#LURNBlindch16.html" >up</a>] </p></div>
+   <h2 class="chapterHead"><span class="titlemark">Chapter&#x00A0;16</span><br /><a 
+ id="x18-12000016"></a>LURN&#x2026; To create maps</h2>
+<!--l. 8--><p class="noindent" >This chapter explains how to create simple maps using some add-on packages. You
+will need to have installed the <a 
+ id="dx18-120001"></a><span 
+class="aeti-12">maps</span>, <a 
+ id="dx18-120002"></a><span 
+class="aeti-12">mapdata</span>, and <a 
+ id="dx18-120003"></a><span 
+class="aeti-12">ggmap </span>packages to complete
+the examples in this chapter. If you have not installed an add-on package before,
+you should take a look at Chapter&#x00A0;<a 
+href="LURNBlindch14.html#x16-10800014">14<!--tex4ht:ref: Additional --></a> first.
+<!--l. 10--><p class="indent" >   After installing the packages, load them into your <span 
+class="aess-12">R </span>session using:
+   <div class="fancyvrb" id="fancyvrb362">  <a 
+ id="x18-120005r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;library(maps)</span></div>
+<div class="fancyvrb" id="fancyvrb363"> <a 
+ id="x18-120007r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
+ id="x18-120009r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;#</span><span 
+class="aett-12">&#x00A0;maps</span><span 
+class="aett-12">&#x00A0;v3.1:</span><span 
+class="aett-12">&#x00A0;updated</span><span 
+class="aett-12">&#x00A0;&#8217;world&#8217;:</span><span 
+class="aett-12">&#x00A0;all</span><span 
+class="aett-12">&#x00A0;lakes</span><span 
+class="aett-12">&#x00A0;moved</span><span 
+class="aett-12">&#x00A0;to</span><span 
+class="aett-12">&#x00A0;separate</span><span 
+class="aett-12">&#x00A0;new</span><span 
+class="aett-12">&#x00A0;#</span>
+<br class="fancyvrb" /><a 
+ id="x18-120011r3"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;#</span><span 
+class="aett-12">&#x00A0;&#8217;lakes&#8217;</span><span 
+class="aett-12">&#x00A0;database.</span><span 
+class="aett-12">&#x00A0;Type</span><span 
+class="aett-12">&#x00A0;&#8217;?world&#8217;</span><span 
+class="aett-12">&#x00A0;or</span><span 
+class="aett-12">&#x00A0;&#8217;news(package="maps")&#8217;.</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;#</span></div>
+<div class="fancyvrb" id="fancyvrb364"> <a 
+ id="x18-120013r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;library(mapdata)</span><br class="fancyvrb" /><a 
+ id="x18-120015r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;library(ggmap)</span></div>
+<div class="fancyvrb" id="fancyvrb365"> <a 
+ id="x18-120017r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Loading</span><span 
+class="aett-12">&#x00A0;required</span><span 
+class="aett-12">&#x00A0;package:</span><span 
+class="aett-12">&#x00A0;ggplot2</span></div>
+   <h3 class="sectionHead"><span class="titlemark">16.1   </span> <a 
+ id="x18-12100016.1"></a>Creation of maps</h3>
+<!--l. 31--><p class="noindent" >The creation of maps is actually a simple task in <span 
+class="aess-12">R</span>, as long as the database for the
+desired land mass is available. There are a number of these data bases available as
+downloadable packages from CRAN.
+<!--l. 33--><p class="indent" >   I first created a map when I wanted a map of New Zealand (my home country)
+for a presentation I gave when I was overseas. I also wanted to show a portion
+of the country to highlight how far my home town is from the nation&#8217;s
+capital. The rectangle that appears on the map of New Zealand was created
+using the <a 
+ id="dx18-121001"></a><span 
+class="aett-12">polygon() </span>command. The <a 
+ id="dx18-121002"></a><span 
+class="aett-12">box() </span>command places the frame
+around the map which is created using the <a 
+ id="dx18-121003"></a><span 
+class="aett-12">map() </span>command. Exhibit&#x00A0;<a 
+href="#x18-121004r1">16.1<!--tex4ht:ref: WholeNZ --></a>
+shows the first map, while Exhibit&#x00A0;<a 
+href="#x18-122002r2">16.2<!--tex4ht:ref: PartNZ --></a> shows the central part of the
+country.
+                                                                          
+
+                                                                          
+<!--l. 35--><p class="indent" >   <a 
+ id="x18-121004r1"></a><hr class="float"><div class="float" 
+>
+                                                                          
+
+                                                                          
+ <div class="caption" 
+><span class="id">Exhibit 16.1: </span><span  
+class="content">Map of New Zealand with a rectangle marked on it that bounds
+the area used in a subsequent map.</span></div><!--tex4ht:label?: x18-121004r1 -->
+<div class="center" 
+>
+<!--l. 37--><p class="noindent" >
+<div class="fancyvrb" id="fancyvrb366"> <a 
+ id="x18-121006r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;map("nzHires",</span><span 
+class="aett-12">&#x00A0;ylim=c(-48,-34),</span><span 
+class="aett-12">&#x00A0;xlim=c(166,179),</span><span 
+class="aett-12">&#x00A0;fill=T,</span><span 
+class="aett-12">&#x00A0;col=3)</span><br class="fancyvrb" /><a 
+ id="x18-121008r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;box()</span>
+<br class="fancyvrb" /><a 
+ id="x18-121010r3"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;polygon(x=c(172,</span><span 
+class="aett-12">&#x00A0;179,</span><span 
+class="aett-12">&#x00A0;179,</span><span 
+class="aett-12">&#x00A0;172),</span><span 
+class="aett-12">&#x00A0;y=c(-42,-42,</span><span 
+class="aett-12">&#x00A0;-39,-39),</span><span 
+class="aett-12">&#x00A0;border=1,</span><span 
+class="aett-12">&#x00A0;lty=2)</span></div>
+<!--l. 45--><p class="noindent" ><img 
+src="LURNBlind39x.png" alt="PIC" class="graphics" width="272.99881pt" height="382.20415pt" ><!--tex4ht:graphics  
+name="LURNBlind39x.png" src="figures/MapsWholeNZ-1.eps"  
+-->
+<a 
+href="../svgs/MapsWholeNZ-1.svg" >link to SVG file: MapsWholeNZ-1.svg</a></div>
+                                                                          
+
+                                                                          
+   </div><hr class="endfloat" />
+<!--l. 50--><p class="indent" >   The maps in these graphs are based on latitude and longitude data. The <a 
+ id="dx18-121011"></a><span 
+class="aett-12">map()</span>
+function ensures the aspect ratio of the resulting plot is in keeping with the actual
+view you would have from space if you were directly above the centre of the map
+being plotted. Note that this rule doesn&#8217;t apply for the world map options that
+exist.
+   <h3 class="sectionHead"><span class="titlemark">16.2   </span> <a 
+ id="x18-12200016.2"></a>Adding cities to a map</h3>
+<!--l. 54--><p class="noindent" >The <a 
+ id="dx18-122001"></a><span 
+class="aett-12">map.cities() </span>function extracts data from a database of the world&#8217;s cities.
+Judicious selection of the criteria for population was required to get Palmerston
+North marked, and the <span 
+class="aett-12">capitals </span>argument was used to get the point for
+Wellington. I have used some colours to distinguish the different cities for my
+plot.
+                                                                          
+
+                                                                          
+<!--l. 57--><p class="indent" >   <a 
+ id="x18-122002r2"></a><hr class="float"><div class="float" 
+>
+                                                                          
+
+                                                                          
+ <div class="caption" 
+><span class="id">Exhibit 16.2: </span><span  
+class="content">Map showing the central part of New Zealand in order to show
+two cities in the lower North Island.</span></div><!--tex4ht:label?: x18-122002r2 -->
+<div class="center" 
+>
+<!--l. 59--><p class="noindent" >
+<div class="fancyvrb" id="fancyvrb367"> <a 
+ id="x18-122004r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;map("nzHires",</span><span 
+class="aett-12">&#x00A0;ylim=c(-42,-39),</span><span 
+class="aett-12">&#x00A0;xlim=c(172,179),</span><span 
+class="aett-12">&#x00A0;fill=T,</span><span 
+class="aett-12">&#x00A0;col=3)</span>
+<br class="fancyvrb" /><a 
+ id="x18-122006r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;box()</span><br class="fancyvrb" /><a 
+ id="x18-122008r3"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;map.cities(minpop=70000,maxpop=80000,</span><span 
+class="aett-12">&#x00A0;pch=16,</span><span 
+class="aett-12">&#x00A0;col=2,</span><span 
+class="aett-12">&#x00A0;cex=2)</span>
+<br class="fancyvrb" /><a 
+ id="x18-122010r4"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;map.cities(capitals=1,</span><span 
+class="aett-12">&#x00A0;col=4,</span><span 
+class="aett-12">&#x00A0;pch=19)</span></div>
+<!--l. 68--><p class="noindent" ><img 
+src="LURNBlind40x.png" alt="PIC" class="graphics" width="272.99881pt" height="153.96234pt" ><!--tex4ht:graphics  
+name="LURNBlind40x.png" src="figures/MapsPartNZ-1.eps"  
+-->
+<a 
+href="../svgs/MapsPartNZ-1.svg" >link to SVG file: MapsPartNZ-1.svg</a></div>
+                                                                          
+
+                                                                          
+   </div><hr class="endfloat" />
+<!--l. 73--><p class="indent" >   One challenge in making this graphic presentable for this document was
+assuring myself that the aspect ratio was correct. Latitudes and longitudes do not
+take up equal space especially as you move further from the tropics. <span 
+class="aess-12">R </span>will get the
+aspect ratio correct but being sure is another matter.
+<!--l. 76--><p class="indent" >   The graph I first created for this example was 5.7cm high and just over
+10cm wide. Was it in proportion though? If each degree of latitude in
+the map used 1cm of space, we would expect each degree of longitude
+to take up at most 1 cm of space. An approximation for this is found
+by multiplying the latitude space by <span 
+class="cmr-12">cos</span><span 
+class="cmr-12">(</span><span 
+class="cmmi-12">&#x03B8;</span><span 
+class="cmr-12">) </span>where <span 
+class="cmmi-12">&#x03B8; </span>is the latitude. So
+each degree of longitude in my plot should take up about 0.76 of the
+space of each degree of latitude. I&#8217;ve plotted three degrees of latitude
+and seven degrees of longitude, so I expect my 5.7cm high graphic to
+be
+   <center class="math-display" >
+<img 
+src="LURNBlind41x.png" alt="5.7
+ 3 &#x00D7;  7 &#x00D7; 0.76 ==  10.1  " class="math-display" ></center>
+centimetres in width. This was about right.
+<!--l. 80--><p class="indent" >   You can see the way we would do this calculation using <span 
+class="aess-12">R </span>in Chapter&#x00A0;<a 
+href="LURNBlindch17.html#x19-12400017">17<!--tex4ht:ref: ScientificCalculator --></a>.
+   <h3 class="sectionHead"><span class="titlemark">16.3   </span> <a 
+ id="x18-12300016.3"></a>Using Google&#8217;s services to map locations of interest</h3>
+<!--l. 85--><p class="noindent" >The ability to search Google for specific locations is really useful, especially if you
+intend plotting maps with points of interest such as universities rather than just
+cities. Our first example does look for cities though, so that it builds on examples
+from previous sections in this chapter.
+<!--l. 87--><p class="indent" >   In mid-2015, I will attend the UseR conference in Aalborg, which is in
+Denmark. I know Denmark has a coastline and is bordered by Germany, but
+actually I don&#8217;t know much else (especially where individual cities are!). I want ot
+know where the city of Aalborg is in relation to Copenhagen (the capital of
+Denmark). Witht he help of the <a 
+ id="dx18-123001"></a><span 
+class="aeti-12">ggmap </span>package tapping into Google maps, I can
+find the latitute and longitude for both cities and then plot them on the map of
+Denmark as follows:
+                                                                          
+
+                                                                          
+   <div class="fancyvrb" id="fancyvrb368">  <a 
+ id="x18-123003r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;Places</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;geocode(location=c("Aalborg",</span><span 
+class="aett-12">&#x00A0;"Copenhagen"))</span></div>
+<!--l. 92--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb369"> <a 
+ id="x18-123005r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Information</span><span 
+class="aett-12">&#x00A0;from</span><span 
+class="aett-12">&#x00A0;URL</span><span 
+class="aett-12">&#x00A0;:</span><span 
+class="aett-12">&#x00A0;http://maps.googleapis.com/maps/api/geocode/json?address=Aalborg&amp;sensor=false</span></div>
+<!--l. 95--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb370"> <a 
+ id="x18-123007r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Information</span><span 
+class="aett-12">&#x00A0;from</span><span 
+class="aett-12">&#x00A0;URL</span><span 
+class="aett-12">&#x00A0;:</span><span 
+class="aett-12">&#x00A0;http://maps.googleapis.com/maps/api/geocode/json?address=Copenhagen&amp;sensor=false</span></div>
+<!--l. 98--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb371"> <a 
+ id="x18-123009r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;Places</span></div>
+<!--l. 101--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb372"> <a 
+ id="x18-123011r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;lon</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;lat</span><br class="fancyvrb" /><a 
+ id="x18-123013r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;9.922</span><span 
+class="aett-12">&#x00A0;57.05</span><br class="fancyvrb" /><a 
+ id="x18-123015r3"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;2</span><span 
+class="aett-12">&#x00A0;12.568</span><span 
+class="aett-12">&#x00A0;55.68</span></div>
+<!--l. 106--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb373"> <a 
+ id="x18-123017r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;map(&#8217;worldHires&#8217;,</span><span 
+class="aett-12">&#x00A0;&#8217;Denmark&#8217;)</span><br class="fancyvrb" /><a 
+ id="x18-123019r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;title(&#8217;Denmark&#8217;)</span><br class="fancyvrb" /><a 
+ id="x18-123021r3"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;points(Places,</span><span 
+class="aett-12">&#x00A0;pch=16)</span></div>
+<!--l. 112--><p class="indent" >   <img 
+src="LURNBlind42x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt" ><!--tex4ht:graphics  
+name="LURNBlind42x.png" src="figures/MapsDenmark-1.eps"  
+-->
+                                                                          
+
+                                                                          
+   <!--l. 2--><div class="crosslinks"><p class="noindent">[<a 
+href="LURNBlindch17.html" >next</a>] [<a 
+href="LURNBlindch15.html" >prev</a>] [<a 
+href="LURNBlindch15.html#tailLURNBlindch15.html" >prev-tail</a>] [<a 
+href="LURNBlindch16.html" >front</a>] [<a 
+href="LURNBlind.html#LURNBlindch16.html" >up</a>] </p></div>
+<!--l. 2--><p class="indent" >   <a 
+ id="tailLURNBlindch16.html"></a>   
+</body></html> 

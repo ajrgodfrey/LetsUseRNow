@@ -1,0 +1,3 @@
+<<TXTOut, eval=FALSE>>= 
+txtOut() 
+@ 

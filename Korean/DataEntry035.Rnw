@@ -1,0 +1,5 @@
+Whatever you do you should observe the way your series is coming out. I would have expected the \Rarg{each} to be used in the last example not \Rarg{times} for example --- always check. 
+ 
+\section{An incomplete pattern} 
+ 
+Let's say we want a set of numbers to be cycled, but know that we won't use the full cycle. The \Rcmd{rep} has an argument that can stop the process early for us. Try using the \Rarg{length.out} argument as follows 

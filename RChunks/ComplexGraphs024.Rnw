@@ -1,0 +1,6 @@
+<<DeathsTSPlotLegend>>= 
+plot(ldeaths, ylim=c(0,4000), xlab="Year", ylab="Number of deaths") 
+lines(fdeaths, col="red") 
+lines(mdeaths, col="blue") 
+legend("topright", legend=c("Total", "Men", "Women"), col=c("black", "blue", "red"), lty=c(1,1,1)) 
+@ 

@@ -1,0 +1,4 @@
+<<Correlations2>>= 
+cor(data.frame(Ozone, Solar.R, Wind, Temp),  
+use = "pairwise.complete.obs") 
+@ 

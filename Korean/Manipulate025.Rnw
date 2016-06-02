@@ -1,0 +1,1 @@
+and then see the structure of the data using the \Rcmd{glimpse} function that is a substitute for the \Rcmd{str} command we've used previously. 

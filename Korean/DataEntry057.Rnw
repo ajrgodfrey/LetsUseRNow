@@ -1,0 +1,4 @@
+ 
+I've used a full printout of the resulting \Rclass{data.frame} instead of using the \Rcmd{str} command to show what \R{} has created because the \Rcmd{str} command gives additional information that we do not require at this point. 
+ 
+Let's say we wish to add a new variable to this \Rclass{data.frame}; a task common when designing an experiment. We can use the \$ notation shown earlier in a new way. We add a set of eight random values extracted from a standard normal distribution here as an illustration using the \Rcmd{rnorm} function. 

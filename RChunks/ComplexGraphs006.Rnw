@@ -1,0 +1,4 @@
+<<CreateArrangement>>= 
+Arrangement.mat = matrix(c(1,1,1,2,1,1,1,3,1,1,1,4,5,5,6,6), byrow=TRUE, nrow=4) 
+Arrangement.mat 
+@ 

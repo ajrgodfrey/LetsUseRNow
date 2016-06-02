@@ -1,0 +1,4 @@
+<<HistWithNormalCurve>>= 
+hist(rnorm(1000)) 
+curve(dnorm(x), -3,3, add=TRUE) 
+@ 

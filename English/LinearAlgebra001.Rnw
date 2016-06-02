@@ -1,0 +1,6 @@
+% trace, found using sum(eigen) 
+ 
+%\setcounter{chapter}{} 
+\chapter{LURN\ldots{} To Use R for Linear Algebra} 
+\label{Algebra} 
+ 

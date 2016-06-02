@@ -1,0 +1,5 @@
+We can add more variables to sort the data by if we like. We used the \Rarg{desc} to get the temperatures to be in descending order in this example. 
+ 
+The temperatures just listed are measured on the Fahrenheit scale. I live in a country that uses the centigrade scale so a conversion is needed to make these results more interpretable. Enter the \Rcmd{mutate} and  
+\Rcmd{transmute} commands.  
+ 

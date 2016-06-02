@@ -1,0 +1,5 @@
+<<GetValues1>>= 
+Ozone.resid1 = resid(Ozone.lm1) 
+Ozone.fitted1 = fitted(Ozone.lm1) 
+Ozone.lev1 = hatvalues(Ozone.lm1) 
+@ 

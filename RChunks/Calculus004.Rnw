@@ -1,0 +1,4 @@
+<<SineCurve>>= 
+MySine <- function(x){ sin(x)} 
+curve(MySine, -4*pi, 2*pi, n = 2001) 
+@ 

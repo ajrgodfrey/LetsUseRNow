@@ -1,0 +1,5 @@
+\SVGLink{SimpleGraphsStateRegionBarChart-1} 
+\end{center} 
+\end{exhibit} 
+ 
+This figure was created from the raw data, that is the regions for each of the fifty states in the U.S. If we had summary data with counts for each of the categories, we would need to use the \Rcmd{barplot} command. The \Rcmd{summary} command shows us how many states fall into each category in this instance. 

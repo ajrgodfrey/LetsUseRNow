@@ -1,0 +1,6 @@
+Given this variable is a \Rclass{factor} with four levels it is well suited to presentation in a bar chart, as seen in Exhibit~\ref{StateRegionBarChart}. 
+ 
+\begin{exhibit} 
+\begin{center} 
+\caption{A bar chart showing which of the regions each of the fifty U.S. states belongs} 
+\label{StateRegionBarChart} 

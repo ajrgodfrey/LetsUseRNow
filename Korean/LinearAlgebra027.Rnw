@@ -1,0 +1,1 @@
+Of course, the product of the matrix and its generalised inverse should be an identity matrix.  

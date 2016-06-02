@@ -1,0 +1,5 @@
+<<STLAustRes, fig=TRUE>>= 
+AustRes.dec3 = stats::stl(austres, s.window="periodic") 
+AustRes.dec3 
+plot(AustRes.dec3) 
+@ 

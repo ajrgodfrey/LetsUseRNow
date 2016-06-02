@@ -1,0 +1,3 @@
+<<ShowIdentity>>= 
+M%*%ginv(M) 
+@ 

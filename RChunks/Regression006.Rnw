@@ -1,0 +1,9 @@
+<<OzoneLM1>>= 
+Ozone.lm1 = lm(Ozone~Wind, data=airquality) 
+Ozone.lm1 
+summary(Ozone.lm1) 
+anova(Ozone.lm1) 
+Ozone.lm2 = lm(Ozone~Temp, data=airquality) 
+summary(Ozone.lm2) 
+anova(Ozone.lm2) 
+@ 

@@ -1,0 +1,5 @@
+These two variables can be brought together with the corresponding data using the \Rcmd{data.frame} command illustrated later in this chapter. 
+ 
+\section{Less pattern and more repetition} 
+ 
+The \Rcmd{rep} command is very flexible, and to be honest can either be a lot of fun to play with or just one big headache. Let's say we want to generate the series of numbers which has one 1, two 2's, three 3's, four 4's, and five 5's. Instead of using the constant for the number of times each element is repeated, we can choose the number of repeats for each element. 

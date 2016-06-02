@@ -1,0 +1,4 @@
+<<NileACFNoPlot>>= 
+acf(Nile, plot=FALSE) 
+pacf(Nile, plot=FALSE) 
+@ 

@@ -1,0 +1,1 @@
+If we want to combine the models for the quadratic form for \Robject{Wind} and the linear form of \Robject{Temp} we would 

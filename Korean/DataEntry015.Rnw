@@ -1,0 +1,6 @@
+This is much more efficient than typing out the actual results as done previously. Note that the colon symbol is used for generating series of integers and that in terms of the order of mathematical operators, it comes after the exponent; the brackets around the sequence are essential. In this case, squaring a number is achieved through use of the carat symbol followed by a 2.  
+ 
+ 
+\section{A simple set of text values} 
+ 
+The \Rcmd{c} command is good for entering any kind of data. We may need to enter a set of categories for example. 

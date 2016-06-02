@@ -1,0 +1,5 @@
+which will install the \Rpackage{Dodge} package. If this package used another package that was not currently installed on your machine, that package would also have been downloaded and installed.
+
+\section{Updating add-on packages}
+
+If you want to be sure you have the latest version of the packages you have downloaded are being used, then every once in a while you should issue the command

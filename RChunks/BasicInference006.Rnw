@@ -1,0 +1,4 @@
+<<FirstConfInt>>= 
+mean(precip) - qt(0.975, length(precip)-1) * sd(precip) / sqrt(length(precip)) 
+mean(precip) + qt(0.975, length(precip)-1) * sd(precip) / sqrt(length(precip)) 
+@ 

@@ -1,0 +1,3 @@
+<<UseVariable>>= 
+12*x 
+@ 

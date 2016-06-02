@@ -1,0 +1,5 @@
+and re-create the bar chart accordingly (see Exhibit~\ref{StateRegionBarChartImp}). 
+\begin{exhibit} 
+\begin{center} 
+\caption{An improved bar chart showing which of the regions each of the fifty U.S. states belongs} 
+\label{StateRegionBarChartImp} 

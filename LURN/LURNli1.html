@@ -1,0 +1,343 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Contents</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html,2,next --> 
+<meta name="src" content="LURN.tex"> 
+<meta name="date" content="2016-06-01 18:11:00"> 
+<link rel="stylesheet" type="text/css" href="LURN.css"> 
+</head><body 
+>
+   <!--l. 23--><div class="crosslinks"><p class="noindent">[<a 
+href="LURNch1.html" >next</a>] [<a 
+href="LURN.html" >prev</a>] [<a 
+href="LURN.html#tailLURN" >prev-tail</a>] [<a 
+href="#tailLURNli1.html">tail</a>] [<a 
+href="LURN.html#LURNli1.html" >up</a>] </p></div>
+   <h2 class="likechapterHead"><a 
+ id="x2-1000"></a>Contents</h2> <div class="tableofcontents">
+   <span class="chapterToc" >1 <a 
+href="LURNch1.html#x3-20001">What&#8217;s this all about?</a></span>
+<br />   &#x00A0;<span class="sectionToc" >1.1 <a 
+href="LURNch1.html#x3-30001.1">Getting started</a></span>
+<br />   &#x00A0;<span class="sectionToc" >1.2 <a 
+href="LURNch1.html#x3-40001.2">Versions of <span 
+class="aess-12">R</span></a></span>
+<br />   <span class="chapterToc" >2 <a 
+href="LURNch2.html#x4-50002">LURN&#x2026; To Work <span 
+class="aess-12">R </span>Blind</a></span>
+<br />   &#x00A0;<span class="sectionToc" >2.1 <a 
+href="LURNch2.html#x4-60002.1">Screen readers</a></span>
+<br />   &#x00A0;<span class="sectionToc" >2.2 <a 
+href="LURNch2.html#x4-70002.2"><span 
+class="aess-12">R </span>and braille displays</a></span>
+<br />   &#x00A0;<span class="sectionToc" >2.3 <a 
+href="LURNch2.html#x4-80002.3">Setting up <span 
+class="aess-12">R </span>as a blind Windows user</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >2.3.1 <a 
+href="LURNch2.html#x4-90002.3.1" id="QQ2-4-9">Solution for the problem of the screen reader losing focus</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >2.3.2 <a 
+href="LURNch2.html#x4-100002.3.2" id="QQ2-4-10">Super fast default installation of <span 
+class="aess-12">R</span></a></span>
+<br />   &#x00A0;<span class="sectionToc" >2.4 <a 
+href="LURNch2.html#x4-110002.4">Setting up <span 
+class="aess-12">R </span>as a blind Mac user</a></span>
+<br />   &#x00A0;<span class="sectionToc" >2.5 <a 
+href="LURNch2.html#x4-120002.5">Setting up <span 
+class="aess-12">R </span>as a blind Linux user</a></span>
+<br />   &#x00A0;<span class="sectionToc" >2.6 <a 
+href="LURNch2.html#x4-130002.6">Getting the most out of the <span 
+class="aess-12">R </span>window</a></span>
+<br />   &#x00A0;<span class="sectionToc" >2.7 <a 
+href="LURNch2.html#x4-140002.7">More advanced ways of running <span 
+class="aess-12">R </span>programs</a></span>
+<br />   <span class="chapterToc" >3 <a 
+href="LURNch3.html#x5-150003">LURN&#x2026; To Enter Data</a></span>
+<br />   &#x00A0;<span class="sectionToc" >3.1 <a 
+href="LURNch3.html#x5-160003.1">Using <span 
+class="aess-12">R </span>as a simple calculator</a></span>
+<br />   &#x00A0;<span class="sectionToc" >3.2 <a 
+href="LURNch3.html#x5-170003.2">A simple set of numbers</a></span>
+<br />   &#x00A0;<span class="sectionToc" >3.3 <a 
+href="LURNch3.html#x5-180003.3">A simple set of text values</a></span>
+                                                                          
+
+                                                                          
+<br />   &#x00A0;<span class="sectionToc" >3.4 <a 
+href="LURNch3.html#x5-190003.4">Logical indicators</a></span>
+<br />   &#x00A0;<span class="sectionToc" >3.5 <a 
+href="LURNch3.html#x5-200003.5">A note on subscripting</a></span>
+<br />   &#x00A0;<span class="sectionToc" >3.6 <a 
+href="LURNch3.html#x5-210003.6">A patterned set of numbers</a></span>
+<br />   &#x00A0;<span class="sectionToc" >3.7 <a 
+href="LURNch3.html#x5-220003.7">Less pattern and more repetition</a></span>
+<br />   &#x00A0;<span class="sectionToc" >3.8 <a 
+href="LURNch3.html#x5-230003.8">An incomplete pattern</a></span>
+<br />   &#x00A0;<span class="sectionToc" >3.9 <a 
+href="LURNch3.html#x5-240003.9">Dates and times</a></span>
+<br />   &#x00A0;<span class="sectionToc" >3.10 <a 
+href="LURNch3.html#x5-250003.10">Larger data objects</a></span>
+<br />   &#x00A0;<span class="sectionToc" >3.11 <a 
+href="LURNch3.html#x5-260003.11">Appropriate data labelling</a></span>
+<br />   &#x00A0;<span class="sectionToc" >3.12 <a 
+href="LURNch3.html#x5-270003.12">Other approaches</a></span>
+<br />   <span class="chapterToc" >4 <a 
+href="LURNch4.html#x6-280004">LURN&#x2026; To Import Data</a></span>
+<br />   &#x00A0;<span class="sectionToc" >4.1 <a 
+href="LURNch4.html#x6-290004.1">Data from external files</a></span>
+<br />   &#x00A0;<span class="sectionToc" >4.2 <a 
+href="LURNch4.html#x6-300004.2">Data stored in another directory</a></span>
+<br />   &#x00A0;<span class="sectionToc" >4.3 <a 
+href="LURNch4.html#x6-310004.3">Data saved by other statistical software</a></span>
+<br />   &#x00A0;<span class="sectionToc" >4.4 <a 
+href="LURNch4.html#x6-320004.4">Data from files stored on the internet</a></span>
+<br />   &#x00A0;<span class="sectionToc" >4.5 <a 
+href="LURNch4.html#x6-330004.5">Data contained in contributed packages</a></span>
+<br />   &#x00A0;<span class="sectionToc" >4.6 <a 
+href="LURNch4.html#x6-340004.6">Data cleanliness</a></span>
+<br />   <span class="chapterToc" >5 <a 
+href="LURNch5.html#x7-350005">LURN&#x2026; To Manipulate your Datasets</a></span>
+<br />   &#x00A0;<span class="sectionToc" >5.1 <a 
+href="LURNch5.html#x7-360005.1">Sorting the data into a different order</a></span>
+<br />   &#x00A0;<span class="sectionToc" >5.2 <a 
+href="LURNch5.html#x7-370005.2">Extracting data using information on one variable</a></span>
+<br />   &#x00A0;<span class="sectionToc" >5.3 <a 
+href="LURNch5.html#x7-380005.3">Extracting data using information on more than one variable</a></span>
+<br />   &#x00A0;<span class="sectionToc" >5.4 <a 
+href="LURNch5.html#x7-390005.4">Use of dplyr for data manipulation</a></span>
+<br />   <span class="chapterToc" >6 <a 
+href="LURNch6.html#x8-400006">LURN&#x2026; To Export a Dataset</a></span>
+<br />   &#x00A0;<span class="sectionToc" >6.1 <a 
+href="LURNch6.html#x8-410006.1">Creating external files</a></span>
+<br />   &#x00A0;<span class="sectionToc" >6.2 <a 
+href="LURNch6.html#x8-420006.2">Exporting data for use in alternative software</a></span>
+<br />   <span class="chapterToc" >7 <a 
+href="LURNch7.html#x9-430007">LURN&#x2026; To Create Simple Graphs</a></span>
+<br />   &#x00A0;<span class="sectionToc" >7.1 <a 
+href="LURNch7.html#x9-440007.1">Histograms</a></span>
+<br />   &#x00A0;<span class="sectionToc" >7.2 <a 
+href="LURNch7.html#x9-450007.2">Basic annotations to graphs</a></span>
+<br />   &#x00A0;<span class="sectionToc" >7.3 <a 
+href="LURNch7.html#x9-460007.3">Other univariate summary graphs</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >7.3.1 <a 
+href="LURNch7.html#x9-470007.3.1" id="QQ2-9-49">Boxplots</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >7.3.2 <a 
+href="LURNch7.html#x9-480007.3.2" id="QQ2-9-51">Comparative boxplots</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >7.3.3 <a 
+href="LURNch7.html#x9-490007.3.3" id="QQ2-9-53">Dotplots</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >7.3.4 <a 
+href="LURNch7.html#x9-500007.3.4" id="QQ2-9-55">Simple line plots</a></span>
+<br />   &#x00A0;<span class="sectionToc" >7.4 <a 
+href="LURNch7.html#x9-510007.4">Quantile-quantile plots</a></span>
+<br />   &#x00A0;<span class="sectionToc" >7.5 <a 
+href="LURNch7.html#x9-520007.5">Scatter plots</a></span>
+<br />   &#x00A0;<span class="sectionToc" >7.6 <a 
+href="LURNch7.html#x9-530007.6">Scatter plot matrices</a></span>
+<br />   &#x00A0;<span class="sectionToc" >7.7 <a 
+href="LURNch7.html#x9-540007.7">Graphs for discrete valued variables</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >7.7.1 <a 
+href="LURNch7.html#x9-550007.7.1" id="QQ2-9-65">Bar charts</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >7.7.2 <a 
+href="LURNch7.html#x9-560007.7.2" id="QQ2-9-69">Pie charts</a></span>
+<br />   &#x00A0;<span class="sectionToc" >7.8 <a 
+href="LURNch7.html#x9-570007.8">Closing</a></span>
+<br />   <span class="chapterToc" >8 <a 
+href="LURNch8.html#x10-580008">LURN&#x2026; To Examine Data Numerically</a></span>
+<br />   &#x00A0;<span class="sectionToc" >8.1 <a 
+href="LURNch8.html#x10-590008.1">Obtaining basic numerical summaries of data</a></span>
+                                                                          
+
+                                                                          
+<br />   &#x00A0;<span class="sectionToc" >8.2 <a 
+href="LURNch8.html#x10-600008.2">Obtaining slightly more elegant summaries</a></span>
+<br />   &#x00A0;<span class="sectionToc" >8.3 <a 
+href="LURNch8.html#x10-610008.3">Getting things printed how we want them</a></span>
+<br />   &#x00A0;<span class="sectionToc" >8.4 <a 
+href="LURNch8.html#x10-620008.4">Correlation structure within a data set</a></span>
+<br />   &#x00A0;<span class="sectionToc" >8.5 <a 
+href="LURNch8.html#x10-630008.5">Use of dplyr for data summarisation</a></span>
+<br />   &#x00A0;<span class="sectionToc" >8.6 <a 
+href="LURNch8.html#x10-640008.6">Closing</a></span>
+<br />   <span class="chapterToc" >9 <a 
+href="LURNch9.html#x11-650009">LURN&#x2026; To Save Results for Later Inspection</a></span>
+<br />   &#x00A0;<span class="sectionToc" >9.1 <a 
+href="LURNch9.html#x11-660009.1">Copying and pasting graphs</a></span>
+<br />   &#x00A0;<span class="sectionToc" >9.2 <a 
+href="LURNch9.html#x11-670009.2">Saving a graph using the menus</a></span>
+<br />   &#x00A0;<span class="sectionToc" >9.3 <a 
+href="LURNch9.html#x11-680009.3">Saving a graph using commands within your <span 
+class="aess-12">R </span>program</a></span>
+<br />   &#x00A0;<span class="sectionToc" >9.4 <a 
+href="LURNch9.html#x11-690009.4">Saving output in a text file</a></span>
+<br />   &#x00A0;<span class="sectionToc" >9.5 <a 
+href="LURNch9.html#x11-700009.5">Saving the entire <span 
+class="aess-12">R </span>Console</a></span>
+<br />   <span class="chapterToc" >10 <a 
+href="LURNch10.html#x12-7100010">LURN&#x2026; To Become More Efficient in your Workplace</a></span>
+<br />   &#x00A0;<span class="sectionToc" >10.1 <a 
+href="LURNch10.html#x12-7200010.1">Managing <span 
+class="aess-12">R </span>when you have multiple projects on the go</a></span>
+<br />   &#x00A0;<span class="sectionToc" >10.2 <a 
+href="LURNch10.html#x12-7300010.2">Batch processing commands</a></span>
+<br />   &#x00A0;<span class="sectionToc" >10.3 <a 
+href="LURNch10.html#x12-7400010.3">Running an <span 
+class="aess-12">R </span>script without opening <span 
+class="aess-12">R </span>under Windows</a></span>
+<br />   &#x00A0;<span class="sectionToc" >10.4 <a 
+href="LURNch10.html#x12-7600010.4">Using file associations in Windows</a></span>
+<br />   &#x00A0;<span class="sectionToc" >10.5 <a 
+href="LURNch10.html#x12-7700010.5">Don&#8217;t re-invent any wheels</a></span>
+<br />   <span class="chapterToc" >11 <a 
+href="LURNch11.html#x13-7800011">LURN&#x2026; To Do Basic Inference</a></span>
+<br />   &#x00A0;<span class="sectionToc" >11.1 <a 
+href="LURNch11.html#x13-7900011.1">Confidence intervals and hypothesis tests for the mean
+of one population</a></span>
+<br />   &#x00A0;<span class="sectionToc" >11.2 <a 
+href="LURNch11.html#x13-8000011.2">Confidence intervals and hypothesis tests for the difference
+of two population means</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsectionToc" >11.2.1 <a 
+href="LURNch11.html#x13-8100011.2.1" id="QQ2-13-96">Two paired samples</a></span>
+<br />   &#x00A0;<span class="sectionToc" >11.3 <a 
+href="LURNch11.html#x13-8200011.3">Confidence intervals and hypothesis tests for a proportion
+from one population</a></span>
+<br />   &#x00A0;<span class="sectionToc" >11.4 <a 
+href="LURNch11.html#x13-8300011.4">Confidence intervals and hypothesis tests for the difference
+of two population proportions</a></span>
+<br />   &#x00A0;<span class="sectionToc" >11.5 <a 
+href="LURNch11.html#x13-8400011.5">Hypothesis tests and confidence intervals for Correlation coefficients</a></span>
+<br />   &#x00A0;<span class="sectionToc" >11.6 <a 
+href="LURNch11.html#x13-8500011.6">Testing the independence of two categorical variables</a></span>
+<br />   &#x00A0;<span class="sectionToc" >11.7 <a 
+href="LURNch11.html#x13-8600011.7">Testing the normality of a distribution</a></span>
+<br />   <span class="chapterToc" >12 <a 
+href="LURNch12.html#x14-8700012">LURN&#x2026; To Perform Regression Analyses</a></span>
+<br />   &#x00A0;<span class="sectionToc" >12.1 <a 
+href="LURNch12.html#x14-8800012.1">Data and suitable exploratory graphs</a></span>
+<br />   &#x00A0;<span class="sectionToc" >12.2 <a 
+href="LURNch12.html#x14-8900012.2">The simple regression model</a></span>
+<br />   &#x00A0;<span class="sectionToc" >12.3 <a 
+href="LURNch12.html#x14-9000012.3">Presenting the straight line model&#8217;s suitability in a graph</a></span>
+<br />   &#x00A0;<span class="sectionToc" >12.4 <a 
+href="LURNch12.html#x14-9100012.4">Model validation using diagnostic plots</a></span>
+<br />   &#x00A0;<span class="sectionToc" >12.5 <a 
+href="LURNch12.html#x14-9200012.5">Polynomial regression models</a></span>
+<br />   &#x00A0;<span class="sectionToc" >12.6 <a 
+href="LURNch12.html#x14-9300012.6">Presenting the polynomial model&#8217;s suitability in a graph</a></span>
+<br />   &#x00A0;<span class="sectionToc" >12.7 <a 
+href="LURNch12.html#x14-9400012.7">Multiple regression models</a></span>
+<br />   &#x00A0;<span class="sectionToc" >12.8 <a 
+href="LURNch12.html#x14-9500012.8">Indicator variables</a></span>
+<br />   <span class="chapterToc" >13 <a 
+href="LURNch13.html#x15-9600013">LURN&#x2026; To Create Complex Graphs</a></span>
+<br />   &#x00A0;<span class="sectionToc" >13.1 <a 
+href="LURNch13.html#x15-9700013.1">More than one graph in a single window</a></span>
+                                                                          
+
+                                                                          
+<br />   &#x00A0;<span class="sectionToc" >13.2 <a 
+href="LURNch13.html#x15-9800013.2">Allowing different sized graphs to be included in a single window</a></span>
+<br />   &#x00A0;<span class="sectionToc" >13.3 <a 
+href="LURNch13.html#x15-9900013.3">Using colour or different symbols</a></span>
+<br />   &#x00A0;<span class="sectionToc" >13.4 <a 
+href="LURNch13.html#x15-10000013.4">Adding points to an existing graph</a></span>
+<br />   &#x00A0;<span class="sectionToc" >13.5 <a 
+href="LURNch13.html#x15-10100013.5">Using lines instead of points</a></span>
+<br />   &#x00A0;<span class="sectionToc" >13.6 <a 
+href="LURNch13.html#x15-10200013.6">Adding lines to an existing graph</a></span>
+<br />   &#x00A0;<span class="sectionToc" >13.7 <a 
+href="LURNch13.html#x15-10300013.7">Adding a curve to a graph</a></span>
+<br />   &#x00A0;<span class="sectionToc" >13.8 <a 
+href="LURNch13.html#x15-10400013.8">Adding text to an existing graph</a></span>
+<br />   &#x00A0;<span class="sectionToc" >13.9 <a 
+href="LURNch13.html#x15-10500013.9">Adding a legend for different information within a graph</a></span>
+<br />   &#x00A0;<span class="sectionToc" >13.10 <a 
+href="LURNch13.html#x15-10600013.10">More complex bar charts</a></span>
+<br />   &#x00A0;<span class="sectionToc" >13.11 <a 
+href="LURNch13.html#x15-10700013.11">Contour plots</a></span>
+<br />   <span class="chapterToc" >14 <a 
+href="LURNch14.html#x16-10800014">Extending <span 
+class="aess-12">R </span>beyond the base installation</a></span>
+<br />   &#x00A0;<span class="sectionToc" >14.1 <a 
+href="LURNch14.html#x16-10900014.1">Installing additional packages</a></span>
+<br />   &#x00A0;<span class="sectionToc" >14.2 <a 
+href="LURNch14.html#x16-11000014.2">Updating add-on packages</a></span>
+<br />   &#x00A0;<span class="sectionToc" >14.3 <a 
+href="LURNch14.html#x16-11100014.3">Using an enhanced graphical interface</a></span>
+<br />   &#x00A0;<span class="sectionToc" >14.4 <a 
+href="LURNch14.html#x16-11200014.4">Use of an integrated development environment (IDE)</a></span>
+<br />   <span class="chapterToc" >15 <a 
+href="LURNch15.html#x17-11300015">LURN&#x2026; To use the BrailleR add-on package</a></span>
+<br />   &#x00A0;<span class="sectionToc" >15.1 <a 
+href="LURNch15.html#x17-11400015.1">Creating a copy of the <span 
+class="aess-12">R </span>console window</a></span>
+<br />   &#x00A0;<span class="sectionToc" >15.2 <a 
+href="LURNch15.html#x17-11500015.2">Text interpretation of graphs</a></span>
+<br />   &#x00A0;<span class="sectionToc" >15.3 <a 
+href="LURNch15.html#x17-11600015.3">Basic descriptions of variables</a></span>
+<br />   &#x00A0;<span class="sectionToc" >15.4 <a 
+href="LURNch15.html#x17-11700015.4">Altering <span 
+class="aess-12">R </span>output to make it easier to read</a></span>
+<br />   &#x00A0;<span class="sectionToc" >15.5 <a 
+href="LURNch15.html#x17-11800015.5">Reading a scatter plot</a></span>
+<br />   &#x00A0;<span class="sectionToc" >15.6 <a 
+href="LURNch15.html#x17-11900015.6">What else?</a></span>
+<br />   <span class="chapterToc" >16 <a 
+href="LURNch16.html#x18-12000016">LURN&#x2026; To create maps</a></span>
+<br />   &#x00A0;<span class="sectionToc" >16.1 <a 
+href="LURNch16.html#x18-12100016.1">Creation of maps</a></span>
+<br />   &#x00A0;<span class="sectionToc" >16.2 <a 
+href="LURNch16.html#x18-12200016.2">Adding cities to a map</a></span>
+<br />   &#x00A0;<span class="sectionToc" >16.3 <a 
+href="LURNch16.html#x18-12300016.3">Using Google&#8217;s services to map locations of interest</a></span>
+<br />   <span class="chapterToc" >17 <a 
+href="LURNch17.html#x19-12400017">LURN&#x2026; To Use R as a Scientific Calculator</a></span>
+<br />   &#x00A0;<span class="sectionToc" >17.1 <a 
+href="LURNch17.html#x19-12500017.1">Trigonometric functions</a></span>
+<br />   &#x00A0;<span class="sectionToc" >17.2 <a 
+href="LURNch17.html#x19-12600017.2">Graphs of trigonometric functions</a></span>
+<br />   <span class="chapterToc" >18 <a 
+href="LURNch18.html#x20-12700018">LURN&#x2026; To Use R for Basic Calculus Tasks</a></span>
+<br />   &#x00A0;<span class="sectionToc" >18.1 <a 
+href="LURNch18.html#x20-12800018.1">Creating mathematical expressions</a></span>
+<br />   &#x00A0;<span class="sectionToc" >18.2 <a 
+href="LURNch18.html#x20-12900018.2">Plotting functions</a></span>
+<br />   &#x00A0;<span class="sectionToc" >18.3 <a 
+href="LURNch18.html#x20-13000018.3">Differentiation</a></span>
+<br />   <span class="chapterToc" >19 <a 
+href="LURNch19.html#x21-13100019">LURN&#x2026; To Use R for Linear Algebra</a></span>
+<br />   &#x00A0;<span class="sectionToc" >19.1 <a 
+href="LURNch19.html#x21-13200019.1">Basic notes on storage of vectors and matrices</a></span>
+<br />   &#x00A0;<span class="sectionToc" >19.2 <a 
+href="LURNch19.html#x21-13300019.2">Creating some simple matrix structures</a></span>
+<br />   &#x00A0;<span class="sectionToc" >19.3 <a 
+href="LURNch19.html#x21-13400019.3">Matrix and vector calculations</a></span>
+<br />   &#x00A0;<span class="sectionToc" >19.4 <a 
+href="LURNch19.html#x21-13500019.4">Inverting a matrix</a></span>
+<br />   &#x00A0;<span class="sectionToc" >19.5 <a 
+href="LURNch19.html#x21-13600019.5">Solving a set of linear equations</a></span>
+<br />   &#x00A0;<span class="sectionToc" >19.6 <a 
+href="LURNch19.html#x21-13700019.6">Determinants and traces</a></span>
+<br />   &#x00A0;<span class="sectionToc" >19.7 <a 
+href="LURNch19.html#x21-13800019.7">Eigenvalues and eigenvectors</a></span>
+                                                                          
+
+                                                                          
+   </div>
+                                                                          
+
+                                                                          
+                                                                          
+
+                                                                          
+   <!--l. 2--><div class="crosslinks"><p class="noindent">[<a 
+href="LURNch1.html" >next</a>] [<a 
+href="LURN.html" >prev</a>] [<a 
+href="LURN.html#tailLURN" >prev-tail</a>] [<a 
+href="LURNli1.html" >front</a>] [<a 
+href="LURN.html#LURNli1.html" >up</a>] </p></div>
+<!--l. 2--><p class="indent" >   <a 
+ id="tailLURNli1.html"></a>  
+</body></html> 

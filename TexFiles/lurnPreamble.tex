@@ -1,0 +1,158 @@
+
+\usepackage{makeidx}
+\makeindex
+
+%%% preamble commands for all of my documents starting February 2009
+
+%% packages to use
+	\usepackage{amssymb}
+	\usepackage{amsfonts}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{calc}
+\usepackage{lscape}
+\usepackage{multirow}
+\usepackage[figuresright]{rotating}
+%% options for the rotating package 
+% figuresleft, figuresright - for two sided presentation
+% clockwise, or counterclockwise (not tested)
+
+
+
+
+%% my mathematical shortcuts
+\newcommand{\abs}[1]{\left\vert#1\right\vert}
+\newcommand{\rndbrk}[1]{\left(#1\right)}
+\newcommand{\sqbrk}[1]{\left[#1\right]}
+\newcommand{\incurly}[1]{\left\{#1\right\}}
+\newcommand{\dfrac}[2]{\frac{\displaystyle #1}{\displaystyle #2}}
+\newcommand{\dblsum}[5]{\sum_{#1}^{#2}{\sum_{#3}^{#4}{#5}}}
+\newcommand{\trpsum}[7]{\sum_{#1}^{#2}{\sum_{#3}^{#4}{\sum_{#5}^{#6}{#7}}}}
+\newcommand{\SumAllH}[1]{{\displaystyle \sum_{h=1}^{H}}{#1}}
+\newcommand{\SumAllI}[1]{{\displaystyle \sum_{i=1}^{I}}{#1}}
+\newcommand{\SumAllJ}[1]{{\displaystyle \sum_{j=1}^{J}}{#1}}
+\newcommand{\SumAllK}[1]{{\displaystyle \sum_{k=1}^{K}}{#1}}
+\newcommand{\SumAvailK}[1]{{\displaystyle \sum_{{\rm available}~k}}{#1}}
+\newcommand{\SumComK}[1]{{\displaystyle \sum_{{\rm common}~k}}{#1}}
+\newcommand{\SumPairsK}[1]{  {\displaystyle \sum_{k=1}^{K-1}}{  {\displaystyle \sum_{k^\prime =k+1}^{K} {#1} }}}
+\newcommand{\SumAllM}[1]{{\displaystyle \sum_{m=1}^{M}}{#1}}
+\newcommand{\SumAllN}[1]{{\displaystyle \sum_{n=1}^{N}}{#1}}
+\newcommand{\SumAllR}[1]{{\displaystyle \sum_{r=1}^{R}}{#1}}
+
+%% graph float controlling commands
+\renewcommand{\topfraction}{.85}
+\renewcommand{\bottomfraction}{.7}
+\renewcommand{\textfraction}{.15}
+\renewcommand{\floatpagefraction}{.66}
+\renewcommand{\dbltopfraction}{.66}
+\renewcommand{\dblfloatpagefraction}{.66}
+\setcounter{topnumber}{9}
+\setcounter{bottomnumber}{9}
+\setcounter{totalnumber}{20}
+\setcounter{dbltopnumber}{9}
+%% The meanings of these parameters are described on pages 199-200, section C.9 of the LaTeX manual.
+%% Are there places in your document where you could 'naturally' put a \clearpage command? If so, do: the backlog of floats is cleared after a \clearpage.
+
+%% commands for use while drafting documents
+\newcommand{\placeholder}[0]{\begin{picture}(14, 14)(0, 0) \end{picture}}
+\newcommand{\NoteJob}[1]{$\clubsuit${\bf {\it Job to do: #1}}}
+
+
+%% default plot sizes
+\setkeys{Gin}{width=0.75\textwidth}
+%% color
+\usepackage{color}
+
+\usepackage[T1]{fontenc}        % Use Type 1 encoding 
+
+
+% Number only to the sections in the table of contents  
+\setcounter{tocdepth}{1} 
+
+%% BibTeX settings
+\usepackage[authoryear,round]{natbib}
+
+%%% R / System symbols
+\newcommand{\R}{\textsf{R}}
+\newcommand{\RHome}{R\_{}HOME}
+\newcommand{\rR}{{R}}
+\renewcommand{\S}{\textsf{S}}
+\newcommand{\SPLUS}{\textsf{S-PLUS}}
+\newcommand{\rSPLUS}{{S-PLUS}}
+\newcommand{\SPSS}{\textsf{SPSS}}
+\newcommand{\EXCEL}{\textsf{Excel}}
+\newcommand{\ACCESS}{\textsf{Access}}
+\newcommand{\SQL}{\textsf{SQL}}
+
+\newcommand{\Rpkg}[1]{\index{#1 package@\textit{#1} package}\textit{#1}}
+\newcommand{\Rpackage}[1]{\index{#1 package@\textit{#1} package}\textit{#1}}
+\newcommand{\Robject}[1]{\texttt{#1}}
+\newcommand{\Rclass}[1]{\index{#1 class@\textit{#1} class}\textit{#1}}
+\newcommand{\Rcmd}[1]{\index{#1 function@\texttt{#1} function}\texttt{#1()}}
+\newcommand{\Roperator}[1]{\texttt{#1}}
+\newcommand{\Rarg}[1]{\texttt{#1}}
+\newcommand{\Rlevel}[1]{\texttt{#1}}
+\newcommand{\file}[1]{\hbox{\rm\texttt{#1}}}
+\newcommand{\code}{\texttt}
+\newcommand{\stress}[1]{\textit{#1}}
+\newcommand{\stressind}[1]{\index{#1}\textit{#1}}
+\newcommand{\nostressind}[1]{\index{#1}#1}
+\newcommand{\booktitle}[1]{`#1'}
+
+%%% Math symbols
+\newcommand{\E}{\mathsf{E}}
+\newcommand{\Var}{\mathsf{Var}}
+\newcommand{\Cov}{\mathsf{Cov}}
+\newcommand{\Cor}{\mathsf{Cor}}
+\newcommand{\x}{\mathbf{x}}
+\newcommand{\y}{\mathbf{y}}
+\renewcommand{\a}{\mathbf{a}}
+\newcommand{\W}{\mathbf{W}}
+\newcommand{\C}{\mathbf{C}}
+\renewcommand{\H}{\mathbf{H}}
+\newcommand{\X}{\mathbf{X}}
+\newcommand{\B}{\mathbf{B}}
+\newcommand{\V}{\mathbf{V}}
+\newcommand{\I}{\mathbf{I}}
+\newcommand{\D}{\mathbf{D}}
+\newcommand{\bS}{\mathbf{S}}
+\newcommand{\N}{\mathcal{N}}
+\renewcommand{\P}{\mathsf{P}}
+
+%%% links
+\hypersetup{pdftitle = {Let's Use R Now}, pdfsubject = {Book}, pdfauthor = {Jonathan Godfrey}, colorlinks = {true}, linkcolor = {blue}, citecolor = {blue}, urlcolor = {red}, hyperindex = {true}, linktocpage = {true}}
+
+%%% captions & tables
+\usepackage{longtable}
+
+
+%%% texi2dvi complains that \newblock is undefined, hm...
+\def\newblock{\hskip .11em plus .33em minus .07em}
+
+%%% Exercise sections
+\newcounter{exercise}[chapter]
+\setcounter{exercise}{0}
+\newcommand{\exercise}{\item{\stepcounter{exercise} Ex.
+                       \arabic{chapter}.\arabic{exercise} }}
+
+%% URLs
+\newcommand{\curl}[1]{\begin{center} \url{#1} \end{center}}
+\newcommand{\email}[1]{\href{mailto:#1}{\normalfont\texttt{#1}}}
+
+
+%%% hyphenations
+\hyphenation{drop-out}
+
+%%% new bidirectional quotes need
+\usepackage[utf8]{inputenc}
+
+
+
+%to replace all figures
+\usepackage{float}
+ \floatstyle{ruled}
+\newfloat{exhibit}{tp}{lox}[chapter]
+\floatname{exhibit}{Exhibit}
+
+
+%\input{LURN-KnitRStart}

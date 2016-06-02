@@ -1,0 +1,1 @@
+\item  If you haven't done so, set your working directory to wherever NewPackage_1.0.tar.gz was placed. For example: 

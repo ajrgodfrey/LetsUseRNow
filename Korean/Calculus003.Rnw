@@ -1,0 +1,11 @@
+ 
+This chapter explains how various tasks in introductory calculus can be undertaken using \R{}. 
+ 
+ 
+\section{Creating mathematical expressions} 
+ 
+Before we embark on doing those fun things we want to do, we need to learn how to store a mathematical expression as an object in \R{}. There are many keywords that appear in these expressions which are translated to symbols when seen printed in a graph window but remain in ordinary text in \R{} commands. Such symbols include Greek letters, hats and bars, all of which have a meaning. 
+ 
+\section{Plotting functions} 
+ 
+This can be a lot of fun if you set things up right to start with. We create a \Rclass{function} to represent the mathematical expression using the \Rcmd{function} command, then plot it using either the \Rcmd{plot.function} or \Rcmd{curve} commands. 

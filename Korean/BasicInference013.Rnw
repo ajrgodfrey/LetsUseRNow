@@ -1,0 +1,1 @@
+This gives a confidence interval with the default level of confidence (95\%), while 

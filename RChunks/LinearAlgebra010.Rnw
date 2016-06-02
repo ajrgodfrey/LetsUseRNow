@@ -1,0 +1,5 @@
+<<Transpose>>= 
+M=matrix(1:6,nrow=2) 
+M 
+t(M) 
+@ 

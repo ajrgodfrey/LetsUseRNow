@@ -1,0 +1,10 @@
+ 
+\section{Creation of maps} 
+ 
+The creation of maps is actually a simple task in \R{}, as long as the database for the desired land mass is available. There are a number of these data bases available as downloadable packages from CRAN. 
+ 
+I first created a map when I wanted a map of New Zealand (my home country) for a presentation I gave when I was overseas. I also wanted to show a portion of the country to highlight how far my home town is from the nation's capital. The rectangle that appears on the map of New Zealand was created using the \Rcmd{polygon} command. The \Rcmd{box} command places the frame around the map which is created using the \Rcmd{map} command. Exhibit~\ref{WholeNZ} shows the first map, while Exhibit~\ref{PartNZ} shows the central part of the country. 
+\begin{exhibit} 
+\caption{Map of New Zealand with a rectangle marked on it that bounds the area used in a subsequent map.} 
+\label{WholeNZ} 
+\begin{center} 

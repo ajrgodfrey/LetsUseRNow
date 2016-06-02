@@ -1,0 +1,4 @@
+<<DecomposeAustRes, fig=TRUE>>= 
+AustRes.dec1 = decompose(austres) 
+Aust.dec2 =decompose(austres, type="mul") 
+@ 

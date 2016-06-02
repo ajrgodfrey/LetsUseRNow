@@ -1,0 +1,17 @@
+ 
+This chapter explains how to construct functions to do those jobs that get repeated without having to repeat them yourself. One key method for making any \R{} user more efficient is the creation of functions.  
+ 
+\section{What is a function?} 
+ 
+A function is a tool to turn specified inputs (called arguments) into desired outcomes. By now, you've used lots of functions to get things done in \R{}. There will be times that a desired outcome can't be achieved using functions available in \R{}.  
+ 
+Most functions will return an output or an answer, but some functions are written to do tasks that just do a specific job for you. 
+ 
+A function is the next logical step after writing a script. For example, instead of writing a script that is specific to the data set being used today, experienced \R{} users will generalise the script so that it can be used for any other dataset at any time.  
+  
+The best way to start is to turn a little script into a function if you know you're going to use it a lot, or even if you think the task will be repeated at a later date. 
+ 
+ 
+\section{A mathematical function} 
+ 
+In Chapter~\ref{Calculus}, you can see how using a \Rclass{function} can make plotting a mathematical function a fairly simple task. Let's explain what is happening in the example used there, which was: 

@@ -1,0 +1,3 @@
+<<TApply2>>= 
+tapply(Wind, list(Month, Day>15), mean) 
+@ 

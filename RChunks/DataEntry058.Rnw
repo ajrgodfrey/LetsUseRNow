@@ -1,0 +1,4 @@
+<<CreateDF5>>= 
+MyThirdDF$Response = rnorm(8) 
+MyThirdDF 
+@ 

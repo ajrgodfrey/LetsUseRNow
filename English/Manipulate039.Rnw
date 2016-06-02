@@ -1,0 +1,4 @@
+creates the new variable as a stand alone object. It hasn't been stored as an object so is only temporarily available.  
+ 
+Finally, the \Rpkg{dplyr} package also gives users two simple ways to extract a random sample from a \Rclass{data.frame}. The commands \Rcmd{sample\_n} and  \Rcmd{sample\_frac} 
+extract a sample of a predetermined size and a specified fraction respectively. For example: 

@@ -1,0 +1,3 @@
+<<NilePlot, fig=TRUE>>= 
+plot(Nile, xlab="Year", ylab="Flow") 
+@ 

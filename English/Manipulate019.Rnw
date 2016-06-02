@@ -1,0 +1,6 @@
+ 
+ 
+ 
+\section{Extracting data using information on more than one variable} 
+ 
+To print out the rows of the \Robject{airquality}  \Rclass{data.frame} where the temperature was less than 60 degrees and the wind was less than ten miles per hour, we would use the \Roperator{\&} operator between the two conditions that identify which rows are required. 

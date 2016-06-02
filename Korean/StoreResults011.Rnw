@@ -1,0 +1,1 @@
+Check this file out and note the contents are what we might expect. It's cleaner to use the \Rcmd{cat} command in place of the \Rcmd{print} command here though. For example 

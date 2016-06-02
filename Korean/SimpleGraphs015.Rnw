@@ -1,0 +1,13 @@
+\SVGLink{SimpleGraphsCompBoxplot-1} 
+\end{center} 
+\end{exhibit} 
+The comparative boxplot is created using a formula to describe the relationship between the two variables that are referred to in our graph. The use of the tilde symbol between \Robject{Wind} and \Robject{Month} could be read as something like ``average wind speed depends on the month" --- well a theory that might be illustrated in our graph anyway. Certainly it is the potential for this relationship to exist that may be exposed through use of the comparative boxplot. 
+ 
+\subsection{Dotplots} 
+ 
+Dotplots aren't everyone's cup of tea but they are frequently offered as substitutes for boxplots and histograms. Again, I chose to alter the default window size for the example given in Exhibit~\ref{AirQualityDotPlotWind} 
+because I didn't like the way the regular graph window presented this graph. 
+\begin{exhibit} 
+\begin{center} 
+\caption{Dotplot of the Average wind speed in miles per hour at 0700 and 1000 hours at LaGuardia Airport. Obtained from the \Robject{air quality} data set.} 
+\label{AirQualityDotPlotWind} 

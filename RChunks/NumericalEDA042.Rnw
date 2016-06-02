@@ -1,0 +1,3 @@
+<<WindAverage>>= 
+airquality %>% summarise(mean(Wind, na.rm = TRUE)) 
+@   

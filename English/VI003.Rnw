@@ -1,0 +1,10 @@
+ 
+This chapter explains how the \Rpackage{BrailleR} add-on package can be used by blind people to get many tasks done quickly and effectively. In general, the package does three things:\begin{enumerate} 
+\item creates a copy of hte R console/terminal in a text file including all standard output. 
+\item creates text descriptions of some graphs. These tools should help the blind user create graphs (with confidence) for the sighted world we must work in. 
+\item provides convenience functions for novice users who do not know enough R commands to survive. Sighted people have the benefit of graphical user interfaces (GUI) to help them, but none of them are accessible by screen reading software. 
+\end{enumerate} 
+Initially, the package was built on top of functionality I wrote to support my own work practices, but additions to meet the needs of other blind \R{} users have been made on request.  
+ 
+ 
+You will need to install the \Rpackage{BrailleR} package before continuing on with the examples in this chapter. It is available from CRAN. Use the examples in Chapter~\ref{Additional} to help install this package. Then use the \Rcmd{library} command to make sure the package is ready for action. 

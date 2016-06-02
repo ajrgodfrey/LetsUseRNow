@@ -1,0 +1,7 @@
+ 
+Note that commands that might be nested on one line in the standard way of combining commands can be split out onto multiple lines to make it even easier to see what has been managed by each command. This leaves room for comments to be added at the end of lines to help anyone else read the code being written. 
+ 
+ 
+\section{Closing} 
+ 
+If you are carrying on working with \R{} you might wish to remove direct access to the data sets we used in this chapter by issuing the following commands 

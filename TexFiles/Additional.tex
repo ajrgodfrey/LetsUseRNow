@@ -1,0 +1,73 @@
+%\setcounter{chapter}{}
+\chapter{Extending \R{} beyond the base installation}
+\label{Additional}
+
+
+
+This chapter explains how you do some tasks that are not part of the basic installation of \R{}. This includes instructions on how to add extra functionality via add-on packages and pointers to some user interfaces.
+
+\section{Installing additional packages}
+\label{InstallPackages}
+
+Many \R{} users find that the vast range of functions that are built into the basic \R{} installation are not enough to meet their specific needs. \R{} is relatively easy to adapt to meet their needs because additional functions are easily created to perform specific tasks.
+
+In order to let others use their creations, \R{} users often make their functions available in add-on packages that can be downloaded by any \R{} user. The network of servers that store these packages is known as CRAN, which is short for Comprehensive R Archive Network. There are over 8000 add-on packages currently available via CRAN as well as others that do not meet the CRAN criteria. To make it to CRAN, an add-on package must meet standards of presentation, quality of documentation, and be available for all operating systems. Add-on packages that do not meet these criteria do exist, especially those that are specific to one operating system.
+
+Installing an add-on package requires two actions. First, you must ask \R{} to install a package of a certain name, either using the \Rcmd{install.packages} command or the Packages pull-down menu item. 
+
+The second task is necessary only once in each \R{} session. When you go to install a package from CRAN, \R{} will ask you to select a \stressind{CRAN mirror}. This just wants you to choose which one of the servers scattered around the world is the one you should point your internet connection towards.
+
+These tasks are most commonly achieved by selecting the menu items and associated dialogue boxes. If you do not want to use the dialogue box approach for selecting a CRAN mirror, there is a text based alternative. If you type
+\begin{Schunk}
+\begin{Sinput}
+> chooseCRANmirror(FALSE)
+\end{Sinput}
+\end{Schunk}
+you will be given a list of the available CRAN mirrors and a different prompt. Type in the number linked to the CRAN mirror you prefer and press the Enter key. If you want to choose the first item on the list (which is a cloud-based server anyway) then you could avoid reviewing the list using:
+\begin{Schunk}
+\begin{Sinput}
+> chooseCRANmirror(ind=1)
+\end{Sinput}
+\end{Schunk}
+
+Installation of individual packages can be achieved using the \Rcmd{install.packages} command. Investigate its help page to ensure you get the most out of its use. 
+
+One key argument for this command is \Rarg{dependencies}. There are many packages that rely on the work of other packages for their success. It's probably a good idea to get into the habit of installing all dependent packages. For example:
+\begin{Schunk}
+\begin{Sinput}
+> install.packages("Dodge", dependencies=TRUE)
+\end{Sinput}
+\end{Schunk}
+which will install the \Rpackage{Dodge} package. If this package used another package that was not currently installed on your machine, that package would also have been downloaded and installed.
+
+\section{Updating add-on packages}
+
+If you want to be sure you have the latest version of the packages you have downloaded are being used, then every once in a while you should issue the command
+\begin{Schunk}
+\begin{Sinput}
+> update.packages(ask=FALSE)
+\end{Sinput}
+\end{Schunk}
+Note that the \Rarg{ask} argument is set to \code{FALSE} here. The default action is to ask the user if they want a particular package updated. I find this frustrating, especially if it's been a while since I updated my packages.
+
+You do not need to do this task very often. I would recommend doing it after installing a new version of \R{}, or if you see a warning message about the version of a package you use.
+
+Finally, note that if you have not established a connection with a CRAN mirror in the current \R{} session, then you will be prompted to do so before anything is downloaded.
+
+\section{Using an enhanced graphical interface}
+
+The base installation of \R{} doesn't offer much statistical functionality in its menu system (assuming you use one!). Various projects are under development that enhance the way users can interact with \R{}.
+
+Perhaps the most well-known is the \R{} Commander project. This interface has been given a lot of development over a number of years now and can support the needs of most introductory level statistical analyses. Its implementation is via the \Rpackage{Rcmdr} add-on package downloadable from CRAN.
+
+I don't use this package as it is more suited to novice to intermediate \R{} users. It also creates a host of new functions that improve on similar functions included in base \R{} that I don't need. The idea of working with mouse clicks is counter-intuitive to reproducible research ideas that most medium to advanced \R{} users like.
+
+\section{Use of an integrated development environment (IDE)} 
+
+The best integrated development environment (IDE) for \R{} users is \R{} Studio. Some people find this way of working to be a bewildering experience. Others love the convenience of having each project contained in a structured environment.
+
+My advice for anyone wanting to use RStudio or any new IDE is to find someone to give you a hands-on demonstration. Perhaps watching videos from the internet are a useful alternative, but you need to know that this tool is what you need before investing time in its use.
+
+Be warned: RStudio is a very powerful and useful tool for even the most advanced \R{} users. As such, it can be too much for the novice \R{} user.
+
+

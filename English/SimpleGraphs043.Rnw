@@ -1,0 +1,13 @@
+\SVGLink{SimpleGraphsStateRegionBarChartImp-1} 
+\end{center} 
+\end{exhibit} 
+ 
+\subsection{Pie charts} 
+ 
+OK, if you must do so, make a pie chart using the \Rcmd{pie} command. Even the help for this command says they are a bad representation for data, stating ``Pie charts are a very bad way of displaying information. The eye is good at judging linear measures and bad at judging relative areas. A bar chart or dot chart is a preferable way of displaying this type of data."  
+ 
+The pie chart for the \Robject{state.region} data is given in Exhibit~\ref{StateRegionPieChart}. 
+\begin{exhibit} 
+\begin{center} 
+\caption{A pie chart showing which of the regions each of the fifty U.S. states belongs} 
+\label{StateRegionPieChart} 

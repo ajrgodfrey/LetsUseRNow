@@ -1,0 +1,3 @@
+<<NileACF, fig=T>>= 
+acf(Nile) 
+@ 

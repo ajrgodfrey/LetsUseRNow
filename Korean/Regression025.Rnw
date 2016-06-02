@@ -1,0 +1,7 @@
+We can compare all three models created thus far because they are a series of nested models. We could not include the model using \Robject{Temp} as the predictor in this command for example. 
+ 
+On the basis of the output from our \Rcmd{anova} command, we might assume that the quadratic form was sufficient to explain the relationship between \Robject{Ozone} and \Robject{Wind} because there is little to be gained by adding the cubic term to our model. Validation of the chosen model via the residual analysis is suggested as a next step. 
+ 
+\section{Presenting the polynomial model's suitability in a graph} 
+ 
+The \Rcmd{abline} command demonstrated earlier is only useful for straight lines. We have seen that the quadratic function is better at explaining the relationship between \Robject{Ozone} and \Robject{Wind}. One solution is to store the fitted values from this model and plot them against the \Robject{Wind} variable, but this will only show the series of points not a smooth curve.  

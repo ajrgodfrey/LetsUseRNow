@@ -1,0 +1,7 @@
+gives us the means of the observed data. 
+ 
+\section{Getting things printed how we want them} 
+ 
+We will often need to watch the way \R{} chooses to print out results. When a direct reference to data is sought, the order of the data is maintained. In our example using the \Rcmd{tapply} command above, the months were numeric values. The order was probably the most logical one as it was in chronological order. 
+ 
+If we had a long list of results and it was the extremes we wanted to focus attention towards, the \Rcmd{sort} and \Rcmd{rev} commands would be most useful. For example, say we want to order the monthly average wind speeds found above in ascending order, then we would use 

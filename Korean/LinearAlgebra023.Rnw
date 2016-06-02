@@ -1,0 +1,4 @@
+ 
+\section{Inverting a matrix} 
+ 
+The inverse of a matrix is used in many statistical procedures. The \Rcmd{solve} command inverts a square matrix. 

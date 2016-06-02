@@ -1,0 +1,7 @@
+\SVGLink{SimpleGraphsNormPlot-1} 
+\end{center} 
+\end{exhibit} 
+ 
+\section{Scatter plots} 
+ 
+Scatter plots are created using the \Rcmd{plot} command by one of two methods. Exhibit~\ref{AirQualityScatterTempWind} was created using 

@@ -1,0 +1,3 @@
+<<CreatePattern2>>= 
+rep(1:5, times=1:5) 
+@ 

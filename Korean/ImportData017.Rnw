@@ -1,0 +1,25 @@
+ 
+Relative paths are therefore quite useful because they avoid having to type out long paths. The full specification of apath might also become a problem when files for a project are moved from one storage device to another. For example, you might want to take your work to a friend, tutor, or colleague on a  memory stick or other portable storage medium. Relative path referencing makes your work very transferable and transportable. 
+ 
+ 
+ 
+ 
+ 
+ 
+\section{Data saved by other statistical software} 
+ 
+Many statistical software packages use their own file types for storing data. \R{} is no different actually! The chief problem we have is to find a way of transferring data from one application to another. Like most other statistics programs, \R{} doesn't handle all other file types. Some files can be imported into \R{} using the commands in the \Rpackage{foreign} package, but it is probably best just to avoid the problems from the start. 
+ 
+In many instances it will prove easiest to use copy and paste functionality within your operating system to take the data from whatever original source it was given to you in and put it into a suitable spreadsheet program. Then save it using the comma separated values format and read the data into \R{} using the commands given in the previous section. 
+ 
+I recommend trying to obtain the data in an easily imported file type rather than attempting to use the functions in the \Rpackage{foreign} package. 
+ 
+\section{Data from files stored on the internet} 
+ 
+Sometimes a data set is made available via the internet. If you can obtain the full URL for the downloadable data file then it can be entered into the \Rcmd{read.csv} or \Rcmd{read.table} commands. This exercise is seldom necessary except for data files that you know will be updated for distribution through the web. Some government agencies and financial database services do this. 
+ 
+\section{Data contained in contributed packages} 
+\label{DataFromPackages} 
+ 
+ 
+The base installation of \R{} includes a package called \Rpackage{datasets}. These data sets are useful for testing code and writing examples for insertion into documents like this one. Data sets contained in the \Rpackage{datasets} package are actually ready and waiting to be accessed, but often we want to bring the data into our current workspace using a command such as 

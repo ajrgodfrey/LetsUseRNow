@@ -1,0 +1,18 @@
+gives us the results for a one-sided hypothesis test and the corresponding confidence interval. 
+ 
+The \Rcmd{t.test} command is used for many $t$-tests, notably for comparing two population means, whether the data are paired or not. 
+ 
+\section{Confidence intervals and hypothesis tests for the difference of two population means} 
+ 
+The first question you must ask yourself when working with two sets of values you wish to compare is if they are two independent samples or two measurements taken on one sample. If the latter is the case, then we have paired samples and will need to add an extra argument to our command to allow for the link. In both cases, the difference of the two population means is denoted $\mu_1-\mu_2$, although as we will see, the linked sample case is really a reduction of the paired values to a one-sample $t$-test.  
+ 
+First, we see how to do a basic two sample $t$-test using the ... data. 
+ 
+\subsection{Two paired samples} 
+\label{PairedSamplesTTest} 
+ 
+The \Robject{sleep} data that is in the \Rpackage{datasets} package has two recordings for each of ten individuals. In an experimental design sense, we would think of the individuals as a blocking factor. In fact we will see how this is done in Section~\ref{RCBAnalysis}. 
+ 
+The data set lists the twenty observations in a single column. This is a little unusual for paired data that will be analyzed using the \Rcmd{t.test} command. Caution must be expressed because the variable that shows how the observations are paired is not stated. If the observations are not ordered the same for each group, then the paring will be done incorrectly. If for any reason you cannot be sure of the ordering of the data then the use of the \Rcmd{aov} command as discussed in Section~\ref{RCBAnalysis} is strongly advised. 
+ 
+Using the \Rcmd{attach} command to be able to refer to the variables directly speeds up this process. 

@@ -1,0 +1,1 @@
+These calculations include all the commands needed for a hypothesis test, except the need to find the specific $p$-value of a hypothesis test. Let's test the notion that the annual precipitation is actually greater than 30 inches per annum. This is a one-sided hypothesis test where the null hypothesis is that $\mu=30$. 

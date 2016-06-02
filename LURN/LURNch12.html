@@ -1,0 +1,2557 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>12 LURN... To Perform Regression Analyses</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html,2,next --> 
+<meta name="src" content="LURN.tex"> 
+<meta name="date" content="2016-06-01 18:11:00"> 
+<link rel="stylesheet" type="text/css" href="LURN.css"> 
+</head><body 
+>
+   <!--l. 2--><div class="crosslinks"><p class="noindent">[<a 
+href="LURNch13.html" >next</a>] [<a 
+href="LURNch11.html" >prev</a>] [<a 
+href="LURNch11.html#tailLURNch11.html" >prev-tail</a>] [<a 
+href="#tailLURNch12.html">tail</a>] [<a 
+href="LURN.html#LURNch12.html" >up</a>] </p></div>
+   <h2 class="chapterHead"><span class="titlemark">Chapter&#x00A0;12</span><br /><a 
+ id="x14-8700012"></a>LURN&#x2026; To Perform Regression Analyses</h2>
+<!--l. 8--><p class="noindent" >This chapter presents the most basic regression models. To really get the most
+out of <span 
+class="aess-12">R </span>and regression techniques (such as those taught in second or
+later statistics courses) you will need to look for guidance from a suitable
+textbook, many of which incorporate use of <span 
+class="aess-12">R </span>as the preferred software
+tool.
+   <h3 class="sectionHead"><span class="titlemark">12.1   </span> <a 
+ id="x14-8800012.1"></a>Data and suitable exploratory graphs</h3>
+<!--l. 12--><p class="noindent" >The easiest way to fit regression models is using data that are contained in a
+<a 
+ id="dx14-88001"></a><span 
+class="aeti-12">data.frame</span>. This means we can use the <a 
+ id="dx14-88002"></a><span 
+class="aett-12">attach() </span>command to get at the separate
+components if we need them. An alternative is to have direct access to each
+variable independently within our current workspace. For neatness, I prefer to
+keep data in the <a 
+ id="dx14-88003"></a><span 
+class="aeti-12">data.frame </span>format.
+<!--l. 14--><p class="indent" >   We can use the <span 
+class="aett-12">air quality </span>data described in Chapter&#x00A0;<a 
+href="LURNch7.html#x9-430007">7<!--tex4ht:ref: SimpleGraphs --></a>. Recall that it is
+available from your current workspace as it is contained within the <a 
+ id="dx14-88004"></a><span 
+class="aeti-12">datasets</span>
+package. Typing
+   <div class="fancyvrb" id="fancyvrb258">  <a 
+ id="x14-88006r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;data(airquality)</span></div>
+<!--l. 20--><p class="noindent" >will make the data explicitly available to you in your current <span 
+class="aess-12">R </span>workspace.
+<!--l. 22--><p class="indent" >   We can look for relationships among the variables within this data set using
+the techniques described in Chapter&#x00A0;<a 
+href="LURNch7.html#x9-430007">7<!--tex4ht:ref: SimpleGraphs --></a>. Note in particular the scatter plot matrix
+presented in Exhibit&#x00A0;<a 
+href="LURNch7.html#x9-53005r10">7.10<!--tex4ht:ref: AirQualityScatterPlotMatrix --></a>.
+<!--l. 26--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">12.2   </span> <a 
+ id="x14-8900012.2"></a>The simple regression model</h3>
+<!--l. 28--><p class="noindent" >To obtain the equation for a straight line relationship of the form
+   <table 
+class="equation"><tr><td>
+   <center class="math-display" >
+<img 
+src="LURN16x.png" alt="y =  &#x03B1; + &#x03B2;x
+                                                                          
+
+                                                                          
+" class="math-display" ><a 
+ id="x14-89001r1"></a></center></td><td class="equation-label">(12.1)</td></tr></table>
+<!--l. 30--><p class="nopar" >
+we use the <a 
+ id="dx14-89002"></a><span 
+class="aett-12">lm() </span>command. The first argument for this command is a <a 
+ id="dx14-89003"></a><span 
+class="aeti-12">formula</span>
+which is the main component of any <a 
+ id="dx14-89004"></a><span 
+class="aett-12">lm() </span>command you issue. It is of the form
+<span 
+class="aett-12">y</span><span 
+class="cmsy-10x-x-120">&#x2248; </span><span 
+class="aett-12">x </span>where the <span 
+class="cmmi-12">y </span>is the response variable and the <span 
+class="cmmi-12">x </span>is the predictor variable. We
+will see how to modify the right hand side of the <a 
+ id="dx14-89005"></a><span 
+class="aeti-12">formula </span>in subsequent
+sections.
+<!--l. 32--><p class="indent" >   A second common argument is the <span 
+class="aett-12">data </span>statement. This means that the model
+formula can be stated using variable names from within the <a 
+ id="dx14-89006"></a><span 
+class="aeti-12">data.frame </span>mentioned
+in the <span 
+class="aett-12">data </span>statement. Models to explain the amount of <span 
+class="aett-12">Ozone </span>using <span 
+class="aett-12">Wind </span>and
+subsequently <span 
+class="aett-12">Temp </span>are as follows.
+   <div class="fancyvrb" id="fancyvrb259">  <a 
+ id="x14-89008r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;Ozone.lm1</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;lm(Ozone~Wind,</span><span 
+class="aett-12">&#x00A0;data=airquality)</span><br class="fancyvrb" /><a 
+ id="x14-89010r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;Ozone.lm1</span></div>
+<!--l. 38--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb260"> <a 
+ id="x14-89012r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
+ id="x14-89014r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Call:</span><br class="fancyvrb" /><a 
+ id="x14-89016r3"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;lm(formula</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;Ozone</span><span 
+class="aett-12">&#x00A0;~</span><span 
+class="aett-12">&#x00A0;Wind,</span><span 
+class="aett-12">&#x00A0;data</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;airquality)</span><br class="fancyvrb" /><a 
+ id="x14-89018r4"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span>
+<br class="fancyvrb" /><a 
+ id="x14-89020r5"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Coefficients:</span><br class="fancyvrb" /><a 
+ id="x14-89022r6"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;(Intercept)</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Wind</span><br class="fancyvrb" /><a 
+ id="x14-89024r7"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;96.87</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-5.55</span></div>
+<!--l. 47--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb261"> <a 
+ id="x14-89026r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;summary(Ozone.lm1)</span></div>
+<!--l. 50--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb262"> <a 
+ id="x14-89028r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
+ id="x14-89030r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Call:</span><br class="fancyvrb" /><a 
+ id="x14-89032r3"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;lm(formula</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;Ozone</span><span 
+class="aett-12">&#x00A0;~</span><span 
+class="aett-12">&#x00A0;Wind,</span><span 
+class="aett-12">&#x00A0;data</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;airquality)</span><br class="fancyvrb" /><a 
+ id="x14-89034r4"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
+ id="x14-89036r5"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Residuals:</span>
+<br class="fancyvrb" /><a 
+ id="x14-89038r6"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Min</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1Q</span><span 
+class="aett-12">&#x00A0;Median</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;3Q</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Max</span><br class="fancyvrb" /><a 
+ id="x14-89040r7"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-51.57</span><span 
+class="aett-12">&#x00A0;-18.85</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-4.87</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;15.23</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;90.00</span>
+<br class="fancyvrb" /><a 
+ id="x14-89042r8"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
+ id="x14-89044r9"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Coefficients:</span><br class="fancyvrb" /><a 
+ id="x14-89046r10"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Estimate</span><span 
+class="aett-12">&#x00A0;Std.</span><span 
+class="aett-12">&#x00A0;Error</span><span 
+class="aett-12">&#x00A0;t</span><span 
+class="aett-12">&#x00A0;value</span><span 
+class="aett-12">&#x00A0;Pr(&#x003E;|t|)</span>
+<br class="fancyvrb" /><a 
+ id="x14-89048r11"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;(Intercept)</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;96.87</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;7.24</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;13.38</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003C;</span><span 
+class="aett-12">&#x00A0;2e-16</span><span 
+class="aett-12">&#x00A0;***</span>
+<br class="fancyvrb" /><a 
+ id="x14-89050r12"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Wind</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-5.55</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.69</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-8.04</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;9.3e-13</span><span 
+class="aett-12">&#x00A0;***</span><br class="fancyvrb" /><a 
+ id="x14-89052r13"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;---</span>
+<br class="fancyvrb" /><a 
+ id="x14-89054r14"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Signif.</span><span 
+class="aett-12">&#x00A0;codes:</span><br class="fancyvrb" /><a 
+ id="x14-89056r15"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0</span><span 
+class="aett-12">&#x00A0;&#8217;***&#8217;</span><span 
+class="aett-12">&#x00A0;0.001</span><span 
+class="aett-12">&#x00A0;&#8217;**&#8217;</span><span 
+class="aett-12">&#x00A0;0.01</span><span 
+class="aett-12">&#x00A0;&#8217;*&#8217;</span><span 
+class="aett-12">&#x00A0;0.05</span><span 
+class="aett-12">&#x00A0;&#8217;.&#8217;</span><span 
+class="aett-12">&#x00A0;0.1</span><span 
+class="aett-12">&#x00A0;&#8217;</span><span 
+class="aett-12">&#x00A0;&#8217;</span><span 
+class="aett-12">&#x00A0;1</span>
+<br class="fancyvrb" /><a 
+ id="x14-89058r16"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
+ id="x14-89060r17"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Residual</span><span 
+class="aett-12">&#x00A0;standard</span><span 
+class="aett-12">&#x00A0;error:</span><span 
+class="aett-12">&#x00A0;26.5</span><span 
+class="aett-12">&#x00A0;on</span><span 
+class="aett-12">&#x00A0;114</span><span 
+class="aett-12">&#x00A0;degrees</span><span 
+class="aett-12">&#x00A0;of</span><span 
+class="aett-12">&#x00A0;freedom</span>
+<br class="fancyvrb" /><a 
+ id="x14-89062r18"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;(37</span><span 
+class="aett-12">&#x00A0;observations</span><span 
+class="aett-12">&#x00A0;deleted</span><span 
+class="aett-12">&#x00A0;due</span><span 
+class="aett-12">&#x00A0;to</span><span 
+class="aett-12">&#x00A0;missingness)</span>
+<br class="fancyvrb" /><a 
+ id="x14-89064r19"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Multiple</span><span 
+class="aett-12">&#x00A0;R-squared:</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.362,        Adjusted</span><span 
+class="aett-12">&#x00A0;R-squared:</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.356</span>
+<br class="fancyvrb" /><a 
+ id="x14-89066r20"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;F-statistic:</span><span 
+class="aett-12">&#x00A0;64.6</span><span 
+class="aett-12">&#x00A0;on</span><span 
+class="aett-12">&#x00A0;1</span><span 
+class="aett-12">&#x00A0;and</span><span 
+class="aett-12">&#x00A0;114</span><span 
+class="aett-12">&#x00A0;DF,</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;p-value:</span><span 
+class="aett-12">&#x00A0;9.27e-13</span></div>
+<!--l. 72--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb263"> <a 
+ id="x14-89068r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;anova(Ozone.lm1)</span></div>
+<!--l. 75--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb264"> <a 
+ id="x14-89070r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Analysis</span><span 
+class="aett-12">&#x00A0;of</span><span 
+class="aett-12">&#x00A0;Variance</span><span 
+class="aett-12">&#x00A0;Table</span><br class="fancyvrb" /><a 
+ id="x14-89072r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
+ id="x14-89074r3"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Response:</span><span 
+class="aett-12">&#x00A0;Ozone</span>
+<br class="fancyvrb" /><a 
+ id="x14-89076r4"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Df</span><span 
+class="aett-12">&#x00A0;Sum</span><span 
+class="aett-12">&#x00A0;Sq</span><span 
+class="aett-12">&#x00A0;Mean</span><span 
+class="aett-12">&#x00A0;Sq</span><span 
+class="aett-12">&#x00A0;F</span><span 
+class="aett-12">&#x00A0;value</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Pr(&#x003E;F)</span>
+<br class="fancyvrb" /><a 
+ id="x14-89078r5"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Wind</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;45284</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;45284</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;64.6</span><span 
+class="aett-12">&#x00A0;9.3e-13</span><span 
+class="aett-12">&#x00A0;***</span><br class="fancyvrb" /><a 
+ id="x14-89080r6"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Residuals</span><span 
+class="aett-12">&#x00A0;114</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;79859</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;701</span>
+<br class="fancyvrb" /><a 
+ id="x14-89082r7"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;---</span><br class="fancyvrb" /><a 
+ id="x14-89084r8"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Signif.</span><span 
+class="aett-12">&#x00A0;codes:</span><br class="fancyvrb" /><a 
+ id="x14-89086r9"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0</span><span 
+class="aett-12">&#x00A0;&#8217;***&#8217;</span><span 
+class="aett-12">&#x00A0;0.001</span><span 
+class="aett-12">&#x00A0;&#8217;**&#8217;</span><span 
+class="aett-12">&#x00A0;0.01</span><span 
+class="aett-12">&#x00A0;&#8217;*&#8217;</span><span 
+class="aett-12">&#x00A0;0.05</span><span 
+class="aett-12">&#x00A0;&#8217;.&#8217;</span><span 
+class="aett-12">&#x00A0;0.1</span><span 
+class="aett-12">&#x00A0;&#8217;</span><span 
+class="aett-12">&#x00A0;&#8217;</span><span 
+class="aett-12">&#x00A0;1</span></div>
+                                                                          
+
+                                                                          
+<!--l. 86--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb265"> <a 
+ id="x14-89088r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;Ozone.lm2</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;lm(Ozone~Temp,</span><span 
+class="aett-12">&#x00A0;data=airquality)</span><br class="fancyvrb" /><a 
+ id="x14-89090r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;summary(Ozone.lm2)</span></div>
+<!--l. 90--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb266"> <a 
+ id="x14-89092r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
+ id="x14-89094r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Call:</span><br class="fancyvrb" /><a 
+ id="x14-89096r3"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;lm(formula</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;Ozone</span><span 
+class="aett-12">&#x00A0;~</span><span 
+class="aett-12">&#x00A0;Temp,</span><span 
+class="aett-12">&#x00A0;data</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;airquality)</span><br class="fancyvrb" /><a 
+ id="x14-89098r4"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
+ id="x14-89100r5"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Residuals:</span>
+<br class="fancyvrb" /><a 
+ id="x14-89102r6"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Min</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1Q</span><span 
+class="aett-12">&#x00A0;Median</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;3Q</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Max</span><br class="fancyvrb" /><a 
+ id="x14-89104r7"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-40.73</span><span 
+class="aett-12">&#x00A0;-17.41</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-0.59</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;11.31</span><span 
+class="aett-12">&#x00A0;118.27</span>
+<br class="fancyvrb" /><a 
+ id="x14-89106r8"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
+ id="x14-89108r9"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Coefficients:</span><br class="fancyvrb" /><a 
+ id="x14-89110r10"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Estimate</span><span 
+class="aett-12">&#x00A0;Std.</span><span 
+class="aett-12">&#x00A0;Error</span><span 
+class="aett-12">&#x00A0;t</span><span 
+class="aett-12">&#x00A0;value</span><span 
+class="aett-12">&#x00A0;Pr(&#x003E;|t|)</span>
+<br class="fancyvrb" /><a 
+ id="x14-89112r11"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;(Intercept)</span><span 
+class="aett-12">&#x00A0;-146.995</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;18.287</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-8.04</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;9.4e-13</span><span 
+class="aett-12">&#x00A0;***</span>
+<br class="fancyvrb" /><a 
+ id="x14-89114r12"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Temp</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;2.429</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.233</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;10.42</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003C;</span><span 
+class="aett-12">&#x00A0;2e-16</span><span 
+class="aett-12">&#x00A0;***</span><br class="fancyvrb" /><a 
+ id="x14-89116r13"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;---</span>
+<br class="fancyvrb" /><a 
+ id="x14-89118r14"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Signif.</span><span 
+class="aett-12">&#x00A0;codes:</span><br class="fancyvrb" /><a 
+ id="x14-89120r15"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0</span><span 
+class="aett-12">&#x00A0;&#8217;***&#8217;</span><span 
+class="aett-12">&#x00A0;0.001</span><span 
+class="aett-12">&#x00A0;&#8217;**&#8217;</span><span 
+class="aett-12">&#x00A0;0.01</span><span 
+class="aett-12">&#x00A0;&#8217;*&#8217;</span><span 
+class="aett-12">&#x00A0;0.05</span><span 
+class="aett-12">&#x00A0;&#8217;.&#8217;</span><span 
+class="aett-12">&#x00A0;0.1</span><span 
+class="aett-12">&#x00A0;&#8217;</span><span 
+class="aett-12">&#x00A0;&#8217;</span><span 
+class="aett-12">&#x00A0;1</span>
+<br class="fancyvrb" /><a 
+ id="x14-89122r16"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
+ id="x14-89124r17"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Residual</span><span 
+class="aett-12">&#x00A0;standard</span><span 
+class="aett-12">&#x00A0;error:</span><span 
+class="aett-12">&#x00A0;23.7</span><span 
+class="aett-12">&#x00A0;on</span><span 
+class="aett-12">&#x00A0;114</span><span 
+class="aett-12">&#x00A0;degrees</span><span 
+class="aett-12">&#x00A0;of</span><span 
+class="aett-12">&#x00A0;freedom</span>
+<br class="fancyvrb" /><a 
+ id="x14-89126r18"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;(37</span><span 
+class="aett-12">&#x00A0;observations</span><span 
+class="aett-12">&#x00A0;deleted</span><span 
+class="aett-12">&#x00A0;due</span><span 
+class="aett-12">&#x00A0;to</span><span 
+class="aett-12">&#x00A0;missingness)</span>
+<br class="fancyvrb" /><a 
+ id="x14-89128r19"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Multiple</span><span 
+class="aett-12">&#x00A0;R-squared:</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.488,        Adjusted</span><span 
+class="aett-12">&#x00A0;R-squared:</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.483</span>
+<br class="fancyvrb" /><a 
+ id="x14-89130r20"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;F-statistic:</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;109</span><span 
+class="aett-12">&#x00A0;on</span><span 
+class="aett-12">&#x00A0;1</span><span 
+class="aett-12">&#x00A0;and</span><span 
+class="aett-12">&#x00A0;114</span><span 
+class="aett-12">&#x00A0;DF,</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;p-value:</span><span 
+class="aett-12">&#x00A0;&#x003C;2e-16</span></div>
+<!--l. 112--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb267"> <a 
+ id="x14-89132r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;anova(Ozone.lm2)</span></div>
+<!--l. 115--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb268"> <a 
+ id="x14-89134r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Analysis</span><span 
+class="aett-12">&#x00A0;of</span><span 
+class="aett-12">&#x00A0;Variance</span><span 
+class="aett-12">&#x00A0;Table</span><br class="fancyvrb" /><a 
+ id="x14-89136r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
+ id="x14-89138r3"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Response:</span><span 
+class="aett-12">&#x00A0;Ozone</span>
+<br class="fancyvrb" /><a 
+ id="x14-89140r4"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Df</span><span 
+class="aett-12">&#x00A0;Sum</span><span 
+class="aett-12">&#x00A0;Sq</span><span 
+class="aett-12">&#x00A0;Mean</span><span 
+class="aett-12">&#x00A0;Sq</span><span 
+class="aett-12">&#x00A0;F</span><span 
+class="aett-12">&#x00A0;value</span><span 
+class="aett-12">&#x00A0;Pr(&#x003E;F)</span>
+<br class="fancyvrb" /><a 
+ id="x14-89142r5"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Temp</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;61033</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;61033</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;109</span><span 
+class="aett-12">&#x00A0;&#x003C;2e-16</span><span 
+class="aett-12">&#x00A0;***</span><br class="fancyvrb" /><a 
+ id="x14-89144r6"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Residuals</span><span 
+class="aett-12">&#x00A0;114</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;64110</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;562</span>
+<br class="fancyvrb" /><a 
+ id="x14-89146r7"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;---</span><br class="fancyvrb" /><a 
+ id="x14-89148r8"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Signif.</span><span 
+class="aett-12">&#x00A0;codes:</span><br class="fancyvrb" /><a 
+ id="x14-89150r9"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0</span><span 
+class="aett-12">&#x00A0;&#8217;***&#8217;</span><span 
+class="aett-12">&#x00A0;0.001</span><span 
+class="aett-12">&#x00A0;&#8217;**&#8217;</span><span 
+class="aett-12">&#x00A0;0.01</span><span 
+class="aett-12">&#x00A0;&#8217;*&#8217;</span><span 
+class="aett-12">&#x00A0;0.05</span><span 
+class="aett-12">&#x00A0;&#8217;.&#8217;</span><span 
+class="aett-12">&#x00A0;0.1</span><span 
+class="aett-12">&#x00A0;&#8217;</span><span 
+class="aett-12">&#x00A0;&#8217;</span><span 
+class="aett-12">&#x00A0;1</span></div>
+<!--l. 127--><p class="noindent" >There are very good reasons for creating the new objects in this example. Aside from
+the use of the <a 
+ id="dx14-89151"></a><span 
+class="aett-12">summary() </span>method and <a 
+ id="dx14-89152"></a><span 
+class="aett-12">anova() </span>command to extract more useful
+information about the model, we will refer back to the object using other
+commands in subsequent sections of this chapter. It also means we can
+investigate the model object, and extract some quantities on their own. For
+example, it&#8217;s common to want to extract the <span 
+class="cmmi-12">R</span><sup><span 
+class="cmr-8">2</span></sup> for a model. We can&#8217;t do
+this from the model object itself, but we can from the <a 
+ id="dx14-89153"></a><span 
+class="aett-12">summary() </span>of the
+model.
+   <div class="fancyvrb" id="fancyvrb269">  <a 
+ id="x14-89155r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;names(Ozone.lm1)</span></div>
+<!--l. 132--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb270"> <a 
+ id="x14-89157r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">&#x00A0;"coefficients"</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;"residuals"</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;"effects"</span>
+<br class="fancyvrb" /><a 
+ id="x14-89159r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[4]</span><span 
+class="aett-12">&#x00A0;"rank"</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;"fitted.values"</span><span 
+class="aett-12">&#x00A0;"assign"</span>
+<br class="fancyvrb" /><a 
+ id="x14-89161r3"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[7]</span><span 
+class="aett-12">&#x00A0;"qr"</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;"df.residual"</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;"na.action"</span>
+<br class="fancyvrb" /><a 
+ id="x14-89163r4"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[10]</span><span 
+class="aett-12">&#x00A0;"xlevels"</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;"call"</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;"terms"</span><br class="fancyvrb" /><a 
+ id="x14-89165r5"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[13]</span><span 
+class="aett-12">&#x00A0;"model"</span></div>
+                                                                          
+
+                                                                          
+<!--l. 139--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb271"> <a 
+ id="x14-89167r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;names(summary(Ozone.lm1))</span></div>
+<!--l. 142--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb272"> <a 
+ id="x14-89169r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">&#x00A0;"call"</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;"terms"</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;"residuals"</span>
+<br class="fancyvrb" /><a 
+ id="x14-89171r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[4]</span><span 
+class="aett-12">&#x00A0;"coefficients"</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;"aliased"</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;"sigma"</span>
+<br class="fancyvrb" /><a 
+ id="x14-89173r3"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[7]</span><span 
+class="aett-12">&#x00A0;"df"</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;"r.squared"</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;"adj.r.squared"</span>
+<br class="fancyvrb" /><a 
+ id="x14-89175r4"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[10]</span><span 
+class="aett-12">&#x00A0;"fstatistic"</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;"cov.unscaled"</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;"na.action"</span></div>
+<!--l. 148--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb273"> <a 
+ id="x14-89177r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;summary(Ozone.lm1)$r.squared</span></div>
+<!--l. 151--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb274"> <a 
+ id="x14-89179r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">&#x00A0;0.3619</span></div>
+<!--l. 158--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">12.3   </span> <a 
+ id="x14-9000012.3"></a>Presenting the straight line model&#8217;s suitability in a graph</h3>
+<!--l. 161--><p class="noindent" >Adding a fitted line to the scatter plot when a simple relationship has
+been fitted is actually a very simple task. Note that when we saw the
+outcome of the simple model above, we obtained just the intercept and slope
+coefficient values until we employed the <a 
+ id="dx14-90001"></a><span 
+class="aett-12">summary() </span>method to extract
+more useful information. These two values will be used by the <a 
+ id="dx14-90002"></a><span 
+class="aett-12">abline()</span>
+function to add the straight line to an existing plot. See Exhibit&#x00A0;<a 
+href="#x14-90003r1">12.1<!--tex4ht:ref: RegLineAdded --></a> for
+example.
+                                                                          
+
+                                                                          
+<!--l. 163--><p class="indent" >   <a 
+ id="x14-90003r1"></a><hr class="float"><div class="float" 
+>
+                                                                          
+
+                                                                          
+<div class="center" 
+>
+<!--l. 163--><p class="noindent" >
+<br /> <div class="caption" 
+><span class="id">Exhibit 12.1: </span><span  
+class="content">Two simple regressions with the straight line added onto the
+scatter plots.</span></div><!--tex4ht:label?: x14-90003r1 -->
+<div class="fancyvrb" id="fancyvrb275"> <a 
+ id="x14-90005r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;attach(airquality)</span><br class="fancyvrb" /><a 
+ id="x14-90007r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;plot(Wind,</span><span 
+class="aett-12">&#x00A0;Ozone)</span><br class="fancyvrb" /><a 
+ id="x14-90009r3"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;abline(Ozone.lm1)</span></div>
+<!--l. 173--><p class="noindent" ><img 
+src="LURN17x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt" ><!--tex4ht:graphics  
+name="LURN17x.png" src="figures/RegressionOzoneWindWithLine-1.eps"  
+-->
+<a 
+href="../svgs/RegressionOzoneWindWithLine-1.svg" >link to SVG file: RegressionOzoneWindWithLine-1.svg</a>
+<div class="fancyvrb" id="fancyvrb276"> <a 
+ id="x14-90011r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;plot(Temp,</span><span 
+class="aett-12">&#x00A0;Ozone)</span><br class="fancyvrb" /><a 
+ id="x14-90013r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;abline(Ozone.lm2)</span></div>
+                                                                          
+
+                                                                          
+<!--l. 181--><p class="noindent" ><img 
+src="LURN18x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt" ><!--tex4ht:graphics  
+name="LURN18x.png" src="figures/RegressionOzoneTempWithLine-1.eps"  
+-->
+<div class="fancyvrb" id="fancyvrb277"> <a 
+ id="x14-90015r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;detach(airquality)</span></div>
+<!--l. 185--><p class="noindent" ><a 
+href="../svgs/RegressionOzoneTempWithLine-1.svg" >link to SVG file: RegressionOzoneTempWithLine-1.svg</a></div>
+                                                                          
+
+                                                                          
+   </div><hr class="endfloat" />
+<!--l. 189--><p class="indent" >   We can see from these graphs that our straight line model might be
+appropriate for explaining <span 
+class="aett-12">Ozone </span>using <span 
+class="aett-12">Temp </span>as the predictor, but that the
+straight line model using <span 
+class="aett-12">Wind </span>as the predictor is not a good idea as there is fairly
+obvious curvature in the relationship. As it happens neither of these models are
+perfect and more work is required.
+   <h3 class="sectionHead"><span class="titlemark">12.4   </span> <a 
+ id="x14-9100012.4"></a>Model validation using diagnostic plots</h3>
+<!--l. 194--><p class="noindent" ><span 
+class="aess-12">R </span>has many useful built-in methods for doing common tasks efficiently.
+Obtaining residual plots for a model is a great example. The <a 
+ id="dx14-91001"></a><span 
+class="aett-12">plot() </span>command
+acts on a <a 
+ id="dx14-91002"></a><span 
+class="aeti-12">lm </span>object by generating a series of plots. The most commonly
+used of these plots are the plot of residuals vs the fitted values and the
+normal probability plot of residuals. These plots are generated by many
+statistical applications but the other two presented by default in <span 
+class="aess-12">R </span>are not
+always given by other programs. <span 
+class="aess-12">R </span>also provides a Scale-Location plot
+of the square root of the absolute value of residuals against the fitted
+values, and a plot of residuals against the leverages. These approaches for
+diagnosing problems in a regression model are seldom taught in introductory
+statistics courses. The scale vs location plot is another means of determining
+if the residuals have constant variance. Leverage is a measure of how
+much influence an observation has on determining the model. A rule of
+thumb says that a leverage of more than twice the average leverage is a
+problem.
+<!--l. 198--><p class="indent" >   The diagnostic plots for the inadequate model for <span 
+class="aett-12">Ozone </span>being predicted by a
+linear function of <span 
+class="aett-12">Wind </span>are presented in Exhibit&#x00A0;<a 
+href="#x14-91003r2">12.2<!--tex4ht:ref: OzoneWindResidPlots --></a>.
+                                                                          
+
+                                                                          
+<!--l. 200--><p class="indent" >   <a 
+ id="x14-91003r2"></a><hr class="float"><div class="float" 
+>
+                                                                          
+
+                                                                          
+<div class="center" 
+>
+<!--l. 200--><p class="noindent" >
+<br /> <div class="caption" 
+><span class="id">Exhibit 12.2: </span><span  
+class="content">Residual plots for the simple regression using Wind to predict
+the Ozone level.</span></div><!--tex4ht:label?: x14-91003r2 -->
+<div class="fancyvrb" id="fancyvrb278"> <a 
+ id="x14-91005r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;par(mfrow=c(2,2))</span><br class="fancyvrb" /><a 
+ id="x14-91007r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;plot(Ozone.lm1)</span></div>
+<!--l. 209--><p class="noindent" ><img 
+src="LURN19x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt" ><!--tex4ht:graphics  
+name="LURN19x.png" src="figures/RegressionOzoneWindResidPlots-1.eps"  
+-->
+</div>
+                                                                          
+
+                                                                          
+   </div><hr class="endfloat" />
+<!--l. 212--><p class="indent" >   These plots are enhanced by <span 
+class="aess-12">R </span>to add more information than the basic
+user is familiar with. Additional lines are added to three of the plots to
+assist in diagnosing problems. We can see from this plot that the model is
+inadequate as there is a nonlinear relationship between the response and
+predictor, and further that the residuals might not have very constant
+variance.
+<!--l. 214--><p class="indent" >   It might be easier to extract just the information we want, so we can build
+simpler plots ourselves. We need to find the residuals, fitted values and leverages
+for the model. These are found using the <a 
+ id="dx14-91008"></a><span 
+class="aett-12">resid()</span>, <a 
+ id="dx14-91009"></a><span 
+class="aett-12">fitted()</span>, and <a 
+ id="dx14-91010"></a><span 
+class="aett-12">hatvalues()</span>
+commands respectively.
+   <div class="fancyvrb" id="fancyvrb279">  <a 
+ id="x14-91012r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;Ozone.resid1</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;resid(Ozone.lm1)</span><br class="fancyvrb" /><a 
+ id="x14-91014r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;Ozone.fitted1</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;fitted(Ozone.lm1)</span>
+<br class="fancyvrb" /><a 
+ id="x14-91016r3"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;Ozone.lev1</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;hatvalues(Ozone.lm1)</span></div>
+<!--l. 222--><p class="noindent" >The various plots can be constructed using the <a 
+ id="dx14-91017"></a><span 
+class="aett-12">plot()</span>, and <a 
+ id="dx14-91018"></a><span 
+class="aett-12">qqnorm() </span>commands as
+needed, but if we want the information on the leverages in text form we will need
+to do tasks like
+   <div class="fancyvrb" id="fancyvrb280">  <a 
+ id="x14-91020r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;mean(Ozone.lev1)</span></div>
+<div class="fancyvrb" id="fancyvrb281"> <a 
+ id="x14-91022r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">&#x00A0;0.01724</span></div>
+<div class="fancyvrb" id="fancyvrb282"> <a 
+ id="x14-91024r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;max(Ozone.lev1)</span></div>
+<div class="fancyvrb" id="fancyvrb283"> <a 
+ id="x14-91026r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">&#x00A0;0.08854</span></div>
+<div class="fancyvrb" id="fancyvrb284"> <a 
+ id="x14-91028r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;Ozone.lev1[Ozone.lev1&#x003E;2*mean(Ozone.lev1)]</span></div>
+<div class="fancyvrb" id="fancyvrb285"> <a 
+ id="x14-91030r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;9</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;18</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;22</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;48</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;117</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;121</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;126</span>
+<br class="fancyvrb" /><a 
+ id="x14-91032r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.07994</span><span 
+class="aett-12">&#x00A0;0.05822</span><span 
+class="aett-12">&#x00A0;0.03951</span><span 
+class="aett-12">&#x00A0;0.08854</span><span 
+class="aett-12">&#x00A0;0.03703</span><span 
+class="aett-12">&#x00A0;0.04753</span><span 
+class="aett-12">&#x00A0;0.04256</span><br class="fancyvrb" /><a 
+ id="x14-91034r3"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;148</span><br class="fancyvrb" /><a 
+ id="x14-91036r4"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.03951</span></div>
+<!--l. 246--><p class="noindent" >The last command in this block has printed out the 8 observations that have excess
+leverage on this model. We should probably see if these are days that had
+extremely high wind. This is not done as this model has already been shown to be
+poor at explaining the amount of <span 
+class="aett-12">Ozone </span>in the atmosphere.
+                                                                          
+
+                                                                          
+   <h3 class="sectionHead"><span class="titlemark">12.5   </span> <a 
+ id="x14-9200012.5"></a>Polynomial regression models</h3>
+<!--l. 252--><p class="noindent" >Given the obvious curvature in the relationship between <span 
+class="aett-12">Ozone </span>and <span 
+class="aett-12">Wind </span>appears
+monotonic, we can probably try both transforming the variables, and
+polynomial regression to explain the relationship. We take advantage of
+the fact that <span 
+class="aess-12">R </span>has an in-built way of producing polynomial terms for
+insertion into models, and use the <a 
+ id="dx14-92001"></a><span 
+class="aett-12">poly() </span>function in this instance. This
+command needs to know which variable to work with and the degree of the
+polynomial desired. For example, to fit the quadratic model we would use the
+commands
+   <div class="fancyvrb" id="fancyvrb286">  <a 
+ id="x14-92003r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;Ozone.poly2</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;lm(Ozone~poly(Wind,2,</span><span 
+class="aett-12">&#x00A0;raw=TRUE),</span><span 
+class="aett-12">&#x00A0;data=airquality)</span>
+<br class="fancyvrb" /><a 
+ id="x14-92005r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;summary(Ozone.poly2)</span></div>
+<!--l. 259--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb287"> <a 
+ id="x14-92007r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
+ id="x14-92009r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Call:</span><br class="fancyvrb" /><a 
+ id="x14-92011r3"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;lm(formula</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;Ozone</span><span 
+class="aett-12">&#x00A0;~</span><span 
+class="aett-12">&#x00A0;poly(Wind,</span><span 
+class="aett-12">&#x00A0;2,</span><span 
+class="aett-12">&#x00A0;raw</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;TRUE),</span><span 
+class="aett-12">&#x00A0;data</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;airquality)</span><br class="fancyvrb" /><a 
+ id="x14-92013r4"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span>
+<br class="fancyvrb" /><a 
+ id="x14-92015r5"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Residuals:</span><br class="fancyvrb" /><a 
+ id="x14-92017r6"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Min</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1Q</span><span 
+class="aett-12">&#x00A0;Median</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;3Q</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Max</span><br class="fancyvrb" /><a 
+ id="x14-92019r7"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-52.29</span><span 
+class="aett-12">&#x00A0;-16.00</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-4.66</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;12.44</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;64.04</span>
+<br class="fancyvrb" /><a 
+ id="x14-92021r8"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
+ id="x14-92023r9"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Coefficients:</span><br class="fancyvrb" /><a 
+ id="x14-92025r10"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Estimate</span><span 
+class="aett-12">&#x00A0;Std.</span><span 
+class="aett-12">&#x00A0;Error</span><span 
+class="aett-12">&#x00A0;t</span><span 
+class="aett-12">&#x00A0;value</span>
+<br class="fancyvrb" /><a 
+ id="x14-92027r11"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;(Intercept)</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;162.572</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;14.185</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;11.46</span>
+<br class="fancyvrb" /><a 
+ id="x14-92029r12"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;poly(Wind,</span><span 
+class="aett-12">&#x00A0;2,</span><span 
+class="aett-12">&#x00A0;raw</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;TRUE)1</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-19.444</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;2.735</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-7.11</span>
+<br class="fancyvrb" /><a 
+ id="x14-92031r13"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;poly(Wind,</span><span 
+class="aett-12">&#x00A0;2,</span><span 
+class="aett-12">&#x00A0;raw</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;TRUE)2</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.649</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.124</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;5.22</span>
+<br class="fancyvrb" /><a 
+ id="x14-92033r14"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Pr(&#x003E;|t|)</span><br class="fancyvrb" /><a 
+ id="x14-92035r15"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;(Intercept)</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003C;</span><span 
+class="aett-12">&#x00A0;2e-16</span><span 
+class="aett-12">&#x00A0;***</span>
+<br class="fancyvrb" /><a 
+ id="x14-92037r16"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;poly(Wind,</span><span 
+class="aett-12">&#x00A0;2,</span><span 
+class="aett-12">&#x00A0;raw</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;TRUE)1</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1.1e-10</span><span 
+class="aett-12">&#x00A0;***</span><br class="fancyvrb" /><a 
+ id="x14-92039r17"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;poly(Wind,</span><span 
+class="aett-12">&#x00A0;2,</span><span 
+class="aett-12">&#x00A0;raw</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;TRUE)2</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;8.3e-07</span><span 
+class="aett-12">&#x00A0;***</span>
+<br class="fancyvrb" /><a 
+ id="x14-92041r18"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;---</span><br class="fancyvrb" /><a 
+ id="x14-92043r19"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Signif.</span><span 
+class="aett-12">&#x00A0;codes:</span><br class="fancyvrb" /><a 
+ id="x14-92045r20"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0</span><span 
+class="aett-12">&#x00A0;&#8217;***&#8217;</span><span 
+class="aett-12">&#x00A0;0.001</span><span 
+class="aett-12">&#x00A0;&#8217;**&#8217;</span><span 
+class="aett-12">&#x00A0;0.01</span><span 
+class="aett-12">&#x00A0;&#8217;*&#8217;</span><span 
+class="aett-12">&#x00A0;0.05</span><span 
+class="aett-12">&#x00A0;&#8217;.&#8217;</span><span 
+class="aett-12">&#x00A0;0.1</span><span 
+class="aett-12">&#x00A0;&#8217;</span><span 
+class="aett-12">&#x00A0;&#8217;</span><span 
+class="aett-12">&#x00A0;1</span>
+<br class="fancyvrb" /><a 
+ id="x14-92047r21"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
+ id="x14-92049r22"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Residual</span><span 
+class="aett-12">&#x00A0;standard</span><span 
+class="aett-12">&#x00A0;error:</span><span 
+class="aett-12">&#x00A0;23.9</span><span 
+class="aett-12">&#x00A0;on</span><span 
+class="aett-12">&#x00A0;113</span><span 
+class="aett-12">&#x00A0;degrees</span><span 
+class="aett-12">&#x00A0;of</span><span 
+class="aett-12">&#x00A0;freedom</span>
+<br class="fancyvrb" /><a 
+ id="x14-92051r23"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;(37</span><span 
+class="aett-12">&#x00A0;observations</span><span 
+class="aett-12">&#x00A0;deleted</span><span 
+class="aett-12">&#x00A0;due</span><span 
+class="aett-12">&#x00A0;to</span><span 
+class="aett-12">&#x00A0;missingness)</span>
+<br class="fancyvrb" /><a 
+ id="x14-92053r24"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Multiple</span><span 
+class="aett-12">&#x00A0;R-squared:</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.486,        Adjusted</span><span 
+class="aett-12">&#x00A0;R-squared:</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.477</span>
+<br class="fancyvrb" /><a 
+ id="x14-92055r25"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;F-statistic:</span><span 
+class="aett-12">&#x00A0;53.4</span><span 
+class="aett-12">&#x00A0;on</span><span 
+class="aett-12">&#x00A0;2</span><span 
+class="aett-12">&#x00A0;and</span><span 
+class="aett-12">&#x00A0;113</span><span 
+class="aett-12">&#x00A0;DF,</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;p-value:</span><span 
+class="aett-12">&#x00A0;&#x003C;2e-16</span></div>
+<!--l. 287--><p class="noindent" >Note that in order to obtain a model with the correct coefficients for the
+polynomial terms in the model, we need to use the <span 
+class="aett-12">raw </span>argument, setting it to
+<span 
+class="aett-12">TRUE</span>.
+<!--l. 289--><p class="indent" >   We usually justify the use of a quadratic form by determining there is
+no practical benefit in making the model more complicated. To do this,
+we need to investigate the model for the cubic form of the relationship
+using
+   <div class="fancyvrb" id="fancyvrb288">  <a 
+ id="x14-92057r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;Ozone.poly3</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;lm(Ozone~poly(Wind,3,</span><span 
+class="aett-12">&#x00A0;raw=TRUE),</span><span 
+class="aett-12">&#x00A0;data=airquality)</span></div>
+<!--l. 295--><p class="noindent" >Rather than continuously investigate the summaries of the various models, we can
+employ the <a 
+ id="dx14-92058"></a><span 
+class="aett-12">anova() </span>command to compare the models.
+   <div class="fancyvrb" id="fancyvrb289">  <a 
+ id="x14-92060r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;anova(Ozone.lm1,</span><span 
+class="aett-12">&#x00A0;Ozone.poly2,</span><span 
+class="aett-12">&#x00A0;Ozone.poly3)</span></div>
+                                                                          
+
+                                                                          
+<!--l. 300--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb290"> <a 
+ id="x14-92062r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Analysis</span><span 
+class="aett-12">&#x00A0;of</span><span 
+class="aett-12">&#x00A0;Variance</span><span 
+class="aett-12">&#x00A0;Table</span><br class="fancyvrb" /><a 
+ id="x14-92064r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
+ id="x14-92066r3"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Model</span><span 
+class="aett-12">&#x00A0;1:</span><span 
+class="aett-12">&#x00A0;Ozone</span><span 
+class="aett-12">&#x00A0;~</span><span 
+class="aett-12">&#x00A0;Wind</span>
+<br class="fancyvrb" /><a 
+ id="x14-92068r4"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Model</span><span 
+class="aett-12">&#x00A0;2:</span><span 
+class="aett-12">&#x00A0;Ozone</span><span 
+class="aett-12">&#x00A0;~</span><span 
+class="aett-12">&#x00A0;poly(Wind,</span><span 
+class="aett-12">&#x00A0;2,</span><span 
+class="aett-12">&#x00A0;raw</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;TRUE)</span>
+<br class="fancyvrb" /><a 
+ id="x14-92070r5"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Model</span><span 
+class="aett-12">&#x00A0;3:</span><span 
+class="aett-12">&#x00A0;Ozone</span><span 
+class="aett-12">&#x00A0;~</span><span 
+class="aett-12">&#x00A0;poly(Wind,</span><span 
+class="aett-12">&#x00A0;3,</span><span 
+class="aett-12">&#x00A0;raw</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;TRUE)</span><br class="fancyvrb" /><a 
+ id="x14-92072r6"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Res.Df</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;RSS</span><span 
+class="aett-12">&#x00A0;Df</span><span 
+class="aett-12">&#x00A0;Sum</span><span 
+class="aett-12">&#x00A0;of</span><span 
+class="aett-12">&#x00A0;Sq</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;F</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Pr(&#x003E;F)</span>
+<br class="fancyvrb" /><a 
+ id="x14-92074r7"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;114</span><span 
+class="aett-12">&#x00A0;79859</span><br class="fancyvrb" /><a 
+ id="x14-92076r8"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;2</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;113</span><span 
+class="aett-12">&#x00A0;64360</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;15499</span><span 
+class="aett-12">&#x00A0;27.62</span><span 
+class="aett-12">&#x00A0;7.1e-07</span><span 
+class="aett-12">&#x00A0;***</span>
+<br class="fancyvrb" /><a 
+ id="x14-92078r9"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;3</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;112</span><span 
+class="aett-12">&#x00A0;62858</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1502</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;2.68</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.1</span><br class="fancyvrb" /><a 
+ id="x14-92080r10"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;---</span><br class="fancyvrb" /><a 
+ id="x14-92082r11"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Signif.</span><span 
+class="aett-12">&#x00A0;codes:</span>
+<br class="fancyvrb" /><a 
+ id="x14-92084r12"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0</span><span 
+class="aett-12">&#x00A0;&#8217;***&#8217;</span><span 
+class="aett-12">&#x00A0;0.001</span><span 
+class="aett-12">&#x00A0;&#8217;**&#8217;</span><span 
+class="aett-12">&#x00A0;0.01</span><span 
+class="aett-12">&#x00A0;&#8217;*&#8217;</span><span 
+class="aett-12">&#x00A0;0.05</span><span 
+class="aett-12">&#x00A0;&#8217;.&#8217;</span><span 
+class="aett-12">&#x00A0;0.1</span><span 
+class="aett-12">&#x00A0;&#8217;</span><span 
+class="aett-12">&#x00A0;&#8217;</span><span 
+class="aett-12">&#x00A0;1</span></div>
+<!--l. 315--><p class="noindent" >We can compare all three models created thus far because they are a series of nested
+models. We could not include the model using <span 
+class="aett-12">Temp </span>as the predictor in this
+command for example.
+<!--l. 317--><p class="indent" >   On the basis of the output from our <a 
+ id="dx14-92085"></a><span 
+class="aett-12">anova() </span>command, we might assume that
+the quadratic form was sufficient to explain the relationship between <span 
+class="aett-12">Ozone </span>and
+<span 
+class="aett-12">Wind </span>because there is little to be gained by adding the cubic term to our model.
+Validation of the chosen model via the residual analysis is suggested as a next
+step.
+<!--l. 319--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">12.6   </span> <a 
+ id="x14-9300012.6"></a>Presenting the polynomial model&#8217;s suitability in a graph</h3>
+<!--l. 321--><p class="noindent" >The <a 
+ id="dx14-93001"></a><span 
+class="aett-12">abline() </span>command demonstrated earlier is only useful for straight lines. We
+have seen that the quadratic function is better at explaining the relationship
+between <span 
+class="aett-12">Ozone </span>and <span 
+class="aett-12">Wind</span>. One solution is to store the fitted values from this
+model and plot them against the <span 
+class="aett-12">Wind </span>variable, but this will only show the series
+of points not a smooth curve.
+   <div class="fancyvrb" id="fancyvrb291">  <a 
+ id="x14-93003r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;plot(Ozone~Wind,</span><span 
+class="aett-12">&#x00A0;data=airquality)</span>
+<br class="fancyvrb" /><a 
+ id="x14-93005r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;points(airquality$Wind[!is.na(airquality$Ozone)],</span><span 
+class="aett-12">&#x00A0;fitted(Ozone.poly2),</span><span 
+class="aett-12">&#x00A0;col=2)</span></div>
+                                                                          
+
+                                                                          
+<!--l. 328--><p class="indent" >   <img 
+src="LURN20x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt" ><!--tex4ht:graphics  
+name="LURN20x.png" src="figures/RegressionQuadAddPoints-1.eps"  
+-->
+<a 
+href="../svgs/RegressionQuadAddPoints-1.svg" >link to SVG file: RegressionQuadAddPoints-1.svg</a>
+<!--l. 331--><p class="indent" >   Note that the <a 
+ id="dx14-93006"></a><span 
+class="aett-12">points() </span>command used here includes the <span 
+class="aett-12">col </span>argument to
+change the colour of the points to red &#8212; the second colour in the list of
+colours.
+<!--l. 333--><p class="indent" >   Also note that there are missing values in the records for <span 
+class="aett-12">Ozone</span>. The fitted
+values from the model are only calculated for the observations where <span 
+class="aett-12">Ozone </span>was
+recorded, so we have employed the <a 
+ id="dx14-93007"></a><span 
+class="aett-12">!() </span>logical operator and <a 
+ id="dx14-93008"></a><span 
+class="aett-12">is.na() </span>command to
+include only complete cases for <span 
+class="aett-12">Ozone </span>and <span 
+class="aett-12">Wind</span>.
+<!--l. 335--><p class="indent" >   Another solution that plots a curve instead of points, is demonstrated in
+Section&#x00A0;<span 
+class="aebx-12">??</span>. It is much more elegant, especially given the missing data problem
+encountered in this example.
+<!--l. 339--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">12.7   </span> <a 
+ id="x14-9400012.7"></a>Multiple regression models</h3>
+<!--l. 341--><p class="noindent" >The addition of multiple terms on the right hand side of the formula in the <a 
+ id="dx14-94001"></a><span 
+class="aett-12">lm()</span>
+command is very simple. We can put both <span 
+class="aett-12">Wind </span>and <span 
+class="aett-12">Temp </span>into a model as
+predictors using
+   <div class="fancyvrb" id="fancyvrb292">  <a 
+ id="x14-94003r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;Ozone.lm3</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;lm(Ozone~Wind+Temp,</span><span 
+class="aett-12">&#x00A0;data=airquality)</span></div>
+                                                                          
+
+                                                                          
+<!--l. 347--><p class="noindent" >If we want to combine the models for the quadratic form for <span 
+class="aett-12">Wind </span>and the linear form
+of <span 
+class="aett-12">Temp </span>we would
+   <div class="fancyvrb" id="fancyvrb293">  <a 
+ id="x14-94005r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;Ozone.lm4</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;lm(Ozone~poly(Wind,2)+Temp,</span><span 
+class="aett-12">&#x00A0;data=airquality)</span></div>
+<!--l. 353--><p class="noindent" >This then allows us the opportunity of using the <a 
+ id="dx14-94006"></a><span 
+class="aett-12">anova() </span>command as demonstrated
+above to compare these two models and one constructed earlier which used only
+<span 
+class="aett-12">Temp </span>as a predictor.
+   <div class="fancyvrb" id="fancyvrb294">  <a 
+ id="x14-94008r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;anova(Ozone.lm2,</span><span 
+class="aett-12">&#x00A0;Ozone.lm3,</span><span 
+class="aett-12">&#x00A0;Ozone.lm4)</span></div>
+<!--l. 358--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb295"> <a 
+ id="x14-94010r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Analysis</span><span 
+class="aett-12">&#x00A0;of</span><span 
+class="aett-12">&#x00A0;Variance</span><span 
+class="aett-12">&#x00A0;Table</span><br class="fancyvrb" /><a 
+ id="x14-94012r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
+ id="x14-94014r3"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Model</span><span 
+class="aett-12">&#x00A0;1:</span><span 
+class="aett-12">&#x00A0;Ozone</span><span 
+class="aett-12">&#x00A0;~</span><span 
+class="aett-12">&#x00A0;Temp</span><br class="fancyvrb" /><a 
+ id="x14-94016r4"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Model</span><span 
+class="aett-12">&#x00A0;2:</span><span 
+class="aett-12">&#x00A0;Ozone</span><span 
+class="aett-12">&#x00A0;~</span><span 
+class="aett-12">&#x00A0;Wind</span><span 
+class="aett-12">&#x00A0;+</span><span 
+class="aett-12">&#x00A0;Temp</span>
+<br class="fancyvrb" /><a 
+ id="x14-94018r5"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Model</span><span 
+class="aett-12">&#x00A0;3:</span><span 
+class="aett-12">&#x00A0;Ozone</span><span 
+class="aett-12">&#x00A0;~</span><span 
+class="aett-12">&#x00A0;poly(Wind,</span><span 
+class="aett-12">&#x00A0;2)</span><span 
+class="aett-12">&#x00A0;+</span><span 
+class="aett-12">&#x00A0;Temp</span><br class="fancyvrb" /><a 
+ id="x14-94020r6"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Res.Df</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;RSS</span><span 
+class="aett-12">&#x00A0;Df</span><span 
+class="aett-12">&#x00A0;Sum</span><span 
+class="aett-12">&#x00A0;of</span><span 
+class="aett-12">&#x00A0;Sq</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;F</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Pr(&#x003E;F)</span>
+<br class="fancyvrb" /><a 
+ id="x14-94022r7"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;114</span><span 
+class="aett-12">&#x00A0;64110</span><br class="fancyvrb" /><a 
+ id="x14-94024r8"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;2</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;113</span><span 
+class="aett-12">&#x00A0;53973</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;10137</span><span 
+class="aett-12">&#x00A0;25.7</span><span 
+class="aett-12">&#x00A0;1.6e-06</span><span 
+class="aett-12">&#x00A0;***</span>
+<br class="fancyvrb" /><a 
+ id="x14-94026r9"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;3</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;112</span><span 
+class="aett-12">&#x00A0;44213</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;9760</span><span 
+class="aett-12">&#x00A0;24.7</span><span 
+class="aett-12">&#x00A0;2.4e-06</span><span 
+class="aett-12">&#x00A0;***</span><br class="fancyvrb" /><a 
+ id="x14-94028r10"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;---</span><br class="fancyvrb" /><a 
+ id="x14-94030r11"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Signif.</span><span 
+class="aett-12">&#x00A0;codes:</span>
+<br class="fancyvrb" /><a 
+ id="x14-94032r12"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0</span><span 
+class="aett-12">&#x00A0;&#8217;***&#8217;</span><span 
+class="aett-12">&#x00A0;0.001</span><span 
+class="aett-12">&#x00A0;&#8217;**&#8217;</span><span 
+class="aett-12">&#x00A0;0.01</span><span 
+class="aett-12">&#x00A0;&#8217;*&#8217;</span><span 
+class="aett-12">&#x00A0;0.05</span><span 
+class="aett-12">&#x00A0;&#8217;.&#8217;</span><span 
+class="aett-12">&#x00A0;0.1</span><span 
+class="aett-12">&#x00A0;&#8217;</span><span 
+class="aett-12">&#x00A0;&#8217;</span><span 
+class="aett-12">&#x00A0;1</span></div>
+<!--l. 374--><p class="indent" >   The creation of interaction variables is also simple in <span 
+class="aess-12">R </span>Changing the &#8220;+" sign
+in the model to a &#8220;*" sign tells <span 
+class="aess-12">R </span>that we want the two main variables and their
+interaction to be included. The interaction term uses a &#8220;:" between the variable
+names in the output.
+   <div class="fancyvrb" id="fancyvrb296">  <a 
+ id="x14-94034r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;Ozone.lm5</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;lm(Ozone~poly(Wind,2)*Temp,</span><span 
+class="aett-12">&#x00A0;data=airquality)</span><br class="fancyvrb" /><a 
+ id="x14-94036r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;summary(Ozone.lm5)</span></div>
+<!--l. 380--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb297"> <a 
+ id="x14-94038r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
+ id="x14-94040r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Call:</span><br class="fancyvrb" /><a 
+ id="x14-94042r3"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;lm(formula</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;Ozone</span><span 
+class="aett-12">&#x00A0;~</span><span 
+class="aett-12">&#x00A0;poly(Wind,</span><span 
+class="aett-12">&#x00A0;2)</span><span 
+class="aett-12">&#x00A0;*</span><span 
+class="aett-12">&#x00A0;Temp,</span><span 
+class="aett-12">&#x00A0;data</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;airquality)</span><br class="fancyvrb" /><a 
+ id="x14-94044r4"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span>
+<br class="fancyvrb" /><a 
+ id="x14-94046r5"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Residuals:</span><br class="fancyvrb" /><a 
+ id="x14-94048r6"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Min</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1Q</span><span 
+class="aett-12">&#x00A0;Median</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;3Q</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Max</span><br class="fancyvrb" /><a 
+ id="x14-94050r7"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-44.70</span><span 
+class="aett-12">&#x00A0;-10.54</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-3.25</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;10.60</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;82.56</span>
+<br class="fancyvrb" /><a 
+ id="x14-94052r8"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
+ id="x14-94054r9"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Coefficients:</span><br class="fancyvrb" /><a 
+ id="x14-94056r10"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Estimate</span><span 
+class="aett-12">&#x00A0;Std.</span><span 
+class="aett-12">&#x00A0;Error</span><span 
+class="aett-12">&#x00A0;t</span><span 
+class="aett-12">&#x00A0;value</span><span 
+class="aett-12">&#x00A0;Pr(&#x003E;|t|)</span>
+<br class="fancyvrb" /><a 
+ id="x14-94058r11"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;(Intercept)</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-91.113</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;18.779</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-4.85</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;4.1e-06</span>
+<br class="fancyvrb" /><a 
+ id="x14-94060r12"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;poly(Wind,</span><span 
+class="aett-12">&#x00A0;2)1</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;108.281</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;262.970</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.41</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.68</span>
+<br class="fancyvrb" /><a 
+ id="x14-94062r13"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;poly(Wind,</span><span 
+class="aett-12">&#x00A0;2)2</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;99.235</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;177.521</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.56</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.58</span>
+<br class="fancyvrb" /><a 
+ id="x14-94064r14"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Temp</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1.688</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.237</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;7.13</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1.1e-10</span>
+<br class="fancyvrb" /><a 
+ id="x14-94066r15"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;poly(Wind,</span><span 
+class="aett-12">&#x00A0;2)1:Temp</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-3.301</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;3.290</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-1.00</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.32</span>
+<br class="fancyvrb" /><a 
+ id="x14-94068r16"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;poly(Wind,</span><span 
+class="aett-12">&#x00A0;2)2:Temp</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-0.147</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;2.273</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-0.06</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.95</span>
+<br class="fancyvrb" /><a 
+ id="x14-94070r17"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
+ id="x14-94072r18"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;(Intercept)</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;***</span><br class="fancyvrb" /><a 
+ id="x14-94074r19"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;poly(Wind,</span><span 
+class="aett-12">&#x00A0;2)1</span><br class="fancyvrb" /><a 
+ id="x14-94076r20"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;poly(Wind,</span><span 
+class="aett-12">&#x00A0;2)2</span>
+<br class="fancyvrb" /><a 
+ id="x14-94078r21"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Temp</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;***</span><br class="fancyvrb" /><a 
+ id="x14-94080r22"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;poly(Wind,</span><span 
+class="aett-12">&#x00A0;2)1:Temp</span><br class="fancyvrb" /><a 
+ id="x14-94082r23"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;poly(Wind,</span><span 
+class="aett-12">&#x00A0;2)2:Temp</span>
+<br class="fancyvrb" /><a 
+ id="x14-94084r24"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;---</span><br class="fancyvrb" /><a 
+ id="x14-94086r25"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Signif.</span><span 
+class="aett-12">&#x00A0;codes:</span><br class="fancyvrb" /><a 
+ id="x14-94088r26"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0</span><span 
+class="aett-12">&#x00A0;&#8217;***&#8217;</span><span 
+class="aett-12">&#x00A0;0.001</span><span 
+class="aett-12">&#x00A0;&#8217;**&#8217;</span><span 
+class="aett-12">&#x00A0;0.01</span><span 
+class="aett-12">&#x00A0;&#8217;*&#8217;</span><span 
+class="aett-12">&#x00A0;0.05</span><span 
+class="aett-12">&#x00A0;&#8217;.&#8217;</span><span 
+class="aett-12">&#x00A0;0.1</span><span 
+class="aett-12">&#x00A0;&#8217;</span><span 
+class="aett-12">&#x00A0;&#8217;</span><span 
+class="aett-12">&#x00A0;1</span>
+<br class="fancyvrb" /><a 
+ id="x14-94090r27"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
+ id="x14-94092r28"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Residual</span><span 
+class="aett-12">&#x00A0;standard</span><span 
+class="aett-12">&#x00A0;error:</span><span 
+class="aett-12">&#x00A0;20</span><span 
+class="aett-12">&#x00A0;on</span><span 
+class="aett-12">&#x00A0;110</span><span 
+class="aett-12">&#x00A0;degrees</span><span 
+class="aett-12">&#x00A0;of</span><span 
+class="aett-12">&#x00A0;freedom</span>
+<br class="fancyvrb" /><a 
+ id="x14-94094r29"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;(37</span><span 
+class="aett-12">&#x00A0;observations</span><span 
+class="aett-12">&#x00A0;deleted</span><span 
+class="aett-12">&#x00A0;due</span><span 
+class="aett-12">&#x00A0;to</span><span 
+class="aett-12">&#x00A0;missingness)</span>
+<br class="fancyvrb" /><a 
+ id="x14-94096r30"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Multiple</span><span 
+class="aett-12">&#x00A0;R-squared:</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.65,        Adjusted</span><span 
+class="aett-12">&#x00A0;R-squared:</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.634</span>
+<br class="fancyvrb" /><a 
+ id="x14-94098r31"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;F-statistic:</span><span 
+class="aett-12">&#x00A0;40.9</span><span 
+class="aett-12">&#x00A0;on</span><span 
+class="aett-12">&#x00A0;5</span><span 
+class="aett-12">&#x00A0;and</span><span 
+class="aett-12">&#x00A0;110</span><span 
+class="aett-12">&#x00A0;DF,</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;p-value:</span><span 
+class="aett-12">&#x00A0;&#x003C;2e-16</span></div>
+                                                                          
+
+                                                                          
+<!--l. 414--><p class="noindent" >Note that this model includes two interaction terms, and on the face of it, neither
+term looks like it is contributing towards explaining the amount of ozone in the
+atmosphere. This can be tested using
+   <div class="fancyvrb" id="fancyvrb298">  <a 
+ id="x14-94100r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;anova(Ozone.lm5,</span><span 
+class="aett-12">&#x00A0;Ozone.lm4)</span></div>
+<!--l. 419--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb299"> <a 
+ id="x14-94102r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Analysis</span><span 
+class="aett-12">&#x00A0;of</span><span 
+class="aett-12">&#x00A0;Variance</span><span 
+class="aett-12">&#x00A0;Table</span><br class="fancyvrb" /><a 
+ id="x14-94104r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
+ id="x14-94106r3"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Model</span><span 
+class="aett-12">&#x00A0;1:</span><span 
+class="aett-12">&#x00A0;Ozone</span><span 
+class="aett-12">&#x00A0;~</span><span 
+class="aett-12">&#x00A0;poly(Wind,</span><span 
+class="aett-12">&#x00A0;2)</span><span 
+class="aett-12">&#x00A0;*</span><span 
+class="aett-12">&#x00A0;Temp</span>
+<br class="fancyvrb" /><a 
+ id="x14-94108r4"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Model</span><span 
+class="aett-12">&#x00A0;2:</span><span 
+class="aett-12">&#x00A0;Ozone</span><span 
+class="aett-12">&#x00A0;~</span><span 
+class="aett-12">&#x00A0;poly(Wind,</span><span 
+class="aett-12">&#x00A0;2)</span><span 
+class="aett-12">&#x00A0;+</span><span 
+class="aett-12">&#x00A0;Temp</span><br class="fancyvrb" /><a 
+ id="x14-94110r5"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Res.Df</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;RSS</span><span 
+class="aett-12">&#x00A0;Df</span><span 
+class="aett-12">&#x00A0;Sum</span><span 
+class="aett-12">&#x00A0;of</span><span 
+class="aett-12">&#x00A0;Sq</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;F</span><span 
+class="aett-12">&#x00A0;Pr(&#x003E;F)</span>
+<br class="fancyvrb" /><a 
+ id="x14-94112r6"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;110</span><span 
+class="aett-12">&#x00A0;43801</span><br class="fancyvrb" /><a 
+ id="x14-94114r7"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;2</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;112</span><span 
+class="aett-12">&#x00A0;44213</span><span 
+class="aett-12">&#x00A0;-2</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-412</span><span 
+class="aett-12">&#x00A0;0.52</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.6</span></div>
+<!--l. 430--><p class="indent" >   Multiple regression models can be checked using the approaches described in
+Section&#x00A0;<a 
+href="#x14-9100012.4">12.4<!--tex4ht:ref: RegValid --></a> above, but it may also prove useful to plot residuals from the current
+model against each current and potential predictor variable in the data
+set.
+<!--l. 432--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">12.8   </span> <a 
+ id="x14-9500012.8"></a>Indicator variables</h3>
+<!--l. 434--><p class="noindent" >When working with a variable that can take one of two values, such as gender,
+many statistical packages need the user to create an indicator variable if this effect
+is to be incorporated into a regression model.
+<!--l. 436--><p class="indent" >   An indicator variable takes the values zero or one, where a &#8220;1" indicates one of
+the two possible values. Normally, the software will create an indicator for each of
+the values of the original variable, and when the original variable takes three
+levels, three indicator variables are made.
+<!--l. 438--><p class="indent" >   The advantage of the indicator is that the model fitted has a coefficient for the
+indicator variable that reflects the constant difference between the two groups
+within the data implied by the original variable.
+<!--l. 440--><p class="indent" >   <span 
+class="aess-12">R </span>does not need explicit creation of indicator variables as it will see the form of
+the variable and create indicator variables in the background. The output for an
+indicator variable in the regression summary is only ever so slightly different
+in that you will see <span 
+class="aett-12">GenderM </span>where you might have thought to see just
+<span 
+class="aett-12">Gender</span>. This is because <span 
+class="aess-12">R </span>tells you that the indicator variable created, and
+therefore the coefficient printed in the output, is for the Male level of
+Gender. For reasons not explained here, you will not see both <span 
+class="aett-12">GenderF </span>and
+<span 
+class="aett-12">GenderM </span>in the output unless you explicitly ask <span 
+class="aess-12">R </span>not to fit the intercept
+term.
+<!--l. 442--><p class="indent" >   As an example,
+                                                                          
+
+                                                                          
+   <!--l. 2--><div class="crosslinks"><p class="noindent">[<a 
+href="LURNch13.html" >next</a>] [<a 
+href="LURNch11.html" >prev</a>] [<a 
+href="LURNch11.html#tailLURNch11.html" >prev-tail</a>] [<a 
+href="LURNch12.html" >front</a>] [<a 
+href="LURN.html#LURNch12.html" >up</a>] </p></div>
+<!--l. 2--><p class="indent" >   <a 
+ id="tailLURNch12.html"></a>   
+</body></html> 

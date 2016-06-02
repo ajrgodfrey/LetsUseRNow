@@ -1,0 +1,3 @@
+<<SleepAOV>>= 
+summary(aov(extra~ID+group, data=sleep)) 
+@ 

@@ -1,0 +1,7 @@
+ 
+\section{Correlation structure within a data set} 
+\label{CorrelationStructure} 
+ 
+The summaries given thus far in this chapter all refer to variables as single objects. Often we have multivariate data and want to know more about it. Looking for inter-relationships among variables can be achieved using correlation coefficients; this gives us a numerical equivalent to the scatter plot matrices shown in Section~\ref{ScatterPlotMatrices}. 
+ 
+In fact, the commands used here resemble those used to generate the scatter plot matrix. I like to do this to save effort. My ability to copy and paste is better than my typing! 

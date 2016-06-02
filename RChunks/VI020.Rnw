@@ -1,0 +1,5 @@
+<<UniDesc, eval=FALSE>>= 
+data(airquality) 
+Ozone=airquality$Ozone 
+UniDesc(Ozone, Folder="AirQuality") 
+@ 

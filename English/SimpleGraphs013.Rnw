@@ -1,0 +1,15 @@
+\SVGLink{SimpleGraphsBoxplot-1} 
+\end{center} 
+\end{exhibit} 
+ 
+Notice that I've changed the default orientation of the boxplot by adding the argument \code{horizontal=TRUE} to the \Rcmd{boxplot} command. I have also ensured the more informative axis label for wind speed is included using the \Rarg{xlab} argument in the command. 
+ 
+\subsection{Comparative boxplots} 
+ 
+Boxplots are often useful for comparing several small samples at once. We must ensure that the same axis is used for the units of measure of interest and the easiest way to ensure this is to put the various samples into the same graphic with only one axis rather than having a series of single boxplots each having their own axis. 
+ 
+For the purposes of illustration, I want to show the distribution of the daily average wind speeds for the five months separately.  
+\begin{exhibit} 
+\begin{center} 
+\caption{Comparative boxplots for the Average wind speed in miles per hour at 0700 and 1000 hours at LaGuardia Airport separated into groups for the months of May to September 1973. Data was Obtained from the \Robject{air quality} data set.} 
+\label{AirQualityCompBoxplotWindMonth} 

@@ -1,0 +1,5 @@
+ 
+ 
+\section{Dates and times} 
+ 
+The current time and date can be extracted using the \Rcmd{date} command but this is not an object that can be manipulated --- it is a character string only. 

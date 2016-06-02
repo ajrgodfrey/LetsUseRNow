@@ -1,0 +1,3 @@
+<<PullData2>>= 
+data(anorexia, package="MASS") 
+@ 

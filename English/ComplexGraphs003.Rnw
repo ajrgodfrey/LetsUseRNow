@@ -1,0 +1,21 @@
+ 
+This chapter assumes an understanding of the material in Chapter~\ref{SimpleGraphs} on creating simple graphs. That material included adding simple elements of good graphing practice, like meaningful titles and axis lables. In this chapter we see colour, multiple graphs in one window, multiple sets of points on a single set of axes, adding extra points or lines, and introduces colour, different symbols and the legends that will then become necessary additions. 
+ 
+ 
+\section{More than one graph in a single window} 
+ 
+We have already seen how to combine a set of graphs to be collected into one window so that they form a single object for inserting into documents. The \Rcmd{par} command controls a large number of graphical parameters, including the layout of the graph window. One of its common uses is to split up the graph window quickly. 
+ 
+Exhibit~\ref{OzoneWindResidPlots} 
+shows the residual analysis plots for a regression model. Four separate graphs form that residual analysis by default. If we do not combine them into a single window using the \Rcmd{par} command we need to manipulate the four graphs separately when it comes time to include them in a report. 
+ 
+The \Rarg{mfrow} argument in the \Rcmd{par} command tells \R{} how to divide up the graph window. Note that it divides the existing window so that the aspect ratio of the separate panels may change from what you expect unless you either change the overall shape of the graph window (see Exhibit~\ref{AirQualityBoxplot} where we did this for a boxplot) or you divide the window up equally in both vertical and horizontal directions (see Exhibit~\ref{OzoneWindResidPlots}). In all examples presented thus far, the window has been divided up into four equal sections. \R{} then inserts successively created graphs into those sections until the window has four graphs in it. A fifth graph would appear on a new window that had four sections in it; this would fit graphs five to eight, with the ninth going onto a new sheet and so on. You can split the window into what ever size grid you like. Keeping the aspect ratio of the graphs is a good idea, but making them slightly wider than they are high is better than the reverse. That is, five rows of four graphs is better than four rows of five graphs, unless you are prepared to change the overall height and width of the window. 
+ 
+To illustrate creation of a lot of graphs and the efficiency of managing them as a single graph window, we will create the histograms of twelve distinct random samples of size 100, taken from the standard normal distribution. 
+ 
+The final graph appears in Exhibit~\ref{Hist12Z}, but there are a couple of functions that need explaining. First, the \Rcmd{par} command with the \Rarg{mfrow} argument opens a graphing window and splits it into twelve sections. The second line uses the \Rcmd{for} command to create a loop which is just a set of commands that are grouped together and run over and over until the end of the loop. In this case, the loop is run a total of twelve times with an arbitrary lable given to the counter used. A loop's counter is often not used in the processing of the code so is given a meaningless name; in this instance, the word \code{Counter} is used to point out where the counter appears in the code. The third line creates a histogram with the \Rcmd{hist} command, of a set of 100 random values taken from the standard normal distribution, found using the \Rcmd{rnorm} command. Note the code also adds a title to each of the distinct graphs. This is done using the \Rcmd{paste} command which joins some text with the counter number to form the title that will, as a consequence, change for each graph. If there had been two or more commands inside the loop, they would need to be grouped together using curly braces. Ignoring the braces would mean only the first line of the set would be issued. The braces are included here as an example of good practice. 
+ 
+\begin{exhibit} 
+\begin{center} 
+\caption{Twelve samples of size 100 drawn from the standard normal distribution, plotted using separate histograms in a single window} 
+\label{Hists12Z} 

@@ -1,0 +1,3 @@
+<<VIBoxplot>>= 
+VI(boxplot(x)) 
+@ 

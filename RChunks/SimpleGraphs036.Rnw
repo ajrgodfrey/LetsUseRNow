@@ -1,0 +1,3 @@
+<<SummaryState>>= 
+summary(state.region) 
+@ 

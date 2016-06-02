@@ -1,0 +1,7 @@
+Notice that the Hilbert matrix is created by adding two matrices together and then a constant is subtracted from all elements of the result. 
+ 
+\section{Matrix and vector calculations} 
+ 
+We saw a simple addition of elements of two matrices of the same size as well as a subtraction in the previous section. \R{} uses the standard arithmetic operators on pairs of matrices (or vectors) on an element-by-element basis.  
+ 
+Addition of a constant to a vector or matrix is effected on all elements 

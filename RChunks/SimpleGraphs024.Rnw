@@ -1,0 +1,3 @@
+<<ScatterCode1, eval=FALSE>>= 
+plot(Wind, Temp) 
+@ 

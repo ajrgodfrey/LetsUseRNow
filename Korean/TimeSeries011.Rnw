@@ -1,0 +1,15 @@
+\SVGLink{TSPlotsCompared-1} 
+\SVGLink{TSPlotsCompared-2} 
+\end{center} 
+\end{exhibit} 
+ 
+\section{Smoothing of a time series using moving averages} 
+ 
+One simple method for smoothing out a time series in order to expose its behaviour is to smooth out the observed data using  the \Rcmd{filter} command to create a moving average. 
+A moving average is often centred, (using the argument \Rarg{sides=2}) but if the series is expected to have no trend, then a backwards only (\Rarg{sides=1})  focus can be taken. We must determine the width of the moving average, usually using odd-numbered widths. 
+ 
+Exhibit~\ref{FilterExample} shows how different amounts of data can be averaged to change the amount of smoothing. 
+\begin{exhibit} 
+\begin{center} 
+\caption{Comparison of different amounts of smoothing a time series.} 
+\label{FilterExample} 

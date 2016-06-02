@@ -1,0 +1,3 @@
+<<CompBoxplot>>= 
+boxplot(Wind~Month, xlab="Month", ylab="Wind speed (mph)") 
+@ 

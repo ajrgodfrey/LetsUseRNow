@@ -1,0 +1,8 @@
+ 
+This chapter assumes you've got some data to export, and I mean data; not results from analyses which is discussed in Chapter~\ref{StoreResults}. You may also wish to use this information once you know how to tabulate various numerical summaries, discussed in Chapter~\ref{NumericalEDA}. 
+ 
+\section{Creating external files} 
+ 
+This section is just the inverse action of importing data from an external file as discussed in Chapter~\ref{ImportData}. All the \code{read} type commands have corresponding \code{write} commands. 
+ 
+If you read Chapter~\ref{ImportData} you'll know that my preference is to use files that are easily transferred and easily checked for their accuracy using other software. In particular, I prefer to create comma separated value (csv) files using the \Rcmd{write.csv} command. If there was a \Rclass{data.frame} called \Robject{Chickens} in my current workspace that I wanted to export for sharing with another user, I would issue the following command. 

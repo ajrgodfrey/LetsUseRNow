@@ -1,0 +1,4 @@
+This way of presenting commands is considered to be easier to read by many users which helps with the popularity of the \Rpkg{dplyr}  package. The \stressind{pipe operator} comes from another package called \Rpkg{magrittr} so its use is not limited to the commands found in the \Rpkg{dplyr} package.  
+This way of presenting multiple commands is called ``chaining" in many resources. I like the simplicity that this offers so I have tried to use the \stressind{pipe operator} as often as I can from here on. 
+  
+The \Rcmd{filter} command is useful if we know the values a variable takes, but at times we just want to know more about the observations that are best or worst according to one (or more) variables. For example, if we wanted to find the hottest days, we can use the \Rcmd{arrange} command instead of the \Rcmd{order} command seen earlier. 

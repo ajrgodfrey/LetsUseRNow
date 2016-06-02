@@ -1,0 +1,7 @@
+which of course assumes you know my name was given first. The subscripts have used square brackets in these examples. The type (and number) of brackets is crucial. If you open a bracket it must be closed, and closed by a bracket of the same type. Nesting brackets is quite acceptable. 
+ 
+ 
+\section{A patterned set of numbers} 
+ 
+In many instances we need to generate series of values in a patterned way. Let's say we want to generate variables that represent the twenty working days over a four week period. We want a list of the week number, and then a list of the weekday names. In both situations we will use the \Rcmd{rep} command. It has three arguments; the list of values, the number of times \Rarg{each} value is to be repeated, and the number of \Rarg{times} the whole series should be repeated.  
+The second and third of these arguments have default values so may not need to be stated explicitly. 

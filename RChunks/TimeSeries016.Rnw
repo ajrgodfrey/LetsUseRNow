@@ -1,0 +1,7 @@
+<<ForecastTests>>= 
+library(tseries) 
+library(forecast) 
+adf.test(Nile) 
+pp.test(Nile) 
+kpss.test(Nile) 
+@ 

@@ -1,0 +1,1 @@
+Having said this, it is now obvious that the missing values in some variables is causing grief. An additional argument is required. 

@@ -1,0 +1,5 @@
+\SVGLink{ComplexGraphsMtEdenContour-1} 
+\end{center} 
+\end{exhibit} 
+ 
+This provides a black and white image that has the contours marked with the value of the third variable. A coloured version of the plot is available using the \Rcmd{filled.contour} command in place of the \Rcmd{contour} command in Exhibit~\ref{MtEdenContour}. An even more impressive version of this plot can be obtained by looking at the example that accompanies the help for the \Robject{volcano} data. Typing: 

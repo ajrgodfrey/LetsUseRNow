@@ -1,0 +1,11 @@
+ 
+\section{Exponential smoothing} 
+ 
+Exponential smoothing is a method for making predictions of the next observation in a time series. The next observation is a weighted average of all observations to date, with the most recent given the greatest weight and the oldest ones having the least impact. This simple version is useful for situations with no seasonal component or systematic trend component. 
+ 
+Note that this is often expressed as $$\hat{y}_{t+1} = \lambda \hat{y}_{t} + (1-\lambda)y_{t}$$ 
+Substituting for $\hat{y}_t$ in terms of terms at time ***t-1*** shows how older values from the observed series contribute smaller and smaller amounts to the new prediction. 
+ 
+The \Rcmd{HoltWinters} command is used for a wide range of models that include the exponential smoother above and allows for trend and seasonality components to be introduced. 
+Starting with the Nile data: 
+ 

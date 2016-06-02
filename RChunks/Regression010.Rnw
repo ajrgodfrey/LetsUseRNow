@@ -1,0 +1,5 @@
+<<OzoneWindWithLine>>= 
+attach(airquality) 
+plot(Wind, Ozone) 
+abline(Ozone.lm1) 
+@ 

@@ -1,0 +1,13 @@
+\SVGLink{FilterExample-1} 
+\end{center} 
+\end{exhibit} 
+ 
+\section{Checking for stationarity}\label{Stationarity}  
+ 
+\stress{Stationarity} is important for modelling time series. Some descriptive methods also need it. 
+The simplest form of \nostressind{stationarity} is when the mean of the series and the variance of the series both remain roughly constant over time, or as explained by Hyndman and Athana-sopou-los (2013), "[a] stationary time series is one whose properties do not depend on the time at which the series is observed". (their book is called Forecasting: Principles and Practice.) 
+  
+A \stressind{white noise} series of normally distributed data with mean zero and constant variance $\sigma^2$ is the strongest form of stationarity we seek in our modelling. It is the desired outcome for the residuals from any model we fit to time series data. 
+ 
+ 
+The \Rcmd{Box.test} function tests for non-stationarity. 

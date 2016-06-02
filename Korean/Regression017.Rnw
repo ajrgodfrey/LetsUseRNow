@@ -1,0 +1,1 @@
+The various plots can be constructed using the \Rcmd{plot}, and \Rcmd{qqnorm} commands as needed, but if we want the information on the leverages in text form we will need to do tasks like 

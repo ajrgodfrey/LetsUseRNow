@@ -1,0 +1,1 @@
+An even quicker method useful for a single result is to use the \Rcmd{cat} command's full potential: 

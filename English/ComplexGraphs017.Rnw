@@ -1,0 +1,18 @@
+\SVGLink{ComplexGraphsDeathsTSPlot-1} 
+\end{center} 
+\end{exhibit} 
+ 
+We will see that the plot can be improved by adding a legend in Exhibit~\ref{LungsLegend}. 
+ 
+ 
+\section{Adding lines to an existing graph} 
+ 
+In Section~\ref{AddFittedLine} we saw how to add a fitted line from a simple regression model to a plot of the data used to fit the model, using the \Rcmd{abline} command. This command has other uses that are explained here. This section is only interested in the addition of a single straight line at a time; a series of line segments joined together was covered in Section~\ref{LinesInsteadOfPoints}. 
+ 
+Perhaps the easiest tasks of adding lines to a plot is to add either a horizontal or a vertical line. In Exhibit~\ref{QuakesPlaces}, we see the locations of the quakes marked by their latitude and longitude. On this occasion, the graph window has been left square and the spacing on the graph itself would be different for the latitude and longitude if we did not force the axes to have similar length for each direction. The \Rarg{xlim} and \Rarg{ylim} arguments create the axes, but note the need to correctly define the axis for latitude from a large negative number to the less negative number so that the orientation of north and south is kept consistent with convention. Fiji is in the southern hemisphere after all! 
+ 
+The \Rcmd{plot} command creates the axes and plots the points for the earthquakes in Exhibit~\ref{QuakesPlaces}. We then add two vertical and two horizontal lines to the plot, both using the \Rcmd{abline} command. 
+\begin{exhibit} 
+\begin{center} 
+\caption{Horizontal and vertical lines added to a scatter plot} 
+\label{QuakesPlaces} 

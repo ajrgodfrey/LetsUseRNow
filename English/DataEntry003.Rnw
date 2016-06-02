@@ -1,0 +1,11 @@
+ 
+The purpose of this chapter is to show the novice \R{} user how \R{} stores data by introducing the shortcuts that make data entry a fairly simple task. 
+ 
+Entering screeds of data is not fun in any software tool. It's more common for the \R{} user to have the data they need already available from another source. This is covered in Chapter~\ref{ImportData} on importing data from alternate sources. 
+ 
+Of course, if you really must enter data manually then you'd better read on; we can at least try to make it as painless as possible. 
+ 
+\section{Using \R{} as a simple calculator} 
+\label{SimpleCalculator} 
+ 
+\R{} can be used to do basic operations whose results do not get stored as objects. We can also assign the answers to a variable. For example 

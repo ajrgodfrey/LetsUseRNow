@@ -1,0 +1,3 @@
+<<tblAirQuality>>= 
+airquality2=tbl_df(airquality) 
+@  

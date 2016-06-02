@@ -1,0 +1,5 @@
+\SVGLink{SimpleGraphsStateRegionBarChart2-1} 
+\end{center} 
+\end{exhibit} 
+ 
+While this data set is rather trivial, it is useful for demonstrating one more feature. Note that both in the output above and in Exhibit~\ref{StateRegionBarChart}, the Western region is the last category. To reorder the regions in the bar chart is actually fairly straight forward. All we need to do is make a small addition to the existing commands. 

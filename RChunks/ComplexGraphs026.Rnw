@@ -1,0 +1,5 @@
+<<CreateSomeData>>= 
+Frequency=c(12,19, 22, 18, 11,13, 13, 12) 
+Gender=rep(c("Male", "Female"), 4) 
+Age=rep(c(17,18,19,20), each=2) 
+@ 

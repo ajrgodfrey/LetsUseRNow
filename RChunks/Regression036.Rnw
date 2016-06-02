@@ -1,0 +1,3 @@
+<<OzoneANOVA3>>= 
+anova(Ozone.lm5, Ozone.lm4) 
+@ 

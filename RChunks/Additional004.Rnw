@@ -1,0 +1,3 @@
+<<ChooseUsingText, eval=FALSE>>=
+chooseCRANmirror(FALSE)
+@

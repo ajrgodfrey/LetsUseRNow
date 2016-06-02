@@ -1,0 +1,17 @@
+ 
+ 
+ 
+ 
+ 
+ 
+\section{Autoregressive models} 
+ 
+ar() 
+ 
+\section{Basic ARIMA models} 
+ 
+ARIMA models require the autoregressive and moving average components to be built on a stationary series. We often need to create a stationary series using differencing as seen in Section~\ref{Stationarity} above. 
+arima() 
+ 
+\section{Seasonality and ARIMA modelling} 
+ 

@@ -1,0 +1,3 @@
+So we now know that August has the smallest average wind speed and that May is the windiest month. 
+ 
+To get the data listed in reverse chronological order we would use: 

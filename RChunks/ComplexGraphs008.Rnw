@@ -1,0 +1,11 @@
+<<LayoutDiffSizes>>= 
+attach(quakes) 
+layout(Arrangement.mat) 
+plot(long, lat) 
+plot(depth, mag, ylim=c(4,6.5)) 
+plot(lat, mag, ylim=c(4,6.5), cex=0.5) 
+plot(long, mag, ylim=c(4,6.5), cex=0.25) 
+boxplot(mag, xlab="Magnitude", horizontal=TRUE) 
+boxplot(log(mag), xlab="log(Magnitude)", horizontal=TRUE) 
+detach(quakes) 
+@ 

@@ -1,0 +1,11 @@
+ 
+ 
+ 
+\section{Presenting the straight line model's suitability in a graph} 
+\label{AddFittedLine} 
+ 
+Adding a fitted line to the scatter plot when a simple relationship has been fitted is actually a very simple task. Note that when we saw the outcome of the simple model above, we obtained just the intercept and slope coefficient values until we employed the \Rcmd{summary} method to extract more useful information. These two values will be used by the \Rcmd{abline} function to add the straight line to an existing plot. See Exhibit~\ref{RegLineAdded} for example. 
+\begin{exhibit} 
+\begin{center} 
+\caption{Two simple regressions with the straight line added onto the scatter plots.} 
+\label{RegLineAdded} 

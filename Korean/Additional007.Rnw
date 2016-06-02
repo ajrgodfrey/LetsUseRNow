@@ -1,0 +1,4 @@
+
+Installation of individual packages can be achieved using the \Rcmd{install.packages} command. Investigate its help page to ensure you get the most out of its use. 
+
+One key argument for this command is \Rarg{dependencies}. There are many packages that rely on the work of other packages for their success. It's probably a good idea to get into the habit of installing all dependent packages. For example:

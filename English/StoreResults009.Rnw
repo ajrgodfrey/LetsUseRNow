@@ -1,0 +1,4 @@
+ 
+This creates a text file called \file{JustPrintX.txt} in a subfolder called \file{other}, within the current working directory (which I created earlier). The file is worth looking at because it should show exactly what would have been printed in the \R{} window if the sink were not active. Note that the second use of \code{sink()} stops the sink from being active. 
+ 
+Just typing the name of an object implicitly calls the relevant \Rcmd{print} function for that object type. This does not work when a sink is active however, so we must use the \Rcmd{print} command explicitly to get the output into our sink file. For example 

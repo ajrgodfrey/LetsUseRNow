@@ -1,0 +1,4 @@
+ 
+This chapter explains how to create simple maps using some add-on packages. You will need to have installed the \Rpackage{maps}, \Rpackage{mapdata}, and  \Rpackage{ggmap} packages to complete the examples in this chapter. If you have not installed an add-on package before, you should take a look at Chapter~\ref{Additional} first. 
+ 
+After installing the packages, load them into your \R{} session using: 

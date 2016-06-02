@@ -1,0 +1,28 @@
+The \Rcmd{detach} command undoes the \Rcmd{attach} command. To remove the ``attachment", you will issue the command \code{detach(airquality)}. 
+ 
+You could look at the help file for this data if you wanted to learn its complete story using \code{?airquality}. It tells us that the data are for daily readings of the following air quality values for May 1, 1973 (a 
+Tuesday) to September 30, 1973. 
+\begin{itemize} 
+\item \code{Ozone}: Mean ozone in parts per 
+billion from 1300 to 1500 hours at Roosevelt Island 
+\item \code{Solar.R}: Solar radiation 
+in Langleys in the frequency band 4000--7700 Angstroms from 
+0800 to 1200 hours at Central Park 
+\item \code{Wind}: Average wind speed in miles 
+per hour at 0700 and 1000 hours at LaGuardia Airport 
+\item \code{Temp}: Maximum daily 
+temperature in degrees Fahrenheit at La Guardia Airport. 
+\end{itemize} 
+ 
+This data suits our purposes for the majority of examples in this chapter but we will also need to look at another data set for the discussion of graphs for discrete valued variables. 
+ 
+\section{Histograms} 
+ 
+Like many graphical functions in \R{}, the \Rcmd{hist} command will attempt to make a suitably attractive histogram with the minimum of input from the user. Exhibit~\ref{AirQualityHistWind} shows what results from the simplest application of the \Rcmd{hist} command. 
+ 
+Note that the figure created has default settings for the main title, axis labels and that the number of classes (also called bins) and the cutoffs between them have been chosen automatically. Various methods exist for these choices, but it is my recommendation that the user find out what happens when the default settings are chosen and then alter only what is actually necessary. For example, graphs in this document do not always need the default title inserted so we need to suppress the default action if we want to remove the title. We may also want more informative axis labels. Both of these alterations are done for the creation of Exhibit~\ref{AirQualityHistWind2}. 
+ 
+\begin{exhibit} 
+\begin{center} 
+\caption{Histogram of Average wind speed in miles per hour at 0700 and 1000 hours at LaGuardia Airport. Obtained from the \Robject{air quality} data set.} 
+\label{AirQualityHistWind} 

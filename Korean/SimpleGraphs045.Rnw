@@ -1,0 +1,8 @@
+\SVGLink{SimpleGraphsStateRegionPieChart-1} 
+\end{center} 
+\end{exhibit} 
+ 
+ 
+\section{Closing} 
+ 
+If you are carrying on working with \R{} you might wish to remove direct access to the data sets we used in this chapter by issuing the following commands 

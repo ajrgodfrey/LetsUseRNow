@@ -1,0 +1,4 @@
+ 
+\section{Other approaches} 
+ 
+Data entry is tedious. Efficiency is therefore an important weapon in your armoury. When we plan experiments we are often interested in obtaining an observation (or multiple observations) for every combination of some factors. In this simple example, imagine there are three experimental factors, given the names H, W, and Sex, and that each factor can take either of two levels. The \Rcmd{expand.grid} command is a useful way to construct a \Rclass{data.frame}. 

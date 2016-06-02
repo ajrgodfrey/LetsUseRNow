@@ -1,0 +1,2 @@
+The Rcmd{stl} command uses loess smoothing to estimate the trend component before finding the seasonal components and the resulting error terms, and is a slightly more advanced process than that offered by \Rcmd{decompose(}. N.B. there is an \Rcmd{stl} command in the \Rpkg{stats} package and another in the \Rpkg{forecast} package. We use the simpler one here but need to force \R{} to do so just in case the \Rpkg{forecast} package version has precedence. 
+ 

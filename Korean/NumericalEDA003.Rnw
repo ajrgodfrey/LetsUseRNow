@@ -1,0 +1,6 @@
+ 
+In this chapter we see how to obtain and present simple numerical summaries suitable for describing data. The same data set used in Chapter~\ref{SimpleGraphs} on creating graphs is used again. 
+ 
+\section{Obtaining basic numerical summaries of data} 
+ 
+The \Rcmd{summary} command is a very useful tool. It behaves differently for \R{} objects depending on the nature of the object it is working on. The air quality data we used for Chapter~\ref{SimpleGraphs} for demonstrating basic graphing techniques is a \Rclass{data.frame} object as evidenced by asking \R{} what class the object is using the \Rcmd{class} command 

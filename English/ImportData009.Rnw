@@ -1,0 +1,4 @@
+ 
+There are other settings to consider which you can investigate using the help for the \Rcmd{read.csv} command by typing \code{?read.csv} at the command prompt. This help page is actually a combined help page for the family of commands described in this section. 
+ 
+The working above assumed you could put the data file into the correct working directory.  So where was that? To find out where \R{} thinks you are currently working, use the \Rcmd{getwd} command. Note that the output may look a little strange to some users, especially Windows users. What do I mean? Look at the following: 

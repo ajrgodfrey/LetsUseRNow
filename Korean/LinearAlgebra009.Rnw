@@ -1,0 +1,2 @@
+ 
+We often need to find the \nostressind{transpose of a matrix}. The \Rcmd{t} command does this. 

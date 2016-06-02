@@ -1,0 +1,9 @@
+% sample commands for dplyr section need completion 
+% use string splitting to split a date and time up into useful parts. 
+% rearrange long table to short form and back 
+% reshape package perhaps 
+ 
+%\setcounter{chapter}{} 
+\chapter{LURN\ldots{} To Manipulate your Datasets} 
+\label{Manipulate} 
+ 

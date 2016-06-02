@@ -1,0 +1,2 @@
+ 
+We can also use some basic mathematical functions such as the logarithm and square root via the \Rcmd{log} and \Rcmd{sqrt} commands --- many other commands like this exist! For example 

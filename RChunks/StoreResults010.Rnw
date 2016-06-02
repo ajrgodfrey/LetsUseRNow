@@ -1,0 +1,5 @@
+<<CreateSink2, eval=-3>>= 
+sink(".\\other\\JustPrintX2.txt") 
+print(x) 
+sink() 
+@ 

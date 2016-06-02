@@ -1,0 +1,7 @@
+ 
+The trace of a matrix is not so easily found. There is a command that is called \Rcmd{trace} but this is not an algebraic function. If you want the trace of the matrix, you will need to sum the eigenvalues of the matrix. 
+ 
+\section{Eigenvalues and eigenvectors} 
+ 
+Calculation of eigenvalues and their associated eigenvalues is fairly simple, but extracting the elements required might pose a little difficulty. 
+ Let's create a 4$\times$4 Hilbert matrix and find its eigenvalues: 

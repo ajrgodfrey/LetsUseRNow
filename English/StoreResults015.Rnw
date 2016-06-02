@@ -1,0 +1,12 @@
+ 
+ 
+\section{Saving the entire \R{} Console} 
+ 
+Windows users of \R{} who use the RConsole have an option to save the entire console using the menus. At present, however, this is not an option that can be invoked via the command line. 
+ 
+It is possible to save the history of commands using the \Rcmd{savehistory} command, and of course your data and command history can be saved at the end of a session. 
+ 
+You'll soon see that you do not need to save a copy of the \R{} console as it takes so little time to re-run a set of commands and re-generate the output desired. 
+ 
+ 
+ 

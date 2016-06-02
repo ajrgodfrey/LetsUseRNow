@@ -1,0 +1,4 @@
+<<Determinant>>= 
+A 
+det(A) 
+@ 

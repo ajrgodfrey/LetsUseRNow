@@ -1,0 +1,8 @@
+<<AustResHW, fig=TRUE>>= 
+AustRes.hw1 = HoltWinters(austres) 
+AustRes.hw1 
+plot(AustRes.hw1) 
+AustRes.hw2 = HoltWinters(austres, seasonal="mult") 
+AustRes.hw2 
+plot(AustRes.hw2) 
+@ 

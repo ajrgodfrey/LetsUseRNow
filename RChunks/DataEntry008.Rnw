@@ -1,0 +1,5 @@
+<<BasicMath>>= 
+x=sqrt(169) 
+y=log(500) 
+x*y 
+@ 

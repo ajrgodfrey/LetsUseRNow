@@ -1,0 +1,19 @@
+\SVGLink{MapsPartNZ-1} 
+\end{center} 
+\end{exhibit} 
+ 
+One challenge in making this graphic presentable for this document  
+was assuring myself that the aspect ratio was correct. Latitudes and longitudes do not take up equal space especially as you move further from the tropics. \R{} will get the aspect ratio correct but being sure is another matter.  
+ 
+The graph I first created for this example was 5.7cm high and just over 10cm wide. Was it in proportion though? If each degree of latitude in the map used 1cm of space, we would expect each degree of longitude to take up at most 1 cm of space. An approximation for this is found by multiplying the latitude space by $\cos(\theta)$ where $\theta$ is the latitude. So each degree of longitude in my plot should take up about \Sexpr{round(cos(2*pi*40.5/360),2)} of the space of each degree of latitude. I've plotted three degrees of latitude and seven degrees of longitude, so I expect my 5.7cm high graphic to be  
+$$ \frac{5.7}{3} \times 7 \times \Sexpr{round(cos(2*pi*40.5/360),2)} == \Sexpr{round(1.9*7*cos(2*pi*40.5/360),1)} $$ 
+centimetres in width. This was about right.  
+ 
+You can see the way we would do this calculation using \R{} in Chapter~\ref{ScientificCalculator}. 
+ 
+ 
+\section{Using Google's services to map locations of interest} 
+ 
+The ability to search Google for specific locations is really useful, especially if you intend plotting maps with points of interest such as universities rather than just cities. Our first example does look for cities though, so that it builds on examples from previous sections in this chapter. 
+ 
+In mid-2015, I will attend the UseR conference in Aalborg, which is in Denmark. I know Denmark has a coastline and is bordered by Germany, but actually I don't know much else (especially where individual cities are!). I want ot know where the city of Aalborg is in relation to Copenhagen (the capital of Denmark). Witht he help of the \Rpackage{ggmap} package tapping into Google maps, I can find the latitute and longitude for both cities and then plot them on the map of Denmark as follows: 

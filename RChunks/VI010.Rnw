@@ -1,0 +1,4 @@
+<<CreateHist>>= 
+x=rnorm(1000) 
+MyHist =hist(x, plot=FALSE) 
+@ 

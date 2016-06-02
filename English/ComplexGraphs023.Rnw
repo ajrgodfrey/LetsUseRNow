@@ -1,0 +1,13 @@
+\SVGLink{ComplexGraphsAddPolyCurve-1} 
+ 
+\section{Adding text to an existing graph} 
+%to finish 
+ 
+ 
+\section{Adding a legend for different information within a graph} 
+%to finish 
+ 
+\begin{exhibit} 
+\begin{center} 
+\caption{Deaths from lung diseases in the United Kingdom (with legend added)} 
+\label{LungsLegend} 

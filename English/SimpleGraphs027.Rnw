@@ -1,0 +1,6 @@
+The tilde symbol is often read as ``\ldots is distributed as\ldots" but we might simplify this to be read as ``follows". This makes some sense as we generally create a scatter plot to see if one variable follows the other; in this case we are seeing if temperature depends on wind speed in some way. 
+ 
+\begin{exhibit} 
+\begin{center} 
+\caption{Scatter plot of the maximum daily temperature against the Average wind speed at 0700 and 1000 hours, both recorded at LaGuardia Airport. Data were obtained from the \Robject{air quality} data set.} 
+\label{AirQualityScatterTempWind} 

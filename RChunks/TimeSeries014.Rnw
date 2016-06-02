@@ -1,0 +1,3 @@
+<<BoxTest>>= 
+Box.test(Nile, lag=20) 
+@ 

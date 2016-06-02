@@ -1,0 +1,17 @@
+ 
+ 
+\section{Confidence intervals and hypothesis tests for a proportion from one population} 
+%unfinished 
+ 
+\section{Confidence intervals and hypothesis tests for the difference of two population proportions} 
+%unfinished 
+ 
+\section{Hypothesis tests and confidence intervals for Correlation coefficients} 
+ 
+In Section~\ref{CorrelationStructure} 
+we examined the correlation of the variables in the \Robject{airquality} data set using the \Rcmd{cor} command.  
+If we require a formal hypothesis test for the significance of the correlation coefficient we will need to use the \Rcmd{cor.test} command. The difference between the two commands is that we could offer the entire data set as the object to work on with the \Rcmd{cor} command while we need to specify two vectors for the \Rcmd{cor.test} command. 
+ 
+There are problems with cherry-picking one pair of variables from a set to perform a post hoc test like this. We should probably consider finding the significance of all correlations of interest and adjusting the way we think about the likelihood of getting the set of hypothesis tests we observe as a combination using a \stressind{Bonn Ferroni adjustment} in our analysis; that is beyond the scope of this exposition so for the moment just assume we are (and were before data was collected) interested in only the correlation that exists between a single pair of variables. We use the \Robject{Ozone} and \Robject{Wind} variables from the \Robject{airquality} data. 
+ 
+To test the notion that there is zero correlation between the two variables we would probably consider using Pearson's correlation coefficient which measures the strength of the linear relationship between a pair of variables, but use of Spearman's rank correlation coefficient will measure the strength of any monotonic relationship that might exist. I prefer to use both at the same time in many circumstances. 

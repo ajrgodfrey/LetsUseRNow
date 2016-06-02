@@ -1,0 +1,14 @@
+\SVGLink{SimpleGraphsMatrixPlot-1} 
+\end{center} 
+\end{exhibit} 
+ 
+Note that the names of the variables appear in the spaces on the leading diagonal and that the graphs on either side of the diagonal plot the same data but with the axes reversed. Sometimes the human eye will pick up a relationship when the data are presented one way better than the other way. 
+ 
+\section{Graphs for discrete valued variables} 
+ 
+\R{} does not contain many graphs for discrete valued variables. 
+ 
+\subsection{Bar charts} 
+\label{BarCharts} 
+ 
+If a variable is considered by \R{} to be a \Rclass{factor}, then the default action of the \Rcmd{plot} command is to construct a bar chart. This is illustrated using a data set which is part of the default installation of \R{} called \Robject{state.region} examined using 

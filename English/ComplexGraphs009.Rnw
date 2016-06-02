@@ -1,0 +1,16 @@
+\SVGLink{ComplexGraphsLayoutDiffSizes-1} 
+\end{center} 
+\end{exhibit} 
+ 
+Note that the way the points have been plotted and the way the text appears in these graphs, differs. The addition of the \Rarg{cex} argument in the third and fourth \Rcmd{plot} commands forces the size of the plotted symbol to be reduced. This is known as \stressind{character expansion}, and can be applied to the text that appears on the graphs as well. Individual elements of text are adjusted using the \Rarg{cex.main}, \Rarg{cex.sub}, \Rarg{cex.lab}, and \Rarg{cex.axis} arguments. See the help for the \Rcmd{par} command for further details on their use. 
+ 
+\section{Using colour or different symbols} 
+ 
+We show how to create a graph with different colours and symbols without passing judgement on the suitability of the colours or symbols used. The important feature to remember when you are about to create such a graph is that the reader will not necessarily see the difference in colour as you do. Similarly, the selection of symbol should be thought out carefully. We do not want a solid symbol to appear bigger than a hollow one or vice versa. 
+ 
+The \Robject{iris} data supplied with \R{} for this example. It has five variables in all; four are for numeric measurements and the fifth is the species. In Exhibit~\ref{IrisInColour} we use three colours for the species and in Exhibit~\ref{IrisInSymbols} we use different symbols. There is no reason why you might not use both arguments in combination to use different colours for the different symbols. 
+ 
+\begin{exhibit} 
+\begin{center} 
+\caption{} 
+\label{IrisInColour} 

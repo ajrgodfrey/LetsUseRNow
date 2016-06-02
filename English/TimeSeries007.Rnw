@@ -1,0 +1,8 @@
+ 
+\section{Time series plots} 
+ 
+We have seen the flexibility of the \Rcmd{plot} command in previous chapters, and now we see another use. Applying the \Rcmd{plot} command to a time series object generates a time series plot, as seen in Exhibit~\ref{NileTSPlot}. 
+\begin{exhibit} 
+\begin{center} 
+\caption{Time series plot for the annual flow of the River Nile.} 
+\label{NileTSPlot} 

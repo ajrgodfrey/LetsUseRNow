@@ -1,0 +1,5 @@
+<<Leverages>>= 
+mean(Ozone.lev1) 
+max(Ozone.lev1) 
+Ozone.lev1[Ozone.lev1>2*mean(Ozone.lev1)] 
+@ 

@@ -1,0 +1,11 @@
+ 
+The \Rcmd{dotplot} command is not part of base \R{} which uses the \Rcmd{stripchart} command instead. The \Rcmd{hist} and \Rcmd{boxplot} commands used here are actually commands from the \Rpkg{BrailleR} package that use the standard commands indirectly. At this point in time, I haven't worked out how to get the \Rcmd{stripchart} command to work as a \Rpkg{BrailleR} command so I needed to use a different name for my version. The \Rpkg{BrailleR} versions of these three commands store the additional information we need to get the text interpretation that is not possible from the standard version of the commands. 
+ 
+ 
+\section{Basic descriptions of variables} 
+ 
+The \Rcmd{UniDesc} function is designed to quickly generate a text summary of a single variable. It also saves several graphs. It can also save the text in a file and use the \Rcmd{VI} command from the \Rpackage{BrailleR} package to add text descriptions to the output file. 
+ 
+One obvious issue is that saving lots of files could become problematic. Default filenames are used and all files can be put into a folder of the user's choosing. 
+ 
+An example will help. Try 

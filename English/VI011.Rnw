@@ -1,0 +1,1 @@
+The \Rarg{plot} argument stops the graph being plotted. We can get the graph anytime by issuing the \Rcmd{plot} command but we are interested in seeing what \R{} has stored in the \Robject{MyHist} object.  

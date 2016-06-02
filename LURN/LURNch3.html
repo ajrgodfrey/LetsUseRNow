@@ -1,0 +1,1475 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>3 LURN... To Enter Data</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html,2,next --> 
+<meta name="src" content="LURN.tex"> 
+<meta name="date" content="2016-06-01 18:11:00"> 
+<link rel="stylesheet" type="text/css" href="LURN.css"> 
+</head><body 
+>
+   <!--l. 2--><div class="crosslinks"><p class="noindent">[<a 
+href="LURNch4.html" >next</a>] [<a 
+href="LURNch2.html" >prev</a>] [<a 
+href="LURNch2.html#tailLURNch2.html" >prev-tail</a>] [<a 
+href="#tailLURNch3.html">tail</a>] [<a 
+href="LURN.html#LURNch3.html" >up</a>] </p></div>
+   <h2 class="chapterHead"><span class="titlemark">Chapter&#x00A0;3</span><br /><a 
+ id="x5-150003"></a>LURN&#x2026; To Enter Data</h2>
+<!--l. 7--><p class="noindent" >The purpose of this chapter is to show the novice <span 
+class="aess-12">R </span>user how <span 
+class="aess-12">R </span>stores
+data by introducing the shortcuts that make data entry a fairly simple
+task.
+<!--l. 9--><p class="indent" >   Entering screeds of data is not fun in any software tool. It&#8217;s more common for
+the <span 
+class="aess-12">R </span>user to have the data they need already available from another
+source. This is covered in Chapter&#x00A0;<a 
+href="LURNch4.html#x6-280004">4<!--tex4ht:ref: ImportData --></a> on importing data from alternate
+sources.
+<!--l. 11--><p class="indent" >   Of course, if you really must enter data manually then you&#8217;d better read on;
+we can at least try to make it as painless as possible.
+   <h3 class="sectionHead"><span class="titlemark">3.1   </span> <a 
+ id="x5-160003.1"></a>Using <span 
+class="aess-12">R </span>as a simple calculator</h3>
+<!--l. 16--><p class="noindent" ><span 
+class="aess-12">R </span>can be used to do basic operations whose results do not get stored as objects.
+We can also assign the answers to a variable. For example
+   <div class="fancyvrb" id="fancyvrb1">  <a 
+ id="x5-16002r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;x=100/7</span><br class="fancyvrb" /><a 
+ id="x5-16004r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;x</span></div>
+<!--l. 22--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb2"> <a 
+ id="x5-16006r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">&#x00A0;14.29</span></div>
+<!--l. 26--><p class="noindent" >This means we can use the variable by name later. For example
+   <div class="fancyvrb" id="fancyvrb3">  <a 
+ id="x5-16008r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;12*x</span></div>
+<!--l. 31--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb4"> <a 
+ id="x5-16010r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">&#x00A0;171.4</span></div>
+<!--l. 36--><p class="indent" >   We can also use some basic mathematical functions such as the logarithm and
+square root via the <a 
+ id="dx5-16011"></a><span 
+class="aett-12">log() </span>and <a 
+ id="dx5-16012"></a><span 
+class="aett-12">sqrt() </span>commands &#8212; many other commands like
+this exist! For example
+   <div class="fancyvrb" id="fancyvrb5">  <a 
+ id="x5-16014r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;x=sqrt(169)</span><br class="fancyvrb" /><a 
+ id="x5-16016r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;y=log(500)</span><br class="fancyvrb" /><a 
+ id="x5-16018r3"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;x*y</span></div>
+<!--l. 43--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb6"> <a 
+ id="x5-16020r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">&#x00A0;80.79</span></div>
+<!--l. 47--><p class="noindent" >OK, these manipulations are trivial, but they can be used in conjunction with other
+data objects as we will see later. More detail on how to use <span 
+class="aess-12">R </span>as a scientific
+calculator can be found in Chapter&#x00A0;<a 
+href="LURNch17.html#x19-12400017">17<!--tex4ht:ref: ScientificCalculator --></a>.
+                                                                          
+
+                                                                          
+<!--l. 50--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">3.2   </span> <a 
+ id="x5-170003.2"></a>A simple set of numbers</h3>
+<!--l. 52--><p class="noindent" >Operating on single values is rare. We are usually faced with numbers that we
+wish to use as a set. Entering them as a set is therefore necessary. The most
+basic way of entering a set of numbers is using the <a 
+ id="dx5-17001"></a><span 
+class="aett-12">c() </span>command. For
+example
+   <div class="fancyvrb" id="fancyvrb7">  <a 
+ id="x5-17003r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;y=c(1,</span><span 
+class="aett-12">&#x00A0;4,</span><span 
+class="aett-12">&#x00A0;9,</span><span 
+class="aett-12">&#x00A0;16,</span><span 
+class="aett-12">&#x00A0;25,</span><span 
+class="aett-12">&#x00A0;36,</span><span 
+class="aett-12">&#x00A0;49,</span><span 
+class="aett-12">&#x00A0;64,</span><span 
+class="aett-12">&#x00A0;81,</span><span 
+class="aett-12">&#x00A0;100)</span><br class="fancyvrb" /><a 
+ id="x5-17005r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;y</span></div>
+<!--l. 58--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb8"> <a 
+ id="x5-17007r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;4</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;9</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;16</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;25</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;36</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;49</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;64</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;81</span><span 
+class="aett-12">&#x00A0;100</span></div>
+<!--l. 62--><p class="noindent" >is the list of the squares of the first ten natural numbers. We can obtain the numbers
+from 1 to 10 faster by issuing
+   <div class="fancyvrb" id="fancyvrb9">  <a 
+ id="x5-17009r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;x=1:10</span><br class="fancyvrb" /><a 
+ id="x5-17011r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;x</span></div>
+<!--l. 68--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb10"> <a 
+ id="x5-17013r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;2</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;3</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;4</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;5</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;6</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;7</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;8</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;9</span><span 
+class="aett-12">&#x00A0;10</span></div>
+<!--l. 72--><p class="noindent" >and therefore can obtain the desired set of the squares for the first ten natural
+numbers using shorter code based on a simple sequence.
+   <div class="fancyvrb" id="fancyvrb11">  <a 
+ id="x5-17015r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;y=(1:10)^2</span><br class="fancyvrb" /><a 
+ id="x5-17017r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;y</span></div>
+<!--l. 78--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb12"> <a 
+ id="x5-17019r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;4</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;9</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;16</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;25</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;36</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;49</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;64</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;81</span><span 
+class="aett-12">&#x00A0;100</span></div>
+<!--l. 82--><p class="noindent" >This is much more efficient than typing out the actual results as done previously.
+Note that the colon symbol is used for generating series of integers and
+that in terms of the order of mathematical operators, it comes after the
+exponent; the brackets around the sequence are essential. In this case,
+squaring a number is achieved through use of the carat symbol followed by a
+2.
+<!--l. 85--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">3.3   </span> <a 
+ id="x5-180003.3"></a>A simple set of text values</h3>
+<!--l. 87--><p class="noindent" >The <a 
+ id="dx5-18001"></a><span 
+class="aett-12">c() </span>command is good for entering any kind of data. We may need to enter a
+set of categories for example.
+                                                                          
+
+                                                                          
+   <div class="fancyvrb" id="fancyvrb13">  <a 
+ id="x5-18003r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;Names</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;c("Jonathan",</span><span 
+class="aett-12">&#x00A0;"Elizabeth",</span><span 
+class="aett-12">&#x00A0;"Peter",</span><span 
+class="aett-12">&#x00A0;"Jenna",</span><span 
+class="aett-12">&#x00A0;"Olivia",</span><span 
+class="aett-12">&#x00A0;"Callum",</span><span 
+class="aett-12">&#x00A0;"Annabelle",</span><span 
+class="aett-12">&#x00A0;"Cordelia")</span>
+<br class="fancyvrb" /><a 
+ id="x5-18005r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;Names</span></div>
+<!--l. 93--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb14"> <a 
+ id="x5-18007r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">&#x00A0;"Jonathan"</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;"Elizabeth"</span><span 
+class="aett-12">&#x00A0;"Peter"</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;"Jenna"</span>
+<br class="fancyvrb" /><a 
+ id="x5-18009r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[5]</span><span 
+class="aett-12">&#x00A0;"Olivia"</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;"Callum"</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;"Annabelle"</span><span 
+class="aett-12">&#x00A0;"Cordelia"</span></div>
+<!--l. 98--><p class="noindent" >Note two important features of this command. I capitalized the variable name here on
+purpose. The vast majority of <span 
+class="aess-12">R </span>commands are in lower case and there is
+one called &#8220;names". I don&#8217;t want to confuse my data and an existing <span 
+class="aess-12">R</span>
+command so my preference is to use an upper case letter on the front
+of all my variable names that mean anything. The second point is that
+the character-valued data I entered were encapsulated by quote marks.
+This means that the actual names (mine, my last dog and some family
+members) were stored. If I had omitted the quote marks, <span 
+class="aess-12">R </span>would have
+looked for variables with the appropriate names &#8212; not defined in this
+instance. You could remove a quote or two to see what happens if you
+must.
+<!--l. 100--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">3.4   </span> <a 
+ id="x5-190003.4"></a>Logical indicators</h3>
+<!--l. 102--><p class="noindent" ><span 
+class="aess-12">R </span>often uses logical indicators to tell us something. These variables take the values
+&#8220;<span 
+class="aett-12">TRUE</span>" or &#8220;<span 
+class="aett-12">FALSE</span>".
+<!--l. 105--><p class="indent" >
+   <div class="fancyvrb" id="fancyvrb15">  <a 
+ id="x5-19002r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;Human</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;c(TRUE,</span><span 
+class="aett-12">&#x00A0;TRUE,</span><span 
+class="aett-12">&#x00A0;TRUE,</span><span 
+class="aett-12">&#x00A0;FALSE,</span><span 
+class="aett-12">&#x00A0;TRUE,</span><span 
+class="aett-12">&#x00A0;TRUE,</span><span 
+class="aett-12">&#x00A0;TRUE,</span><span 
+class="aett-12">&#x00A0;TRUE)</span></div>
+<!--l. 109--><p class="noindent" >You might suspect that this variable tells you if the name given in the <span 
+class="aett-12">Names </span>variable
+are for humans. The fourth name is therefore the dog. To extract the names of the
+humans we use the command
+   <div class="fancyvrb" id="fancyvrb16">  <a 
+ id="x5-19004r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;Names[Human]</span></div>
+<!--l. 114--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb17"> <a 
+ id="x5-19006r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">&#x00A0;"Jonathan"</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;"Elizabeth"</span><span 
+class="aett-12">&#x00A0;"Peter"</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;"Olivia"</span>
+<br class="fancyvrb" /><a 
+ id="x5-19008r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[5]</span><span 
+class="aett-12">&#x00A0;"Callum"</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;"Annabelle"</span><span 
+class="aett-12">&#x00A0;"Cordelia"</span></div>
+<!--l. 119--><p class="noindent" >Note here that the brackets used are square brackets. Use round brackets for
+functions, square for elements of an object.
+<!--l. 121--><p class="indent" >   It&#8217;s pretty simple to extract the dog&#8217;s name:
+                                                                          
+
+                                                                          
+   <div class="fancyvrb" id="fancyvrb18">  <a 
+ id="x5-19010r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;Names[!Human]</span></div>
+<!--l. 126--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb19"> <a 
+ id="x5-19012r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">&#x00A0;"Jenna"</span></div>
+<!--l. 130--><p class="noindent" >In this situation the exclamation mark should be read as &#8220;not" and therefore picks up
+the elements where the logical variable is set to <span 
+class="aett-12">FALSE</span>.
+<!--l. 132--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">3.5   </span> <a 
+ id="x5-200003.5"></a>A note on subscripting</h3>
+<!--l. 134--><p class="noindent" >We&#8217;ve seen that we can find a subset of the set of names using the indicator
+variable, but it&#8217;s frequently useful to be able to extract one or more elements by
+their location. For example
+   <div class="fancyvrb" id="fancyvrb20">  <a 
+ id="x5-20002r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;Names[1]</span></div>
+<!--l. 139--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb21"> <a 
+ id="x5-20004r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">&#x00A0;"Jonathan"</span></div>
+<!--l. 143--><p class="noindent" >gives the first name, and
+   <div class="fancyvrb" id="fancyvrb22">  <a 
+ id="x5-20006r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;Names[2:3]</span></div>
+<!--l. 148--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb23"> <a 
+ id="x5-20008r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">&#x00A0;"Elizabeth"</span><span 
+class="aett-12">&#x00A0;"Peter"</span></div>
+<!--l. 152--><p class="noindent" >extracts the second and third names. The set of names entered is a <a 
+ id="dx5-20009"></a><span 
+class="aeti-12">vector </span>and has
+only one subscript to monitor. We will see how to subscript elements within a
+<a 
+ id="dx5-20010"></a><span 
+class="aeti-12">matrix </span>or <a 
+ id="dx5-20011"></a><span 
+class="aeti-12">data.frame </span>later.
+<!--l. 154--><p class="indent" >   It&#8217;s also often necessary to understand how <span 
+class="aess-12">R </span>has stored an object. The
+<a 
+ id="dx5-20012"></a><span 
+class="aett-12">class() </span>command is useful, and so is the <a 
+ id="dx5-20013"></a><span 
+class="aett-12">str() </span>command. For example
+   <div class="fancyvrb" id="fancyvrb24">  <a 
+ id="x5-20015r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;class(Names)</span></div>
+<!--l. 159--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb25"> <a 
+ id="x5-20017r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">&#x00A0;"character"</span></div>
+<!--l. 162--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb26"> <a 
+ id="x5-20019r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;str(Names)</span></div>
+                                                                          
+
+                                                                          
+<!--l. 165--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb27"> <a 
+ id="x5-20021r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;chr</span><span 
+class="aett-12">&#x00A0;[1:8]</span><span 
+class="aett-12">&#x00A0;"Jonathan"</span><span 
+class="aett-12">&#x00A0;"Elizabeth"</span><span 
+class="aett-12">&#x00A0;"Peter"</span><span 
+class="aett-12">&#x00A0;...</span></div>
+<!--l. 169--><p class="noindent" >We can get the names of all the people that aren&#8217;t me by
+   <div class="fancyvrb" id="fancyvrb28">  <a 
+ id="x5-20023r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;Names[-1]</span></div>
+<!--l. 174--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb29"> <a 
+ id="x5-20025r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">&#x00A0;"Elizabeth"</span><span 
+class="aett-12">&#x00A0;"Peter"</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;"Jenna"</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;"Olivia"</span>
+<br class="fancyvrb" /><a 
+ id="x5-20027r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[5]</span><span 
+class="aett-12">&#x00A0;"Callum"</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;"Annabelle"</span><span 
+class="aett-12">&#x00A0;"Cordelia"</span></div>
+<!--l. 179--><p class="noindent" >which of course assumes you know my name was given first. The subscripts have used
+square brackets in these examples. The type (and number) of brackets is crucial. If
+you open a bracket it must be closed, and closed by a bracket of the same type.
+Nesting brackets is quite acceptable.
+<!--l. 182--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">3.6   </span> <a 
+ id="x5-210003.6"></a>A patterned set of numbers</h3>
+<!--l. 184--><p class="noindent" >In many instances we need to generate series of values in a patterned way. Let&#8217;s
+say we want to generate variables that represent the twenty working days over a
+four week period. We want a list of the week number, and then a list of the
+weekday names. In both situations we will use the <a 
+ id="dx5-21001"></a><span 
+class="aett-12">rep() </span>command. It has three
+arguments; the list of values, the number of times <span 
+class="aett-12">each </span>value is to be repeated,
+and the number of <span 
+class="aett-12">times </span>the whole series should be repeated. The second and
+third of these arguments have default values so may not need to be stated
+explicitly.
+   <div class="fancyvrb" id="fancyvrb30">  <a 
+ id="x5-21003r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;Week</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;rep(1:4,</span><span 
+class="aett-12">&#x00A0;each=5)</span><br class="fancyvrb" /><a 
+ id="x5-21005r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;Week</span></div>
+<!--l. 191--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb31"> <a 
+ id="x5-21007r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">&#x00A0;1</span><span 
+class="aett-12">&#x00A0;1</span><span 
+class="aett-12">&#x00A0;1</span><span 
+class="aett-12">&#x00A0;1</span><span 
+class="aett-12">&#x00A0;1</span><span 
+class="aett-12">&#x00A0;2</span><span 
+class="aett-12">&#x00A0;2</span><span 
+class="aett-12">&#x00A0;2</span><span 
+class="aett-12">&#x00A0;2</span><span 
+class="aett-12">&#x00A0;2</span><span 
+class="aett-12">&#x00A0;3</span><span 
+class="aett-12">&#x00A0;3</span><span 
+class="aett-12">&#x00A0;3</span><span 
+class="aett-12">&#x00A0;3</span><span 
+class="aett-12">&#x00A0;3</span><span 
+class="aett-12">&#x00A0;4</span><span 
+class="aett-12">&#x00A0;4</span><span 
+class="aett-12">&#x00A0;4</span><span 
+class="aett-12">&#x00A0;4</span><span 
+class="aett-12">&#x00A0;4</span></div>
+<!--l. 194--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb32"> <a 
+ id="x5-21009r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;Day</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;rep(c("Mon",</span><span 
+class="aett-12">&#x00A0;"Tue",</span><span 
+class="aett-12">&#x00A0;"Wed",</span><span 
+class="aett-12">&#x00A0;"Thu",</span><span 
+class="aett-12">&#x00A0;"Fri"),</span><span 
+class="aett-12">&#x00A0;times=4)</span><br class="fancyvrb" /><a 
+ id="x5-21011r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;Day</span></div>
+<!--l. 198--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb33"> <a 
+ id="x5-21013r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">&#x00A0;"Mon"</span><span 
+class="aett-12">&#x00A0;"Tue"</span><span 
+class="aett-12">&#x00A0;"Wed"</span><span 
+class="aett-12">&#x00A0;"Thu"</span><span 
+class="aett-12">&#x00A0;"Fri"</span><span 
+class="aett-12">&#x00A0;"Mon"</span><span 
+class="aett-12">&#x00A0;"Tue"</span><span 
+class="aett-12">&#x00A0;"Wed"</span><span 
+class="aett-12">&#x00A0;"Thu"</span>
+<br class="fancyvrb" /><a 
+ id="x5-21015r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[10]</span><span 
+class="aett-12">&#x00A0;"Fri"</span><span 
+class="aett-12">&#x00A0;"Mon"</span><span 
+class="aett-12">&#x00A0;"Tue"</span><span 
+class="aett-12">&#x00A0;"Wed"</span><span 
+class="aett-12">&#x00A0;"Thu"</span><span 
+class="aett-12">&#x00A0;"Fri"</span><span 
+class="aett-12">&#x00A0;"Mon"</span><span 
+class="aett-12">&#x00A0;"Tue"</span><span 
+class="aett-12">&#x00A0;"Wed"</span><br class="fancyvrb" /><a 
+ id="x5-21017r3"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[19]</span><span 
+class="aett-12">&#x00A0;"Thu"</span><span 
+class="aett-12">&#x00A0;"Fri"</span></div>
+<!--l. 204--><p class="noindent" >These two variables can be brought together with the corresponding data using the
+<a 
+ id="dx5-21018"></a><span 
+class="aett-12">data.frame() </span>command illustrated later in this chapter.
+                                                                          
+
+                                                                          
+<!--l. 206--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">3.7   </span> <a 
+ id="x5-220003.7"></a>Less pattern and more repetition</h3>
+<!--l. 208--><p class="noindent" >The <a 
+ id="dx5-22001"></a><span 
+class="aett-12">rep() </span>command is very flexible, and to be honest can either be a
+lot of fun to play with or just one big headache. Let&#8217;s say we want to
+generate the series of numbers which has one 1, two 2&#8217;s, three 3&#8217;s, four
+4&#8217;s, and five 5&#8217;s. Instead of using the constant for the number of times
+each element is repeated, we can choose the number of repeats for each
+element.
+   <div class="fancyvrb" id="fancyvrb34">  <a 
+ id="x5-22003r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;rep(1:5,</span><span 
+class="aett-12">&#x00A0;times=1:5)</span></div>
+<!--l. 213--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb35"> <a 
+ id="x5-22005r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">&#x00A0;1</span><span 
+class="aett-12">&#x00A0;2</span><span 
+class="aett-12">&#x00A0;2</span><span 
+class="aett-12">&#x00A0;3</span><span 
+class="aett-12">&#x00A0;3</span><span 
+class="aett-12">&#x00A0;3</span><span 
+class="aett-12">&#x00A0;4</span><span 
+class="aett-12">&#x00A0;4</span><span 
+class="aett-12">&#x00A0;4</span><span 
+class="aett-12">&#x00A0;4</span><span 
+class="aett-12">&#x00A0;5</span><span 
+class="aett-12">&#x00A0;5</span><span 
+class="aett-12">&#x00A0;5</span><span 
+class="aett-12">&#x00A0;5</span><span 
+class="aett-12">&#x00A0;5</span></div>
+<!--l. 217--><p class="noindent" >Whatever you do you should observe the way your series is coming out. I would have
+expected the <span 
+class="aett-12">each </span>to be used in the last example not <span 
+class="aett-12">times </span>for example &#8212; always
+check.
+<!--l. 219--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">3.8   </span> <a 
+ id="x5-230003.8"></a>An incomplete pattern</h3>
+<!--l. 221--><p class="noindent" >Let&#8217;s say we want a set of numbers to be cycled, but know that we won&#8217;t use the
+full cycle. The <a 
+ id="dx5-23001"></a><span 
+class="aett-12">rep() </span>has an argument that can stop the process early for us. Try
+using the <span 
+class="aett-12">length.out </span>argument as follows
+   <div class="fancyvrb" id="fancyvrb36">  <a 
+ id="x5-23003r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;rep(c(1,2,4),</span><span 
+class="aett-12">&#x00A0;times=3,</span><span 
+class="aett-12">&#x00A0;length.out=8)</span></div>
+<!--l. 226--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb37"> <a 
+ id="x5-23005r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">&#x00A0;1</span><span 
+class="aett-12">&#x00A0;2</span><span 
+class="aett-12">&#x00A0;4</span><span 
+class="aett-12">&#x00A0;1</span><span 
+class="aett-12">&#x00A0;2</span><span 
+class="aett-12">&#x00A0;4</span><span 
+class="aett-12">&#x00A0;1</span><span 
+class="aett-12">&#x00A0;2</span></div>
+<!--l. 232--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">3.9   </span> <a 
+ id="x5-240003.9"></a>Dates and times</h3>
+<!--l. 234--><p class="noindent" >The current time and date can be extracted using the <a 
+ id="dx5-24001"></a><span 
+class="aett-12">date() </span>command but
+this is not an object that can be manipulated &#8212; it is a character string
+only.
+   <div class="fancyvrb" id="fancyvrb38">  <a 
+ id="x5-24003r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;date()</span></div>
+<!--l. 239--><p class="noindent" >
+                                                                          
+
+                                                                          
+   <div class="fancyvrb" id="fancyvrb39"> <a 
+ id="x5-24005r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">&#x00A0;"Wed</span><span 
+class="aett-12">&#x00A0;Jun</span><span 
+class="aett-12">&#x00A0;01</span><span 
+class="aett-12">&#x00A0;18:11:20</span><span 
+class="aett-12">&#x00A0;2016"</span></div>
+<!--l. 242--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb40"> <a 
+ id="x5-24007r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;class(date())</span></div>
+<!--l. 245--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb41"> <a 
+ id="x5-24009r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">&#x00A0;"character"</span></div>
+<!--l. 249--><p class="noindent" >It might be useful to print this information as part of your documentation of an
+analysis. We can come back to an <span 
+class="aess-12">R </span>session at a later time and to keep track of
+when we do things might prove useful. You can see from the output given here the
+exact time and date this document was compiled. This format is not to be
+confused with what we would store or manipulate; it is just a print out of the
+current time and date. The <a 
+ id="dx5-24010"></a><span 
+class="aett-12">Sys.Date() </span>command stores the same information as
+number.
+   <div class="fancyvrb" id="fancyvrb42">  <a 
+ id="x5-24012r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;Sys.Date()</span></div>
+<!--l. 254--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb43"> <a 
+ id="x5-24014r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">&#x00A0;"2016-06-01"</span></div>
+<!--l. 257--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb44"> <a 
+ id="x5-24016r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;class(Sys.Date())</span></div>
+<!--l. 260--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb45"> <a 
+ id="x5-24018r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">&#x00A0;"Date"</span></div>
+<!--l. 265--><p class="indent" >   This print out is different to what needs to happen when we want to store
+numerical values that represent the times and dates particular observations were
+taken. The base distribution of <span 
+class="aess-12">R </span>does not cater for extracting the date and
+time in simple numeric terms. This can be achieved, but is beyond the
+scope of this chapter. It may prove best to store a date using its three
+constituent parts (day, month, and year) as separate numeric variables.
+Times should be stored using 24-hour format and be careful not to use a
+separator between the hour and minute values. Mathematical operations
+should not be done on these variables unless we convert the minutes to
+decimal fractions of an hour. In any situation you should decide what you
+will do with the data before choosing the format you wish to store it
+in.
+<!--l. 267--><p class="indent" >   An example for storing details of months might be useful here.
+                                                                          
+
+                                                                          
+   <div class="fancyvrb" id="fancyvrb46">  <a 
+ id="x5-24020r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;Months</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;as.factor(c(3,6,9,12,3,6,9,12))</span><br class="fancyvrb" /><a 
+ id="x5-24022r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;Months</span></div>
+<!--l. 273--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb47"> <a 
+ id="x5-24024r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">&#x00A0;3</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;6</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;9</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;12</span><span 
+class="aett-12">&#x00A0;3</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;6</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;9</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;12</span><br class="fancyvrb" /><a 
+ id="x5-24026r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Levels:</span><span 
+class="aett-12">&#x00A0;3</span><span 
+class="aett-12">&#x00A0;6</span><span 
+class="aett-12">&#x00A0;9</span><span 
+class="aett-12">&#x00A0;12</span></div>
+<!--l. 278--><p class="noindent" >The <a 
+ id="dx5-24027"></a><span 
+class="aett-12">as.factor() </span>command tells <span 
+class="aess-12">R </span>that these numbers are to be thought of as
+non-numeric data. A <a 
+ id="dx5-24028"></a><span 
+class="aeti-12">factor </span>also has an associated attribute called <span 
+class="aett-12">levels</span>.
+We can edit the levels directly and this will change our entire variable.
+   <div class="fancyvrb" id="fancyvrb48">  <a 
+ id="x5-24030r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;levels(Months)</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;c("Mar",</span><span 
+class="aett-12">&#x00A0;"Jun",</span><span 
+class="aett-12">&#x00A0;"Sep",</span><span 
+class="aett-12">&#x00A0;"Dec")</span><br class="fancyvrb" /><a 
+ id="x5-24032r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;Months</span></div>
+<!--l. 284--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb49"> <a 
+ id="x5-24034r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">&#x00A0;Mar</span><span 
+class="aett-12">&#x00A0;Jun</span><span 
+class="aett-12">&#x00A0;Sep</span><span 
+class="aett-12">&#x00A0;Dec</span><span 
+class="aett-12">&#x00A0;Mar</span><span 
+class="aett-12">&#x00A0;Jun</span><span 
+class="aett-12">&#x00A0;Sep</span><span 
+class="aett-12">&#x00A0;Dec</span><br class="fancyvrb" /><a 
+ id="x5-24036r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Levels:</span><span 
+class="aett-12">&#x00A0;Mar</span><span 
+class="aett-12">&#x00A0;Jun</span><span 
+class="aett-12">&#x00A0;Sep</span><span 
+class="aett-12">&#x00A0;Dec</span></div>
+<!--l. 289--><p class="noindent" >As it happens, we didn&#8217;t need to actually explicitly state the month number
+when the variable was first created, but it is good practice to keep things
+logical!
+<!--l. 291--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">3.10   </span> <a 
+ id="x5-250003.10"></a>Larger data objects</h3>
+<!--l. 293--><p class="noindent" >There are two data object types that are quite similar but not the same. A <a 
+ id="dx5-25001"></a><span 
+class="aeti-12">matrix</span>
+is a two-dimensional array of values of the same type &#8212; numeric, character,
+or logical. A <a 
+ id="dx5-25002"></a><span 
+class="aeti-12">data.frame </span>looks like a matrix but can have variables of
+different types embedded within it. For example, we can create a new
+<a 
+ id="dx5-25003"></a><span 
+class="aeti-12">data.frame </span>by combining the names and human status variables created earlier
+using
+   <div class="fancyvrb" id="fancyvrb50">  <a 
+ id="x5-25005r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;data.frame(Names,</span><span 
+class="aett-12">&#x00A0;Human)</span></div>
+<!--l. 298--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb51"> <a 
+ id="x5-25007r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Names</span><span 
+class="aett-12">&#x00A0;Human</span><br class="fancyvrb" /><a 
+ id="x5-25009r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Jonathan</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;TRUE</span><br class="fancyvrb" /><a 
+ id="x5-25011r3"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;2</span><span 
+class="aett-12">&#x00A0;Elizabeth</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;TRUE</span>
+<br class="fancyvrb" /><a 
+ id="x5-25013r4"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;3</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Peter</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;TRUE</span><br class="fancyvrb" /><a 
+ id="x5-25015r5"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;4</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Jenna</span><span 
+class="aett-12">&#x00A0;FALSE</span><br class="fancyvrb" /><a 
+ id="x5-25017r6"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;5</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Olivia</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;TRUE</span>
+<br class="fancyvrb" /><a 
+ id="x5-25019r7"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;6</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Callum</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;TRUE</span><br class="fancyvrb" /><a 
+ id="x5-25021r8"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;7</span><span 
+class="aett-12">&#x00A0;Annabelle</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;TRUE</span><br class="fancyvrb" /><a 
+ id="x5-25023r9"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;8</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Cordelia</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;TRUE</span></div>
+<!--l. 310--><p class="noindent" >We would usually assign the results of this command to a named object for
+storage.
+   <div class="fancyvrb" id="fancyvrb52">  <a 
+ id="x5-25025r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;MyFirstDF</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;data.frame(Names,</span><span 
+class="aett-12">&#x00A0;Human)</span><br class="fancyvrb" /><a 
+ id="x5-25027r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;str(MyFirstDF)</span></div>
+<!--l. 316--><p class="noindent" >
+                                                                          
+
+                                                                          
+   <div class="fancyvrb" id="fancyvrb53"> <a 
+ id="x5-25029r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#8217;data.frame&#8217;:        8</span><span 
+class="aett-12">&#x00A0;obs.</span><span 
+class="aett-12">&#x00A0;of</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;2</span><span 
+class="aett-12">&#x00A0;variables:</span>
+<br class="fancyvrb" /><a 
+ id="x5-25031r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;$</span><span 
+class="aett-12">&#x00A0;Names:</span><span 
+class="aett-12">&#x00A0;Factor</span><span 
+class="aett-12">&#x00A0;w/</span><span 
+class="aett-12">&#x00A0;8</span><span 
+class="aett-12">&#x00A0;levels</span><span 
+class="aett-12">&#x00A0;"Annabelle","Callum",..:</span><span 
+class="aett-12">&#x00A0;6</span><span 
+class="aett-12">&#x00A0;4</span><span 
+class="aett-12">&#x00A0;8</span><span 
+class="aett-12">&#x00A0;5</span><span 
+class="aett-12">&#x00A0;7</span><span 
+class="aett-12">&#x00A0;2</span><span 
+class="aett-12">&#x00A0;1</span><span 
+class="aett-12">&#x00A0;3</span>
+<br class="fancyvrb" /><a 
+ id="x5-25033r3"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;$</span><span 
+class="aett-12">&#x00A0;Human:</span><span 
+class="aett-12">&#x00A0;logi</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;TRUE</span><span 
+class="aett-12">&#x00A0;TRUE</span><span 
+class="aett-12">&#x00A0;TRUE</span><span 
+class="aett-12">&#x00A0;FALSE</span><span 
+class="aett-12">&#x00A0;TRUE</span><span 
+class="aett-12">&#x00A0;TRUE</span><span 
+class="aett-12">&#x00A0;...</span></div>
+<!--l. 323--><p class="indent" >   Now we can see why we should not confuse <span 
+class="aett-12">names </span>and <span 
+class="aett-12">Names</span>. We can ask for
+the names of the variables in a <a 
+ id="dx5-25034"></a><span 
+class="aeti-12">data.frame </span>using the <a 
+ id="dx5-25035"></a><span 
+class="aett-12">names() </span>command. For
+example
+   <div class="fancyvrb" id="fancyvrb54">  <a 
+ id="x5-25037r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;names(MyFirstDF)</span></div>
+<!--l. 328--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb55"> <a 
+ id="x5-25039r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">&#x00A0;"Names"</span><span 
+class="aett-12">&#x00A0;"Human"</span></div>
+<!--l. 333--><p class="indent" >   We can also now think about how we might extract the fourth name from the
+<a 
+ id="dx5-25040"></a><span 
+class="aeti-12">data.frame </span>because this is the data structure we will work with the most. There
+are several alternatives.
+   <div class="fancyvrb" id="fancyvrb56">  <a 
+ id="x5-25042r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;MyFirstDF[4,1]</span></div>
+<!--l. 338--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb57"> <a 
+ id="x5-25044r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">&#x00A0;Jenna</span><br class="fancyvrb" /><a 
+ id="x5-25046r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;8</span><span 
+class="aett-12">&#x00A0;Levels:</span><span 
+class="aett-12">&#x00A0;Annabelle</span><span 
+class="aett-12">&#x00A0;Callum</span><span 
+class="aett-12">&#x00A0;Cordelia</span><span 
+class="aett-12">&#x00A0;Elizabeth</span><span 
+class="aett-12">&#x00A0;...</span><span 
+class="aett-12">&#x00A0;Peter</span></div>
+<!--l. 342--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb58"> <a 
+ id="x5-25048r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;MyFirstDF[4,"Names"]</span></div>
+<!--l. 345--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb59"> <a 
+ id="x5-25050r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">&#x00A0;Jenna</span><br class="fancyvrb" /><a 
+ id="x5-25052r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;8</span><span 
+class="aett-12">&#x00A0;Levels:</span><span 
+class="aett-12">&#x00A0;Annabelle</span><span 
+class="aett-12">&#x00A0;Callum</span><span 
+class="aett-12">&#x00A0;Cordelia</span><span 
+class="aett-12">&#x00A0;Elizabeth</span><span 
+class="aett-12">&#x00A0;...</span><span 
+class="aett-12">&#x00A0;Peter</span></div>
+<!--l. 349--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb60"> <a 
+ id="x5-25054r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;MyFirstDF$Names[4]</span></div>
+<!--l. 352--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb61"> <a 
+ id="x5-25056r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">&#x00A0;Jenna</span><br class="fancyvrb" /><a 
+ id="x5-25058r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;8</span><span 
+class="aett-12">&#x00A0;Levels:</span><span 
+class="aett-12">&#x00A0;Annabelle</span><span 
+class="aett-12">&#x00A0;Callum</span><span 
+class="aett-12">&#x00A0;Cordelia</span><span 
+class="aett-12">&#x00A0;Elizabeth</span><span 
+class="aett-12">&#x00A0;...</span><span 
+class="aett-12">&#x00A0;Peter</span></div>
+<!--l. 358--><p class="indent" >   Notice that as well as the result we wanted, <span 
+class="aess-12">R </span>has also printed the levels of the
+<span 
+class="aett-12">Names </span>variable. This is because this variable has been determined to be a
+factor.
+                                                                          
+
+                                                                          
+<!--l. 362--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">3.11   </span> <a 
+ id="x5-260003.11"></a>Appropriate data labelling</h3>
+<!--l. 364--><p class="noindent" >The construction of our first data.frame is slightly flawed. If the <span 
+class="aett-12">MyFirstDF </span>data
+was going to be for all those beings I am in contact with, the details should be
+related to the individual concerned. In this situation, allowing the <span 
+class="aett-12">Names </span>object to
+be data rather than a label was probably not the wisest move. Let&#8217;s say that we
+want the year and month of birth for the individuals in the example, and that
+they should form a new <a 
+ id="dx5-26001"></a><span 
+class="aeti-12">data.frame</span>.
+   <div class="fancyvrb" id="fancyvrb62">  <a 
+ id="x5-26003r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;Year</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;c(1971,</span><span 
+class="aett-12">&#x00A0;1945,</span><span 
+class="aett-12">&#x00A0;1925,</span><span 
+class="aett-12">&#x00A0;2003,</span><span 
+class="aett-12">&#x00A0;1982,</span><span 
+class="aett-12">&#x00A0;2010,</span><span 
+class="aett-12">&#x00A0;2012,</span><span 
+class="aett-12">&#x00A0;2013)</span>
+<br class="fancyvrb" /><a 
+ id="x5-26005r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;Month</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;c("October",</span><span 
+class="aett-12">&#x00A0;"October",</span><span 
+class="aett-12">&#x00A0;"July",</span><span 
+class="aett-12">&#x00A0;"October",</span><span 
+class="aett-12">&#x00A0;"December",</span><span 
+class="aett-12">&#x00A0;"April",</span><span 
+class="aett-12">&#x00A0;"June",</span><span 
+class="aett-12">&#x00A0;"June")</span>
+<br class="fancyvrb" /><a 
+ id="x5-26007r3"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;MySecondDF</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;data.frame(Year,</span><span 
+class="aett-12">&#x00A0;Month,</span><span 
+class="aett-12">&#x00A0;Human,</span><span 
+class="aett-12">&#x00A0;row.names</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;Names)</span><br class="fancyvrb" /><a 
+ id="x5-26009r4"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;str(MySecondDF)</span></div>
+<!--l. 372--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb63"> <a 
+ id="x5-26011r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#8217;data.frame&#8217;:        8</span><span 
+class="aett-12">&#x00A0;obs.</span><span 
+class="aett-12">&#x00A0;of</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;3</span><span 
+class="aett-12">&#x00A0;variables:</span>
+<br class="fancyvrb" /><a 
+ id="x5-26013r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;$</span><span 
+class="aett-12">&#x00A0;Year</span><span 
+class="aett-12">&#x00A0;:</span><span 
+class="aett-12">&#x00A0;num</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1971</span><span 
+class="aett-12">&#x00A0;1945</span><span 
+class="aett-12">&#x00A0;1925</span><span 
+class="aett-12">&#x00A0;2003</span><span 
+class="aett-12">&#x00A0;1982</span><span 
+class="aett-12">&#x00A0;...</span>
+<br class="fancyvrb" /><a 
+ id="x5-26015r3"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;$</span><span 
+class="aett-12">&#x00A0;Month:</span><span 
+class="aett-12">&#x00A0;Factor</span><span 
+class="aett-12">&#x00A0;w/</span><span 
+class="aett-12">&#x00A0;5</span><span 
+class="aett-12">&#x00A0;levels</span><span 
+class="aett-12">&#x00A0;"April","December",..:</span><span 
+class="aett-12">&#x00A0;5</span><span 
+class="aett-12">&#x00A0;5</span><span 
+class="aett-12">&#x00A0;3</span><span 
+class="aett-12">&#x00A0;5</span><span 
+class="aett-12">&#x00A0;2</span><span 
+class="aett-12">&#x00A0;1</span><span 
+class="aett-12">&#x00A0;4</span><span 
+class="aett-12">&#x00A0;4</span>
+<br class="fancyvrb" /><a 
+ id="x5-26017r4"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;$</span><span 
+class="aett-12">&#x00A0;Human:</span><span 
+class="aett-12">&#x00A0;logi</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;TRUE</span><span 
+class="aett-12">&#x00A0;TRUE</span><span 
+class="aett-12">&#x00A0;TRUE</span><span 
+class="aett-12">&#x00A0;FALSE</span><span 
+class="aett-12">&#x00A0;TRUE</span><span 
+class="aett-12">&#x00A0;TRUE</span><span 
+class="aett-12">&#x00A0;...</span></div>
+<!--l. 380--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">3.12   </span> <a 
+ id="x5-270003.12"></a>Other approaches</h3>
+<!--l. 382--><p class="noindent" >Data entry is tedious. Efficiency is therefore an important weapon in your
+armoury. When we plan experiments we are often interested in obtaining an
+observation (or multiple observations) for every combination of some factors.
+In this simple example, imagine there are three experimental factors,
+given the names H, W, and Sex, and that each factor can take either of
+two levels. The <a 
+ id="dx5-27001"></a><span 
+class="aett-12">expand.grid() </span>command is a useful way to construct a
+<a 
+ id="dx5-27002"></a><span 
+class="aeti-12">data.frame</span>.
+   <div class="fancyvrb" id="fancyvrb64">  <a 
+ id="x5-27004r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;MyThirdDF</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;expand.grid(h=c(60,80),</span><span 
+class="aett-12">&#x00A0;w=c(100,</span><span 
+class="aett-12">&#x00A0;300),</span><span 
+class="aett-12">&#x00A0;sex=c("Male",</span><span 
+class="aett-12">&#x00A0;"Female"))</span>
+<br class="fancyvrb" /><a 
+ id="x5-27006r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;MyThirdDF</span></div>
+<!--l. 388--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb65"> <a 
+ id="x5-27008r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;h</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;w</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;sex</span><br class="fancyvrb" /><a 
+ id="x5-27010r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1</span><span 
+class="aett-12">&#x00A0;60</span><span 
+class="aett-12">&#x00A0;100</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Male</span><br class="fancyvrb" /><a 
+ id="x5-27012r3"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;2</span><span 
+class="aett-12">&#x00A0;80</span><span 
+class="aett-12">&#x00A0;100</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Male</span><br class="fancyvrb" /><a 
+ id="x5-27014r4"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;3</span><span 
+class="aett-12">&#x00A0;60</span><span 
+class="aett-12">&#x00A0;300</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Male</span>
+<br class="fancyvrb" /><a 
+ id="x5-27016r5"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;4</span><span 
+class="aett-12">&#x00A0;80</span><span 
+class="aett-12">&#x00A0;300</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Male</span><br class="fancyvrb" /><a 
+ id="x5-27018r6"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;5</span><span 
+class="aett-12">&#x00A0;60</span><span 
+class="aett-12">&#x00A0;100</span><span 
+class="aett-12">&#x00A0;Female</span><br class="fancyvrb" /><a 
+ id="x5-27020r7"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;6</span><span 
+class="aett-12">&#x00A0;80</span><span 
+class="aett-12">&#x00A0;100</span><span 
+class="aett-12">&#x00A0;Female</span><br class="fancyvrb" /><a 
+ id="x5-27022r8"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;7</span><span 
+class="aett-12">&#x00A0;60</span><span 
+class="aett-12">&#x00A0;300</span><span 
+class="aett-12">&#x00A0;Female</span><br class="fancyvrb" /><a 
+ id="x5-27024r9"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;8</span><span 
+class="aett-12">&#x00A0;80</span><span 
+class="aett-12">&#x00A0;300</span><span 
+class="aett-12">&#x00A0;Female</span></div>
+<!--l. 401--><p class="indent" >   I&#8217;ve used a full printout of the resulting <a 
+ id="dx5-27025"></a><span 
+class="aeti-12">data.frame </span>instead of using the <a 
+ id="dx5-27026"></a><span 
+class="aett-12">str()</span>
+command to show what <span 
+class="aess-12">R </span>has created because the <a 
+ id="dx5-27027"></a><span 
+class="aett-12">str() </span>command gives
+additional information that we do not require at this point.
+                                                                          
+
+                                                                          
+<!--l. 403--><p class="indent" >   Let&#8217;s say we wish to add a new variable to this <a 
+ id="dx5-27028"></a><span 
+class="aeti-12">data.frame</span>; a task
+common when designing an experiment. We can use the $ notation shown
+earlier in a new way. We add a set of eight random values extracted from a
+standard normal distribution here as an illustration using the <a 
+ id="dx5-27029"></a><span 
+class="aett-12">rnorm()</span>
+function.
+   <div class="fancyvrb" id="fancyvrb66">  <a 
+ id="x5-27031r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;MyThirdDF$Response</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;rnorm(8)</span><br class="fancyvrb" /><a 
+ id="x5-27033r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;MyThirdDF</span></div>
+<!--l. 409--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb67"> <a 
+ id="x5-27035r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;h</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;w</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;sex</span><span 
+class="aett-12">&#x00A0;Response</span><br class="fancyvrb" /><a 
+ id="x5-27037r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1</span><span 
+class="aett-12">&#x00A0;60</span><span 
+class="aett-12">&#x00A0;100</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Male</span><span 
+class="aett-12">&#x00A0;-0.53954</span><br class="fancyvrb" /><a 
+ id="x5-27039r3"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;2</span><span 
+class="aett-12">&#x00A0;80</span><span 
+class="aett-12">&#x00A0;100</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Male</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.09504</span>
+<br class="fancyvrb" /><a 
+ id="x5-27041r4"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;3</span><span 
+class="aett-12">&#x00A0;60</span><span 
+class="aett-12">&#x00A0;300</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Male</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.16238</span><br class="fancyvrb" /><a 
+ id="x5-27043r5"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;4</span><span 
+class="aett-12">&#x00A0;80</span><span 
+class="aett-12">&#x00A0;300</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Male</span><span 
+class="aett-12">&#x00A0;-0.40040</span><br class="fancyvrb" /><a 
+ id="x5-27045r6"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;5</span><span 
+class="aett-12">&#x00A0;60</span><span 
+class="aett-12">&#x00A0;100</span><span 
+class="aett-12">&#x00A0;Female</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.07082</span>
+<br class="fancyvrb" /><a 
+ id="x5-27047r7"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;6</span><span 
+class="aett-12">&#x00A0;80</span><span 
+class="aett-12">&#x00A0;100</span><span 
+class="aett-12">&#x00A0;Female</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.06128</span><br class="fancyvrb" /><a 
+ id="x5-27049r8"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;7</span><span 
+class="aett-12">&#x00A0;60</span><span 
+class="aett-12">&#x00A0;300</span><span 
+class="aett-12">&#x00A0;Female</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.22646</span><br class="fancyvrb" /><a 
+ id="x5-27051r9"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;8</span><span 
+class="aett-12">&#x00A0;80</span><span 
+class="aett-12">&#x00A0;300</span><span 
+class="aett-12">&#x00A0;Female</span><span 
+class="aett-12">&#x00A0;-0.66805</span></div>
+<!--l. 422--><p class="indent" >   I like to create random data when planning an analysis. In this instance, the
+data are normally distributed which is not particularly important, but they are
+random which is important. There are many other functions that generate
+random data from other distributions; by convention, these functions all
+start with a letter &#8220;r" followed by a shortened form of the distribution&#8217;s
+name.
+<!--l. 424--><p class="indent" >   I do this because data that will be collected should be appropriate for the
+intended analysis to be conducted, and likewise the analysis should reflect the way
+data were collected. Creation of the random data means I can write the <span 
+class="aess-12">R</span>
+commands that will generate the analysis, and once I have checked that the
+analysis is possible, I can then collect the data. When the data has been collected,
+I can then re-process the commands using the real data instead of the
+random data. This can save time during the analysis but more importantly,
+I can be confident that the data collection and analysis were planned
+well.
+                                                                          
+
+                                                                          
+   <!--l. 1--><div class="crosslinks"><p class="noindent">[<a 
+href="LURNch4.html" >next</a>] [<a 
+href="LURNch2.html" >prev</a>] [<a 
+href="LURNch2.html#tailLURNch2.html" >prev-tail</a>] [<a 
+href="LURNch3.html" >front</a>] [<a 
+href="LURN.html#LURNch3.html" >up</a>] </p></div>
+<!--l. 1--><p class="indent" >   <a 
+ id="tailLURNch3.html"></a>   
+</body></html> 

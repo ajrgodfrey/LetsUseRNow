@@ -1,0 +1,3 @@
+<<loadDPlyR>>= 
+library(dplyr) 
+@ 

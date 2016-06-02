@@ -1,0 +1,5 @@
+<<Sorting>>= 
+x=round(rnorm(10),2) 
+sort(x) 
+sort(x, decreasing=TRUE) 
+@ 

@@ -1,0 +1,3 @@
+<<SineCurve>>= 
+MySine <- function(x){ sin(x)} 
+@ 

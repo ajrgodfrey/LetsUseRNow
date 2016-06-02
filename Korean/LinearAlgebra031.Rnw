@@ -1,0 +1,4 @@
+ 
+\section{Determinants and traces} 
+ 
+The \Rcmd{det} command is used for finding the determinant of a matrix. 

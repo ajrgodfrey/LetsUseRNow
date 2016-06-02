@@ -1,0 +1,4 @@
+<<NormPlot>>= 
+qqnorm(Wind) 
+qqline(Wind) 
+@ 

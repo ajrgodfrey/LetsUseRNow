@@ -1,0 +1,3 @@
+ 
+The \Rpkg{dplyr}  package is under active development and so we should expect more functionality to become available, but there is also work being done to make the processing of data even faster so that it can handle huge data sets. 
+ 

@@ -1,0 +1,5 @@
+<<FindHottestMonths>>= 
+Grouped = group_by(airquality, Month) 
+Summarised = summarise(Grouped, AveTemp=mean(Temp, na.rm = TRUE)) 
+arrange(Summarised, desc(AveTemp)) 
+@ 

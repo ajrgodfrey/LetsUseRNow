@@ -1,0 +1,3 @@
+The \Rcmd{glimpse} command works on a \Rclass{data.frame} or the new structure called a \Rclass{tbl\_df} equally well. 
+  
+The \Rcmd{filter} and \Rcmd{arrange} commands make many of the examples seen earlier in this chapter much easier. The \Rcmd{filter} command is for extraction, while \Rcmd{arrange} is for rearrangement. For example, 

@@ -1,0 +1,10 @@
+\SVGLink{ComplexGraphsQuakesPlaces-1} 
+\end{center} 
+\end{exhibit} 
+Notice that the four commands used to add the four extra lines state the horizontal or vertical placement with a single letter, and that the line type has been chosen in three instances. It turns out that line type~1 (a solid line) is the default. More types do exist but those given are the most commonly chosen. The thickness of the lines can be altered also, using the \Rarg{lwd} argument. The default line width is 1. 
+ 
+It is also possible to add a straight line that is niether vertical or horizontal using the \Rcmd{abline} command. To achieve this we need to know the slope and intercept of the line. This is the form of this command used when we added the fitted line for a simple linear regression model to the plot in Section~\ref{AddFittedLine}. The plotted line will have the equation $y=a+bx$ and we need only supply the values of $a$ and $b$ to the \Rcmd{abline} command. Exhibit~\ref{} shows an example using the  
+ 
+\section{Adding a curve to a graph} 
+ 
+Use of \Rcmd{abline} is great if you have a straight line to add to a plot, but as soon as the line needs to be curved the problems begin. We will see that it isn't actually too difficult if we use the \Rcmd{curve} command. First, we add a curve representing the normal probability density function to a histogram of random values. 

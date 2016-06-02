@@ -1,0 +1,68 @@
+% chickwts data for one way
+% cabbages from MASS package for two way
+%\setcounter{chapter}{}
+\chapter{LURN\ldots{} To Perform Analyses of Variance (ANOVA)}
+\label{ANOVA}
+
+
+
+
+This chapter explains the basic use of the Analysis of variance (ANOVA) model for analyzing appropriate data. This is commonly (but not always) obtained through experimentation. To truly learn about the appropriate analysis of experimental data you will need to consult a suitable textbook on experimental design.
+
+As there are insufficient data sets in the \Rpackage{datasets} package, the examples in this chapter draw on data supplied with the \Rpackage{MASS} package. This package supports a very famous resource by Venables and Riply, often abbreviated to V\&R. The full reference is:
+
+Venables, W.N. and Ripley, B.D. (1999) {\it Modern Applied Statistics with S-PLUS.} Third Edition. Springer. 
+
+This book is very useful for many topics in statistics and given the similarity of the syntax between S-PLUS and \R{}, remains a good resource for users of \R{} today.
+
+
+
+\section{Data and suitable exploratory graphs}
+
+The data used to fit models discussed in this chapter require a single response variable which is assumed continuous, and one or more explanatory variables that are discrete valued. More specifically, these explanatory variables are called \stress{factors}; in an experiment, each observation takes a preplanned \stressind{level} for each \stressind{factor} under consideration.
+
+\section{One-way ANOVA}
+
+\section{Model validation using diagnostic plots}
+
+Readers should note that the same code was used to generate the residual analysis plots as would be done for a linear regression model. Note that the \Rcmd{plot} command is sensitive to the type of object being used, and that the set of residual graphs is therefore different to those created for an \Rclass{lm} object.
+
+\section{Two-way ANOVA}
+
+There are two different situations where a two-way analysis of variance is called for. First, a simple randomized complete block design and second, a factorial experiment with two factors.
+
+\subsection{Randomized complete block designs}
+\label{RCBAnalysis}
+
+We use the \Robject{sleep} data used to show the analysis of paired data in Section\ref{PairedSamplesTTest}, which has two measurements on ten individuals. As the two observations on each person are often thought to be related, we use the known structure of the experiment's design to incorporate this knowledge. The individual people are therefore thought of as a blocking variable. Rather than using the \Rcmd{attach} command, we employ the \Rargument{data} argument inside the \Rcmd{aov} command. As before, we use the \Rcmd{summary} method to present the analysis:
+\begin{Schunk}
+\begin{Sinput}
+> summary(aov(extra~ID+group, data=sleep))
+\end{Sinput}
+\begin{Soutput}
+            Df Sum Sq Mean Sq F value Pr(>F)   
+ID           9   58.1    6.45    8.53 0.0019 **
+group        1   12.5   12.48   16.50 0.0028 **
+Residuals    9    6.8    0.76                  
+---
+Signif. codes:  
+0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+\end{Soutput}
+\end{Schunk}
+
+The \Robject{group} variable is the treatment variable for this data set. Note that (depending on the level of significance required) leaving the \Robject{ID} variable out of the analysis could lead to a different conclusion for this experiment. The above analysis shows that there were differences among the ten individuals as well as a significant difference between the two treatments.
+
+
+\subsection{Factorial design with two factors}
+
+
+
+\subsection{Graphing the results for an experiment with two factors}
+
+\subsection{What is an interaction?}
+
+\subsection{Two-way ANOVA with no interaction}
+
+\subsection{Two-way ANOVA with an interaction}
+
+

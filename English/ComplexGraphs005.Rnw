@@ -1,0 +1,16 @@
+\SVGLink{ComplexGraphsHists12Z-1} 
+\end{center} 
+\end{exhibit} 
+ 
+\section{Allowing different sized graphs to be included in a single window} 
+ 
+The \Rcmd{layout} command is very powerful, but can be a nightmare to sort out. Before demonstrating how to implemet the command, I need to show you what is possible by explaining how to think about the way the command works. 
+ 
+Regardless of the size and shape of the particular graphs and how you want them arranged, you need to think of the graphing winow as a rectangle that can be split into any number of rows and columns. The shape of the sections of the window are dependent on the number of rows and columns of course so for the time being let's work with a 4$\times$4 grid. This means the 16 sections are the same shape as the overall window. 
+ 
+We tell the \Rcmd{layout} command how to use up the sections by giving each section a label. The sections that get used for the first graph will be given a ``1", sections for the second graph get a ``2" and so on. For illustration, let's use up nine of the 16 sections for a large graph (a scatter plot), and place three smaller ones down the side of it; below those, we will add a pair of boxplots which each need two sections of the window. 
+ 
+The \Rcmd{layout} command needs to interpret these labels as a matrix. It would probably help to write out what you want for the arrangement, create the matrix of labels, check that the two agree, and then worry about the code for the various graphs. So for my description, I want a 4$\times$4 matrix, with a total of six different numbers in it. Nine of them will be ones, a two, a three, a four, two fives, and two sixes. They will be laid out as follows: 
+$$\begin{array}{cccc} 1&1&1&2\\ 1&1&1&3\\ 1&1&1&4\\ 5&5&6&6\\ \end{array}$$ 
+ 
+Getting this matrix in \R{} means identifying its contents, naming exactly how many rows or columns are needed and how to insert the values into the defined structure. We use the \Rcmd{matrix} command to create the object for our arrangement, and the \Rcmd{c} command to combine the labels into a single object. Arguments to the \Rcmd{matrix} command we need are either the \Rarg{nrow} or \Rarg{ncol} (one will do) and the \Rarg{byrow} switch that tells the \Rcmd{matrix} command to fill up the matrix by row until it is full. 

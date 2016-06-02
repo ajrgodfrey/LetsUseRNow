@@ -1,0 +1,3 @@
+<<ImportCSVSubFolder1, eval=FALSE>>= 
+Chickens = read.csv("MyData/chickens.csv") 
+@ 

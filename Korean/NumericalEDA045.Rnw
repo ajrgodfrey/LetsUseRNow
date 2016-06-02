@@ -1,0 +1,2 @@
+ 
+We could use other functions seen in this chapter for alternative summary statistics within these functions. A common task is to check on how much data we have for each group of interest. We could use \Rcmd{summarise} and \Rcmd{length} to count up the data, but the \Rpkg{dplyr} package gives us the \Rcmd{count} function to make this even more efficient. 

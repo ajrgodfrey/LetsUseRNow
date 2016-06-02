@@ -1,0 +1,6 @@
+<<PartNZ, fig.width=10.1, fig.height=5.7>>= 
+map("nzHires", ylim=c(-42,-39), xlim=c(172,179), fill=T, col=3) 
+box() 
+map.cities(minpop=70000,maxpop=80000, pch=16, col=2, cex=2) 
+map.cities(capitals=1, col=4, pch=19) 
+@ 

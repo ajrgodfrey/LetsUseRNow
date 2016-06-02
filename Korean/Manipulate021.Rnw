@@ -1,0 +1,8 @@
+ 
+ 
+\section{Use of dplyr for data manipulation} 
+\label{DPlyRDataManipulation} 
+ 
+The \Rpkg{dplyr} package is an alternative to the basic \R{} functionality shown in this chapter. The package creator (Hadley Wickham) wants his package to make data manipulation easier for the end-user, and more fficient with respect to computation time. He has simplified data manipulations to a small set of commands: \Rcmd{filter}, \Rcmd{arrange}, \Rcmd{sample\_n}, \Rcmd{sample\_frac}, \Rcmd{mutate}, and \Rcmd{transmute} are discussed here, while the others will be discussed in Section~\ref{DPlyRDataSummarisation}  where they are more relevant. 
+ 
+You'll need to install the package (see Section~\ref{InstallPackages} for instructions) before running the function 

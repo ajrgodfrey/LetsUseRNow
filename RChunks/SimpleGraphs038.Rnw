@@ -1,0 +1,3 @@
+<<StateRegionBarChart2>>= 
+barplot(summary(state.region)) 
+@ 

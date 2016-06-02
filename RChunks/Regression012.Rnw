@@ -1,0 +1,5 @@
+<<OzoneTempWithLine>>= 
+plot(Temp, Ozone) 
+abline(Ozone.lm2) 
+detach(airquality) 
+@ 

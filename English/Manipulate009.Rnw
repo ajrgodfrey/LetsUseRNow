@@ -1,0 +1,2 @@
+ 
+The \Rcmd{order} command can prove a useful method of re-ordering experimental data if the run order has been stored as a variable. To illustrate this point we create a \Rclass{data.frame} with two elements. 

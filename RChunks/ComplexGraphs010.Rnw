@@ -1,0 +1,5 @@
+<<IrisInColour>>= 
+attach(iris) 
+plot(Sepal.Length~Sepal.Width, xlab="Sepal width", ylab="Sepal length", col=Species) 
+detach(iris) 
+@ 

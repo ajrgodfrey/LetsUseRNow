@@ -1,0 +1,6 @@
+ 
+\section{Decomposition into seasonal and trend components} 
+ 
+The basic idea of the decompositions presented in this section is to explain the observed time series values $y_t$ in terms of a trend $T_t$, a seasonal component $S_t$ and residual error. 
+ 
+Obviously we need a series that has a seasonal component such as the Australian resident numbers measured quarterly from  1971 to 1994. 

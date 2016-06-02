@@ -1,0 +1,3 @@
+<<getAustResData>>= 
+str(austres) 
+@ 

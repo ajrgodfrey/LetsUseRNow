@@ -1,0 +1,3 @@
+creates a matrix with elements based on simple multiplication of the paired elements, not those based on proper matrix multiplication. 
+ 
+If we want to multiply two matrices, the order is important. 

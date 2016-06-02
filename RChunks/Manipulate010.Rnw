@@ -1,0 +1,5 @@
+<<Ordering3>>= 
+x=round(rnorm(10),2) 
+x 
+RunOrder=sample(10) 
+@ 

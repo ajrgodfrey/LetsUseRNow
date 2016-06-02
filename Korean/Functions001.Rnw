@@ -1,0 +1,5 @@
+% for loop variables are retained for later use. 
+%\setcounter{chapter}{} 
+\chapter{LURN\ldots{} To write functions to do what you want} 
+\label{Functions} 
+ 

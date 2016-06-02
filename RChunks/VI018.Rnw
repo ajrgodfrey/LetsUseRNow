@@ -1,0 +1,3 @@
+<<VIDotplot>>= 
+VI(dotplot(x)) 
+@ 

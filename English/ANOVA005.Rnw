@@ -1,0 +1,16 @@
+ 
+The \Robject{group} variable is the treatment variable for this data set. Note that (depending on the level of significance required) leaving the \Robject{ID} variable out of the analysis could lead to a different conclusion for this experiment. The above analysis shows that there were differences among the ten individuals as well as a significant difference between the two treatments. 
+ 
+ 
+\subsection{Factorial design with two factors} 
+ 
+ 
+ 
+\subsection{Graphing the results for an experiment with two factors} 
+ 
+\subsection{What is an interaction?} 
+ 
+\subsection{Two-way ANOVA with no interaction} 
+ 
+\subsection{Two-way ANOVA with an interaction} 
+ 

@@ -1,0 +1,16 @@
+ 
+Multiple regression models can be checked using the approaches described in Section~\ref{RegValid} above, but it may also prove useful to plot residuals from the current model against each current and potential predictor variable in the data set. 
+ 
+\section{Indicator variables} 
+ 
+When working with a variable that can take one of two values, such as gender, many statistical packages need the user to create an indicator variable if this effect is to be incorporated into a regression model. 
+ 
+An indicator variable takes the values zero or one, where a ``1" indicates one of the two possible values. Normally, the software will create an indicator for each of the values of the original variable, and when the original variable takes three levels, three indicator variables are made.  
+ 
+The advantage of the indicator is that the model fitted has a coefficient for the indicator variable that reflects the constant difference between the two groups within the data implied by the original variable. 
+ 
+\R{} does not need explicit creation of indicator variables as it will see the form of the variable and create indicator variables in the background. The output for an indicator variable in the regression summary is only ever so slightly different in that you will see \code{GenderM} where you might have thought to see just \code{Gender}. This is because \R{} tells you that the indicator variable created, and therefore the coefficient printed in the output, is for the Male level of Gender. For reasons not explained here, you will not see both \code{GenderF} and \code{GenderM} in the output unless you explicitly ask \R{} not to fit the intercept term. 
+ 
+As an example, 
+%% bits missing 
+ 

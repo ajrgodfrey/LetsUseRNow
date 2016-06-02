@@ -1,0 +1,3 @@
+<<SummaryDF>>= 
+summary(airquality) 
+@ 

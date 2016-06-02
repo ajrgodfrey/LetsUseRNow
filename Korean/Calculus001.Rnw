@@ -1,0 +1,7 @@
+% simplify, substitute factorise etc. 
+% uniroot 
+ 
+%\setcounter{chapter}{} 
+\chapter{LURN\ldots{} To Use R for Basic Calculus Tasks} 
+\label{Calculus} 
+ 

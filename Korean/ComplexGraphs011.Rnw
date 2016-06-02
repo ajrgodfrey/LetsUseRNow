@@ -1,0 +1,8 @@
+\SVGLink{ComplexGraphsIrisInColour-1} 
+\end{center} 
+\end{exhibit} 
+ 
+\begin{exhibit} 
+\begin{center} 
+\caption{} 
+\label{IrisInSymbols} 

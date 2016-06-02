@@ -1,0 +1,7 @@
+\SVGLink{SimpleGraphsLinePlot-1} 
+\end{center} 
+\end{exhibit} 
+\begin{exhibit} 
+\begin{center} 
+\caption{Line plot of the maximum daily temperatures from 1 May to 30 September 1973, measured in degrees Fahrenheit, at LaGuardia Airport. Data were obtained from the \Robject{air quality} data set.} 
+\label{AirQualityLinePlotTemp2} 

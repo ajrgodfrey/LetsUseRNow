@@ -1,0 +1,20 @@
+ 
+This chapter covers the methods required to pull data from external sources into \R{}. If you want to create data within \R{}, you should be reading Chapter~\ref{DataEntry}. 
+ 
+\section{Data from external files} 
+ 
+While I prefer to use files extracted from EXCEL with comma delimited values, \R{} handles many common formats such as plain text files with space or tab delimiters. You need to know what format a file is, probably by opening it and actually seeing if it is as you expect. It is too easy to rename a file with various extensions which may have meanings in your operating system that have little relevance to \R{}. A specific case in point is when you are presented with a file having the \file{txt} extension, which is commonly assumed to be a text file. We need to know if the first line of information in the file is actual data or the headings for the columns of data. We also need to know what symbol is used to separate the columns of the data; spaces, commas, or tabs are the most common options. Each of these options has a distinct \R{} command associated with it, but all of these commands link back to the same \Rcmd{read.table} command. 
+ 
+The various commands are as follows 
+\begin{center} \begin{tabular}{lll} 
+\hline\hline 
+Delimiter&\R{} command&Common Extensions\\ \hline 
+space&\Rcmd{read.table}&DAT, TXT\\ 
+tab&\Rcmd{read.delim}&TXT\\ 
+comma&\Rcmd{read.csv}&CSV, TXT\\ 
+\hline\hline 
+\end{tabular} \end{center} 
+ 
+Note that the \file{txt} extension appears as possible extensions for all delimiter types. \R{} will not assume any extension for these commands. You will need to explicitly state the full filename including extension when using these commands. Some extensions will have a default program associated with them by your operating system. For example, \file{txt} files will be opened in \file{Notepad} under Windows, and if Microsoft Office is installed on your machine, a \file{csv} file will be opened in Microsoft EXCEL. 
+ 
+To import a comma delimited file called \file{chickens.csv}, you would issue the following command 

@@ -1,0 +1,11 @@
+ 
+This chapter explains how to rearrange your data to meet your needs. Basic sorting, data extraction and re-combination are discussed. 
+ 
+To get the most of this chapter, you should have worked through Chapter~\ref{DataEntry} on entering data manually. You do not need to have completely read through Chapter~\ref{ImportData} on importing data as the examples here do not rely on its content. Ultimately, you will want to use the material in Chapter~\ref{ImportData} in conjunction with what follows here. 
+ 
+ 
+This chapter starts using the functionality that is built into \R{}, but we also take a look at an add-on package called \Rpkg{dplyr} that is becomeing more and more commonly used. 
+ 
+\section{Sorting the data into a different order} 
+ 
+The \Rcmd{sort} command is illustrated in this section. It works for sorting a single vector of numeric values into ascending or descending order. 

@@ -1,0 +1,21 @@
+\SVGLink{SimpleGraphsLinePlot2-1} 
+\end{center} 
+\end{exhibit} 
+ 
+%%default is points and lines are wanted. explain 
+ 
+Notice that we have altered the range of values covered by the $y$-axis using a specific command. The \Rarg{ylim} has a corresponding \Rarg{xlim} to create limits for the $x$-axis. Adding one more argument to the \Rcmd{plot} command will change the plotting from points to lines (shown in Exhibit~\ref{AirQualityLinePlotTemp2}). Combinations of points and lines can be obtained (not shown); the user can also alter the style of the points and lines being printed. 
+ 
+There is a simpler way to generate time series plots which we demonstrate in Chapter~\ref{TimeSeries}. It is easier to augment this line plot than the time series plot and in so doing, we will gain an insight into how other plots like the time series plot are created. 
+ 
+ 
+\section{Quantile-quantile plots} 
+ 
+The most common quantile-quantile plot we might wish to create is used to investigate the usefulness of the normal distribution to model a variable's distribution. Normal quantiles are created automatically for the normal quantile plot when it is generated using the \Rcmd{qqnorm} command. The default plot for this is shown in Exhibit~\ref{AirQualityNormPlotWind}. 
+ 
+If these data were normally distributed, the points on the plot would lie on a straight line. The \Rcmd{qqline} command adds the straight line to the plot to assist with determining the linearity of the points. 
+ 
+\begin{exhibit} 
+\begin{center} 
+\caption{Normal probability plot of the Average wind speed in miles per hour at 0700 and 1000 hours at LaGuardia Airport. Obtained from the \Robject{air quality} data set.} 
+\label{AirQualityNormPlotWind} 

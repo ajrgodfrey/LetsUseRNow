@@ -1,0 +1,5 @@
+<<MapsPackage>>= 
+library(maps) 
+library(mapdata) 
+library(ggmap) 
+@ 

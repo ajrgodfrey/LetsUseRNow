@@ -1,0 +1,5 @@
+<<BasicTrig>>= 
+pi 
+sin(pi/6) 
+sin(30) 
+@ 

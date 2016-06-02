@@ -1,0 +1,2 @@
+ 
+For matrices that are not square, a generalised inverse can be found using the \Rcmd{ginv} command found in the \Rpackage{MASS} package that is part of the standard \R{} distribution. 

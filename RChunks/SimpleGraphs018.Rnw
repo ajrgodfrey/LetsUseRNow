@@ -1,0 +1,3 @@
+<<LinePlot>>= 
+plot(Temp, ylim=c(50,100)) 
+@ 

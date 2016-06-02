@@ -1,0 +1,15 @@
+ 
+I've used version \Sexpr{packageVersion("qcc")} of the \Rpkg{qcc} package for the work in this chapter. Please note that other packages have been developed that will also produce control charts and other quality improvement analyses. 
+ 
+ 
+\section{Data} 
+ 
+\section{Monitoring a process mean} 
+ 
+\section{Monitoring process variance} 
+ 
+\section{Monitoring a process using proportions} 
+ 
+ 
+\section{Monitoring a process using count data} 
+ 

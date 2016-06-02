@@ -1,0 +1,4 @@
+<<setup, include=FALSE>>= 
+opts_chunk$set(fig.path='figures/KeepUseful', comment=NA, dev=c('pdf','postscript','svg'), prompt=T, out.width="0.7\\textwidth") 
+source("GenericSettings.R") 
+@ 

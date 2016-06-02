@@ -1,0 +1,26 @@
+\SVGLink{SimpleGraphsHistAirQualityWind-1} 
+\end{center} 
+\end{exhibit} 
+ 
+Variable names should be informative but aren't always what we want to see in graphs. Notice that in Exhibit~\ref{AirQualityHistWind2}, I've made the x-axis label more informative by indicating the units of measurement for the wind speed. As I already have a caption for my Exhibit, I have chosen to remove the default title by adding the argument \code{main=""} to the \Rcmd{hist} command. 
+ 
+Aside from the alteration of the default axis label and the change in the main title for our histograms, we could make quite a number of changes. The \Rcmd{hist} function allows the user various options for the way the bars are filled in for example. It's often worth checking the default behaviour and then seeing if the resulting graph is what you want. If it isn't, then investigate your options by looking at the relevant help file; in this case type \code{?hist} to get to the help for the \Rcmd{hist} function. 
+ 
+ Other graphs we create will show points marked with small hollow circles; we may wish to make these circles smaller, joined by line segments, filled in, a different colour or combinations of all of these attributes. The \Rcmd{par} function should be investigated to find out what is possible. Most graph functions allow the user the option of adding arguments that will be passed directly to the \Rcmd{par} function to obtain the same behaviour. Investigate the graphical parameters at some stage using \code{?par} but be warned, there are lots of adjustments that can be made. Experimenting is really the only option when it comes time to get your graph looking perfect. 
+ 
+Additional text and/or lines can be added to some graph types. It may prove useful to show the line of best fit along with the data (illustrated in Chapter~\ref{Regression}) for example. We'll see how to do the fancy things in Chapter~\ref{ComplexGraphs}. 
+ 
+\section{Other univariate summary graphs} 
+ 
+Histograms aren't the ``be all and end all" for univariate summary graphs. As a case in point, they aren't at all useful for small sample sizes. Various other graphs appear in introductory statistics courses and that is why they appear here. I don't mean to support one over another at all --- that's up to you to determine. 
+ 
+\subsection{Boxplots} 
+ 
+Boxplots show us quickly the shape of the distribution of a sample. They show the median, lower and upper quartiles, and the minimum and maximum of a sample. They will also identify points as outliers if these points are too far from the bulk of values in the sample. 
+ 
+Exhibit~\ref{AirQualityBoxplot} shows us the boxplot for the average wind speed at LaGuardia airport. Notice that I have added an additional command to set up the size of the graph window. The \Rcmd{windows} command has various aliases --- \Rcmd{x11}, \Rcmd{X11}, \Rcmd{win.graph} --- none of which are required if the standard width and height of the graph window are acceptable. You may wish to see why I've changed the height of the graph window by ignoring the \Rcmd{windows} command from Exhibit~\ref{AirQualityBoxplot} 
+ 
+\begin{exhibit} 
+\begin{center} 
+\caption{Boxplot of Average wind speed in miles per hour at 0700 and 1000 hours at LaGuardia Airport. Obtained from the \Robject{air quality} data set.} 
+\label{AirQualityBoxplot} 

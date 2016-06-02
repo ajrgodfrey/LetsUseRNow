@@ -1,0 +1,6 @@
+OK, these manipulations are trivial, but they can be used in conjunction with other data objects as we will see later. More detail on how to use \R{} as a scientific calculator can be found in Chapter~\ref{ScientificCalculator}. 
+ 
+ 
+\section{A simple set of numbers} 
+ 
+Operating on single values is rare. We are usually faced with numbers that we wish to use as a set. Entering them as a set is therefore necessary. The most basic way of entering a set of numbers is using the \Rcmd{c} command. For example 

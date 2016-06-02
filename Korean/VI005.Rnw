@@ -1,0 +1,16 @@
+This chapter was created using version \Sexpr{packageVersion("BrailleR")} of the \Rpkg{BrailleR} package. This version of the package has a number of other packages that it depends on for functionality. When you make the \Rpkg{BrailleR} package available, you may see a few introduction messages that tell you about the other packages being loaded. You will be told about some default settings for the package that can be altered later to suit your needs. 
+ 
+ 
+\section{Creating a copy of the \R{} console window}\label{CreateCopyConsole} 
+ 
+In Chapter~\ref{BlindUse} I mentioned the need to save the content of the console window to a text file to be able to copy and paste its content to a report or document. One major feature of the BrailleR package is that this functionality can be done easily and efficiently. 
+ 
+There are three types of content printed in the console window.\begin{enumerate} 
+\item The commands we type, 
+\item The output valid commands generate, and 
+\item Any error or warning messages that arise from our commands. 
+\end{enumerate} 
+ 
+The \Rcmd{sink} command does not currently record the commands or the errors and warning messages. It is therefore a valuable tool for those \R{} users that are confident about the validity of their scripts. 
+ 
+Saving the commands typed into an \R{} session can be achieved using the \Rcmd{savehistory} command. For example 

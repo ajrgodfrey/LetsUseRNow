@@ -1,0 +1,12 @@
+ 
+This chapter focuses on some simple time series approaches for univariate time series. At this stage multivariate time series are not included, but could be in future depending on demand. In any case, the methods shown here are certainly not meant to be a comprehensive elucidation of all time series methods. Dealing with just the most commonly taught (and therefore the simplest) methods takes up enough space.  
+ 
+You will need to refer to a standard time series analysis textbook for more complete guidance; many of these are now written with \R{} as the chosen software to support the material in the book. 
+ 
+Given this proliferation of textbooks on the topic of time series analysis, it is no surprise that there are a number of add-on packages written to support them. In this chapter we do not extend beyond the functionality offered by the base distribution of \R{}. 
+ 
+\section{Time series objects in \R{}} 
+ 
+The basic univariate time series, with no missing data is stored in \R{} as a time series object. This is marginally different to a vector in that it has a time stamp or index associated with each observation in the series. 
+ 
+We will use several time series data sets that are available within the default installation of \R{}.  

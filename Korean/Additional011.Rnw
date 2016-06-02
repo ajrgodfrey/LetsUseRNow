@@ -1,0 +1,22 @@
+Note that the \Rarg{ask} argument is set to \code{FALSE} here. The default action is to ask the user if they want a particular package updated. I find this frustrating, especially if it's been a while since I updated my packages.
+
+You do not need to do this task very often. I would recommend doing it after installing a new version of \R{}, or if you see a warning message about the version of a package you use.
+
+Finally, note that if you have not established a connection with a CRAN mirror in the current \R{} session, then you will be prompted to do so before anything is downloaded.
+
+\section{Using an enhanced graphical interface}
+
+The base installation of \R{} doesn't offer much statistical functionality in its menu system (assuming you use one!). Various projects are under development that enhance the way users can interact with \R{}.
+
+Perhaps the most well-known is the \R{} Commander project. This interface has been given a lot of development over a number of years now and can support the needs of most introductory level statistical analyses. Its implementation is via the \Rpackage{Rcmdr} add-on package downloadable from CRAN.
+
+I don't use this package as it is more suited to novice to intermediate \R{} users. It also creates a host of new functions that improve on similar functions included in base \R{} that I don't need. The idea of working with mouse clicks is counter-intuitive to reproducible research ideas that most medium to advanced \R{} users like.
+
+\section{Use of an integrated development environment (IDE)} 
+
+The best integrated development environment (IDE) for \R{} users is \R{} Studio. Some people find this way of working to be a bewildering experience. Others love the convenience of having each project contained in a structured environment.
+
+My advice for anyone wanting to use RStudio or any new IDE is to find someone to give you a hands-on demonstration. Perhaps watching videos from the internet are a useful alternative, but you need to know that this tool is what you need before investing time in its use.
+
+Be warned: RStudio is a very powerful and useful tool for even the most advanced \R{} users. As such, it can be too much for the novice \R{} user.
+

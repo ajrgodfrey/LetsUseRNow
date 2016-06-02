@@ -1,0 +1,14 @@
+\SVGLink{SimpleGraphsScatter-1} 
+\end{center} 
+\end{exhibit} 
+ 
+\section{Scatter plot matrices} 
+\label{ScatterPlotMatrices} 
+ 
+A scatter plot matrix is just a matrix of scatter plots where each variable is plotted against all other variables. This graphic is therefore very useful for a preliminary look at multivariate data. In \R{}, we obtain this graphic using the \Rcmd{pairs} command as illustrated in Exhibit~\ref{AirQualityScatterPlotMatrix}. 
+ 
+Only four of the variables within the \Robject{air quality} data have been used in this example because the variables for the month and day take discrete values and therefore do not suit scatter plots --- take a look for yourself if you must but it's probably better to think about why this is the case before you look at the graphs. To select the four variables of interest, I have created a \Rclass{data.frame} with the variables I want included,; this \Rcmd{data.frame} command is then nested within the \Rcmd{pairs} command. 
+\begin{exhibit} 
+\begin{center} 
+\caption{A scatter plot matrix of the numeric variables within the \Robject{airquality} data set.} 
+\label{AirQualityScatterPlotMatrix}. 

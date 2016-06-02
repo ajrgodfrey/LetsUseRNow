@@ -1,0 +1,11 @@
+There are some minor differences between the methods used by the \Rcmd{summary} and \Rcmd{fivenum} commands for the first and third quartiles. See the relevant help page using \code{?fivenum} for an explanation. 
+ 
+Knowing how these commands work on simple sets of numbers is very useful for the more elegant presentations in the following sections. 
+ 
+\section{Obtaining slightly more elegant summaries} 
+ 
+When preparing reports it is unlikely that we would want a single statistic all that often. Rather, we are usually interested in exposing patterns or differences within the data. We do this graphically but we may need to extract the exact quantities plotted in the graph as well. 
+ 
+The \Rcmd{tapply} command is very useful for creating tables of results. It has three arguments; the main variable of interest, the grouping variable(s), and the function we want performed on each group within the data. It is of course, easier to show how the \Rcmd{tapply} command works in action so we'll use the air quality data again. 
+ 
+Let's say we want to know the \Rcmd{mean} Wind speed over the five months data were collected. 

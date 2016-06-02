@@ -1,0 +1,3 @@
+<<MtEdenContour>>= 
+contour(volcano) 
+@ 

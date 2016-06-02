@@ -1,0 +1,3 @@
+will create a new column in the returned data. N.B. the new data was not stored in a new object so this command's effect was purely temporary. 
+ 
+Again, notice that we didn't need to do all that much to add a new column and that this code is perhaps a little simpler than the alternative: 

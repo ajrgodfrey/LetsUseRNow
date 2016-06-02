@@ -1,0 +1,10 @@
+\SVGLink{ComplexGraphsDeathsTSPlotLegend-1} 
+\end{center} 
+\end{exhibit} 
+ 
+\section{More complex bar charts} 
+%% 
+ 
+A bar chart, as seen in Section~\ref{BarCharts}, has a bar showing the frequency of each level of a single factor. A \stressind{cluster bar chart} has a bar for each combination of two factors. The clustering indicates how the bars are grouped together. A \stressind{stack bar chart} on the other hand has a single bar for each level of one factor split into sections for each level of the second factor; it therefore appears to stack the bars on top of one another. 
+ 
+To create an example, we will first create a list of frequencies of outcomes and the two categorical variables required. The cluster bar chart and stack bar chart then appear in Exhibits~\ref{ClusterBarChart} and~\ref{StackBarChart} respectively. Our data consist of the counts of males and females of ages~17 to~20. 

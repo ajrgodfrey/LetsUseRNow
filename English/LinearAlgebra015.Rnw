@@ -1,0 +1,1 @@
+Similarly, we can multiply a vector or matrix by a scalar using: 

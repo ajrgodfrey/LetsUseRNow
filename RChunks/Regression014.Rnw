@@ -1,0 +1,4 @@
+<<OzoneWindResidPlots>>= 
+par(mfrow=c(2,2)) 
+plot(Ozone.lm1) 
+@ 

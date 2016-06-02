@@ -1,0 +1,2 @@
+ 
+Multiplying a matrix by a vector is easily achieved, and \R{} will orient the vector to conform to the rules of matrix multiplication as required. 

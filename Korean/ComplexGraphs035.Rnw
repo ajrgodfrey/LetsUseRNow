@@ -1,0 +1,11 @@
+generates the plot using the code given in the help file. 
+ 
+The \Robject{volcano} data is stored as a matrix of altitudes. The \Rcmd{contour} command uses this to interpolate the coordinates of the points where the altitude is constant. 
+ 
+A further example is generating the contours for a function. Let's plot the function 
+$$z=0.75x^2 + 0.5y^2 -0.4xy + x - y -1$$ 
+over the range $-5\leq x,y \leq 5$. All necessary codes are given in Exhibit~\ref{XYZContour} which includes the contour plot of the function. 
+\begin{exhibit} 
+\begin{center} 
+\caption{Contour plot showing values of $z$, where $z=0.75x^2 + 0.5y^2 -0.4xy + x - y -1$} 
+\label{XYZContour} 

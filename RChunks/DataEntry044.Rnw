@@ -1,0 +1,4 @@
+<<UseLevels>>= 
+levels(Months) = c("Mar", "Jun", "Sep", "Dec") 
+Months 
+@ 

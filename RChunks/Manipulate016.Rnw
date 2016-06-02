@@ -1,0 +1,4 @@
+<<GrabRows1>>= 
+nrow(airquality[airquality$Wind<10,]) 
+nrow(airquality[airquality$Temp<60,]) 
+@ 

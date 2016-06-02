@@ -1,0 +1,1 @@
+The \Rcmd{as.factor} command tells \R{} that these numbers are to be thought of as non-numeric data. A \Rclass{factor} also has an associated attribute called \Rarg{levels}. We can edit the levels directly and this will change our entire variable. \label{UseOfLevels} 

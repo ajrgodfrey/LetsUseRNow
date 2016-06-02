@@ -1,0 +1,3 @@
+<<TApply4>>= 
+tapply(Ozone, Month, mean) 
+@ 

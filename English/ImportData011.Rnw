@@ -1,0 +1,17 @@
+ 
+The full path to the working directory where this chapter was processed has been displayed, starting with the letter associated with the hard drive, followed by a colon. Then the fun begins. The folder structure is represented using forward slash signs, not the backslash used in Windows operating systems even though the processing of this work is done using a Windows machine. The rest should be as expected and you could find the right folder by looking in the appropriate place on your hard drive. The reason for \R{}'s use of the foward slash is not entirely simple to explain, but in short it is because the standard backslash symbols has a special use  in \R{}.For the moment, the choice of slash versus backslash is not important. It is important when we need to type out the path to the location of a file for ourselves. 
+ 
+ 
+ 
+\section{Data stored in another directory} 
+ 
+ 
+I do try to keep each separate project in its own distinct directory, and moving the raw data file to that directory makes sense. It does not make sense to have multiple copies of a dataset though, so we need to know how to pull a file from a different working directory into \R{}. 
+ 
+When I displayed the current working directory in the previous section using the \Rcmd{getwd} command, we saw the way that \R{} used forward slash symbols to denote the hierarchy of folders on our hard drive. 
+ 
+If we know the complete specification of the location of a file, right the way from the name of the hard drive down the directory tree to the actual location, the way we specify the location needs to match the way \R{} has printed a path. That is, we use the forward slash symbol not a single backslash. If we do want to use a backslash symbol, we would need to use a double backslash, not just a single one. It is better to use a single forward slash symbol however. This is because the single forward slash presentation works for all operating systems and means our code can be shared to users of all operating systems. You might not plan to do this right now, but let's use good habits from the start. 
+ 
+It is common for data to be stored in a folder that is close to the one we are working in. We might have a folder called \file{MyData} which is within the working directory (a subfolder), or it might be a folder at the same level in the directory tree as the current working directory. In either case, we don't need to specify the location using the full path. The term used to describe the location is a \stressind{relative path} because the reference to the location is relative to the current location having focus (our working directory).  
+ 
+If our data set is stored in the file \file{chickens.csv} in a  subfolder called \file{MyData}, we can use  

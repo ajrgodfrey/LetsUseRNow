@@ -1,0 +1,4 @@
+ 
+What we might guess from the above is that a graph of $(x,y_1)$ pairs would show quite a lot of noise; $(x,y_2)$ pairs are a parabola with some noise; $(x,y_3)$ pairs are for a straight line with some noise; and, $(x,y_4)$ pairs are the same as the previous straight line, but one point is some distance from the line. 
+ 
+The \Rcmd{WhereXY} command for each plot is now given. 

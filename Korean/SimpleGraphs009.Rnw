@@ -1,0 +1,10 @@
+\SVGLink{SimpleGraphsHistAirQualityWind-1} 
+\end{center} 
+\end{exhibit} 
+ 
+\section{Basic annotations to graphs} 
+ 
+\begin{exhibit} 
+\begin{center} 
+\caption{Histogram of Average wind speed at 0700 and 1000 hours at New York's LaGuardia Airport. Obtained from the \Robject{air quality} data set.} 
+\label{AirQualityHistWind2} 

@@ -1,0 +1,7 @@
+<<SummaryVector>>= 
+attach(airquality) 
+min(Temp) 
+max(Wind) 
+median(Solar.R) 
+median(Solar.R, na.rm=TRUE) 
+@ 

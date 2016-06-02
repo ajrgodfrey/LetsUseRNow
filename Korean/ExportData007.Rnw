@@ -1,0 +1,8 @@
+ 
+If another file type is required then the help page for \Rcmd{write.csv} may be useful. This page also gives the help on the \Rcmd{write.table} command. 
+ 
+\section{Exporting data for use in alternative software} 
+ 
+The better statistical software options allow users to import data from a range of sources and file types. If for some (very strange) reason you need to create files in a specific format for importing into another statistics package then you will need to investigate the \Rpackage{foreign} package. 
+ 
+ 

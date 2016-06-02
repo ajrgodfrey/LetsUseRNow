@@ -1,0 +1,6 @@
+<<Correlations>>= 
+attach(airquality) 
+cor.test(Ozone, Wind) 
+cor.test(Ozone, Wind, method="spearman") 
+detach(airquality) 
+@ 

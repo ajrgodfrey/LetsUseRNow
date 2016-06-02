@@ -1,0 +1,3 @@
+<<DetachAirQuality>>= 
+detach(airquality) 
+@ 

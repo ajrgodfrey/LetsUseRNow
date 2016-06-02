@@ -1,0 +1,7 @@
+This simple function takes one argument \Rarg{x} and uses its assigned value instead of \code{x} whenever the commands within the function ask for it. 
+ 
+We do not know what the value of the input arguments will be when the function is created. For simple cases like this one, we rely on the error handling of \R{} when it issues the commands that form the function. In this case, we are asking for the sine of the input values; if the input is a text string instead of a number, the \Rcmd{sin} command will fail, causing the newly created \code{MySine} command to fail as well. 
+ 
+Programmers will create bulletproof functions that cater for user errors like entering text instead of numbers in complex situations. When you are doing the simpler tasks where you can be sure that you will enter the right kind of value for your inputs, you can keep your functions simple. 
+ 
+Our example has only one command within the function. The commands included in the function are enclosed by curly brackets or braces, depending on what you call them. The last command issued within a function is the one that leads to establishing what will be returned to the user once the new function has done its work. In our first example, the last work done was to generate the sine of the input value. Look what happens if we do something else within the function. 

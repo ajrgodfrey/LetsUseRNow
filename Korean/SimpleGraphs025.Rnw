@@ -1,0 +1,1 @@
+but the same plot can be generated using what is known as a formula. In this case, only one argument is given to the \Rcmd{plot} command but both variables of interest are in that argument. 

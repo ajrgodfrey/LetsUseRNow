@@ -1,0 +1,15 @@
+
+This chapter explains how you do some tasks that are not part of the basic installation of \R{}. This includes instructions on how to add extra functionality via add-on packages and pointers to some user interfaces.
+
+\section{Installing additional packages}
+\label{InstallPackages}
+
+Many \R{} users find that the vast range of functions that are built into the basic \R{} installation are not enough to meet their specific needs. \R{} is relatively easy to adapt to meet their needs because additional functions are easily created to perform specific tasks.
+
+In order to let others use their creations, \R{} users often make their functions available in add-on packages that can be downloaded by any \R{} user. The network of servers that store these packages is known as CRAN, which is short for Comprehensive R Archive Network. There are over 8000 add-on packages currently available via CRAN as well as others that do not meet the CRAN criteria. To make it to CRAN, an add-on package must meet standards of presentation, quality of documentation, and be available for all operating systems. Add-on packages that do not meet these criteria do exist, especially those that are specific to one operating system.
+
+Installing an add-on package requires two actions. First, you must ask \R{} to install a package of a certain name, either using the \Rcmd{install.packages} command or the Packages pull-down menu item. 
+
+The second task is necessary only once in each \R{} session. When you go to install a package from CRAN, \R{} will ask you to select a \stressind{CRAN mirror}. This just wants you to choose which one of the servers scattered around the world is the one you should point your internet connection towards.
+
+These tasks are most commonly achieved by selecting the menu items and associated dialogue boxes. If you do not want to use the dialogue box approach for selecting a CRAN mirror, there is a text based alternative. If you type

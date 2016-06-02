@@ -1,0 +1,6 @@
+ 
+I like to create random data when planning an analysis. In this instance, the data are normally distributed which is not particularly important, but they are random which is important. There are many other functions that generate random data from other distributions; by convention, these functions all start with a letter ``r" followed by a shortened form of the distribution's name.  
+ 
+I do this because data that will  be collected should be appropriate for the intended analysis to be conducted, and likewise the analysis should reflect the way data were collected. Creation of the random data means I can write the \R{} commands that will generate the analysis, and once I have checked that the analysis is possible, I can then collect the data. When the data has been collected, I can then re-process the commands using the real data instead of the  random data. This can save time during the analysis but more importantly, I can be confident that the data collection and analysis were planned well. 
+ 
+ 

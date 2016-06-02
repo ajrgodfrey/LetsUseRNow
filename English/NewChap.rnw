@@ -1,0 +1,18 @@
+%\setcounter{chapter}{}
+\chapter{LURN\ldots{} To }
+\label{}
+
+<<setup, include=FALSE>>=
+opts_chunk$set(fig.path='figures/Calculus', comment=NA, dev=c('pdf','postscript','svg'), prompt=T, out.width="0.7\\textwidth")
+source("GenericSettings.R")
+@
+
+This chapter explains 
+
+\section{}
+
+
+
+<<cleanup, include=FALSE>>=
+rm(list = ls())
+@

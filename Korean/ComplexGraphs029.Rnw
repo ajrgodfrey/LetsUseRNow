@@ -1,0 +1,7 @@
+\SVGLink{ComplexGraphsClusterBar-1} 
+\end{center} 
+\end{exhibit} 
+\begin{exhibit} 
+\begin{center} 
+\caption{An example of a stack bar chart} 
+\label{StackBarChart} 

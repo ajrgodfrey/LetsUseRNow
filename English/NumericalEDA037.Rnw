@@ -1,0 +1,11 @@
+ 
+ 
+ 
+ 
+\section{Use of dplyr for data summarisation} 
+\label{DPlyRDataSummarisation} 
+ 
+ 
+In Section~\ref{DPlyRDataManipulation}, we saw how the \Rpkg{dplyr} package offers an alternative to base \R{} functionality for manipulating data. We now see that this package offers commands for summarising data. In particular, the commands: \Rcmd{group\_by}, \Rcmd{summarise}, and \Rcmd{count}. 
+   
+You'll need to install the package (see Section~\ref{InstallPackages} for instructions) before running the function 

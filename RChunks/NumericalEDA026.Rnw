@@ -1,0 +1,3 @@
+<<SortedTApply>>= 
+sort(tapply(Wind, Month, mean)) 
+@ 

@@ -1,0 +1,5 @@
+As it happens, we didn't need to actually explicitly state the month number when the variable was first created, but it is good practice to keep things logical! 
+ 
+\section{Larger data objects} 
+ 
+There are two data object types that are quite similar but not the same. A \Rclass{matrix} is a two-dimensional array of values of the same type --- numeric, character, or logical. A \Rclass{data.frame} looks like a matrix but can have variables of different types embedded within it. For example, we can create a new \Rclass{data.frame} by combining the names and human status variables created earlier using 

@@ -1,0 +1,9 @@
+
+\begin{exhibit}
+\caption{}
+\label{}
+\centering
+<<, fig=TRUE>>=
+
+@
+\end{exhibit}

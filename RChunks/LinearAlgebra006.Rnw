@@ -1,0 +1,5 @@
+<<CreateMatrix>>= 
+X=matrix(x, ncol=1) 
+class(X) 
+X 
+@ 

@@ -1,0 +1,13 @@
+Note that we must explicitly set \Rarg{beta} and \Rarg{gamma} to \Rarg{FALSE} to get the simple exponential smoother. 
+ 
+ 
+Adding a linear trend is fairly simple, but the seasonal component can be expressed as either an additive or a multiplicative term. The two forms would be 
+$$y_t = \mu_t + \beta_t t +S_{t-p} + e_t$$ 
+and 
+$$y_t = (\mu_t + \beta_t t) S_{t-p} + e_t$$ 
+respectively , where the $\mu_t$ is found using a deseasonalised version of the simple exponential smoother 
+$$\mu_t = \alpha (y_t - S_{t-p}) + (1-\alpha) (\mu_{t-1} + \beta_{t-1})$$ 
+for the additive model and 
+$$\mu_t = \alpha \frac{y_t }{ S_{t-p}} + (1-\alpha) (\mu_{t-1} + \beta_{t-1})$$ 
+for the multiplicative model. 
+ 

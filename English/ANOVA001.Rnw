@@ -1,0 +1,7 @@
+% chickwts data for one way 
+% cabbages from MASS package for two way 
+%\setcounter{chapter}{} 
+\chapter{LURN\ldots{} To Perform Analyses of Variance (ANOVA)} 
+\label{ANOVA} 
+ 
+ 

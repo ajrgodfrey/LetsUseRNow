@@ -1,0 +1,4 @@
+<<Boxplot, echo=FALSE, fig.width=7, fig.height=5, eval=-1>>= 
+windows(7, 5) 
+boxplot(Wind, horizontal=TRUE, xlab="Wind speed (mph)") 
+@ 

@@ -1,0 +1,8 @@
+The last command in this block has printed out the \Sexpr{length(Ozone.lev1[Ozone.lev1>2*mean(Ozone.lev1)])} observations that have excess leverage on this model. We should probably see if these are days that had extremely high wind. This is not done as this model has already been shown to be poor at explaining the amount of \Robject{Ozone} in the atmosphere. 
+ 
+ 
+\section{Polynomial regression models} 
+\label{PolyReg} 
+ 
+Given the obvious curvature in the relationship between \Robject{Ozone} and \Robject{Wind} appears monotonic, we can probably try both transforming the variables, and polynomial regression to explain the relationship. We take advantage of the  
+fact that \R{} has an in-built way of producing polynomial terms for insertion into models, and use the \Rcmd{poly} function in this instance. This command needs to know which variable to work with and the degree of the polynomial desired. For example, to fit the quadratic model we would use the commands 

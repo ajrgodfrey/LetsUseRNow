@@ -1,0 +1,12 @@
+ 
+This chapter explains how some tasks commonly taught in introductory algebra courses can be undertaken using \R{}. The functionality is built into \R{} because so many tasks in statistical analyses require manipulation of vectors and matrices, although much of this work is hidden behind other commands and functions. 
+ 
+\section{Basic notes on storage of vectors and matrices} 
+ 
+We will concern ourselves with only numeric valued vectors and matrices in this chapter. Other types of data can be stored in vectors and matrices (as well as other data structures) but they have little relevance for linear algebra at this time. 
+ 
+In linear algebra, a vector is a one dimensional set of numbers. It is usually referred to as a row vector or a column vector to indicate its orientation. This orientation does matter for the ability to perform certain tasks when working with two or more vectors and matrices.  
+ 
+A matrix is a two-dimensional array of numbers, having a number of rows and columns. Many mathematical software applications do not explicitly distinguish a vector from a matrix because they store a row vector as if it were a matrix having just one row. Similarly, a column vector is stored as a matrix having just one column. 
+ 
+\R{} does distinguish betweena vector and a matrix, but it does not state whether a vector is a row or column vector. This does have its advantages, and probably some disadvantages as well. If for any reason you need to force the orientation of a vector, then create it as a matrix with one of its dimensions set equal to one. For example, we create a simple vector: 

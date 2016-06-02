@@ -1,0 +1,5 @@
+<<CreateVector>>= 
+x=1:4 
+x 
+class(x) 
+@ 

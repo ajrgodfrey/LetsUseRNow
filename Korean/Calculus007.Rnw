@@ -1,0 +1,12 @@
+ 
+%\section{} 
+%\section{} 
+ 
+ 
+\section{Differentiation} 
+ 
+The internal code used for differentiation in \R{} is not as comprehensive as other mathematical software. 
+It can handle arithmetic operators $+$, $-$, $*$, $/$ and \^, and the single-variable functions \Rcmd{exp}, \Rcmd{log} (natural logarithm), \Rcmd{sin}, \Rcmd{cos}, \Rcmd{tan}, \Rcmd{sinh}, \Rcmd{cosh}, \Rcmd{sqrt}, \Rcmd{pnorm}, 
+\Rcmd{dnorm}, \Rcmd{asin} (inverse sine), \Rcmd{acos} (inverse cosine), \Rcmd{atan} (inverse tangent), and various \Rcmd{gamma} functions. The functions \Rcmd{pnorm} and \Rcmd{dnorm} are restricted to the standard normal distribution. 
+ 
+The easiest way to find the derivative of an expression is to store the mathematical function using the \Rcmd{expression} command, and then use the \Rcmd{D} or \Rcmd{deriv} commands. 

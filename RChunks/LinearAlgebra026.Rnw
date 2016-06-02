@@ -1,0 +1,5 @@
+<<GetGInverse>>= 
+M 
+require(MASS) 
+ginv(M) 
+@ 

@@ -1,0 +1,6 @@
+Note two important features of this command. I capitalized the variable name here on purpose. The vast majority of \R{} commands are in lower case and there is one called ``names". I don't want to confuse my data and an existing \R{} command so my preference is to use an upper case letter on the front of all my variable names that mean anything. The second point is that the character-valued data I entered were encapsulated by quote marks. This means that the actual names (mine, my last dog and some family members) were stored. If I had omitted the quote marks, \R{} would have looked for variables with the appropriate names --- not defined in this instance. You could remove a quote or two to see what happens if you must. 
+ 
+\section{Logical indicators} 
+ 
+\R{} often uses logical indicators to tell us something. These variables take the values ``\code{TRUE}" or ``\code{FALSE}". 
+ 

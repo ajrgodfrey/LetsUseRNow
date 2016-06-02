@@ -1,0 +1,608 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>4 LURN... To Import Data</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html,2,next --> 
+<meta name="src" content="LURN.tex"> 
+<meta name="date" content="2016-06-01 18:11:00"> 
+<link rel="stylesheet" type="text/css" href="LURN.css"> 
+</head><body 
+>
+   <!--l. 1--><div class="crosslinks"><p class="noindent">[<a 
+href="LURNch5.html" >next</a>] [<a 
+href="LURNch3.html" >prev</a>] [<a 
+href="LURNch3.html#tailLURNch3.html" >prev-tail</a>] [<a 
+href="#tailLURNch4.html">tail</a>] [<a 
+href="LURN.html#LURNch4.html" >up</a>] </p></div>
+   <h2 class="chapterHead"><span class="titlemark">Chapter&#x00A0;4</span><br /><a 
+ id="x6-280004"></a>LURN&#x2026; To Import Data</h2>
+<!--l. 6--><p class="noindent" >This chapter covers the methods required to pull data from external sources into
+<span 
+class="aess-12">R</span>. If you want to create data within <span 
+class="aess-12">R</span>, you should be reading Chapter&#x00A0;<a 
+href="LURNch3.html#x5-150003">3<!--tex4ht:ref: DataEntry --></a>.
+   <h3 class="sectionHead"><span class="titlemark">4.1   </span> <a 
+ id="x6-290004.1"></a>Data from external files</h3>
+<!--l. 10--><p class="noindent" >While I prefer to use files extracted from EXCEL with comma delimited values, <span 
+class="aess-12">R</span>
+handles many common formats such as plain text files with space or tab
+delimiters. You need to know what format a file is, probably by opening it and
+actually seeing if it is as you expect. It is too easy to rename a file with various
+extensions which may have meanings in your operating system that have little
+relevance to <span 
+class="aess-12">R</span>. A specific case in point is when you are presented with a file
+having the <span 
+class="aett-12">txt</span> extension, which is commonly assumed to be a text file. We need
+to know if the first line of information in the file is actual data or the headings
+for the columns of data. We also need to know what symbol is used to
+separate the columns of the data; spaces, commas, or tabs are the most
+common options. Each of these options has a distinct <span 
+class="aess-12">R </span>command associated
+with it, but all of these commands link back to the same <a 
+ id="dx6-29001"></a><span 
+class="aett-12">read.table()</span>
+command.
+<!--l. 12--><p class="indent" >   The various commands are as follows
+<div class="center" 
+>
+<!--l. 13--><p class="noindent" >
+<div class="tabular"> <table id="TBL-3" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-3-1g"><col 
+id="TBL-3-1"><col 
+id="TBL-3-2"><col 
+id="TBL-3-3"></colgroup><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-1-1"  
+class="td11">Delimiter</td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-1-2"  
+class="td11"><span 
+class="aess-12">R </span>command   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-1-3"  
+class="td11">Common Extensions</td></tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-2-1"  
+class="td11">space </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-2-2"  
+class="td11"><a 
+ id="dx6-29002"></a><span 
+class="aett-12">read.table()</span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-2-3"  
+class="td11">DAT, TXT</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-3-1"  
+class="td11">tab         </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-3-2"  
+class="td11"><a 
+ id="dx6-29003"></a><span 
+class="aett-12">read.delim()</span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-3-3"  
+class="td11">TXT                    </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-4-1"  
+class="td11">comma    </td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-4-2"  
+class="td11"><a 
+ id="dx6-29004"></a><span 
+class="aett-12">read.csv()  </span></td><td  style="white-space:nowrap; text-align:left;" id="TBL-3-4-3"  
+class="td11">CSV, TXT            </td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-5-1"  
+class="td11">        </td></tr></table></div></div>
+<!--l. 22--><p class="indent" >   Note that the <span 
+class="aett-12">txt</span> extension appears as possible extensions for all delimiter
+types. <span 
+class="aess-12">R </span>will not assume any extension for these commands. You will need to
+explicitly state the full filename including extension when using these commands.
+Some extensions will have a default program associated with them by your
+operating system. For example, <span 
+class="aett-12">txt</span> files will be opened in <span 
+class="aett-12">Notepad</span> under
+Windows, and if Microsoft Office is installed on your machine, a <span 
+class="aett-12">csv</span> file will be
+opened in Microsoft EXCEL.
+<!--l. 24--><p class="indent" >   To import a comma delimited file called <span 
+class="aett-12">chickens.csv</span>, you would issue the
+following command
+   <div class="fancyvrb" id="fancyvrb68">  <a 
+ id="x6-29006r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;Chickens</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;read.csv("chickens.csv")</span></div>
+                                                                          
+
+                                                                          
+<!--l. 30--><p class="noindent" >In this most basic form, the <a 
+ id="dx6-29007"></a><span 
+class="aett-12">read.csv() </span>command will look for the <span 
+class="aett-12">chickens.csv</span>
+file in the current working directory, and import it into <span 
+class="aess-12">R </span>and store it as a
+<a 
+ id="dx6-29008"></a><span 
+class="aeti-12">data.frame </span>called <span 
+class="aett-12">Chickens</span>. The default settings of the <a 
+ id="dx6-29009"></a><span 
+class="aett-12">read.csv() </span>command are
+to have a <span 
+class="aett-12">header </span>row in the file and to have no <span 
+class="aett-12">row.names </span>attribute
+associated with the data in the file. If your data file already had a column
+for the names of the chickens as the first column, you would issue the
+command
+   <div class="fancyvrb" id="fancyvrb69">  <a 
+ id="x6-29011r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;Chickens</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;read.csv("chickens.csv",</span><span 
+class="aett-12">&#x00A0;row.names=1)</span></div>
+<!--l. 37--><p class="noindent" >and if the data did not currently have any column headings you would issue the
+command
+   <div class="fancyvrb" id="fancyvrb70">  <a 
+ id="x6-29013r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;Chickens</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;read.csv("chickens.csv",</span><span 
+class="aett-12">&#x00A0;header=FALSE)</span></div>
+<!--l. 44--><p class="indent" >   There are other settings to consider which you can investigate using the help
+for the <a 
+ id="dx6-29014"></a><span 
+class="aett-12">read.csv() </span>command by typing <span 
+class="aett-12">?read.csv </span>at the command prompt. This
+help page is actually a combined help page for the family of commands described
+in this section.
+<!--l. 46--><p class="indent" >   The working above assumed you could put the data file into the correct
+working directory. So where was that? To find out where <span 
+class="aess-12">R </span>thinks you are
+currently working, use the <a 
+ id="dx6-29015"></a><span 
+class="aett-12">getwd() </span>command. Note that the output may look a
+little strange to some users, especially Windows users. What do I mean? Look at
+the following:
+   <div class="fancyvrb" id="fancyvrb71">  <a 
+ id="x6-29017r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;getwd()</span></div>
+<!--l. 51--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb72"> <a 
+ id="x6-29019r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">&#x00A0;"C:/Users/ajgodfre/Documents/Publications/LetsUseRNow"</span></div>
+<!--l. 56--><p class="indent" >   The full path to the working directory where this chapter was processed has
+been displayed, starting with the letter associated with the hard drive,
+followed by a colon. Then the fun begins. The folder structure is represented
+using forward slash signs, not the backslash used in Windows operating
+systems even though the processing of this work is done using a Windows
+machine. The rest should be as expected and you could find the right folder
+by looking in the appropriate place on your hard drive. The reason for
+<span 
+class="aess-12">R</span>&#8217;s use of the foward slash is not entirely simple to explain, but in short
+it is because the standard backslash symbols has a special use in <span 
+class="aess-12">R</span>.For
+the moment, the choice of slash versus backslash is not important. It is
+important when we need to type out the path to the location of a file for
+ourselves.
+                                                                          
+
+                                                                          
+<!--l. 60--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">4.2   </span> <a 
+ id="x6-300004.2"></a>Data stored in another directory</h3>
+<!--l. 63--><p class="noindent" >I do try to keep each separate project in its own distinct directory, and moving
+the raw data file to that directory makes sense. It does not make sense to have
+multiple copies of a dataset though, so we need to know how to pull a file from a
+different working directory into <span 
+class="aess-12">R</span>.
+<!--l. 65--><p class="indent" >   When I displayed the current working directory in the previous section using
+the <a 
+ id="dx6-30001"></a><span 
+class="aett-12">getwd() </span>command, we saw the way that <span 
+class="aess-12">R </span>used forward slash symbols to
+denote the hierarchy of folders on our hard drive.
+<!--l. 67--><p class="indent" >   If we know the complete specification of the location of a file, right the way
+from the name of the hard drive down the directory tree to the actual location,
+the way we specify the location needs to match the way <span 
+class="aess-12">R </span>has printed a path.
+That is, we use the forward slash symbol not a single backslash. If we do want to
+use a backslash symbol, we would need to use a double backslash, not just a single
+one. It is better to use a single forward slash symbol however. This is
+because the single forward slash presentation works for all operating systems
+and means our code can be shared to users of all operating systems. You
+might not plan to do this right now, but let&#8217;s use good habits from the
+start.
+<!--l. 69--><p class="indent" >   It is common for data to be stored in a folder that is close to the
+one we are working in. We might have a folder called <span 
+class="aett-12">MyData</span> which is
+within the working directory (a subfolder), or it might be a folder at the
+same level in the directory tree as the current working directory. In either
+case, we don&#8217;t need to specify the location using the full path. The term
+used to describe the location is a <a 
+ id="dx6-30002"></a><span 
+class="aeti-12">relative path </span>because the reference to
+the location is relative to the current location having focus (our working
+directory).
+<!--l. 71--><p class="indent" >   If our data set is stored in the file <span 
+class="aett-12">chickens.csv</span> in a subfolder called <span 
+class="aett-12">MyData</span>,
+we can use
+   <div class="fancyvrb" id="fancyvrb73">  <a 
+ id="x6-30004r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;Chickens</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;read.csv("MyData/chickens.csv")</span></div>
+<!--l. 77--><p class="noindent" >to pull it into our current workspace. This is actually shorthand for the more
+complete form
+   <div class="fancyvrb" id="fancyvrb74">  <a 
+ id="x6-30006r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;Chickens</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;read.csv("./MyData/chickens.csv")</span></div>
+<!--l. 83--><p class="noindent" >where the current folder is denoted using the single period followed by the first slash.
+Personally, I would prefer to see the more complete form of this relative path
+being used but it is personal preference only.
+<!--l. 85--><p class="indent" >   If the <span 
+class="aett-12">MyData</span> folder was not a subfolder, but was on the same level in the
+directory tree as our current working directory, we would use the shorthand
+                                                                          
+
+                                                                          
+symbol for the parent directory (one level up the directory tree). This is done
+using a double period.
+   <div class="fancyvrb" id="fancyvrb75">  <a 
+ id="x6-30008r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;Chickens</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;read.csv("../MyData/chickens.csv")</span></div>
+<!--l. 92--><p class="indent" >   Relative paths are therefore quite useful because they avoid having to type out
+long paths. The full specification of apath might also become a problem when files
+for a project are moved from one storage device to another. For example, you
+might want to take your work to a friend, tutor, or colleague on a memory stick or
+other portable storage medium. Relative path referencing makes your work very
+transferable and transportable.
+<!--l. 99--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">4.3   </span> <a 
+ id="x6-310004.3"></a>Data saved by other statistical software</h3>
+<!--l. 101--><p class="noindent" >Many statistical software packages use their own file types for storing data. <span 
+class="aess-12">R </span>is no
+different actually! The chief problem we have is to find a way of transferring data
+from one application to another. Like most other statistics programs, <span 
+class="aess-12">R </span>doesn&#8217;t
+handle all other file types. Some files can be imported into <span 
+class="aess-12">R </span>using the commands
+in the <a 
+ id="dx6-31001"></a><span 
+class="aeti-12">foreign </span>package, but it is probably best just to avoid the problems from the
+start.
+<!--l. 103--><p class="indent" >   In many instances it will prove easiest to use copy and paste functionality
+within your operating system to take the data from whatever original source it
+was given to you in and put it into a suitable spreadsheet program. Then save it
+using the comma separated values format and read the data into <span 
+class="aess-12">R </span>using the
+commands given in the previous section.
+<!--l. 105--><p class="indent" >   I recommend trying to obtain the data in an easily imported file type rather
+than attempting to use the functions in the <a 
+ id="dx6-31002"></a><span 
+class="aeti-12">foreign </span>package.
+<!--l. 107--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">4.4   </span> <a 
+ id="x6-320004.4"></a>Data from files stored on the internet</h3>
+<!--l. 109--><p class="noindent" >Sometimes a data set is made available via the internet. If you can obtain the
+full URL for the downloadable data file then it can be entered into the
+<a 
+ id="dx6-32001"></a><span 
+class="aett-12">read.csv() </span>or <a 
+ id="dx6-32002"></a><span 
+class="aett-12">read.table() </span>commands. This exercise is seldom necessary
+except for data files that you know will be updated for distribution through
+the web. Some government agencies and financial database services do
+this.
+                                                                          
+
+                                                                          
+<!--l. 111--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">4.5   </span> <a 
+ id="x6-330004.5"></a>Data contained in contributed packages</h3>
+<!--l. 115--><p class="noindent" >The base installation of <span 
+class="aess-12">R </span>includes a package called <a 
+ id="dx6-33001"></a><span 
+class="aeti-12">datasets</span>. These data sets are
+useful for testing code and writing examples for insertion into documents like this
+one. Data sets contained in the <a 
+ id="dx6-33002"></a><span 
+class="aeti-12">datasets </span>package are actually ready and waiting to
+be accessed, but often we want to bring the data into our current workspace using
+a command such as
+   <div class="fancyvrb" id="fancyvrb76">  <a 
+ id="x6-33004r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;data(airquality)</span><br class="fancyvrb" /><a 
+ id="x6-33006r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;str(airquality)</span></div>
+<!--l. 121--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb77"> <a 
+ id="x6-33008r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#8217;data.frame&#8217;:        153</span><span 
+class="aett-12">&#x00A0;obs.</span><span 
+class="aett-12">&#x00A0;of</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;6</span><span 
+class="aett-12">&#x00A0;variables:</span>
+<br class="fancyvrb" /><a 
+ id="x6-33010r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;$</span><span 
+class="aett-12">&#x00A0;Ozone</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;:</span><span 
+class="aett-12">&#x00A0;int</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;41</span><span 
+class="aett-12">&#x00A0;36</span><span 
+class="aett-12">&#x00A0;12</span><span 
+class="aett-12">&#x00A0;18</span><span 
+class="aett-12">&#x00A0;NA</span><span 
+class="aett-12">&#x00A0;28</span><span 
+class="aett-12">&#x00A0;23</span><span 
+class="aett-12">&#x00A0;19</span><span 
+class="aett-12">&#x00A0;8</span><span 
+class="aett-12">&#x00A0;NA</span><span 
+class="aett-12">&#x00A0;...</span>
+<br class="fancyvrb" /><a 
+ id="x6-33012r3"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;$</span><span 
+class="aett-12">&#x00A0;Solar.R:</span><span 
+class="aett-12">&#x00A0;int</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;190</span><span 
+class="aett-12">&#x00A0;118</span><span 
+class="aett-12">&#x00A0;149</span><span 
+class="aett-12">&#x00A0;313</span><span 
+class="aett-12">&#x00A0;NA</span><span 
+class="aett-12">&#x00A0;NA</span><span 
+class="aett-12">&#x00A0;299</span><span 
+class="aett-12">&#x00A0;99</span><span 
+class="aett-12">&#x00A0;19</span><span 
+class="aett-12">&#x00A0;194</span><span 
+class="aett-12">&#x00A0;...</span>
+<br class="fancyvrb" /><a 
+ id="x6-33014r4"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;$</span><span 
+class="aett-12">&#x00A0;Wind</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;:</span><span 
+class="aett-12">&#x00A0;num</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;7.4</span><span 
+class="aett-12">&#x00A0;8</span><span 
+class="aett-12">&#x00A0;12.6</span><span 
+class="aett-12">&#x00A0;11.5</span><span 
+class="aett-12">&#x00A0;14.3</span><span 
+class="aett-12">&#x00A0;14.9</span><span 
+class="aett-12">&#x00A0;8.6</span><span 
+class="aett-12">&#x00A0;13.8</span><span 
+class="aett-12">&#x00A0;20.1</span><span 
+class="aett-12">&#x00A0;8.6</span><span 
+class="aett-12">&#x00A0;...</span>
+<br class="fancyvrb" /><a 
+ id="x6-33016r5"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;$</span><span 
+class="aett-12">&#x00A0;Temp</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;:</span><span 
+class="aett-12">&#x00A0;int</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;67</span><span 
+class="aett-12">&#x00A0;72</span><span 
+class="aett-12">&#x00A0;74</span><span 
+class="aett-12">&#x00A0;62</span><span 
+class="aett-12">&#x00A0;56</span><span 
+class="aett-12">&#x00A0;66</span><span 
+class="aett-12">&#x00A0;65</span><span 
+class="aett-12">&#x00A0;59</span><span 
+class="aett-12">&#x00A0;61</span><span 
+class="aett-12">&#x00A0;69</span><span 
+class="aett-12">&#x00A0;...</span>
+<br class="fancyvrb" /><a 
+ id="x6-33018r6"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;$</span><span 
+class="aett-12">&#x00A0;Month</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;:</span><span 
+class="aett-12">&#x00A0;int</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;5</span><span 
+class="aett-12">&#x00A0;5</span><span 
+class="aett-12">&#x00A0;5</span><span 
+class="aett-12">&#x00A0;5</span><span 
+class="aett-12">&#x00A0;5</span><span 
+class="aett-12">&#x00A0;5</span><span 
+class="aett-12">&#x00A0;5</span><span 
+class="aett-12">&#x00A0;5</span><span 
+class="aett-12">&#x00A0;5</span><span 
+class="aett-12">&#x00A0;5</span><span 
+class="aett-12">&#x00A0;...</span><br class="fancyvrb" /><a 
+ id="x6-33020r7"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;$</span><span 
+class="aett-12">&#x00A0;Day</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;:</span><span 
+class="aett-12">&#x00A0;int</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1</span><span 
+class="aett-12">&#x00A0;2</span><span 
+class="aett-12">&#x00A0;3</span><span 
+class="aett-12">&#x00A0;4</span><span 
+class="aett-12">&#x00A0;5</span><span 
+class="aett-12">&#x00A0;6</span><span 
+class="aett-12">&#x00A0;7</span><span 
+class="aett-12">&#x00A0;8</span><span 
+class="aett-12">&#x00A0;9</span><span 
+class="aett-12">&#x00A0;10</span><span 
+class="aett-12">&#x00A0;...</span></div>
+<!--l. 130--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb78"> <a 
+ id="x6-33022r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;ls()</span></div>
+<!--l. 133--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb79"> <a 
+ id="x6-33024r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">&#x00A0;"airquality"</span></div>
+<!--l. 137--><p class="noindent" >The <a 
+ id="dx6-33025"></a><span 
+class="aett-12">data() </span>command looks in the <a 
+ id="dx6-33026"></a><span 
+class="aeti-12">datasets </span>package by default. If we wanted to get
+some data from another package we would need to state the name of the package
+explicitly. For example,
+   <div class="fancyvrb" id="fancyvrb80">  <a 
+ id="x6-33028r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;data(anorexia,</span><span 
+class="aett-12">&#x00A0;package="MASS")</span></div>
+<!--l. 143--><p class="noindent" >(The <a 
+ id="dx6-33029"></a><span 
+class="aeti-12">MASS </span>package is already installed by default.)
+<!--l. 145--><p class="indent" >   Often we will be using a particular data set because it is good for
+demonstrating functions within a particular package. If we are loading the
+package using the <a 
+ id="dx6-33030"></a><span 
+class="aett-12">library() </span>command, to get access to the functions, we
+will have also made the data available. This is why the data from the
+<a 
+ id="dx6-33031"></a><span 
+class="aeti-12">datasets </span>is ready for use; this package is loaded by default whenever <span 
+class="aess-12">R </span>is
+started.
+                                                                          
+
+                                                                          
+<!--l. 148--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">4.6   </span> <a 
+ id="x6-340004.6"></a>Data cleanliness</h3>
+<!--l. 150--><p class="noindent" >Rather ironically, the suggestion for including this section came from my mother.
+All too frequently, data are entered by people who will not actually need to use
+the data themselves. Sometimes data are entered by different people and then
+compiled into a single dataset and the various codes that some sources of data
+may use are not necessarily in common with all other users. Take for example, the
+many ways we might enter data for the gender of individuals answering a
+survey. You might easily realise that an &#8220;<span 
+class="aett-12">M</span>" means male, but <span 
+class="aess-12">R </span>needs
+consistency.
+<!--l. 152--><p class="indent" >   It is extremely important that we have knowledge of the format of the data we
+import. Use of the <a 
+ id="dx6-34001"></a><span 
+class="aett-12">str() </span>command is a good start, and use of the <a 
+ id="dx6-34002"></a><span 
+class="aett-12">head()</span>
+command might also be useful.
+<!--l. 154--><p class="indent" >   Here are some pointers to look out for:
+      <ul class="itemize1">
+      <li class="itemize">Have you mixed the case of the text in your data? Remember that <span 
+class="aess-12">R </span>is
+      case sensitive and that &#8220;R" is not the same as &#8220;r" in <span 
+class="aess-12">R</span>.
+      </li>
+      <li class="itemize">Has <span 
+class="aess-12">R </span>tried to be too smart and interpretted plain text information
+      as if you wanted a <a 
+ id="dx6-34003"></a><span 
+class="aeti-12">factor  </span>instead? This occurs frequently with date
+      values which are notorious for the variety of formats people choose.
+      If  you  have  a  factor  when  you  wanted  just  plain  text,  investigate
+      the  <a 
+ id="dx6-34004"></a><span 
+class="aett-12">as.character() </span>command  which  changes  the  format  to  being
+      character valued data.
+      </li>
+      <li class="itemize">Have a multitude of codes been used for variables like gender? If so,
+      <span 
+class="aess-12">R </span>will decide that the variable is a <a 
+ id="dx6-34005"></a><span 
+class="aeti-12">factor </span>and list the different values
+      the variable can take. The levels of the factor can be re-assigned using
+      the <a 
+ id="dx6-34006"></a><span 
+class="aett-12">levels() </span>command. See how this is done on <a 
+href="LURNch3.html#x5-240003.9">22<!--tex4ht:ref: UseOfLevels --></a> and note that two
+      elements of the assignment can be the same if the current codes mean
+      the same thing.
+      </li>
+      <li class="itemize">Have extra spaces crept into the codes for levels of factors somehow?
+      This happens when an extra space occurs between words or is added on
+      the end of a text string. Often, this problem is difficult to spot visually
+      as we are talking about white space &#8212; <span 
+class="aess-12">R </span>will find it though! Use the
+      <a 
+ id="dx6-34007"></a><span 
+class="aett-12">levels() </span>command to fix this if the problem is small, but consider
+      using a find/replace tool in a spreadsheet application as an alternative.
+                                                                          
+
+                                                                          
+      </li>
+      <li class="itemize">Have numbers come into <span 
+class="aess-12">R </span>as text for some reason? This happens for
+      a number of reasons. A blank space being entered in the cell instead
+      of  a  code  for  a  missing  value  for  example.  <span 
+class="aess-12">R  </span>would  see  this  as  a
+      character string &#8220; ", not a empty cell. Another reason is that the missing
+      value code is textual and not recognized by <span 
+class="aess-12">R</span>. There are ways around
+      this problem using either find/replace techniques in your spreadsheet
+      application to delete the missing value codes, or by changing the way
+      the <a 
+ id="dx6-34008"></a><span 
+class="aett-12">read.table() </span>or <a 
+ id="dx6-34009"></a><span 
+class="aett-12">read.csv() </span>command reads your data file. See
+      the help for these commands if this is the case.</li></ul>
+                                                                          
+
+                                                                          
+   <!--l. 7--><div class="crosslinks"><p class="noindent">[<a 
+href="LURNch5.html" >next</a>] [<a 
+href="LURNch3.html" >prev</a>] [<a 
+href="LURNch3.html#tailLURNch3.html" >prev-tail</a>] [<a 
+href="LURNch4.html" >front</a>] [<a 
+href="LURN.html#LURNch4.html" >up</a>] </p></div>
+<!--l. 7--><p class="indent" >   <a 
+ id="tailLURNch4.html"></a>   
+</body></html> 

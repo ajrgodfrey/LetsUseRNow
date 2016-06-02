@@ -1,0 +1,14 @@
+\SVGLink{MapsWholeNZ-1} 
+\end{center} 
+\end{exhibit} 
+ 
+The maps in these graphs are based on latitude and longitude data. The \Rcmd{map} function ensures the aspect ratio of the resulting plot is in keeping with the actual view you would have from space if you were directly above the centre of the map being plotted. Note that this rule doesn't apply for the world map options that exist. 
+ 
+\section{Adding cities to a map} 
+ 
+The \Rcmd{map.cities} function extracts data from a database of the world's cities. Judicious selection of the criteria for population was required to get Palmerston North marked, and the \Rarg{capitals} argument was used to get the point for Wellington. I have used some colours to distinguish the different cities for my plot. 
+ 
+\begin{exhibit} 
+\caption{Map showing the central part of New Zealand in order to show two cities in the lower North Island.} 
+\label{PartNZ} 
+\begin{center} 

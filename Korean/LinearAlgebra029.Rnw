@@ -1,0 +1,6 @@
+Like many other applications, \R{} does not recognize the number zero very well. This is due to the way decimal numbers are stored. 
+ 
+ 
+\section{Solving a set of linear equations} 
+ 
+If we want to solve the set of equations, represented in matrix form as $Ax=b$, we use the \Rcmd{solve} command 

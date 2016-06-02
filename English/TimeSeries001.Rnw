@@ -1,0 +1,6 @@
+%\setcounter{chapter}{} 
+% commands to check for inclusion 
+% filter(), HoltWinters(), spectrum(), Box.test(), lag.plot(), monthplot(), tsdiag(),  
+\chapter{LURN\ldots{} To Perform Times Series Analyses} 
+\label{TimeSeries} 
+ 

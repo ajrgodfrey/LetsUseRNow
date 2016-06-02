@@ -1,0 +1,4 @@
+<<StackBar>>= 
+barplot(tapply(Frequency, list(Gender, Age), sum), col=c(2,4), legend=TRUE) 
+title("Stack bar chart of age and gender", ylab="Count", xlab="Age") 
+@  

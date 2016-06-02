@@ -1,0 +1,1 @@
+You might suspect that this variable tells you if the name given in the \Robject{Names} variable are for humans. The fourth name is therefore the dog. To extract the names of the humans we use the command 

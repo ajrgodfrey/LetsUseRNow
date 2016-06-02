@@ -1,0 +1,36 @@
+\documentclass[a4paper,12pt,openany,english]{book}
+\input{LURNPreamble}
+
+%% just for web versions
+\usepackage{SweaveWebLURN}
+\newcommand{\SVGLink}[1]{\href{../svgs/#1.svg}{link to SVG file: #1.svg}}
+\newcommand{\Blind}[1]{}
+
+% the following is used for the print version only
+%\input{LURN-KnitRStart}
+
+\begin{document}
+\pagestyle{empty}
+%% Title page
+\title{L U R N\\[15mm]Let's Use \includegraphics[width=0.2\textwidth]{Other/rlogo}  Now\ldots}
+\author{A.\ Jonathan R.\ Godfrey}
+\date{\today \\
+ISBN 978-0-473-17650-1}
+\maketitle \pagebreak
+\input{Citation}
+\frontmatter \pagestyle{plain} 
+\clearpage
+\tableofcontents
+
+
+\mainmatter
+\pagestyle{headings}
+
+\input{LURNCommon}
+
+
+%\clearpage
+%\phantomsection
+%\addcontentsline{toc}{chapter}{Index} 
+\printindex
+\end{document}

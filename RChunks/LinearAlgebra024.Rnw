@@ -1,0 +1,4 @@
+<<GetInverse>>= 
+A 
+solve(A) 
+@ 

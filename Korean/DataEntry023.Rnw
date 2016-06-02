@@ -1,0 +1,5 @@
+In this situation the exclamation mark should be read as ``not" and therefore picks up the elements where the logical variable is set to \code{FALSE}. 
+ 
+\section{A note on subscripting} 
+ 
+We've seen that we can find a subset of the set of names using the indicator variable, but it's frequently useful to be able to extract one or more elements by their location. For example 

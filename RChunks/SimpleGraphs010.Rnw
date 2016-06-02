@@ -1,0 +1,3 @@
+<<HistAirQualityWind2>>= 
+hist(Wind, xlab="Average wind speed (mph)", main="") 
+@ 

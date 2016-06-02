@@ -1,0 +1,17 @@
+\SVGLink{ComplexGraphsStackBar-1} 
+\end{center} 
+\end{exhibit} 
+ 
+ 
+ 
+\section{Contour plots} 
+ 
+A scatter plot indicates the presence of an observation at pairs of $x$ and $y$ values. When a third variable is also measured, we run into some trouble when comparing it to the values of $x$ and $y$ in a single graph. Three-dimensional displays can be employed but require the interpretation of the creator and the reader to turn the two-dimensional graph on paper or the screen into the three-dimensional object actually being displayed. 
+ 
+A contour plot is a two-dimensional display. It shows a set of curves that represent common values of a variable plotted against two other variables. They are commonly seen in weather charts where barometric pressure lines (contours) are plotted on the map of a country or region (latitude and longitude are the two other variables). 
+ 
+Exhibit~\ref{MtEdenContour} shows the contour lines for the altitude of a volcano in Auckland, New Zealand. Mt Eden is also known by its Maori name Maunga Whau and the data we need for this illustration is provided in the datasets supplied with base installations of \R{}. 
+\begin{exhibit} 
+\begin{center} 
+\caption{Contour plot of Mt Eden, a volcano in Auckland, New Zealand.} 
+\label{MtEdenContour} 
