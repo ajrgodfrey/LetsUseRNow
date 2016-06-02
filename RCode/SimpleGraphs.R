@@ -1,76 +1,76 @@
 ## ----setup, include=FALSE------------------------------------------------
-opts_chunk$set(fig.path='figures/SimpleGraphs', comment=NA, dev=c('pdf','postscript','svg'), prompt=T, out.width="0.8\\textwidth")
-source("GenericSettings.R")
+opts_chunk$set(fig.path='figures/SimpleGraphs', comment=NA, dev=c('pdf','postscript','svg'), prompt=T, out.width="0.8\\textwidth") 
+source("GenericSettings.R") 
 
 ## ----IntroAirQuality-----------------------------------------------------
-str(airquality)
+str(airquality) 
 
 ## ----Attach--------------------------------------------------------------
-attach(airquality)
+attach(airquality) 
 
 ## ----HistAirQualityWind--------------------------------------------------
-hist(Wind)
+hist(Wind) 
 
 ## ----HistAirQualityWind2-------------------------------------------------
-hist(Wind, xlab="Average wind speed (mph)", main="")
+hist(Wind, xlab="Average wind speed (mph)", main="") 
 
 ## ----Boxplot, echo=FALSE, fig.width=7, fig.height=5, eval=-1-------------
-windows(7, 5)
-boxplot(Wind, horizontal=TRUE, xlab="Wind speed (mph)")
+windows(7, 5) 
+boxplot(Wind, horizontal=TRUE, xlab="Wind speed (mph)") 
 
 ## ----CompBoxplot---------------------------------------------------------
-boxplot(Wind~Month, xlab="Month", ylab="Wind speed (mph)")
+boxplot(Wind~Month, xlab="Month", ylab="Wind speed (mph)") 
 
 ## ----DotPlot, echo=FALSE, fig.width=7, fig.height=2.5, eval=-1-----------
-windows(7, 2.5)
-dotchart(Wind)
+windows(7, 2.5) 
+dotchart(Wind) 
 
 ## ----LinePlot------------------------------------------------------------
-plot(Temp, ylim=c(50,100))
+plot(Temp, ylim=c(50,100)) 
 
 ## ----LinePlot2-----------------------------------------------------------
-plot(Temp, ylim=c(50,100), type="l")
+plot(Temp, ylim=c(50,100), type="l") 
 
 ## ----NormPlot------------------------------------------------------------
-qqnorm(Wind)
-qqline(Wind)
+qqnorm(Wind) 
+qqline(Wind) 
 
 ## ----ScatterCode1, eval=FALSE--------------------------------------------
-plot(Wind, Temp)
+plot(Wind, Temp) 
 
 ## ----ScatterCode2, eval=FALSE--------------------------------------------
-plot(Temp~Wind)
+plot(Temp~Wind) 
 
 ## ----Scatter-------------------------------------------------------------
-plot(Wind, Temp)
+plot(Wind, Temp) 
 
 ## ----MatrixPlot----------------------------------------------------------
-pairs(data.frame(Ozone, Solar.R, Wind, Temp))
+pairs(data.frame(Ozone, Solar.R, Wind, Temp)) 
 
 ## ----IntroStateRegion----------------------------------------------------
-str(state.region)
-levels(state.region)
+str(state.region) 
+levels(state.region) 
 
 ## ----StateRegionBarChart-------------------------------------------------
-plot(state.region)
+plot(state.region) 
 
 ## ----SummaryState--------------------------------------------------------
-summary(state.region)
+summary(state.region) 
 
 ## ----StateRegionBarChart2------------------------------------------------
-barplot(summary(state.region))
+barplot(summary(state.region)) 
 
 ## ----ReorderRegions------------------------------------------------------
-summary(state.region)[c(4,2,3,1)]
+summary(state.region)[c(4,2,3,1)] 
 
 ## ----StateRegionBarChartImp----------------------------------------------
-barplot(summary(state.region)[c(4,2,3,1)])
+barplot(summary(state.region)[c(4,2,3,1)]) 
 
 ## ----StateRegionPieChart, fig.width=7, fig.height=7----------------------
-pie(summary(state.region))
+pie(summary(state.region)) 
 
 ## ----DetachAirQuality----------------------------------------------------
-detach(airquality)
+detach(airquality) 
 
 ## ----cleanup, include=FALSE----------------------------------------------
 rm(list = ls())

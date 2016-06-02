@@ -1,35 +1,35 @@
 ## ----setup, include = FALSE----------------------------------------------
-source("GenericSettings.R")
+source("GenericSettings.R") 
 
 ## ----ImportCSV, eval=FALSE-----------------------------------------------
-Chickens = read.csv("chickens.csv")
+Chickens = read.csv("chickens.csv") 
 
 ## ----ImportCSV2,eval=FALSE-----------------------------------------------
-Chickens = read.csv("chickens.csv", row.names=1)
+Chickens = read.csv("chickens.csv", row.names=1) 
 
 ## ----ImportCSV3,eval=FALSE-----------------------------------------------
-Chickens = read.csv("chickens.csv", header=FALSE)
+Chickens = read.csv("chickens.csv", header=FALSE) 
 
 ## ----GetWD---------------------------------------------------------------
-getwd()
+getwd() 
 
 ## ----ImportCSVSubFolder1, eval=FALSE-------------------------------------
-Chickens = read.csv("MyData/chickens.csv")
+Chickens = read.csv("MyData/chickens.csv") 
 
 ## ----ImportCSVSubFolder2, eval=FALSE-------------------------------------
-Chickens = read.csv("./MyData/chickens.csv")
+Chickens = read.csv("./MyData/chickens.csv") 
 
 ## ----ImportCSVSOtherFolder, eval=FALSE-----------------------------------
-Chickens = read.csv("../MyData/chickens.csv")
+Chickens = read.csv("../MyData/chickens.csv") 
 
 ## ----PullData------------------------------------------------------------
-data(airquality)
-str(airquality)
-ls()
+data(airquality) 
+str(airquality) 
+ls() 
 
 ## ----PullData2-----------------------------------------------------------
-data(anorexia, package="MASS")
+data(anorexia, package="MASS") 
 
-## ----cleanup, include = FALSE--------------------------------------------
+## ----cleanup, include=FALSE----------------------------------------------
 rm(list = ls())
 

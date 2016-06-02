@@ -5,7 +5,7 @@
 ## Introduction 
 This e-book has been posted on GitHub because there are two offers to translate sections into other languages. Instructions for doing so will be put in the file called NewLanguage.txt as a reference.
 
-The GitHub repository was created on 2 June 2016 by Jonathan Godfrey; please send me a message if you intend to translate the owrk into a new language so I can be ready to help out when things aren't going so well. Use a.j.godfrey@massey.ac.nz 
+The GitHub repository was created on 2 June 2016 by Jonathan Godfrey; please send me a message if you intend to translate the work into a new language so I can be ready to help out when things aren't going so well. Use a.j.godfrey@massey.ac.nz 
 
 ## A note on completeness
 

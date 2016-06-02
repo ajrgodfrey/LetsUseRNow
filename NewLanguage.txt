@@ -55,7 +55,10 @@ Now see if miktex is working correctly by running the LatexLURN.bat batch file. 
 
 If you've ended up with a file called lurnPrint.pdf that is newly created (check the timestamp on that file carefully) then everything is working with making the e-book in English using your copy of the Rnw files and your first batch file; well done.
 
-## 
+##  Making an HTML version
+
+There are some things I need to add to this repository before this can happen. Please be patient.
+
 
 
 

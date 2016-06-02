@@ -1,122 +1,122 @@
-\chapter{LURN\ldots{} To Import Data}
-\label{ImportData}
+\chapter{LURN\ldots{} To Import Data} 
+\label{ImportData} 
+ 
 
-
-
-This chapter covers the methods required to pull data from external sources into \R{}. If you want to create data within \R{}, you should be reading Chapter~\ref{DataEntry}.
-
-\section{Data from external files}
-
-While I prefer to use files extracted from EXCEL with comma delimited values, \R{} handles many common formats such as plain text files with space or tab delimiters. You need to know what format a file is, probably by opening it and actually seeing if it is as you expect. It is too easy to rename a file with various extensions which may have meanings in your operating system that have little relevance to \R{}. A specific case in point is when you are presented with a file having the \file{txt} extension, which is commonly assumed to be a text file. We need to know if the first line of information in the file is actual data or the headings for the columns of data. We also need to know what symbol is used to separate the columns of the data; spaces, commas, or tabs are the most common options. Each of these options has a distinct \R{} command associated with it, but all of these commands link back to the same \Rcmd{read.table} command.
-
-The various commands are as follows
-\begin{center} \begin{tabular}{lll}
-\hline\hline
-Delimiter&\R{} command&Common Extensions\\ \hline
-space&\Rcmd{read.table}&DAT, TXT\\
-tab&\Rcmd{read.delim}&TXT\\
-comma&\Rcmd{read.csv}&CSV, TXT\\
-\hline\hline
-\end{tabular} \end{center}
-
-Note that the \file{txt} extension appears as possible extensions for all delimiter types. \R{} will not assume any extension for these commands. You will need to explicitly state the full filename including extension when using these commands. Some extensions will have a default program associated with them by your operating system. For example, \file{txt} files will be opened in \file{Notepad} under Windows, and if Microsoft Office is installed on your machine, a \file{csv} file will be opened in Microsoft EXCEL.
-
-To import a comma delimited file called \file{chickens.csv}, you would issue the following command
+ 
+This chapter covers the methods required to pull data from external sources into \R{}. If you want to create data within \R{}, you should be reading Chapter~\ref{DataEntry}. 
+ 
+\section{Data from external files} 
+ 
+While I prefer to use files extracted from EXCEL with comma delimited values, \R{} handles many common formats such as plain text files with space or tab delimiters. You need to know what format a file is, probably by opening it and actually seeing if it is as you expect. It is too easy to rename a file with various extensions which may have meanings in your operating system that have little relevance to \R{}. A specific case in point is when you are presented with a file having the \file{txt} extension, which is commonly assumed to be a text file. We need to know if the first line of information in the file is actual data or the headings for the columns of data. We also need to know what symbol is used to separate the columns of the data; spaces, commas, or tabs are the most common options. Each of these options has a distinct \R{} command associated with it, but all of these commands link back to the same \Rcmd{read.table} command. 
+ 
+The various commands are as follows 
+\begin{center} \begin{tabular}{lll} 
+\hline\hline 
+Delimiter&\R{} command&Common Extensions\\ \hline 
+space&\Rcmd{read.table}&DAT, TXT\\ 
+tab&\Rcmd{read.delim}&TXT\\ 
+comma&\Rcmd{read.csv}&CSV, TXT\\ 
+\hline\hline 
+\end{tabular} \end{center} 
+ 
+Note that the \file{txt} extension appears as possible extensions for all delimiter types. \R{} will not assume any extension for these commands. You will need to explicitly state the full filename including extension when using these commands. Some extensions will have a default program associated with them by your operating system. For example, \file{txt} files will be opened in \file{Notepad} under Windows, and if Microsoft Office is installed on your machine, a \file{csv} file will be opened in Microsoft EXCEL. 
+ 
+To import a comma delimited file called \file{chickens.csv}, you would issue the following command 
 \begin{Schunk}
 \begin{Sinput}
-> Chickens = read.csv("chickens.csv")
+> Chickens = read.csv("chickens.csv") 
 \end{Sinput}
 \end{Schunk}
-In this most basic form, the 
-\Rcmd{read.csv} command will look for the \file{chickens.csv} file in the current working directory, and import it into \R{} and store it as a \Rclass{data.frame} called \Robject{Chickens}. The default settings of the \Rcmd{read.csv} command are to have a \Rarg{header} row in the file and to have no \Rarg{row.names} attribute associated with the data in the file. If your data file already had a column for the names of the chickens as the first column, you would issue the command
+In this most basic form, the  
+\Rcmd{read.csv} command will look for the \file{chickens.csv} file in the current working directory, and import it into \R{} and store it as a \Rclass{data.frame} called \Robject{Chickens}. The default settings of the \Rcmd{read.csv} command are to have a \Rarg{header} row in the file and to have no \Rarg{row.names} attribute associated with the data in the file. If your data file already had a column for the names of the chickens as the first column, you would issue the command 
 \begin{Schunk}
 \begin{Sinput}
-> Chickens = read.csv("chickens.csv", row.names=1)
+> Chickens = read.csv("chickens.csv", row.names=1) 
 \end{Sinput}
 \end{Schunk}
-and if the data did not currently have any column headings you would issue the command
+and if the data did not currently have any column headings you would issue the command 
 \begin{Schunk}
 \begin{Sinput}
-> Chickens = read.csv("chickens.csv", header=FALSE)
+> Chickens = read.csv("chickens.csv", header=FALSE) 
 \end{Sinput}
 \end{Schunk}
-
-There are other settings to consider which you can investigate using the help for the \Rcmd{read.csv} command by typing \code{?read.csv} at the command prompt. This help page is actually a combined help page for the family of commands described in this section.
-
-The working above assumed you could put the data file into the correct working directory.  So where was that? To find out where \R{} thinks you are currently working, use the \Rcmd{getwd} command. Note that the output may look a little strange to some users, especially Windows users. What do I mean? Look at the following:
+ 
+There are other settings to consider which you can investigate using the help for the \Rcmd{read.csv} command by typing \code{?read.csv} at the command prompt. This help page is actually a combined help page for the family of commands described in this section. 
+ 
+The working above assumed you could put the data file into the correct working directory.  So where was that? To find out where \R{} thinks you are currently working, use the \Rcmd{getwd} command. Note that the output may look a little strange to some users, especially Windows users. What do I mean? Look at the following: 
 \begin{Schunk}
 \begin{Sinput}
-> getwd()
+> getwd() 
 \end{Sinput}
 \begin{Soutput}
 [1] "C:/Users/ajgodfre/Documents/Publications/LetsUseRNow"
 \end{Soutput}
 \end{Schunk}
-
-The full path to the working directory where this chapter was processed has been displayed, starting with the letter associated with the hard drive, followed by a colon. Then the fun begins. The folder structure is represented using forward slash signs, not the backslash used in Windows operating systems even though the processing of this work is done using a Windows machine. The rest should be as expected and you could find the right folder by looking in the appropriate place on your hard drive. The reason for \R{}'s use of the foward slash is not entirely simple to explain, but in short it is because the standard backslash symbols has a special use  in \R{}.For the moment, the choice of slash versus backslash is not important. It is important when we need to type out the path to the location of a file for ourselves.
-
-
-
-\section{Data stored in another directory}
-
-
-I do try to keep each separate project in its own distinct directory, and moving the raw data file to that directory makes sense. It does not make sense to have multiple copies of a dataset though, so we need to know how to pull a file from a different working directory into \R{}.
-
-When I displayed the current working directory in the previous section using the \Rcmd{getwd} command, we saw the way that \R{} used forward slash symbols to denote the hierarchy of folders on our hard drive.
-
-If we know the complete specification of the location of a file, right the way from the name of the hard drive down the directory tree to the actual location, the way we specify the location needs to match the way \R{} has printed a path. That is, we use the forward slash symbol not a single backslash. If we do want to use a backslash symbol, we would need to use a double backslash, not just a single one. It is better to use a single forward slash symbol however. This is because the single forward slash presentation works for all operating systems and means our code can be shared to users of all operating systems. You might not plan to do this right now, but let's use good habits from the start.
-
-It is common for data to be stored in a folder that is close to the one we are working in. We might have a folder called \file{MyData} which is within the working directory (a subfolder), or it might be a folder at the same level in the directory tree as the current working directory. In either case, we don't need to specify the location using the full path. The term used to describe the location is a \stressind{relative path} because the reference to the location is relative to the current location having focus (our working directory). 
-
-If our data set is stored in the file \file{chickens.csv} in a  subfolder called \file{MyData}, we can use 
+ 
+The full path to the working directory where this chapter was processed has been displayed, starting with the letter associated with the hard drive, followed by a colon. Then the fun begins. The folder structure is represented using forward slash signs, not the backslash used in Windows operating systems even though the processing of this work is done using a Windows machine. The rest should be as expected and you could find the right folder by looking in the appropriate place on your hard drive. The reason for \R{}'s use of the foward slash is not entirely simple to explain, but in short it is because the standard backslash symbols has a special use  in \R{}.For the moment, the choice of slash versus backslash is not important. It is important when we need to type out the path to the location of a file for ourselves. 
+ 
+ 
+ 
+\section{Data stored in another directory} 
+ 
+ 
+I do try to keep each separate project in its own distinct directory, and moving the raw data file to that directory makes sense. It does not make sense to have multiple copies of a dataset though, so we need to know how to pull a file from a different working directory into \R{}. 
+ 
+When I displayed the current working directory in the previous section using the \Rcmd{getwd} command, we saw the way that \R{} used forward slash symbols to denote the hierarchy of folders on our hard drive. 
+ 
+If we know the complete specification of the location of a file, right the way from the name of the hard drive down the directory tree to the actual location, the way we specify the location needs to match the way \R{} has printed a path. That is, we use the forward slash symbol not a single backslash. If we do want to use a backslash symbol, we would need to use a double backslash, not just a single one. It is better to use a single forward slash symbol however. This is because the single forward slash presentation works for all operating systems and means our code can be shared to users of all operating systems. You might not plan to do this right now, but let's use good habits from the start. 
+ 
+It is common for data to be stored in a folder that is close to the one we are working in. We might have a folder called \file{MyData} which is within the working directory (a subfolder), or it might be a folder at the same level in the directory tree as the current working directory. In either case, we don't need to specify the location using the full path. The term used to describe the location is a \stressind{relative path} because the reference to the location is relative to the current location having focus (our working directory).  
+ 
+If our data set is stored in the file \file{chickens.csv} in a  subfolder called \file{MyData}, we can use  
 \begin{Schunk}
 \begin{Sinput}
-> Chickens = read.csv("MyData/chickens.csv")
+> Chickens = read.csv("MyData/chickens.csv") 
 \end{Sinput}
 \end{Schunk}
-to pull it into our current workspace. This is actually shorthand for the more complete form
+to pull it into our current workspace. This is actually shorthand for the more complete form 
 \begin{Schunk}
 \begin{Sinput}
-> Chickens = read.csv("./MyData/chickens.csv")
+> Chickens = read.csv("./MyData/chickens.csv") 
 \end{Sinput}
 \end{Schunk}
-where the current folder is denoted using the single period followed by the first slash. Personally, I would prefer to see the more complete form of this relative path being used but it is personal preference only.
-
-If the \file{MyData} folder was not a subfolder, but was on the same level in the directory tree as our current working directory, we would use the shorthand symbol for the parent directory (one level up the directory tree). This is done using  a double period.
+where the current folder is denoted using the single period followed by the first slash. Personally, I would prefer to see the more complete form of this relative path being used but it is personal preference only. 
+ 
+If the \file{MyData} folder was not a subfolder, but was on the same level in the directory tree as our current working directory, we would use the shorthand symbol for the parent directory (one level up the directory tree). This is done using  a double period. 
 \begin{Schunk}
 \begin{Sinput}
-> Chickens = read.csv("../MyData/chickens.csv")
+> Chickens = read.csv("../MyData/chickens.csv") 
 \end{Sinput}
 \end{Schunk}
-
-Relative paths are therefore quite useful because they avoid having to type out long paths. The full specification of apath might also become a problem when files for a project are moved from one storage device to another. For example, you might want to take your work to a friend, tutor, or colleague on a  memory stick or other portable storage medium. Relative path referencing makes your work very transferable and transportable.
-
-
-
-
-
-
-\section{Data saved by other statistical software}
-
-Many statistical software packages use their own file types for storing data. \R{} is no different actually! The chief problem we have is to find a way of transferring data from one application to another. Like most other statistics programs, \R{} doesn't handle all other file types. Some files can be imported into \R{} using the commands in the \Rpackage{foreign} package, but it is probably best just to avoid the problems from the start.
-
-In many instances it will prove easiest to use copy and paste functionality within your operating system to take the data from whatever original source it was given to you in and put it into a suitable spreadsheet program. Then save it using the comma separated values format and read the data into \R{} using the commands given in the previous section.
-
-I recommend trying to obtain the data in an easily imported file type rather than attempting to use the functions in the \Rpackage{foreign} package.
-
-\section{Data from files stored on the internet}
-
-Sometimes a data set is made available via the internet. If you can obtain the full URL for the downloadable data file then it can be entered into the \Rcmd{read.csv} or \Rcmd{read.table} commands. This exercise is seldom necessary except for data files that you know will be updated for distribution through the web. Some government agencies and financial database services do this.
-
-\section{Data contained in contributed packages}
-\label{DataFromPackages}
-
-
-The base installation of \R{} includes a package called \Rpackage{datasets}. These data sets are useful for testing code and writing examples for insertion into documents like this one. Data sets contained in the \Rpackage{datasets} package are actually ready and waiting to be accessed, but often we want to bring the data into our current workspace using a command such as
+ 
+Relative paths are therefore quite useful because they avoid having to type out long paths. The full specification of apath might also become a problem when files for a project are moved from one storage device to another. For example, you might want to take your work to a friend, tutor, or colleague on a  memory stick or other portable storage medium. Relative path referencing makes your work very transferable and transportable. 
+ 
+ 
+ 
+ 
+ 
+ 
+\section{Data saved by other statistical software} 
+ 
+Many statistical software packages use their own file types for storing data. \R{} is no different actually! The chief problem we have is to find a way of transferring data from one application to another. Like most other statistics programs, \R{} doesn't handle all other file types. Some files can be imported into \R{} using the commands in the \Rpackage{foreign} package, but it is probably best just to avoid the problems from the start. 
+ 
+In many instances it will prove easiest to use copy and paste functionality within your operating system to take the data from whatever original source it was given to you in and put it into a suitable spreadsheet program. Then save it using the comma separated values format and read the data into \R{} using the commands given in the previous section. 
+ 
+I recommend trying to obtain the data in an easily imported file type rather than attempting to use the functions in the \Rpackage{foreign} package. 
+ 
+\section{Data from files stored on the internet} 
+ 
+Sometimes a data set is made available via the internet. If you can obtain the full URL for the downloadable data file then it can be entered into the \Rcmd{read.csv} or \Rcmd{read.table} commands. This exercise is seldom necessary except for data files that you know will be updated for distribution through the web. Some government agencies and financial database services do this. 
+ 
+\section{Data contained in contributed packages} 
+\label{DataFromPackages} 
+ 
+ 
+The base installation of \R{} includes a package called \Rpackage{datasets}. These data sets are useful for testing code and writing examples for insertion into documents like this one. Data sets contained in the \Rpackage{datasets} package are actually ready and waiting to be accessed, but often we want to bring the data into our current workspace using a command such as 
 \begin{Schunk}
 \begin{Sinput}
-> data(airquality)
-> str(airquality)
+> data(airquality) 
+> str(airquality) 
 \end{Sinput}
 \begin{Soutput}
 'data.frame':	153 obs. of  6 variables:
@@ -128,41 +128,41 @@ The base installation of \R{} includes a package called \Rpackage{datasets}. The
  $ Day    : int  1 2 3 4 5 6 7 8 9 10 ...
 \end{Soutput}
 \begin{Sinput}
-> ls()
+> ls() 
 \end{Sinput}
 \begin{Soutput}
 [1] "airquality"
 \end{Soutput}
 \end{Schunk}
-The \Rcmd{data} command looks in the \Rpackage{datasets} package by default. If we wanted to get some data from another package we would need to state the name of the package explicitly. For example,
+The \Rcmd{data} command looks in the \Rpackage{datasets} package by default. If we wanted to get some data from another package we would need to state the name of the package explicitly. For example, 
 \begin{Schunk}
 \begin{Sinput}
-> data(anorexia, package="MASS")
+> data(anorexia, package="MASS") 
 \end{Sinput}
 \end{Schunk}
-(The \Rpackage{MASS} package is already installed by default.) 
-
-Often we will be using a particular data set because it is good for demonstrating functions within a particular package. If we are loading the package using the \Rcmd{library} command, to get access to the functions, we will have also made the data available. This is why the data from the \Rpackage{datasets} is ready for use; this package is loaded by default whenever \R{} is started.
-
-
-\section{Data cleanliness}
-
-Rather ironically, the suggestion for including this section came from my mother. All too frequently, data are entered by people who will not actually need to use the data themselves. Sometimes data are entered by different people and then compiled into a single dataset and the various codes that some sources of data may use are not necessarily in common with all other users. Take for example, the many ways we might enter data for the gender of individuals answering a survey. You might easily realise that an ``\code{M}" means male, but \R{} needs consistency.
-
-It is extremely important that we have knowledge of the format of the data we import. Use of the \Rcmd{str} command is a good start, and use of the \Rcmd{head} command might also be useful.
-
-Here are some pointers to look out for:\begin{itemize}
-
-\item Have you mixed the case of the text in your data? Remember that \R{} is case sensitive and that ``R" is not the same as ``r" in \R{}.
-
-\item Has \R{} tried to be too smart and interpretted plain text information as if you wanted a \Rclass{factor} instead? This occurs frequently with date values which are notorious for the variety of formats people choose. If you have a factor when you wanted just plain text, investigate the \Rcmd{as.character} command which changes the format to being character valued data.
-\item Have a multitude of codes been used for variables like gender? If so, \R{} will decide that the variable is a \Rclass{factor} and list the different values the variable can take. The levels of the factor can be re-assigned using the \Rcmd{levels} command. See how this is done on \pageref{UseOfLevels} and note that two elements of the assignment can be the same if the current codes mean the same thing.
-\item Have extra spaces crept into the codes for levels of factors somehow? This happens when an extra space occurs between words or is added on the end of a text string. Often, this problem is difficult to spot visually as we are talking about white space --- \R{} will find it though! Use the \Rcmd{levels} command to fix this if the problem is small, but consider using a find/replace tool in a spreadsheet application as an alternative.
-\item Have numbers come into \R{} as text for some reason? This happens for a number of reasons. A blank space being entered in the cell instead of a code for a missing value for example. \R{} would see this as a character string `` ", not a empty cell. Another reason is that the missing value code is textual and not recognized by \R{}. There are ways around this problem using either find/replace techniques in your spreadsheet application to delete the missing value codes, or by changing the way the \Rcmd{read.table} or \Rcmd{read.csv} command reads your data file. See the help for these commands if this is the case.
-\end{itemize}
-
-
-
-
-
+(The \Rpackage{MASS} package is already installed by default.)  
+ 
+Often we will be using a particular data set because it is good for demonstrating functions within a particular package. If we are loading the package using the \Rcmd{library} command, to get access to the functions, we will have also made the data available. This is why the data from the \Rpackage{datasets} is ready for use; this package is loaded by default whenever \R{} is started. 
+ 
+ 
+\section{Data cleanliness} 
+ 
+Rather ironically, the suggestion for including this section came from my mother. All too frequently, data are entered by people who will not actually need to use the data themselves. Sometimes data are entered by different people and then compiled into a single dataset and the various codes that some sources of data may use are not necessarily in common with all other users. Take for example, the many ways we might enter data for the gender of individuals answering a survey. You might easily realise that an ``\code{M}" means male, but \R{} needs consistency. 
+ 
+It is extremely important that we have knowledge of the format of the data we import. Use of the \Rcmd{str} command is a good start, and use of the \Rcmd{head} command might also be useful. 
+ 
+Here are some pointers to look out for:\begin{itemize} 
+ 
+\item Have you mixed the case of the text in your data? Remember that \R{} is case sensitive and that ``R" is not the same as ``r" in \R{}. 
+ 
+\item Has \R{} tried to be too smart and interpretted plain text information as if you wanted a \Rclass{factor} instead? This occurs frequently with date values which are notorious for the variety of formats people choose. If you have a factor when you wanted just plain text, investigate the \Rcmd{as.character} command which changes the format to being character valued data. 
+\item Have a multitude of codes been used for variables like gender? If so, \R{} will decide that the variable is a \Rclass{factor} and list the different values the variable can take. The levels of the factor can be re-assigned using the \Rcmd{levels} command. See how this is done on \pageref{UseOfLevels} and note that two elements of the assignment can be the same if the current codes mean the same thing. 
+\item Have extra spaces crept into the codes for levels of factors somehow? This happens when an extra space occurs between words or is added on the end of a text string. Often, this problem is difficult to spot visually as we are talking about white space --- \R{} will find it though! Use the \Rcmd{levels} command to fix this if the problem is small, but consider using a find/replace tool in a spreadsheet application as an alternative. 
+\item Have numbers come into \R{} as text for some reason? This happens for a number of reasons. A blank space being entered in the cell instead of a code for a missing value for example. \R{} would see this as a character string `` ", not a empty cell. Another reason is that the missing value code is textual and not recognized by \R{}. There are ways around this problem using either find/replace techniques in your spreadsheet application to delete the missing value codes, or by changing the way the \Rcmd{read.table} or \Rcmd{read.csv} command reads your data file. See the help for these commands if this is the case. 
+\end{itemize} 
+ 
+ 
+ 
+ 
+ 
 

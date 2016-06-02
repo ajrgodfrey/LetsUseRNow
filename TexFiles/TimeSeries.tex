@@ -1,114 +1,130 @@
-%\setcounter{chapter}{}
-% commands to check for inclusion
-% filter(), HoltWinters(), spectrum(), Box.test(), lag.plot(), monthplot(), tsdiag(), 
-\chapter{LURN\ldots{} To Perform Times Series Analyses}
-\label{TimeSeries}
+%\setcounter{chapter}{} 
+% commands to check for inclusion 
+% filter(), HoltWinters(), spectrum(), Box.test(), lag.plot(), monthplot(), tsdiag(),  
+\chapter{LURN\ldots{} To Perform Times Series Analyses} 
+\label{TimeSeries} 
+ 
 
-
-
-This chapter focuses on some simple time series approaches for univariate time series. At this stage multivariate time series are not included, but could be in future depending on demand. In any case, the methods shown here are certainly not meant to be a comprehensive elucidation of all time series methods. Dealing with just the most commonly taught (and therefore the simplest) methods takes up enough space. 
-
-You will need to refer to a standard time series analysis textbook for more complete guidance; many of these are now written with \R{} as the chosen software to support the material in the book.
-
-Given this proliferation of textbooks on the topic of time series analysis, it is no surprise that there are a number of add-on packages written to support them. In this chapter we do not extend beyond the functionality offered by the base distribution of \R{}.
-
-\section{Time series objects in \R{}}
-
-The basic univariate time series, with no missing data is stored in \R{} as a time series object. This is marginally different to a vector in that it has a time stamp or index associated with each observation in the series.
-
-We will use several time series data sets that are available within the default installation of \R{}. <<IntroData>>=
-str(LakeHuron)
-str(lynx)
-str(Nile)
-@
-The first is for the level of Lake Huron; the second is the number of lynx that were trapped in Canada; and the third is the flow of the River Nile. More detailed information for all of these series is available using the relevant help function for the series.
-
-You can use the Rcmd{as.ts} command to convert a vector of observations to a time series object. For example, the Robject{airquality} data is recorded in time order. We might want to treat the observed temperatures as a time series by converting it using:
+ 
+This chapter focuses on some simple time series approaches for univariate time series. At this stage multivariate time series are not included, but could be in future depending on demand. In any case, the methods shown here are certainly not meant to be a comprehensive elucidation of all time series methods. Dealing with just the most commonly taught (and therefore the simplest) methods takes up enough space.  
+ 
+You will need to refer to a standard time series analysis textbook for more complete guidance; many of these are now written with \R{} as the chosen software to support the material in the book. 
+ 
+Given this proliferation of textbooks on the topic of time series analysis, it is no surprise that there are a number of add-on packages written to support them. In this chapter we do not extend beyond the functionality offered by the base distribution of \R{}. 
+ 
+\section{Time series objects in \R{}} 
+ 
+The basic univariate time series, with no missing data is stored in \R{} as a time series object. This is marginally different to a vector in that it has a time stamp or index associated with each observation in the series. 
+ 
+We will use several time series data sets that are available within the default installation of \R{}.  
 \begin{Schunk}
 \begin{Sinput}
-> Temp.ts = as.ts(airquality$Temp)
+> str(LakeHuron) 
+\end{Sinput}
+\begin{Soutput}
+ Time-Series [1:98] from 1875 to 1972: 580 582 581 581 580 ...
+\end{Soutput}
+\begin{Sinput}
+> str(lynx) 
+\end{Sinput}
+\begin{Soutput}
+ Time-Series [1:114] from 1821 to 1934: 269 321 585 871 1475 ...
+\end{Soutput}
+\begin{Sinput}
+> str(Nile) 
+\end{Sinput}
+\begin{Soutput}
+ Time-Series [1:100] from 1871 to 1970: 1120 1160 963 1210 1160 1160 813 1230 1370 1140 ...
+\end{Soutput}
+\end{Schunk}
+The first is for the level of Lake Huron; the second is the number of lynx that were trapped in Canada; and the third is the flow of the River Nile. More detailed information for all of these series is available using the relevant help function for the series. 
+ 
+You can use the Rcmd{as.ts} command to convert a vector of observations to a time series object. For example, the Robject{airquality} data is recorded in time order. We might want to treat the observed temperatures as a time series by converting it using: 
+\begin{Schunk}
+\begin{Sinput}
+> Temp.ts = as.ts(airquality$Temp) 
 \end{Sinput}
 \end{Schunk}
-
-\section{Time series plots}
-
-We have seen the flexibility of the \Rcmd{plot} command in previous chapters, and now we see another use. Applying the \Rcmd{plot} command to a time series object generates a time series plot, as seen in Exhibit~\ref{NileTSPlot}.
-\begin{exhibit}
-\begin{center}
-\caption{Time series plot for the annual flow of the River Nile.}
-\label{NileTSPlot}
+ 
+\section{Time series plots} 
+ 
+We have seen the flexibility of the \Rcmd{plot} command in previous chapters, and now we see another use. Applying the \Rcmd{plot} command to a time series object generates a time series plot, as seen in Exhibit~\ref{NileTSPlot}. 
+\begin{exhibit} 
+\begin{center} 
+\caption{Time series plot for the annual flow of the River Nile.} 
+\label{NileTSPlot} 
 \begin{Schunk}
 \begin{Sinput}
-> plot(Nile, xlab="Year", ylab="Flow")
+> plot(Nile, xlab="Year", ylab="Flow") 
 \end{Sinput}
 
 \includegraphics[width=0.7\textwidth]{figures/TimeSeriesNilePlot-1} \end{Schunk}
-\SVGLink{TimeSeriesNilePlot-1}
-\end{center}
-\end{exhibit}
-%%%check resulting graph and fix
-
-Having the class assigned to our data means the plot was enhanced slightly. Check this by comparing the results for the two plots in Exhibit~\ref{TSPlotsCompared}.
-\begin{exhibit}
-\begin{center}
-\caption{Comparison of use of \Rcmd{plot} on a vector and a time series object.}
-\label{TSPlotsCompared}
+\SVGLink{TimeSeriesNilePlot-1} 
+\end{center} 
+\end{exhibit} 
+%%%check resulting graph and fix 
+ 
+Having the class assigned to our data means the plot was enhanced slightly. Check this by comparing the results for the two plots in Exhibit~\ref{TSPlotsCompared}. 
+\begin{exhibit} 
+\begin{center} 
+\caption{Comparison of use of \Rcmd{plot} on a vector and a time series object.} 
+\label{TSPlotsCompared} 
 \begin{Schunk}
 \begin{Sinput}
-> plot(airquality$Temp, ylab="Temperature")
+> plot(airquality$Temp, ylab="Temperature") 
 \end{Sinput}
 
 \includegraphics[width=0.7\textwidth]{figures/TimeSeriesTSPlotsCompared-1} \begin{Sinput}
-> plot(Temp.ts, ylab="Temperature")
+> plot(Temp.ts, ylab="Temperature") 
 \end{Sinput}
 
 \includegraphics[width=0.7\textwidth]{figures/TimeSeriesTSPlotsCompared-2} \end{Schunk}
-\SVGLink{TSPlotsCompared-1}
-\SVGLink{TSPlotsCompared-2}
-\end{center}
-\end{exhibit}
-
-\section{Smoothing of a time series using moving averages}
-
-One simple method for smoothing out a time series in order to expose its behaviour is to smooth out the observed data using  the \Rcmd{filter} command to create a moving average.
-A moving average is often centred, (using the argument \Rarg{sides=2}) but if the series is expected to have no trend, then a backwards only (\Rarg{sides=1})  focus can be taken. We must determine the width of the moving average, usually using odd-numbered widths.
-
-Exhibit~\ref{FilterExample} shows how different amounts of data can be averaged to change the amount of smoothing.
-\begin{exhibit}
-\begin{center}
-\caption{Comparison of different amounts of smoothing a time series.}
-\label{FilterExample}
+\SVGLink{TSPlotsCompared-1} 
+\SVGLink{TSPlotsCompared-2} 
+\end{center} 
+\end{exhibit} 
+ 
+\section{Smoothing of a time series using moving averages} 
+ 
+One simple method for smoothing out a time series in order to expose its behaviour is to smooth out the observed data using  the \Rcmd{filter} command to create a moving average. 
+A moving average is often centred, (using the argument \Rarg{sides=2}) but if the series is expected to have no trend, then a backwards only (\Rarg{sides=1})  focus can be taken. We must determine the width of the moving average, usually using odd-numbered widths. 
+ 
+Exhibit~\ref{FilterExample} shows how different amounts of data can be averaged to change the amount of smoothing. 
+\begin{exhibit} 
+\begin{center} 
+\caption{Comparison of different amounts of smoothing a time series.} 
+\label{FilterExample} 
 \begin{Schunk}
 \begin{Sinput}
-> plot(Nile)
+> plot(Nile) 
 \end{Sinput}
 
 \includegraphics[width=0.7\textwidth]{figures/TimeSeriesFilterExample-1} \begin{Sinput}
-> for(i in 1:4){
-   w=4*i-1 # choose the window (3, 7,11,15)
-   lines( (start(Nile)[1]):end(Nile)[1], filter(Nile, rep(1/w, w), sides=1), col=i+2)
-   }
+> for(i in 1:4){ 
+   w=4*i-1 # choose the window (3, 7,11,15) 
+   lines( (start(Nile)[1]):end(Nile)[1], filter(Nile, rep(1/w, w), sides=1), col=i+2) 
+   } 
 \end{Sinput}
 \begin{Soutput}
 Error in UseMethod("filter_"): no applicable method for 'filter_' applied to an object of class "ts"
 \end{Soutput}
 \end{Schunk}
-\SVGLink{FilterExample-1}
-\end{center}
-\end{exhibit}
-
-\section{Checking for stationarity}\label{Stationarity} 
-
-\stress{Stationarity} is important for modelling time series. Some descriptive methods also need it.
-The simplest form of \nostressind{stationarity} is when the mean of the series and the variance of the series both remain roughly constant over time, or as explained by Hyndman and Athana-sopou-los (2013), "[a] stationary time series is one whose properties do not depend on the time at which the series is observed". (their book is called Forecasting: Principles and Practice.)
+\SVGLink{FilterExample-1} 
+\end{center} 
+\end{exhibit} 
  
-A \stressind{white noise} series of normally distributed data with mean zero and constant variance $\sigma^2$ is the strongest form of stationarity we seek in our modelling. It is the desired outcome for the residuals from any model we fit to time series data.
-
-
-The \Rcmd{Box.test} function tests for non-stationarity.
+\section{Checking for stationarity}\label{Stationarity}  
+ 
+\stress{Stationarity} is important for modelling time series. Some descriptive methods also need it. 
+The simplest form of \nostressind{stationarity} is when the mean of the series and the variance of the series both remain roughly constant over time, or as explained by Hyndman and Athana-sopou-los (2013), "[a] stationary time series is one whose properties do not depend on the time at which the series is observed". (their book is called Forecasting: Principles and Practice.) 
+  
+A \stressind{white noise} series of normally distributed data with mean zero and constant variance $\sigma^2$ is the strongest form of stationarity we seek in our modelling. It is the desired outcome for the residuals from any model we fit to time series data. 
+ 
+ 
+The \Rcmd{Box.test} function tests for non-stationarity. 
 \begin{Schunk}
 \begin{Sinput}
-> Box.test(Nile, lag=20)
+> Box.test(Nile, lag=20) 
 \end{Sinput}
 \begin{Soutput}
 
@@ -118,11 +134,11 @@ data:  Nile
 X-squared = 120, df = 20, p-value = 1e-15
 \end{Soutput}
 \end{Schunk}
-while several other tests exist in add-on packages which can be accessed by loading the  Rpkg{tseries} and \Rpkgforecast} packages.
+while several other tests exist in add-on packages which can be accessed by loading the  Rpkg{tseries} and \Rpkgforecast} packages. 
 \begin{Schunk}
 \begin{Sinput}
-> library(tseries)
-> library(forecast)
+> library(tseries) 
+> library(forecast) 
 \end{Sinput}
 \begin{Soutput}
 Loading required package: zoo
@@ -143,7 +159,7 @@ Loading required package: timeDate
 This is forecast 7.1 
 \end{Soutput}
 \begin{Sinput}
-> adf.test(Nile)
+> adf.test(Nile) 
 \end{Sinput}
 \begin{Soutput}
 
@@ -154,7 +170,7 @@ Dickey-Fuller = -3.4, Lag order = 4, p-value = 0.06
 alternative hypothesis: stationary
 \end{Soutput}
 \begin{Sinput}
-> pp.test(Nile)
+> pp.test(Nile) 
 \end{Sinput}
 \begin{Soutput}
 Warning in pp.test(Nile): p-value smaller than printed p-value
@@ -169,7 +185,7 @@ parameter = 3, p-value = 0.01
 alternative hypothesis: stationary
 \end{Soutput}
 \begin{Sinput}
-> kpss.test(Nile)
+> kpss.test(Nile) 
 \end{Sinput}
 \begin{Soutput}
 Warning in kpss.test(Nile): p-value smaller than printed p-value
@@ -183,34 +199,34 @@ KPSS Level = 1.3, Truncation lag parameter = 2,
 p-value = 0.01
 \end{Soutput}
 \end{Schunk}
-Each test is looking at a different facet of what might indicate how a series might not be stationary. Check out the null hypothesis and alternative for each test on its help page.
-
-
-%% diff()
-
-\section{Autocorrelation and partial autocorrelation}
-
-% check out the Box.test() command.
-
-The autocorrelation and partial autocorrelation function values can be obtained using the \Rcmd{acf} and \Rcmd{pacf} commands. Plotting these is a common way to determine if any of the values found are of interest in understanding the process being modelled so this is the default action performed by these commands. See Exhibit~\ref{NileACF} for the plot generated by the \Rcmd{acf} command. The \Rcmd{pacf} command functions in the same way so is not demonstrated.
-\begin{exhibit}
-\begin{center}
-\caption{Autocorrelation function for the annual flow of the River Nile.}
-\label{NileACF}
+Each test is looking at a different facet of what might indicate how a series might not be stationary. Check out the null hypothesis and alternative for each test on its help page. 
+ 
+ 
+%% diff() 
+ 
+\section{Autocorrelation and partial autocorrelation} 
+ 
+% check out the Box.test() command. 
+ 
+The autocorrelation and partial autocorrelation function values can be obtained using the \Rcmd{acf} and \Rcmd{pacf} commands. Plotting these is a common way to determine if any of the values found are of interest in understanding the process being modelled so this is the default action performed by these commands. See Exhibit~\ref{NileACF} for the plot generated by the \Rcmd{acf} command. The \Rcmd{pacf} command functions in the same way so is not demonstrated. 
+\begin{exhibit} 
+\begin{center} 
+\caption{Autocorrelation function for the annual flow of the River Nile.} 
+\label{NileACF} 
 \begin{Schunk}
 \begin{Sinput}
-> acf(Nile)
+> acf(Nile) 
 \end{Sinput}
 
 \includegraphics[width=0.7\textwidth]{figures/TimeSeriesNileACF-1} \end{Schunk}
-\SVGLink{TimeSeriesNileACF-1}
-\end{center}
-\end{exhibit}
-
-To obtain the values of the autocorrelation function (or partial autocorrelation function) in text form, we add an argument to stop the results being plotted.
+\SVGLink{TimeSeriesNileACF-1} 
+\end{center} 
+\end{exhibit} 
+ 
+To obtain the values of the autocorrelation function (or partial autocorrelation function) in text form, we add an argument to stop the results being plotted. 
 \begin{Schunk}
 \begin{Sinput}
-> acf(Nile, plot=FALSE)
+> acf(Nile, plot=FALSE) 
 \end{Sinput}
 \begin{Soutput}
 
@@ -224,7 +240,7 @@ Autocorrelations of series 'Nile', by lag
 0.114 
 \end{Soutput}
 \begin{Sinput}
-> pacf(Nile, plot=FALSE)
+> pacf(Nile, plot=FALSE) 
 \end{Sinput}
 \begin{Soutput}
 
@@ -238,35 +254,35 @@ Partial autocorrelations of series 'Nile', by lag
  0.017  0.115 -0.124 -0.059 
 \end{Soutput}
 \end{Schunk}
-
-\section{Decomposition into seasonal and trend components}
-
-The basic idea of the decompositions presented in this section is to explain the observed time series values $y_t$ in terms of a trend $T_t$, a seasonal component $S_t$ and residual error.
-
-Obviously we need a series that has a seasonal component such as the Australian resident numbers measured quarterly from  1971 to 1994.
+ 
+\section{Decomposition into seasonal and trend components} 
+ 
+The basic idea of the decompositions presented in this section is to explain the observed time series values $y_t$ in terms of a trend $T_t$, a seasonal component $S_t$ and residual error. 
+ 
+Obviously we need a series that has a seasonal component such as the Australian resident numbers measured quarterly from  1971 to 1994. 
 \begin{Schunk}
 \begin{Sinput}
-> str(austres)
+> str(austres) 
 \end{Sinput}
 \begin{Soutput}
  Time-Series [1:89] from 1971 to 1993: 13067 13130 13198 13254 13304 ...
 \end{Soutput}
 \end{Schunk}
-
-
-The \Rcmd{decompose} function can create two forms of the decomposition, one of which is additive and the other is multiplicative.
+ 
+ 
+The \Rcmd{decompose} function can create two forms of the decomposition, one of which is additive and the other is multiplicative. 
 \begin{Schunk}
 \begin{Sinput}
-> AustRes.dec1 = decompose(austres)
-> Aust.dec2 =decompose(austres, type="mul")
+> AustRes.dec1 = decompose(austres) 
+> Aust.dec2 =decompose(austres, type="mul") 
 \end{Sinput}
 \end{Schunk}
-The Rcmd{stl} command uses loess smoothing to estimate the trend component before finding the seasonal components and the resulting error terms, and is a slightly more advanced process than that offered by \Rcmd{decompose(}. N.B. there is an \Rcmd{stl} command in the \Rpkg{stats} package and another in the \Rpkg{forecast} package. We use the simpler one here but need to force \R{} to do so just in case the \Rpkg{forecast} package version has precedence.
-
+The Rcmd{stl} command uses loess smoothing to estimate the trend component before finding the seasonal components and the resulting error terms, and is a slightly more advanced process than that offered by \Rcmd{decompose(}. N.B. there is an \Rcmd{stl} command in the \Rpkg{stats} package and another in the \Rpkg{forecast} package. We use the simpler one here but need to force \R{} to do so just in case the \Rpkg{forecast} package version has precedence. 
+ 
 \begin{Schunk}
 \begin{Sinput}
-> AustRes.dec3 = stats::stl(austres, s.window="periodic")
-> AustRes.dec3
+> AustRes.dec3 = stats::stl(austres, s.window="periodic") 
+> AustRes.dec3 
 \end{Sinput}
 \begin{Soutput}
  Call:
@@ -365,25 +381,25 @@ Components
 1993 Q2  -0.9674 17662    0.7065
 \end{Soutput}
 \begin{Sinput}
-> plot(AustRes.dec3)
+> plot(AustRes.dec3) 
 \end{Sinput}
 
 \includegraphics[width=0.7\textwidth]{figures/TimeSeriesSTLAustRes-1} \end{Schunk}
-
-\section{Exponential smoothing}
-
-Exponential smoothing is a method for making predictions of the next observation in a time series. The next observation is a weighted average of all observations to date, with the most recent given the greatest weight and the oldest ones having the least impact. This simple version is useful for situations with no seasonal component or systematic trend component.
-
-Note that this is often expressed as $$\hat{y}_{t+1} = \lambda \hat{y}_{t} + (1-\lambda)y_{t}$$
-Substituting for $\hat{y}_t$ in terms of terms at time ***t-1*** shows how older values from the observed series contribute smaller and smaller amounts to the new prediction.
-
-The \Rcmd{HoltWinters} command is used for a wide range of models that include the exponential smoother above and allows for trend and seasonality components to be introduced.
-Starting with the Nile data:
-
+ 
+\section{Exponential smoothing} 
+ 
+Exponential smoothing is a method for making predictions of the next observation in a time series. The next observation is a weighted average of all observations to date, with the most recent given the greatest weight and the oldest ones having the least impact. This simple version is useful for situations with no seasonal component or systematic trend component. 
+ 
+Note that this is often expressed as $$\hat{y}_{t+1} = \lambda \hat{y}_{t} + (1-\lambda)y_{t}$$ 
+Substituting for $\hat{y}_t$ in terms of terms at time ***t-1*** shows how older values from the observed series contribute smaller and smaller amounts to the new prediction. 
+ 
+The \Rcmd{HoltWinters} command is used for a wide range of models that include the exponential smoother above and allows for trend and seasonality components to be introduced. 
+Starting with the Nile data: 
+ 
 \begin{Schunk}
 \begin{Sinput}
-> Nile.hw1 = HoltWinters(Nile, beta=FALSE, gamma = FALSE)
-> Nile.hw1
+> Nile.hw1 = HoltWinters(Nile, beta=FALSE, gamma = FALSE) 
+> Nile.hw1 
 \end{Sinput}
 \begin{Soutput}
 Holt-Winters exponential smoothing without trend and without seasonal component.
@@ -401,27 +417,27 @@ Coefficients:
 a  805
 \end{Soutput}
 \begin{Sinput}
-> plot(Nile.hw1)
+> plot(Nile.hw1) 
 \end{Sinput}
 
 \includegraphics[width=0.7\textwidth]{figures/TimeSeriesNileHoltWinters-1} \end{Schunk}
-Note that we must explicitly set \Rarg{beta} and \Rarg{gamma} to \Rarg{FALSE} to get the simple exponential smoother.
-
-
-Adding a linear trend is fairly simple, but the seasonal component can be expressed as either an additive or a multiplicative term. The two forms would be
-$$y_t = \mu_t + \beta_t t +S_{t-p} + e_t$$
-and
-$$y_t = (\mu_t + \beta_t t) S_{t-p} + e_t$$
-respectively , where the $\mu_t$ is found using a deseasonalised version of the simple exponential smoother
-$$\mu_t = \alpha (y_t - S_{t-p}) + (1-\alpha) (\mu_{t-1} + \beta_{t-1})$$
-for the additive model and
-$$\mu_t = \alpha \frac{y_t }{ S_{t-p}} + (1-\alpha) (\mu_{t-1} + \beta_{t-1})$$
-for the multiplicative model.
-
+Note that we must explicitly set \Rarg{beta} and \Rarg{gamma} to \Rarg{FALSE} to get the simple exponential smoother. 
+ 
+ 
+Adding a linear trend is fairly simple, but the seasonal component can be expressed as either an additive or a multiplicative term. The two forms would be 
+$$y_t = \mu_t + \beta_t t +S_{t-p} + e_t$$ 
+and 
+$$y_t = (\mu_t + \beta_t t) S_{t-p} + e_t$$ 
+respectively , where the $\mu_t$ is found using a deseasonalised version of the simple exponential smoother 
+$$\mu_t = \alpha (y_t - S_{t-p}) + (1-\alpha) (\mu_{t-1} + \beta_{t-1})$$ 
+for the additive model and 
+$$\mu_t = \alpha \frac{y_t }{ S_{t-p}} + (1-\alpha) (\mu_{t-1} + \beta_{t-1})$$ 
+for the multiplicative model. 
+ 
 \begin{Schunk}
 \begin{Sinput}
-> AustRes.hw1 = HoltWinters(austres)
-> AustRes.hw1
+> AustRes.hw1 = HoltWinters(austres) 
+> AustRes.hw1 
 \end{Sinput}
 \begin{Soutput}
 Holt-Winters exponential smoothing with trend and additive seasonal component.
@@ -444,12 +460,12 @@ s3     3.8737
 s4    -1.1967
 \end{Soutput}
 \begin{Sinput}
-> plot(AustRes.hw1)
+> plot(AustRes.hw1) 
 \end{Sinput}
 
 \includegraphics[width=0.7\textwidth]{figures/TimeSeriesAustResHW-1} \begin{Sinput}
-> AustRes.hw2 = HoltWinters(austres, seasonal="mult")
-> AustRes.hw2
+> AustRes.hw2 = HoltWinters(austres, seasonal="mult") 
+> AustRes.hw2 
 \end{Sinput}
 \begin{Soutput}
 Holt-Winters exponential smoothing with trend and multiplicative seasonal component.
@@ -472,25 +488,25 @@ s3 1.000e+00
 s4 9.999e-01
 \end{Soutput}
 \begin{Sinput}
-> plot(AustRes.hw2)
+> plot(AustRes.hw2) 
 \end{Sinput}
 
 \includegraphics[width=0.7\textwidth]{figures/TimeSeriesAustResHW-2} \end{Schunk}
-
-
-
-
-
-
-\section{Autoregressive models}
-
-ar()
-
-\section{Basic ARIMA models}
-
-ARIMA models require the autoregressive and moving average components to be built on a stationary series. We often need to create a stationary series using differencing as seen in Section~\ref{Stationarity} above.
-arima()
-
-\section{Seasonality and ARIMA modelling}
-
+ 
+ 
+ 
+ 
+ 
+ 
+\section{Autoregressive models} 
+ 
+ar() 
+ 
+\section{Basic ARIMA models} 
+ 
+ARIMA models require the autoregressive and moving average components to be built on a stationary series. We often need to create a stationary series using differencing as seen in Section~\ref{Stationarity} above. 
+arima() 
+ 
+\section{Seasonality and ARIMA modelling} 
+ 
 
