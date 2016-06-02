@@ -1,0 +1,61 @@
+This file includes instructions for anyone wishing to translate LURN into another language.
+
+## What you need.
+1. LaTeX, probably using miktex2.9
+
+The document is written in LaTeX, but uses the file extension Rnw because the text includes sections of R code. The prose is kept separate from the code for editing purposes, but the files are pasted together to form the chapters. This paste operation is done by the batch file MakeEnglishFiles.bat (different languages will replace English by the new language. e.g. MakeKoreanFiles.bat for Korean.
+
+These files will be processed into the tex files commonly used by LaTeX. They will then be processed into both pdf and html using commands found in the standard installation of miktex2.9
+
+
+2. Image Magic
+
+The processing of the tex files into html needs Image Magic. If the intention is to produce only the pdf version of LURN, then this application is not required.
+
+3.A current installation of R
+
+The chunks of R code are in the RChunks folder and are to be left alone for the most part. Suggestions for improvement will be considered, but these files are to be kept common across all translations of LURN.
+Ultimately, these are to be edited by Jonathan.
+
+There are a number of add-on packages needed for the e-book's R scripts to run. This includes:
+- BrailleR
+- dplyr
+- knitr
+- qcc
+
+
+It is essential that the installation of R be kept up to date and that the add-on packages are also updated frequently.
+
+
+## Getting set up to create the workspace for your new language
+
+1. Take a copy of the entire repository. 
+
+You might do this with Git commands, or by just downloading as a single zip file.
+
+Working with Git is probably preferred as it means you can upload your work easily. This should make collaboration run more smoothly.
+
+2. Make a new folder for your language in parallel to the English folder.
+
+We want you to work on the files in the order that suits you so having a complete copy of them makes sense. You won't be doing much to the English language files except make a copy of them all in the folder you created for your language.
+
+3. Make a new batch file for your language
+
+You'll need to make a copy of the MakeEnglishFiles.bat so that your work can be pasted back together to form the book. It should look practically the same on the outside and on the inside as MakeEnglishFiles.bat does except that the filename will use your language and the commands inside it will point towards the new language folder not to the eEnglish folder.
+
+4. Test your setup
+
+Your new batch file will pull the chapters together and put them in the main folder; there will be one per chapter and some additional ones around the fringes. 
+
+To see that the installation of R is working, run the KnitLURN.bat file. This will turn all those Rnw files into standard tex files, as well as create a bunch of files in other folders for the graphs and tables etc.
+
+Also test that you can clean up afterwards by running the CleanUp.bat file; this just deletes those newly created Rnw files from the main LetsUseRNow folder. (We'll keep cleaning up later on as well.)
+
+Now see if miktex is working correctly by running the LatexLURN.bat batch file. This will make a post script file as the final desirable outcome, but there will be a lot of other files created by the processing. The post script file gets turned into a pdf by running the  pdfLURN.bat batch file. 
+
+If you've ended up with a file called lurnPrint.pdf that is newly created (check the timestamp on that file carefully) then everything is working with making the e-book in English using your copy of the Rnw files and your first batch file; well done.
+
+## 
+
+
+
