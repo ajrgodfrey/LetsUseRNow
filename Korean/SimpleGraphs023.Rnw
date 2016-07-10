@@ -1,4 +1,3 @@
-\SVGLink{SimpleGraphsNormPlot-1} 
 \end{center} 
 \end{exhibit} 
  

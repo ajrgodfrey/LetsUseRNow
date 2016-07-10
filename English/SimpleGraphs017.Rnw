@@ -1,4 +1,3 @@
-\SVGLink{SimpleGraphsDotPlot-1} 
 \end{center} 
 \end{exhibit} 
  

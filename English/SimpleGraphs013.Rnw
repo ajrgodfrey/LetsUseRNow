@@ -1,4 +1,3 @@
-\SVGLink{SimpleGraphsBoxplot-1} 
 \end{center} 
 \end{exhibit} 
  

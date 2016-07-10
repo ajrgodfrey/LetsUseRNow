@@ -1,14 +1,17 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
-  "http://www.w3.org/TR/html4/loose.dtd">  
-<html > 
+<?xml version="1.0" encoding="iso-8859-1" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
+<html xmlns="http://www.w3.org/1999/xhtml"  
+> 
 <head><title>13 LURN... To Create Complex Graphs</title> 
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
-<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
-<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
-<!-- html,2,next --> 
-<meta name="src" content="LURNBlind.tex"> 
-<meta name="date" content="2016-06-02 16:55:00"> 
-<link rel="stylesheet" type="text/css" href="LURNBlind.css"> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<!-- xhtml,2,next,mathjax,html --> 
+<meta name="src" content="LURNBlind.tex" /> 
+<meta name="date" content="2016-07-10 10:39:00" /> 
+<link rel="stylesheet" type="text/css" href="LURNBlind.css" /> 
 </head><body 
 >
    <!--l. 2--><div class="crosslinks"><p class="noindent">[<a 
@@ -27,6 +30,7 @@ chapter we see colour, multiple graphs in one window, multiple sets of
 points on a single set of axes, adding extra points or lines, and introduces
 colour, different symbols and the legends that will then become necessary
 additions.
+</p>
    <h3 class="sectionHead"><span class="titlemark">13.1   </span> <a 
  id="x15-9700013.1"></a>More than one graph in a single window</h3>
 <!--l. 12--><p class="noindent" >We have already seen how to combine a set of graphs to be collected into one
@@ -36,7 +40,7 @@ class="aett-12">par()</span>
 command controls a large number of graphical parameters, including the layout of
 the graph window. One of its common uses is to split up the graph window
 quickly.
-<!--l. 14--><p class="indent" >   Exhibit&#x00A0;<a 
+</p><!--l. 14--><p class="indent" >   Exhibit&#x00A0;<a 
 href="LURNBlindch12.html#x14-91003r2">12.2<!--tex4ht:ref: OzoneWindResidPlots --></a> shows the residual analysis plots for a regression model.
 Four separate graphs form that residual analysis by default. If we do not
 combine them into a single window using the <a 
@@ -44,7 +48,7 @@ combine them into a single window using the <a
 class="aett-12">par() </span>command we need to
 manipulate the four graphs separately when it comes time to include them in a
 report.
-<!--l. 17--><p class="indent" >   The <span 
+</p><!--l. 17--><p class="indent" >   The <span 
 class="aett-12">mfrow </span>argument in the <a 
  id="dx15-97003"></a><span 
 class="aett-12">par() </span>command tells <span 
@@ -67,14 +71,14 @@ making them slightly wider than they are high is better than the reverse.
 That is, five rows of four graphs is better than four rows of five graphs,
 unless you are prepared to change the overall height and width of the
 window.
-<!--l. 19--><p class="indent" >   To illustrate creation of a lot of graphs and the efficiency of managing
-them as a single graph window, we will create the histograms of twelve
+</p><!--l. 19--><p class="indent" >   To illustrate creation of a lot of graphs and the efficiency of managing
                                                                           
 
                                                                           
+them as a single graph window, we will create the histograms of twelve
 distinct random samples of size 100, taken from the standard normal
 distribution.
-<!--l. 21--><p class="indent" >   The final graph appears in Exhibit&#x00A0;<span 
+</p><!--l. 21--><p class="indent" >   The final graph appears in Exhibit&#x00A0;<span 
 class="aebx-12">??</span>, but there are a couple of functions that
 need explaining. First, the <a 
  id="dx15-97004"></a><span 
@@ -109,8 +113,8 @@ practice.
                                                                           
 
                                                                           
-<!--l. 24--><p class="indent" >   <a 
- id="x15-97009r1"></a><hr class="float"><div class="float" 
+</p><!--l. 24--><p class="indent" >   <a 
+ id="x15-97009r1"></a></p><hr class="float" /><div class="float" 
 >
                                                                           
 
@@ -118,11 +122,11 @@ practice.
 <div class="center" 
 >
 <!--l. 24--><p class="noindent" >
-<br /> <div class="caption" 
+<br /> </p><div class="caption" 
 ><span class="id">Exhibit 13.1: </span><span  
 class="content">Twelve samples of size 100 drawn from the standard normal
 distribution, plotted using separate histograms in a single window</span></div><!--tex4ht:label?: x15-97009r1 -->
-<div class="fancyvrb" id="fancyvrb300"> <a 
+<div class="fancyvrb" id="fancyvrb301"> <a 
  id="x15-97011r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
@@ -142,8 +146,8 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;hist(rnorm(100),</span><span 
 class="aett-12">&#x00A0;main=paste("Sample",</span><span 
 class="aett-12">&#x00A0;Counter))}</span></div>
-<!--l. 34--><p class="noindent" ><img 
-src="LURNBlind21x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt" ><!--tex4ht:graphics  
+<img 
+src="LURNBlind21x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt"  /><!--tex4ht:graphics  
 name="LURNBlind21x.png" src="figures/ComplexGraphsHists12Z-1.eps"  
 -->
 <a 
@@ -160,14 +164,14 @@ class="aett-12">layout() </span>command is very powerful, but can be a nightmare
 Before demonstrating how to implemet the command, I need to show you
 what is possible by explaining how to think about the way the command
 works.
-<!--l. 43--><p class="indent" >   Regardless of the size and shape of the particular graphs and how you want
+</p><!--l. 43--><p class="indent" >   Regardless of the size and shape of the particular graphs and how you want
 them arranged, you need to think of the graphing winow as a rectangle that can
 be split into any number of rows and columns. The shape of the sections of the
 window are dependent on the number of rows and columns of course so for the
 time being let&#8217;s work with a 4<span 
 class="cmsy-10x-x-120">&#x00D7;</span>4 grid. This means the 16 sections are the same
 shape as the overall window.
-<!--l. 45--><p class="indent" >   We tell the <a 
+</p><!--l. 45--><p class="indent" >   We tell the <a 
  id="dx15-98002"></a><span 
 class="aett-12">layout() </span>command how to use up the sections by giving each
 section a label. The sections that get used for the first graph will be given a &#8220;1",
@@ -175,7 +179,7 @@ sections for the second graph get a &#8220;2" and so on. For illustration, let&#
 of the 16 sections for a large graph (a scatter plot), and place three smaller ones
 down the side of it; below those, we will add a pair of boxplots which each need
 two sections of the window.
-<!--l. 47--><p class="indent" >   The <a 
+</p><!--l. 47--><p class="indent" >   The <a 
  id="dx15-98003"></a><span 
 class="aett-12">layout() </span>command needs to interpret these labels as a matrix. It would
 probably help to write out what you want for the arrangement, create the
@@ -185,16 +189,14 @@ class="cmsy-10x-x-120">&#x00D7;</span>4 matrix,
 with a total of six different numbers in it. Nine of them will be ones, a
 two, a three, a four, two fives, and two sixes. They will be laid out as
 follows:
+</p>
    <center class="math-display" >
 <img 
 src="LURNBlind22x.png" alt="1  1  1  2
 1  1  1  3
 1  1  1  4
 5  5  6  6
-                                                                          
-
-                                                                          
-" class="math-display" ></center>
+" class="math-display"  /></center>
 <!--l. 50--><p class="indent" >   Getting this matrix in <span 
 class="aess-12">R </span>means identifying its contents, naming exactly how
 many rows or columns are needed and how to insert the values into the defined
@@ -214,7 +216,8 @@ class="aett-12">byrow </span>switch that tells the <a
  id="dx15-98007"></a><span 
 class="aett-12">matrix() </span>command to fill up the
 matrix by row until it is full.
-   <div class="fancyvrb" id="fancyvrb301">  <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb302">  <a 
  id="x15-98009r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
@@ -229,7 +232,8 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;Arrangement.mat</span></div>
 <!--l. 56--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb302"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb303"> <a 
  id="x15-98013r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -335,8 +339,8 @@ illustration.
                                                                           
 
                                                                           
-<!--l. 67--><p class="indent" >   <a 
- id="x15-98024r2"></a><hr class="float"><div class="float" 
+</p><!--l. 67--><p class="indent" >   <a 
+ id="x15-98024r2"></a></p><hr class="float" /><div class="float" 
 >
                                                                           
 
@@ -344,11 +348,11 @@ illustration.
 <div class="center" 
 >
 <!--l. 67--><p class="noindent" >
-<br /> <div class="caption" 
+<br /> </p><div class="caption" 
 ><span class="id">Exhibit 13.2: </span><span  
 class="content">A selection of differing size graphs combined into one graph
 window</span></div><!--tex4ht:label?: x15-98024r2 -->
-<div class="fancyvrb" id="fancyvrb303"> <a 
+<div class="fancyvrb" id="fancyvrb304"> <a 
  id="x15-98026r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
@@ -398,16 +402,16 @@ class="aett-12">&#x00A0;&#x003E;</span><span
 class="aett-12">&#x00A0;boxplot(log(mag),</span><span 
 class="aett-12">&#x00A0;xlab="log(Magnitude)",</span><span 
 class="aett-12">&#x00A0;horizontal=TRUE)</span></div>
-<!--l. 82--><p class="noindent" ><img 
-src="LURNBlind23x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt" ><!--tex4ht:graphics  
+<img 
+src="LURNBlind23x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt"  /><!--tex4ht:graphics  
 name="LURNBlind23x.png" src="figures/ComplexGraphsLayoutDiffSizes-1.eps"  
 -->
-<div class="fancyvrb" id="fancyvrb304"> <a 
+<div class="fancyvrb" id="fancyvrb305"> <a 
  id="x15-98042r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;detach(quakes)</span></div>
-<!--l. 86--><p class="noindent" ><a 
+<a 
 href="../svgs/ComplexGraphsLayoutDiffSizes-1.svg" >link to SVG file: ComplexGraphsLayoutDiffSizes-1.svg</a></div>
                                                                           
 
@@ -432,6 +436,7 @@ arguments. See the help for the <a
  id="dx15-98045"></a><span 
 class="aett-12">par() </span>command for further details on their
 use.
+</p>
    <h3 class="sectionHead"><span class="titlemark">13.3   </span> <a 
  id="x15-9900013.3"></a>Using colour or different symbols</h3>
 <!--l. 94--><p class="noindent" >We show how to create a graph with different colours and symbols without
@@ -441,7 +446,7 @@ that the reader will not necessarily see the difference in colour as you do.
 Similarly, the selection of symbol should be thought out carefully. We
 do not want a solid symbol to appear bigger than a hollow one or vice
 versa.
-<!--l. 96--><p class="indent" >   The <span 
+</p><!--l. 96--><p class="indent" >   The <span 
 class="aett-12">iris </span>data supplied with <span 
 class="aess-12">R </span>for this example. It has five variables in all;
 four are for numeric measurements and the fifth is the species. In Exhibit&#x00A0;<a 
@@ -453,8 +458,8 @@ different colours for the different symbols.
                                                                           
 
                                                                           
-<!--l. 99--><p class="indent" >   <a 
- id="x15-99001r3"></a><hr class="float"><div class="float" 
+</p><!--l. 99--><p class="indent" >   <a 
+ id="x15-99001r3"></a></p><hr class="float" /><div class="float" 
 >
                                                                           
 
@@ -462,10 +467,10 @@ different colours for the different symbols.
 <div class="center" 
 >
 <!--l. 99--><p class="noindent" >
-<br /> <div class="caption" 
+<br /> </p><div class="caption" 
 ><span class="id">Exhibit 13.3: </span><span  
 class="content"></span></div><!--tex4ht:label?: x15-99001r3 -->
-<div class="fancyvrb" id="fancyvrb305"> <a 
+<div class="fancyvrb" id="fancyvrb306"> <a 
  id="x15-99003r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
@@ -480,16 +485,16 @@ class="aett-12">&#x00A0;width",</span><span
 class="aett-12">&#x00A0;ylab="Sepal</span><span 
 class="aett-12">&#x00A0;length",</span><span 
 class="aett-12">&#x00A0;col=Species)</span></div>
-<!--l. 108--><p class="noindent" ><img 
-src="LURNBlind24x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt" ><!--tex4ht:graphics  
+<img 
+src="LURNBlind24x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt"  /><!--tex4ht:graphics  
 name="LURNBlind24x.png" src="figures/ComplexGraphsIrisInColour-1.eps"  
 -->
-<div class="fancyvrb" id="fancyvrb306"> <a 
+<div class="fancyvrb" id="fancyvrb307"> <a 
  id="x15-99007r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;detach(iris)</span></div>
-<!--l. 112--><p class="noindent" ><a 
+<a 
 href="../svgs/ComplexGraphsIrisInColour-1.svg" >link to SVG file: ComplexGraphsIrisInColour-1.svg</a></div>
                                                                           
 
@@ -499,7 +504,7 @@ href="../svgs/ComplexGraphsIrisInColour-1.svg" >link to SVG file: ComplexGraphsI
 
                                                                           
 <!--l. 117--><p class="indent" >   <a 
- id="x15-99008r4"></a><hr class="float"><div class="float" 
+ id="x15-99008r4"></a></p><hr class="float" /><div class="float" 
 >
                                                                           
 
@@ -507,10 +512,10 @@ href="../svgs/ComplexGraphsIrisInColour-1.svg" >link to SVG file: ComplexGraphsI
 <div class="center" 
 >
 <!--l. 117--><p class="noindent" >
-<br /> <div class="caption" 
+<br /> </p><div class="caption" 
 ><span class="id">Exhibit 13.4: </span><span  
 class="content"></span></div><!--tex4ht:label?: x15-99008r4 -->
-<div class="fancyvrb" id="fancyvrb307"> <a 
+<div class="fancyvrb" id="fancyvrb308"> <a 
  id="x15-99010r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
@@ -525,16 +530,16 @@ class="aett-12">&#x00A0;width",</span><span
 class="aett-12">&#x00A0;ylab="Petal</span><span 
 class="aett-12">&#x00A0;length",</span><span 
 class="aett-12">&#x00A0;pch=as.numeric(Species))</span></div>
-<!--l. 126--><p class="noindent" ><img 
-src="LURNBlind25x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt" ><!--tex4ht:graphics  
+<img 
+src="LURNBlind25x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt"  /><!--tex4ht:graphics  
 name="LURNBlind25x.png" src="figures/ComplexGraphsIrisInSymbols-1.eps"  
 -->
-<div class="fancyvrb" id="fancyvrb308"> <a 
+<div class="fancyvrb" id="fancyvrb309"> <a 
  id="x15-99014r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;detach(iris)</span></div>
-<!--l. 130--><p class="noindent" ><a 
+<a 
 href="../svgs/ComplexGraphsIrisInSymbols-1.svg" >link to SVG file: ComplexGraphsIrisInSymbols-1.svg</a></div>
                                                                           
 
@@ -544,13 +549,14 @@ href="../svgs/ComplexGraphsIrisInSymbols-1.svg" >link to SVG file: ComplexGraphs
 <a 
  id="dx15-99015"></a><span 
 class="aett-12">as.numeric() </span>command to get the symbols to be plotted.
-<!--l. 136--><p class="indent" >   <span 
+</p><!--l. 136--><p class="indent" >   <span 
 class="aess-12">R </span>seesm to have converted the species names to numbers when we called for
 different colours, starting with 1 for black, 2 for red, and 3 for green. As an aside,
 the colour can be specified by name or by a number. There are well over 600
 named colours to choose from so the full list is therefore not printed here.
 Type
-   <div class="fancyvrb" id="fancyvrb309">  <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb310">  <a 
  id="x15-99017r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
@@ -561,9 +567,11 @@ green, and blue components. This is explained under the help for the <a
  id="dx15-99018"></a><span 
 class="aett-12">par()</span>
 command.
+</p>
    <h3 class="sectionHead"><span class="titlemark">13.4   </span> <a 
  id="x15-10000013.4"></a>Adding points to an existing graph</h3>
 <!--l. 147--><p class="noindent" >
+</p>
    <h3 class="sectionHead"><span class="titlemark">13.5   </span> <a 
  id="x15-10100013.5"></a>Using lines instead of points</h3>
 <!--l. 149--><p class="noindent" >The default action for any scatter plot is to mark each point. If the set of <span 
@@ -579,7 +587,7 @@ class="aeti-12">datasets </span>package. We use the <span
 class="aett-12">ldeaths </span>series which counts the number of deaths
 due to lung diseases in the United Kingdom, and its associated series for male and
 female deaths.
-<!--l. 151--><p class="indent" >   In Exhibit&#x00A0;<a 
+</p><!--l. 151--><p class="indent" >   In Exhibit&#x00A0;<a 
 href="#x15-101004r5">13.5<!--tex4ht:ref: LungsNoLegend --></a>, we see a set of three commands. The first plots a time
 series on a set of axes and the axis labels. The second and third each
 add a set of line segments from the other two series using the <a 
@@ -589,8 +597,8 @@ command.
                                                                           
 
                                                                           
-<!--l. 154--><p class="indent" >   <a 
- id="x15-101004r5"></a><hr class="float"><div class="float" 
+</p><!--l. 154--><p class="indent" >   <a 
+ id="x15-101004r5"></a></p><hr class="float" /><div class="float" 
 >
                                                                           
 
@@ -598,10 +606,10 @@ command.
 <div class="center" 
 >
 <!--l. 154--><p class="noindent" >
-<br /> <div class="caption" 
+<br /> </p><div class="caption" 
 ><span class="id">Exhibit 13.5: </span><span  
 class="content">Deaths from lung diseases in the United Kingdom</span></div><!--tex4ht:label?: x15-101004r5 -->
-<div class="fancyvrb" id="fancyvrb310"> <a 
+<div class="fancyvrb" id="fancyvrb311"> <a 
  id="x15-101006r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
@@ -622,8 +630,8 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;lines(mdeaths,</span><span 
 class="aett-12">&#x00A0;col="blue")</span></div>
-<!--l. 164--><p class="noindent" ><img 
-src="LURNBlind26x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt" ><!--tex4ht:graphics  
+<img 
+src="LURNBlind26x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt"  /><!--tex4ht:graphics  
 name="LURNBlind26x.png" src="figures/ComplexGraphsDeathsTSPlot-1.eps"  
 -->
 <a 
@@ -634,6 +642,7 @@ href="../svgs/ComplexGraphsDeathsTSPlot-1.svg" >link to SVG file: ComplexGraphsD
    </div><hr class="endfloat" />
 <!--l. 169--><p class="indent" >   We will see that the plot can be improved by adding a legend in Exhibit&#x00A0;<a 
 href="#x15-105001r7">13.7<!--tex4ht:ref: LungsLegend --></a>.
+</p>
    <h3 class="sectionHead"><span class="titlemark">13.6   </span> <a 
  id="x15-10200013.6"></a>Adding lines to an existing graph</h3>
 <!--l. 174--><p class="noindent" >In Section&#x00A0;<a 
@@ -645,7 +654,7 @@ command has other uses that are explained here. This section is only interested 
 the addition of a single straight line at a time; a series of line segments joined
 together was covered in Section&#x00A0;<a 
 href="#x15-10100013.5">13.5<!--tex4ht:ref: LinesInsteadOfPoints --></a>.
-<!--l. 176--><p class="indent" >   Perhaps the easiest tasks of adding lines to a plot is to add either a horizontal
+</p><!--l. 176--><p class="indent" >   Perhaps the easiest tasks of adding lines to a plot is to add either a horizontal
 or a vertical line. In Exhibit&#x00A0;<a 
 href="#x15-102004r6">13.6<!--tex4ht:ref: QuakesPlaces --></a>, we see the locations of the quakes marked by
 their latitude and longitude. On this occasion, the graph window has been left
@@ -658,7 +667,7 @@ correctly define the axis for latitude from a large negative number to
 the less negative number so that the orientation of north and south is
 kept consistent with convention. Fiji is in the southern hemisphere after
 all!
-<!--l. 178--><p class="indent" >   The <a 
+</p><!--l. 178--><p class="indent" >   The <a 
  id="dx15-102002"></a><span 
 class="aett-12">plot() </span>command creates the axes and plots the points for the
 earthquakes in Exhibit&#x00A0;<a 
@@ -669,8 +678,8 @@ class="aett-12">abline() </span>command.
                                                                           
 
                                                                           
-<!--l. 180--><p class="indent" >   <a 
- id="x15-102004r6"></a><hr class="float"><div class="float" 
+</p><!--l. 180--><p class="indent" >   <a 
+ id="x15-102004r6"></a></p><hr class="float" /><div class="float" 
 >
                                                                           
 
@@ -678,10 +687,10 @@ class="aett-12">abline() </span>command.
 <div class="center" 
 >
 <!--l. 180--><p class="noindent" >
-<br /> <div class="caption" 
+<br /> </p><div class="caption" 
 ><span class="id">Exhibit 13.6: </span><span  
 class="content">Horizontal and vertical lines added to a scatter plot</span></div><!--tex4ht:label?: x15-102004r6 -->
-<div class="fancyvrb" id="fancyvrb311"> <a 
+<div class="fancyvrb" id="fancyvrb312"> <a 
  id="x15-102006r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
@@ -714,16 +723,16 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;abline(v=170,</span><span 
 class="aett-12">&#x00A0;lty=3)</span></div>
-<!--l. 193--><p class="noindent" ><img 
-src="LURNBlind27x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt" ><!--tex4ht:graphics  
+<img 
+src="LURNBlind27x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt"  /><!--tex4ht:graphics  
 name="LURNBlind27x.png" src="figures/ComplexGraphsQuakesPlaces-1.eps"  
 -->
-<div class="fancyvrb" id="fancyvrb312"> <a 
+<div class="fancyvrb" id="fancyvrb313"> <a 
  id="x15-102018r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;detach(quakes)</span></div>
-<!--l. 197--><p class="noindent" ><a 
+<a 
 href="../svgs/ComplexGraphsQuakesPlaces-1.svg" >link to SVG file: ComplexGraphsQuakesPlaces-1.svg</a></div>
                                                                           
 
@@ -736,7 +745,7 @@ default. More types do exist but those given are the most commonly chosen. The
 thickness of the lines can be altered also, using the <span 
 class="aett-12">lwd </span>argument. The default line
 width is 1.
-<!--l. 202--><p class="indent" >   It is also possible to add a straight line that is niether vertical or horizontal
+</p><!--l. 202--><p class="indent" >   It is also possible to add a straight line that is niether vertical or horizontal
 using the <a 
  id="dx15-102019"></a><span 
 class="aett-12">abline() </span>command. To achieve this we need to know the slope and
@@ -756,6 +765,7 @@ class="cmmi-12">b </span>to the <a
 class="aett-12">abline() </span>command. Exhibit&#x00A0;<span 
 class="aebx-12">??</span> shows an example using
 the
+</p>
    <h3 class="sectionHead"><span class="titlemark">13.7   </span> <a 
  id="x15-10300013.7"></a>Adding a curve to a graph</h3>
 <!--l. 206--><p class="noindent" >Use of <a 
@@ -767,7 +777,8 @@ actually too difficult if we use the <a
 class="aett-12">curve() </span>command. First, we add a curve
 representing the normal probability density function to a histogram of random
 values.
-   <div class="fancyvrb" id="fancyvrb313">  <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb314">  <a 
  id="x15-103004r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
@@ -782,12 +793,12 @@ class="aett-12">&#x00A0;add=TRUE)</span></div>
 
                                                                           
 <!--l. 213--><p class="indent" >   <img 
-src="LURNBlind28x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt" ><!--tex4ht:graphics  
+src="LURNBlind28x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt"  /><!--tex4ht:graphics  
 name="LURNBlind28x.png" src="figures/ComplexGraphsHistWithNormalCurve-1.eps"  
 -->
 <a 
 href="../svgs/ComplexGraphsHistWithNormalCurve-1.svg" >link to SVG file: ComplexGraphsHistWithNormalCurve-1.svg</a>
-<!--l. 216--><p class="indent" >   The <a 
+</p><!--l. 216--><p class="indent" >   The <a 
  id="dx15-103007"></a><span 
 class="aett-12">curve() </span>function has four arguments in this example. First is the function
 being plotted, which in this case is <a 
@@ -799,10 +810,11 @@ be aded to the existing plot. There are other arguments that we could
 add, including <span 
 class="aett-12">n</span>, the number of points to be evaluated over the specified
 range.
-<!--l. 218--><p class="indent" >   The second example shown here is the addition of the quadratic fitted line for
+</p><!--l. 218--><p class="indent" >   The second example shown here is the addition of the quadratic fitted line for
 a regression model. We use the example given in Section&#x00A0;<a 
 href="LURNBlindch12.html#x14-9200012.5">12.5<!--tex4ht:ref: PolyReg --></a>.
-   <div class="fancyvrb" id="fancyvrb314">  <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb315">  <a 
  id="x15-103010r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
@@ -837,27 +849,30 @@ class="aett-12">&#x00A0;add=TRUE)</span></div>
 
                                                                           
 <!--l. 228--><p class="indent" >   <img 
-src="LURNBlind29x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt" ><!--tex4ht:graphics  
+src="LURNBlind29x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt"  /><!--tex4ht:graphics  
 name="LURNBlind29x.png" src="figures/ComplexGraphsAddPolyCurve-1.eps"  
 -->
-   <div class="fancyvrb" id="fancyvrb315">  <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb316">  <a 
  id="x15-103020r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;detach(airquality)</span></div>
 <!--l. 232--><p class="noindent" ><a 
 href="../svgs/ComplexGraphsAddPolyCurve-1.svg" >link to SVG file: ComplexGraphsAddPolyCurve-1.svg</a>
-<!--l. 234--><p class="noindent" >
+</p><!--l. 234--><p class="noindent" >
+</p>
    <h3 class="sectionHead"><span class="titlemark">13.8   </span> <a 
  id="x15-10400013.8"></a>Adding text to an existing graph</h3>
 <!--l. 238--><p class="noindent" >
+</p>
    <h3 class="sectionHead"><span class="titlemark">13.9   </span> <a 
  id="x15-10500013.9"></a>Adding a legend for different information within a graph</h3>
                                                                           
 
                                                                           
 <!--l. 242--><p class="indent" >   <a 
- id="x15-105001r7"></a><hr class="float"><div class="float" 
+ id="x15-105001r7"></a></p><hr class="float" /><div class="float" 
 >
                                                                           
 
@@ -865,11 +880,11 @@ href="../svgs/ComplexGraphsAddPolyCurve-1.svg" >link to SVG file: ComplexGraphsA
 <div class="center" 
 >
 <!--l. 242--><p class="noindent" >
-<br /> <div class="caption" 
+<br /> </p><div class="caption" 
 ><span class="id">Exhibit 13.7: </span><span  
 class="content">Deaths from lung diseases in the United Kingdom (with legend
 added)</span></div><!--tex4ht:label?: x15-105001r7 -->
-<div class="fancyvrb" id="fancyvrb316"> <a 
+<div class="fancyvrb" id="fancyvrb317"> <a 
  id="x15-105003r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
@@ -902,8 +917,8 @@ class="aett-12">&#x00A0;col=c("black",</span><span
 class="aett-12">&#x00A0;"blue",</span><span 
 class="aett-12">&#x00A0;"red"),</span><span 
 class="aett-12">&#x00A0;lty=c(1,1,1))</span></div>
-<!--l. 253--><p class="noindent" ><img 
-src="LURNBlind30x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt" ><!--tex4ht:graphics  
+<img 
+src="LURNBlind30x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt"  /><!--tex4ht:graphics  
 name="LURNBlind30x.png" src="figures/ComplexGraphsDeathsTSPlotLegend-1.eps"  
 -->
 <a 
@@ -926,13 +941,14 @@ class="aeti-12">stack bar</span>
 class="aeti-12">chart </span>on the other hand has a single bar for each level of one factor split into
 sections for each level of the second factor; it therefore appears to stack the bars
 on top of one another.
-<!--l. 263--><p class="indent" >   To create an example, we will first create a list of frequencies of outcomes and
+</p><!--l. 263--><p class="indent" >   To create an example, we will first create a list of frequencies of outcomes and
 the two categorical variables required. The cluster bar chart and stack bar chart
 then appear in Exhibits&#x00A0;<a 
 href="#x15-106011r8">13.8<!--tex4ht:ref: ClusterBarChart --></a> and&#x00A0;<a 
 href="#x15-106016r9">13.9<!--tex4ht:ref: StackBarChart --></a> respectively. Our data consist of the counts
 of males and females of ages&#x00A0;17 to&#x00A0;20.
-   <div class="fancyvrb" id="fancyvrb317">  <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb318">  <a 
  id="x15-106004r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
@@ -963,8 +979,8 @@ The actual plotting is done using the <a
 class="aett-12">barplot() </span>command which recognizes it is
 working on this matrix and acts accordingly, including the ability to generate a
 legend for the graphs.
-<!--l. 273--><p class="indent" >   <a 
- id="x15-106011r8"></a><hr class="float"><div class="float" 
+</p><!--l. 273--><p class="indent" >   <a 
+ id="x15-106011r8"></a></p><hr class="float" /><div class="float" 
 >
                                                                           
 
@@ -972,10 +988,10 @@ legend for the graphs.
 <div class="center" 
 >
 <!--l. 273--><p class="noindent" >
-<br /> <div class="caption" 
+<br /> </p><div class="caption" 
 ><span class="id">Exhibit 13.8: </span><span  
 class="content">An example of a cluster bar chart</span></div><!--tex4ht:label?: x15-106011r8 -->
-<div class="fancyvrb" id="fancyvrb318"> <a 
+<div class="fancyvrb" id="fancyvrb319"> <a 
  id="x15-106013r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
@@ -999,8 +1015,8 @@ class="aett-12">&#x00A0;and</span><span
 class="aett-12">&#x00A0;gender",</span><span 
 class="aett-12">&#x00A0;ylab="Count",</span><span 
 class="aett-12">&#x00A0;xlab="Age")</span></div>
-<!--l. 282--><p class="noindent" ><img 
-src="LURNBlind31x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt" ><!--tex4ht:graphics  
+<img 
+src="LURNBlind31x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt"  /><!--tex4ht:graphics  
 name="LURNBlind31x.png" src="figures/ComplexGraphsClusterBar-1.eps"  
 -->
 <a 
@@ -1010,7 +1026,7 @@ href="../svgs/ComplexGraphsClusterBar-1.svg" >link to SVG file: ComplexGraphsClu
                                                                           
    </div><hr class="endfloat" />
 <!--l. 287--><p class="indent" >   <a 
- id="x15-106016r9"></a><hr class="float"><div class="float" 
+ id="x15-106016r9"></a></p><hr class="float" /><div class="float" 
 >
                                                                           
 
@@ -1018,10 +1034,10 @@ href="../svgs/ComplexGraphsClusterBar-1.svg" >link to SVG file: ComplexGraphsClu
 <div class="center" 
 >
 <!--l. 287--><p class="noindent" >
-<br /> <div class="caption" 
+<br /> </p><div class="caption" 
 ><span class="id">Exhibit 13.9: </span><span  
 class="content">An example of a stack bar chart</span></div><!--tex4ht:label?: x15-106016r9 -->
-<div class="fancyvrb" id="fancyvrb319"> <a 
+<div class="fancyvrb" id="fancyvrb320"> <a 
  id="x15-106018r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
@@ -1044,8 +1060,8 @@ class="aett-12">&#x00A0;and</span><span
 class="aett-12">&#x00A0;gender",</span><span 
 class="aett-12">&#x00A0;ylab="Count",</span><span 
 class="aett-12">&#x00A0;xlab="Age")</span></div>
-<!--l. 296--><p class="noindent" ><img 
-src="LURNBlind32x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt" ><!--tex4ht:graphics  
+<img 
+src="LURNBlind32x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt"  /><!--tex4ht:graphics  
 name="LURNBlind32x.png" src="figures/ComplexGraphsStackBar-1.eps"  
 -->
 <a 
@@ -1066,12 +1082,12 @@ class="cmmi-12">y </span>in a single graph. Three-dimensional displays can be
 employed but require the interpretation of the creator and the reader to turn the
 two-dimensional graph on paper or the screen into the three-dimensional object
 actually being displayed.
-<!--l. 307--><p class="indent" >   A contour plot is a two-dimensional display. It shows a set of curves that
+</p><!--l. 307--><p class="indent" >   A contour plot is a two-dimensional display. It shows a set of curves that
 represent common values of a variable plotted against two other variables. They
 are commonly seen in weather charts where barometric pressure lines (contours)
 are plotted on the map of a country or region (latitude and longitude are the two
 other variables).
-<!--l. 309--><p class="indent" >   Exhibit&#x00A0;<a 
+</p><!--l. 309--><p class="indent" >   Exhibit&#x00A0;<a 
 href="#x15-107001r10">13.10<!--tex4ht:ref: MtEdenContour --></a> shows the contour lines for the altitude of a volcano in
 Auckland, New Zealand. Mt Eden is also known by its Maori name Maunga Whau
 and the data we need for this illustration is provided in the datasets supplied with
@@ -1080,8 +1096,8 @@ class="aess-12">R</span>.
                                                                           
 
                                                                           
-<!--l. 311--><p class="indent" >   <a 
- id="x15-107001r10"></a><hr class="float"><div class="float" 
+</p><!--l. 311--><p class="indent" >   <a 
+ id="x15-107001r10"></a></p><hr class="float" /><div class="float" 
 >
                                                                           
 
@@ -1089,17 +1105,17 @@ class="aess-12">R</span>.
 <div class="center" 
 >
 <!--l. 311--><p class="noindent" >
-<br /> <div class="caption" 
+<br /> </p><div class="caption" 
 ><span class="id">Exhibit  13.10:  </span><span  
 class="content">Contour  plot  of  Mt  Eden,  a  volcano  in  Auckland,  New
 Zealand.</span></div><!--tex4ht:label?: x15-107001r10 -->
-<div class="fancyvrb" id="fancyvrb320"> <a 
+<div class="fancyvrb" id="fancyvrb321"> <a 
  id="x15-107003r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;contour(volcano)</span></div>
-<!--l. 319--><p class="noindent" ><img 
-src="LURNBlind33x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt" ><!--tex4ht:graphics  
+<img 
+src="LURNBlind33x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt"  /><!--tex4ht:graphics  
 name="LURNBlind33x.png" src="figures/ComplexGraphsMtEdenContour-1.eps"  
 -->
 <a 
@@ -1120,23 +1136,25 @@ href="#x15-107001r10">13.10<!--tex4ht:ref: MtEdenContour --></a>. An even more i
 looking at the example that accompanies the help for the <span 
 class="aett-12">volcano </span>data.
 Typing:
-   <div class="fancyvrb" id="fancyvrb321">  <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb322">  <a 
  id="x15-107007r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;example(volcano)</span></div>
 <!--l. 330--><p class="noindent" >generates the plot using the code given in the help file.
-<!--l. 332--><p class="indent" >   The <span 
+</p><!--l. 332--><p class="indent" >   The <span 
 class="aett-12">volcano </span>data is stored as a matrix of altitudes. The <a 
  id="dx15-107008"></a><span 
 class="aett-12">contour() </span>command
 uses this to interpolate the coordinates of the points where the altitude is
 constant.
-<!--l. 334--><p class="indent" >   A further example is generating the contours for a function. Let&#8217;s plot the
+</p><!--l. 334--><p class="indent" >   A further example is generating the contours for a function. Let&#8217;s plot the
 function
+</p>
    <center class="math-display" >
 <img 
-src="LURNBlind34x.png" alt="z = 0.75x2 + 0.5y2 - 0.4xy + x - y - 1  " class="math-display" ></center>
+src="LURNBlind34x.png" alt="z = 0.75x2 + 0.5y2 - 0.4xy + x - y - 1  " class="math-display"  /></center>
 over the range <span 
 class="cmsy-10x-x-120">-</span><span 
 class="cmr-12">5 </span><span 
@@ -1150,7 +1168,7 @@ which includes the contour plot of the function.
 
                                                                           
 <!--l. 338--><p class="indent" >   <a 
- id="x15-107009r11"></a><hr class="float"><div class="float" 
+ id="x15-107009r11"></a></p><hr class="float" /><div class="float" 
 >
                                                                           
 
@@ -1158,7 +1176,7 @@ which includes the contour plot of the function.
 <div class="center" 
 >
 <!--l. 338--><p class="noindent" >
-<br /> <div class="caption" 
+<br /> </p><div class="caption" 
 ><span class="id">Exhibit 13.11: </span><span  
 class="content">Contour plot showing values of <span 
 class="cmmi-12">z</span>, where <span 
@@ -1185,7 +1203,7 @@ class="cmsy-10x-x-120">- </span><span
 class="cmmi-12">y </span><span 
 class="cmsy-10x-x-120">- </span><span 
 class="cmr-12">1</span></span></div><!--tex4ht:label?: x15-107009r11 -->
-<div class="fancyvrb" id="fancyvrb322"> <a 
+<div class="fancyvrb" id="fancyvrb323"> <a 
  id="x15-107011r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
@@ -1219,8 +1237,8 @@ class="aett-12">&#x00A0;&#x003E;</span><span
 class="aett-12">&#x00A0;contour(xUnique,</span><span 
 class="aett-12">&#x00A0;yUnique,</span><span 
 class="aett-12">&#x00A0;z)</span></div>
-<!--l. 351--><p class="noindent" ><img 
-src="LURNBlind35x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt" ><!--tex4ht:graphics  
+<img 
+src="LURNBlind35x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt"  /><!--tex4ht:graphics  
 name="LURNBlind35x.png" src="figures/ComplexGraphsXYZContour-1.eps"  
 -->
 <a 
@@ -1243,6 +1261,7 @@ class="cmmi-12">y</span>.
                                                                           
 
                                                                           
+</p>
    <!--l. 2--><div class="crosslinks"><p class="noindent">[<a 
 href="LURNBlindch14.html" >next</a>] [<a 
 href="LURNBlindch12.html" >prev</a>] [<a 
@@ -1250,5 +1269,5 @@ href="LURNBlindch12.html#tailLURNBlindch12.html" >prev-tail</a>] [<a
 href="LURNBlindch13.html" >front</a>] [<a 
 href="LURNBlind.html#LURNBlindch13.html" >up</a>] </p></div>
 <!--l. 2--><p class="indent" >   <a 
- id="tailLURNBlindch13.html"></a>   
+ id="tailLURNBlindch13.html"></a>  </p> 
 </body></html> 

@@ -13,9 +13,9 @@ Ozone.skew = moments::skewness(Ozone, na.rm = TRUE)
 Ozone.kurt = moments::kurtosis(Ozone, na.rm = TRUE)
 
 ## ----Quantiles1----------------------------------------------------------
-Quantiles=quantile(Ozone, na.rm=TRUE)  
-QList=c("Minimum", "Lower Quartile", "Median", "Upper Quartile", "Maximum")  
-Results=data.frame(Quantile=QList, Value=Quantiles[1:5])  
+Quantiles=quantile(Ozone, na.rm=TRUE)
+QList=c("Minimum", "Lower Quartile", "Median", "Upper Quartile", "Maximum")
+Results=data.frame(Quantile=QList, Value=Quantiles[1:5])
 
 ## ----Hist, fig.cap="The histogram", fig.height=5-------------------------
 VI(hist(Ozone, xlab="Ozone", main="Histogram of Ozone"))
@@ -26,7 +26,7 @@ VI(boxplot(Ozone, horizontal=TRUE, main = "Boxplot of Ozone"))
 ## ----NormalityTests------------------------------------------------------
 library(nortest)
 Results = matrix(0, nrow=6, ncol=2)
-dimnames(Results) = list(c("Shapiro-Wilk", "Anderson-Darling", "Cramer-von Mises", 
+dimnames(Results) = list(c("Shapiro-Wilk", "Anderson-Darling", "Cramer-von Mises",
 "Lilliefors (Kolmogorov-Smirnov)", "Pearson chi-square", "Shapiro-Francia"), c("Statistic", "P Value"))
  SW =shapiro.test(Ozone)
 Results[1,] = c(SW$statistic, SW$p.value)
@@ -50,9 +50,9 @@ qqline(Ozone)
 
 ## ----MomentsTests--------------------------------------------------------
 library(moments)
-Results = matrix(0, nrow=2, ncol=3)  
-dimnames(Results)= list(c( "D'Agostino skewness", "Anscombe-Glynn kurtosis"), 
- c("Statistic","Z",  "P Value"))  
+Results = matrix(0, nrow=2, ncol=3)
+dimnames(Results)= list(c( "D'Agostino skewness", "Anscombe-Glynn kurtosis"),
+ c("Statistic","Z",  "P Value"))
 AG = moments::agostino.test(Ozone)
 AN = moments::anscombe.test(Ozone)
 Results[1,] = c(AG$statistic, AG$p.value)

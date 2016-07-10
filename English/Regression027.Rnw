@@ -1,4 +1,3 @@
-\SVGLink{RegressionQuadAddPoints-1} 
  
 Note that the \Rcmd{points} command used here includes the \Rarg{col} argument to change the colour of the points to red --- the second colour in the list of colours.  
  

@@ -1,14 +1,17 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
-  "http://www.w3.org/TR/html4/loose.dtd">  
-<html > 
+<?xml version="1.0" encoding="iso-8859-1" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
+<html xmlns="http://www.w3.org/1999/xhtml"  
+> 
 <head><title>2 LURN... To Work R Blind</title> 
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
-<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
-<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
-<!-- html,2,next --> 
-<meta name="src" content="LURNBlind.tex"> 
-<meta name="date" content="2016-06-02 16:55:00"> 
-<link rel="stylesheet" type="text/css" href="LURNBlind.css"> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<!-- xhtml,2,next,mathjax,html --> 
+<meta name="src" content="LURNBlind.tex" /> 
+<meta name="date" content="2016-07-10 10:39:00" /> 
+<link rel="stylesheet" type="text/css" href="LURNBlind.css" /> 
 </head><body 
 >
    <!--l. 1--><div class="crosslinks"><p class="noindent">[<a 
@@ -29,13 +32,13 @@ other packages like SAS and SPlus with almost as much success, Minitab and
 SPSS with differing levels of success (mostly depending on the version of
 that software), and have tried a number of other options with little or no
 success.
-<!--l. 6--><p class="indent" >   I do use Microsoft EXCEL at times, but not for doing the tasks described in
+</p><!--l. 6--><p class="indent" >   I do use Microsoft EXCEL at times, but not for doing the tasks described in
 this document. I do not regard EXCEL as statistical software but do use it to do
 some basic calculations and for editing large data sets. To this extent, EXCEL is
 just an example of a spreadsheet application and has no advantage or
 disadvantage over any other spreadsheet application. They are therefore all as
 equally useful/useless to me.
-<!--l. 8--><p class="indent" >   My software experiences have all been gained as a blind person. I had some
+</p><!--l. 8--><p class="indent" >   My software experiences have all been gained as a blind person. I had some
 useful vision for handling print while I was an undergraduate but I found using
 low-vision software was slower than operating as a blind person. Some of what
 follows might prove useful to people using software which enlarges the screen&#8217;s
@@ -49,7 +52,7 @@ class="aess-12">R </span>can choose
 whether operating as a sighted or blind user is better for them so reading
 through this chapter may prove important if they are to make the best
 choice.
-<!--l. 10--><p class="indent" >   The material that follows in this chapter has been tested by blind users of
+</p><!--l. 10--><p class="indent" >   The material that follows in this chapter has been tested by blind users of
 <span 
 class="aess-12">R </span>on all three operating systems mentioned here. I am grateful to the
 organizers of the second Summer University of the ICCHP, held in the Czech
@@ -58,7 +61,7 @@ showcase <span
 class="aess-12">R </span>to a wide audience of blind students from many European
 countries, and to verify the usefulness of the software on platforms other than
 Windows.
-<!--l. 12--><p class="indent" >   If you&#8217;re a sighted user of <span 
+</p><!--l. 12--><p class="indent" >   If you&#8217;re a sighted user of <span 
 class="aess-12">R </span>and want to know how your blind student is going
 to get on, you need to talk to them. It might help to read on, but it is going to be
 much more use if the blind student solves as many of their problems themselves &#8212;
@@ -66,6 +69,7 @@ perhaps with your supervision and assistance.
                                                                           
 
                                                                           
+</p>
    <h3 class="sectionHead"><span class="titlemark">2.1   </span> <a 
  id="x4-60002.1"></a>Screen readers</h3>
 <!--l. 16--><p class="noindent" >Blind people use screen reading software to listen to what gets printed on the
@@ -80,13 +84,14 @@ MacIntosh users, but some are taking up Linux as their operating system of
 choice. The screen reader in many Linux distributions is called ORCA,
 and Macintosh users have VoiceOver as part of the standard operating
 system.
-<!--l. 18--><p class="indent" >   This document assumes the blind user has a good working knowledge of their
+</p><!--l. 18--><p class="indent" >   This document assumes the blind user has a good working knowledge of their
 screen reader and operating system. Most of us know where to find help with our
 screen reader problems, and in any case the solution I have for using <span 
 class="aess-12">R </span>as a blind
 person requires little more than the basic knowledge for either screen reader or the
 Windows operating system.
-<!--l. 21--><p class="noindent" >
+</p><!--l. 21--><p class="noindent" >
+</p>
    <h3 class="sectionHead"><span class="titlemark">2.2   </span> <a 
  id="x4-70002.2"></a><span 
 class="aess-12">R </span>and braille displays</h3>
@@ -98,7 +103,7 @@ Many blind programmers I have spoken with, swear by their braille display for
 giving them true access to the printed word. Sound from screen readers is
 wonderful, but there are opportunities to make mistakes when relying on sound
 alone.
-<!--l. 25--><p class="indent" >   At the 2011 Summer University I was able to see how students using a braille
+</p><!--l. 25--><p class="indent" >   At the 2011 Summer University I was able to see how students using a braille
 display could use <span 
 class="aess-12">R</span>. The results were very pleasing indeed. The Windows
 users with braille displays relied on their screen reader to provide the
@@ -106,18 +111,19 @@ information to the user via the braille display and as the screen readers
 were working well with <span 
 class="aess-12">R </span>already, the access was further improved with
 braille.
-<!--l. 27--><p class="indent" >   A Linux user at the Summer University was able to make use of his braille
+</p><!--l. 27--><p class="indent" >   A Linux user at the Summer University was able to make use of his braille
 display without explicitly using a screen reader. The interesting aspect to this
 discovery was that this means <span 
 class="aess-12">R </span>is available to the deaf-blind user as
-well.
-<!--l. 29--><p class="indent" >   I still need to learn how well the braille display would work with <span 
-class="aess-12">R </span>on a Mac,
                                                                           
 
                                                                           
+well.
+</p><!--l. 29--><p class="indent" >   I still need to learn how well the braille display would work with <span 
+class="aess-12">R </span>on a Mac,
 but expect the experiment would show similarly pleasing outcomes.
-<!--l. 31--><p class="noindent" >
+</p><!--l. 31--><p class="noindent" >
+</p>
    <h3 class="sectionHead"><span class="titlemark">2.3   </span> <a 
  id="x4-80002.3"></a>Setting up <span 
 class="aess-12">R </span>as a blind Windows user</h3>
@@ -131,7 +137,7 @@ either typing commands one at a time or by executing a whole bunch of
 commands together. In either case, the commands are all generated by typing
 standard text somewhere. Standard text is of course totally accessible to the blind
 user.
-<!--l. 35--><p class="indent" >   The standard <span 
+</p><!--l. 35--><p class="indent" >   The standard <span 
 class="aess-12">R </span>application window is not accessible to the blind user. We can
 hear a command being typed in but can&#8217;t hear what gets returned. This
 behaviour is somewhat strange as the sighted user sees what appears to
@@ -143,14 +149,14 @@ try to close the application using <span
 class="aett-12">ALT+F4</span>, JAWS will actually speak the
 dialogue perfectly well. It is in fact the only dialogue that works this
 well.
-<!--l. 37--><p class="indent" >   Obviously, it&#8217;s not all bad news. <span 
+</p><!--l. 37--><p class="indent" >   Obviously, it&#8217;s not all bad news. <span 
 class="aess-12">R </span>does come with a terminal window system
 and this is accessible; it&#8217;s actually what the Linux user gets anyway! This terminal
 has the look and feel of a standard command prompt window that many users will
 be familiar with. This window is where all text is entered and where all
 non-graphical output will be printed. Your screen reader will speak the contents of
 the terminal window as output is added.
-<!--l. 39--><p class="indent" >   The default installation of <span 
+</p><!--l. 39--><p class="indent" >   The default installation of <span 
 class="aess-12">R </span>places a shortcut on the desktop. Once
 you&#8217;ve installed <span 
 class="aess-12">R </span>in the default way, you will need to edit this shortcut&#8217;s
@@ -158,20 +164,20 @@ properties. Find it, hit &#8220;ALT+Enter" and make sure you are on the dialogue
 box that is for the target file. The full path is given here and the last
 element is &#8220;rgui.exe". Change this last bit to read &#8220;rterm.exe" and hit
 OK.
-<!--l. 41--><p class="indent" >   Test it now. The shortcut should run <span 
+</p><!--l. 41--><p class="indent" >   Test it now. The shortcut should run <span 
 class="aess-12">R </span>in a terminal window which looks like
 a DOS window. You will hear an introduction message about <span 
 class="aess-12">R </span>and ultimately the
 prompt which is a greater than symbol. To get out of <span 
 class="aess-12">R</span>, we need to type <span 
 class="aett-12">q() </span>and
-answer a question about saving the workspace. This should all be heard if things
-are going correctly. Note: your answer needs to be followed by hitting the enter
-key.
                                                                           
 
                                                                           
-<!--l. 43--><p class="indent" >   Change in software is inevitable and <span 
+answer a question about saving the workspace. This should all be heard if things
+are going correctly. Note: your answer needs to be followed by hitting the enter
+key.
+</p><!--l. 43--><p class="indent" >   Change in software is inevitable and <span 
 class="aess-12">R </span>does undergo changes all the time.
 When version 2.10.0 came out the standard functionality of <span 
 class="aess-12">R</span>&#8217;s help was
@@ -181,7 +187,7 @@ internet browser with the help page. This was very readable by screen reader
 software. In version 2.10.0, this default behaviour changed. In version 2.10.1
 however the developers fixed the problem. We expect this problem not to arise
 again, but just in case here is the solution.
-<!--l. 45--><p class="indent" >   If for some reason, the help functionality doesn&#8217;t work as we suggest, you can
+</p><!--l. 45--><p class="indent" >   If for some reason, the help functionality doesn&#8217;t work as we suggest, you can
 force the html help pages to be displayed by performing the following task. You
 will need to find the folder where <span 
 class="aess-12">R </span>was installed. It should be in the &#8220;Program
@@ -196,12 +202,13 @@ will) at the beginning of the line, it will stop the command from being
 executed. Remove the character so that the line starts with <span 
 class="aett-12">options</span>. Save the
 file.
-<!--l. 48--><p class="indent" >   If you&#8217;ve changed the shortcut on the desktop and checked the options for
+</p><!--l. 48--><p class="indent" >   If you&#8217;ve changed the shortcut on the desktop and checked the options for
 html help, then open <span 
 class="aess-12">R </span>and type <span 
 class="aett-12">?mean</span>. You should be able to see full html style
 help complete with the ability to link to other help pages.
-<!--l. 50--><p class="noindent" >
+</p><!--l. 50--><p class="noindent" >
+</p>
    <h4 class="subsectionHead"><span class="titlemark">2.3.1   </span> <a 
  id="x4-90002.3.1"></a>Solution for the problem of the screen reader losing focus</h4>
 <!--l. 52--><p class="noindent" >I have encountered a problem where the screen reader loses focus when using the
@@ -214,19 +221,20 @@ href="#x4-130002.6">2.6<!--tex4ht:ref: GettingTheMost --></a> and&#x00A0;<a
 href="LURNBlindch9.html#x11-690009.4">9.4<!--tex4ht:ref: TextSink --></a> which present a way of gaining access to the output.
 It is still a good idea to look at the suggested material, but a solution has come to
 hand.
-<!--l. 54--><p class="indent" >   In January 2014, Dr Robert Erhardt (Assistant Professor of Mathematics at
+</p><!--l. 54--><p class="indent" >   In January 2014, Dr Robert Erhardt (Assistant Professor of Mathematics at
 Wake Forest University) contacted me with a solution. His suggestion is to
 hit the <span 
 class="aett-12">ALT </span>key when the focus gets lost. I&#8217;ve tested this with JAWS&#x00A0;14
 and NVDA with R&#x00A0;3.0.2 running under Windows&#x00A0;7 and it worked for
 me.
-<!--l. 56--><p class="noindent" >
-   <h4 class="subsectionHead"><span class="titlemark">2.3.2   </span> <a 
- id="x4-100002.3.2"></a>Super fast default installation of <span 
-class="aess-12">R</span></h4>
                                                                           
 
                                                                           
+</p><!--l. 56--><p class="noindent" >
+</p>
+   <h4 class="subsectionHead"><span class="titlemark">2.3.2   </span> <a 
+ id="x4-100002.3.2"></a>Super fast default installation of <span 
+class="aess-12">R</span></h4>
 <!--l. 58--><p class="noindent" >In May 2014 I learnt how to install <span 
 class="aess-12">R </span>from a command line. Having downloaded
 the installation file, I created a batch file with the single line <span 
@@ -238,7 +246,8 @@ class="aess-12">R </span>installed silently. Usin a batch file means that
 when the next version of <span 
 class="aess-12">R </span>comes out, I will only need to change the version
 number in the filename.
-<!--l. 62--><p class="noindent" >
+</p><!--l. 62--><p class="noindent" >
+</p>
    <h3 class="sectionHead"><span class="titlemark">2.4   </span> <a 
  id="x4-110002.4"></a>Setting up <span 
 class="aess-12">R </span>as a blind Mac user</h3>
@@ -246,12 +255,12 @@ class="aess-12">R </span>as a blind Mac user</h3>
 following instructions were provided to me by Bram Duvigneau(a blind Mac user
 himself) at the Summer University in 2011, who had read this document and then
 given me some pointers to share.
-<!--l. 67--><p class="indent" >   Like Windows users, Mac users will find the screen reader for Mac works
+</p><!--l. 67--><p class="indent" >   Like Windows users, Mac users will find the screen reader for Mac works
 better if you use the terminal version of <span 
 class="aess-12">R </span>instead of the GUI version.
 Having obtained the installer for the Mac from CRAN, follow the following
 steps:
-      <ol  class="enumerate1" >
+      </p><ol  class="enumerate1" >
       <li 
   class="enumerate" id="x4-11002x1">Install <span 
 class="aess-12">R </span>using the .pkg installer package you downloaded.
@@ -270,7 +279,11 @@ class="aett-12">cmd+shift+u </span>in Finder and open the Terminal
   class="enumerate" id="x4-11008x4">Enter <span 
 class="aett-12">R </span>(Note this is a capital R) to start the terminal version of <span 
 class="aess-12">R</span>.</li></ol>
+                                                                          
+
+                                                                          
 <!--l. 74--><p class="noindent" >
+</p>
    <h3 class="sectionHead"><span class="titlemark">2.5   </span> <a 
  id="x4-120002.5"></a>Setting up <span 
 class="aess-12">R </span>as a blind Linux user</h3>
@@ -278,32 +291,30 @@ class="aess-12">R </span>as a blind Linux user</h3>
 means you know how you will obtain the installer for <span 
 class="aess-12">R </span>yourself. Further I assume
 you know how your screen reader works.
-                                                                          
-
-                                                                          
-<!--l. 78--><p class="indent" >   Once you&#8217;ve downloaded the installer and installed <span 
+</p><!--l. 78--><p class="indent" >   Once you&#8217;ve downloaded the installer and installed <span 
 class="aess-12">R</span>, you should
 be able to run it by typing &#8220;<span 
 class="aett-12">R</span>" at the command prompt. Pretty simple
 really.
-<!--l. 80--><p class="indent" >   Many installations of Linux offer the user the opportunity to install directly so
+</p><!--l. 80--><p class="indent" >   Many installations of Linux offer the user the opportunity to install directly so
 that the download step is not explicitly required.
-<!--l. 82--><p class="indent" >   I have witnessed (first-hand) a blind Linux user operate <span 
+</p><!--l. 82--><p class="indent" >   I have witnessed (first-hand) a blind Linux user operate <span 
 class="aess-12">R </span>without the speech
 synthesis turned on. His comfort in Linux with a braille display alone was
 sufficient.
-<!--l. 84--><p class="indent" >   There are a number of reasons why I&#8217;d like to be using Linux and
+</p><!--l. 84--><p class="indent" >   There are a number of reasons why I&#8217;d like to be using Linux and
 <span 
 class="aess-12">R </span>one day. Chief among these is the ability to set up each <span 
 class="aess-12">R </span>script file
 as an executable file that will run without needing to actually open <span 
 class="aess-12">R</span>
 itself.
-<!--l. 86--><p class="indent" >   Linux users have a much greater range of options available to them for
+</p><!--l. 86--><p class="indent" >   Linux users have a much greater range of options available to them for
 improving the accessibility of any software. Re-direction of output from an <span 
 class="aess-12">R</span>
 session is an example.
-<!--l. 88--><p class="noindent" >
+</p><!--l. 88--><p class="noindent" >
+</p>
    <h3 class="sectionHead"><span class="titlemark">2.6   </span> <a 
  id="x4-130002.6"></a>Getting the most out of the <span 
 class="aess-12">R </span>window</h3>
@@ -313,7 +324,7 @@ readers will find it difficult to copy and paste any output from <span
 class="aess-12">R </span>for insertion into
 a document. The solution is to create a text file that contains the output from the
 current session.
-<!--l. 92--><p class="indent" >   Use of the <a 
+</p><!--l. 92--><p class="indent" >   Use of the <a 
  id="dx4-13001"></a><span 
 class="aett-12">sink() </span>command is explained in Section&#x00A0;<a 
 href="LURNBlindch9.html#x11-690009.4">9.4<!--tex4ht:ref: TextSink --></a>. For the blind user,
@@ -327,21 +338,22 @@ href="LURNBlindch15.html#x17-11400015.1">15.1<!--tex4ht:ref: CreateCopyConsole -
 user can move to working with <span 
 class="aess-12">R </span>in batch mode (one way or another) life will get
 even easier.
-<!--l. 94--><p class="indent" >   Once the sink is in place, the blind user opens the text file that is being
+</p><!--l. 94--><p class="indent" >   Once the sink is in place, the blind user opens the text file that is being
 created (and continuously updated) in their preferred browser. After a set of
 commands that would normally print output in the terminal/console window have
+                                                                          
+
+                                                                          
 been issued, the blind user only needs to refresh the browser so that the latest
 output appears.
-<!--l. 96--><p class="indent" >   The result is that the output appears in the sink file if the command was
+</p><!--l. 96--><p class="indent" >   The result is that the output appears in the sink file if the command was
 successfully issued. Warning and error messages are printed in the terminal
 window and are read aloud by the screen reader. Users of the <span 
 class="aess-12">R </span>console window
 will need to review the screen to see why nothing was added to the sink
 file.
-                                                                          
-
-                                                                          
-<!--l. 100--><p class="noindent" >
+</p><!--l. 100--><p class="noindent" >
+</p>
    <h3 class="sectionHead"><span class="titlemark">2.7   </span> <a 
  id="x4-140002.7"></a>More advanced ways of running <span 
 class="aess-12">R </span>programs</h3>
@@ -349,7 +361,7 @@ class="aess-12">R </span>programs</h3>
 commands can prove tedious and to be honest no sighted <span 
 class="aess-12">R </span>user does it by issuing
 commands via the command line one at a time.
-<!--l. 104--><p class="indent" >   <span 
+</p><!--l. 104--><p class="indent" >   <span 
 class="aess-12">R </span>does have its own script window that the GUI version uses. In that
 window users edit the set of commands they want to run. Sometimes
 it&#8217;s easier to obtain the code we want from another <span 
@@ -363,40 +375,44 @@ class="aess-12">R</span>, is an option available to the blind
 user but the outputs from running commands all gets pumped into the
 main console window where the screen reader may not be able to read it
 all.
-<!--l. 106--><p class="indent" >   The most advanced users of <span 
+</p><!--l. 106--><p class="indent" >   The most advanced users of <span 
 class="aess-12">R </span>who have large jobs to run will run them on
 another computer, and it is from this approach that my favourite method of
 running my <span 
 class="aess-12">R </span>programs was developed.
-<!--l. 108--><p class="indent" >   All necessary commands are typed up in a standard text file. <span 
+</p><!--l. 108--><p class="indent" >   All necessary commands are typed up in a standard text file. <span 
 class="aess-12">R </span>command files
 are often given the single capital letter R as their extension but they are just plain
 text files, editable in any text editor program you choose.
-<!--l. 110--><p class="indent" >   For the moment, assume a valid set of commands has been placed in the file
+</p><!--l. 110--><p class="indent" >   For the moment, assume a valid set of commands has been placed in the file
 <span 
 class="aett-12">testing.R</span> and this file has been placed in your working directory. You can see
 how the sighted <span 
 class="aess-12">R </span>user runs batch jobs and the use of multiple working directories
 in Chapter&#x00A0;<a 
 href="LURNBlindch10.html#x12-7100010">10<!--tex4ht:ref: GoodIdeas --></a> on what I think are good ideas.
-<!--l. 112--><p class="indent" >   My first approach uses what the geeks call &#8220;piping". We pipe our set of
+</p><!--l. 112--><p class="indent" >   My first approach uses what the geeks call &#8220;piping". We pipe our set of
 commands into <span 
 class="aess-12">R </span>and pipe out all output to a text file. This is done using a batch
 file. Batch files are just text files themselves, with commands that are
 issued in a DOS window, sometimes known as the command prompt. All
 we need to do is create a new text file and give it the name we want.
 This text file will have just one command in it which will look something
+                                                                          
+
+                                                                          
 like
                                                                           
 
                                                                           
+</p>
    <div class="verbatim" id="verbatim-1">
 "c:\program&#x00A0;files\r\r-3.0.2\i386\bin\rterm.exe"&#x00A0;--no-save&#x00A0;&#x003C;&#x00A0;testing.R&#x00A0;&#x003E;&#x00A0;testing.Rout
 </div>
 <!--l. 116--><p class="nopar" > You&#8217;ll need to edit this command to suit your installation, especially the
 full path to the executable file which will also depend on your operating
 system.
-<!--l. 119--><p class="indent" >   When you save this file, it can be called whatever you like but needs to have
+</p><!--l. 119--><p class="indent" >   When you save this file, it can be called whatever you like but needs to have
 the <span 
 class="aett-12">bat </span>extension. I tend to keep the files together with the same name so would
 recommend <span 
@@ -407,7 +423,7 @@ then printed in the <span
 class="aett-12">testing.Rout</span> file including the commands you issued.
 The output file is just plain text and can be opened in a text editor or
 browser.
-<!--l. 121--><p class="indent" >   It&#8217;s certainly not essential that you come to grips with using the batch file
+</p><!--l. 121--><p class="indent" >   It&#8217;s certainly not essential that you come to grips with using the batch file
 approach to run <span 
 class="aess-12">R </span>in the background. It is fairly essential that you are
 comfortable writing up the <span 
@@ -417,7 +433,7 @@ using the <a
  id="dx4-14001"></a><span 
 class="aett-12">source() </span>command if you intend doing more than just simple
 jobs.
-<!--l. 123--><p class="indent" >   For the time-being, my recommendation is to run <span 
+</p><!--l. 123--><p class="indent" >   For the time-being, my recommendation is to run <span 
 class="aess-12">R </span>using the terminal
 window until you gain some confidence in its operation. Come back to the
 batch file approach once you know that <span 
@@ -426,6 +442,7 @@ done.
                                                                           
 
                                                                           
+</p>
    <!--l. 2--><div class="crosslinks"><p class="noindent">[<a 
 href="LURNBlindch3.html" >next</a>] [<a 
 href="LURNBlindch1.html" >prev</a>] [<a 
@@ -433,5 +450,5 @@ href="LURNBlindch1.html#tailLURNBlindch1.html" >prev-tail</a>] [<a
 href="LURNBlindch2.html" >front</a>] [<a 
 href="LURNBlind.html#LURNBlindch2.html" >up</a>] </p></div>
 <!--l. 2--><p class="indent" >   <a 
- id="tailLURNBlindch2.html"></a>   
+ id="tailLURNBlindch2.html"></a>  </p> 
 </body></html> 

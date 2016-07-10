@@ -27,7 +27,7 @@ We can look for relationships among the variables within this data set using the
  
 To obtain the equation for a straight line relationship of the form \begin{equation} 
 y=\alpha+\beta{}x 
-\end{equation} we use the \Rcmd{lm} command. The first argument for this command is a \Rclass{formula} which is the main component of any \Rcmd{lm} command you issue. It is of the form \code{y$\approx{}$x} where the $y$ is the response variable and the $x$ is the predictor variable. We will see how to modify the right hand side of the \Rclass{formula} in subsequent sections.  
+\end{equation} we use the \Rcmd{lm} command. The first argument for this command is a \Rclass{formula}{} which is the main component of any \Rcmd{lm} command you issue. It is of the form \code{y\textasciitilde{}x} where the $y$ is the response variable and the $x$ is the predictor variable. We will see how to modify the right hand side of the \Rclass{formula} in subsequent sections.  
  
 A second common argument is the \Rarg{data} statement. This means that the model formula can be stated using variable names from within the \Rclass{data.frame} mentioned in the \Rarg{data} statement. Models to explain the amount of \Robject{Ozone} using \Robject{Wind} and subsequently \Robject{Temp} are as follows. 
 \begin{Schunk}

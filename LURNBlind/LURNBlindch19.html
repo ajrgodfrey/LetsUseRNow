@@ -1,14 +1,17 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
-  "http://www.w3.org/TR/html4/loose.dtd">  
-<html > 
+<?xml version="1.0" encoding="iso-8859-1" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
+<html xmlns="http://www.w3.org/1999/xhtml"  
+> 
 <head><title>19 LURN... To Use R for Linear Algebra</title> 
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
-<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
-<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
-<!-- html,2,next --> 
-<meta name="src" content="LURNBlind.tex"> 
-<meta name="date" content="2016-06-02 16:55:00"> 
-<link rel="stylesheet" type="text/css" href="LURNBlind.css"> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<!-- xhtml,2,next,mathjax,html --> 
+<meta name="src" content="LURNBlind.tex" /> 
+<meta name="date" content="2016-07-10 10:39:00" /> 
+<link rel="stylesheet" type="text/css" href="LURNBlind.css" /> 
 </head><body 
 >
    <!--l. 4--><div class="crosslinks"><p class="noindent">[<a 
@@ -26,28 +29,30 @@ class="aess-12">R </span>because so
 many tasks in statistical analyses require manipulation of vectors and
 matrices, although much of this work is hidden behind other commands and
 functions.
+</p>
    <h3 class="sectionHead"><span class="titlemark">19.1   </span> <a 
  id="x21-13200019.1"></a>Basic notes on storage of vectors and matrices</h3>
 <!--l. 13--><p class="noindent" >We will concern ourselves with only numeric valued vectors and matrices in this
 chapter. Other types of data can be stored in vectors and matrices (as well as
 other data structures) but they have little relevance for linear algebra at this
 time.
-<!--l. 15--><p class="indent" >   In linear algebra, a vector is a one dimensional set of numbers. It is usually
+</p><!--l. 15--><p class="indent" >   In linear algebra, a vector is a one dimensional set of numbers. It is usually
 referred to as a row vector or a column vector to indicate its orientation. This
 orientation does matter for the ability to perform certain tasks when working with
 two or more vectors and matrices.
-<!--l. 17--><p class="indent" >   A matrix is a two-dimensional array of numbers, having a number of rows and
+</p><!--l. 17--><p class="indent" >   A matrix is a two-dimensional array of numbers, having a number of rows and
 columns. Many mathematical software applications do not explicitly distinguish a
 vector from a matrix because they store a row vector as if it were a matrix having
 just one row. Similarly, a column vector is stored as a matrix having just one
 column.
-<!--l. 19--><p class="indent" >   <span 
+</p><!--l. 19--><p class="indent" >   <span 
 class="aess-12">R </span>does distinguish betweena vector and a matrix, but it does not state whether
 a vector is a row or column vector. This does have its advantages, and probably
 some disadvantages as well. If for any reason you need to force the orientation of a
 vector, then create it as a matrix with one of its dimensions set equal to one. For
 example, we create a simple vector:
-   <div class="fancyvrb" id="fancyvrb383">  <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb388">  <a 
  id="x21-132002r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
@@ -57,7 +62,8 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;x</span></div>
 <!--l. 25--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb384"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb389"> <a 
  id="x21-132006r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1]</span><span 
@@ -66,22 +72,25 @@ class="aett-12">&#x00A0;2</span><span
 class="aett-12">&#x00A0;3</span><span 
 class="aett-12">&#x00A0;4</span></div>
 <!--l. 28--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb385"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb390"> <a 
  id="x21-132008r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;class(x)</span></div>
+                                                                          
+
+                                                                          
 <!--l. 31--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb386"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb391"> <a 
  id="x21-132010r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1]</span><span 
 class="aett-12">&#x00A0;"integer"</span></div>
-                                                                          
-
-                                                                          
 <!--l. 35--><p class="noindent" >We can convert this to a column matrix using
-   <div class="fancyvrb" id="fancyvrb387">  <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb392">  <a 
  id="x21-132012r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
@@ -92,19 +101,22 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;class(X)</span></div>
 <!--l. 41--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb388"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb393"> <a 
  id="x21-132016r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1]</span><span 
 class="aett-12">&#x00A0;"matrix"</span></div>
 <!--l. 44--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb389"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb394"> <a 
  id="x21-132018r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;X</span></div>
 <!--l. 47--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb390"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb395"> <a 
  id="x21-132020r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -148,7 +160,8 @@ class="aett-12">ncol</span>
 argument can be replaced by using the <span 
 class="aett-12">nrow </span>argument if a row vector is
 required.
-<!--l. 57--><p class="noindent" >
+</p><!--l. 57--><p class="noindent" >
+</p>
    <h3 class="sectionHead"><span class="titlemark">19.2   </span> <a 
  id="x21-13300019.2"></a>Creating some simple matrix structures</h3>
 <!--l. 59--><p class="noindent" >The <a 
@@ -157,7 +170,8 @@ class="aeti-12">identity matrix </span>is a diagonal matrix so we use the <a
  id="dx21-133002"></a><span 
 class="aett-12">diag() </span>command to create
 it. For example
-   <div class="fancyvrb" id="fancyvrb391">  <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb396">  <a 
  id="x21-133004r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
@@ -167,7 +181,8 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;I3</span></div>
 <!--l. 65--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb392"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb397"> <a 
  id="x21-133008r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -223,12 +238,16 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;1</span></div>
+                                                                          
+
+                                                                          
 <!--l. 73--><p class="indent" >   We often need to find the <a 
  id="dx21-133015"></a>transpose of a matrix. The <a 
  id="dx21-133016"></a><span 
 class="aett-12">t() </span>command does
 this.
-   <div class="fancyvrb" id="fancyvrb393">  <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb398">  <a 
  id="x21-133018r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
@@ -238,7 +257,8 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;M</span></div>
 <!--l. 79--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb394"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb399"> <a 
  id="x21-133022r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -280,16 +300,15 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;6</span></div>
 <!--l. 84--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb395"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb400"> <a 
  id="x21-133028r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;t(M)</span></div>
 <!--l. 87--><p class="noindent" >
-                                                                          
-
-                                                                          
-   <div class="fancyvrb" id="fancyvrb396"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb401"> <a 
  id="x21-133030r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -341,13 +360,15 @@ class="aett-12">row() </span>and <a
 class="aett-12">col()</span>
 commands use the size of the argument to create objects of the same
 size.
-   <div class="fancyvrb" id="fancyvrb397">  <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb402">  <a 
  id="x21-133041r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;row(I3)</span></div>
 <!--l. 100--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb398"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb403"> <a 
  id="x21-133043r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -404,28 +425,35 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;3</span></div>
 <!--l. 106--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb399"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb404"> <a 
  id="x21-133051r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;Hilb3=row(I3)+col(I3)-1</span></div>
 <!--l. 110--><p class="noindent" >Notice that the Hilbert matrix is created by adding two matrices together and then a
 constant is subtracted from all elements of the result.
-<!--l. 112--><p class="noindent" >
+                                                                          
+
+                                                                          
+</p><!--l. 112--><p class="noindent" >
+</p>
    <h3 class="sectionHead"><span class="titlemark">19.3   </span> <a 
  id="x21-13400019.3"></a>Matrix and vector calculations</h3>
 <!--l. 114--><p class="noindent" >We saw a simple addition of elements of two matrices of the same size as well as a
 subtraction in the previous section. <span 
 class="aess-12">R </span>uses the standard arithmetic operators on
 pairs of matrices (or vectors) on an element-by-element basis.
-<!--l. 116--><p class="indent" >   Addition of a constant to a vector or matrix is effected on all elements
-   <div class="fancyvrb" id="fancyvrb400">  <a 
+</p><!--l. 116--><p class="indent" >   Addition of a constant to a vector or matrix is effected on all elements
+</p>
+   <div class="fancyvrb" id="fancyvrb405">  <a 
  id="x21-134002r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;x+2</span></div>
 <!--l. 121--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb401"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb406"> <a 
  id="x21-134004r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1]</span><span 
@@ -434,13 +462,15 @@ class="aett-12">&#x00A0;4</span><span
 class="aett-12">&#x00A0;5</span><span 
 class="aett-12">&#x00A0;6</span></div>
 <!--l. 124--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb402"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb407"> <a 
  id="x21-134006r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;2+x</span></div>
 <!--l. 127--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb403"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb408"> <a 
  id="x21-134008r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1]</span><span 
@@ -449,16 +479,15 @@ class="aett-12">&#x00A0;4</span><span
 class="aett-12">&#x00A0;5</span><span 
 class="aett-12">&#x00A0;6</span></div>
 <!--l. 131--><p class="noindent" >Similarly, we can multiply a vector or matrix by a scalar using:
-   <div class="fancyvrb" id="fancyvrb404">  <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb409">  <a 
  id="x21-134010r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;5*x</span></div>
 <!--l. 136--><p class="noindent" >
-                                                                          
-
-                                                                          
-   <div class="fancyvrb" id="fancyvrb405"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb410"> <a 
  id="x21-134012r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1]</span><span 
@@ -468,13 +497,15 @@ class="aett-12">&#x00A0;10</span><span
 class="aett-12">&#x00A0;15</span><span 
 class="aett-12">&#x00A0;20</span></div>
 <!--l. 139--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb406"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb411"> <a 
  id="x21-134014r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;x*5</span></div>
 <!--l. 142--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb407"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb412"> <a 
  id="x21-134016r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1]</span><span 
@@ -484,13 +515,18 @@ class="aett-12">&#x00A0;10</span><span
 class="aett-12">&#x00A0;15</span><span 
 class="aett-12">&#x00A0;20</span></div>
 <!--l. 145--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb408"> <a 
+                                                                          
+
+                                                                          
+</p>
+   <div class="fancyvrb" id="fancyvrb413"> <a 
  id="x21-134018r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;5*X</span></div>
 <!--l. 148--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb409"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb414"> <a 
  id="x21-134020r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -527,9 +563,10 @@ class="aett-12">&#x00A0;20</span></div>
 <!--l. 156--><p class="noindent" >which retains the size of the vector or matrix. Also note that pre-multiplying by a
 scalar is equivalent to post-multiplying by a scalar, as should have been expected.
 This is of course different to matrix multiplication.
-<!--l. 158--><p class="indent" >   Matrix operations use different symbols from simple arithmetic operators to
+</p><!--l. 158--><p class="indent" >   Matrix operations use different symbols from simple arithmetic operators to
 distinguish the different results that might be desired. For example,
-   <div class="fancyvrb" id="fancyvrb410">  <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb415">  <a 
  id="x21-134030r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
@@ -545,7 +582,8 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;A*B</span></div>
 <!--l. 165--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb411"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb416"> <a 
  id="x21-134036r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -576,14 +614,16 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;40</span></div>
 <!--l. 171--><p class="noindent" >creates a matrix with elements based on simple multiplication of the paired elements,
 not those based on proper matrix multiplication.
-<!--l. 173--><p class="indent" >   If we want to multiply two matrices, the order is important.
-   <div class="fancyvrb" id="fancyvrb412">  <a 
+</p><!--l. 173--><p class="indent" >   If we want to multiply two matrices, the order is important.
+</p>
+   <div class="fancyvrb" id="fancyvrb417">  <a 
  id="x21-134042r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;A%*%B</span></div>
 <!--l. 178--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb413"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb418"> <a 
  id="x21-134044r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -612,13 +652,15 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;58</span></div>
 <!--l. 183--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb414"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb419"> <a 
  id="x21-134050r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;B%*%A</span></div>
 <!--l. 186--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb415"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb420"> <a 
  id="x21-134052r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -646,13 +688,14 @@ class="aett-12">&#x00A0;28</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;64</span></div>
-                                                                          
-
-                                                                          
 <!--l. 193--><p class="indent" >   Multiplying a matrix by a vector is easily achieved, and <span 
 class="aess-12">R </span>will orient the
 vector to conform to the rules of matrix multiplication as required.
-   <div class="fancyvrb" id="fancyvrb416">  <a 
+                                                                          
+
+                                                                          
+</p>
+   <div class="fancyvrb" id="fancyvrb421">  <a 
  id="x21-134058r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
@@ -662,7 +705,8 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;A%*%y</span></div>
 <!--l. 199--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb417"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb422"> <a 
  id="x21-134062r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -684,13 +728,15 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;22</span></div>
 <!--l. 204--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb418"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb423"> <a 
  id="x21-134068r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;y%*%A</span></div>
 <!--l. 207--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb419"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb424"> <a 
  id="x21-134070r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -710,19 +756,22 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;25</span></div>
 <!--l. 213--><p class="noindent" >
+</p>
    <h3 class="sectionHead"><span class="titlemark">19.4   </span> <a 
  id="x21-13500019.4"></a>Inverting a matrix</h3>
 <!--l. 215--><p class="noindent" >The inverse of a matrix is used in many statistical procedures. The <a 
  id="dx21-135001"></a><span 
 class="aett-12">solve()</span>
 command inverts a square matrix.
-   <div class="fancyvrb" id="fancyvrb420">  <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb425">  <a 
  id="x21-135003r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;A</span></div>
 <!--l. 220--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb421"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb426"> <a 
  id="x21-135005r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -755,13 +804,15 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;4</span></div>
 <!--l. 225--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb422"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb427"> <a 
  id="x21-135011r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;solve(A)</span></div>
 <!--l. 228--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb423"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb428"> <a 
  id="x21-135013r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -787,6 +838,9 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;1</span><span 
 class="aett-12">&#x00A0;-0.5</span></div>
+                                                                          
+
+                                                                          
 <!--l. 235--><p class="indent" >   For matrices that are not square, a generalised inverse can be found using the
 <a 
  id="dx21-135018"></a><span 
@@ -795,13 +849,15 @@ class="aett-12">ginv() </span>command found in the <a
 class="aeti-12">MASS </span>package that is part of the standard <span 
 class="aess-12">R</span>
 distribution.
-   <div class="fancyvrb" id="fancyvrb424">  <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb429">  <a 
  id="x21-135021r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;M</span></div>
 <!--l. 240--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb425"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb430"> <a 
  id="x21-135023r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -842,11 +898,9 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;6</span></div>
-                                                                          
-
-                                                                          
 <!--l. 245--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb426"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb431"> <a 
  id="x21-135029r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
@@ -856,7 +910,8 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;ginv(M)</span></div>
 <!--l. 249--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb427"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb432"> <a 
  id="x21-135033r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -893,13 +948,15 @@ class="aett-12">&#x00A0;0.6667</span><span
 class="aett-12">&#x00A0;-0.4167</span></div>
 <!--l. 256--><p class="noindent" >Of course, the product of the matrix and its generalised inverse should be an identity
 matrix.
-   <div class="fancyvrb" id="fancyvrb428">  <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb433">  <a 
  id="x21-135041r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;M%*%ginv(M)</span></div>
 <!--l. 261--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb429"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb434"> <a 
  id="x21-135043r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -933,7 +990,8 @@ class="aett-12">&#x00A0;1.00e+00</span></div>
 <!--l. 267--><p class="noindent" >Like many other applications, <span 
 class="aess-12">R </span>does not recognize the number zero very well. This is
 due to the way decimal numbers are stored.
-<!--l. 270--><p class="noindent" >
+</p><!--l. 270--><p class="noindent" >
+</p>
    <h3 class="sectionHead"><span class="titlemark">19.5   </span> <a 
  id="x21-13600019.5"></a>Solving a set of linear equations</h3>
 <!--l. 272--><p class="noindent" >If we want to solve the set of equations, represented in matrix form as <span 
@@ -943,13 +1001,18 @@ class="cmmi-12">b</span>, we
 use the <a 
  id="dx21-136001"></a><span 
 class="aett-12">solve() </span>command
-   <div class="fancyvrb" id="fancyvrb430">  <a 
+                                                                          
+
+                                                                          
+</p>
+   <div class="fancyvrb" id="fancyvrb435">  <a 
  id="x21-136003r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;A</span></div>
 <!--l. 277--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb431"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb436"> <a 
  id="x21-136005r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -982,7 +1045,8 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;4</span></div>
 <!--l. 282--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb432"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb437"> <a 
  id="x21-136011r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
@@ -992,28 +1056,29 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;solve(A,b)</span></div>
 <!--l. 286--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb433"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb438"> <a 
  id="x21-136015r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1]</span><span 
 class="aett-12">&#x00A0;0.5</span><span 
 class="aett-12">&#x00A0;1.5</span></div>
-                                                                          
-
-                                                                          
 <!--l. 291--><p class="noindent" >
+</p>
    <h3 class="sectionHead"><span class="titlemark">19.6   </span> <a 
  id="x21-13700019.6"></a>Determinants and traces</h3>
 <!--l. 293--><p class="noindent" >The <a 
  id="dx21-137001"></a><span 
 class="aett-12">det() </span>command is used for finding the determinant of a matrix.
-   <div class="fancyvrb" id="fancyvrb434">  <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb439">  <a 
  id="x21-137003r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;A</span></div>
 <!--l. 298--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb435"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb440"> <a 
  id="x21-137005r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1046,13 +1111,15 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;4</span></div>
 <!--l. 303--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb436"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb441"> <a 
  id="x21-137011r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;det(A)</span></div>
 <!--l. 306--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb437"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb442"> <a 
  id="x21-137013r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1]</span><span 
@@ -1062,14 +1129,19 @@ class="aett-12">&#x00A0;-2</span></div>
  id="dx21-137014"></a><span 
 class="aett-12">trace() </span>but this is not an algebraic function. If you want the trace of the matrix,
 you will need to sum the eigenvalues of the matrix.
-<!--l. 313--><p class="noindent" >
+                                                                          
+
+                                                                          
+</p><!--l. 313--><p class="noindent" >
+</p>
    <h3 class="sectionHead"><span class="titlemark">19.7   </span> <a 
  id="x21-13800019.7"></a>Eigenvalues and eigenvectors</h3>
 <!--l. 315--><p class="noindent" >Calculation of eigenvalues and their associated eigenvalues is fairly simple, but
 extracting the elements required might pose a little difficulty. Let&#8217;s create a 4<span 
 class="cmsy-10x-x-120">&#x00D7;</span>4
 Hilbert matrix and find its eigenvalues:
-   <div class="fancyvrb" id="fancyvrb438">  <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb443">  <a 
  id="x21-138002r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
@@ -1084,7 +1156,8 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;H4</span></div>
 <!--l. 323--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb439"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb444"> <a 
  id="x21-138008r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1174,13 +1247,15 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;7</span></div>
 <!--l. 330--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb440"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb445"> <a 
  id="x21-138018r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;eigen(H4)</span></div>
 <!--l. 333--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb441"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb446"> <a 
  id="x21-138020r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;$values</span><br class="fancyvrb" /><a 
@@ -1261,20 +1336,19 @@ class="aett-12">&#x00A0;-0.3651</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0.4082</span><span 
 class="aett-12">&#x00A0;-0.52309</span></div>
-                                                                          
-
-                                                                          
 <!--l. 345--><p class="noindent" >If we only wanted the eigenvalues, we could add the argument <span 
 class="aett-12">only.values=TRUE</span>; if
 the eigenvectors were of interest, then we would need to extract the second
 element of the above result:
-   <div class="fancyvrb" id="fancyvrb442">  <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb447">  <a 
  id="x21-138038r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;eigen(H4)$vectors</span></div>
 <!--l. 350--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb443"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb448"> <a 
  id="x21-138040r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1346,5 +1420,5 @@ href="LURNBlindch18.html#tailLURNBlindch18.html" >prev-tail</a>] [<a
 href="LURNBlindch19.html" >front</a>] [<a 
 href="LURNBlind.html#LURNBlindch19.html" >up</a>] </p></div>
 <!--l. 1--><p class="indent" >   <a 
- id="tailLURNBlindch19.html"></a>   
+ id="tailLURNBlindch19.html"></a>  </p> 
 </body></html> 

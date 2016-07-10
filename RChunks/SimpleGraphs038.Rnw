@@ -1,3 +1,4 @@
 <<StateRegionBarChart2>>= 
 barplot(summary(state.region)) 
 @ 
+\SVGLink{SimpleGraphsStateRegionBarChart2-1} 

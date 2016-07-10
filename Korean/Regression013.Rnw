@@ -1,4 +1,3 @@
-\SVGLink{RegressionOzoneTempWithLine-1} 
 \end{center} 
 \end{exhibit} 
  

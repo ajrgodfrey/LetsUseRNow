@@ -1,4 +1,3 @@
-\SVGLink{SimpleGraphsStateRegionBarChart2-1} 
 \end{center} 
 \end{exhibit} 
  

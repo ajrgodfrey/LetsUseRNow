@@ -1,14 +1,17 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
-  "http://www.w3.org/TR/html4/loose.dtd">  
-<html > 
+<?xml version="1.0" encoding="iso-8859-1" ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<!--http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd-->  
+<html xmlns="http://www.w3.org/1999/xhtml"  
+> 
 <head><title>8 LURN... To Examine Data Numerically</title> 
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
-<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
-<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
-<!-- html,2,next --> 
-<meta name="src" content="LURNBlind.tex"> 
-<meta name="date" content="2016-06-02 16:55:00"> 
-<link rel="stylesheet" type="text/css" href="LURNBlind.css"> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<!-- xhtml,2,next,mathjax,html --> 
+<meta name="src" content="LURNBlind.tex" /> 
+<meta name="date" content="2016-07-10 10:39:00" /> 
+<link rel="stylesheet" type="text/css" href="LURNBlind.css" /> 
 </head><body 
 >
    <!--l. 3--><div class="crosslinks"><p class="noindent">[<a 
@@ -23,6 +26,7 @@ href="LURNBlind.html#LURNBlindch8.html" >up</a>] </p></div>
 suitable for describing data. The same data set used in Chapter&#x00A0;<a 
 href="LURNBlindch7.html#x9-430007">7<!--tex4ht:ref: SimpleGraphs --></a> on creating
 graphs is used again.
+</p>
    <h3 class="sectionHead"><span class="titlemark">8.1   </span> <a 
  id="x10-590008.1"></a>Obtaining basic numerical summaries of data</h3>
 <!--l. 12--><p class="noindent" >The <a 
@@ -39,13 +43,15 @@ class="aess-12">R </span>what class the object is using the <a
  id="dx10-59003"></a><span 
 class="aett-12">class()</span>
 command
-   <div class="fancyvrb" id="fancyvrb157">  <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb158">  <a 
  id="x10-59005r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;class(airquality)</span></div>
 <!--l. 17--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb158"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb159"> <a 
  id="x10-59007r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1]</span><span 
@@ -54,13 +60,15 @@ class="aett-12">&#x00A0;"data.frame"</span></div>
  id="dx10-59008"></a><span 
 class="aett-12">summary() </span>command to the <span 
 class="aett-12">air quality </span>data gives:
-   <div class="fancyvrb" id="fancyvrb159">  <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb160">  <a 
  id="x10-59010r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;summary(airquality)</span></div>
 <!--l. 27--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb160"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb161"> <a 
  id="x10-59012r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -355,20 +363,20 @@ class="aett-12">&#x00A0;:31.0</span><br class="fancyvrb" /><a
  id="x10-59042r16"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span></div>
+                                                                          
+
+                                                                          
 <!--l. 46--><p class="noindent" >The <a 
  id="dx10-59043"></a><span 
 class="aett-12">summary() </span>command finds the common numeric summary statistics for the
 continuous-valued variables and does a particulary useless job on the
 variables for month and day. Well it&#8217;s not really <span 
 class="aess-12">R</span>&#8217;s fault. The month didn&#8217;t
-                                                                          
-
-                                                                          
 need to be stored numerically, but in any case we got what we asked for!
 It&#8217;s not <span 
 class="aess-12">R</span>&#8217;s fault we asked to be told what the minimum day number
 was!
-<!--l. 48--><p class="indent" >   Notice that the <a 
+</p><!--l. 48--><p class="indent" >   Notice that the <a 
  id="dx10-59044"></a><span 
 class="aett-12">summary() </span>command extracted the minimum, maximum,
 median and mean for the variables in the <a 
@@ -393,13 +401,15 @@ but it is better practice to use the more specific <a
  id="dx10-59052"></a><span 
 class="aett-12">colMeans() </span>command
 instead.
-   <div class="fancyvrb" id="fancyvrb161">  <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb162">  <a 
  id="x10-59054r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;colMeans(airquality[,1:4])</span></div>
 <!--l. 53--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb162"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb163"> <a 
  id="x10-59056r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -434,14 +444,16 @@ class="aett-12">&#x00A0;9.958</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;77.882</span></div>
 <!--l. 57--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb163"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb164"> <a 
  id="x10-59060r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;colMeans(airquality[,1:4],</span><span 
 class="aett-12">&#x00A0;na.rm=TRUE)</span></div>
 <!--l. 60--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb164"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb165"> <a 
  id="x10-59062r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -467,18 +479,23 @@ class="aett-12">&#x00A0;9.958</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;77.882</span></div>
 <!--l. 64--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb165"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb166"> <a 
  id="x10-59066r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;mean(airquality[,1],</span><span 
 class="aett-12">&#x00A0;na.rm=TRUE)</span></div>
 <!--l. 67--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb166"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb167"> <a 
  id="x10-59068r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1]</span><span 
 class="aett-12">&#x00A0;42.13</span></div>
+                                                                          
+
+                                                                          
 <!--l. 71--><p class="noindent" >Note that I&#8217;ve told <span 
 class="aess-12">R </span>which columns of the <span 
 class="aett-12">air quality</span> <a 
@@ -496,14 +513,15 @@ class="aett-12">summary() </span>command did tell us how many values for each
 variable were missing. Recall that missing values are represented by a
 &#8220;<span 
 class="aett-12">NA</span>".
-<!--l. 73--><p class="indent" >   The <a 
+</p><!--l. 73--><p class="indent" >   The <a 
  id="dx10-59071"></a><span 
 class="aett-12">min() </span>and <a 
  id="dx10-59072"></a><span 
 class="aett-12">max() </span>commands all work on the data by assuming we
 want the statistic for the whole list of numbers over all columns. For
 example
-   <div class="fancyvrb" id="fancyvrb167">  <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb168">  <a 
  id="x10-59074r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
@@ -515,23 +533,23 @@ class="aett-12">&#x00A0;&#x003E;</span><span
 class="aett-12">&#x00A0;min(airquality[,1:4],</span><span 
 class="aett-12">&#x00A0;na.rm=TRUE)</span></div>
 <!--l. 79--><p class="noindent" >
-                                                                          
-
-                                                                          
-   <div class="fancyvrb" id="fancyvrb168"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb169"> <a 
  id="x10-59078r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1]</span><span 
 class="aett-12">&#x00A0;1</span></div>
 <!--l. 82--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb169"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb170"> <a 
  id="x10-59080r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;max(airquality[,1:4],</span><span 
 class="aett-12">&#x00A0;na.rm=TRUE)</span></div>
 <!--l. 85--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb170"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb171"> <a 
  id="x10-59082r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1]</span><span 
@@ -542,7 +560,7 @@ class="aess-12">R </span>to use the <a
 class="aett-12">median()</span>, in a command like this,
 but as of version 2-14-0, an error message was returned instead of an
 answer.
-<!--l. 92--><p class="indent" >   We will need to see how to get the relevant medians, minima, and maxima for
+</p><!--l. 92--><p class="indent" >   We will need to see how to get the relevant medians, minima, and maxima for
 the columns separately later in this chapter, but for now let&#8217;s see how the relevant
 summary measures can be obtained for a single column of the <span 
 class="aett-12">air quality</span>
@@ -550,7 +568,8 @@ data. The <a
  id="dx10-59084"></a><span 
 class="aett-12">attach() </span>command allows us direct access to the variables by
 name.
-   <div class="fancyvrb" id="fancyvrb171">  <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb172">  <a 
  id="x10-59086r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
@@ -560,51 +579,58 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;min(Temp)</span></div>
 <!--l. 98--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb172"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb173"> <a 
  id="x10-59090r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1]</span><span 
 class="aett-12">&#x00A0;56</span></div>
+                                                                          
+
+                                                                          
 <!--l. 101--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb173"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb174"> <a 
  id="x10-59092r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;max(Wind)</span></div>
 <!--l. 104--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb174"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb175"> <a 
  id="x10-59094r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1]</span><span 
 class="aett-12">&#x00A0;20.7</span></div>
 <!--l. 107--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb175"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb176"> <a 
  id="x10-59096r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;median(Solar.R)</span></div>
 <!--l. 110--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb176"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb177"> <a 
  id="x10-59098r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1]</span><span 
 class="aett-12">&#x00A0;NA</span></div>
 <!--l. 113--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb177"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb178"> <a 
  id="x10-59100r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;median(Solar.R,</span><span 
 class="aett-12">&#x00A0;na.rm=TRUE)</span></div>
 <!--l. 116--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb178"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb179"> <a 
  id="x10-59102r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1]</span><span 
 class="aett-12">&#x00A0;205</span></div>
-                                                                          
-
-                                                                          
 <!--l. 120--><p class="noindent" >Notice that a consequence of missing values in our data is that some functions will
 return the <span 
 class="aett-12">NA </span>value. If we want the quantity returned to be estimated using the
@@ -612,19 +638,21 @@ available data we simply add the argument <span
 class="aett-12">na.rm=TRUE </span>which removes the values
 denoted with the <span 
 class="aett-12">NA</span>.
-<!--l. 122--><p class="indent" >   The first and third quartiles are not so easily extracted however. We
+</p><!--l. 122--><p class="indent" >   The first and third quartiles are not so easily extracted however. We
 can get the first and third quartiles from the five number summary by
 extracting elements of the output returned by the <a 
  id="dx10-59103"></a><span 
 class="aett-12">fivenum() </span>command. For
 example
-   <div class="fancyvrb" id="fancyvrb179">  <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb180">  <a 
  id="x10-59105r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;fivenum(Ozone)</span></div>
 <!--l. 127--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb180"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb181"> <a 
  id="x10-59107r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1]</span><span 
@@ -638,6 +666,9 @@ class="aett-12">&#x00A0;31.5</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;63.5</span><span 
 class="aett-12">&#x00A0;168.0</span></div>
+                                                                          
+
+                                                                          
 <!--l. 131--><p class="noindent" >There are some minor differences between the methods used by the <a 
  id="dx10-59108"></a><span 
 class="aett-12">summary() </span>and
@@ -646,16 +677,17 @@ class="aett-12">summary() </span>and
 class="aett-12">fivenum() </span>commands for the first and third quartiles. See the relevant help page
 using <span 
 class="aett-12">?fivenum </span>for an explanation.
-<!--l. 133--><p class="indent" >   Knowing how these commands work on simple sets of numbers is very useful
+</p><!--l. 133--><p class="indent" >   Knowing how these commands work on simple sets of numbers is very useful
 for the more elegant presentations in the following sections.
-<!--l. 135--><p class="noindent" >
+</p><!--l. 135--><p class="noindent" >
+</p>
    <h3 class="sectionHead"><span class="titlemark">8.2   </span> <a 
  id="x10-600008.2"></a>Obtaining slightly more elegant summaries</h3>
 <!--l. 137--><p class="noindent" >When preparing reports it is unlikely that we would want a single statistic all that
 often. Rather, we are usually interested in exposing patterns or differences within
 the data. We do this graphically but we may need to extract the exact quantities
 plotted in the graph as well.
-<!--l. 139--><p class="indent" >   The <a 
+</p><!--l. 139--><p class="indent" >   The <a 
  id="dx10-60001"></a><span 
 class="aett-12">tapply() </span>command is very useful for creating tables of results. It has
 three arguments; the main variable of interest, the grouping variable(s), and the
@@ -664,11 +696,12 @@ to show how the <a
  id="dx10-60002"></a><span 
 class="aett-12">tapply() </span>command works in action so we&#8217;ll use the air quality
 data again.
-<!--l. 141--><p class="indent" >   Let&#8217;s say we want to know the <a 
+</p><!--l. 141--><p class="indent" >   Let&#8217;s say we want to know the <a 
  id="dx10-60003"></a><span 
 class="aett-12">mean() </span>Wind speed over the five months data
 were collected.
-   <div class="fancyvrb" id="fancyvrb181">  <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb182">  <a 
  id="x10-60005r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
@@ -676,7 +709,8 @@ class="aett-12">&#x00A0;tapply(Wind,</span><span
 class="aett-12">&#x00A0;Month,</span><span 
 class="aett-12">&#x00A0;mean)</span></div>
 <!--l. 146--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb182"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb183"> <a 
  id="x10-60007r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -718,14 +752,11 @@ class="aett-12">&#x00A0;8.942</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;8.794</span><span 
 class="aett-12">&#x00A0;10.180</span></div>
-                                                                          
-
-                                                                          
 <!--l. 151--><p class="noindent" >This does the job very nicely. We could ask for other quantities such as the minimum,
 maximum, or standard deviation within each month by referring to the relevant <span 
 class="aess-12">R</span>
 command in the third argument.
-<!--l. 153--><p class="indent" >   If we had multiple response variables of interest, we would need to repeat the
+</p><!--l. 153--><p class="indent" >   If we had multiple response variables of interest, we would need to repeat the
 command for each one. If we had more than one way of asking for the grouping
 though, the <a 
  id="dx10-60010"></a><span 
@@ -733,7 +764,8 @@ class="aett-12">tapply() </span>command is very useful indeed. The air quality d
 doesn&#8217;t have a second factor we can use for this illustration, so I&#8217;ve created a
 second variable which asks if the day of the month is in the second half of the
 month. See what happens.
-   <div class="fancyvrb" id="fancyvrb183">  <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb184">  <a 
  id="x10-60012r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
@@ -741,8 +773,12 @@ class="aett-12">&#x00A0;tapply(Wind,</span><span
 class="aett-12">&#x00A0;list(Month,</span><span 
 class="aett-12">&#x00A0;Day&#x003E;15),</span><span 
 class="aett-12">&#x00A0;mean)</span></div>
+                                                                          
+
+                                                                          
 <!--l. 158--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb184"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb185"> <a 
  id="x10-60014r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -790,7 +826,8 @@ We can use the <a
  id="dx10-60025"></a><span 
 class="aett-12">summary() </span>command here though as it gives us more
 quantities.
-   <div class="fancyvrb" id="fancyvrb185">  <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb186">  <a 
  id="x10-60027r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
@@ -798,7 +835,8 @@ class="aett-12">&#x00A0;tapply(Wind,</span><span
 class="aett-12">&#x00A0;Month,</span><span 
 class="aett-12">&#x00A0;summary)</span></div>
 <!--l. 173--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb186"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb187"> <a 
  id="x10-60029r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;$&#8216;5&#8216;</span><br class="fancyvrb" /><a 
@@ -1066,7 +1104,7 @@ class="aett-12">&#x00A0;16.60</span></div>
 If presentation was more important than getting results efficiently, we
 would look to improve the appearance &#8212; this means more difficult coding
 though.
-<!--l. 198--><p class="indent" >   There is one more feature of the <a 
+</p><!--l. 198--><p class="indent" >   There is one more feature of the <a 
  id="dx10-60066"></a><span 
 class="aett-12">tapply() </span>command that must be pointed
 out. The simple commands shown thus far use the default settings of the relevant
@@ -1074,10 +1112,8 @@ functions. In particular, the <a
  id="dx10-60067"></a><span 
 class="aett-12">mean() </span>command does not ignore missing values by
 default.
-                                                                          
-
-                                                                          
-   <div class="fancyvrb" id="fancyvrb187">  <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb188">  <a 
  id="x10-60069r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
@@ -1085,7 +1121,8 @@ class="aett-12">&#x00A0;tapply(Ozone,</span><span
 class="aett-12">&#x00A0;Month,</span><span 
 class="aett-12">&#x00A0;mean)</span></div>
 <!--l. 203--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb188"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb189"> <a 
  id="x10-60071r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1105,11 +1142,15 @@ class="aett-12">&#x00A0;NA</span><span
 class="aett-12">&#x00A0;NA</span><span 
 class="aett-12">&#x00A0;NA</span><span 
 class="aett-12">&#x00A0;NA</span></div>
+                                                                          
+
+                                                                          
 <!--l. 208--><p class="noindent" >We now know that there are missing <span 
 class="aett-12">Ozone </span>observations in each month. We can add
 a fourth argument to the command which will be passed on to the function
 mentioned in the third argument.
-   <div class="fancyvrb" id="fancyvrb189">  <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb190">  <a 
  id="x10-60075r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
@@ -1118,7 +1159,8 @@ class="aett-12">&#x00A0;Month,</span><span
 class="aett-12">&#x00A0;mean,</span><span 
 class="aett-12">&#x00A0;na.rm=TRUE)</span></div>
 <!--l. 213--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb190"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb191"> <a 
  id="x10-60077r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1154,7 +1196,8 @@ class="aett-12">&#x00A0;59.12</span><span
 class="aett-12">&#x00A0;59.96</span><span 
 class="aett-12">&#x00A0;31.45</span></div>
 <!--l. 218--><p class="noindent" >gives us the means of the observed data.
-<!--l. 220--><p class="noindent" >
+</p><!--l. 220--><p class="noindent" >
+</p>
    <h3 class="sectionHead"><span class="titlemark">8.3   </span> <a 
  id="x10-610008.3"></a>Getting things printed how we want them</h3>
 <!--l. 222--><p class="noindent" >We will often need to watch the way <span 
@@ -1165,7 +1208,7 @@ using the <a
 class="aett-12">tapply() </span>command above, the months were numeric values.
 The order was probably the most logical one as it was in chronological
 order.
-<!--l. 224--><p class="indent" >   If we had a long list of results and it was the extremes we wanted to focus
+</p><!--l. 224--><p class="indent" >   If we had a long list of results and it was the extremes we wanted to focus
 attention towards, the <a 
  id="dx10-61002"></a><span 
 class="aett-12">sort() </span>and <a 
@@ -1173,7 +1216,8 @@ class="aett-12">sort() </span>and <a
 class="aett-12">rev() </span>commands would be most useful. For
 example, say we want to order the monthly average wind speeds found above in
 ascending order, then we would use
-   <div class="fancyvrb" id="fancyvrb191">  <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb192">  <a 
  id="x10-61005r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
@@ -1181,7 +1225,8 @@ class="aett-12">&#x00A0;sort(tapply(Wind,</span><span
 class="aett-12">&#x00A0;Month,</span><span 
 class="aett-12">&#x00A0;mean))</span></div>
 <!--l. 229--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb192"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb193"> <a 
  id="x10-61007r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1225,8 +1270,9 @@ class="aett-12">&#x00A0;10.267</span><span
 class="aett-12">&#x00A0;11.623</span></div>
 <!--l. 234--><p class="noindent" >So we now know that August has the smallest average wind speed and that May is
 the windiest month.
-<!--l. 236--><p class="indent" >   To get the data listed in reverse chronological order we would use:
-   <div class="fancyvrb" id="fancyvrb193">  <a 
+</p><!--l. 236--><p class="indent" >   To get the data listed in reverse chronological order we would use:
+</p>
+   <div class="fancyvrb" id="fancyvrb194">  <a 
  id="x10-61011r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
@@ -1237,7 +1283,8 @@ class="aett-12">&#x00A0;mean))</span></div>
                                                                           
 
                                                                           
-   <div class="fancyvrb" id="fancyvrb194"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb195"> <a 
  id="x10-61013r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1281,7 +1328,8 @@ class="aett-12">&#x00A0;10.267</span><span
 class="aett-12">&#x00A0;11.623</span></div>
 <!--l. 246--><p class="noindent" >and we can combine both commands to get the months ordered from windiest to least
 windy using:
-   <div class="fancyvrb" id="fancyvrb195">  <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb196">  <a 
  id="x10-61017r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
@@ -1289,7 +1337,8 @@ class="aett-12">&#x00A0;rev(sort(tapply(Wind,</span><span
 class="aett-12">&#x00A0;Month,</span><span 
 class="aett-12">&#x00A0;mean)))</span></div>
 <!--l. 251--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb196"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb197"> <a 
  id="x10-61019r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1332,6 +1381,7 @@ class="aett-12">&#x00A0;8.942</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;8.794</span></div>
 <!--l. 257--><p class="noindent" >
+</p>
    <h3 class="sectionHead"><span class="titlemark">8.4   </span> <a 
  id="x10-620008.4"></a>Correlation structure within a data set</h3>
 <!--l. 260--><p class="noindent" >The summaries given thus far in this chapter all refer to variables as single
@@ -1340,10 +1390,11 @@ Looking for inter-relationships among variables can be achieved using correlatio
 coefficients; this gives us a numerical equivalent to the scatter plot matrices shown
 in Section&#x00A0;<a 
 href="LURNBlindch7.html#x9-530007.6">7.6<!--tex4ht:ref: ScatterPlotMatrices --></a>.
-<!--l. 262--><p class="indent" >   In fact, the commands used here resemble those used to generate the scatter
+</p><!--l. 262--><p class="indent" >   In fact, the commands used here resemble those used to generate the scatter
 plot matrix. I like to do this to save effort. My ability to copy and paste is better
 than my typing!
-   <div class="fancyvrb" id="fancyvrb197">  <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb198">  <a 
  id="x10-62002r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
@@ -1352,7 +1403,8 @@ class="aett-12">&#x00A0;Solar.R,</span><span
 class="aett-12">&#x00A0;Wind,</span><span 
 class="aett-12">&#x00A0;Temp))</span></div>
 <!--l. 267--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb198"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb199"> <a 
  id="x10-62004r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1463,7 +1515,8 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;1.000</span></div>
 <!--l. 275--><p class="noindent" >Having said this, it is now obvious that the missing values in some variables is
 causing grief. An additional argument is required.
-   <div class="fancyvrb" id="fancyvrb199">  <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb200">  <a 
  id="x10-62014r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
@@ -1479,8 +1532,12 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;use</span><span 
 class="aett-12">&#x00A0;=</span><span 
 class="aett-12">&#x00A0;"pairwise.complete.obs")</span></div>
+                                                                          
+
+                                                                          
 <!--l. 281--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb200"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb201"> <a 
  id="x10-62018r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1553,9 +1610,6 @@ class="aett-12">&#x00A0;0.27584</span><span
 class="aett-12">&#x00A0;-0.45799</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;1.0000</span></div>
-                                                                          
-
-                                                                          
 <!--l. 289--><p class="noindent" >Often, <span 
 class="aess-12">R </span>will allow arguments to be abbreviated. Unfortunately, this isn&#8217;t the case for
 this additional argument. It is the case for choosing the preferred correlation
@@ -1568,7 +1622,8 @@ places is unnecessary so have restricted the output using the <a
  id="dx10-62027"></a><span 
 class="aett-12">round()</span>
 command.
-   <div class="fancyvrb" id="fancyvrb201">  <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb202">  <a 
  id="x10-62029r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
@@ -1590,7 +1645,8 @@ class="aett-12">&#x00A0;=</span><span
 class="aett-12">&#x00A0;"s"),</span><span 
 class="aett-12">&#x00A0;3)</span></div>
 <!--l. 295--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb202"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb203"> <a 
  id="x10-62033r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1663,6 +1719,7 @@ class="aett-12">&#x00A0;-0.447</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;1.000</span></div>
 <!--l. 307--><p class="noindent" >
+</p>
    <h3 class="sectionHead"><span class="titlemark">8.5   </span> <a 
  id="x10-630008.5"></a>Use of dplyr for data summarisation</h3>
 <!--l. 311--><p class="noindent" >In Section&#x00A0;<a 
@@ -1679,14 +1736,18 @@ class="aett-12">group_by()</span>,
 class="aett-12">summarise()</span>, and <a 
  id="dx10-63004"></a><span 
 class="aett-12">count()</span>.
-<!--l. 313--><p class="indent" >   You&#8217;ll need to install the package (see Section&#x00A0;<a 
+</p><!--l. 313--><p class="indent" >   You&#8217;ll need to install the package (see Section&#x00A0;<a 
 href="LURNBlindch14.html#x16-10900014.1">14.1<!--tex4ht:ref: InstallPackages --></a> for instructions) before
 running the function
-   <div class="fancyvrb" id="fancyvrb203">  <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb204">  <a 
  id="x10-63006r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;library(dplyr)</span></div>
+                                                                          
+
+                                                                          
 <!--l. 319--><p class="noindent" >to gain access to the commands just listed. We will also make use of the
 <a 
  id="dx10-63007"></a><span 
@@ -1696,7 +1757,8 @@ class="aeti-12">tbl_df  </span>instead of the common <a
  id="dx10-63009"></a><span 
 class="aeti-12">data.frame</span>
 using:
-   <div class="fancyvrb" id="fancyvrb204">  <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb205">  <a 
  id="x10-63011r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
@@ -1711,7 +1773,8 @@ class="aett-12">group_by() </span>commands can be used instead of the
 class="aett-12">tapply() </span>command introduced earlier in this chapter. To get the overall average
 wind speed from the <span 
 class="aett-12">airquality </span>data, we could use:
-   <div class="fancyvrb" id="fancyvrb205">  <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb206">  <a 
  id="x10-63016r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
@@ -1721,11 +1784,9 @@ class="aett-12">&#x00A0;summarise(mean(Wind,</span><span
 class="aett-12">&#x00A0;na.rm</span><span 
 class="aett-12">&#x00A0;=</span><span 
 class="aett-12">&#x00A0;TRUE))</span></div>
-                                                                          
-
-                                                                          
 <!--l. 332--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb206"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb207"> <a 
  id="x10-63018r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1764,7 +1825,8 @@ class="aett-12">mean() </span>command alone. The value of
  id="dx10-63022"></a><span 
 class="aett-12">summarise() </span>becomes more evident when we seek the means for groups within
 our data, such as:
-   <div class="fancyvrb" id="fancyvrb207">  <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb208">  <a 
  id="x10-63024r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
@@ -1776,7 +1838,8 @@ class="aett-12">&#x00A0;na.rm</span><span
 class="aett-12">&#x00A0;=</span><span 
 class="aett-12">&#x00A0;TRUE))</span></div>
 <!--l. 342--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb208"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb209"> <a 
  id="x10-63026r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;Source:</span><span 
@@ -1803,7 +1866,7 @@ class="aett-12">&#x00A0;TRUE)</span>
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;(int)</span><span 
+class="aett-12">&#x00A0;&#x003C;int&#x003E;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1823,7 +1886,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;(dbl)</span><br class="fancyvrb" /><a 
+class="aett-12">&#x00A0;&#x003C;dbl&#x003E;</span><br class="fancyvrb" /><a 
  id="x10-63034r5"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;1</span><span 
@@ -1976,14 +2039,19 @@ class="aeti-12">dplyr </span>package gives us the <a
  id="dx10-63046"></a><span 
 class="aett-12">count() </span>function to make this
 even more efficient.
-   <div class="fancyvrb" id="fancyvrb209">  <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb210">  <a 
  id="x10-63048r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;airquality%&#x003E;%</span><span 
 class="aett-12">&#x00A0;count(Month)</span></div>
 <!--l. 360--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb210"> <a 
+                                                                          
+
+                                                                          
+</p>
+   <div class="fancyvrb" id="fancyvrb211"> <a 
  id="x10-63050r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;Source:</span><span 
@@ -2010,8 +2078,8 @@ class="aett-12">&#x00A0;n</span><br class="fancyvrb" /><a
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;(int)</span><span 
-class="aett-12">&#x00A0;(int)</span>
+class="aett-12">&#x00A0;&#x003C;int&#x003E;</span><span 
+class="aett-12">&#x00A0;&#x003C;int&#x003E;</span>
 <br class="fancyvrb" /><a 
  id="x10-63058r5"></a><span 
 class="aett-12">&#x00A0;</span><span 
@@ -2081,7 +2149,8 @@ quality data. One way to do this using commands from the <a
  id="dx10-63068"></a><span 
 class="aeti-12">dplyr </span>package is
 to:
-   <div class="fancyvrb" id="fancyvrb211">  <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb212">  <a 
  id="x10-63070r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
@@ -2107,7 +2176,8 @@ class="aett-12">&#x00A0;&#x003E;</span><span
 class="aett-12">&#x00A0;arrange(Summarised,</span><span 
 class="aett-12">&#x00A0;desc(AveTemp))</span></div>
 <!--l. 381--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb212"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb213"> <a 
  id="x10-63076r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;Source:</span><span 
@@ -2130,10 +2200,10 @@ class="aett-12">&#x00A0;AveTemp</span><br class="fancyvrb" /><a
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;(int)</span><span 
+class="aett-12">&#x00A0;&#x003C;int&#x003E;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;(dbl)</span>
+class="aett-12">&#x00A0;&#x003C;dbl&#x003E;</span>
 <br class="fancyvrb" /><a 
  id="x10-63084r5"></a><span 
 class="aett-12">&#x00A0;</span><span 
@@ -2190,9 +2260,6 @@ class="aett-12">&#x00A0;5</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;65.55</span></div>
-                                                                          
-
-                                                                          
 <!--l. 393--><p class="noindent" >Which has stored data at each step. Note in particular that a new variable was
 created by name in the <a 
  id="dx10-63093"></a><span 
@@ -2201,7 +2268,8 @@ class="aett-12">summarise() </span>command; this helps in the subsequent
  id="dx10-63094"></a><span 
 class="aett-12">arrange() </span>step. We might want to store the results at each step, but if we didn&#8217;t
 want to, then we could use piping like this:
-   <div class="fancyvrb" id="fancyvrb213">  <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb214">  <a 
  id="x10-63096r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
@@ -2235,7 +2303,8 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;arrange(desc(AveTemp))</span></div>
 <!--l. 401--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb214"> <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb215"> <a 
  id="x10-63104r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;Source:</span><span 
@@ -2258,10 +2327,10 @@ class="aett-12">&#x00A0;AveTemp</span><br class="fancyvrb" /><a
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;(int)</span><span 
+class="aett-12">&#x00A0;&#x003C;int&#x003E;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;(dbl)</span>
+class="aett-12">&#x00A0;&#x003C;dbl&#x003E;</span>
 <br class="fancyvrb" /><a 
  id="x10-63112r5"></a><span 
 class="aett-12">&#x00A0;</span><span 
@@ -2323,14 +2392,19 @@ combining commands can be split out onto multiple lines to make it even easier t
 see what has been managed by each command. This leaves room for comments
 to be added at the end of lines to help anyone else read the code being
 written.
-<!--l. 417--><p class="noindent" >
+                                                                          
+
+                                                                          
+</p><!--l. 417--><p class="noindent" >
+</p>
    <h3 class="sectionHead"><span class="titlemark">8.6   </span> <a 
  id="x10-640008.6"></a>Closing</h3>
 <!--l. 419--><p class="noindent" >If you are carrying on working with <span 
 class="aess-12">R </span>you might wish to remove direct
 access to the data sets we used in this chapter by issuing the following
 commands
-   <div class="fancyvrb" id="fancyvrb215">  <a 
+</p>
+   <div class="fancyvrb" id="fancyvrb216">  <a 
  id="x10-64002r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
@@ -2345,5 +2419,5 @@ href="LURNBlindch7.html#tailLURNBlindch7.html" >prev-tail</a>] [<a
 href="LURNBlindch8.html" >front</a>] [<a 
 href="LURNBlind.html#LURNBlindch8.html" >up</a>] </p></div>
 <!--l. 3--><p class="indent" >   <a 
- id="tailLURNBlindch8.html"></a>   
+ id="tailLURNBlindch8.html"></a>  </p> 
 </body></html> 

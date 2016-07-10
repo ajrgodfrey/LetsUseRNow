@@ -3,3 +3,4 @@ attach(airquality)
 plot(Wind, Ozone) 
 abline(Ozone.lm1) 
 @ 
+\SVGLink{RegressionOzoneWindWithLine-1} 

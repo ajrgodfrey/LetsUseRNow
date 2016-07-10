@@ -1,3 +1,4 @@
 <<MatrixPlot>>= 
 pairs(data.frame(Ozone, Solar.R, Wind, Temp)) 
 @ 
+\SVGLink{SimpleGraphsMatrixPlot-1} 

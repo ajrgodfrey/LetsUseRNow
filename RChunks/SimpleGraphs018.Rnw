@@ -1,3 +1,4 @@
 <<LinePlot>>= 
 plot(Temp, ylim=c(50,100)) 
 @ 
+\SVGLink{SimpleGraphsLinePlot-1} 

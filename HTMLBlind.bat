@@ -1,4 +1,4 @@
-htlatex LURNBlind.tex "html,2,next"
+htlatex LURNBlind.tex "xhtml,2,next,mathjax"
 
 echo body{font-family: arial, helvetica, sans-serif;} >> LURNBlind.css
 

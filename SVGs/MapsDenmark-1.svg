@@ -27,9 +27,6 @@
 <clipPath id="clip1">
   <path d="M 30.238281 105.527344 L 474.757813 105.527344 L 474.757813 399.46875 L 30.238281 399.46875 Z M 30.238281 105.527344 "/>
 </clipPath>
-<clipPath id="clip2">
-  <path d="M 30.238281 105.527344 L 474.757813 105.527344 L 474.757813 399.46875 L 30.238281 399.46875 Z M 30.238281 105.527344 "/>
-</clipPath>
 </defs>
 <g id="surface151">
 <rect x="0" y="0" width="504" height="504" style="fill:rgb(100%,100%,100%);fill-opacity:1;stroke:none;"/>
@@ -70,10 +67,6 @@
   <use xlink:href="#glyph0-4" x="261.195313" y="81.164063"/>
   <use xlink:href="#glyph0-5" x="269.203906" y="81.164063"/>
   <use xlink:href="#glyph0-6" x="274.807813" y="81.164063"/>
-</g>
-<g clip-path="url(#clip2)" clip-rule="nonzero">
-<path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,0%,0%);fill-opacity:1;" d="M 372.53125 304.03125 C 372.53125 307.632813 367.132813 307.632813 367.132813 304.03125 C 367.132813 300.429688 372.53125 300.429688 372.53125 304.03125 "/>
-<path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,0%,0%);fill-opacity:1;" d="M 423.957031 354.539063 C 423.957031 358.140625 418.554688 358.140625 418.554688 354.539063 C 418.554688 350.9375 423.957031 350.9375 423.957031 354.539063 "/>
 </g>
 </g>
 </svg>

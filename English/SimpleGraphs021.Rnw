@@ -1,4 +1,3 @@
-\SVGLink{SimpleGraphsLinePlot2-1} 
 \end{center} 
 \end{exhibit} 
  

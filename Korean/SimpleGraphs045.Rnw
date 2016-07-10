@@ -1,4 +1,3 @@
-\SVGLink{SimpleGraphsStateRegionPieChart-1} 
 \end{center} 
 \end{exhibit} 
  

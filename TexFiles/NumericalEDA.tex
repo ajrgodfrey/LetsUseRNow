@@ -343,7 +343,7 @@ which is more long-winded than just using the \Rcmd{mean} command alone. The val
 Source: local data frame [5 x 2]
 
   Month mean(Wind, na.rm = TRUE)
-  (int)                    (dbl)
+  <int>                    <dbl>
 1     5                   11.623
 2     6                   10.267
 3     7                    8.942
@@ -361,7 +361,7 @@ We could use other functions seen in this chapter for alternative summary statis
 Source: local data frame [5 x 2]
 
   Month     n
-  (int) (int)
+  <int> <int>
 1     5    31
 2     6    30
 3     7    31
@@ -382,7 +382,7 @@ As an illustration of the real power of the \stressind{pipe operator}, say we wa
 Source: local data frame [5 x 2]
 
   Month AveTemp
-  (int)   (dbl)
+  <int>   <dbl>
 1     8   83.97
 2     7   83.90
 3     6   79.10
@@ -402,7 +402,7 @@ Which has stored data at each step. Note in particular that a new variable was c
 Source: local data frame [5 x 2]
 
   Month AveTemp
-  (int)   (dbl)
+  <int>   <dbl>
 1     8   83.97
 2     7   83.90
 3     6   79.10

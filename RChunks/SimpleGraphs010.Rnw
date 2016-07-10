@@ -1,3 +1,4 @@
 <<HistAirQualityWind2>>= 
 hist(Wind, xlab="Average wind speed (mph)", main="") 
 @ 
+\SVGLink{SimpleGraphsHistAirQualityWind2-1} 

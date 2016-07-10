@@ -1,3 +1,4 @@
 <<HistAirQualityWind>>= 
 hist(Wind) 
 @ 
+\SVGLink{SimpleGraphsHistAirQualityWind-1} 

@@ -1,3 +1,4 @@
 <<Scatter>>= 
 plot(Wind, Temp) 
 @ 
+\SVGLink{SimpleGraphsScatter-1} 
