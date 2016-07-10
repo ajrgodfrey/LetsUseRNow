@@ -101,10 +101,10 @@ auto/
 
 
 ### LURN output files
-LURN/
-LURNBlind/
-SVGs/
-TexFiles/
-English/LURNprint.pdf
-Other/*.txt
+LURN\*.*
+LURNBlind\*.*
+SVGs\*.*
+TexFiles\*.*
+English\lurnPrint.pdf
+Other\*.txt
 
