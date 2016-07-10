@@ -15,9 +15,10 @@ If you want to start a translation project, then again, please offer.
 
 
 
- ## Changes
+## Changes
 
 ### July 2016
+
 - switched the Blind version to use mathjax for representing mathematical expressions. This is because screen reader support for mathematics has really grown over the last six months to a year and I am now ready to say that I am confident users can handle this content.
 - made additions to offer more comments specifically targeted to the needs of the blind audience.
 - some clean up to get the SVG links into the RChunk files that they belong to; this should have been done prior to upload to GitHub.
