@@ -23,4 +23,5 @@ If you want to start a translation project, then again, please offer.
 - made additions to offer more comments specifically targeted to the needs of the blind audience.
 - some clean up to get the SVG links into the RChunk files that they belong to; this should have been done prior to upload to GitHub.
 - removed some files containing nothing but white space; altered Make*Lang*.bat files accordingly.
-
+- fixed error with \Blind
+ 

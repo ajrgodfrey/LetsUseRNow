@@ -26,9 +26,12 @@ We can look for relationships among the variables within this data set using the
 \section{The simple regression model} 
  
 To obtain the equation for a straight line relationship of the form \begin{equation} 
-y=\alpha+\beta{}x 
-\end{equation} we use the \Rcmd{lm} command. The first argument for this command is a \Rclass{formula}{} which is the main component of any \Rcmd{lm} command you issue. It is of the form \code{y\textasciitilde{}x} where the $y$ is the response variable and the $x$ is the predictor variable. We will see how to modify the right hand side of the \Rclass{formula} in subsequent sections.  
- 
+y=\alpha+\beta{}x +\epsilon 
+\end{equation} we use the \Rcmd{lm} command. The first argument for this command is a \Rclass{formula}{} which is the main component of any \Rcmd{lm} command you issue. It is of the form \code{y\textasciitilde{}x} where the $y$ is the response variable and the $x$ is the predictor variable. We will see how to modify the right hand side of the \Rclass{formula} in subsequent sections. The $\epsilon$ is the error term for our model; we look at that aspect more in Section~\ref{RegValid}    below.  
+
+\Blind{The above equation is a simpler version than you will see in many textbooks. You might see a subscript on the $y$, $x$, and $\epsilon$ when referring to individual observations, but when we refer to the set of response values and the set of predictor values, we are usually thinking of them as vectors; as such, the notation above really should indicate that $y$, $x$, and $\epsilon$ are vectors. A bold face is often used for vectors and matrices or sometimes vectors are underscored. This additional notation is not used in the current context.}
+
+
 A second common argument is the \Rarg{data} statement. This means that the model formula can be stated using variable names from within the \Rclass{data.frame} mentioned in the \Rarg{data} statement. Models to explain the amount of \Robject{Ozone} using \Robject{Wind} and subsequently \Robject{Temp} are as follows. 
 \begin{Schunk}
 \begin{Sinput}

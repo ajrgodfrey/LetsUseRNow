@@ -93,29 +93,15 @@ In mid-2015, I will attend the UseR conference in Aalborg, which is in Denmark. 
 Information from URL : http://maps.googleapis.com/maps/api/geocode/json?address=Aalborg&sensor=false
 \end{Soutput}
 \begin{Soutput}
-Warning in readLines(connect, warn = FALSE): InternetOpenUrl failed: 'The server name or address could not be resolved'
-\end{Soutput}
-\begin{Soutput}
-Warning in FUN(X[[i]], ...):   geocoding failed for "Aalborg".
-  if accompanied by 500 Internal Server Error with using dsk, try google.
-\end{Soutput}
-\begin{Soutput}
 Information from URL : http://maps.googleapis.com/maps/api/geocode/json?address=Copenhagen&sensor=false
-\end{Soutput}
-\begin{Soutput}
-Warning in readLines(connect, warn = FALSE): InternetOpenUrl failed: 'The server name or address could not be resolved'
-\end{Soutput}
-\begin{Soutput}
-Warning in FUN(X[[i]], ...):   geocoding failed for "Copenhagen".
-  if accompanied by 500 Internal Server Error with using dsk, try google.
 \end{Soutput}
 \begin{Sinput}
 > Places 
 \end{Sinput}
 \begin{Soutput}
-  lon lat
-1  NA  NA
-2  NA  NA
+     lon   lat
+1  9.922 57.05
+2 12.568 55.68
 \end{Soutput}
 \begin{Sinput}
 > map('worldHires', 'Denmark') 
@@ -124,6 +110,4 @@ Warning in FUN(X[[i]], ...):   geocoding failed for "Copenhagen".
 \end{Sinput}
 
 \includegraphics[width=0.7\textwidth]{figures/MapsDenmark-1} \end{Schunk}
- 
- 
 
