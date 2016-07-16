@@ -1,0 +1,52 @@
+%\setcounter{chapter}{} 
+\chapter{LURN\ldots{} To Keep Useful Ideas in an Easy-to-find Place} 
+\label{KeepUseful} 
+ 
+<<setup, include=FALSE>>= 
+opts_chunk$set(fig.path='figures/KeepUseful', comment=NA, dev=c('pdf','postscript','svg'), prompt=T, out.width="0.7\\textwidth") 
+source("GenericSettings.R") 
+@ 
+ 
+This chapter is my dumping ground for all the little hints I have used once and put somewhere safe, only to find that safe means hard to find later. 
+ 
+I think it's a good idea to watch how other people use \R{} and get the best out of it so that you can learn from their experiences. Learnging from others can be fun and when you get to teach someone else what you know better than they do, it's rewarding too. 
+ 
+So here are a bunch of tasks that I had to do once or thought I might need to do later that I put here for safe-keeping. 
+ 
+ 
+\section{Installing an add-on  package from the source file} 
+ 
+Add-on packages are stored in a folder of their own name. They have subfolders containing all the things that they need to do the extra jobs we want that don't come with the standard installation of \R{}. They are stored in a source file which gets unpacked and put into the right place for your \{} installation to find it later. The add-on packages are installed fromt he source that suits your operating system; ``tar.gz" for Linux and Mac, or ``zip" for Windows users. 
+ 
+Sometimes, we are only able to find the original source file that the package creator was using during development which will be of the ``tar.gz" kind. If you are using a Mac or Linux, this file is what you need for the standard installation process, but Windows users have to do a little work to get things sorted. I got the following instructions from Dr Jonathan Marshall who works in the office next to mine during October 2014; they do need testing to ensure their validity remains as they cannot be tested as part of the creation of the LURN document. Let's say we just downloaded the file NewPackage_1.0.tar.gz and have moved it to a working directory for \R{}. 
+ 
+\begin{enumerate} 
+\item Don't unzip or untar it.  Just leave it as NewPackage_1.0.tar.gz  
+\item Install the devtools package: 
+<<eval=FALSE>>= 
+install.packages("devtools") 
+@ 
+\item Load the devtools package: 
+<<eval=FALSE>>= 
+library(devtools) 
+@ 
+\item  If you haven't done so, set your working directory to wherever NewPackage_1.0.tar.gz was placed. For example: 
+<<eval=FALSE>>= 
+setwd("C:/Users/My Documents/Downloads/") 
+@ 
+\item Build and install the NewPackage  package: 
+<<eval=FALSE>>= 
+install_source("NewPackage_1.0.tar.gz") 
+@ 
+\item That should have built and installed the package for you. Gain access to it using: 
+<<eval=FALSE>>= 
+library(NewPackage) 
+@ 
+\end{enumerate} 
+ 
+ 
+ 
+<<cleanup, include=FALSE>>=
+rm(list = ls())
+@
+

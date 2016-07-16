@@ -1,0 +1,32 @@
+ 
+\chapter{What's this all about?} 
+\label{Intro} 
+ 
+<<setup, include=FALSE>>= 
+source("GenericSettings.R") 
+Months = c("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December")  
+@ 
+ 
+\R{} is a statistical programming language and environment. The up-front learning curve is somewhat steeper than other statistical software systems as \R{} does not have the Graphical User Interface (GUI) that other packages have; browsing the menus for inspiration is not an option. 
+ 
+This means that \R{} is best suited to users who know what they want, or in educational situations where students are encouraged to know what they want before they play around in a particular application. The difficulty most people will have when encountering \R{} is that knowing what you want is different to knowing how to get what you want. This manual is aimed at developing a set of instructions for doing tasks that might be required in all introductory statistics courses --- basic data analysis, manipulation and presentation. It is not intended to be a comprehensive textbook although some theory might be thrown in to help explain particular topics when this is necessary. 
+ 
+This collection should be useful as a reference guide; it might be useful as a series of tasks for undergraduate learning but is not specifically intended for that purpose. If there is something you think you want to do that isn't here let me know and I will endeavour to add it into the next iteration. 
+ 
+I've tried to keep the order of topics fairly linear, but to be honest it's difficult to talk about some things in such a constrained order. Most chapters will state what is assumed before the chapter is worked through. For example, if it's a simple matter of loading the data then it's done on the spot, assuming the reader can work out what is happening for themselves. The index is therefore an invaluable resource for finding where commands were introduced or explained in greater detail. This means that jumping around should be possible.  
+In the end, skipping chapters and sections of little interest is advisable; there is so much you could learn about using \R{}. You should avoid getting bogged down by unimportant topics; note they are there and move on. There's always time to come back if you find you need to later. 
+ 
+\section{Getting started} 
+ 
+OK, lets assume that you've got this manual because you also have \R{} and are ready to go. If you haven't installed \R{}, then please do, and if you really know little about how to choose the best options for the questions that get asked during the installation, choose the default answer. I install new versions of \R{} as they become available, and happily use the default settings without any downstream pain and suffering. 
+ 
+\section{Versions of \R{}} 
+ 
+\R{} is a collaborative project and development is ongoing. Most users do not need to update \R{} with the release of every new version. I recommend staying with one \R{} version for as long as you can. I only change versions to keep up with the latest version my students might be using and because some of the additional packages created by other \R{} users are built on recent versions.  
+ 
+As it happens, this manual was compiled using version \Sexpr{version$major}.\Sexpr{version$minor} which was released on \Sexpr{version$day} \Sexpr{Months[as.numeric(version$month)]}, \Sexpr{version$year}. All code should work on other versions equally well. Please report any faults with the code to the author. Be warned though that if it works for me then it might be because you have an antiquated version of \R{}! 
+ 
+<<cleanup, include=FALSE>>=
+rm(list = ls())
+@
+

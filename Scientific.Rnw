@@ -1,0 +1,30 @@
+%\setcounter{chapter}{} 
+\chapter{LURN\ldots{} To Use R as a Scientific Calculator} 
+\label{ScientificCalculator} 
+ 
+<<setup, include=FALSE>>= 
+opts_chunk$set(fig.path='figures/Scientific', comment=NA, dev=c('pdf','postscript','svg'), prompt=T, out.width="0.7\\textwidth") 
+source("GenericSettings.R") 
+@ 
+ 
+This chapter explains how to use \R{} as a scientific calculator, including its use of trigonometric functions. We'll also plot some of the functions for illustrative purposes.  
+ 
+\section{Trigonometric functions} 
+ 
+\R{} has a series of commands that all perform quite similarly. The only real issue is to find out what actual commands get what we want. First of all, we need to know how \R{} will work with degrees or radians. 
+<<BasicTrig>>= 
+pi 
+sin(pi/6) 
+sin(30) 
+@ 
+So our experiment shows us that \R{} is working in radians. 
+ 
+The functions \Rcmd{sin}, \Rcmd{cos}, and \Rcmd{tan} give the sine, cosine, and tangent respectively. To find the inverse sine, sometimes called the arcsine, we use the \Rcmd{asin} command. The hyperbolic functions associated with these functions also exist; use \Rcmd{sinh}, \Rcmd{cosh} and \Rcmd{tanh} and for the inverse, just add an extra \code{a} before the command named here. 
+ 
+\section{Graphs of trigonometric functions} 
+ 
+ 
+<<cleanup, include=FALSE>>=
+rm(list = ls())
+@
+

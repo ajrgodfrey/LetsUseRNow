@@ -2,3 +2,8 @@
 hist(Wind) 
 @ 
 \SVGLink{SimpleGraphsHistAirQualityWind-1} 
+\Blind{
+<<HistAirQualityWindVI>>= 
+BrailleR::VI(hist(Wind, plot=F) )
+@ 
+}
