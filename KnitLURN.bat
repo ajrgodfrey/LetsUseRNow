@@ -18,5 +18,4 @@ copy LURNPrint.r+LURN.r LURNWorkhorse.r
 del "Rplots.pdf"
 
 move *.r .\RCode
-copy .\RCode\GenericSettings.r GenericSettings.r
 move .\RCode\LURN*.r .

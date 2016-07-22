@@ -1,4 +1,4 @@
-<<>>= 
+<<Suare10qIntegers>>= 
 y=(1:10)^2 
 y 
 @ 

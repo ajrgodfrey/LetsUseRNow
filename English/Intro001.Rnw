@@ -2,3 +2,6 @@
 \chapter{What's this all about?} 
 \label{Intro} 
  
+<<SetupMonths>>=
+Months = c("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December")  
+@ 

@@ -20,3 +20,5 @@ del .\LURNBlind\*.* /q
 move *.png .\LURNBlind
 move *.html .\LURNBlind
 move LURNBlind.css .\LURNBlind
+
+copy .\LURN\Ozone-UniDesc.html .\LURNBlind

@@ -7,11 +7,11 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
 <!-- html,2,next --> 
 <meta name="src" content="LURN.tex"> 
-<meta name="date" content="2016-07-11 09:49:00"> 
+<meta name="date" content="2016-07-17 03:07:00"> 
 <link rel="stylesheet" type="text/css" href="LURN.css"> 
 </head><body 
 >
-   <!--l. 3--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 5--><div class="crosslinks"><p class="noindent">[<a 
 href="LURNch12.html" >next</a>] [<a 
 href="LURNch10.html" >prev</a>] [<a 
 href="LURNch10.html#tailLURNch10.html" >prev-tail</a>] [<a 
@@ -19,7 +19,7 @@ href="#tailLURNch11.html">tail</a>] [<a
 href="LURN.html#LURNch11.html" >up</a>] </p></div>
    <h2 class="chapterHead"><span class="titlemark">Chapter&#x00A0;11</span><br /><a 
  id="x13-7800011"></a>LURN&#x2026; To Do Basic Inference</h2>
-<!--l. 8--><p class="noindent" >This chapter is all about finding confidence intervals and performing hypothesis
+<!--l. 10--><p class="noindent" >This chapter is all about finding confidence intervals and performing hypothesis
 tests. While many textbooks separate these activities there is little point doing so
 when it comes time to using <span 
 class="aess-12">R </span>as both are done at the same time in the majority
@@ -27,13 +27,13 @@ of cases.
    <h3 class="sectionHead"><span class="titlemark">11.1   </span> <a 
  id="x13-7900011.1"></a>Confidence intervals and hypothesis tests for the mean of one
 population</h3>
-<!--l. 13--><p class="noindent" >The <a 
+<!--l. 15--><p class="noindent" >The <a 
  id="dx13-79001"></a><span 
 class="aeti-12">datasets </span>package contains a set of annual precipitation values (in inches) for
 70 U.S. cities. If we could assume this set to be a random sample (and we will
 even if it is not true), then we can find a confidence interval for the mean annual
 precipitation for U.S. cities on the whole.
-<!--l. 15--><p class="indent" >   You could use a manual approach to find the 95% confidence interval for the
+<!--l. 17--><p class="indent" >   You could use a manual approach to find the 95% confidence interval for the
 population mean (<span 
 class="cmmi-12">&#x03BC;</span>) yourself using the <a 
  id="dx13-79002"></a><span 
@@ -50,44 +50,44 @@ commands as follows:
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;mean(precip)</span></div>
-<!--l. 20--><p class="noindent" >
+<!--l. 22--><p class="noindent" >
    <div class="fancyvrb" id="fancyvrb228"> <a 
  id="x13-79009r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1]</span><span 
 class="aett-12">&#x00A0;34.89</span></div>
-<!--l. 23--><p class="noindent" >
+<!--l. 25--><p class="noindent" >
    <div class="fancyvrb" id="fancyvrb229"> <a 
  id="x13-79011r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;sd(precip)</span></div>
-<!--l. 26--><p class="noindent" >
+<!--l. 28--><p class="noindent" >
    <div class="fancyvrb" id="fancyvrb230"> <a 
  id="x13-79013r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1]</span><span 
 class="aett-12">&#x00A0;13.71</span></div>
-<!--l. 29--><p class="noindent" >
+<!--l. 31--><p class="noindent" >
    <div class="fancyvrb" id="fancyvrb231"> <a 
  id="x13-79015r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;length(precip)</span></div>
-<!--l. 32--><p class="noindent" >
+<!--l. 34--><p class="noindent" >
    <div class="fancyvrb" id="fancyvrb232"> <a 
  id="x13-79017r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1]</span><span 
 class="aett-12">&#x00A0;70</span></div>
-<!--l. 35--><p class="noindent" >
+<!--l. 37--><p class="noindent" >
    <div class="fancyvrb" id="fancyvrb233"> <a 
  id="x13-79019r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;qt(0.975,</span><span 
 class="aett-12">&#x00A0;length(precip)-1)</span></div>
-<!--l. 38--><p class="noindent" >
+<!--l. 40--><p class="noindent" >
                                                                           
 
                                                                           
@@ -96,7 +96,7 @@ class="aett-12">&#x00A0;length(precip)-1)</span></div>
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1]</span><span 
 class="aett-12">&#x00A0;1.995</span></div>
-<!--l. 42--><p class="noindent" >Note the use of the <a 
+<!--l. 44--><p class="noindent" >Note the use of the <a 
  id="dx13-79022"></a><span 
 class="aett-12">qt() </span>command here. It has two arguments; one for the level of
 confidence (95% confidence relates to an upper tail area of 0.025) and the degrees
@@ -114,13 +114,13 @@ class="aett-12">&#x00A0;*</span><span
 class="aett-12">&#x00A0;sd(precip)</span><span 
 class="aett-12">&#x00A0;/</span><span 
 class="aett-12">&#x00A0;sqrt(length(precip))</span></div>
-<!--l. 47--><p class="noindent" >
+<!--l. 49--><p class="noindent" >
    <div class="fancyvrb" id="fancyvrb236"> <a 
  id="x13-79026r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1]</span><span 
 class="aett-12">&#x00A0;31.62</span></div>
-<!--l. 50--><p class="noindent" >
+<!--l. 52--><p class="noindent" >
    <div class="fancyvrb" id="fancyvrb237"> <a 
  id="x13-79028r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
@@ -133,13 +133,13 @@ class="aett-12">&#x00A0;*</span><span
 class="aett-12">&#x00A0;sd(precip)</span><span 
 class="aett-12">&#x00A0;/</span><span 
 class="aett-12">&#x00A0;sqrt(length(precip))</span></div>
-<!--l. 53--><p class="noindent" >
+<!--l. 55--><p class="noindent" >
    <div class="fancyvrb" id="fancyvrb238"> <a 
  id="x13-79030r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1]</span><span 
 class="aett-12">&#x00A0;38.15</span></div>
-<!--l. 57--><p class="noindent" >or, with a nicer (quicker) command:
+<!--l. 59--><p class="noindent" >or, with a nicer (quicker) command:
    <div class="fancyvrb" id="fancyvrb239">
 <a 
  id="x13-79032r1"></a><span 
@@ -155,14 +155,14 @@ class="aett-12">&#x00A0;*</span><span
 class="aett-12">&#x00A0;sd(precip)</span><span 
 class="aett-12">&#x00A0;/</span><span 
 class="aett-12">&#x00A0;sqrt(length(precip))</span></div>
-<!--l. 62--><p class="noindent" >
+<!--l. 64--><p class="noindent" >
    <div class="fancyvrb" id="fancyvrb240"> <a 
  id="x13-79034r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1]</span><span 
 class="aett-12">&#x00A0;31.62</span><span 
 class="aett-12">&#x00A0;38.15</span></div>
-<!--l. 66--><p class="noindent" >These calculations include all the commands needed for a hypothesis test, except
+<!--l. 68--><p class="noindent" >These calculations include all the commands needed for a hypothesis test, except
 the need to find the specific <span 
 class="cmmi-12">p</span>-value of a hypothesis test. Let&#8217;s test the
 notion that the annual precipitation is actually greater than 30 inches per
@@ -185,19 +185,19 @@ class="aett-12">&#x00A0;&#x003E;</span><span
 class="aett-12">&#x00A0;pt(TestStat,</span><span 
 class="aett-12">&#x00A0;length(precip)-1,</span><span 
 class="aett-12">&#x00A0;lower.tail=FALSE)</span></div>
-<!--l. 72--><p class="noindent" >
+<!--l. 74--><p class="noindent" >
    <div class="fancyvrb" id="fancyvrb242"> <a 
  id="x13-79040r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1]</span><span 
 class="aett-12">&#x00A0;0.001976</span></div>
-<!--l. 76--><p class="noindent" >Note that the <a 
+<!--l. 78--><p class="noindent" >Note that the <a 
  id="dx13-79041"></a><span 
 class="aett-12">pt() </span>command required us to think about the degrees of freedom and
 that the upper tail area was important to us. We now see that the null hypothesis
 is rejected as the <span 
 class="cmmi-12">p</span>-value is very small.
-<!--l. 78--><p class="indent" >   These calculations are fine, but there is a quicker way! The <a 
+<!--l. 80--><p class="indent" >   These calculations are fine, but there is a quicker way! The <a 
  id="dx13-79042"></a><span 
 class="aett-12">t.test()</span>
 command does it all for us &#8212; both confidence interval and hypothesis
@@ -210,7 +210,7 @@ test.
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;t.test(precip)</span></div>
-<!--l. 83--><p class="noindent" >
+<!--l. 85--><p class="noindent" >
    <div class="fancyvrb" id="fancyvrb244"> <a 
  id="x13-79046r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
@@ -278,7 +278,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;34.89</span></div>
-<!--l. 97--><p class="noindent" >This gives a confidence interval with the default level of confidence (95%),
+<!--l. 99--><p class="noindent" >This gives a confidence interval with the default level of confidence (95%),
 while
    <div class="fancyvrb" id="fancyvrb245">  <a 
  id="x13-79068r1"></a><span 
@@ -287,7 +287,7 @@ class="aett-12">&#x00A0;&#x003E;</span><span
 class="aett-12">&#x00A0;t.test(precip,</span><span 
 class="aett-12">&#x00A0;mu=30,</span><span 
 class="aett-12">&#x00A0;alternative="greater")</span></div>
-<!--l. 102--><p class="noindent" >
+<!--l. 104--><p class="noindent" >
    <div class="fancyvrb" id="fancyvrb246"> <a 
  id="x13-79070r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
@@ -357,18 +357,18 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;34.89</span></div>
-<!--l. 116--><p class="noindent" >gives us the results for a one-sided hypothesis test and the corresponding confidence
+<!--l. 118--><p class="noindent" >gives us the results for a one-sided hypothesis test and the corresponding confidence
 interval.
-<!--l. 118--><p class="indent" >   The <a 
+<!--l. 120--><p class="indent" >   The <a 
  id="dx13-79091"></a><span 
 class="aett-12">t.test() </span>command is used for many <span 
 class="cmmi-12">t</span>-tests, notably for comparing two
 population means, whether the data are paired or not.
-<!--l. 120--><p class="noindent" >
+<!--l. 122--><p class="noindent" >
    <h3 class="sectionHead"><span class="titlemark">11.2   </span> <a 
  id="x13-8000011.2"></a>Confidence intervals and hypothesis tests for the difference of two
 population means</h3>
-<!--l. 122--><p class="noindent" >The first question you must ask yourself when working with two sets of
+<!--l. 124--><p class="noindent" >The first question you must ask yourself when working with two sets of
 values you wish to compare is if they are two independent samples or
 two measurements taken on one sample. If the latter is the case, then
 we have paired samples and will need to add an extra argument to our
@@ -382,15 +382,15 @@ class="cmr-8">2</span></sub>, although as we will see, the linked
 sample case is really a reduction of the paired values to a one-sample
 <span 
 class="cmmi-12">t</span>-test.
-<!--l. 124--><p class="indent" >   First, we see how to do a basic two sample <span 
+<!--l. 126--><p class="indent" >   First, we see how to do a basic two sample <span 
 class="cmmi-12">t</span>-test using the ... data.
                                                                           
 
                                                                           
-<!--l. 126--><p class="noindent" >
+<!--l. 128--><p class="noindent" >
    <h4 class="subsectionHead"><span class="titlemark">11.2.1   </span> <a 
  id="x13-8100011.2.1"></a>Two paired samples</h4>
-<!--l. 129--><p class="noindent" >The <span 
+<!--l. 131--><p class="noindent" >The <span 
 class="aett-12">sleep </span>data that is in the <a 
  id="dx13-81001"></a><span 
 class="aeti-12">datasets </span>package has two recordings for each of
@@ -398,7 +398,7 @@ ten individuals. In an experimental design sense, we would think of the
 individuals as a blocking factor. In fact we will see how this is done in
 Section&#x00A0;<span 
 class="aebx-12">??</span>.
-<!--l. 131--><p class="indent" >   The data set lists the twenty observations in a single column. This is a
+<!--l. 133--><p class="indent" >   The data set lists the twenty observations in a single column. This is a
 little unusual for paired data that will be analyzed using the <a 
  id="dx13-81002"></a><span 
 class="aett-12">t.test()</span>
@@ -411,7 +411,7 @@ the use of the <a
 class="aett-12">aov() </span>command as discussed in Section&#x00A0;<span 
 class="aebx-12">??</span> is strongly
 advised.
-<!--l. 133--><p class="indent" >   Using the <a 
+<!--l. 135--><p class="indent" >   Using the <a 
  id="dx13-81004"></a><span 
 class="aett-12">attach() </span>command to be able to refer to the variables directly
 speeds up this process.
@@ -420,7 +420,7 @@ speeds up this process.
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;attach(sleep)</span></div>
-<!--l. 140--><p class="indent" >   We employ the <a 
+<!--l. 142--><p class="indent" >   We employ the <a 
  id="dx13-81007"></a><span 
 class="aett-12">t.test() </span>command with the <span 
 class="aett-12">paired </span>argument set to <span 
@@ -434,7 +434,7 @@ class="aett-12">&#x00A0;&#x003E;</span><span
 class="aett-12">&#x00A0;t.test(extra[group=="1"],</span><span 
 class="aett-12">&#x00A0;extra[group=="2"],</span><span 
 class="aett-12">&#x00A0;paired=TRUE)</span></div>
-<!--l. 145--><p class="noindent" >
+<!--l. 147--><p class="noindent" >
    <div class="fancyvrb" id="fancyvrb249"> <a 
  id="x13-81011r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
@@ -527,7 +527,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;-1.58</span></div>
-<!--l. 160--><p class="indent" >   which is the way we would normally work when we have the two measurements
+<!--l. 162--><p class="indent" >   which is the way we would normally work when we have the two measurements
 stored using two distinct variables; or, use the formula approach:
    <div class="fancyvrb" id="fancyvrb250">  <a 
  id="x13-81033r1"></a><span 
@@ -535,7 +535,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;t.test(extra~group,</span><span 
 class="aett-12">&#x00A0;paired=TRUE)</span></div>
-<!--l. 165--><p class="noindent" >
+<!--l. 167--><p class="noindent" >
    <div class="fancyvrb" id="fancyvrb251"> <a 
  id="x13-81035r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
@@ -626,7 +626,7 @@ class="aett-12">&#x00A0;-1.58</span></div>
                                                                           
 
                                                                           
-<!--l. 180--><p class="indent" >   You could of course alter the analysis by adding arguments to these commands
+<!--l. 182--><p class="indent" >   You could of course alter the analysis by adding arguments to these commands
 to suit your needs. Experiment a little before detaching the <span 
 class="aett-12">sleep </span>data using the
 <a 
@@ -637,18 +637,18 @@ class="aett-12">detach() </span>command:
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;detach(sleep)</span></div>
-<!--l. 188--><p class="noindent" >
+<!--l. 190--><p class="noindent" >
    <h3 class="sectionHead"><span class="titlemark">11.3   </span> <a 
  id="x13-8200011.3"></a>Confidence intervals and hypothesis tests for a proportion from one
 population</h3>
-<!--l. 191--><p class="noindent" >
+<!--l. 193--><p class="noindent" >
    <h3 class="sectionHead"><span class="titlemark">11.4   </span> <a 
  id="x13-8300011.4"></a>Confidence intervals and hypothesis tests for the difference of two
 population proportions</h3>
-<!--l. 194--><p class="noindent" >
+<!--l. 196--><p class="noindent" >
    <h3 class="sectionHead"><span class="titlemark">11.5   </span> <a 
  id="x13-8400011.5"></a>Hypothesis tests and confidence intervals for Correlation coefficients</h3>
-<!--l. 196--><p class="noindent" >In Section&#x00A0;<a 
+<!--l. 198--><p class="noindent" >In Section&#x00A0;<a 
 href="LURNch8.html#x10-620008.4">8.4<!--tex4ht:ref: CorrelationStructure --></a> we examined the correlation of the variables in the <span 
 class="aett-12">airquality</span>
 data set using the <a 
@@ -665,7 +665,7 @@ class="aett-12">cor() </span>command while we need to specify two vectors for th
  id="dx13-84004"></a><span 
 class="aett-12">cor.test()</span>
 command.
-<!--l. 200--><p class="indent" >   There are problems with cherry-picking one pair of variables from a set to
+<!--l. 202--><p class="indent" >   There are problems with cherry-picking one pair of variables from a set to
 perform a post hoc test like this. We should probably consider finding the
 significance of all correlations of interest and adjusting the way we think about
 the likelihood of getting the set of hypothesis tests we observe as a combination
@@ -679,7 +679,7 @@ class="aett-12">Ozone </span>and <span
 class="aett-12">Wind </span>variables from the <span 
 class="aett-12">airquality</span>
 data.
-<!--l. 202--><p class="indent" >   To test the notion that there is zero correlation between the two variables we
+<!--l. 204--><p class="indent" >   To test the notion that there is zero correlation between the two variables we
 would probably consider using Pearson&#8217;s correlation coefficient which measures
 the strength of the linear relationship between a pair of variables, but use of
                                                                           
@@ -698,7 +698,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;cor.test(Ozone,</span><span 
 class="aett-12">&#x00A0;Wind)</span></div>
-<!--l. 208--><p class="noindent" >
+<!--l. 210--><p class="noindent" >
    <div class="fancyvrb" id="fancyvrb254"> <a 
  id="x13-84011r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
@@ -768,7 +768,7 @@ class="aett-12">&#x00A0;cor</span><br class="fancyvrb" /><a
  id="x13-84031r11"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;-0.6015</span></div>
-<!--l. 221--><p class="noindent" >
+<!--l. 223--><p class="noindent" >
    <div class="fancyvrb" id="fancyvrb255"> <a 
  id="x13-84033r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
@@ -776,7 +776,7 @@ class="aett-12">&#x00A0;&#x003E;</span><span
 class="aett-12">&#x00A0;cor.test(Ozone,</span><span 
 class="aett-12">&#x00A0;Wind,</span><span 
 class="aett-12">&#x00A0;method="spearman")</span></div>
-<!--l. 224--><p class="noindent" >
+<!--l. 226--><p class="noindent" >
    <div class="fancyvrb" id="fancyvrb256"> <a 
  id="x13-84035r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
@@ -793,7 +793,7 @@ class="aett-12">&#x00A0;exact</span><span
 class="aett-12">&#x00A0;p-value</span><span 
 class="aett-12">&#x00A0;with</span><span 
 class="aett-12">&#x00A0;ties</span></div>
-<!--l. 227--><p class="noindent" >
+<!--l. 229--><p class="noindent" >
    <div class="fancyvrb" id="fancyvrb257"> <a 
  id="x13-84037r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
@@ -849,32 +849,32 @@ class="aett-12">&#x00A0;rho</span><br class="fancyvrb" /><a
  id="x13-84053r9"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;-0.5902</span></div>
-<!--l. 238--><p class="noindent" >
+<!--l. 240--><p class="noindent" >
    <div class="fancyvrb" id="fancyvrb258"> <a 
  id="x13-84055r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;detach(airquality)</span></div>
-<!--l. 242--><p class="noindent" >So it seems the two variables are correlated and have a monotonic relationship that
+<!--l. 244--><p class="noindent" >So it seems the two variables are correlated and have a monotonic relationship that
 implies that as wind increases the amount of ozone decreases and that this
 relationship is fairly linear. We will look at this relationship again when we look at
 linear regression in Chapter&#x00A0;<a 
 href="LURNch12.html#x14-8700012">12<!--tex4ht:ref: Regression --></a>.
-<!--l. 248--><p class="noindent" >
+<!--l. 250--><p class="noindent" >
    <h3 class="sectionHead"><span class="titlemark">11.6   </span> <a 
  id="x13-8500011.6"></a>Testing the independence of two categorical variables</h3>
-<!--l. 250--><p class="noindent" >using the chisq.test command. Refer graphical representation to the <a 
+<!--l. 252--><p class="noindent" >using the chisq.test command. Refer graphical representation to the <a 
  id="dx13-85001"></a><span 
 class="aeti-12">vcd</span>
 package.
                                                                           
 
                                                                           
-<!--l. 253--><p class="noindent" >
+<!--l. 255--><p class="noindent" >
    <h3 class="sectionHead"><span class="titlemark">11.7   </span> <a 
  id="x13-8600011.7"></a>Testing the normality of a distribution</h3>
-<!--l. 256--><p class="noindent" >norm test package here.
-<!--l. 258--><p class="indent" >   We can use the <a 
+<!--l. 258--><p class="noindent" >norm test package here.
+<!--l. 260--><p class="indent" >   We can use the <a 
  id="dx13-86001"></a><span 
 class="aett-12">ks.test() </span>function for the Kolmogorov-Smirnov test. It is
 suitable for comparing two samples, or a single sample against a theoretical
@@ -882,12 +882,12 @@ distribution.
                                                                           
 
                                                                           
-   <!--l. 2--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 4--><div class="crosslinks"><p class="noindent">[<a 
 href="LURNch12.html" >next</a>] [<a 
 href="LURNch10.html" >prev</a>] [<a 
 href="LURNch10.html#tailLURNch10.html" >prev-tail</a>] [<a 
 href="LURNch11.html" >front</a>] [<a 
 href="LURN.html#LURNch11.html" >up</a>] </p></div>
-<!--l. 2--><p class="indent" >   <a 
+<!--l. 4--><p class="indent" >   <a 
  id="tailLURNch11.html"></a>   
 </body></html> 

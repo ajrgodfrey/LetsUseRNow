@@ -1,3 +1,5 @@
+
+
 %\setcounter{chapter}{} 
 \chapter{LURN\ldots{} To use the BrailleR add-on package} 
 \label{BrailleR} 
@@ -74,42 +76,49 @@ See the help page for the \Rcmd{txtOut} command as it includes the history of th
 You can open the text file that is being created and modified as you work in any browser. Once you have the file open and have done some work, you must  refresh your browser to see the latest changes. Keep the browser open as you work and remember to refresh often to keep on top of what is happening with complete access via your screen reader. 
  
 \section{Text interpretation of graphs} 
+\label{VIExplained}
  
 Statistics is an inherently visual discipline. Many statistical analyses lead to a graphic representation of data that is easy for the sighted world to interpret. Through use of \R{} we can create functions that can interpret the graphs using text descriptions. We'll start with a histogram.  
  
 In most circumstances, the user will create a histogram using the \Rcmd{hist} command. This command takes data and creates a number of values needed to construct the histogram. We can see what has been created by storing these values in an object. For example: 
 \begin{Schunk}
 \begin{Sinput}
-> x=rnorm(1000) 
-> MyHist =hist(x, plot=FALSE) 
+> MyHist = hist(airquality$Wind, xlab="Average wind speed (mph)", main="", plot=FALSE) 
 \end{Sinput}
+\begin{Soutput}
+Warning in hist.default(x = airquality$Wind, xlab = "Average wind speed (mph)", : arguments 'main', 'xlab' are not made use of
+\end{Soutput}
 \end{Schunk}
-The \Rarg{plot} argument stops the graph being plotted. We can get the graph anytime by issuing the \Rcmd{plot} command but we are interested in seeing what \R{} has stored in the \Robject{MyHist} object.  
+The \Rarg{plot} argument stops the graph being plotted. We can get the graph anytime by issuing the \Rcmd{plot} command but we are only interested in seeing what \R{} has stored in the \Robject{MyHist} object at the moment.  
 \begin{Schunk}
 \begin{Sinput}
 > MyHist 
 \end{Sinput}
 \begin{Soutput}
 $breaks
- [1] -3.5 -3.0 -2.5 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5
-[12]  2.0  2.5  3.0  3.5
+ [1]  0  2  4  6  8 10 12 14 16 18 20 22
 
 $counts
- [1]   1   8  13  49 100 138 203 180 154  84  51  13   4   2
+ [1]  1  4 11 38 27 38 10 17  4  1  2
 
 $density
- [1] 0.002 0.016 0.026 0.098 0.200 0.276 0.406 0.360 0.308
-[10] 0.168 0.102 0.026 0.008 0.004
+ [1] 0.003268 0.013072 0.035948 0.124183 0.088235 0.124183
+ [7] 0.032680 0.055556 0.013072 0.003268 0.006536
 
 $mids
- [1] -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25  0.25  0.75
-[10]  1.25  1.75  2.25  2.75  3.25
+ [1]  1  3  5  7  9 11 13 15 17 19 21
 
 $xname
-[1] "x"
+[1] "airquality$Wind"
 
 $equidist
 [1] TRUE
+
+$main
+[1] ""
+
+$xlab
+[1] "Average wind speed (mph)"
 
 $xaxp
 [1] 0 1 5
@@ -124,13 +133,15 @@ attr(,"class")
 > str(MyHist) 
 \end{Sinput}
 \begin{Soutput}
-List of 8
- $ breaks  : num [1:15] -3.5 -3 -2.5 -2 -1.5 -1 -0.5 0 0.5 1 ...
- $ counts  : int [1:14] 1 8 13 49 100 138 203 180 154 84 ...
- $ density : num [1:14] 0.002 0.016 0.026 0.098 0.2 0.276 0.406 0.36 0.308 0.168 ...
- $ mids    : num [1:14] -3.25 -2.75 -2.25 -1.75 -1.25 -0.75 -0.25 0.25 0.75 1.25 ...
- $ xname   : chr "x"
+List of 10
+ $ breaks  : num [1:12] 0 2 4 6 8 10 12 14 16 18 ...
+ $ counts  : int [1:11] 1 4 11 38 27 38 10 17 4 1 ...
+ $ density : num [1:11] 0.00327 0.01307 0.03595 0.12418 0.08824 ...
+ $ mids    : num [1:11] 1 3 5 7 9 11 13 15 17 19 ...
+ $ xname   : chr "airquality$Wind"
  $ equidist: logi TRUE
+ $ main    : chr ""
+ $ xlab    : chr "Average wind speed (mph)"
  $ xaxp    : num [1:3] 0 1 5
  $ yaxp    : num [1:3] 0 1 5
  - attr(*, "class")= chr "histogram"
@@ -148,31 +159,28 @@ The full print out has everything we need but is not in a friendly format. The \
 The \Rpackage{BrailleR} package includes a \stressind{method} for creating text interpretations in a similar way. The \Rcmd{VI} command is actually a family of commands that includes the \Rcmd{VI.histogram} command. When we issue the \Rcmd{VI} command on the \Robject{MyHist} object, the \Rcmd{VI.histogram} function does the work. Let's see what we get: 
 \begin{Schunk}
 \begin{Sinput}
-> VI(hist(x)) 
+> VI(hist(airquality$Wind, xlab="Average wind speed (mph)", main="")) 
 \end{Sinput}
 
 \includegraphics[width=0.7\textwidth]{figures/VIVIHist-1} \begin{Soutput}
-This is a histogram, with the title: Histogram of x 
- "x" is marked on the x-axis.
-Tick marks for the x-axis are at: -3, and 3 
-There are a total of 1000 elements for this variable.
-Tick marks for the y-axis are at: 0, 50, 100, 150, and 200 
-It has 14 bins with equal widths, starting at -3.5 and ending at 3.5 .
+This is a histogram, with the title:  
+ "Average wind speed (mph)" is marked on the x-axis.
+Tick marks for the x-axis are at: 0, 5, 10, 15, and 20 
+There are a total of 153 elements for this variable.
+Tick marks for the y-axis are at: 0, 10, 20, and 30 
+It has 11 bins with equal widths, starting at 0 and ending at 22 .
 The mids and counts for the bins are:
-mid = -3.25  count = 1 
-mid = -2.75  count = 8 
-mid = -2.25  count = 13 
-mid = -1.75  count = 49 
-mid = -1.25  count = 100 
-mid = -0.75  count = 138 
-mid = -0.25  count = 203 
-mid = 0.25  count = 180 
-mid = 0.75  count = 154 
-mid = 1.25  count = 84 
-mid = 1.75  count = 51 
-mid = 2.25  count = 13 
-mid = 2.75  count = 4 
-mid = 3.25  count = 2
+mid = 1  count = 1 
+mid = 3  count = 4 
+mid = 5  count = 11 
+mid = 7  count = 38 
+mid = 9  count = 27 
+mid = 11  count = 38 
+mid = 13  count = 10 
+mid = 15  count = 17 
+mid = 17  count = 4 
+mid = 19  count = 1 
+mid = 21  count = 2
 \end{Soutput}
 \end{Schunk}
  
@@ -180,21 +188,21 @@ mid = 3.25  count = 2
 Other functions exist for boxplots and dotplots. Try: 
 \begin{Schunk}
 \begin{Sinput}
-> VI(boxplot(x)) 
+> VI(boxplot(airquality$Wind, xlab="Average wind speed (mph)")) 
 \end{Sinput}
 
 \includegraphics[width=0.7\textwidth]{figures/VIVIBoxplot-1} \begin{Soutput}
 This graph has a boxplot printed vertically
 but has no title
-No label appears on the x-axis.
+"Average wind speed (mph)" appears on the x-axis.
 No label appears on the y-axis.
-Tick marks for the y-axis are at: -3, and 3 
-This variable has 1000 values.
-An outlier is marked at: 3.171 2.782 2.819 3.144 -2.716 -2.753 2.733 -2.9 -3.005 
-The whiskers extend to -2.676 and 2.583 from the ends of the box, 
-which are at -0.6895 and 0.6447 
-The median, -0.02724 is 50 % from the lower end of the box to the upper end.
-The upper whisker is 0.98 times the length of the lower whisker.
+Tick marks for the y-axis are at: 5, 10, 15, and 20 
+This variable has 153 values.
+An outlier is marked at: 20.1 18.4 20.7 
+The whiskers extend to 1.7 and 16.6 from the ends of the box, 
+which are at 7.4 and 11.5 
+The median, 9.7 is 56 % from the lower end of the box to the upper end.
+The upper whisker is 0.89 times the length of the lower whisker.
 \end{Soutput}
 \end{Schunk}
  and 
@@ -203,18 +211,7 @@ The upper whisker is 0.98 times the length of the lower whisker.
 > VI(dotplot(x)) 
 \end{Sinput}
 \begin{Soutput}
-Warning in dotplot.default(x): The dotplot command is a wrapper for stripchart, and is not a base R function.
-\end{Soutput}
-
-\includegraphics[width=0.7\textwidth]{figures/VIVIDotplot-1} \begin{Soutput}
-This graph has a dotplot printed horizontally
-but has no title
-No label appears on the x-axis.
-No label appears on the y-axis.
-Tick marks for the x-axis are at: -3, and 3 
-the data that range from -3.00520712717559 to 3.17125282201477 has been broken into 6 bins.
-The counts are:
-: 23 161 363 325 112 16 
+Error in dotplot(x): object 'x' not found
 \end{Soutput}
 \end{Schunk}
  
@@ -237,7 +234,7 @@ An example will help. Try
 \end{Schunk}
 Take a look in the \file{AirQuality} folder that has been created in your working directory. It has a number of files that all start with ``Ozone" --- the name of the variable being analysed.  You will also have three files stored in the current working directory which have the filename \file{Ozone-UniDesc.*} where the star is for the extension which is one of \file{html}, \file{R}, and \file{Rmd}. 
  
-The most useful one at first is the \file{Ozone-UniDesc.html} file. Open this file in a browser to see what analyses have been included. This file is specifically formatted for use with screen readers. I hope you find it valuable. If you are reading this document on the web, then the link \url{Ozone-UniDesc.html} will open it in your browser. The link will not work if you are using the \file{pdf} version of LURN. 
+The most useful one at first is the \file{Ozone-UniDesc.html} file. Open this file in a browser to see what analyses have been included. This file is specifically formatted for use with screen readers. I hope you find it valuable. If you are reading this document on the web, then the link \url{Ozone-UniDesc.html} will open it in your browser. \Sighted{The link will not work if you are using the \file{pdf} version of LURN.} 
  
 The commands used to generate parts of this HTML document are given in the \R{} script file; the third file is called an \R{} markdown document. This is the file that gets converted into the other two files. It might prove useful to learn how to write this kind of file for yourself one day. 
  
@@ -323,11 +320,11 @@ The \Rcmd{WhereXY} command for each plot is now given.
 \end{Sinput}
 \begin{Soutput}
      1  2  3  4  5 Sum
-5    1  0  0  0  1   2
-4    7  0  0  0  7  14
-3   10  2  0  2 10  24
-2    3 10  7 13  2  35
-1    0  8 13  5  0  26
+5    6  0  0  0  3   9
+4    3  1  0  0 12  16
+3   11  6  0  6  5  28
+2    1 11 13 12  0  37
+1    0  2  7  2  0  11
 Sum 21 20 20 20 20 101
 \end{Soutput}
 \begin{Sinput}
@@ -335,11 +332,11 @@ Sum 21 20 20 20 20 101
 \end{Sinput}
 \begin{Soutput}
      1  2  3  4  5 Sum
-5    1  0  0  0  1   2
-4    7  0  0  0  7  14
-3   10  2  0  2 10  24
-2    3 10  7 13  2  35
-1    0  8 13  5  0  26
+5    6  0  0  0  3   9
+4    3  1  0  0 12  16
+3   11  6  0  6  5  28
+2    1 11 13 12  0  37
+1    0  2  7  2  0  11
 Sum 21 20 20 20 20 101
 \end{Soutput}
 \begin{Sinput}
@@ -347,11 +344,11 @@ Sum 21 20 20 20 20 101
 \end{Sinput}
 \begin{Soutput}
      1  2  3  4  5 Sum
-5    0  0  0  1 11  12
-4    0  0  0 10  9  19
-3    0  6 18  9  0  33
-2   11 13  2  0  0  26
-1   10  1  0  0  0  11
+5    0  0  0  3 12  15
+4    0  0  4 13  8  25
+3    0  7 15  4  0  26
+2   14 12  1  0  0  27
+1    7  1  0  0  0   8
 Sum 21 20 20 20 20 101
 \end{Soutput}
 \begin{Sinput}
@@ -359,11 +356,11 @@ Sum 21 20 20 20 20 101
 \end{Sinput}
 \begin{Soutput}
      1  2  3  4  5 Sum
-5    0  0  0  1 10  11
-4    0  0  0 10  9  19
-3    0  6 18  9  0  33
-2   11 13  2  0  0  26
-1   10  1  0  0  1  12
+5    0  0  0  3 11  14
+4    0  0  4 13  8  25
+3    0  7 15  4  0  26
+2   14 12  1  0  0  27
+1    7  1  0  0  1   9
 Sum 21 20 20 20 20 101
 \end{Soutput}
 \end{Schunk}

@@ -1,4 +1,3 @@
-<<setup, include=FALSE>>= 
+<<ChSetup, include=FALSE>>= 
 opts_chunk$set(fig.path='figures/SimpleGraphs', comment=NA, dev=c('pdf','postscript','svg'), prompt=T, out.width="0.8\\textwidth") 
-source("GenericSettings.R") 
 @ 

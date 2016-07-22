@@ -7,11 +7,11 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
 <!-- html,2,next --> 
 <meta name="src" content="LURN.tex"> 
-<meta name="date" content="2016-07-11 09:49:00"> 
+<meta name="date" content="2016-07-17 03:07:00"> 
 <link rel="stylesheet" type="text/css" href="LURN.css"> 
 </head><body 
 >
-   <!--l. 2--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 4--><div class="crosslinks"><p class="noindent">[<a 
 href="LURNch13.html" >next</a>] [<a 
 href="LURNch11.html" >prev</a>] [<a 
 href="LURNch11.html#tailLURNch11.html" >prev-tail</a>] [<a 
@@ -19,7 +19,7 @@ href="#tailLURNch12.html">tail</a>] [<a
 href="LURN.html#LURNch12.html" >up</a>] </p></div>
    <h2 class="chapterHead"><span class="titlemark">Chapter&#x00A0;12</span><br /><a 
  id="x14-8700012"></a>LURN&#x2026; To Perform Regression Analyses</h2>
-<!--l. 8--><p class="noindent" >This chapter presents the most basic regression models. To really get the most
+<!--l. 10--><p class="noindent" >This chapter presents the most basic regression models. To really get the most
 out of <span 
 class="aess-12">R </span>and regression techniques (such as those taught in second or
 later statistics courses) you will need to look for guidance from a suitable
@@ -28,7 +28,7 @@ class="aess-12">R </span>as the preferred software
 tool.
    <h3 class="sectionHead"><span class="titlemark">12.1   </span> <a 
  id="x14-8800012.1"></a>Data and suitable exploratory graphs</h3>
-<!--l. 12--><p class="noindent" >The easiest way to fit regression models is using data that are contained in a
+<!--l. 14--><p class="noindent" >The easiest way to fit regression models is using data that are contained in a
 <a 
  id="dx14-88001"></a><span 
 class="aeti-12">data.frame</span>. This means we can use the <a 
@@ -39,7 +39,7 @@ variable independently within our current workspace. For neatness, I prefer to
 keep data in the <a 
  id="dx14-88003"></a><span 
 class="aeti-12">data.frame </span>format.
-<!--l. 14--><p class="indent" >   We can use the <span 
+<!--l. 16--><p class="indent" >   We can use the <span 
 class="aett-12">air quality </span>data described in Chapter&#x00A0;<a 
 href="LURNch7.html#x9-430007">7<!--tex4ht:ref: SimpleGraphs --></a>. Recall that it is
 available from your current workspace as it is contained within the <a 
@@ -51,17 +51,17 @@ package. Typing
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;data(airquality)</span></div>
-<!--l. 20--><p class="noindent" >will make the data explicitly available to you in your current <span 
+<!--l. 22--><p class="noindent" >will make the data explicitly available to you in your current <span 
 class="aess-12">R </span>workspace.
-<!--l. 22--><p class="indent" >   We can look for relationships among the variables within this data set using
+<!--l. 24--><p class="indent" >   We can look for relationships among the variables within this data set using
 the techniques described in Chapter&#x00A0;<a 
 href="LURNch7.html#x9-430007">7<!--tex4ht:ref: SimpleGraphs --></a>. Note in particular the scatter plot matrix
 presented in Exhibit&#x00A0;<a 
 href="LURNch7.html#x9-53005r10">7.10<!--tex4ht:ref: AirQualityScatterPlotMatrix --></a>.
-<!--l. 26--><p class="noindent" >
+<!--l. 28--><p class="noindent" >
    <h3 class="sectionHead"><span class="titlemark">12.2   </span> <a 
  id="x14-8900012.2"></a>The simple regression model</h3>
-<!--l. 28--><p class="noindent" >To obtain the equation for a straight line relationship of the form
+<!--l. 30--><p class="noindent" >To obtain the equation for a straight line relationship of the form
    <table 
 class="equation"><tr><td>
    <center class="math-display" >
@@ -72,7 +72,7 @@ src="LURN16x.png" alt="y = &#x03B1; + &#x03B2;x + &#x03F5;
                                                                           
 " class="math-display" ><a 
  id="x14-89001r1"></a></center></td><td class="equation-label">(12.1)</td></tr></table>
-<!--l. 30--><p class="nopar" >
+<!--l. 32--><p class="nopar" >
 we use the <a 
  id="dx14-89002"></a><span 
 class="aett-12">lm() </span>command. The first argument for this command is a <a 
@@ -92,7 +92,7 @@ The <span
 class="cmmi-12">&#x03F5; </span>is the error term for our model; we look at that aspect more in Section&#x00A0;<a 
 href="#x14-9100012.4">12.4<!--tex4ht:ref: RegValid --></a>
 below.
-<!--l. 35--><p class="indent" >   A second common argument is the <span 
+<!--l. 37--><p class="indent" >   A second common argument is the <span 
 class="aett-12">data </span>statement. This means that the model
 formula can be stated using variable names from within the <a 
  id="dx14-89006"></a><span 
@@ -115,7 +115,7 @@ class="aett-12">&#x00A0;data=airquality)</span><br class="fancyvrb" /><a
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;Ozone.lm1</span></div>
-<!--l. 41--><p class="noindent" >
+<!--l. 43--><p class="noindent" >
    <div class="fancyvrb" id="fancyvrb261"> <a 
  id="x14-89012r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
@@ -169,13 +169,13 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;-5.55</span></div>
-<!--l. 50--><p class="noindent" >
+<!--l. 52--><p class="noindent" >
    <div class="fancyvrb" id="fancyvrb262"> <a 
  id="x14-89026r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;summary(Ozone.lm1)</span></div>
-<!--l. 53--><p class="noindent" >
+<!--l. 55--><p class="noindent" >
    <div class="fancyvrb" id="fancyvrb263"> <a 
  id="x14-89028r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
@@ -379,13 +379,13 @@ class="aett-12">&#x00A0;DF,</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;p-value:</span><span 
 class="aett-12">&#x00A0;9.27e-13</span></div>
-<!--l. 75--><p class="noindent" >
+<!--l. 77--><p class="noindent" >
    <div class="fancyvrb" id="fancyvrb264"> <a 
  id="x14-89068r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;anova(Ozone.lm1)</span></div>
-<!--l. 78--><p class="noindent" >
+<!--l. 80--><p class="noindent" >
                                                                           
 
                                                                           
@@ -482,7 +482,7 @@ class="aett-12">&#x00A0;0.1</span><span
 class="aett-12">&#x00A0;&#8217;</span><span 
 class="aett-12">&#x00A0;&#8217;</span><span 
 class="aett-12">&#x00A0;1</span></div>
-<!--l. 89--><p class="noindent" >
+<!--l. 91--><p class="noindent" >
    <div class="fancyvrb" id="fancyvrb266"> <a 
  id="x14-89088r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
@@ -495,7 +495,7 @@ class="aett-12">&#x00A0;data=airquality)</span><br class="fancyvrb" /><a
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;summary(Ozone.lm2)</span></div>
-<!--l. 93--><p class="noindent" >
+<!--l. 95--><p class="noindent" >
    <div class="fancyvrb" id="fancyvrb267"> <a 
  id="x14-89092r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
@@ -693,13 +693,13 @@ class="aett-12">&#x00A0;DF,</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;p-value:</span><span 
 class="aett-12">&#x00A0;&#x003C;2e-16</span></div>
-<!--l. 115--><p class="noindent" >
+<!--l. 117--><p class="noindent" >
    <div class="fancyvrb" id="fancyvrb268"> <a 
  id="x14-89132r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;anova(Ozone.lm2)</span></div>
-<!--l. 118--><p class="noindent" >
+<!--l. 120--><p class="noindent" >
    <div class="fancyvrb" id="fancyvrb269"> <a 
  id="x14-89134r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
@@ -793,7 +793,7 @@ class="aett-12">&#x00A0;0.1</span><span
 class="aett-12">&#x00A0;&#8217;</span><span 
 class="aett-12">&#x00A0;&#8217;</span><span 
 class="aett-12">&#x00A0;1</span></div>
-<!--l. 130--><p class="noindent" >There are very good reasons for creating the new objects in this example. Aside from
+<!--l. 132--><p class="noindent" >There are very good reasons for creating the new objects in this example. Aside from
 the use of the <a 
  id="dx14-89151"></a><span 
 class="aett-12">summary() </span>method and <a 
@@ -814,7 +814,7 @@ model.
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;names(Ozone.lm1)</span></div>
-<!--l. 135--><p class="noindent" >
+<!--l. 137--><p class="noindent" >
                                                                           
 
                                                                           
@@ -895,13 +895,13 @@ class="aett-12">&#x00A0;"terms"</span><br class="fancyvrb" /><a
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[13]</span><span 
 class="aett-12">&#x00A0;"model"</span></div>
-<!--l. 142--><p class="noindent" >
+<!--l. 144--><p class="noindent" >
    <div class="fancyvrb" id="fancyvrb272"> <a 
  id="x14-89167r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;names(summary(Ozone.lm1))</span></div>
-<!--l. 145--><p class="noindent" >
+<!--l. 147--><p class="noindent" >
    <div class="fancyvrb" id="fancyvrb273"> <a 
  id="x14-89169r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
@@ -976,22 +976,22 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;"cov.unscaled"</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;"na.action"</span></div>
-<!--l. 151--><p class="noindent" >
+<!--l. 153--><p class="noindent" >
    <div class="fancyvrb" id="fancyvrb274"> <a 
  id="x14-89177r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;summary(Ozone.lm1)$r.squared</span></div>
-<!--l. 154--><p class="noindent" >
+<!--l. 156--><p class="noindent" >
    <div class="fancyvrb" id="fancyvrb275"> <a 
  id="x14-89179r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1]</span><span 
 class="aett-12">&#x00A0;0.3619</span></div>
-<!--l. 161--><p class="noindent" >
+<!--l. 163--><p class="noindent" >
    <h3 class="sectionHead"><span class="titlemark">12.3   </span> <a 
  id="x14-9000012.3"></a>Presenting the straight line model&#8217;s suitability in a graph</h3>
-<!--l. 164--><p class="noindent" >Adding a fitted line to the scatter plot when a simple relationship has
+<!--l. 166--><p class="noindent" >Adding a fitted line to the scatter plot when a simple relationship has
 been fitted is actually a very simple task. Note that when we saw the
 outcome of the simple model above, we obtained just the intercept and slope
 coefficient values until we employed the <a 
@@ -1006,7 +1006,7 @@ example.
                                                                           
 
                                                                           
-<!--l. 166--><p class="indent" >   <a 
+<!--l. 168--><p class="indent" >   <a 
  id="x14-90003r1"></a><hr class="float"><div class="float" 
 >
                                                                           
@@ -1014,7 +1014,7 @@ example.
                                                                           
 <div class="center" 
 >
-<!--l. 166--><p class="noindent" >
+<!--l. 168--><p class="noindent" >
 <br /> <div class="caption" 
 ><span class="id">Exhibit 12.1: </span><span  
 class="content">Two simple regressions with the straight line added onto the
@@ -1033,7 +1033,7 @@ class="aett-12">&#x00A0;Ozone)</span><br class="fancyvrb" /><a
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;abline(Ozone.lm1)</span></div>
-<!--l. 176--><p class="noindent" ><img 
+<!--l. 178--><p class="noindent" ><img 
 src="LURN17x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt" ><!--tex4ht:graphics  
 name="LURN17x.png" src="figures/RegressionOzoneWindWithLine-1.eps"  
 -->
@@ -1052,7 +1052,7 @@ class="aett-12">&#x00A0;abline(Ozone.lm2)</span></div>
                                                                           
 
                                                                           
-<!--l. 184--><p class="noindent" ><img 
+<!--l. 186--><p class="noindent" ><img 
 src="LURN18x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt" ><!--tex4ht:graphics  
 name="LURN18x.png" src="figures/RegressionOzoneTempWithLine-1.eps"  
 -->
@@ -1061,13 +1061,13 @@ name="LURN18x.png" src="figures/RegressionOzoneTempWithLine-1.eps"
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;detach(airquality)</span></div>
-<!--l. 188--><p class="noindent" ><a 
+<!--l. 190--><p class="noindent" ><a 
 href="../svgs/RegressionOzoneTempWithLine-1.svg" >link to SVG file: RegressionOzoneTempWithLine-1.svg</a></div>
                                                                           
 
                                                                           
    </div><hr class="endfloat" />
-<!--l. 192--><p class="indent" >   We can see from these graphs that our straight line model might be
+<!--l. 194--><p class="indent" >   We can see from these graphs that our straight line model might be
 appropriate for explaining <span 
 class="aett-12">Ozone </span>using <span 
 class="aett-12">Temp </span>as the predictor, but that the
@@ -1077,7 +1077,7 @@ obvious curvature in the relationship. As it happens neither of these models are
 perfect and more work is required.
    <h3 class="sectionHead"><span class="titlemark">12.4   </span> <a 
  id="x14-9100012.4"></a>Model validation using diagnostic plots</h3>
-<!--l. 197--><p class="noindent" ><span 
+<!--l. 199--><p class="noindent" ><span 
 class="aess-12">R </span>has many useful built-in methods for doing common tasks efficiently.
 Obtaining residual plots for a model is a great example. The <a 
  id="dx14-91001"></a><span 
@@ -1099,7 +1099,7 @@ if the residuals have constant variance. Leverage is a measure of how
 much influence an observation has on determining the model. A rule of
 thumb says that a leverage of more than twice the average leverage is a
 problem.
-<!--l. 201--><p class="indent" >   The diagnostic plots for the inadequate model for <span 
+<!--l. 203--><p class="indent" >   The diagnostic plots for the inadequate model for <span 
 class="aett-12">Ozone </span>being predicted by a
 linear function of <span 
 class="aett-12">Wind </span>are presented in Exhibit&#x00A0;<a 
@@ -1107,7 +1107,7 @@ href="#x14-91003r2">12.2<!--tex4ht:ref: OzoneWindResidPlots --></a>.
                                                                           
 
                                                                           
-<!--l. 203--><p class="indent" >   <a 
+<!--l. 205--><p class="indent" >   <a 
  id="x14-91003r2"></a><hr class="float"><div class="float" 
 >
                                                                           
@@ -1115,7 +1115,7 @@ href="#x14-91003r2">12.2<!--tex4ht:ref: OzoneWindResidPlots --></a>.
                                                                           
 <div class="center" 
 >
-<!--l. 203--><p class="noindent" >
+<!--l. 205--><p class="noindent" >
 <br /> <div class="caption" 
 ><span class="id">Exhibit 12.2: </span><span  
 class="content">Residual plots for the simple regression using Wind to predict
@@ -1129,7 +1129,7 @@ class="aett-12">&#x00A0;par(mfrow=c(2,2))</span><br class="fancyvrb" /><a
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;plot(Ozone.lm1)</span></div>
-<!--l. 212--><p class="noindent" ><img 
+<!--l. 214--><p class="noindent" ><img 
 src="LURN19x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt" ><!--tex4ht:graphics  
 name="LURN19x.png" src="figures/RegressionOzoneWindResidPlots-1.eps"  
 -->
@@ -1138,14 +1138,14 @@ name="LURN19x.png" src="figures/RegressionOzoneWindResidPlots-1.eps"
 
                                                                           
    </div><hr class="endfloat" />
-<!--l. 215--><p class="indent" >   These plots are enhanced by <span 
+<!--l. 217--><p class="indent" >   These plots are enhanced by <span 
 class="aess-12">R </span>to add more information than the basic
 user is familiar with. Additional lines are added to three of the plots to
 assist in diagnosing problems. We can see from this plot that the model is
 inadequate as there is a nonlinear relationship between the response and
 predictor, and further that the residuals might not have very constant
 variance.
-<!--l. 217--><p class="indent" >   It might be easier to extract just the information we want, so we can build
+<!--l. 219--><p class="indent" >   It might be easier to extract just the information we want, so we can build
 simpler plots ourselves. We need to find the residuals, fitted values and leverages
 for the model. These are found using the <a 
  id="dx14-91008"></a><span 
@@ -1175,7 +1175,7 @@ class="aett-12">&#x00A0;&#x003E;</span><span
 class="aett-12">&#x00A0;Ozone.lev1</span><span 
 class="aett-12">&#x00A0;=</span><span 
 class="aett-12">&#x00A0;hatvalues(Ozone.lm1)</span></div>
-<!--l. 225--><p class="noindent" >The various plots can be constructed using the <a 
+<!--l. 227--><p class="noindent" >The various plots can be constructed using the <a 
  id="dx14-91017"></a><span 
 class="aett-12">plot()</span>, and <a 
  id="dx14-91018"></a><span 
@@ -1270,7 +1270,7 @@ class="aett-12">&#x00A0;148</span><br class="fancyvrb" /><a
  id="x14-91036r4"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0.03951</span></div>
-<!--l. 249--><p class="noindent" >The last command in this block has printed out the 8 observations that have excess
+<!--l. 251--><p class="noindent" >The last command in this block has printed out the 8 observations that have excess
 leverage on this model. We should probably see if these are days that had
 extremely high wind. This is not done as this model has already been shown to be
 poor at explaining the amount of <span 
@@ -1280,7 +1280,7 @@ class="aett-12">Ozone </span>in the atmosphere.
                                                                           
    <h3 class="sectionHead"><span class="titlemark">12.5   </span> <a 
  id="x14-9200012.5"></a>Polynomial regression models</h3>
-<!--l. 255--><p class="noindent" >Given the obvious curvature in the relationship between <span 
+<!--l. 257--><p class="noindent" >Given the obvious curvature in the relationship between <span 
 class="aett-12">Ozone </span>and <span 
 class="aett-12">Wind </span>appears
 monotonic, we can probably try both transforming the variables, and
@@ -1307,7 +1307,7 @@ class="aett-12">&#x00A0;data=airquality)</span>
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;summary(Ozone.poly2)</span></div>
-<!--l. 262--><p class="noindent" >
+<!--l. 264--><p class="noindent" >
    <div class="fancyvrb" id="fancyvrb288"> <a 
  id="x14-92007r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1623,12 +1623,12 @@ class="aett-12">&#x00A0;DF,</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;p-value:</span><span 
 class="aett-12">&#x00A0;&#x003C;2e-16</span></div>
-<!--l. 290--><p class="noindent" >Note that in order to obtain a model with the correct coefficients for the
+<!--l. 292--><p class="noindent" >Note that in order to obtain a model with the correct coefficients for the
 polynomial terms in the model, we need to use the <span 
 class="aett-12">raw </span>argument, setting it to
 <span 
 class="aett-12">TRUE</span>.
-<!--l. 292--><p class="indent" >   We usually justify the use of a quadratic form by determining there is
+<!--l. 294--><p class="indent" >   We usually justify the use of a quadratic form by determining there is
 no practical benefit in making the model more complicated. To do this,
 we need to investigate the model for the cubic form of the relationship
 using
@@ -1641,7 +1641,7 @@ class="aett-12">&#x00A0;=</span><span
 class="aett-12">&#x00A0;lm(Ozone~poly(Wind,3,</span><span 
 class="aett-12">&#x00A0;raw=TRUE),</span><span 
 class="aett-12">&#x00A0;data=airquality)</span></div>
-<!--l. 298--><p class="noindent" >Rather than continuously investigate the summaries of the various models, we can
+<!--l. 300--><p class="noindent" >Rather than continuously investigate the summaries of the various models, we can
 employ the <a 
  id="dx14-92058"></a><span 
 class="aett-12">anova() </span>command to compare the models.
@@ -1655,7 +1655,7 @@ class="aett-12">&#x00A0;Ozone.poly3)</span></div>
                                                                           
 
                                                                           
-<!--l. 303--><p class="noindent" >
+<!--l. 305--><p class="noindent" >
    <div class="fancyvrb" id="fancyvrb291"> <a 
  id="x14-92062r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1789,11 +1789,11 @@ class="aett-12">&#x00A0;0.1</span><span
 class="aett-12">&#x00A0;&#8217;</span><span 
 class="aett-12">&#x00A0;&#8217;</span><span 
 class="aett-12">&#x00A0;1</span></div>
-<!--l. 318--><p class="noindent" >We can compare all three models created thus far because they are a series of nested
+<!--l. 320--><p class="noindent" >We can compare all three models created thus far because they are a series of nested
 models. We could not include the model using <span 
 class="aett-12">Temp </span>as the predictor in this
 command for example.
-<!--l. 320--><p class="indent" >   On the basis of the output from our <a 
+<!--l. 322--><p class="indent" >   On the basis of the output from our <a 
  id="dx14-92085"></a><span 
 class="aett-12">anova() </span>command, we might assume that
 the quadratic form was sufficient to explain the relationship between <span 
@@ -1802,10 +1802,10 @@ class="aett-12">Ozone </span>and
 class="aett-12">Wind </span>because there is little to be gained by adding the cubic term to our model.
 Validation of the chosen model via the residual analysis is suggested as a next
 step.
-<!--l. 322--><p class="noindent" >
+<!--l. 324--><p class="noindent" >
    <h3 class="sectionHead"><span class="titlemark">12.6   </span> <a 
  id="x14-9300012.6"></a>Presenting the polynomial model&#8217;s suitability in a graph</h3>
-<!--l. 324--><p class="noindent" >The <a 
+<!--l. 326--><p class="noindent" >The <a 
  id="dx14-93001"></a><span 
 class="aett-12">abline() </span>command demonstrated earlier is only useful for straight lines. We
 have seen that the quadratic function is better at explaining the relationship
@@ -1831,19 +1831,19 @@ class="aett-12">&#x00A0;col=2)</span></div>
                                                                           
 
                                                                           
-<!--l. 331--><p class="indent" >   <img 
+<!--l. 333--><p class="indent" >   <img 
 src="LURN20x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt" ><!--tex4ht:graphics  
 name="LURN20x.png" src="figures/RegressionQuadAddPoints-1.eps"  
 -->
 <a 
 href="../svgs/RegressionQuadAddPoints-1.svg" >link to SVG file: RegressionQuadAddPoints-1.svg</a>
-<!--l. 334--><p class="indent" >   Note that the <a 
+<!--l. 336--><p class="indent" >   Note that the <a 
  id="dx14-93006"></a><span 
 class="aett-12">points() </span>command used here includes the <span 
 class="aett-12">col </span>argument to
 change the colour of the points to red &#8212; the second colour in the list of
 colours.
-<!--l. 336--><p class="indent" >   Also note that there are missing values in the records for <span 
+<!--l. 338--><p class="indent" >   Also note that there are missing values in the records for <span 
 class="aett-12">Ozone</span>. The fitted
 values from the model are only calculated for the observations where <span 
 class="aett-12">Ozone </span>was
@@ -1855,14 +1855,14 @@ class="aett-12">is.na() </span>command to
 include only complete cases for <span 
 class="aett-12">Ozone </span>and <span 
 class="aett-12">Wind</span>.
-<!--l. 338--><p class="indent" >   Another solution that plots a curve instead of points, is demonstrated in
+<!--l. 340--><p class="indent" >   Another solution that plots a curve instead of points, is demonstrated in
 Section&#x00A0;<span 
 class="aebx-12">??</span>. It is much more elegant, especially given the missing data problem
 encountered in this example.
-<!--l. 342--><p class="noindent" >
+<!--l. 344--><p class="noindent" >
    <h3 class="sectionHead"><span class="titlemark">12.7   </span> <a 
  id="x14-9400012.7"></a>Multiple regression models</h3>
-<!--l. 344--><p class="noindent" >The addition of multiple terms on the right hand side of the formula in the <a 
+<!--l. 346--><p class="noindent" >The addition of multiple terms on the right hand side of the formula in the <a 
  id="dx14-94001"></a><span 
 class="aett-12">lm()</span>
 command is very simple. We can put both <span 
@@ -1880,7 +1880,7 @@ class="aett-12">&#x00A0;data=airquality)</span></div>
                                                                           
 
                                                                           
-<!--l. 350--><p class="noindent" >If we want to combine the models for the quadratic form for <span 
+<!--l. 352--><p class="noindent" >If we want to combine the models for the quadratic form for <span 
 class="aett-12">Wind </span>and the linear form
 of <span 
 class="aett-12">Temp </span>we would
@@ -1892,7 +1892,7 @@ class="aett-12">&#x00A0;Ozone.lm4</span><span
 class="aett-12">&#x00A0;=</span><span 
 class="aett-12">&#x00A0;lm(Ozone~poly(Wind,2)+Temp,</span><span 
 class="aett-12">&#x00A0;data=airquality)</span></div>
-<!--l. 356--><p class="noindent" >This then allows us the opportunity of using the <a 
+<!--l. 358--><p class="noindent" >This then allows us the opportunity of using the <a 
  id="dx14-94006"></a><span 
 class="aett-12">anova() </span>command as demonstrated
 above to compare these two models and one constructed earlier which used only
@@ -1905,7 +1905,7 @@ class="aett-12">&#x00A0;&#x003E;</span><span
 class="aett-12">&#x00A0;anova(Ozone.lm2,</span><span 
 class="aett-12">&#x00A0;Ozone.lm3,</span><span 
 class="aett-12">&#x00A0;Ozone.lm4)</span></div>
-<!--l. 361--><p class="noindent" >
+<!--l. 363--><p class="noindent" >
    <div class="fancyvrb" id="fancyvrb296"> <a 
  id="x14-94010r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
@@ -2030,7 +2030,7 @@ class="aett-12">&#x00A0;0.1</span><span
 class="aett-12">&#x00A0;&#8217;</span><span 
 class="aett-12">&#x00A0;&#8217;</span><span 
 class="aett-12">&#x00A0;1</span></div>
-<!--l. 377--><p class="indent" >   The creation of interaction variables is also simple in <span 
+<!--l. 379--><p class="indent" >   The creation of interaction variables is also simple in <span 
 class="aess-12">R </span>Changing the &#8220;+" sign
 in the model to a &#8220;*" sign tells <span 
 class="aess-12">R </span>that we want the two main variables and their
@@ -2048,7 +2048,7 @@ class="aett-12">&#x00A0;data=airquality)</span><br class="fancyvrb" /><a
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;summary(Ozone.lm5)</span></div>
-<!--l. 383--><p class="noindent" >
+<!--l. 385--><p class="noindent" >
    <div class="fancyvrb" id="fancyvrb298"> <a 
  id="x14-94038r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
@@ -2422,7 +2422,7 @@ class="aett-12">&#x00A0;&#x003C;2e-16</span></div>
                                                                           
 
                                                                           
-<!--l. 417--><p class="noindent" >Note that this model includes two interaction terms, and on the face of it, neither
+<!--l. 419--><p class="noindent" >Note that this model includes two interaction terms, and on the face of it, neither
 term looks like it is contributing towards explaining the amount of ozone in the
 atmosphere. This can be tested using
    <div class="fancyvrb" id="fancyvrb299">  <a 
@@ -2431,7 +2431,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;anova(Ozone.lm5,</span><span 
 class="aett-12">&#x00A0;Ozone.lm4)</span></div>
-<!--l. 422--><p class="noindent" >
+<!--l. 424--><p class="noindent" >
    <div class="fancyvrb" id="fancyvrb300"> <a 
  id="x14-94102r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
@@ -2509,25 +2509,25 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0.6</span></div>
-<!--l. 433--><p class="indent" >   Multiple regression models can be checked using the approaches described in
+<!--l. 435--><p class="indent" >   Multiple regression models can be checked using the approaches described in
 Section&#x00A0;<a 
 href="#x14-9100012.4">12.4<!--tex4ht:ref: RegValid --></a> above, but it may also prove useful to plot residuals from the current
 model against each current and potential predictor variable in the data
 set.
-<!--l. 435--><p class="noindent" >
+<!--l. 437--><p class="noindent" >
    <h3 class="sectionHead"><span class="titlemark">12.8   </span> <a 
  id="x14-9500012.8"></a>Indicator variables</h3>
-<!--l. 437--><p class="noindent" >When working with a variable that can take one of two values, such as gender,
+<!--l. 439--><p class="noindent" >When working with a variable that can take one of two values, such as gender,
 many statistical packages need the user to create an indicator variable if this effect
 is to be incorporated into a regression model.
-<!--l. 439--><p class="indent" >   An indicator variable takes the values zero or one, where a &#8220;1" indicates one of
+<!--l. 441--><p class="indent" >   An indicator variable takes the values zero or one, where a &#8220;1" indicates one of
 the two possible values. Normally, the software will create an indicator for each of
 the values of the original variable, and when the original variable takes three
 levels, three indicator variables are made.
-<!--l. 441--><p class="indent" >   The advantage of the indicator is that the model fitted has a coefficient for the
+<!--l. 443--><p class="indent" >   The advantage of the indicator is that the model fitted has a coefficient for the
 indicator variable that reflects the constant difference between the two groups
 within the data implied by the original variable.
-<!--l. 443--><p class="indent" >   <span 
+<!--l. 445--><p class="indent" >   <span 
 class="aess-12">R </span>does not need explicit creation of indicator variables as it will see the form of
 the variable and create indicator variables in the background. The output for an
 indicator variable in the regression summary is only ever so slightly different
@@ -2543,16 +2543,16 @@ class="aett-12">GenderF </span>and
 class="aett-12">GenderM </span>in the output unless you explicitly ask <span 
 class="aess-12">R </span>not to fit the intercept
 term.
-<!--l. 445--><p class="indent" >   As an example,
+<!--l. 447--><p class="indent" >   As an example,
                                                                           
 
                                                                           
-   <!--l. 2--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 4--><div class="crosslinks"><p class="noindent">[<a 
 href="LURNch13.html" >next</a>] [<a 
 href="LURNch11.html" >prev</a>] [<a 
 href="LURNch11.html#tailLURNch11.html" >prev-tail</a>] [<a 
 href="LURNch12.html" >front</a>] [<a 
 href="LURN.html#LURNch12.html" >up</a>] </p></div>
-<!--l. 2--><p class="indent" >   <a 
+<!--l. 4--><p class="indent" >   <a 
  id="tailLURNch12.html"></a>   
 </body></html> 

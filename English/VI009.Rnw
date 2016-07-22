@@ -6,6 +6,7 @@ See the help page for the \Rcmd{txtOut} command as it includes the history of th
 You can open the text file that is being created and modified as you work in any browser. Once you have the file open and have done some work, you must  refresh your browser to see the latest changes. Keep the browser open as you work and remember to refresh often to keep on top of what is happening with complete access via your screen reader. 
  
 \section{Text interpretation of graphs} 
+\label{VIExplained}
  
 Statistics is an inherently visual discipline. Many statistical analyses lead to a graphic representation of data that is easy for the sighted world to interpret. Through use of \R{} we can create functions that can interpret the graphs using text descriptions. We'll start with a histogram.  
  

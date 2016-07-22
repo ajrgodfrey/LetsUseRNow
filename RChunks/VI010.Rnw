@@ -1,4 +1,3 @@
 <<CreateHist>>= 
-x=rnorm(1000) 
-MyHist =hist(x, plot=FALSE) 
+MyHist = hist(airquality$Wind, xlab="Average wind speed (mph)", main="", plot=FALSE) 
 @ 

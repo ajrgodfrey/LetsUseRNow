@@ -7,11 +7,11 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
 <!-- html,2,next --> 
 <meta name="src" content="LURN.tex"> 
-<meta name="date" content="2016-07-11 09:49:00"> 
+<meta name="date" content="2016-07-17 03:07:00"> 
 <link rel="stylesheet" type="text/css" href="LURN.css"> 
 </head><body 
 >
-   <!--l. 2--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 4--><div class="crosslinks"><p class="noindent">[<a 
 href="LURNch15.html" >next</a>] [<a 
 href="LURNch13.html" >prev</a>] [<a 
 href="LURNch13.html#tailLURNch13.html" >prev-tail</a>] [<a 
@@ -20,20 +20,20 @@ href="LURN.html#LURNch14.html" >up</a>] </p></div>
    <h2 class="chapterHead"><span class="titlemark">Chapter&#x00A0;14</span><br /><a 
  id="x16-10800014"></a>Extending <span 
 class="aess-12">R </span>beyond the base installation</h2>
-<!--l. 7--><p class="noindent" >This chapter explains how you do some tasks that are not part of the basic
+<!--l. 9--><p class="noindent" >This chapter explains how you do some tasks that are not part of the basic
 installation of <span 
 class="aess-12">R</span>. This includes instructions on how to add extra functionality via
 add-on packages and pointers to some user interfaces.
    <h3 class="sectionHead"><span class="titlemark">14.1   </span> <a 
  id="x16-10900014.1"></a>Installing additional packages</h3>
-<!--l. 12--><p class="noindent" >Many <span 
+<!--l. 14--><p class="noindent" >Many <span 
 class="aess-12">R </span>users find that the vast range of functions that are built into the basic <span 
 class="aess-12">R</span>
 installation are not enough to meet their specific needs. <span 
 class="aess-12">R </span>is relatively easy to
 adapt to meet their needs because additional functions are easily created to
 perform specific tasks.
-<!--l. 14--><p class="indent" >   In order to let others use their creations, <span 
+<!--l. 16--><p class="indent" >   In order to let others use their creations, <span 
 class="aess-12">R </span>users often make their
 functions available in add-on packages that can be downloaded by any <span 
 class="aess-12">R </span>user.
@@ -45,13 +45,13 @@ must meet standards of presentation, quality of documentation, and be
 available for all operating systems. Add-on packages that do not meet
 these criteria do exist, especially those that are specific to one operating
 system.
-<!--l. 16--><p class="indent" >   Installing an add-on package requires two actions. First, you must ask <span 
+<!--l. 18--><p class="indent" >   Installing an add-on package requires two actions. First, you must ask <span 
 class="aess-12">R </span>to
 install a package of a certain name, either using the <a 
  id="dx16-109001"></a><span 
 class="aett-12">install.packages()</span>
 command or the Packages pull-down menu item.
-<!--l. 18--><p class="indent" >   The second task is necessary only once in each <span 
+<!--l. 20--><p class="indent" >   The second task is necessary only once in each <span 
 class="aess-12">R </span>session. When you
 go to install a package from CRAN, <span 
 class="aess-12">R </span>will ask you to select a <a 
@@ -61,7 +61,7 @@ class="aeti-12">CRAN</span>
 class="aeti-12">mirror</span>. This just wants you to choose which one of the servers scattered
 around the world is the one you should point your internet connection
 towards.
-<!--l. 20--><p class="indent" >   These tasks are most commonly achieved by selecting the menu items and
+<!--l. 22--><p class="indent" >   These tasks are most commonly achieved by selecting the menu items and
 associated dialogue boxes. If you do not want to use the dialogue box approach
 for selecting a CRAN mirror, there is a text based alternative. If you
 type
@@ -70,7 +70,7 @@ type
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;chooseCRANmirror(FALSE)</span></div>
-<!--l. 26--><p class="noindent" >you will be given a list of the available CRAN mirrors and a different prompt.
+<!--l. 28--><p class="noindent" >you will be given a list of the available CRAN mirrors and a different prompt.
 Type in the number linked to the CRAN mirror you prefer and press
 the Enter key. If you want to choose the first item on the list (which is
 a cloud-based server anyway) then you could avoid reviewing the list
@@ -83,12 +83,12 @@ using:
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;chooseCRANmirror(ind=1)</span></div>
-<!--l. 33--><p class="indent" >   Installation of individual packages can be achieved using the <a 
+<!--l. 35--><p class="indent" >   Installation of individual packages can be achieved using the <a 
  id="dx16-109007"></a><span 
 class="aett-12">install.packages()</span>
 command. Investigate its help page to ensure you get the most out of its
 use.
-<!--l. 35--><p class="indent" >   One key argument for this command is <span 
+<!--l. 37--><p class="indent" >   One key argument for this command is <span 
 class="aett-12">dependencies</span>. There are many
 packages that rely on the work of other packages for their success. It&#8217;s probably a
 good idea to get into the habit of installing all dependent packages. For
@@ -99,15 +99,15 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;install.packages("Dodge",</span><span 
 class="aett-12">&#x00A0;dependencies=TRUE)</span></div>
-<!--l. 41--><p class="noindent" >which will install the <a 
+<!--l. 43--><p class="noindent" >which will install the <a 
  id="dx16-109010"></a><span 
 class="aeti-12">Dodge </span>package. If this package used another package that was
 not currently installed on your machine, that package would also have been
 downloaded and installed.
-<!--l. 43--><p class="noindent" >
+<!--l. 45--><p class="noindent" >
    <h3 class="sectionHead"><span class="titlemark">14.2   </span> <a 
  id="x16-11000014.2"></a>Updating add-on packages</h3>
-<!--l. 45--><p class="noindent" >If you want to be sure you have the latest version of the packages you have
+<!--l. 47--><p class="noindent" >If you want to be sure you have the latest version of the packages you have
 downloaded are being used, then every once in a while you should issue the
 command
    <div class="fancyvrb" id="fancyvrb327">  <a 
@@ -115,31 +115,31 @@ command
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;update.packages(ask=FALSE)</span></div>
-<!--l. 51--><p class="noindent" >Note that the <span 
+<!--l. 53--><p class="noindent" >Note that the <span 
 class="aett-12">ask </span>argument is set to <span 
 class="aett-12">FALSE </span>here. The default action is to ask the user
 if they want a particular package updated. I find this frustrating, especially if it&#8217;s
 been a while since I updated my packages.
-<!--l. 53--><p class="indent" >   You do not need to do this task very often. I would recommend doing it after
+<!--l. 55--><p class="indent" >   You do not need to do this task very often. I would recommend doing it after
 installing a new version of <span 
 class="aess-12">R</span>, or if you see a warning message about the version of
 a package you use.
-<!--l. 55--><p class="indent" >   Finally, note that if you have not established a connection with a CRAN
+<!--l. 57--><p class="indent" >   Finally, note that if you have not established a connection with a CRAN
 mirror in the current <span 
 class="aess-12">R </span>session, then you will be prompted to do so before
 anything is downloaded.
-<!--l. 57--><p class="noindent" >
+<!--l. 59--><p class="noindent" >
    <h3 class="sectionHead"><span class="titlemark">14.3   </span> <a 
  id="x16-11100014.3"></a>Using an enhanced graphical interface</h3>
                                                                           
 
                                                                           
-<!--l. 59--><p class="noindent" >The base installation of <span 
+<!--l. 61--><p class="noindent" >The base installation of <span 
 class="aess-12">R </span>doesn&#8217;t offer much statistical functionality in its menu
 system (assuming you use one!). Various projects are under development that
 enhance the way users can interact with <span 
 class="aess-12">R</span>.
-<!--l. 61--><p class="indent" >   Perhaps the most well-known is the <span 
+<!--l. 63--><p class="indent" >   Perhaps the most well-known is the <span 
 class="aess-12">R </span>Commander project. This interface
 has been given a lot of development over a number of years now and
 can support the needs of most introductory level statistical analyses. Its
@@ -147,7 +147,7 @@ implementation is via the <a
  id="dx16-111001"></a><span 
 class="aeti-12">Rcmdr </span>add-on package downloadable from
 CRAN.
-<!--l. 63--><p class="indent" >   I don&#8217;t use this package as it is more suited to novice to intermediate <span 
+<!--l. 65--><p class="indent" >   I don&#8217;t use this package as it is more suited to novice to intermediate <span 
 class="aess-12">R </span>users.
 It also creates a host of new functions that improve on similar functions included
 in base <span 
@@ -155,20 +155,20 @@ class="aess-12">R </span>that I don&#8217;t need. The idea of working with mouse
 counter-intuitive to reproducible research ideas that most medium to advanced <span 
 class="aess-12">R</span>
 users like.
-<!--l. 65--><p class="noindent" >
+<!--l. 67--><p class="noindent" >
    <h3 class="sectionHead"><span class="titlemark">14.4   </span> <a 
  id="x16-11200014.4"></a>Use of an integrated development environment (IDE)</h3>
-<!--l. 67--><p class="noindent" >The best integrated development environment (IDE) for <span 
+<!--l. 69--><p class="noindent" >The best integrated development environment (IDE) for <span 
 class="aess-12">R </span>users is <span 
 class="aess-12">R </span>Studio. Some
 people find this way of working to be a bewildering experience. Others
 love the convenience of having each project contained in a structured
 environment.
-<!--l. 69--><p class="indent" >   My advice for anyone wanting to use RStudio or any new IDE is to find
+<!--l. 71--><p class="indent" >   My advice for anyone wanting to use RStudio or any new IDE is to find
 someone to give you a hands-on demonstration. Perhaps watching videos from the
 internet are a useful alternative, but you need to know that this tool is what you
 need before investing time in its use.
-<!--l. 71--><p class="indent" >   Be warned: RStudio is a very powerful and useful tool for even the
+<!--l. 73--><p class="indent" >   Be warned: RStudio is a very powerful and useful tool for even the
 most advanced <span 
 class="aess-12">R </span>users. As such, it can be too much for the novice <span 
 class="aess-12">R</span>
@@ -176,12 +176,12 @@ user.
                                                                           
 
                                                                           
-   <!--l. 2--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 4--><div class="crosslinks"><p class="noindent">[<a 
 href="LURNch15.html" >next</a>] [<a 
 href="LURNch13.html" >prev</a>] [<a 
 href="LURNch13.html#tailLURNch13.html" >prev-tail</a>] [<a 
 href="LURNch14.html" >front</a>] [<a 
 href="LURN.html#LURNch14.html" >up</a>] </p></div>
-<!--l. 2--><p class="indent" >   <a 
+<!--l. 4--><p class="indent" >   <a 
  id="tailLURNch14.html"></a>   
 </body></html> 

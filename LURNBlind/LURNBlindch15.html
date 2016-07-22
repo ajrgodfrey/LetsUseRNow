@@ -10,11 +10,11 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,2,next,mathjax,html --> 
 <meta name="src" content="LURNBlind.tex" /> 
-<meta name="date" content="2016-07-11 09:49:00" /> 
+<meta name="date" content="2016-07-17 03:08:00" /> 
 <link rel="stylesheet" type="text/css" href="LURNBlind.css" /> 
 </head><body 
 >
-   <!--l. 2--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 4--><div class="crosslinks"><p class="noindent">[<a 
 href="LURNBlindch16.html" >next</a>] [<a 
 href="LURNBlindch14.html" >prev</a>] [<a 
 href="LURNBlindch14.html#tailLURNBlindch14.html" >prev-tail</a>] [<a 
@@ -22,7 +22,7 @@ href="#tailLURNBlindch15.html">tail</a>] [<a
 href="LURNBlind.html#LURNBlindch15.html" >up</a>] </p></div>
    <h2 class="chapterHead"><span class="titlemark">Chapter&#x00A0;15</span><br /><a 
  id="x17-11300015"></a>LURN&#x2026; To use the BrailleR add-on package</h2>
-<!--l. 7--><p class="noindent" >This chapter explains how the <a 
+<!--l. 9--><p class="noindent" >This chapter explains how the <a 
  id="dx17-113001"></a><span 
 class="aeti-12">BrailleR </span>add-on package can be used by blind
 people to get many tasks done quickly and effectively. In general, the package does
@@ -42,11 +42,11 @@ three things:
       R commands to survive. Sighted people have the benefit of graphical
       user interfaces (GUI) to help them, but none of them are accessible by
       screen reading software.</li></ol>
-<!--l. 12--><p class="noindent" >Initially, the package was built on top of functionality I wrote to support my own
+<!--l. 14--><p class="noindent" >Initially, the package was built on top of functionality I wrote to support my own
 work practices, but additions to meet the needs of other blind <span 
 class="aess-12">R </span>users have been
 made on request.
-</p><!--l. 15--><p class="indent" >   You will need to install the <a 
+</p><!--l. 17--><p class="indent" >   You will need to install the <a 
  id="dx17-113008"></a><span 
 class="aeti-12">BrailleR </span>package before continuing on with the
 examples in this chapter. It is available from CRAN. Use the examples in
@@ -125,7 +125,7 @@ class="aett-12">&#x00A0;history</span></div>
                                                                           
 
                                                                           
-<!--l. 38--><p class="noindent" >This chapter was created using version 0.25.2 of the <a 
+<!--l. 40--><p class="noindent" >This chapter was created using version 0.25.2 of the <a 
  id="dx17-113030"></a><span 
 class="aeti-12">BrailleR </span>package. This version of
 the package has a number of other packages that it depends on for functionality.
@@ -139,12 +139,12 @@ needs.
    <h3 class="sectionHead"><span class="titlemark">15.1   </span> <a 
  id="x17-11400015.1"></a>Creating a copy of the <span 
 class="aess-12">R </span>console window</h3>
-<!--l. 43--><p class="noindent" >In Chapter&#x00A0;<a 
+<!--l. 45--><p class="noindent" >In Chapter&#x00A0;<a 
 href="LURNBlindch2.html#x4-50002">2<!--tex4ht:ref: BlindUse --></a> I mentioned the need to save the content of the console window to a
 text file to be able to copy and paste its content to a report or document. One
 major feature of the BrailleR package is that this functionality can be done easily
 and efficiently.
-</p><!--l. 45--><p class="indent" >   There are three types of content printed in the console window.
+</p><!--l. 47--><p class="indent" >   There are three types of content printed in the console window.
       </p><ol  class="enumerate1" >
       <li 
   class="enumerate" id="x17-114002x1">The commands we type,
@@ -154,13 +154,13 @@ and efficiently.
       </li>
       <li 
   class="enumerate" id="x17-114006x3">Any error or warning messages that arise from our commands.</li></ol>
-<!--l. 51--><p class="indent" >   The <a 
+<!--l. 53--><p class="indent" >   The <a 
  id="dx17-114007"></a><span 
 class="aett-12">sink() </span>command does not currently record the commands or the errors
 and warning messages. It is therefore a valuable tool for those <span 
 class="aess-12">R </span>users that are
 confident about the validity of their scripts.
-</p><!--l. 53--><p class="indent" >   Saving the commands typed into an <span 
+</p><!--l. 55--><p class="indent" >   Saving the commands typed into an <span 
 class="aess-12">R </span>session can be achieved using the
 <a 
  id="dx17-114008"></a><span 
@@ -171,14 +171,14 @@ class="aett-12">savehistory() </span>command. For example
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;savehistory("WhatIDidToday.txt")</span></div>
-<!--l. 59--><p class="noindent" >will save all the issued commands into a text file called <span 
+<!--l. 61--><p class="noindent" >will save all the issued commands into a text file called <span 
 class="aett-12">WhatIDidToday.txt</span> in the
 working directory.
-</p><!--l. 61--><p class="indent" >   If I just want to have everything I do during a session recorded for posterity, I
+</p><!--l. 63--><p class="indent" >   If I just want to have everything I do during a session recorded for posterity, I
 want all contents of the console window to be saved. A plain text file is
 sufficient but it is possible to use add-on packages to create other file
 formats.
-</p><!--l. 63--><p class="indent" >   I have included a convenience function in the <a 
+</p><!--l. 65--><p class="indent" >   I have included a convenience function in the <a 
  id="dx17-114011"></a><span 
 class="aeti-12">BrailleR </span>package that starts a
 text file with the date and time in its filename. It gets saved in the current
@@ -192,7 +192,7 @@ working directory. To get this file started, just type
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;txtOut()</span></div>
-<!--l. 69--><p class="noindent" >In fact this command starts several files, one for the complete console and one for the
+<!--l. 71--><p class="noindent" >In fact this command starts several files, one for the complete console and one for the
 issued commands. The command actually runs the <a 
  id="dx17-114014"></a><span 
 class="aett-12">txtStart() </span>command but
@@ -201,27 +201,27 @@ use the defalt filename then you just need to hit &#x003C;enter&#x003E;, but if 
 want to specify the filename, you type the name, and then hit &#x003C;Enter&#x003E;
 twice (once for your file and once to get out of the filename requesting
 prompt).
-</p><!--l. 71--><p class="indent" >   See the help page for the <a 
+</p><!--l. 73--><p class="indent" >   See the help page for the <a 
  id="dx17-114015"></a><span 
 class="aett-12">txtOut() </span>command as it includes the history of the
 command and its relatives. The other related commands add comments to the
 text file or stop the processing entirely. Also note that the help page mentions how
 to get the packages needed for other file formats.
-</p><!--l. 74--><p class="indent" >   You can open the text file that is being created and modified as you work in
+</p><!--l. 76--><p class="indent" >   You can open the text file that is being created and modified as you work in
 any browser. Once you have the file open and have done some work, you must
 refresh your browser to see the latest changes. Keep the browser open as you work
 and remember to refresh often to keep on top of what is happening with complete
 access via your screen reader.
-</p><!--l. 76--><p class="noindent" >
+</p><!--l. 78--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">15.2   </span> <a 
  id="x17-11500015.2"></a>Text interpretation of graphs</h3>
-<!--l. 78--><p class="noindent" >Statistics is an inherently visual discipline. Many statistical analyses lead to a
+<!--l. 81--><p class="noindent" >Statistics is an inherently visual discipline. Many statistical analyses lead to a
 graphic representation of data that is easy for the sighted world to interpret.
 Through use of <span 
 class="aess-12">R </span>we can create functions that can interpret the graphs using text
 descriptions. We&#8217;ll start with a histogram.
-</p><!--l. 80--><p class="indent" >   In most circumstances, the user will create a histogram using the <a 
+</p><!--l. 83--><p class="indent" >   In most circumstances, the user will create a histogram using the <a 
  id="dx17-115001"></a><span 
 class="aett-12">hist()</span>
 command. This command takes data and creates a number of values needed to
@@ -232,33 +232,60 @@ in an object. For example:
  id="x17-115003r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
-class="aett-12">&#x00A0;x=rnorm(1000)</span><br class="fancyvrb" /><a 
- id="x17-115005r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;MyHist</span><span 
-class="aett-12">&#x00A0;=hist(x,</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;hist(airquality$Wind,</span><span 
+class="aett-12">&#x00A0;xlab="Average</span><span 
+class="aett-12">&#x00A0;wind</span><span 
+class="aett-12">&#x00A0;speed</span><span 
+class="aett-12">&#x00A0;(mph)",</span><span 
+class="aett-12">&#x00A0;main="",</span><span 
 class="aett-12">&#x00A0;plot=FALSE)</span></div>
-<!--l. 87--><p class="noindent" >The <span 
+<!--l. 88--><p class="noindent" >
+</p>
+   <div class="fancyvrb" id="fancyvrb336"> <a 
+ id="x17-115005r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Warning</span><span 
+class="aett-12">&#x00A0;in</span><span 
+class="aett-12">&#x00A0;hist.default(x</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;airquality$Wind,</span><span 
+class="aett-12">&#x00A0;xlab</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;"Average</span><span 
+class="aett-12">&#x00A0;wind</span><span 
+class="aett-12">&#x00A0;speed</span><span 
+class="aett-12">&#x00A0;(mph)",</span><span 
+class="aett-12">&#x00A0;:</span><span 
+class="aett-12">&#x00A0;arguments</span><span 
+class="aett-12">&#x00A0;&#8217;main&#8217;,</span><span 
+class="aett-12">&#x00A0;&#8217;xlab&#8217;</span><span 
+class="aett-12">&#x00A0;are</span><span 
+class="aett-12">&#x00A0;not</span><span 
+class="aett-12">&#x00A0;made</span><span 
+class="aett-12">&#x00A0;use</span><span 
+class="aett-12">&#x00A0;of</span></div>
+                                                                          
+
+                                                                          
+<!--l. 92--><p class="noindent" >The <span 
 class="aett-12">plot </span>argument stops the graph being plotted. We can get the graph anytime by
 issuing the <a 
  id="dx17-115006"></a><span 
-class="aett-12">plot() </span>command but we are interested in seeing what <span 
-class="aess-12">R </span>has stored in
-the <span 
-class="aett-12">MyHist </span>object.
+class="aett-12">plot() </span>command but we are only interested in seeing what <span 
+class="aess-12">R </span>has
+stored in the <span 
+class="aett-12">MyHist </span>object at the moment.
 </p>
-   <div class="fancyvrb" id="fancyvrb336">  <a 
+   <div class="fancyvrb" id="fancyvrb337">  <a 
  id="x17-115008r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;MyHist</span></div>
-                                                                          
-
-                                                                          
-<!--l. 92--><p class="noindent" >
+<!--l. 97--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb337"> <a 
+   <div class="fancyvrb" id="fancyvrb338"> <a 
  id="x17-115010r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;$breaks</span><br class="fancyvrb" /><a 
@@ -266,207 +293,199 @@ class="aett-12">&#x00A0;$breaks</span><br class="fancyvrb" /><a
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1]</span><span 
-class="aett-12">&#x00A0;-3.5</span><span 
-class="aett-12">&#x00A0;-3.0</span><span 
-class="aett-12">&#x00A0;-2.5</span><span 
-class="aett-12">&#x00A0;-2.0</span><span 
-class="aett-12">&#x00A0;-1.5</span><span 
-class="aett-12">&#x00A0;-1.0</span><span 
-class="aett-12">&#x00A0;-0.5</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;0.0</span><span 
+class="aett-12">&#x00A0;0</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;0.5</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;1.0</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;1.5</span>
-<br class="fancyvrb" /><a 
- id="x17-115014r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[12]</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;2.0</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;2.5</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;3.0</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;3.5</span><br class="fancyvrb" /><a 
- id="x17-115016r4"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
- id="x17-115018r5"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;$counts</span>
-<br class="fancyvrb" /><a 
- id="x17-115020r6"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1]</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;1</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;8</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;13</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;49</span><span 
-class="aett-12">&#x00A0;100</span><span 
-class="aett-12">&#x00A0;138</span><span 
-class="aett-12">&#x00A0;203</span><span 
-class="aett-12">&#x00A0;180</span><span 
-class="aett-12">&#x00A0;154</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;84</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;51</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;13</span><span 
-class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;2</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;4</span><span 
 class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;6</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;2</span><br class="fancyvrb" /><a 
- id="x17-115022r7"></a><span 
+class="aett-12">&#x00A0;8</span><span 
+class="aett-12">&#x00A0;10</span><span 
+class="aett-12">&#x00A0;12</span><span 
+class="aett-12">&#x00A0;14</span><span 
+class="aett-12">&#x00A0;16</span><span 
+class="aett-12">&#x00A0;18</span><span 
+class="aett-12">&#x00A0;20</span><span 
+class="aett-12">&#x00A0;22</span><br class="fancyvrb" /><a 
+ id="x17-115014r3"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span>
 <br class="fancyvrb" /><a 
+ id="x17-115016r4"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;$counts</span><br class="fancyvrb" /><a 
+ id="x17-115018r5"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;4</span><span 
+class="aett-12">&#x00A0;11</span><span 
+class="aett-12">&#x00A0;38</span><span 
+class="aett-12">&#x00A0;27</span><span 
+class="aett-12">&#x00A0;38</span><span 
+class="aett-12">&#x00A0;10</span><span 
+class="aett-12">&#x00A0;17</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;4</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;2</span><br class="fancyvrb" /><a 
+ id="x17-115020r6"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
+ id="x17-115022r7"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;$density</span>
+<br class="fancyvrb" /><a 
  id="x17-115024r8"></a><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;$density</span><br class="fancyvrb" /><a 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">&#x00A0;0.003268</span><span 
+class="aett-12">&#x00A0;0.013072</span><span 
+class="aett-12">&#x00A0;0.035948</span><span 
+class="aett-12">&#x00A0;0.124183</span><span 
+class="aett-12">&#x00A0;0.088235</span><span 
+class="aett-12">&#x00A0;0.124183</span>
+<br class="fancyvrb" /><a 
  id="x17-115026r9"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1]</span><span 
-class="aett-12">&#x00A0;0.002</span><span 
-class="aett-12">&#x00A0;0.016</span><span 
-class="aett-12">&#x00A0;0.026</span><span 
-class="aett-12">&#x00A0;0.098</span><span 
-class="aett-12">&#x00A0;0.200</span><span 
-class="aett-12">&#x00A0;0.276</span><span 
-class="aett-12">&#x00A0;0.406</span><span 
-class="aett-12">&#x00A0;0.360</span><span 
-class="aett-12">&#x00A0;0.308</span>
-<br class="fancyvrb" /><a 
+class="aett-12">&#x00A0;[7]</span><span 
+class="aett-12">&#x00A0;0.032680</span><span 
+class="aett-12">&#x00A0;0.055556</span><span 
+class="aett-12">&#x00A0;0.013072</span><span 
+class="aett-12">&#x00A0;0.003268</span><span 
+class="aett-12">&#x00A0;0.006536</span><br class="fancyvrb" /><a 
  id="x17-115028r10"></a><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[10]</span><span 
-class="aett-12">&#x00A0;0.168</span><span 
-class="aett-12">&#x00A0;0.102</span><span 
-class="aett-12">&#x00A0;0.026</span><span 
-class="aett-12">&#x00A0;0.008</span><span 
-class="aett-12">&#x00A0;0.004</span><br class="fancyvrb" /><a 
- id="x17-115030r11"></a><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
- id="x17-115032r12"></a><span 
+ id="x17-115030r11"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;$mids</span>
 <br class="fancyvrb" /><a 
+ id="x17-115032r12"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;3</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;5</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;7</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;9</span><span 
+class="aett-12">&#x00A0;11</span><span 
+class="aett-12">&#x00A0;13</span><span 
+class="aett-12">&#x00A0;15</span><span 
+class="aett-12">&#x00A0;17</span><span 
+class="aett-12">&#x00A0;19</span><span 
+class="aett-12">&#x00A0;21</span><br class="fancyvrb" /><a 
  id="x17-115034r13"></a><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1]</span><span 
-class="aett-12">&#x00A0;-3.25</span><span 
-class="aett-12">&#x00A0;-2.75</span><span 
-class="aett-12">&#x00A0;-2.25</span><span 
-class="aett-12">&#x00A0;-1.75</span><span 
-class="aett-12">&#x00A0;-1.25</span><span 
-class="aett-12">&#x00A0;-0.75</span><span 
-class="aett-12">&#x00A0;-0.25</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;0.25</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;0.75</span>
-<br class="fancyvrb" /><a 
+class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
  id="x17-115036r14"></a><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[10]</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;1.25</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;1.75</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;2.25</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;2.75</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;3.25</span><br class="fancyvrb" /><a 
+class="aett-12">&#x00A0;$xname</span><br class="fancyvrb" /><a 
  id="x17-115038r15"></a><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
+class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">&#x00A0;"airquality$Wind"</span><br class="fancyvrb" /><a 
  id="x17-115040r16"></a><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;$xname</span><br class="fancyvrb" /><a 
+class="aett-12">&#x00A0;</span>
+<br class="fancyvrb" /><a 
  id="x17-115042r17"></a><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1]</span><span 
-class="aett-12">&#x00A0;"x"</span><br class="fancyvrb" /><a 
+class="aett-12">&#x00A0;$equidist</span><br class="fancyvrb" /><a 
  id="x17-115044r18"></a><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
+class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">&#x00A0;TRUE</span><br class="fancyvrb" /><a 
  id="x17-115046r19"></a><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;$equidist</span><br class="fancyvrb" /><a 
+class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
  id="x17-115048r20"></a><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1]</span><span 
-class="aett-12">&#x00A0;TRUE</span>
-<br class="fancyvrb" /><a 
+class="aett-12">&#x00A0;$main</span><br class="fancyvrb" /><a 
  id="x17-115050r21"></a><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
+class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">&#x00A0;""</span><br class="fancyvrb" /><a 
  id="x17-115052r22"></a><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;$xaxp</span><br class="fancyvrb" /><a 
+class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
  id="x17-115054r23"></a><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1]</span><span 
-class="aett-12">&#x00A0;0</span><span 
-class="aett-12">&#x00A0;1</span><span 
-class="aett-12">&#x00A0;5</span><br class="fancyvrb" /><a 
+class="aett-12">&#x00A0;$xlab</span><br class="fancyvrb" /><a 
  id="x17-115056r24"></a><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
+class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">&#x00A0;"Average</span><span 
+class="aett-12">&#x00A0;wind</span><span 
+class="aett-12">&#x00A0;speed</span><span 
+class="aett-12">&#x00A0;(mph)"</span>
+<br class="fancyvrb" /><a 
  id="x17-115058r25"></a><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;$yaxp</span><br class="fancyvrb" /><a 
+class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
  id="x17-115060r26"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;$xaxp</span><br class="fancyvrb" /><a 
+ id="x17-115062r27"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1]</span><span 
 class="aett-12">&#x00A0;0</span><span 
 class="aett-12">&#x00A0;1</span><span 
 class="aett-12">&#x00A0;5</span><br class="fancyvrb" /><a 
- id="x17-115062r27"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
  id="x17-115064r28"></a><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;attr(,"class")</span><br class="fancyvrb" /><a 
+class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
  id="x17-115066r29"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;$yaxp</span><br class="fancyvrb" /><a 
+ id="x17-115068r30"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">&#x00A0;0</span><span 
+class="aett-12">&#x00A0;1</span><span 
+class="aett-12">&#x00A0;5</span><br class="fancyvrb" /><a 
+ id="x17-115070r31"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
+ id="x17-115072r32"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;attr(,"class")</span><br class="fancyvrb" /><a 
+ id="x17-115074r33"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1]</span><span 
 class="aett-12">&#x00A0;"histogram"</span></div>
-<!--l. 123--><p class="noindent" >
+<!--l. 132--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb338"> <a 
- id="x17-115068r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb339"> <a 
+ id="x17-115076r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;str(MyHist)</span></div>
-<!--l. 126--><p class="noindent" >
+<!--l. 135--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb339"> <a 
- id="x17-115070r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb340"> <a 
+ id="x17-115078r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;List</span><span 
 class="aett-12">&#x00A0;of</span><span 
-class="aett-12">&#x00A0;8</span><br class="fancyvrb" /><a 
- id="x17-115072r2"></a><span 
+class="aett-12">&#x00A0;10</span><br class="fancyvrb" /><a 
+ id="x17-115080r2"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;$</span><span 
@@ -474,20 +493,20 @@ class="aett-12">&#x00A0;breaks</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;:</span><span 
 class="aett-12">&#x00A0;num</span><span 
-class="aett-12">&#x00A0;[1:15]</span><span 
-class="aett-12">&#x00A0;-3.5</span><span 
-class="aett-12">&#x00A0;-3</span><span 
-class="aett-12">&#x00A0;-2.5</span><span 
-class="aett-12">&#x00A0;-2</span><span 
-class="aett-12">&#x00A0;-1.5</span><span 
-class="aett-12">&#x00A0;-1</span><span 
-class="aett-12">&#x00A0;-0.5</span><span 
+class="aett-12">&#x00A0;[1:12]</span><span 
 class="aett-12">&#x00A0;0</span><span 
-class="aett-12">&#x00A0;0.5</span><span 
-class="aett-12">&#x00A0;1</span><span 
+class="aett-12">&#x00A0;2</span><span 
+class="aett-12">&#x00A0;4</span><span 
+class="aett-12">&#x00A0;6</span><span 
+class="aett-12">&#x00A0;8</span><span 
+class="aett-12">&#x00A0;10</span><span 
+class="aett-12">&#x00A0;12</span><span 
+class="aett-12">&#x00A0;14</span><span 
+class="aett-12">&#x00A0;16</span><span 
+class="aett-12">&#x00A0;18</span><span 
 class="aett-12">&#x00A0;...</span>
 <br class="fancyvrb" /><a 
- id="x17-115074r3"></a><span 
+ id="x17-115082r3"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;$</span><span 
@@ -495,40 +514,35 @@ class="aett-12">&#x00A0;counts</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;:</span><span 
 class="aett-12">&#x00A0;int</span><span 
-class="aett-12">&#x00A0;[1:14]</span><span 
+class="aett-12">&#x00A0;[1:11]</span><span 
 class="aett-12">&#x00A0;1</span><span 
-class="aett-12">&#x00A0;8</span><span 
-class="aett-12">&#x00A0;13</span><span 
-class="aett-12">&#x00A0;49</span><span 
-class="aett-12">&#x00A0;100</span><span 
-class="aett-12">&#x00A0;138</span><span 
-class="aett-12">&#x00A0;203</span><span 
-class="aett-12">&#x00A0;180</span><span 
-class="aett-12">&#x00A0;154</span><span 
-class="aett-12">&#x00A0;84</span><span 
+class="aett-12">&#x00A0;4</span><span 
+class="aett-12">&#x00A0;11</span><span 
+class="aett-12">&#x00A0;38</span><span 
+class="aett-12">&#x00A0;27</span><span 
+class="aett-12">&#x00A0;38</span><span 
+class="aett-12">&#x00A0;10</span><span 
+class="aett-12">&#x00A0;17</span><span 
+class="aett-12">&#x00A0;4</span><span 
+class="aett-12">&#x00A0;1</span><span 
 class="aett-12">&#x00A0;...</span>
 <br class="fancyvrb" /><a 
- id="x17-115076r4"></a><span 
+ id="x17-115084r4"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;$</span><span 
 class="aett-12">&#x00A0;density</span><span 
 class="aett-12">&#x00A0;:</span><span 
 class="aett-12">&#x00A0;num</span><span 
-class="aett-12">&#x00A0;[1:14]</span><span 
-class="aett-12">&#x00A0;0.002</span><span 
-class="aett-12">&#x00A0;0.016</span><span 
-class="aett-12">&#x00A0;0.026</span><span 
-class="aett-12">&#x00A0;0.098</span><span 
-class="aett-12">&#x00A0;0.2</span><span 
-class="aett-12">&#x00A0;0.276</span><span 
-class="aett-12">&#x00A0;0.406</span><span 
-class="aett-12">&#x00A0;0.36</span><span 
-class="aett-12">&#x00A0;0.308</span><span 
-class="aett-12">&#x00A0;0.168</span><span 
+class="aett-12">&#x00A0;[1:11]</span><span 
+class="aett-12">&#x00A0;0.00327</span><span 
+class="aett-12">&#x00A0;0.01307</span><span 
+class="aett-12">&#x00A0;0.03595</span><span 
+class="aett-12">&#x00A0;0.12418</span><span 
+class="aett-12">&#x00A0;0.08824</span><span 
 class="aett-12">&#x00A0;...</span>
 <br class="fancyvrb" /><a 
- id="x17-115078r5"></a><span 
+ id="x17-115086r5"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;$</span><span 
@@ -538,20 +552,20 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;:</span><span 
 class="aett-12">&#x00A0;num</span><span 
-class="aett-12">&#x00A0;[1:14]</span><span 
-class="aett-12">&#x00A0;-3.25</span><span 
-class="aett-12">&#x00A0;-2.75</span><span 
-class="aett-12">&#x00A0;-2.25</span><span 
-class="aett-12">&#x00A0;-1.75</span><span 
-class="aett-12">&#x00A0;-1.25</span><span 
-class="aett-12">&#x00A0;-0.75</span><span 
-class="aett-12">&#x00A0;-0.25</span><span 
-class="aett-12">&#x00A0;0.25</span><span 
-class="aett-12">&#x00A0;0.75</span><span 
-class="aett-12">&#x00A0;1.25</span><span 
+class="aett-12">&#x00A0;[1:11]</span><span 
+class="aett-12">&#x00A0;1</span><span 
+class="aett-12">&#x00A0;3</span><span 
+class="aett-12">&#x00A0;5</span><span 
+class="aett-12">&#x00A0;7</span><span 
+class="aett-12">&#x00A0;9</span><span 
+class="aett-12">&#x00A0;11</span><span 
+class="aett-12">&#x00A0;13</span><span 
+class="aett-12">&#x00A0;15</span><span 
+class="aett-12">&#x00A0;17</span><span 
+class="aett-12">&#x00A0;19</span><span 
 class="aett-12">&#x00A0;...</span>
 <br class="fancyvrb" /><a 
- id="x17-115080r6"></a><span 
+ id="x17-115088r6"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;$</span><span 
@@ -560,15 +574,41 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;:</span><span 
 class="aett-12">&#x00A0;chr</span><span 
-class="aett-12">&#x00A0;"x"</span><br class="fancyvrb" /><a 
- id="x17-115082r7"></a><span 
+class="aett-12">&#x00A0;"airquality$Wind"</span><br class="fancyvrb" /><a 
+ id="x17-115090r7"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;$</span><span 
 class="aett-12">&#x00A0;equidist:</span><span 
 class="aett-12">&#x00A0;logi</span><span 
 class="aett-12">&#x00A0;TRUE</span><br class="fancyvrb" /><a 
- id="x17-115084r8"></a><span 
+ id="x17-115092r8"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;$</span><span 
+class="aett-12">&#x00A0;main</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;:</span><span 
+class="aett-12">&#x00A0;chr</span><span 
+class="aett-12">&#x00A0;""</span>
+<br class="fancyvrb" /><a 
+ id="x17-115094r9"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;$</span><span 
+class="aett-12">&#x00A0;xlab</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;:</span><span 
+class="aett-12">&#x00A0;chr</span><span 
+class="aett-12">&#x00A0;"Average</span><span 
+class="aett-12">&#x00A0;wind</span><span 
+class="aett-12">&#x00A0;speed</span><span 
+class="aett-12">&#x00A0;(mph)"</span><br class="fancyvrb" /><a 
+ id="x17-115096r10"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;$</span><span 
@@ -583,7 +623,7 @@ class="aett-12">&#x00A0;0</span><span
 class="aett-12">&#x00A0;1</span><span 
 class="aett-12">&#x00A0;5</span>
 <br class="fancyvrb" /><a 
- id="x17-115086r9"></a><span 
+ id="x17-115098r11"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;$</span><span 
@@ -597,7 +637,7 @@ class="aett-12">&#x00A0;[1:3]</span><span
 class="aett-12">&#x00A0;0</span><span 
 class="aett-12">&#x00A0;1</span><span 
 class="aett-12">&#x00A0;5</span><br class="fancyvrb" /><a 
- id="x17-115088r10"></a><span 
+ id="x17-115100r12"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;-</span><span 
@@ -605,84 +645,89 @@ class="aett-12">&#x00A0;attr(*,</span><span
 class="aett-12">&#x00A0;"class")=</span><span 
 class="aett-12">&#x00A0;chr</span><span 
 class="aett-12">&#x00A0;"histogram"</span></div>
-<!--l. 138--><p class="noindent" >
+<!--l. 149--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb340"> <a 
- id="x17-115090r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb341"> <a 
+ id="x17-115102r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;class(MyHist)</span></div>
-<!--l. 141--><p class="noindent" >
+<!--l. 152--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb341"> <a 
- id="x17-115092r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb342"> <a 
+ id="x17-115104r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1]</span><span 
 class="aett-12">&#x00A0;"histogram"</span></div>
-<!--l. 146--><p class="indent" >   The full print out has everything we need but is not in a friendly format. The
-<a 
- id="dx17-115093"></a><span 
-class="aett-12">str() </span>command gives us a condensed version of the data being stored but isn&#8217;t
-sufficient, and the <a 
- id="dx17-115094"></a><span 
-class="aett-12">class() </span>command just tells us that this information is stored
-in an object of type <a 
- id="dx17-115095"></a><span 
-class="aeti-12">histogram</span>. The class of the object is the most important as it
-is what tells <span 
-class="aess-12">R </span>how to work on the object when we use the <a 
- id="dx17-115096"></a><span 
-class="aett-12">plot() </span>command on
-the <span 
-class="aett-12">MyHist </span>object. The <a 
- id="dx17-115097"></a><span 
-class="aett-12">plot() </span>command is actually a family of commands, one of
-which is purposely designed for histograms. The <a 
- id="dx17-115098"></a><span 
-class="aett-12">plot.histogram() </span>command is
-actually what constructs the graph when the user calls the <a 
- id="dx17-115099"></a><span 
-class="aett-12">plot() </span>command
-on an object of type <a 
- id="dx17-115100"></a><span 
-class="aeti-12">histogram</span>. This family of commands is known as a
-<a 
- id="dx17-115101"></a><span 
-class="aeti-12">method</span>.
                                                                           
 
                                                                           
-</p><!--l. 148--><p class="indent" >   The <a 
- id="dx17-115102"></a><span 
+<!--l. 157--><p class="indent" >   The full print out has everything we need but is not in a friendly format. The
+<a 
+ id="dx17-115105"></a><span 
+class="aett-12">str() </span>command gives us a condensed version of the data being stored but isn&#8217;t
+sufficient, and the <a 
+ id="dx17-115106"></a><span 
+class="aett-12">class() </span>command just tells us that this information is stored
+in an object of type <a 
+ id="dx17-115107"></a><span 
+class="aeti-12">histogram</span>. The class of the object is the most important as it
+is what tells <span 
+class="aess-12">R </span>how to work on the object when we use the <a 
+ id="dx17-115108"></a><span 
+class="aett-12">plot() </span>command on
+the <span 
+class="aett-12">MyHist </span>object. The <a 
+ id="dx17-115109"></a><span 
+class="aett-12">plot() </span>command is actually a family of commands, one of
+which is purposely designed for histograms. The <a 
+ id="dx17-115110"></a><span 
+class="aett-12">plot.histogram() </span>command is
+actually what constructs the graph when the user calls the <a 
+ id="dx17-115111"></a><span 
+class="aett-12">plot() </span>command
+on an object of type <a 
+ id="dx17-115112"></a><span 
+class="aeti-12">histogram</span>. This family of commands is known as a
+<a 
+ id="dx17-115113"></a><span 
+class="aeti-12">method</span>.
+</p><!--l. 159--><p class="indent" >   The <a 
+ id="dx17-115114"></a><span 
 class="aeti-12">BrailleR </span>package includes a <a 
- id="dx17-115103"></a><span 
+ id="dx17-115115"></a><span 
 class="aeti-12">method </span>for creating text interpretations in a
 similar way. The <a 
- id="dx17-115104"></a><span 
+ id="dx17-115116"></a><span 
 class="aett-12">VI() </span>command is actually a family of commands that includes
 the <a 
- id="dx17-115105"></a><span 
+ id="dx17-115117"></a><span 
 class="aett-12">VI.histogram() </span>command. When we issue the <a 
- id="dx17-115106"></a><span 
+ id="dx17-115118"></a><span 
 class="aett-12">VI() </span>command on the <span 
 class="aett-12">MyHist</span>
 object, the <a 
- id="dx17-115107"></a><span 
+ id="dx17-115119"></a><span 
 class="aett-12">VI.histogram() </span>function does the work. Let&#8217;s see what we
 get:
 </p>
-   <div class="fancyvrb" id="fancyvrb342">  <a 
- id="x17-115109r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb343">  <a 
+ id="x17-115121r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
-class="aett-12">&#x00A0;VI(hist(x))</span></div>
-<!--l. 154--><p class="indent" >   <img 
+class="aett-12">&#x00A0;VI(hist(airquality$Wind,</span><span 
+class="aett-12">&#x00A0;xlab="Average</span><span 
+class="aett-12">&#x00A0;wind</span><span 
+class="aett-12">&#x00A0;speed</span><span 
+class="aett-12">&#x00A0;(mph)",</span><span 
+class="aett-12">&#x00A0;main=""))</span></div>
+<!--l. 165--><p class="indent" >   <img 
 src="LURNBlind36x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt"  /><!--tex4ht:graphics  
 name="LURNBlind36x.png" src="figures/VIVIHist-1.eps"  
 -->
 </p>
-   <div class="fancyvrb" id="fancyvrb343">  <a 
- id="x17-115111r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb344">  <a 
+ id="x17-115123r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;This</span><span 
 class="aett-12">&#x00A0;is</span><span 
@@ -690,21 +735,25 @@ class="aett-12">&#x00A0;a</span><span
 class="aett-12">&#x00A0;histogram,</span><span 
 class="aett-12">&#x00A0;with</span><span 
 class="aett-12">&#x00A0;the</span><span 
-class="aett-12">&#x00A0;title:</span><span 
-class="aett-12">&#x00A0;Histogram</span><span 
-class="aett-12">&#x00A0;of</span><span 
-class="aett-12">&#x00A0;x</span>
+class="aett-12">&#x00A0;title:</span>
 <br class="fancyvrb" /><a 
- id="x17-115113r2"></a><span 
+ id="x17-115125r2"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;"x"</span><span 
+class="aett-12">&#x00A0;"Average</span><span 
+class="aett-12">&#x00A0;wind</span><span 
+class="aett-12">&#x00A0;speed</span><span 
+class="aett-12">&#x00A0;(mph)"</span><span 
 class="aett-12">&#x00A0;is</span><span 
 class="aett-12">&#x00A0;marked</span><span 
 class="aett-12">&#x00A0;on</span><span 
 class="aett-12">&#x00A0;the</span><span 
-class="aett-12">&#x00A0;x-axis.</span><br class="fancyvrb" /><a 
- id="x17-115115r3"></a><span 
+class="aett-12">&#x00A0;x-axis.</span>
+                                                                          
+
+                                                                          
+<br class="fancyvrb" /><a 
+ id="x17-115127r3"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;Tick</span><span 
 class="aett-12">&#x00A0;marks</span><span 
@@ -713,24 +762,27 @@ class="aett-12">&#x00A0;the</span><span
 class="aett-12">&#x00A0;x-axis</span><span 
 class="aett-12">&#x00A0;are</span><span 
 class="aett-12">&#x00A0;at:</span><span 
-class="aett-12">&#x00A0;-3,</span><span 
+class="aett-12">&#x00A0;0,</span><span 
+class="aett-12">&#x00A0;5,</span><span 
+class="aett-12">&#x00A0;10,</span><span 
+class="aett-12">&#x00A0;15,</span><span 
 class="aett-12">&#x00A0;and</span><span 
-class="aett-12">&#x00A0;3</span>
+class="aett-12">&#x00A0;20</span>
 <br class="fancyvrb" /><a 
- id="x17-115117r4"></a><span 
+ id="x17-115129r4"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;There</span><span 
 class="aett-12">&#x00A0;are</span><span 
 class="aett-12">&#x00A0;a</span><span 
 class="aett-12">&#x00A0;total</span><span 
 class="aett-12">&#x00A0;of</span><span 
-class="aett-12">&#x00A0;1000</span><span 
+class="aett-12">&#x00A0;153</span><span 
 class="aett-12">&#x00A0;elements</span><span 
 class="aett-12">&#x00A0;for</span><span 
 class="aett-12">&#x00A0;this</span><span 
 class="aett-12">&#x00A0;variable.</span>
 <br class="fancyvrb" /><a 
- id="x17-115119r5"></a><span 
+ id="x17-115131r5"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;Tick</span><span 
 class="aett-12">&#x00A0;marks</span><span 
@@ -740,31 +792,30 @@ class="aett-12">&#x00A0;y-axis</span><span
 class="aett-12">&#x00A0;are</span><span 
 class="aett-12">&#x00A0;at:</span><span 
 class="aett-12">&#x00A0;0,</span><span 
-class="aett-12">&#x00A0;50,</span><span 
-class="aett-12">&#x00A0;100,</span><span 
-class="aett-12">&#x00A0;150,</span><span 
+class="aett-12">&#x00A0;10,</span><span 
+class="aett-12">&#x00A0;20,</span><span 
 class="aett-12">&#x00A0;and</span><span 
-class="aett-12">&#x00A0;200</span>
+class="aett-12">&#x00A0;30</span>
 <br class="fancyvrb" /><a 
- id="x17-115121r6"></a><span 
+ id="x17-115133r6"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;It</span><span 
 class="aett-12">&#x00A0;has</span><span 
-class="aett-12">&#x00A0;14</span><span 
+class="aett-12">&#x00A0;11</span><span 
 class="aett-12">&#x00A0;bins</span><span 
 class="aett-12">&#x00A0;with</span><span 
 class="aett-12">&#x00A0;equal</span><span 
 class="aett-12">&#x00A0;widths,</span><span 
 class="aett-12">&#x00A0;starting</span><span 
 class="aett-12">&#x00A0;at</span><span 
-class="aett-12">&#x00A0;-3.5</span><span 
+class="aett-12">&#x00A0;0</span><span 
 class="aett-12">&#x00A0;and</span><span 
 class="aett-12">&#x00A0;ending</span><span 
 class="aett-12">&#x00A0;at</span><span 
-class="aett-12">&#x00A0;3.5</span><span 
+class="aett-12">&#x00A0;22</span><span 
 class="aett-12">&#x00A0;.</span>
 <br class="fancyvrb" /><a 
- id="x17-115123r7"></a><span 
+ id="x17-115135r7"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;The</span><span 
 class="aett-12">&#x00A0;mids</span><span 
@@ -774,153 +825,126 @@ class="aett-12">&#x00A0;for</span><span
 class="aett-12">&#x00A0;the</span><span 
 class="aett-12">&#x00A0;bins</span><span 
 class="aett-12">&#x00A0;are:</span><br class="fancyvrb" /><a 
- id="x17-115125r8"></a><span 
+ id="x17-115137r8"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;mid</span><span 
 class="aett-12">&#x00A0;=</span><span 
-class="aett-12">&#x00A0;-3.25</span><span 
+class="aett-12">&#x00A0;1</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;count</span><span 
 class="aett-12">&#x00A0;=</span><span 
 class="aett-12">&#x00A0;1</span><br class="fancyvrb" /><a 
- id="x17-115127r9"></a><span 
+ id="x17-115139r9"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;mid</span><span 
 class="aett-12">&#x00A0;=</span><span 
-class="aett-12">&#x00A0;-2.75</span><span 
+class="aett-12">&#x00A0;3</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;count</span><span 
 class="aett-12">&#x00A0;=</span><span 
-class="aett-12">&#x00A0;8</span>
+class="aett-12">&#x00A0;4</span>
 <br class="fancyvrb" /><a 
- id="x17-115129r10"></a><span 
+ id="x17-115141r10"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;mid</span><span 
 class="aett-12">&#x00A0;=</span><span 
-class="aett-12">&#x00A0;-2.25</span><span 
+class="aett-12">&#x00A0;5</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;count</span><span 
 class="aett-12">&#x00A0;=</span><span 
-class="aett-12">&#x00A0;13</span><br class="fancyvrb" /><a 
- id="x17-115131r11"></a><span 
+class="aett-12">&#x00A0;11</span><br class="fancyvrb" /><a 
+ id="x17-115143r11"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;mid</span><span 
 class="aett-12">&#x00A0;=</span><span 
-class="aett-12">&#x00A0;-1.75</span><span 
+class="aett-12">&#x00A0;7</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;count</span><span 
 class="aett-12">&#x00A0;=</span><span 
-class="aett-12">&#x00A0;49</span><br class="fancyvrb" /><a 
- id="x17-115133r12"></a><span 
+class="aett-12">&#x00A0;38</span><br class="fancyvrb" /><a 
+ id="x17-115145r12"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;mid</span><span 
 class="aett-12">&#x00A0;=</span><span 
-class="aett-12">&#x00A0;-1.25</span><span 
+class="aett-12">&#x00A0;9</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;count</span><span 
 class="aett-12">&#x00A0;=</span><span 
-class="aett-12">&#x00A0;100</span>
+class="aett-12">&#x00A0;27</span>
 <br class="fancyvrb" /><a 
- id="x17-115135r13"></a><span 
+ id="x17-115147r13"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;mid</span><span 
 class="aett-12">&#x00A0;=</span><span 
-class="aett-12">&#x00A0;-0.75</span><span 
+class="aett-12">&#x00A0;11</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;count</span><span 
 class="aett-12">&#x00A0;=</span><span 
-class="aett-12">&#x00A0;138</span><br class="fancyvrb" /><a 
- id="x17-115137r14"></a><span 
+class="aett-12">&#x00A0;38</span><br class="fancyvrb" /><a 
+ id="x17-115149r14"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;mid</span><span 
 class="aett-12">&#x00A0;=</span><span 
-class="aett-12">&#x00A0;-0.25</span><span 
+class="aett-12">&#x00A0;13</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;count</span><span 
 class="aett-12">&#x00A0;=</span><span 
-class="aett-12">&#x00A0;203</span><br class="fancyvrb" /><a 
- id="x17-115139r15"></a><span 
+class="aett-12">&#x00A0;10</span><br class="fancyvrb" /><a 
+ id="x17-115151r15"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;mid</span><span 
 class="aett-12">&#x00A0;=</span><span 
-class="aett-12">&#x00A0;0.25</span><span 
+class="aett-12">&#x00A0;15</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;count</span><span 
 class="aett-12">&#x00A0;=</span><span 
-class="aett-12">&#x00A0;180</span>
+class="aett-12">&#x00A0;17</span>
 <br class="fancyvrb" /><a 
- id="x17-115141r16"></a><span 
+ id="x17-115153r16"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;mid</span><span 
 class="aett-12">&#x00A0;=</span><span 
-class="aett-12">&#x00A0;0.75</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;count</span><span 
-class="aett-12">&#x00A0;=</span><span 
-class="aett-12">&#x00A0;154</span><br class="fancyvrb" /><a 
- id="x17-115143r17"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;mid</span><span 
-class="aett-12">&#x00A0;=</span><span 
-class="aett-12">&#x00A0;1.25</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;count</span><span 
-class="aett-12">&#x00A0;=</span><span 
-class="aett-12">&#x00A0;84</span><br class="fancyvrb" /><a 
- id="x17-115145r18"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;mid</span><span 
-class="aett-12">&#x00A0;=</span><span 
-class="aett-12">&#x00A0;1.75</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;count</span><span 
-class="aett-12">&#x00A0;=</span><span 
-class="aett-12">&#x00A0;51</span>
-<br class="fancyvrb" /><a 
- id="x17-115147r19"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;mid</span><span 
-class="aett-12">&#x00A0;=</span><span 
-class="aett-12">&#x00A0;2.25</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;count</span><span 
-class="aett-12">&#x00A0;=</span><span 
-class="aett-12">&#x00A0;13</span><br class="fancyvrb" /><a 
- id="x17-115149r20"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;mid</span><span 
-class="aett-12">&#x00A0;=</span><span 
-class="aett-12">&#x00A0;2.75</span><span 
+class="aett-12">&#x00A0;17</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;count</span><span 
 class="aett-12">&#x00A0;=</span><span 
 class="aett-12">&#x00A0;4</span><br class="fancyvrb" /><a 
- id="x17-115151r21"></a><span 
+ id="x17-115155r17"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;mid</span><span 
 class="aett-12">&#x00A0;=</span><span 
-class="aett-12">&#x00A0;3.25</span><span 
+class="aett-12">&#x00A0;19</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;count</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;1</span><br class="fancyvrb" /><a 
+ id="x17-115157r18"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;mid</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;21</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;count</span><span 
 class="aett-12">&#x00A0;=</span><span 
 class="aett-12">&#x00A0;2</span></div>
-<!--l. 180--><p class="indent" >   Other functions exist for boxplots and dotplots. Try:
-                                                                          
-
-                                                                          
+<!--l. 188--><p class="indent" >   Other functions exist for boxplots and dotplots. Try:
 </p>
-   <div class="fancyvrb" id="fancyvrb344">  <a 
- id="x17-115153r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb345">  <a 
+ id="x17-115159r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
-class="aett-12">&#x00A0;VI(boxplot(x))</span></div>
-<!--l. 186--><p class="indent" >   <img 
+class="aett-12">&#x00A0;VI(boxplot(airquality$Wind,</span><span 
+class="aett-12">&#x00A0;xlab="Average</span><span 
+class="aett-12">&#x00A0;wind</span><span 
+class="aett-12">&#x00A0;speed</span><span 
+class="aett-12">&#x00A0;(mph)"))</span></div>
+<!--l. 194--><p class="indent" >   <img 
 src="LURNBlind37x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt"  /><!--tex4ht:graphics  
 name="LURNBlind37x.png" src="figures/VIVIBoxplot-1.eps"  
 -->
 </p>
-   <div class="fancyvrb" id="fancyvrb345">  <a 
- id="x17-115155r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb346">  <a 
+ id="x17-115161r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;This</span><span 
 class="aett-12">&#x00A0;graph</span><span 
@@ -929,22 +953,24 @@ class="aett-12">&#x00A0;a</span><span
 class="aett-12">&#x00A0;boxplot</span><span 
 class="aett-12">&#x00A0;printed</span><span 
 class="aett-12">&#x00A0;vertically</span><br class="fancyvrb" /><a 
- id="x17-115157r2"></a><span 
+ id="x17-115163r2"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;but</span><span 
 class="aett-12">&#x00A0;has</span><span 
 class="aett-12">&#x00A0;no</span><span 
 class="aett-12">&#x00A0;title</span>
 <br class="fancyvrb" /><a 
- id="x17-115159r3"></a><span 
+ id="x17-115165r3"></a><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;No</span><span 
-class="aett-12">&#x00A0;label</span><span 
+class="aett-12">&#x00A0;"Average</span><span 
+class="aett-12">&#x00A0;wind</span><span 
+class="aett-12">&#x00A0;speed</span><span 
+class="aett-12">&#x00A0;(mph)"</span><span 
 class="aett-12">&#x00A0;appears</span><span 
 class="aett-12">&#x00A0;on</span><span 
 class="aett-12">&#x00A0;the</span><span 
 class="aett-12">&#x00A0;x-axis.</span><br class="fancyvrb" /><a 
- id="x17-115161r4"></a><span 
+ id="x17-115167r4"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;No</span><span 
 class="aett-12">&#x00A0;label</span><span 
@@ -953,7 +979,7 @@ class="aett-12">&#x00A0;on</span><span
 class="aett-12">&#x00A0;the</span><span 
 class="aett-12">&#x00A0;y-axis.</span>
 <br class="fancyvrb" /><a 
- id="x17-115163r5"></a><span 
+ id="x17-115169r5"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;Tick</span><span 
 class="aett-12">&#x00A0;marks</span><span 
@@ -962,66 +988,61 @@ class="aett-12">&#x00A0;the</span><span
 class="aett-12">&#x00A0;y-axis</span><span 
 class="aett-12">&#x00A0;are</span><span 
 class="aett-12">&#x00A0;at:</span><span 
-class="aett-12">&#x00A0;-3,</span><span 
+class="aett-12">&#x00A0;5,</span><span 
+class="aett-12">&#x00A0;10,</span><span 
+class="aett-12">&#x00A0;15,</span><span 
 class="aett-12">&#x00A0;and</span><span 
-class="aett-12">&#x00A0;3</span><br class="fancyvrb" /><a 
- id="x17-115165r6"></a><span 
+class="aett-12">&#x00A0;20</span>
+<br class="fancyvrb" /><a 
+ id="x17-115171r6"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;This</span><span 
 class="aett-12">&#x00A0;variable</span><span 
 class="aett-12">&#x00A0;has</span><span 
-class="aett-12">&#x00A0;1000</span><span 
-class="aett-12">&#x00A0;values.</span>
-<br class="fancyvrb" /><a 
- id="x17-115167r7"></a><span 
+class="aett-12">&#x00A0;153</span><span 
+class="aett-12">&#x00A0;values.</span><br class="fancyvrb" /><a 
+ id="x17-115173r7"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;An</span><span 
 class="aett-12">&#x00A0;outlier</span><span 
 class="aett-12">&#x00A0;is</span><span 
 class="aett-12">&#x00A0;marked</span><span 
 class="aett-12">&#x00A0;at:</span><span 
-class="aett-12">&#x00A0;3.171</span><span 
-class="aett-12">&#x00A0;2.782</span><span 
-class="aett-12">&#x00A0;2.819</span><span 
-class="aett-12">&#x00A0;3.144</span><span 
-class="aett-12">&#x00A0;-2.716</span><span 
-class="aett-12">&#x00A0;-2.753</span><span 
-class="aett-12">&#x00A0;2.733</span><span 
-class="aett-12">&#x00A0;-2.9</span><span 
-class="aett-12">&#x00A0;-3.005</span>
+class="aett-12">&#x00A0;20.1</span><span 
+class="aett-12">&#x00A0;18.4</span><span 
+class="aett-12">&#x00A0;20.7</span>
 <br class="fancyvrb" /><a 
- id="x17-115169r8"></a><span 
+ id="x17-115175r8"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;The</span><span 
 class="aett-12">&#x00A0;whiskers</span><span 
 class="aett-12">&#x00A0;extend</span><span 
 class="aett-12">&#x00A0;to</span><span 
-class="aett-12">&#x00A0;-2.676</span><span 
+class="aett-12">&#x00A0;1.7</span><span 
 class="aett-12">&#x00A0;and</span><span 
-class="aett-12">&#x00A0;2.583</span><span 
+class="aett-12">&#x00A0;16.6</span><span 
 class="aett-12">&#x00A0;from</span><span 
 class="aett-12">&#x00A0;the</span><span 
 class="aett-12">&#x00A0;ends</span><span 
 class="aett-12">&#x00A0;of</span><span 
 class="aett-12">&#x00A0;the</span><span 
-class="aett-12">&#x00A0;box,</span>
-<br class="fancyvrb" /><a 
- id="x17-115171r9"></a><span 
+class="aett-12">&#x00A0;box,</span><br class="fancyvrb" /><a 
+ id="x17-115177r9"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;which</span><span 
 class="aett-12">&#x00A0;are</span><span 
 class="aett-12">&#x00A0;at</span><span 
-class="aett-12">&#x00A0;-0.6895</span><span 
+class="aett-12">&#x00A0;7.4</span><span 
 class="aett-12">&#x00A0;and</span><span 
-class="aett-12">&#x00A0;0.6447</span>
+class="aett-12">&#x00A0;11.5</span>
 <br class="fancyvrb" /><a 
- id="x17-115173r10"></a><span 
+ id="x17-115179r10"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;The</span><span 
 class="aett-12">&#x00A0;median,</span><span 
-class="aett-12">&#x00A0;-0.02724</span><span 
+class="aett-12">&#x00A0;9.7</span><span 
 class="aett-12">&#x00A0;is</span><span 
-class="aett-12">&#x00A0;50</span><span 
+class="aett-12">&#x00A0;56</span><span 
 class="aett-12">&#x00A0;%</span><span 
 class="aett-12">&#x00A0;from</span><span 
 class="aett-12">&#x00A0;the</span><span 
@@ -1035,13 +1056,13 @@ class="aett-12">&#x00A0;the</span><span
 class="aett-12">&#x00A0;upper</span><span 
 class="aett-12">&#x00A0;end.</span>
 <br class="fancyvrb" /><a 
- id="x17-115175r11"></a><span 
+ id="x17-115181r11"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;The</span><span 
 class="aett-12">&#x00A0;upper</span><span 
 class="aett-12">&#x00A0;whisker</span><span 
 class="aett-12">&#x00A0;is</span><span 
-class="aett-12">&#x00A0;0.98</span><span 
+class="aett-12">&#x00A0;0.89</span><span 
 class="aett-12">&#x00A0;times</span><span 
 class="aett-12">&#x00A0;the</span><span 
 class="aett-12">&#x00A0;length</span><span 
@@ -1049,155 +1070,58 @@ class="aett-12">&#x00A0;of</span><span
 class="aett-12">&#x00A0;the</span><span 
 class="aett-12">&#x00A0;lower</span><span 
 class="aett-12">&#x00A0;whisker.</span></div>
-<!--l. 200--><p class="noindent" >and
+                                                                          
+
+                                                                          
+<!--l. 208--><p class="noindent" >and
 </p>
-   <div class="fancyvrb" id="fancyvrb346">  <a 
- id="x17-115177r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb347">  <a 
+ id="x17-115183r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;VI(dotplot(x))</span></div>
-<!--l. 205--><p class="noindent" >
+<!--l. 213--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb347"> <a 
- id="x17-115179r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb348"> <a 
+ id="x17-115185r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;Warning</span><span 
+class="aett-12">&#x00A0;Error</span><span 
 class="aett-12">&#x00A0;in</span><span 
-class="aett-12">&#x00A0;dotplot.default(x):</span><span 
-class="aett-12">&#x00A0;The</span><span 
-class="aett-12">&#x00A0;dotplot</span><span 
-class="aett-12">&#x00A0;command</span><span 
-class="aett-12">&#x00A0;is</span><span 
-class="aett-12">&#x00A0;a</span><span 
-class="aett-12">&#x00A0;wrapper</span><span 
-class="aett-12">&#x00A0;for</span><span 
-class="aett-12">&#x00A0;stripchart,</span><span 
-class="aett-12">&#x00A0;and</span><span 
-class="aett-12">&#x00A0;is</span><span 
+class="aett-12">&#x00A0;dotplot(x):</span><span 
+class="aett-12">&#x00A0;object</span><span 
+class="aett-12">&#x00A0;&#8217;x&#8217;</span><span 
 class="aett-12">&#x00A0;not</span><span 
-class="aett-12">&#x00A0;a</span><span 
-class="aett-12">&#x00A0;base</span><span 
-class="aett-12">&#x00A0;R</span><span 
-class="aett-12">&#x00A0;function.</span></div>
-                                                                          
-
-                                                                          
-<!--l. 209--><p class="indent" >   <img 
-src="LURNBlind38x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt"  /><!--tex4ht:graphics  
-name="LURNBlind38x.png" src="figures/VIVIDotplot-1.eps"  
--->
-</p>
-   <div class="fancyvrb" id="fancyvrb348">  <a 
- id="x17-115181r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;This</span><span 
-class="aett-12">&#x00A0;graph</span><span 
-class="aett-12">&#x00A0;has</span><span 
-class="aett-12">&#x00A0;a</span><span 
-class="aett-12">&#x00A0;dotplot</span><span 
-class="aett-12">&#x00A0;printed</span><span 
-class="aett-12">&#x00A0;horizontally</span>
-<br class="fancyvrb" /><a 
- id="x17-115183r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;but</span><span 
-class="aett-12">&#x00A0;has</span><span 
-class="aett-12">&#x00A0;no</span><span 
-class="aett-12">&#x00A0;title</span><br class="fancyvrb" /><a 
- id="x17-115185r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;No</span><span 
-class="aett-12">&#x00A0;label</span><span 
-class="aett-12">&#x00A0;appears</span><span 
-class="aett-12">&#x00A0;on</span><span 
-class="aett-12">&#x00A0;the</span><span 
-class="aett-12">&#x00A0;x-axis.</span>
-<br class="fancyvrb" /><a 
- id="x17-115187r4"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;No</span><span 
-class="aett-12">&#x00A0;label</span><span 
-class="aett-12">&#x00A0;appears</span><span 
-class="aett-12">&#x00A0;on</span><span 
-class="aett-12">&#x00A0;the</span><span 
-class="aett-12">&#x00A0;y-axis.</span><br class="fancyvrb" /><a 
- id="x17-115189r5"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;Tick</span><span 
-class="aett-12">&#x00A0;marks</span><span 
-class="aett-12">&#x00A0;for</span><span 
-class="aett-12">&#x00A0;the</span><span 
-class="aett-12">&#x00A0;x-axis</span><span 
-class="aett-12">&#x00A0;are</span><span 
-class="aett-12">&#x00A0;at:</span><span 
-class="aett-12">&#x00A0;-3,</span><span 
-class="aett-12">&#x00A0;and</span><span 
-class="aett-12">&#x00A0;3</span>
-<br class="fancyvrb" /><a 
- id="x17-115191r6"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;the</span><span 
-class="aett-12">&#x00A0;data</span><span 
-class="aett-12">&#x00A0;that</span><span 
-class="aett-12">&#x00A0;range</span><span 
-class="aett-12">&#x00A0;from</span><span 
-class="aett-12">&#x00A0;-3.00520712717559</span><span 
-class="aett-12">&#x00A0;to</span><span 
-class="aett-12">&#x00A0;3.17125282201477</span><span 
-class="aett-12">&#x00A0;has</span><span 
-class="aett-12">&#x00A0;been</span><span 
-class="aett-12">&#x00A0;broken</span><span 
-class="aett-12">&#x00A0;into</span><span 
-class="aett-12">&#x00A0;6</span><span 
-class="aett-12">&#x00A0;bins.</span>
-<br class="fancyvrb" /><a 
- id="x17-115193r7"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;The</span><span 
-class="aett-12">&#x00A0;counts</span><span 
-class="aett-12">&#x00A0;are:</span><br class="fancyvrb" /><a 
- id="x17-115195r8"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;:</span><span 
-class="aett-12">&#x00A0;23</span><span 
-class="aett-12">&#x00A0;161</span><span 
-class="aett-12">&#x00A0;363</span><span 
-class="aett-12">&#x00A0;325</span><span 
-class="aett-12">&#x00A0;112</span><span 
-class="aett-12">&#x00A0;16</span></div>
-<!--l. 221--><p class="indent" >   The <a 
- id="dx17-115196"></a><span 
+class="aett-12">&#x00A0;found</span></div>
+<!--l. 218--><p class="indent" >   The <a 
+ id="dx17-115186"></a><span 
 class="aett-12">dotplot() </span>command is not part of base <span 
 class="aess-12">R </span>which uses the <a 
- id="dx17-115197"></a><span 
+ id="dx17-115187"></a><span 
 class="aett-12">stripchart()</span>
 command instead. The <a 
- id="dx17-115198"></a><span 
+ id="dx17-115188"></a><span 
 class="aett-12">hist() </span>and <a 
- id="dx17-115199"></a><span 
+ id="dx17-115189"></a><span 
 class="aett-12">boxplot() </span>commands used here are actually
 commands from the <a 
- id="dx17-115200"></a><span 
+ id="dx17-115190"></a><span 
 class="aeti-12">BrailleR </span>package that use the standard commands indirectly.
 At this point in time, I haven&#8217;t worked out how to get the <a 
- id="dx17-115201"></a><span 
+ id="dx17-115191"></a><span 
 class="aett-12">stripchart()</span>
 command to work as a <a 
- id="dx17-115202"></a><span 
+ id="dx17-115192"></a><span 
 class="aeti-12">BrailleR </span>command so I needed to use a different name for
 my version. The <a 
- id="dx17-115203"></a><span 
+ id="dx17-115193"></a><span 
 class="aeti-12">BrailleR </span>versions of these three commands store the additional
 information we need to get the text interpretation that is not possible from the
 standard version of the commands.
-</p><!--l. 224--><p class="noindent" >
+</p><!--l. 221--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">15.3   </span> <a 
  id="x17-11600015.3"></a>Basic descriptions of variables</h3>
-                                                                          
-
-                                                                          
-<!--l. 226--><p class="noindent" >The <a 
+<!--l. 223--><p class="noindent" >The <a 
  id="dx17-116001"></a><span 
 class="aett-12">UniDesc() </span>function is designed to quickly generate a text summary of a
 single variable. It also saves several graphs. It can also save the text in a file and
@@ -1207,10 +1131,10 @@ class="aett-12">VI() </span>command from the <a
  id="dx17-116003"></a><span 
 class="aeti-12">BrailleR </span>package to add text descriptions to the
 output file.
-</p><!--l. 228--><p class="indent" >   One obvious issue is that saving lots of files could become problematic.
+</p><!--l. 225--><p class="indent" >   One obvious issue is that saving lots of files could become problematic.
 Default filenames are used and all files can be put into a folder of the user&#8217;s
 choosing.
-</p><!--l. 230--><p class="indent" >   An example will help. Try
+</p><!--l. 227--><p class="indent" >   An example will help. Try
 </p>
    <div class="fancyvrb" id="fancyvrb349">  <a 
  id="x17-116005r1"></a><span 
@@ -1227,7 +1151,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;UniDesc(Ozone,</span><span 
 class="aett-12">&#x00A0;Folder="AirQuality")</span></div>
-<!--l. 238--><p class="noindent" >Take a look in the <span 
+<!--l. 235--><p class="noindent" >Take a look in the <span 
 class="aett-12">AirQuality</span> folder that has been created in your working directory.
 It has a number of files that all start with &#8220;Ozone" &#8212; the name of the variable
 being analysed. You will also have three files stored in the current working
@@ -1237,23 +1161,24 @@ extension which is one of <span
 class="aett-12">html</span>, <span 
 class="aett-12">R</span>, and <span 
 class="aett-12">Rmd</span>.
-</p><!--l. 240--><p class="indent" >   The most useful one at first is the <span 
+                                                                          
+
+                                                                          
+</p><!--l. 237--><p class="indent" >   The most useful one at first is the <span 
 class="aett-12">Ozone-UniDesc.html</span> file. Open this file in a
 browser to see what analyses have been included. This file is specifically formatted
 for use with screen readers. I hope you find it valuable. If you are reading this
 document on the web, then the link <a 
 href="Ozone-UniDesc.html" class="url" ><span 
-class="aett-12">Ozone-_UniDesc.html</span></a> will open it in
-your browser. The link will not work if you are using the <span 
-class="aett-12">pdf</span> version of
-LURN.
-</p><!--l. 242--><p class="indent" >   The commands used to generate parts of this HTML document are given in
+class="aett-12">Ozone-_UniDesc.html</span></a> will open it in your
+browser.
+</p><!--l. 239--><p class="indent" >   The commands used to generate parts of this HTML document are given in
 the <span 
 class="aess-12">R </span>script file; the third file is called an <span 
 class="aess-12">R </span>markdown document. This is the file
 that gets converted into the other two files. It might prove useful to learn how to
 write this kind of file for yourself one day.
-</p><!--l. 244--><p class="indent" >   In the <span 
+</p><!--l. 241--><p class="indent" >   In the <span 
 class="aett-12">airquality</span> subfolder you will find that graphs have been saved in a
 variety of formats. They each have their uses and hopefully the filetype you need
 is there. Special attention is made for those users of <span class="LATEX">L<span class="A">A</span><span class="TEX">T<span 
@@ -1330,7 +1255,7 @@ class="content">Tests for normality: Variable is Ozone.</span></div><!--tex4ht:l
                                                                           
    </div><hr class="endfloat" />
    </div>
-<!--l. 248--><p class="indent" >   Whenever the <a 
+<!--l. 245--><p class="indent" >   Whenever the <a 
  id="dx17-116011"></a><span 
 class="aett-12">VI() </span>function is employed on an object that does not yet have
 an explicit function tied to it, then you will be told that this is the case. This
@@ -1340,7 +1265,7 @@ like any extra functionality.
    <h3 class="sectionHead"><span class="titlemark">15.4   </span> <a 
  id="x17-11700015.4"></a>Altering <span 
 class="aess-12">R </span>output to make it easier to read</h3>
-<!--l. 254--><p class="noindent" >Some <span 
+<!--l. 251--><p class="noindent" >Some <span 
 class="aess-12">R </span>output is arranged in nice tables that are easy for the sighted user to
 read, but are difficult to understand if using synthesised speech to read the
 information back to you. The <a 
@@ -1358,7 +1283,7 @@ used frequently.
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;summary(airquality)</span></div>
-<!--l. 259--><p class="noindent" >
+<!--l. 256--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb351"> <a 
  id="x17-117007r1"></a><span 
@@ -1655,14 +1580,14 @@ class="aett-12">&#x00A0;:31.0</span><br class="fancyvrb" /><a
  id="x17-117037r16"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span></div>
-<!--l. 277--><p class="noindent" >
+<!--l. 274--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb352"> <a 
  id="x17-117039r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;VI(airquality)</span></div>
-<!--l. 280--><p class="noindent" >
+<!--l. 277--><p class="noindent" >
                                                                           
 
                                                                           
@@ -1855,29 +1780,29 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;Max.</span><span 
 class="aett-12">&#x00A0;31</span></div>
-<!--l. 292--><p class="indent" >   The output generated by the <a 
+<!--l. 289--><p class="indent" >   The output generated by the <a 
  id="dx17-117056"></a><span 
 class="aett-12">summary() </span>command is difficult to follow as
 variables are represented in columns while rows that are read aloud by a screen
 reader are for the sample statistics.
-</p><!--l. 294--><p class="indent" >   The <a 
+</p><!--l. 291--><p class="indent" >   The <a 
  id="dx17-117057"></a><span 
 class="aett-12">VI() </span>method has given us a summary of the variables one by one. This
 should prove easier to navigate and interpret as either a braille or screen reader
 user.
-</p><!--l. 296--><p class="noindent" >
+</p><!--l. 293--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">15.5   </span> <a 
  id="x17-11800015.5"></a>Reading a scatter plot</h3>
-<!--l. 299--><p class="noindent" >One challenge facing blind people is the inability to glance at a graph and
+<!--l. 296--><p class="noindent" >One challenge facing blind people is the inability to glance at a graph and
 understand what is intended just as sighted people can. The most difficult graphs
 to deal with are multidimensional representations of data. Two dimensional
 scatter plots are the first example of such graphs.
-</p><!--l. 302--><p class="indent" >   When a sighted person looks at a scatter plot, they are looking for a number of
+</p><!--l. 299--><p class="indent" >   When a sighted person looks at a scatter plot, they are looking for a number of
 things. A relationship between the variables is the most common thing to look for,
 but there is also a need to identify points that are unusual in the context of the
 data presented.
-</p><!--l. 304--><p class="indent" >   One possible way to describe how the data points are summarised
+</p><!--l. 301--><p class="indent" >   One possible way to describe how the data points are summarised
 at a glance is that the graphing window is broken up into areas and a
 rough guess at the density of points within each region is evaluated. If this
 evaluation of density can be guessed, it can be counted more exactly by a
@@ -1888,7 +1813,7 @@ us. It assumes equal-sized rectangular regions in the graph window. We
 can choose how many regions but the illustrations here all use a 5<span 
 class="cmsy-10x-x-120">&#x00D7;</span>5
 grid.
-</p><!--l. 306--><p class="indent" >   Let&#8217;s work with a number of examples, all based on a set of predetermined
+</p><!--l. 303--><p class="indent" >   Let&#8217;s work with a number of examples, all based on a set of predetermined
 <span 
 class="cmmi-12">x</span>-values and various possible <span 
 class="cmmi-12">y</span>-values.
@@ -1919,7 +1844,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;y4=y3;</span><span 
 class="aett-12">&#x00A0;y4[100]=0</span></div>
-<!--l. 317--><p class="indent" >   What we might guess from the above is that a graph of <span 
+<!--l. 314--><p class="indent" >   What we might guess from the above is that a graph of <span 
 class="cmr-12">(</span><span 
 class="cmmi-12">x,y</span><sub><span 
 class="cmr-8">1</span></sub><span 
@@ -1940,7 +1865,7 @@ class="cmr-8">4</span></sub><span
 class="cmr-12">) </span>pairs are the same
 as the previous straight line, but one point is some distance from the
 line.
-</p><!--l. 319--><p class="indent" >   The <a 
+</p><!--l. 316--><p class="indent" >   The <a 
  id="dx17-118012"></a><span 
 class="aett-12">WhereXY() </span>command for each plot is now given.
 </p>
@@ -1950,7 +1875,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;WhereXY(x,y2,</span><span 
 class="aett-12">&#x00A0;grid=c(5,5))</span></div>
-<!--l. 324--><p class="noindent" >
+<!--l. 321--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb356"> <a 
  id="x17-118016r1"></a><span 
@@ -1976,7 +1901,7 @@ class="aett-12">&#x00A0;5</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;1</span><span 
+class="aett-12">&#x00A0;6</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1984,10 +1909,10 @@ class="aett-12">&#x00A0;0</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;1</span><span 
+class="aett-12">&#x00A0;3</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;2</span>
+class="aett-12">&#x00A0;9</span>
 <br class="fancyvrb" /><a 
  id="x17-118020r3"></a><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1995,47 +1920,46 @@ class="aett-12">&#x00A0;4</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;7</span><span 
+class="aett-12">&#x00A0;3</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0</span><span 
+class="aett-12">&#x00A0;12</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;0</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;7</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;14</span><br class="fancyvrb" /><a 
+class="aett-12">&#x00A0;16</span><br class="fancyvrb" /><a 
  id="x17-118022r4"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;3</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;10</span><span 
+class="aett-12">&#x00A0;11</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;2</span><span 
+class="aett-12">&#x00A0;6</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;2</span><span 
-class="aett-12">&#x00A0;10</span><span 
+class="aett-12">&#x00A0;6</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;24</span><br class="fancyvrb" /><a 
+class="aett-12">&#x00A0;5</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;28</span><br class="fancyvrb" /><a 
  id="x17-118024r5"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;2</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;3</span><span 
-class="aett-12">&#x00A0;10</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;7</span><span 
+class="aett-12">&#x00A0;1</span><span 
+class="aett-12">&#x00A0;11</span><span 
 class="aett-12">&#x00A0;13</span><span 
+class="aett-12">&#x00A0;12</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;2</span><span 
+class="aett-12">&#x00A0;0</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;35</span>
+class="aett-12">&#x00A0;37</span>
 <br class="fancyvrb" /><a 
  id="x17-118026r6"></a><span 
 class="aett-12">&#x00A0;</span><span 
@@ -2045,14 +1969,15 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;8</span><span 
-class="aett-12">&#x00A0;13</span><span 
+class="aett-12">&#x00A0;2</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;5</span><span 
+class="aett-12">&#x00A0;7</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;2</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;26</span><br class="fancyvrb" /><a 
+class="aett-12">&#x00A0;11</span><br class="fancyvrb" /><a 
  id="x17-118028r7"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;Sum</span><span 
@@ -2062,7 +1987,7 @@ class="aett-12">&#x00A0;20</span><span
 class="aett-12">&#x00A0;20</span><span 
 class="aett-12">&#x00A0;20</span><span 
 class="aett-12">&#x00A0;101</span></div>
-<!--l. 333--><p class="noindent" >
+<!--l. 330--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb357"> <a 
  id="x17-118030r1"></a><span 
@@ -2070,7 +1995,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;WhereXY(x,y2,</span><span 
 class="aett-12">&#x00A0;grid=c(5,5))</span></div>
-<!--l. 336--><p class="noindent" >
+<!--l. 333--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb358"> <a 
  id="x17-118032r1"></a><span 
@@ -2096,7 +2021,7 @@ class="aett-12">&#x00A0;5</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;1</span><span 
+class="aett-12">&#x00A0;6</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -2104,10 +2029,10 @@ class="aett-12">&#x00A0;0</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;1</span><span 
+class="aett-12">&#x00A0;3</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;2</span>
+class="aett-12">&#x00A0;9</span>
 <br class="fancyvrb" /><a 
  id="x17-118036r3"></a><span 
 class="aett-12">&#x00A0;</span><span 
@@ -2115,47 +2040,46 @@ class="aett-12">&#x00A0;4</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;7</span><span 
+class="aett-12">&#x00A0;3</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0</span><span 
+class="aett-12">&#x00A0;12</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;0</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;7</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;14</span><br class="fancyvrb" /><a 
+class="aett-12">&#x00A0;16</span><br class="fancyvrb" /><a 
  id="x17-118038r4"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;3</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;10</span><span 
+class="aett-12">&#x00A0;11</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;2</span><span 
+class="aett-12">&#x00A0;6</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;2</span><span 
-class="aett-12">&#x00A0;10</span><span 
+class="aett-12">&#x00A0;6</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;24</span><br class="fancyvrb" /><a 
+class="aett-12">&#x00A0;5</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;28</span><br class="fancyvrb" /><a 
  id="x17-118040r5"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;2</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;3</span><span 
-class="aett-12">&#x00A0;10</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;7</span><span 
+class="aett-12">&#x00A0;1</span><span 
+class="aett-12">&#x00A0;11</span><span 
 class="aett-12">&#x00A0;13</span><span 
+class="aett-12">&#x00A0;12</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;2</span><span 
+class="aett-12">&#x00A0;0</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;35</span>
+class="aett-12">&#x00A0;37</span>
 <br class="fancyvrb" /><a 
  id="x17-118042r6"></a><span 
 class="aett-12">&#x00A0;</span><span 
@@ -2165,14 +2089,15 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;8</span><span 
-class="aett-12">&#x00A0;13</span><span 
+class="aett-12">&#x00A0;2</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;5</span><span 
+class="aett-12">&#x00A0;7</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;2</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;26</span><br class="fancyvrb" /><a 
+class="aett-12">&#x00A0;11</span><br class="fancyvrb" /><a 
  id="x17-118044r7"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;Sum</span><span 
@@ -2182,7 +2107,7 @@ class="aett-12">&#x00A0;20</span><span
 class="aett-12">&#x00A0;20</span><span 
 class="aett-12">&#x00A0;20</span><span 
 class="aett-12">&#x00A0;101</span></div>
-<!--l. 345--><p class="noindent" >
+<!--l. 342--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb359"> <a 
  id="x17-118046r1"></a><span 
@@ -2190,7 +2115,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;WhereXY(x,y3,</span><span 
 class="aett-12">&#x00A0;grid=c(5,5))</span></div>
-<!--l. 348--><p class="noindent" >
+<!--l. 345--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb360"> <a 
  id="x17-118048r1"></a><span 
@@ -2222,10 +2147,10 @@ class="aett-12">&#x00A0;0</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;1</span><span 
-class="aett-12">&#x00A0;11</span><span 
+class="aett-12">&#x00A0;3</span><span 
+class="aett-12">&#x00A0;12</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;12</span>
+class="aett-12">&#x00A0;15</span>
 <br class="fancyvrb" /><a 
  id="x17-118052r3"></a><span 
 class="aett-12">&#x00A0;</span><span 
@@ -2237,12 +2162,12 @@ class="aett-12">&#x00A0;0</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;0</span><span 
-class="aett-12">&#x00A0;10</span><span 
+class="aett-12">&#x00A0;4</span><span 
+class="aett-12">&#x00A0;13</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;9</span><span 
+class="aett-12">&#x00A0;8</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;19</span><br class="fancyvrb" /><a 
+class="aett-12">&#x00A0;25</span><br class="fancyvrb" /><a 
  id="x17-118054r4"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;3</span><span 
@@ -2251,36 +2176,37 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;6</span><span 
-class="aett-12">&#x00A0;18</span><span 
+class="aett-12">&#x00A0;7</span><span 
+class="aett-12">&#x00A0;15</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;9</span><span 
+class="aett-12">&#x00A0;4</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;33</span><br class="fancyvrb" /><a 
+class="aett-12">&#x00A0;26</span><br class="fancyvrb" /><a 
  id="x17-118056r5"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;2</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;11</span><span 
-class="aett-12">&#x00A0;13</span><span 
+class="aett-12">&#x00A0;14</span><span 
+class="aett-12">&#x00A0;12</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;2</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;0</span><span 
+class="aett-12">&#x00A0;1</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;26</span>
+class="aett-12">&#x00A0;0</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;27</span>
 <br class="fancyvrb" /><a 
  id="x17-118058r6"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;1</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;10</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;7</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;1</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -2290,7 +2216,8 @@ class="aett-12">&#x00A0;0</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;11</span><br class="fancyvrb" /><a 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;8</span><br class="fancyvrb" /><a 
  id="x17-118060r7"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;Sum</span><span 
@@ -2300,7 +2227,7 @@ class="aett-12">&#x00A0;20</span><span
 class="aett-12">&#x00A0;20</span><span 
 class="aett-12">&#x00A0;20</span><span 
 class="aett-12">&#x00A0;101</span></div>
-<!--l. 357--><p class="noindent" >
+<!--l. 354--><p class="noindent" >
                                                                           
 
                                                                           
@@ -2311,7 +2238,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;WhereXY(x,y4,</span><span 
 class="aett-12">&#x00A0;grid=c(5,5))</span></div>
-<!--l. 360--><p class="noindent" >
+<!--l. 357--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb362"> <a 
  id="x17-118064r1"></a><span 
@@ -2343,10 +2270,10 @@ class="aett-12">&#x00A0;0</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;1</span><span 
-class="aett-12">&#x00A0;10</span><span 
+class="aett-12">&#x00A0;3</span><span 
+class="aett-12">&#x00A0;11</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;11</span>
+class="aett-12">&#x00A0;14</span>
 <br class="fancyvrb" /><a 
  id="x17-118068r3"></a><span 
 class="aett-12">&#x00A0;</span><span 
@@ -2358,12 +2285,12 @@ class="aett-12">&#x00A0;0</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;0</span><span 
-class="aett-12">&#x00A0;10</span><span 
+class="aett-12">&#x00A0;4</span><span 
+class="aett-12">&#x00A0;13</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;9</span><span 
+class="aett-12">&#x00A0;8</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;19</span><br class="fancyvrb" /><a 
+class="aett-12">&#x00A0;25</span><br class="fancyvrb" /><a 
  id="x17-118070r4"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;3</span><span 
@@ -2372,36 +2299,37 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;6</span><span 
-class="aett-12">&#x00A0;18</span><span 
+class="aett-12">&#x00A0;7</span><span 
+class="aett-12">&#x00A0;15</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;9</span><span 
+class="aett-12">&#x00A0;4</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;33</span><br class="fancyvrb" /><a 
+class="aett-12">&#x00A0;26</span><br class="fancyvrb" /><a 
  id="x17-118072r5"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;2</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;11</span><span 
-class="aett-12">&#x00A0;13</span><span 
+class="aett-12">&#x00A0;14</span><span 
+class="aett-12">&#x00A0;12</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;2</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;0</span><span 
+class="aett-12">&#x00A0;1</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;26</span>
+class="aett-12">&#x00A0;0</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;27</span>
 <br class="fancyvrb" /><a 
  id="x17-118074r6"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;1</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;10</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;7</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;1</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -2411,7 +2339,8 @@ class="aett-12">&#x00A0;0</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;1</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;12</span><br class="fancyvrb" /><a 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;9</span><br class="fancyvrb" /><a 
  id="x17-118076r7"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;Sum</span><span 
@@ -2421,14 +2350,14 @@ class="aett-12">&#x00A0;20</span><span
 class="aett-12">&#x00A0;20</span><span 
 class="aett-12">&#x00A0;20</span><span 
 class="aett-12">&#x00A0;101</span></div>
-<!--l. 371--><p class="indent" >   We might also alter the number of cells in the grid to see how sensitive we
+<!--l. 368--><p class="indent" >   We might also alter the number of cells in the grid to see how sensitive we
 want to make our investigation. Personal preferences will determine which
 combination of rows and columns works best.
-</p><!--l. 373--><p class="noindent" >
+</p><!--l. 370--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">15.6   </span> <a 
  id="x17-11900015.6"></a>What else?</h3>
-<!--l. 375--><p class="noindent" >Future developments in the BrailleR package will be made to meet demand. If you
+<!--l. 372--><p class="noindent" >Future developments in the BrailleR package will be made to meet demand. If you
 do want some additional functionality that you think is likely to be wanted by
 others then please do add to the wish list. Current ideas on the wish list include:
 </p>
@@ -2445,12 +2374,12 @@ class="aett-12">VI() </span>command.
                                                                           
 
                                                                           
-   <!--l. 3--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 5--><div class="crosslinks"><p class="noindent">[<a 
 href="LURNBlindch16.html" >next</a>] [<a 
 href="LURNBlindch14.html" >prev</a>] [<a 
 href="LURNBlindch14.html#tailLURNBlindch14.html" >prev-tail</a>] [<a 
 href="LURNBlindch15.html" >front</a>] [<a 
 href="LURNBlind.html#LURNBlindch15.html" >up</a>] </p></div>
-<!--l. 3--><p class="indent" >   <a 
+<!--l. 5--><p class="indent" >   <a 
  id="tailLURNBlindch15.html"></a>  </p> 
 </body></html> 
