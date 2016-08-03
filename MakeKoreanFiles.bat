@@ -25,7 +25,7 @@ copy .\RChunks\GenericSettings.Rnw + .\korean\GoodIdeas001.Rnw + .\korean\GoodId
 
 copy .\RChunks\GenericSettings.Rnw + .\korean\ImportData001.Rnw + .\korean\ImportData003.Rnw + .\RChunks\ImportData004.Rnw + .\korean\ImportData005.Rnw + .\RChunks\ImportData006.Rnw + .\korean\ImportData007.Rnw + .\RChunks\ImportData008.Rnw + .\korean\ImportData009.Rnw + .\RChunks\ImportData010.Rnw + .\korean\ImportData011.Rnw + .\RChunks\ImportData012.Rnw + .\korean\ImportData013.Rnw + .\RChunks\ImportData014.Rnw + .\korean\ImportData015.Rnw + .\RChunks\ImportData016.Rnw + .\korean\ImportData017.Rnw + .\RChunks\ImportData018.Rnw + .\korean\ImportData019.Rnw + .\RChunks\ImportData020.Rnw + .\korean\ImportData021.Rnw + .\RChunks\CleanUp.Rnw ImportData.Rnw
 
-copy .\RChunks\GenericSettings.Rnw + .\korean\Intro001.Rnw + .\korean\Intro003.Rnw + .\RChunks\CleanUp.Rnw Intro.Rnw
+copy .\RChunks\GenericSettings.Rnw + .\korean\Intro001.Rnw + .\korean\Intro002.Rnw + .\korean\Intro003.Rnw + .\RChunks\CleanUp.Rnw Intro.Rnw
 
 copy .\RChunks\GenericSettings.Rnw + .\korean\KeepUseful001.Rnw + .\RChunks\KeepUseful002.Rnw + .\korean\KeepUseful003.Rnw + .\RChunks\KeepUseful004.Rnw + .\korean\KeepUseful005.Rnw + .\RChunks\KeepUseful006.Rnw + .\korean\KeepUseful007.Rnw + .\RChunks\KeepUseful008.Rnw + .\korean\KeepUseful009.Rnw + .\RChunks\KeepUseful010.Rnw + .\korean\KeepUseful011.Rnw + .\RChunks\KeepUseful012.Rnw + .\korean\KeepUseful013.Rnw + .\RChunks\CleanUp.Rnw KeepUseful.Rnw
 

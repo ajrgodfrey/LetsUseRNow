@@ -208,12 +208,12 @@ and then see the structure of the data using the \Rcmd{glimpse} function that is
 \begin{Soutput}
 Observations: 153
 Variables: 6
-$ Ozone   (int) 41, 36, 12, 18, NA, 28, 23, 19, 8, NA, ...
-$ Solar.R (int) 190, 118, 149, 313, NA, NA, 299, 99, 19...
-$ Wind    (dbl) 7.4, 8.0, 12.6, 11.5, 14.3, 14.9, 8.6, ...
-$ Temp    (int) 67, 72, 74, 62, 56, 66, 65, 59, 61, 69,...
-$ Month   (int) 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, ...
-$ Day     (int) 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, ...
+$ Ozone   <int> 41, 36, 12, 18, NA, 28, 23, 19, 8, NA, ...
+$ Solar.R <int> 190, 118, 149, 313, NA, NA, 299, 99, 19...
+$ Wind    <dbl> 7.4, 8.0, 12.6, 11.5, 14.3, 14.9, 8.6, ...
+$ Temp    <int> 67, 72, 74, 62, 56, 66, 65, 59, 61, 69,...
+$ Month   <int> 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, ...
+$ Day     <int> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, ...
 \end{Soutput}
 \end{Schunk}
 The \Rcmd{glimpse} command works on a \Rclass{data.frame} or the new structure called a \Rclass{tbl\_df} equally well. 
@@ -252,8 +252,7 @@ The \Rcmd{filter} command is useful if we know the values a variable takes, but 
 > airquality2 %>% arrange(desc(Temp)) 
 \end{Sinput}
 \begin{Soutput}
-Source: local data frame [153 x 6]
-
+# A tibble: 153 x 6
    Ozone Solar.R  Wind  Temp Month   Day
    <int>   <int> <dbl> <int> <int> <int>
 1     76     203   9.7    97     8    28
@@ -266,7 +265,7 @@ Source: local data frame [153 x 6]
 8     NA     250   9.2    92     6    12
 9     97     267   6.3    92     7     8
 10    97     272   5.7    92     7     9
-..   ...     ...   ...   ...   ...   ...
+# ... with 143 more rows
 \end{Soutput}
 \end{Schunk}
 We can add more variables to sort the data by if we like. We used the \Rarg{desc} to get the temperatures to be in descending order in this example. 
@@ -305,8 +304,7 @@ The command
 > airquality2 %>% transmute(TempC = (Temp - 32) * 5 / 9) 
 \end{Sinput}
 \begin{Soutput}
-Source: local data frame [153 x 1]
-
+# A tibble: 153 x 1
    TempC
    <dbl>
 1  19.44
@@ -319,7 +317,7 @@ Source: local data frame [153 x 1]
 8  15.00
 9  16.11
 10 20.56
-..   ...
+# ... with 143 more rows
 \end{Soutput}
 \end{Schunk}
 creates the new variable as a stand alone object. It hasn't been stored as an object so is only temporarily available.  
@@ -358,4 +356,5 @@ extract a sample of a predetermined size and a specified fraction respectively. 
  
 The \Rpkg{dplyr}  package is under active development and so we should expect more functionality to become available, but there is also work being done to make the processing of data even faster so that it can handle huge data sets. 
  
+
 
