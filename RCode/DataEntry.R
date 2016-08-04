@@ -101,8 +101,8 @@ MyFirstDF[4,"Names"]
 MyFirstDF$Names[4] 
 
 ## ----CreateDF3-----------------------------------------------------------
-Year = c(1971, 1945, 1925, 2003, 1982, 2010, 2012, 2013) 
-Month = c("October", "October", "July", "October", "December", "April", "June", "June") 
+Year = c(1971, 1945, 1925, 2003, 2010, 2012, 2013) 
+Month = c("October", "October", "July", "October", "April", "June", "June") 
 MySecondDF = data.frame(Year, Month, Human, row.names = Names) 
 str(MySecondDF) 
 
