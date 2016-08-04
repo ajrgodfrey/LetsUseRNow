@@ -32,6 +32,10 @@ If you want to start a translation project, then again, please offer.
 ## August 2016
 - First chapter of Korean files came in.
 - Discovered that we need to alter Sweave() commands to avoid encoding checks.  if we are processing files inside R using the standard Sweave() process; no changes made to any of the batch files are required as the knitr package seems to handle the various encoding variations properly. This was necessary to get Korean files processed correctly. Who knows what havoc this might create...
+- added DoAllKorean.bat
+- moved the three headline files into Korean folder for separate editing. 
+- Need to fix the encoding of the Korean files for porcessing by LaTeX
+
 
  
 ## To do list

@@ -5,8 +5,8 @@
 %%% preamble commands for all of my documents starting February 2009
 
 %% packages to use
-	\usepackage{amssymb}
-	\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsfonts}
 \usepackage{hyperref}
 \usepackage{graphicx}
 \usepackage{calc}
@@ -16,8 +16,6 @@
 %% options for the rotating package 
 % figuresleft, figuresright - for two sided presentation
 % clockwise, or counterclockwise (not tested)
-
-
 
 
 %% my mathematical shortcuts
@@ -51,7 +49,6 @@
 \setcounter{totalnumber}{20}
 \setcounter{dbltopnumber}{9}
 %% The meanings of these parameters are described on pages 199-200, section C.9 of the LaTeX manual.
-%% Are there places in your document where you could 'naturally' put a \clearpage command? If so, do: the backlog of floats is cleared after a \clearpage.
 
 %% commands for use while drafting documents
 \newcommand{\placeholder}[0]{\begin{picture}(14, 14)(0, 0) \end{picture}}
@@ -139,13 +136,9 @@
 \newcommand{\curl}[1]{\begin{center} \url{#1} \end{center}}
 \newcommand{\email}[1]{\href{mailto:#1}{\normalfont\texttt{#1}}}
 
-
-%%% hyphenations
-\hyphenation{drop-out}
-
 %%% new bidirectional quotes need
-\usepackage[utf8]{inputenc}
-
+%\usepackage[utf8]{inputenc}
+% and I don't know why they are needed but the use of this package breaks the Korean version.
 
 
 %to replace all figures
@@ -154,5 +147,3 @@
 \newfloat{exhibit}{tp}{lox}[chapter]
 \floatname{exhibit}{Exhibit}
 
-
-%\input{LURN-KnitRStart}

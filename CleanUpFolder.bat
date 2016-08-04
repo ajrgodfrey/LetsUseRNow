@@ -14,8 +14,6 @@ del "Rplots.pdf"
 
 
 move *.tex .\TexFiles
-copy .\TexFiles\lurn*.tex lurn*.tex
-copy .\TexFiles\jg*.tex jg*.tex 
 
 move .\Figures\*.svg .\SVgs
 

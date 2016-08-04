@@ -1,22 +1,6 @@
 \documentclass[a4paper,12pt,openany,english]{book}
-\input{LURNPreamble}
-
-%% just for print version
-%\usepackage{SweaveLURN} % no longer required
-\newcommand{\SVGLink}[1]{ }
-\newcommand{\Blind}[1]{}
-\newcommand{\Sighted}[1]{#1}
-
-\usepackage{a4wide}
-
-%\usepackage[ansinew]{inputenc}
-\usepackage{lmodern}
-
-%% my desire for pretty line spacing
-\renewcommand{\baselinestretch}{1.3}
-\flushbottom
-
-\input{LURN-KnitRStart}
+\input{Shared/LURNPreamble}
+\input{Shared/LURNPreamblePrint}
 
 \begin{document}
 \pagestyle{empty}
@@ -34,7 +18,7 @@ ISBN 978-0-473-17650-1}
 
 \mainmatter
 \pagestyle{headings}
-\input{LURNCommon}
+\input{Shared/LURNCommon}
 
 %\clearpage
 %\phantomsection

@@ -88,12 +88,12 @@ This is much more efficient than typing out the actual results as done previousl
 The \Rcmd{c} command is good for entering any kind of data. We may need to enter a set of categories for example. 
 \begin{Schunk}
 \begin{Sinput}
-> Names = c("Jonathan", "Elizabeth", "Peter", "Jenna", "Olivia", "Callum", "Annabelle", "Cordelia") 
+> Names = c("Jonathan", "Elizabeth", "Peter", "Jenna", "Callum", "Annabelle", "Cordelia") 
 > Names 
 \end{Sinput}
 \begin{Soutput}
 [1] "Jonathan"  "Elizabeth" "Peter"     "Jenna"    
-[5] "Olivia"    "Callum"    "Annabelle" "Cordelia" 
+[5] "Callum"    "Annabelle" "Cordelia" 
 \end{Soutput}
 \end{Schunk}
 Note two important features of this command. I capitalized the variable name here on purpose. The vast majority of \R{} commands are in lower case and there is one called ``names". I don't want to confuse my data and an existing \R{} command so my preference is to use an upper case letter on the front of all my variable names that mean anything. The second point is that the character-valued data I entered were encapsulated by quote marks. This means that the actual names (mine, my last dog and some family members) were stored. If I had omitted the quote marks, \R{} would have looked for variables with the appropriate names --- not defined in this instance. You could remove a quote or two to see what happens if you must. 
@@ -104,7 +104,7 @@ Note two important features of this command. I capitalized the variable name her
  
 \begin{Schunk}
 \begin{Sinput}
-> Human = c(TRUE, TRUE, TRUE, FALSE, TRUE, TRUE, TRUE, TRUE) 
+> Human = c(TRUE, TRUE, TRUE, FALSE, TRUE, TRUE, TRUE) 
 \end{Sinput}
 \end{Schunk}
 You might suspect that this variable tells you if the name given in the \Robject{Names} variable are for humans. The fourth name is therefore the dog. To extract the names of the humans we use the command 
@@ -113,8 +113,8 @@ You might suspect that this variable tells you if the name given in the \Robject
 > Names[Human] 
 \end{Sinput}
 \begin{Soutput}
-[1] "Jonathan"  "Elizabeth" "Peter"     "Olivia"   
-[5] "Callum"    "Annabelle" "Cordelia" 
+[1] "Jonathan"  "Elizabeth" "Peter"     "Callum"   
+[5] "Annabelle" "Cordelia" 
 \end{Soutput}
 \end{Schunk}
 Note here that the brackets used are square brackets. Use round brackets for functions, square for elements of an object. 
@@ -164,7 +164,7 @@ It's also often necessary to understand how \R{} has stored an object. The \Rcmd
 > str(Names) 
 \end{Sinput}
 \begin{Soutput}
- chr [1:8] "Jonathan" "Elizabeth" "Peter" ...
+ chr [1:7] "Jonathan" "Elizabeth" "Peter" ...
 \end{Soutput}
 \end{Schunk}
 We can get the names of all the people that aren't me by 
@@ -173,8 +173,8 @@ We can get the names of all the people that aren't me by
 > Names[-1] 
 \end{Sinput}
 \begin{Soutput}
-[1] "Elizabeth" "Peter"     "Jenna"     "Olivia"   
-[5] "Callum"    "Annabelle" "Cordelia" 
+[1] "Elizabeth" "Peter"     "Jenna"     "Callum"   
+[5] "Annabelle" "Cordelia" 
 \end{Soutput}
 \end{Schunk}
 which of course assumes you know my name was given first. The subscripts have used square brackets in these examples. The type (and number) of brackets is crucial. If you open a bracket it must be closed, and closed by a bracket of the same type. Nesting brackets is quite acceptable. 
@@ -238,7 +238,7 @@ The current time and date can be extracted using the \Rcmd{date} command but thi
 > date() 
 \end{Sinput}
 \begin{Soutput}
-[1] "Thu Aug 04 10:17:24 2016"
+[1] "Thu Aug 04 17:43:41 2016"
 \end{Soutput}
 \begin{Sinput}
 > class(date()) 
@@ -302,10 +302,9 @@ There are two data object types that are quite similar but not the same. A \Rcla
 2 Elizabeth  TRUE
 3     Peter  TRUE
 4     Jenna FALSE
-5    Olivia  TRUE
-6    Callum  TRUE
-7 Annabelle  TRUE
-8  Cordelia  TRUE
+5    Callum  TRUE
+6 Annabelle  TRUE
+7  Cordelia  TRUE
 \end{Soutput}
 \end{Schunk}
 We would usually assign the results of this command to a named object for storage. 
@@ -315,8 +314,8 @@ We would usually assign the results of this command to a named object for storag
 > str(MyFirstDF) 
 \end{Sinput}
 \begin{Soutput}
-'data.frame':	8 obs. of  2 variables:
- $ Names: Factor w/ 8 levels "Annabelle","Callum",..: 6 4 8 5 7 2 1 3
+'data.frame':	7 obs. of  2 variables:
+ $ Names: Factor w/ 7 levels "Annabelle","Callum",..: 6 4 7 5 2 1 3
  $ Human: logi  TRUE TRUE TRUE FALSE TRUE TRUE ...
 \end{Soutput}
 \end{Schunk}
@@ -338,21 +337,21 @@ We can also now think about how we might extract the fourth name from the \Rclas
 \end{Sinput}
 \begin{Soutput}
 [1] Jenna
-8 Levels: Annabelle Callum Cordelia Elizabeth ... Peter
+7 Levels: Annabelle Callum Cordelia Elizabeth ... Peter
 \end{Soutput}
 \begin{Sinput}
 > MyFirstDF[4,"Names"] 
 \end{Sinput}
 \begin{Soutput}
 [1] Jenna
-8 Levels: Annabelle Callum Cordelia Elizabeth ... Peter
+7 Levels: Annabelle Callum Cordelia Elizabeth ... Peter
 \end{Soutput}
 \begin{Sinput}
 > MyFirstDF$Names[4] 
 \end{Sinput}
 \begin{Soutput}
 [1] Jenna
-8 Levels: Annabelle Callum Cordelia Elizabeth ... Peter
+7 Levels: Annabelle Callum Cordelia Elizabeth ... Peter
 \end{Soutput}
 \end{Schunk}
  
@@ -368,13 +367,15 @@ The construction of our first data.frame is slightly flawed. If the \Robject{MyF
 > Year = c(1971, 1945, 1925, 2003, 1982, 2010, 2012, 2013) 
 > Month = c("October", "October", "July", "October", "December", "April", "June", "June") 
 > MySecondDF = data.frame(Year, Month, Human, row.names = Names) 
+\end{Sinput}
+\begin{Soutput}
+Error in data.frame(Year, Month, Human, row.names = Names): arguments imply differing number of rows: 8, 7
+\end{Soutput}
+\begin{Sinput}
 > str(MySecondDF) 
 \end{Sinput}
 \begin{Soutput}
-'data.frame':	8 obs. of  3 variables:
- $ Year : num  1971 1945 1925 2003 1982 ...
- $ Month: Factor w/ 5 levels "April","December",..: 5 5 3 5 2 1 4 4
- $ Human: logi  TRUE TRUE TRUE FALSE TRUE TRUE ...
+Error in str(MySecondDF): object 'MySecondDF' not found
 \end{Soutput}
 \end{Schunk}
  

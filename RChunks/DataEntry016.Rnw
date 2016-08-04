@@ -1,4 +1,4 @@
 <<EnterText>>= 
-Names = c("Jonathan", "Elizabeth", "Peter", "Jenna", "Olivia", "Callum", "Annabelle", "Cordelia") 
+Names = c("Jonathan", "Elizabeth", "Peter", "Jenna", "Callum", "Annabelle", "Cordelia") 
 Names 
 @ 

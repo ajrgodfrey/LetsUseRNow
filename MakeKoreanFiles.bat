@@ -1,3 +1,9 @@
+copy .\Korean\lurnPrint.tex lurnPrint.tex
+copy .\Korean\lurn.tex lurn.tex
+copy .\Korean\lurnBlind.tex lurnBlind.tex
+
+copy .\RChunks\GenericSettings.Rnw + .\korean\Citation.rnw Citation.rnw
+
 copy .\RChunks\GenericSettings.Rnw + .\korean\Additional001.Rnw + .\RChunks\Additional002.Rnw + .\korean\Additional003.Rnw + .\RChunks\Additional004.Rnw + .\korean\Additional005.Rnw + .\RChunks\Additional006.Rnw + .\korean\Additional007.Rnw + .\RChunks\Additional008.Rnw + .\korean\Additional009.Rnw + .\RChunks\Additional010.Rnw + .\korean\Additional011.Rnw + .\RChunks\CleanUp.Rnw Additional.Rnw
 
 copy .\RChunks\GenericSettings.Rnw + .\korean\ANOVA001.Rnw + .\RChunks\ANOVA002.Rnw + .\korean\ANOVA003.Rnw + .\RChunks\ANOVA004.Rnw + .\korean\ANOVA005.Rnw + .\RChunks\CleanUp.Rnw ANOVA.Rnw
@@ -8,7 +14,6 @@ copy .\RChunks\GenericSettings.Rnw + .\korean\BlindUse.rnw BlindUse.rnw
 
 copy .\RChunks\GenericSettings.Rnw + .\korean\Calculus001.Rnw + .\RChunks\Calculus002.Rnw + .\korean\Calculus003.Rnw + .\RChunks\Calculus004.Rnw + .\korean\Calculus005.Rnw + .\RChunks\Calculus006.Rnw + .\korean\Calculus007.Rnw + .\RChunks\Calculus008.Rnw + .\korean\Calculus009.Rnw + .\RChunks\CleanUp.Rnw Calculus.Rnw
 
-copy .\RChunks\GenericSettings.Rnw + .\korean\Citation.rnw Citation.rnw
 
 
 copy .\RChunks\GenericSettings.Rnw + .\korean\ComplexGraphs001.Rnw + .\RChunks\ComplexGraphs002.Rnw + .\korean\ComplexGraphs003.Rnw + .\RChunks\ComplexGraphs004.Rnw + .\korean\ComplexGraphs005.Rnw + .\RChunks\ComplexGraphs006.Rnw + .\korean\ComplexGraphs007.Rnw + .\RChunks\ComplexGraphs008.Rnw + .\korean\ComplexGraphs009.Rnw + .\RChunks\ComplexGraphs010.Rnw + .\korean\ComplexGraphs011.Rnw + .\RChunks\ComplexGraphs012.Rnw + .\korean\ComplexGraphs013.Rnw + .\RChunks\ComplexGraphs014.Rnw + .\korean\ComplexGraphs015.Rnw + .\RChunks\ComplexGraphs016.Rnw + .\korean\ComplexGraphs017.Rnw + .\RChunks\ComplexGraphs018.Rnw + .\korean\ComplexGraphs019.Rnw + .\RChunks\ComplexGraphs020.Rnw + .\korean\ComplexGraphs021.Rnw + .\RChunks\ComplexGraphs022.Rnw + .\korean\ComplexGraphs023.Rnw + .\RChunks\ComplexGraphs024.Rnw + .\korean\ComplexGraphs025.Rnw + .\RChunks\ComplexGraphs026.Rnw + .\korean\ComplexGraphs027.Rnw + .\RChunks\ComplexGraphs028.Rnw + .\korean\ComplexGraphs029.Rnw + .\RChunks\ComplexGraphs030.Rnw + .\korean\ComplexGraphs031.Rnw + .\RChunks\ComplexGraphs032.Rnw + .\korean\ComplexGraphs033.Rnw + .\RChunks\ComplexGraphs034.Rnw + .\korean\ComplexGraphs035.Rnw + .\RChunks\ComplexGraphs036.Rnw + .\korean\ComplexGraphs037.Rnw + .\RChunks\CleanUp.Rnw ComplexGraphs.Rnw

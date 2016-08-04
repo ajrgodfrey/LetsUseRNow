@@ -1,3 +1,9 @@
+copy .\English\lurnPrint.tex lurnPrint.tex
+copy .\English\lurn.tex lurn.tex
+copy .\English\lurnBlind.tex lurnBlind.tex
+
+copy .\RChunks\GenericSettings.Rnw + .\English\Citation.Rnw Citation.Rnw
+
 copy .\RChunks\GenericSettings.Rnw + .\English\Additional001.Rnw + .\RChunks\Additional002.Rnw + .\English\Additional003.Rnw + .\RChunks\Additional004.Rnw + .\English\Additional005.Rnw + .\RChunks\Additional006.Rnw + .\English\Additional007.Rnw + .\RChunks\Additional008.Rnw + .\English\Additional009.Rnw + .\RChunks\Additional010.Rnw + .\English\Additional011.Rnw + .\RChunks\CleanUp.Rnw Additional.Rnw
 
 copy .\RChunks\GenericSettings.Rnw + .\English\ANOVA001.Rnw + .\RChunks\ANOVA002.Rnw + .\English\ANOVA003.Rnw + .\RChunks\ANOVA004.Rnw + .\English\ANOVA005.Rnw + .\RChunks\CleanUp.Rnw ANOVA.Rnw
@@ -7,8 +13,6 @@ copy .\RChunks\GenericSettings.Rnw + .\English\BasicInference001.Rnw + .\RChunks
 copy .\RChunks\GenericSettings.Rnw + .\English\BlindUse.rnw BlindUse.rnw
 
 copy .\RChunks\GenericSettings.Rnw + .\English\Calculus001.Rnw + .\RChunks\Calculus002.Rnw + .\English\Calculus003.Rnw + .\RChunks\Calculus004.Rnw + .\English\Calculus005.Rnw + .\RChunks\Calculus006.Rnw + .\English\Calculus007.Rnw + .\RChunks\Calculus008.Rnw + .\English\Calculus009.Rnw + .\RChunks\CleanUp.Rnw Calculus.Rnw
-
-copy .\RChunks\GenericSettings.Rnw + .\English\Citation.rnw Citation.rnw
 
 
 copy .\RChunks\GenericSettings.Rnw + .\English\ComplexGraphs001.Rnw + .\RChunks\ComplexGraphs002.Rnw + .\English\ComplexGraphs003.Rnw + .\RChunks\ComplexGraphs004.Rnw + .\English\ComplexGraphs005.Rnw + .\RChunks\ComplexGraphs006.Rnw + .\English\ComplexGraphs007.Rnw + .\RChunks\ComplexGraphs008.Rnw + .\English\ComplexGraphs009.Rnw + .\RChunks\ComplexGraphs010.Rnw + .\English\ComplexGraphs011.Rnw + .\RChunks\ComplexGraphs012.Rnw + .\English\ComplexGraphs013.Rnw + .\RChunks\ComplexGraphs014.Rnw + .\English\ComplexGraphs015.Rnw + .\RChunks\ComplexGraphs016.Rnw + .\English\ComplexGraphs017.Rnw + .\RChunks\ComplexGraphs018.Rnw + .\English\ComplexGraphs019.Rnw + .\RChunks\ComplexGraphs020.Rnw + .\English\ComplexGraphs021.Rnw + .\RChunks\ComplexGraphs022.Rnw + .\English\ComplexGraphs023.Rnw + .\RChunks\ComplexGraphs024.Rnw + .\English\ComplexGraphs025.Rnw + .\RChunks\ComplexGraphs026.Rnw + .\English\ComplexGraphs027.Rnw + .\RChunks\ComplexGraphs028.Rnw + .\English\ComplexGraphs029.Rnw + .\RChunks\ComplexGraphs030.Rnw + .\English\ComplexGraphs031.Rnw + .\RChunks\ComplexGraphs032.Rnw + .\English\ComplexGraphs033.Rnw + .\RChunks\ComplexGraphs034.Rnw + .\English\ComplexGraphs035.Rnw + .\RChunks\ComplexGraphs036.Rnw + .\English\ComplexGraphs037.Rnw + .\RChunks\CleanUp.Rnw ComplexGraphs.Rnw

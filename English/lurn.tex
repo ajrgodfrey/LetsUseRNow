@@ -1,14 +1,7 @@
 \documentclass[a4paper,12pt,openany,english]{book}
-\input{LURNPreamble}
-
-%% just for web versions
-\usepackage{SweaveWebLURN}
-\newcommand{\SVGLink}[1]{\href{../svgs/#1.svg}{link to SVG file: #1.svg}}
-\newcommand{\Blind}[1]{}
-\newcommand{\Sighted}[1]{#1}
-
-% the following is used for the print version only
-%\input{LURN-KnitRStart}
+\input{Shared/LURNPreamble}
+\input{Shared/LURNPreambleWeb}
+\input{English/LURNHyphens}
 
 \begin{document}
 \pagestyle{empty}
@@ -27,7 +20,7 @@ ISBN 978-0-473-17650-1}
 \mainmatter
 \pagestyle{headings}
 
-\input{LURNCommon}
+\input{Shared/LURNCommon}
 
 
 %\clearpage

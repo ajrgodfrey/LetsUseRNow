@@ -32,11 +32,11 @@ y=(1:10)^2
 y 
 
 ## ----EnterText-----------------------------------------------------------
-Names = c("Jonathan", "Elizabeth", "Peter", "Jenna", "Olivia", "Callum", "Annabelle", "Cordelia") 
+Names = c("Jonathan", "Elizabeth", "Peter", "Jenna", "Callum", "Annabelle", "Cordelia") 
 Names 
 
 ## ----EnterLogical--------------------------------------------------------
-Human = c(TRUE, TRUE, TRUE, FALSE, TRUE, TRUE, TRUE, TRUE) 
+Human = c(TRUE, TRUE, TRUE, FALSE, TRUE, TRUE, TRUE) 
 
 ## ----UseLogical----------------------------------------------------------
 Names[Human] 
