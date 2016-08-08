@@ -1,4 +1,6 @@
- 
-<<SetupMonths>>=
+% the following R code could be altered to suit, but the entries should be in plain text, not utf-8
+% the command needs to be tested in R prior to its use here. 
+
+<<SetupMonths, echo=FALSE>>=
 Months = c("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December")  
 @ 

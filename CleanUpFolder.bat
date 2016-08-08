@@ -1,3 +1,4 @@
+del *.fd
 del *.bak
 del *.ps
 

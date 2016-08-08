@@ -1,6 +1,4 @@
-copy .\Korean\lurnPrint.tex lurnPrint.tex
-copy .\Korean\lurn.tex lurn.tex
-copy .\Korean\lurnBlind.tex lurnBlind.tex
+copy .\Korean\*.tex *.tex
 
 copy .\RChunks\GenericSettings.Rnw + .\korean\Citation.rnw Citation.rnw
 
