@@ -34,7 +34,9 @@ If you want to start a translation project, then again, please offer.
 - Discovered that we need to alter Sweave() commands to avoid encoding checks.  if we are processing files inside R using the standard Sweave() process; no changes made to any of the batch files are required as the knitr package seems to handle the various encoding variations properly. This was necessary to get Korean files processed correctly. Who knows what havoc this might create...
 - added DoAllKorean.bat
 - moved the three headline files into Korean folder for separate editing. 
-- Need to fix the encoding of the Korean files for processing by LaTeX. These need to be in a utf-8 font. JG did this conversion in NotePad++
+- Need to fix the encoding of the Korean files for processing by LaTeX. These need to be in a utf-8 font. JG did this conversion in NotePad++ with thanks for help going to Chris Tuffley.
+- removed use of attach() and detach() on simple plot() commands
+- improved the presentation of the R scripts to drop chunks used for purposes of knitr and chapter setup and clean up.
 
 
 

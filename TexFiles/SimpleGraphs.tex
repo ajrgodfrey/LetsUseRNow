@@ -11,11 +11,12 @@
 This chapter illustrates the construction of some basic exploratory data analysis graphs. More complex graphs are considered in Chapter~\ref{ComplexGraphs}, although at times we will see graphs presented in conjunction with particular statistical analysis techniques. We concentrate on data taking continuous values initially, but a short section on graphs for discrete valued variables is included at the end. 
  
 We will use the \Robject{air quality} data set that is distributed in the \Rpackage{datasets} package which is part of the default installation of \R{}. This data set is immediately accessible from your \R{} session and can be investigated using 
-\begin{Schunk}
-\begin{Sinput}
-> str(airquality) 
-\end{Sinput}
-\begin{Soutput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{str}\hlstd{(airquality)}
+\end{alltt}
+\begin{verbatim}
 'data.frame':	153 obs. of  6 variables:
  $ Ozone  : int  41 36 12 18 NA 28 23 19 8 NA ...
  $ Solar.R: int  190 118 149 313 NA NA 299 99 19 194 ...
@@ -23,14 +24,17 @@ We will use the \Robject{air quality} data set that is distributed in the \Rpack
  $ Temp   : int  67 72 74 62 56 66 65 59 61 69 ...
  $ Month  : int  5 5 5 5 5 5 5 5 5 5 ...
  $ Day    : int  1 2 3 4 5 6 7 8 9 10 ...
-\end{Soutput}
-\end{Schunk}
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
 It is common for \R{} users to access the variables after issuing the command 
-\begin{Schunk}
-\begin{Sinput}
-> attach(airquality) 
-\end{Sinput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{attach}\hlstd{(airquality)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
 The \Rcmd{detach} command undoes the \Rcmd{attach} command. To remove the ``attachment", you will issue the command \code{detach(airquality)}. 
  
 You could look at the help file for this data if you wanted to learn its complete story using \code{?airquality}. It tells us that the data are for daily readings of the following air quality values for May 1, 1973 (a 
@@ -59,12 +63,15 @@ Note that the figure created has default settings for the main title, axis label
 \begin{center} 
 \caption{Histogram of Average wind speed in miles per hour at 0700 and 1000 hours at LaGuardia Airport. Obtained from the \Robject{air quality} data set.} 
 \label{AirQualityHistWind} 
-\begin{Schunk}
-\begin{Sinput}
-> hist(Wind) 
-\end{Sinput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{hist}\hlstd{(Wind)}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=0.8\textwidth]{figures/SimpleGraphsHistAirQualityWind-1} 
 
-\includegraphics[width=0.8\textwidth]{figures/SimpleGraphsHistAirQualityWind-1} \end{Schunk}
+\end{knitrout}
 \SVGLink{SimpleGraphsHistAirQualityWind-1} 
 \end{center} 
 \end{exhibit} 
@@ -75,12 +82,15 @@ Note that the figure created has default settings for the main title, axis label
 \begin{center} 
 \caption{Histogram of Average wind speed at 0700 and 1000 hours at New York's LaGuardia Airport. Obtained from the \Robject{air quality} data set.} 
 \label{AirQualityHistWind2} 
-\begin{Schunk}
-\begin{Sinput}
-> hist(Wind, xlab="Average wind speed (mph)", main="") 
-\end{Sinput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{hist}\hlstd{(Wind,} \hlkwc{xlab}\hlstd{=}\hlstr{"Average wind speed (mph)"}\hlstd{,} \hlkwc{main}\hlstd{=}\hlstr{""}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=0.8\textwidth]{figures/SimpleGraphsHistAirQualityWind2-1} 
 
-\includegraphics[width=0.8\textwidth]{figures/SimpleGraphsHistAirQualityWind2-1} \end{Schunk}
+\end{knitrout}
 \SVGLink{SimpleGraphsHistAirQualityWind2-1} 
 \end{center} 
 \end{exhibit} 
@@ -107,9 +117,11 @@ Exhibit~\ref{AirQualityBoxplot} shows us the boxplot for the average wind speed 
 \begin{center} 
 \caption{Boxplot of Average wind speed in miles per hour at 0700 and 1000 hours at LaGuardia Airport. Obtained from the \Robject{air quality} data set.} 
 \label{AirQualityBoxplot} 
-\begin{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=0.8\textwidth]{figures/SimpleGraphsBoxplot-1} 
 
-\includegraphics[width=0.8\textwidth]{figures/SimpleGraphsBoxplot-1} \end{Schunk}
+\end{knitrout}
 \SVGLink{SimpleGraphsBoxplot-1} 
 \end{center} 
 \end{exhibit} 
@@ -125,12 +137,15 @@ For the purposes of illustration, I want to show the distribution of the daily a
 \begin{center} 
 \caption{Comparative boxplots for the Average wind speed in miles per hour at 0700 and 1000 hours at LaGuardia Airport separated into groups for the months of May to September 1973. Data was Obtained from the \Robject{air quality} data set.} 
 \label{AirQualityCompBoxplotWindMonth} 
-\begin{Schunk}
-\begin{Sinput}
-> boxplot(Wind~Month, xlab="Month", ylab="Wind speed (mph)") 
-\end{Sinput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{boxplot}\hlstd{(Wind}\hlopt{~}\hlstd{Month,} \hlkwc{xlab}\hlstd{=}\hlstr{"Month"}\hlstd{,} \hlkwc{ylab}\hlstd{=}\hlstr{"Wind speed (mph)"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=0.8\textwidth]{figures/SimpleGraphsCompBoxplot-1} 
 
-\includegraphics[width=0.8\textwidth]{figures/SimpleGraphsCompBoxplot-1} \end{Schunk}
+\end{knitrout}
 \SVGLink{SimpleGraphsCompBoxplot-1} 
 \end{center} 
 \end{exhibit} 
@@ -144,9 +159,11 @@ because I didn't like the way the regular graph window presented this graph.
 \begin{center} 
 \caption{Dotplot of the Average wind speed in miles per hour at 0700 and 1000 hours at LaGuardia Airport. Obtained from the \Robject{air quality} data set.} 
 \label{AirQualityDotPlotWind} 
-\begin{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=0.8\textwidth]{figures/SimpleGraphsDotPlot-1} 
 
-\includegraphics[width=0.8\textwidth]{figures/SimpleGraphsDotPlot-1} \end{Schunk}
+\end{knitrout}
 \SVGLink{SimpleGraphsDotPlot-1} 
 \end{center} 
 \end{exhibit} 
@@ -162,12 +179,15 @@ Occasionally it's useful to see how a measurement changes over the time data wer
 \begin{center} 
 \caption{Line plot of the maximum daily temperatures from 1 May to 30 September 1973, measured in degrees Fahrenheit, at LaGuardia Airport. Data were obtained from the \Robject{air quality} data set.} 
 \label{AirQualityLinePlotTemp} 
-\begin{Schunk}
-\begin{Sinput}
-> plot(Temp, ylim=c(50,100)) 
-\end{Sinput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{plot}\hlstd{(Temp,} \hlkwc{ylim}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{50}\hlstd{,}\hlnum{100}\hlstd{))}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=0.8\textwidth]{figures/SimpleGraphsLinePlot-1} 
 
-\includegraphics[width=0.8\textwidth]{figures/SimpleGraphsLinePlot-1} \end{Schunk}
+\end{knitrout}
 \SVGLink{SimpleGraphsLinePlot-1} 
 \end{center} 
 \end{exhibit} 
@@ -175,12 +195,15 @@ Occasionally it's useful to see how a measurement changes over the time data wer
 \begin{center} 
 \caption{Line plot of the maximum daily temperatures from 1 May to 30 September 1973, measured in degrees Fahrenheit, at LaGuardia Airport. Data were obtained from the \Robject{air quality} data set.} 
 \label{AirQualityLinePlotTemp2} 
-\begin{Schunk}
-\begin{Sinput}
-> plot(Temp, ylim=c(50,100), type="l") 
-\end{Sinput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{plot}\hlstd{(Temp,} \hlkwc{ylim}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{50}\hlstd{,}\hlnum{100}\hlstd{),} \hlkwc{type}\hlstd{=}\hlstr{"l"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=0.8\textwidth]{figures/SimpleGraphsLinePlot2-1} 
 
-\includegraphics[width=0.8\textwidth]{figures/SimpleGraphsLinePlot2-1} \end{Schunk}
+\end{knitrout}
 \SVGLink{SimpleGraphsLinePlot2-1} 
 \end{center} 
 \end{exhibit} 
@@ -202,13 +225,16 @@ If these data were normally distributed, the points on the plot would lie on a s
 \begin{center} 
 \caption{Normal probability plot of the Average wind speed in miles per hour at 0700 and 1000 hours at LaGuardia Airport. Obtained from the \Robject{air quality} data set.} 
 \label{AirQualityNormPlotWind} 
-\begin{Schunk}
-\begin{Sinput}
-> qqnorm(Wind) 
-> qqline(Wind) 
-\end{Sinput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{qqnorm}\hlstd{(Wind)}
+\hlstd{> }\hlkwd{qqline}\hlstd{(Wind)}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=0.8\textwidth]{figures/SimpleGraphsNormPlot-1} 
 
-\includegraphics[width=0.8\textwidth]{figures/SimpleGraphsNormPlot-1} \end{Schunk}
+\end{knitrout}
 \SVGLink{SimpleGraphsNormPlot-1} 
 \end{center} 
 \end{exhibit} 
@@ -216,29 +242,36 @@ If these data were normally distributed, the points on the plot would lie on a s
 \section{Scatter plots} 
  
 Scatter plots are created using the \Rcmd{plot} command by one of two methods. Exhibit~\ref{AirQualityScatterTempWind} was created using 
-\begin{Schunk}
-\begin{Sinput}
-> plot(Wind, Temp) 
-\end{Sinput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{plot}\hlstd{(Wind, Temp)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
 but the same plot can be generated using what is known as a formula. In this case, only one argument is given to the \Rcmd{plot} command but both variables of interest are in that argument. 
-\begin{Schunk}
-\begin{Sinput}
-> plot(Temp~Wind) 
-\end{Sinput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{plot}\hlstd{(Temp}\hlopt{~}\hlstd{Wind)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
 The tilde symbol is often read as ``\ldots is distributed as\ldots" but we might simplify this to be read as ``follows". This makes some sense as we generally create a scatter plot to see if one variable follows the other; in this case we are seeing if temperature depends on wind speed in some way. 
  
 \begin{exhibit} 
 \begin{center} 
 \caption{Scatter plot of the maximum daily temperature against the Average wind speed at 0700 and 1000 hours, both recorded at LaGuardia Airport. Data were obtained from the \Robject{air quality} data set.} 
 \label{AirQualityScatterTempWind} 
-\begin{Schunk}
-\begin{Sinput}
-> plot(Wind, Temp) 
-\end{Sinput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{plot}\hlstd{(Wind, Temp)}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=0.8\textwidth]{figures/SimpleGraphsScatter-1} 
 
-\includegraphics[width=0.8\textwidth]{figures/SimpleGraphsScatter-1} \end{Schunk}
+\end{knitrout}
 \SVGLink{SimpleGraphsScatter-1} 
 \end{center} 
 \end{exhibit} 
@@ -253,12 +286,15 @@ Only four of the variables within the \Robject{air quality} data have been used 
 \begin{center} 
 \caption{A scatter plot matrix of the numeric variables within the \Robject{airquality} data set.} 
 \label{AirQualityScatterPlotMatrix}. 
-\begin{Schunk}
-\begin{Sinput}
-> pairs(data.frame(Ozone, Solar.R, Wind, Temp)) 
-\end{Sinput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{pairs}\hlstd{(}\hlkwd{data.frame}\hlstd{(Ozone, Solar.R, Wind, Temp))}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=0.8\textwidth]{figures/SimpleGraphsMatrixPlot-1} 
 
-\includegraphics[width=0.8\textwidth]{figures/SimpleGraphsMatrixPlot-1} \end{Schunk}
+\end{knitrout}
 \SVGLink{SimpleGraphsMatrixPlot-1} 
 \end{center} 
 \end{exhibit} 
@@ -273,83 +309,98 @@ Note that the names of the variables appear in the spaces on the leading diagona
 \label{BarCharts} 
  
 If a variable is considered by \R{} to be a \Rclass{factor}, then the default action of the \Rcmd{plot} command is to construct a bar chart. This is illustrated using a data set which is part of the default installation of \R{} called \Robject{state.region} examined using 
-\begin{Schunk}
-\begin{Sinput}
-> str(state.region) 
-\end{Sinput}
-\begin{Soutput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{str}\hlstd{(state.region)}
+\end{alltt}
+\begin{verbatim}
  Factor w/ 4 levels "Northeast","South",..: 2 4 4 2 4 4 1 2 2 2 ...
-\end{Soutput}
-\begin{Sinput}
-> levels(state.region) 
-\end{Sinput}
-\begin{Soutput}
+\end{verbatim}
+\begin{alltt}
+\hlstd{> }\hlkwd{levels}\hlstd{(state.region)}
+\end{alltt}
+\begin{verbatim}
 [1] "Northeast"     "South"         "North Central"
 [4] "West"         
-\end{Soutput}
-\end{Schunk}
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
 Given this variable is a \Rclass{factor} with four levels it is well suited to presentation in a bar chart, as seen in Exhibit~\ref{StateRegionBarChart}. 
  
 \begin{exhibit} 
 \begin{center} 
 \caption{A bar chart showing which of the regions each of the fifty U.S. states belongs} 
 \label{StateRegionBarChart} 
-\begin{Schunk}
-\begin{Sinput}
-> plot(state.region) 
-\end{Sinput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{plot}\hlstd{(state.region)}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=0.8\textwidth]{figures/SimpleGraphsStateRegionBarChart-1} 
 
-\includegraphics[width=0.8\textwidth]{figures/SimpleGraphsStateRegionBarChart-1} \end{Schunk}
+\end{knitrout}
 \SVGLink{SimpleGraphsStateRegionBarChart-1} 
 \end{center} 
 \end{exhibit} 
  
 This figure was created from the raw data, that is the regions for each of the fifty states in the U.S. If we had summary data with counts for each of the categories, we would need to use the \Rcmd{barplot} command. The \Rcmd{summary} command shows us how many states fall into each category in this instance. 
-\begin{Schunk}
-\begin{Sinput}
-> summary(state.region) 
-\end{Sinput}
-\begin{Soutput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{summary}\hlstd{(state.region)}
+\end{alltt}
+\begin{verbatim}
     Northeast         South North Central          West 
             9            16            12            13 
-\end{Soutput}
-\end{Schunk}
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
 These values are then plotted in Exhibit~\ref{StateRegionBarChart2}. 
 \begin{exhibit} 
 \begin{center} 
 \caption{A bar chart showing which of the regions each of the fifty U.S. states belongs} 
 \label{StateRegionBarChart2} 
-\begin{Schunk}
-\begin{Sinput}
-> barplot(summary(state.region)) 
-\end{Sinput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{barplot}\hlstd{(}\hlkwd{summary}\hlstd{(state.region))}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=0.8\textwidth]{figures/SimpleGraphsStateRegionBarChart2-1} 
 
-\includegraphics[width=0.8\textwidth]{figures/SimpleGraphsStateRegionBarChart2-1} \end{Schunk}
+\end{knitrout}
 \SVGLink{SimpleGraphsStateRegionBarChart2-1} 
 \end{center} 
 \end{exhibit} 
  
 While this data set is rather trivial, it is useful for demonstrating one more feature. Note that both in the output above and in Exhibit~\ref{StateRegionBarChart}, the Western region is the last category. To reorder the regions in the bar chart is actually fairly straight forward. All we need to do is make a small addition to the existing commands. 
-\begin{Schunk}
-\begin{Sinput}
-> summary(state.region)[c(4,2,3,1)] 
-\end{Sinput}
-\begin{Soutput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{summary}\hlstd{(state.region)[}\hlkwd{c}\hlstd{(}\hlnum{4}\hlstd{,}\hlnum{2}\hlstd{,}\hlnum{3}\hlstd{,}\hlnum{1}\hlstd{)]}
+\end{alltt}
+\begin{verbatim}
          West         South North Central     Northeast 
            13            16            12             9 
-\end{Soutput}
-\end{Schunk}
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
 and re-create the bar chart accordingly (see Exhibit~\ref{StateRegionBarChartImp}). 
 \begin{exhibit} 
 \begin{center} 
 \caption{An improved bar chart showing which of the regions each of the fifty U.S. states belongs} 
 \label{StateRegionBarChartImp} 
-\begin{Schunk}
-\begin{Sinput}
-> barplot(summary(state.region)[c(4,2,3,1)]) 
-\end{Sinput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{barplot}\hlstd{(}\hlkwd{summary}\hlstd{(state.region)[}\hlkwd{c}\hlstd{(}\hlnum{4}\hlstd{,}\hlnum{2}\hlstd{,}\hlnum{3}\hlstd{,}\hlnum{1}\hlstd{)])}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=0.8\textwidth]{figures/SimpleGraphsStateRegionBarChartImp-1} 
 
-\includegraphics[width=0.8\textwidth]{figures/SimpleGraphsStateRegionBarChartImp-1} \end{Schunk}
+\end{knitrout}
 \SVGLink{SimpleGraphsStateRegionBarChartImp-1} 
 \end{center} 
 \end{exhibit} 
@@ -363,12 +414,15 @@ The pie chart for the \Robject{state.region} data is given in Exhibit~\ref{State
 \begin{center} 
 \caption{A pie chart showing which of the regions each of the fifty U.S. states belongs} 
 \label{StateRegionPieChart} 
-\begin{Schunk}
-\begin{Sinput}
-> pie(summary(state.region)) 
-\end{Sinput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{pie}\hlstd{(}\hlkwd{summary}\hlstd{(state.region))}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=0.8\textwidth]{figures/SimpleGraphsStateRegionPieChart-1} 
 
-\includegraphics[width=0.8\textwidth]{figures/SimpleGraphsStateRegionPieChart-1} \end{Schunk}
+\end{knitrout}
 \SVGLink{SimpleGraphsStateRegionPieChart-1} 
 \end{center} 
 \end{exhibit} 
@@ -377,10 +431,12 @@ The pie chart for the \Robject{state.region} data is given in Exhibit~\ref{State
 \section{Closing} 
  
 If you are carrying on working with \R{} you might wish to remove direct access to the data sets we used in this chapter by issuing the following commands 
-\begin{Schunk}
-\begin{Sinput}
-> detach(airquality) 
-\end{Sinput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{detach}\hlstd{(airquality)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
 
 

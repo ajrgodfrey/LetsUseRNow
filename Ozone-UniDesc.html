@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Univariate analysis for Ozone</title>
+
+<script type="text/javascript">
+window.onload = function() {
+  var imgs = document.getElementsByTagName('img'), i, img;
+  for (i = 0; i < imgs.length; i++) {
+    img = imgs[i];
+    // center an image if it is the only element of its parent
+    if (img.parentElement.childElementCount === 1)
+      img.parentElement.style.textAlign = 'center';
+  }
+};
+</script>
+
+
+
+
+
+<style type="text/css">
+body, td {
+      font-family: arial, helvetica, sans-serif;   background-color: white;
+   font-size: 13px;
+}
+
+body {
+  max-width: 800px;
+  margin: auto;
+  padding: 1em;
+  line-height: 20px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 {
+color: blue;     font-weight: bold; margin-bottom: 15pt; text-align: center;
+   font-size:2.2em;
+}
+
+h2 {
+color: darkred; font-weight: bold; 
+font-size:1.8em;
+padding-top: 15pt;
+}
+
+h3 {
+font-weight: bold; padding-left: 5pt; padding-top: 5pt;
+   font-size:1.4em;
+}
+
+h4 {
+color: blue;   margin-bottom: 15pt; text-align: center;
+   font-size:1.0em;
+}
+
+h5 {
+   font-size:0.9em;
+}
+
+h6 {
+   font-size:0.8em;
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre, img {
+  max-width: 100%;
+}
+pre {
+  overflow-x: auto;
+}
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code {
+  font-size: 92%;
+  border: 1px solid orange;
+}
+
+code[class] {
+  background-color: #F8F8F8;
+}
+
+table {
+   max-width: 95%;
+  margin-top: 10pt;
+  margin-bottom: 15pt;
+   border: 2pt solid darkblue;
+}
+
+td, th {
+  border: none;
+  padding: 5pt;
+}
+
+th{
+font-weight: bold; 
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * {
+      background: transparent !important;
+      color: black !important;
+      filter:none !important;
+      -ms-filter: none !important;
+   }
+
+   body {
+      font-size:12pt;
+      max-width:100%;
+   }
+
+   a, a:visited {
+      text-decoration: underline;
+   }
+
+   hr {
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote {
+      padding-right: 1em;
+      page-break-inside: avoid;
+   }
+
+   tr, img {
+      page-break-inside: avoid;
+   }
+
+   img {
+      max-width: 100% !important;
+   }
+
+   @page :left {
+      margin: 15mm 20mm 15mm 10mm;
+   }
+
+   @page :right {
+      margin: 15mm 10mm 15mm 20mm;
+   }
+
+   p, h2, h3 {
+      orphans: 3; widows: 3;
+   }
+
+   h2, h3 {
+      page-break-after: avoid;
+   }
+}
+</style>
+
+
+
+</head>
+
+<body>
+<h1>Univariate analysis for Ozone</h1>
+
+<h4>Prepared by BrailleR</h4>
+
+<h2>Basic summary measures</h2>
+
+<h3>Counts</h3>
+
+<p>153 values in all, made up of
+68 unique values,
+116 observed, and
+37 missing values.   </p>
+
+<h3>Measures of location</h3>
+
+<table><thead>
+<tr>
+<th>Data</th>
+<th>all</th>
+<th>5% trimmed</th>
+<th>10% trimmed</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Mean</td>
+<td>42.1293</td>
+<td>40.8839</td>
+<td>39.6604</td>
+</tr>
+</tbody></table>
+
+<h3>Quantiles</h3>
+
+<table><thead>
+<tr>
+<th align="left">&nbsp;</th>
+<th align="left">Quantile</th>
+<th align="left">Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left"><strong>0%</strong></td>
+<td align="left">Minimum</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left"><strong>25%</strong></td>
+<td align="left">Lower Quartile</td>
+<td align="left">18</td>
+</tr>
+<tr>
+<td align="left"><strong>50%</strong></td>
+<td align="left">Median</td>
+<td align="left">31.5</td>
+</tr>
+<tr>
+<td align="left"><strong>75%</strong></td>
+<td align="left">Upper Quartile</td>
+<td align="left">63.25</td>
+</tr>
+<tr>
+<td align="left"><strong>100%</strong></td>
+<td align="left">Maximum</td>
+<td align="left">168</td>
+</tr>
+</tbody></table>
+
+<h3>Measures of spread</h3>
+
+<table><thead>
+<tr>
+<th>Measure</th>
+<th>IQR</th>
+<th>Standard deviation</th>
+<th>Variance</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Value</td>
+<td>45.25</td>
+<td>32.9879</td>
+<td>1088.2005</td>
+</tr>
+</tbody></table>
+
+<h2>Basic univariate graphs</h2>
+
+<h3>Histogram</h3>
+
+<p>\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}
+\includegraphics[width=\maxwidth]{Ozone/Ozone-Hist-1} \caption[The histogram]{The histogram}\label{fig:Hist}
+\end{figure}</p>
+
+<p>\begin{kframe}\begin{verbatim}
+This is a histogram, with the title: Histogram of Ozone
+&ldquo;Ozone&rdquo; is marked on the x-axis.
+Tick marks for the x-axis are at: 0, 50, 100, and 150 
+There are a total of 116 elements for this variable.
+Tick marks for the y-axis are at: 0, 10, 20, and 30 
+It has 9 bins with equal widths, starting at 0 and ending at 180 .
+The mids and counts for the bins are:
+mid = 10  count = 37 
+mid = 30  count = 34 
+mid = 50  count = 14 
+mid = 70  count = 15 
+mid = 90  count = 9 
+mid = 110  count = 4 
+mid = 130  count = 2 
+mid = 150  count = 0 
+mid = 170  count = 1
+\end{verbatim}
+\end{kframe}
+\end{knitrout}</p>
+
+<h3>Boxplot</h3>
+
+<p>\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}
+\includegraphics[width=\maxwidth]{Ozone/Ozone-Boxplot-1} \caption[The boxplot]{The boxplot}\label{fig:Boxplot}
+\end{figure}</p>
+
+<p>\begin{kframe}\begin{verbatim}
+This graph has a boxplot printed horizontally
+with the title: Boxplot of Ozone
+No label appears on the x-axis.
+No label appears on the y-axis.
+Tick marks for the x-axis are at: 0, 50, 100, and 150 
+This variable has 116 values.
+An outlier is marked at: 135 168 
+The whiskers extend to 1 and 122 from the ends of the box, 
+which are at 18 and 63.5 
+The median, 31.5 is 30 % from the left end of the box to the right end.
+The right whisker is 3.44 times the length of the left whisker.
+\end{verbatim}
+\end{kframe}
+\end{knitrout}</p>
+
+<h2>Assessing normality</h2>
+
+<h3>Formal tests for normality</h3>
+
+<p>\begin{kframe}</p>
+
+<table><thead>
+<tr>
+<th align="left"></th>
+<th align="right">Statistic</th>
+<th align="right">P Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">Shapiro-Wilk</td>
+<td align="right">0.8787</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="left">Anderson-Darling</td>
+<td align="right">4.5211</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="left">Cramer-von Mises</td>
+<td align="right">0.8033</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="left">Lilliefors (Kolmogorov-Smirnov)</td>
+<td align="right">0.1480</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="left">Pearson chi-square</td>
+<td align="right">73.7241</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="left">Shapiro-Francia</td>
+<td align="right">0.8786</td>
+<td align="right">0</td>
+</tr>
+</tbody></table>
+
+<p>\end{kframe}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}</p>
+
+<p>{\ttfamily\noindent\itshape\color{messagecolor}{\Attaching package: &#39;xtable&#39;}}</p>
+
+<p>{\ttfamily\noindent\itshape\color{messagecolor}{The following object is masked from &#39;package:timeDate&#39;:</p>
+
+<p>\ \ \ \ align}}\end{kframe}
+\end{knitrout}</p>
+
+<h3>Normality plot</h3>
+
+<p>\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}
+\includegraphics[width=\maxwidth]{Ozone/Ozone-NormPlot-1} \caption[The normality plot]{The normality plot}\label{fig:NormPlot}
+\end{figure}</p>
+
+<p>\end{knitrout}</p>
+
+<h2>Formal tests of moments</h2>
+
+<p>\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}</p>
+
+<p>{\ttfamily\noindent\itshape\color{messagecolor}{\Attaching package: &#39;moments&#39;}}</p>
+
+<p>{\ttfamily\noindent\itshape\color{messagecolor}{The following objects are masked from &#39;package:timeDate&#39;:</p>
+
+<p>\ \ \ \ kurtosis, skewness}}\end{kframe}
+\end{knitrout}</p>
+
+<p>\begin{kframe}</p>
+
+<table><thead>
+<tr>
+<th align="left"></th>
+<th align="right">Statistic</th>
+<th align="right">Z</th>
+<th align="right">P Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">D&#39;Agostino skewness</td>
+<td align="right">1.226</td>
+<td align="right">4.656</td>
+<td align="right">0.0000</td>
+</tr>
+<tr>
+<td align="left">Anscombe-Glynn kurtosis</td>
+<td align="right">4.184</td>
+<td align="right">2.203</td>
+<td align="right">0.0276</td>
+</tr>
+</tbody></table>
+
+<p>\end{kframe}</p>
+
+</body>
+
+</html>

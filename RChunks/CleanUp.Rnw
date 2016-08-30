@@ -1,4 +1,4 @@
 
-<<cleanup, include=FALSE>>=
+<<cleanup, include=FALSE, purl=FALSE>>=
 rm(list = ls())
 @

@@ -15,168 +15,196 @@ Of course, if you really must enter data manually then you'd better read on; we 
 \label{SimpleCalculator} 
  
 \R{} can be used to do basic operations whose results do not get stored as objects. We can also assign the answers to a variable. For example 
-\begin{Schunk}
-\begin{Sinput}
-> x=100/7 
-> x 
-\end{Sinput}
-\begin{Soutput}
-[1] 14.29
-\end{Soutput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{x}\hlkwb{=}\hlnum{100}\hlopt{/}\hlnum{7}
+\hlstd{x}
+\end{alltt}
+\begin{verbatim}
+## [1] 14.29
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
 This means we can use the variable by name later. For example 
-\begin{Schunk}
-\begin{Sinput}
-> 12*x 
-\end{Sinput}
-\begin{Soutput}
-[1] 171.4
-\end{Soutput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlnum{12}\hlopt{*}\hlstd{x}
+\end{alltt}
+\begin{verbatim}
+## [1] 171.4
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
  
 We can also use some basic mathematical functions such as the logarithm and square root via the \Rcmd{log} and \Rcmd{sqrt} commands --- many other commands like this exist! For example 
-\begin{Schunk}
-\begin{Sinput}
-> x=sqrt(169) 
-> y=log(500) 
-> x*y 
-\end{Sinput}
-\begin{Soutput}
-[1] 80.79
-\end{Soutput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{x}\hlkwb{=}\hlkwd{sqrt}\hlstd{(}\hlnum{169}\hlstd{)}
+\hlstd{y}\hlkwb{=}\hlkwd{log}\hlstd{(}\hlnum{500}\hlstd{)}
+\hlstd{x}\hlopt{*}\hlstd{y}
+\end{alltt}
+\begin{verbatim}
+## [1] 80.79
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
 OK, these manipulations are trivial, but they can be used in conjunction with other data objects as we will see later. More detail on how to use \R{} as a scientific calculator can be found in Chapter~\ref{ScientificCalculator}. 
  
  
 \section{A simple set of numbers} 
  
 Operating on single values is rare. We are usually faced with numbers that we wish to use as a set. Entering them as a set is therefore necessary. The most basic way of entering a set of numbers is using the \Rcmd{c} command. For example 
-\begin{Schunk}
-\begin{Sinput}
-> y=c(1, 4, 9, 16, 25, 36, 49, 64, 81, 100) 
-> y 
-\end{Sinput}
-\begin{Soutput}
- [1]   1   4   9  16  25  36  49  64  81 100
-\end{Soutput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{y}\hlkwb{=}\hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{4}\hlstd{,} \hlnum{9}\hlstd{,} \hlnum{16}\hlstd{,} \hlnum{25}\hlstd{,} \hlnum{36}\hlstd{,} \hlnum{49}\hlstd{,} \hlnum{64}\hlstd{,} \hlnum{81}\hlstd{,} \hlnum{100}\hlstd{)}
+\hlstd{y}
+\end{alltt}
+\begin{verbatim}
+##  [1]   1   4   9  16  25  36  49  64  81 100
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
 is the list of the squares of the first ten natural numbers. We can obtain the numbers from 1 to 10 faster by issuing 
-\begin{Schunk}
-\begin{Sinput}
-> x=1:10 
-> x 
-\end{Sinput}
-\begin{Soutput}
- [1]  1  2  3  4  5  6  7  8  9 10
-\end{Soutput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{x}\hlkwb{=}\hlnum{1}\hlopt{:}\hlnum{10}
+\hlstd{x}
+\end{alltt}
+\begin{verbatim}
+##  [1]  1  2  3  4  5  6  7  8  9 10
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
 and therefore can obtain the desired set of the squares for the first ten natural numbers using shorter code based on a simple sequence. 
-\begin{Schunk}
-\begin{Sinput}
-> y=(1:10)^2 
-> y 
-\end{Sinput}
-\begin{Soutput}
- [1]   1   4   9  16  25  36  49  64  81 100
-\end{Soutput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{y}\hlkwb{=}\hlstd{(}\hlnum{1}\hlopt{:}\hlnum{10}\hlstd{)}\hlopt{^}\hlnum{2}
+\hlstd{y}
+\end{alltt}
+\begin{verbatim}
+##  [1]   1   4   9  16  25  36  49  64  81 100
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
 This is much more efficient than typing out the actual results as done previously. Note that the colon symbol is used for generating series of integers and that in terms of the order of mathematical operators, it comes after the exponent; the brackets around the sequence are essential. In this case, squaring a number is achieved through use of the carat symbol followed by a 2.  
  
  
 \section{A simple set of text values} 
  
 The \Rcmd{c} command is good for entering any kind of data. We may need to enter a set of categories for example. 
-\begin{Schunk}
-\begin{Sinput}
-> Names = c("Jonathan", "Elizabeth", "Peter", "Jenna", "Callum", "Annabelle", "Cordelia") 
-> Names 
-\end{Sinput}
-\begin{Soutput}
-[1] "Jonathan"  "Elizabeth" "Peter"     "Jenna"    
-[5] "Callum"    "Annabelle" "Cordelia" 
-\end{Soutput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{Names} \hlkwb{=} \hlkwd{c}\hlstd{(}\hlstr{"Jonathan"}\hlstd{,} \hlstr{"Elizabeth"}\hlstd{,} \hlstr{"Peter"}\hlstd{,} \hlstr{"Jenna"}\hlstd{,} \hlstr{"Callum"}\hlstd{,} \hlstr{"Annabelle"}\hlstd{,} \hlstr{"Cordelia"}\hlstd{)}
+\hlstd{Names}
+\end{alltt}
+\begin{verbatim}
+## [1] "Jonathan"  "Elizabeth" "Peter"     "Jenna"    
+## [5] "Callum"    "Annabelle" "Cordelia"
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
 Note two important features of this command. I capitalized the variable name here on purpose. The vast majority of \R{} commands are in lower case and there is one called ``names". I don't want to confuse my data and an existing \R{} command so my preference is to use an upper case letter on the front of all my variable names that mean anything. The second point is that the character-valued data I entered were encapsulated by quote marks. This means that the actual names (mine, my last dog and some family members) were stored. If I had omitted the quote marks, \R{} would have looked for variables with the appropriate names --- not defined in this instance. You could remove a quote or two to see what happens if you must. 
  
 \section{Logical indicators} 
  
 \R{} often uses logical indicators to tell us something. These variables take the values ``\code{TRUE}" or ``\code{FALSE}". 
  
-\begin{Schunk}
-\begin{Sinput}
-> Human = c(TRUE, TRUE, TRUE, FALSE, TRUE, TRUE, TRUE) 
-\end{Sinput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{Human} \hlkwb{=} \hlkwd{c}\hlstd{(}\hlnum{TRUE}\hlstd{,} \hlnum{TRUE}\hlstd{,} \hlnum{TRUE}\hlstd{,} \hlnum{FALSE}\hlstd{,} \hlnum{TRUE}\hlstd{,} \hlnum{TRUE}\hlstd{,} \hlnum{TRUE}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
 You might suspect that this variable tells you if the name given in the \Robject{Names} variable are for humans. The fourth name is therefore the dog. To extract the names of the humans we use the command 
-\begin{Schunk}
-\begin{Sinput}
-> Names[Human] 
-\end{Sinput}
-\begin{Soutput}
-[1] "Jonathan"  "Elizabeth" "Peter"     "Callum"   
-[5] "Annabelle" "Cordelia" 
-\end{Soutput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{Names[Human]}
+\end{alltt}
+\begin{verbatim}
+## [1] "Jonathan"  "Elizabeth" "Peter"     "Callum"   
+## [5] "Annabelle" "Cordelia"
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
 Note here that the brackets used are square brackets. Use round brackets for functions, square for elements of an object. 
  
 It's pretty simple to extract the dog's name: 
-\begin{Schunk}
-\begin{Sinput}
-> Names[!Human] 
-\end{Sinput}
-\begin{Soutput}
-[1] "Jenna"
-\end{Soutput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{Names[}\hlopt{!}\hlstd{Human]}
+\end{alltt}
+\begin{verbatim}
+## [1] "Jenna"
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
 In this situation the exclamation mark should be read as ``not" and therefore picks up the elements where the logical variable is set to \code{FALSE}. 
  
 \section{A note on subscripting} 
  
 We've seen that we can find a subset of the set of names using the indicator variable, but it's frequently useful to be able to extract one or more elements by their location. For example 
-\begin{Schunk}
-\begin{Sinput}
-> Names[1] 
-\end{Sinput}
-\begin{Soutput}
-[1] "Jonathan"
-\end{Soutput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{Names[}\hlnum{1}\hlstd{]}
+\end{alltt}
+\begin{verbatim}
+## [1] "Jonathan"
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
 gives the first name, and  
-\begin{Schunk}
-\begin{Sinput}
-> Names[2:3] 
-\end{Sinput}
-\begin{Soutput}
-[1] "Elizabeth" "Peter"    
-\end{Soutput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{Names[}\hlnum{2}\hlopt{:}\hlnum{3}\hlstd{]}
+\end{alltt}
+\begin{verbatim}
+## [1] "Elizabeth" "Peter"
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
 extracts the second and third names. The set of names entered is a \Rclass{vector} and has only one subscript to monitor. We will see how to subscript elements within a \Rclass{matrix} or \Rclass{data.frame} later. 
  
 It's also often necessary to understand how \R{} has stored an object. The \Rcmd{class} command is useful, and so is the \Rcmd{str} command. For example 
-\begin{Schunk}
-\begin{Sinput}
-> class(Names) 
-\end{Sinput}
-\begin{Soutput}
-[1] "character"
-\end{Soutput}
-\begin{Sinput}
-> str(Names) 
-\end{Sinput}
-\begin{Soutput}
- chr [1:7] "Jonathan" "Elizabeth" "Peter" ...
-\end{Soutput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{class}\hlstd{(Names)}
+\end{alltt}
+\begin{verbatim}
+## [1] "character"
+\end{verbatim}
+\begin{alltt}
+\hlkwd{str}\hlstd{(Names)}
+\end{alltt}
+\begin{verbatim}
+##  chr [1:7] "Jonathan" "Elizabeth" "Peter" ...
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
 We can get the names of all the people that aren't me by 
-\begin{Schunk}
-\begin{Sinput}
-> Names[-1] 
-\end{Sinput}
-\begin{Soutput}
-[1] "Elizabeth" "Peter"     "Jenna"     "Callum"   
-[5] "Annabelle" "Cordelia" 
-\end{Soutput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{Names[}\hlopt{-}\hlnum{1}\hlstd{]}
+\end{alltt}
+\begin{verbatim}
+## [1] "Elizabeth" "Peter"     "Jenna"     "Callum"   
+## [5] "Annabelle" "Cordelia"
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
 which of course assumes you know my name was given first. The subscripts have used square brackets in these examples. The type (and number) of brackets is crucial. If you open a bracket it must be closed, and closed by a bracket of the same type. Nesting brackets is quite acceptable. 
  
  
@@ -184,176 +212,198 @@ which of course assumes you know my name was given first. The subscripts have us
  
 In many instances we need to generate series of values in a patterned way. Let's say we want to generate variables that represent the twenty working days over a four week period. We want a list of the week number, and then a list of the weekday names. In both situations we will use the \Rcmd{rep} command. It has three arguments; the list of values, the number of times \Rarg{each} value is to be repeated, and the number of \Rarg{times} the whole series should be repeated.  
 The second and third of these arguments have default values so may not need to be stated explicitly. 
-\begin{Schunk}
-\begin{Sinput}
-> Week = rep(1:4, each=5) 
-> Week 
-\end{Sinput}
-\begin{Soutput}
- [1] 1 1 1 1 1 2 2 2 2 2 3 3 3 3 3 4 4 4 4 4
-\end{Soutput}
-\begin{Sinput}
-> Day = rep(c("Mon", "Tue", "Wed", "Thu", "Fri"), times=4) 
-> Day 
-\end{Sinput}
-\begin{Soutput}
- [1] "Mon" "Tue" "Wed" "Thu" "Fri" "Mon" "Tue" "Wed" "Thu"
-[10] "Fri" "Mon" "Tue" "Wed" "Thu" "Fri" "Mon" "Tue" "Wed"
-[19] "Thu" "Fri"
-\end{Soutput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{Week} \hlkwb{=} \hlkwd{rep}\hlstd{(}\hlnum{1}\hlopt{:}\hlnum{4}\hlstd{,} \hlkwc{each}\hlstd{=}\hlnum{5}\hlstd{)}
+\hlstd{Week}
+\end{alltt}
+\begin{verbatim}
+##  [1] 1 1 1 1 1 2 2 2 2 2 3 3 3 3 3 4 4 4 4 4
+\end{verbatim}
+\begin{alltt}
+\hlstd{Day} \hlkwb{=} \hlkwd{rep}\hlstd{(}\hlkwd{c}\hlstd{(}\hlstr{"Mon"}\hlstd{,} \hlstr{"Tue"}\hlstd{,} \hlstr{"Wed"}\hlstd{,} \hlstr{"Thu"}\hlstd{,} \hlstr{"Fri"}\hlstd{),} \hlkwc{times}\hlstd{=}\hlnum{4}\hlstd{)}
+\hlstd{Day}
+\end{alltt}
+\begin{verbatim}
+##  [1] "Mon" "Tue" "Wed" "Thu" "Fri" "Mon" "Tue" "Wed" "Thu"
+## [10] "Fri" "Mon" "Tue" "Wed" "Thu" "Fri" "Mon" "Tue" "Wed"
+## [19] "Thu" "Fri"
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
 These two variables can be brought together with the corresponding data using the \Rcmd{data.frame} command illustrated later in this chapter. 
  
 \section{Less pattern and more repetition} 
  
 The \Rcmd{rep} command is very flexible, and to be honest can either be a lot of fun to play with or just one big headache. Let's say we want to generate the series of numbers which has one 1, two 2's, three 3's, four 4's, and five 5's. Instead of using the constant for the number of times each element is repeated, we can choose the number of repeats for each element. 
-\begin{Schunk}
-\begin{Sinput}
-> rep(1:5, times=1:5) 
-\end{Sinput}
-\begin{Soutput}
- [1] 1 2 2 3 3 3 4 4 4 4 5 5 5 5 5
-\end{Soutput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{rep}\hlstd{(}\hlnum{1}\hlopt{:}\hlnum{5}\hlstd{,} \hlkwc{times}\hlstd{=}\hlnum{1}\hlopt{:}\hlnum{5}\hlstd{)}
+\end{alltt}
+\begin{verbatim}
+##  [1] 1 2 2 3 3 3 4 4 4 4 5 5 5 5 5
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
 Whatever you do you should observe the way your series is coming out. I would have expected the \Rarg{each} to be used in the last example not \Rarg{times} for example --- always check. 
  
 \section{An incomplete pattern} 
  
 Let's say we want a set of numbers to be cycled, but know that we won't use the full cycle. The \Rcmd{rep} has an argument that can stop the process early for us. Try using the \Rarg{length.out} argument as follows 
-\begin{Schunk}
-\begin{Sinput}
-> rep(c(1,2,4), times=3, length.out=8) 
-\end{Sinput}
-\begin{Soutput}
-[1] 1 2 4 1 2 4 1 2
-\end{Soutput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{rep}\hlstd{(}\hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,}\hlnum{2}\hlstd{,}\hlnum{4}\hlstd{),} \hlkwc{times}\hlstd{=}\hlnum{3}\hlstd{,} \hlkwc{length.out}\hlstd{=}\hlnum{8}\hlstd{)}
+\end{alltt}
+\begin{verbatim}
+## [1] 1 2 4 1 2 4 1 2
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
  
  
 \section{Dates and times} 
  
 The current time and date can be extracted using the \Rcmd{date} command but this is not an object that can be manipulated --- it is a character string only. 
-\begin{Schunk}
-\begin{Sinput}
-> date() 
-\end{Sinput}
-\begin{Soutput}
-[1] "Mon Aug 08 12:15:58 2016"
-\end{Soutput}
-\begin{Sinput}
-> class(date()) 
-\end{Sinput}
-\begin{Soutput}
-[1] "character"
-\end{Soutput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{date}\hlstd{()}
+\end{alltt}
+\begin{verbatim}
+## [1] "Tue Aug 30 22:19:49 2016"
+\end{verbatim}
+\begin{alltt}
+\hlkwd{class}\hlstd{(}\hlkwd{date}\hlstd{())}
+\end{alltt}
+\begin{verbatim}
+## [1] "character"
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
 It might be useful to print this information as part of your documentation of an analysis. We can come back to an \R{} session at a later time and to keep track of when we do things might prove useful. You can see from the output given here the exact time and date this document was compiled. This format is not to be confused with what we would store or manipulate; it is just a print out of the current time and date. The \Rcmd{Sys.Date} command stores the same information as number. 
-\begin{Schunk}
-\begin{Sinput}
-> Sys.Date() 
-\end{Sinput}
-\begin{Soutput}
-[1] "2016-08-08"
-\end{Soutput}
-\begin{Sinput}
-> class(Sys.Date()) 
-\end{Sinput}
-\begin{Soutput}
-[1] "Date"
-\end{Soutput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{Sys.Date}\hlstd{()}
+\end{alltt}
+\begin{verbatim}
+## [1] "2016-08-30"
+\end{verbatim}
+\begin{alltt}
+\hlkwd{class}\hlstd{(}\hlkwd{Sys.Date}\hlstd{())}
+\end{alltt}
+\begin{verbatim}
+## [1] "Date"
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
  
 This print out is different to what needs to happen when we want to store numerical values that represent the times and dates particular observations were taken. The base distribution of \R{} does not cater for extracting the date and time in simple numeric terms. This can be achieved, but is beyond the scope of this chapter. It may prove best to store a date using its three constituent parts (day, month, and year) as separate numeric variables. Times should be stored using 24-hour format and be careful not to use a separator between the hour and minute values. Mathematical operations should not be done on these variables unless we convert the minutes to decimal fractions of an hour. In any situation you should decide what you will do with the data before choosing the format you wish to store it in. 
  
 An example for storing details of months might be useful here. 
-\begin{Schunk}
-\begin{Sinput}
-> Months = as.factor(c(3,6,9,12,3,6,9,12)) 
-> Months 
-\end{Sinput}
-\begin{Soutput}
-[1] 3  6  9  12 3  6  9  12
-Levels: 3 6 9 12
-\end{Soutput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{Months} \hlkwb{=} \hlkwd{as.factor}\hlstd{(}\hlkwd{c}\hlstd{(}\hlnum{3}\hlstd{,}\hlnum{6}\hlstd{,}\hlnum{9}\hlstd{,}\hlnum{12}\hlstd{,}\hlnum{3}\hlstd{,}\hlnum{6}\hlstd{,}\hlnum{9}\hlstd{,}\hlnum{12}\hlstd{))}
+\hlstd{Months}
+\end{alltt}
+\begin{verbatim}
+## [1] 3  6  9  12 3  6  9  12
+## Levels: 3 6 9 12
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
 The \Rcmd{as.factor} command tells \R{} that these numbers are to be thought of as non-numeric data. A \Rclass{factor} also has an associated attribute called \Rarg{levels}. We can edit the levels directly and this will change our entire variable. \label{UseOfLevels} 
-\begin{Schunk}
-\begin{Sinput}
-> levels(Months) = c("Mar", "Jun", "Sep", "Dec") 
-> Months 
-\end{Sinput}
-\begin{Soutput}
-[1] Mar Jun Sep Dec Mar Jun Sep Dec
-Levels: Mar Jun Sep Dec
-\end{Soutput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{levels}\hlstd{(Months)} \hlkwb{=} \hlkwd{c}\hlstd{(}\hlstr{"Mar"}\hlstd{,} \hlstr{"Jun"}\hlstd{,} \hlstr{"Sep"}\hlstd{,} \hlstr{"Dec"}\hlstd{)}
+\hlstd{Months}
+\end{alltt}
+\begin{verbatim}
+## [1] Mar Jun Sep Dec Mar Jun Sep Dec
+## Levels: Mar Jun Sep Dec
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
 As it happens, we didn't need to actually explicitly state the month number when the variable was first created, but it is good practice to keep things logical! 
  
 \section{Larger data objects} 
  
 There are two data object types that are quite similar but not the same. A \Rclass{matrix} is a two-dimensional array of values of the same type --- numeric, character, or logical. A \Rclass{data.frame} looks like a matrix but can have variables of different types embedded within it. For example, we can create a new \Rclass{data.frame} by combining the names and human status variables created earlier using 
-\begin{Schunk}
-\begin{Sinput}
-> data.frame(Names, Human) 
-\end{Sinput}
-\begin{Soutput}
-      Names Human
-1  Jonathan  TRUE
-2 Elizabeth  TRUE
-3     Peter  TRUE
-4     Jenna FALSE
-5    Callum  TRUE
-6 Annabelle  TRUE
-7  Cordelia  TRUE
-\end{Soutput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{data.frame}\hlstd{(Names, Human)}
+\end{alltt}
+\begin{verbatim}
+##       Names Human
+## 1  Jonathan  TRUE
+## 2 Elizabeth  TRUE
+## 3     Peter  TRUE
+## 4     Jenna FALSE
+## 5    Callum  TRUE
+## 6 Annabelle  TRUE
+## 7  Cordelia  TRUE
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
 We would usually assign the results of this command to a named object for storage. 
-\begin{Schunk}
-\begin{Sinput}
-> MyFirstDF = data.frame(Names, Human) 
-> str(MyFirstDF) 
-\end{Sinput}
-\begin{Soutput}
-'data.frame':	7 obs. of  2 variables:
- $ Names: Factor w/ 7 levels "Annabelle","Callum",..: 6 4 7 5 2 1 3
- $ Human: logi  TRUE TRUE TRUE FALSE TRUE TRUE ...
-\end{Soutput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{MyFirstDF} \hlkwb{=} \hlkwd{data.frame}\hlstd{(Names, Human)}
+\hlkwd{str}\hlstd{(MyFirstDF)}
+\end{alltt}
+\begin{verbatim}
+## 'data.frame':	7 obs. of  2 variables:
+##  $ Names: Factor w/ 7 levels "Annabelle","Callum",..: 6 4 7 5 2 1 3
+##  $ Human: logi  TRUE TRUE TRUE FALSE TRUE TRUE ...
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
  
 Now we can see why we should not confuse \code{names} and \Robject{Names}. We can ask for the names of the variables in a \Rclass{data.frame} using the \Rcmd{names} command. For example 
-\begin{Schunk}
-\begin{Sinput}
-> names(MyFirstDF) 
-\end{Sinput}
-\begin{Soutput}
-[1] "Names" "Human"
-\end{Soutput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{names}\hlstd{(MyFirstDF)}
+\end{alltt}
+\begin{verbatim}
+## [1] "Names" "Human"
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
  
 We can also now think about how we might extract the fourth name from the \Rclass{data.frame} because this is the data structure we will work with the most. There are several alternatives. 
-\begin{Schunk}
-\begin{Sinput}
-> MyFirstDF[4,1] 
-\end{Sinput}
-\begin{Soutput}
-[1] Jenna
-7 Levels: Annabelle Callum Cordelia Elizabeth ... Peter
-\end{Soutput}
-\begin{Sinput}
-> MyFirstDF[4,"Names"] 
-\end{Sinput}
-\begin{Soutput}
-[1] Jenna
-7 Levels: Annabelle Callum Cordelia Elizabeth ... Peter
-\end{Soutput}
-\begin{Sinput}
-> MyFirstDF$Names[4] 
-\end{Sinput}
-\begin{Soutput}
-[1] Jenna
-7 Levels: Annabelle Callum Cordelia Elizabeth ... Peter
-\end{Soutput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{MyFirstDF[}\hlnum{4}\hlstd{,}\hlnum{1}\hlstd{]}
+\end{alltt}
+\begin{verbatim}
+## [1] Jenna
+## 7 Levels: Annabelle Callum Cordelia Elizabeth ... Peter
+\end{verbatim}
+\begin{alltt}
+\hlstd{MyFirstDF[}\hlnum{4}\hlstd{,}\hlstr{"Names"}\hlstd{]}
+\end{alltt}
+\begin{verbatim}
+## [1] Jenna
+## 7 Levels: Annabelle Callum Cordelia Elizabeth ... Peter
+\end{verbatim}
+\begin{alltt}
+\hlstd{MyFirstDF}\hlopt{$}\hlstd{Names[}\hlnum{4}\hlstd{]}
+\end{alltt}
+\begin{verbatim}
+## [1] Jenna
+## 7 Levels: Annabelle Callum Cordelia Elizabeth ... Peter
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
  
 Notice that as well as the result we wanted, \R{} has also printed the levels of the \Robject{Names} variable. This is because this variable has been determined to be a factor. 
  
@@ -362,62 +412,68 @@ Notice that as well as the result we wanted, \R{} has also printed the levels of
 \section{Appropriate data labelling} 
  
 The construction of our first data.frame is slightly flawed. If the \Robject{MyFirstDF} data was going to be for all those beings I am in contact with, the details should be related to the individual concerned. In this situation, allowing the \Robject{Names} object to be data rather than a label was probably not the wisest move. Let's say that we want the year and month of birth for the individuals in the example, and that they should form a new \Rclass{data.frame}. 
-\begin{Schunk}
-\begin{Sinput}
-> Year = c(1971, 1945, 1925, 2003, 2010, 2012, 2013) 
-> Month = c("October", "October", "July", "October", "April", "June", "June") 
-> MySecondDF = data.frame(Year, Month, Human, row.names = Names) 
-> str(MySecondDF) 
-\end{Sinput}
-\begin{Soutput}
-'data.frame':	7 obs. of  3 variables:
- $ Year : num  1971 1945 1925 2003 2010 ...
- $ Month: Factor w/ 4 levels "April","July",..: 4 4 2 4 1 3 3
- $ Human: logi  TRUE TRUE TRUE FALSE TRUE TRUE ...
-\end{Soutput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{Year} \hlkwb{=} \hlkwd{c}\hlstd{(}\hlnum{1971}\hlstd{,} \hlnum{1945}\hlstd{,} \hlnum{1925}\hlstd{,} \hlnum{2003}\hlstd{,} \hlnum{2010}\hlstd{,} \hlnum{2012}\hlstd{,} \hlnum{2013}\hlstd{)}
+\hlstd{Month} \hlkwb{=} \hlkwd{c}\hlstd{(}\hlstr{"October"}\hlstd{,} \hlstr{"October"}\hlstd{,} \hlstr{"July"}\hlstd{,} \hlstr{"October"}\hlstd{,} \hlstr{"April"}\hlstd{,} \hlstr{"June"}\hlstd{,} \hlstr{"June"}\hlstd{)}
+\hlstd{MySecondDF} \hlkwb{=} \hlkwd{data.frame}\hlstd{(Year, Month, Human,} \hlkwc{row.names} \hlstd{= Names)}
+\hlkwd{str}\hlstd{(MySecondDF)}
+\end{alltt}
+\begin{verbatim}
+## 'data.frame':	7 obs. of  3 variables:
+##  $ Year : num  1971 1945 1925 2003 2010 ...
+##  $ Month: Factor w/ 4 levels "April","July",..: 4 4 2 4 1 3 3
+##  $ Human: logi  TRUE TRUE TRUE FALSE TRUE TRUE ...
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
  
 \section{Other approaches} 
  
 Data entry is tedious. Efficiency is therefore an important weapon in your armoury. When we plan experiments we are often interested in obtaining an observation (or multiple observations) for every combination of some factors. In this simple example, imagine there are three experimental factors, given the names H, W, and Sex, and that each factor can take either of two levels. The \Rcmd{expand.grid} command is a useful way to construct a \Rclass{data.frame}. 
-\begin{Schunk}
-\begin{Sinput}
-> MyThirdDF = expand.grid(h=c(60,80), w=c(100, 300), sex=c("Male", "Female")) 
-> MyThirdDF 
-\end{Sinput}
-\begin{Soutput}
-   h   w    sex
-1 60 100   Male
-2 80 100   Male
-3 60 300   Male
-4 80 300   Male
-5 60 100 Female
-6 80 100 Female
-7 60 300 Female
-8 80 300 Female
-\end{Soutput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{MyThirdDF} \hlkwb{=} \hlkwd{expand.grid}\hlstd{(}\hlkwc{h}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{60}\hlstd{,}\hlnum{80}\hlstd{),} \hlkwc{w}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{100}\hlstd{,} \hlnum{300}\hlstd{),} \hlkwc{sex}\hlstd{=}\hlkwd{c}\hlstd{(}\hlstr{"Male"}\hlstd{,} \hlstr{"Female"}\hlstd{))}
+\hlstd{MyThirdDF}
+\end{alltt}
+\begin{verbatim}
+##    h   w    sex
+## 1 60 100   Male
+## 2 80 100   Male
+## 3 60 300   Male
+## 4 80 300   Male
+## 5 60 100 Female
+## 6 80 100 Female
+## 7 60 300 Female
+## 8 80 300 Female
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
  
 I've used a full printout of the resulting \Rclass{data.frame} instead of using the \Rcmd{str} command to show what \R{} has created because the \Rcmd{str} command gives additional information that we do not require at this point. 
  
 Let's say we wish to add a new variable to this \Rclass{data.frame}; a task common when designing an experiment. We can use the \$ notation shown earlier in a new way. We add a set of eight random values extracted from a standard normal distribution here as an illustration using the \Rcmd{rnorm} function. 
-\begin{Schunk}
-\begin{Sinput}
-> MyThirdDF$Response = rnorm(8) 
-> MyThirdDF 
-\end{Sinput}
-\begin{Soutput}
-   h   w    sex Response
-1 60 100   Male -0.53954
-2 80 100   Male  0.09504
-3 60 300   Male  0.16238
-4 80 300   Male -0.40040
-5 60 100 Female  0.07082
-6 80 100 Female  0.06128
-7 60 300 Female  0.22646
-8 80 300 Female -0.66805
-\end{Soutput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{MyThirdDF}\hlopt{$}\hlstd{Response} \hlkwb{=} \hlkwd{rnorm}\hlstd{(}\hlnum{8}\hlstd{)}
+\hlstd{MyThirdDF}
+\end{alltt}
+\begin{verbatim}
+##    h   w    sex Response
+## 1 60 100   Male -0.53954
+## 2 80 100   Male  0.09504
+## 3 60 300   Male  0.16238
+## 4 80 300   Male -0.40040
+## 5 60 100 Female  0.07082
+## 6 80 100 Female  0.06128
+## 7 60 300 Female  0.22646
+## 8 80 300 Female -0.66805
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
  
 I like to create random data when planning an analysis. In this instance, the data are normally distributed which is not particularly important, but they are random which is important. There are many other functions that generate random data from other distributions; by convention, these functions all start with a letter ``r" followed by a shortened form of the distribution's name.  
  

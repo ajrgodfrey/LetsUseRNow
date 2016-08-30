@@ -1,22 +1,10 @@
-## ----setup, include=FALSE------------------------------------------------
-rm(list = ls())
-if (!file.exists("Data")) dir.create("Data")
-if (!file.exists("figures")) dir.create("figures")
-if (!file.exists("tables")) dir.create("tables")
-if (!file.exists("Other")) dir.create("Other")
-set.seed(222664)
-options(width = 60,  digits = 4, continue="   ")
-
-## ----ChSetup, include=FALSE----------------------------------------------
-opts_chunk$set(fig.path='figures/Manip', comment=NA, dev=c('pdf','postscript','svg'), prompt=T, out.width="0.7\\textwidth") 
-
 ## ----Sorting-------------------------------------------------------------
 x=round(rnorm(10),2) 
 sort(x) 
 sort(x, decreasing=TRUE) 
 
 ## ----Ordering------------------------------------------------------------
-Home=c("Jonathan", "Olivia", "Callum", "Annabelle", "Cordelia", "Hershey", "Quake") 
+Home=c("Jonathan", "Callum", "Annabelle", "Cordelia", "Hershey") 
 order(Home) 
 Home[order(Home)] 
 
@@ -69,7 +57,7 @@ airquality2 %>% arrange(desc(Temp))
 airquality %>% mutate(TempC = (Temp - 32) * 5 / 9) %>% head() 
 
 ## ----MutateAlt, eval=FALSE-----------------------------------------------
-airquality$TempC = (airquality$Temp - 32) * 5 / 9 
+## airquality$TempC = (airquality$Temp - 32) * 5 / 9
 
 ## ----TransmuteData-------------------------------------------------------
 airquality2 %>% transmute(TempC = (Temp - 32) * 5 / 9) 
@@ -79,7 +67,4 @@ airquality %>% sample_n(4)
 
 ## ----ExtractSampleFrac---------------------------------------------------
 airquality %>% sample_frac(0.05) 
-
-## ----cleanup, include=FALSE----------------------------------------------
-rm(list = ls())
 

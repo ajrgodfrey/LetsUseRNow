@@ -1,5 +1,3 @@
 <<IrisInSymbols>>= 
-attach(iris) 
-plot(Petal.Length~Petal.Width, xlab="Petal width", ylab="Petal length", pch=as.numeric(Species)) 
-detach(iris) 
+plot(Petal.Length~Petal.Width, data=iris, xlab="Petal width", ylab="Petal length", pch=as.numeric(Species)) 
 @ 

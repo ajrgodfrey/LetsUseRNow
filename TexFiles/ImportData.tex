@@ -23,38 +23,46 @@ comma&\Rcmd{read.csv}&CSV, TXT\\
 Note that the \file{txt} extension appears as possible extensions for all delimiter types. \R{} will not assume any extension for these commands. You will need to explicitly state the full filename including extension when using these commands. Some extensions will have a default program associated with them by your operating system. For example, \file{txt} files will be opened in \file{Notepad} under Windows, and if Microsoft Office is installed on your machine, a \file{csv} file will be opened in Microsoft EXCEL. 
  
 To import a comma delimited file called \file{chickens.csv}, you would issue the following command 
-\begin{Schunk}
-\begin{Sinput}
-> Chickens = read.csv("chickens.csv") 
-\end{Sinput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{Chickens} \hlkwb{=} \hlkwd{read.csv}\hlstd{(}\hlstr{"chickens.csv"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
 In this most basic form, the  
 \Rcmd{read.csv} command will look for the \file{chickens.csv} file in the current working directory, and import it into \R{} and store it as a \Rclass{data.frame} called \Robject{Chickens}. The default settings of the \Rcmd{read.csv} command are to have a \Rarg{header} row in the file and to have no \Rarg{row.names} attribute associated with the data in the file. If your data file already had a column for the names of the chickens as the first column, you would issue the command 
-\begin{Schunk}
-\begin{Sinput}
-> Chickens = read.csv("chickens.csv", row.names=1) 
-\end{Sinput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{Chickens} \hlkwb{=} \hlkwd{read.csv}\hlstd{(}\hlstr{"chickens.csv"}\hlstd{,} \hlkwc{row.names}\hlstd{=}\hlnum{1}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
 and if the data did not currently have any column headings you would issue the command 
-\begin{Schunk}
-\begin{Sinput}
-> Chickens = read.csv("chickens.csv", header=FALSE) 
-\end{Sinput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{Chickens} \hlkwb{=} \hlkwd{read.csv}\hlstd{(}\hlstr{"chickens.csv"}\hlstd{,} \hlkwc{header}\hlstd{=}\hlnum{FALSE}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
  
 There are other settings to consider which you can investigate using the help for the \Rcmd{read.csv} command by typing \code{?read.csv} at the command prompt. This help page is actually a combined help page for the family of commands described in this section. 
  
 The working above assumed you could put the data file into the correct working directory.  So where was that? To find out where \R{} thinks you are currently working, use the \Rcmd{getwd} command. Note that the output may look a little strange to some users, especially Windows users. What do I mean? Look at the following: 
-\begin{Schunk}
-\begin{Sinput}
-> getwd() 
-\end{Sinput}
-\begin{Soutput}
-[1] "C:/Users/ajgodfre/Documents/Research/Publications/LetsUseRNow"
-\end{Soutput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{getwd}\hlstd{()}
+\end{alltt}
+\begin{verbatim}
+## [1] "C:/Users/ajgodfre/Documents/Research/Publications/LetsUseRNow"
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
  
-The full path to the working directory where this chapter was processed has been displayed, starting with the letter associated with the hard drive, followed by a colon. Then the fun begins. The folder structure is represented using forward slash signs, not the backslash used in Windows operating systems even though the processing of this work is done using a Windows machine. The rest should be as expected and you could find the right folder by looking in the appropriate place on your hard drive. The reason for \R{}'s use of the foward slash is not entirely simple to explain, but in short it is because the standard backslash symbols has a special use  in \R{}.For the moment, the choice of slash versus backslash is not important. It is important when we need to type out the path to the location of a file for ourselves. 
+The full path to the working directory where this chapter was processed has been displayed, starting with the letter associated with the hard drive, followed by a colon. Then the fun begins. The folder structure is represented using forward slash signs, not the backslash used in Windows operating systems even though the processing of this work is done using a Windows machine. The rest should be as expected and you could find the right folder by looking in the appropriate place on your hard drive. The reason for \R{}'s use of the forward slash is not entirely simple to explain, but in short it is because the standard backslash symbol has a special use  in \R{}. For the moment, the choice of slash versus backslash is not important. It is important when we need to type out the path to the location of a file for ourselves. 
  
  
  
@@ -70,25 +78,31 @@ If we know the complete specification of the location of a file, right the way f
 It is common for data to be stored in a folder that is close to the one we are working in. We might have a folder called \file{MyData} which is within the working directory (a subfolder), or it might be a folder at the same level in the directory tree as the current working directory. In either case, we don't need to specify the location using the full path. The term used to describe the location is a \stressind{relative path} because the reference to the location is relative to the current location having focus (our working directory).  
  
 If our data set is stored in the file \file{chickens.csv} in a  subfolder called \file{MyData}, we can use  
-\begin{Schunk}
-\begin{Sinput}
-> Chickens = read.csv("MyData/chickens.csv") 
-\end{Sinput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{Chickens} \hlkwb{=} \hlkwd{read.csv}\hlstd{(}\hlstr{"MyData/chickens.csv"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
 to pull it into our current workspace. This is actually shorthand for the more complete form 
-\begin{Schunk}
-\begin{Sinput}
-> Chickens = read.csv("./MyData/chickens.csv") 
-\end{Sinput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{Chickens} \hlkwb{=} \hlkwd{read.csv}\hlstd{(}\hlstr{"./MyData/chickens.csv"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
 where the current folder is denoted using the single period followed by the first slash. Personally, I would prefer to see the more complete form of this relative path being used but it is personal preference only. 
  
 If the \file{MyData} folder was not a subfolder, but was on the same level in the directory tree as our current working directory, we would use the shorthand symbol for the parent directory (one level up the directory tree). This is done using  a double period. 
-\begin{Schunk}
-\begin{Sinput}
-> Chickens = read.csv("../MyData/chickens.csv") 
-\end{Sinput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{Chickens} \hlkwb{=} \hlkwd{read.csv}\hlstd{(}\hlstr{"../MyData/chickens.csv"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
  
 Relative paths are therefore quite useful because they avoid having to type out long paths. The full specification of apath might also become a problem when files for a project are moved from one storage device to another. For example, you might want to take your work to a friend, tutor, or colleague on a  memory stick or other portable storage medium. Relative path referencing makes your work very transferable and transportable. 
  
@@ -114,33 +128,37 @@ Sometimes a data set is made available via the internet. If you can obtain the f
  
  
 The base installation of \R{} includes a package called \Rpackage{datasets}. These data sets are useful for testing code and writing examples for insertion into documents like this one. Data sets contained in the \Rpackage{datasets} package are actually ready and waiting to be accessed, but often we want to bring the data into our current workspace using a command such as 
-\begin{Schunk}
-\begin{Sinput}
-> data(airquality) 
-> str(airquality) 
-\end{Sinput}
-\begin{Soutput}
-'data.frame':	153 obs. of  6 variables:
- $ Ozone  : int  41 36 12 18 NA 28 23 19 8 NA ...
- $ Solar.R: int  190 118 149 313 NA NA 299 99 19 194 ...
- $ Wind   : num  7.4 8 12.6 11.5 14.3 14.9 8.6 13.8 20.1 8.6 ...
- $ Temp   : int  67 72 74 62 56 66 65 59 61 69 ...
- $ Month  : int  5 5 5 5 5 5 5 5 5 5 ...
- $ Day    : int  1 2 3 4 5 6 7 8 9 10 ...
-\end{Soutput}
-\begin{Sinput}
-> ls() 
-\end{Sinput}
-\begin{Soutput}
-[1] "airquality"
-\end{Soutput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{data}\hlstd{(airquality)}
+\hlkwd{str}\hlstd{(airquality)}
+\end{alltt}
+\begin{verbatim}
+## 'data.frame':	153 obs. of  6 variables:
+##  $ Ozone  : int  41 36 12 18 NA 28 23 19 8 NA ...
+##  $ Solar.R: int  190 118 149 313 NA NA 299 99 19 194 ...
+##  $ Wind   : num  7.4 8 12.6 11.5 14.3 14.9 8.6 13.8 20.1 8.6 ...
+##  $ Temp   : int  67 72 74 62 56 66 65 59 61 69 ...
+##  $ Month  : int  5 5 5 5 5 5 5 5 5 5 ...
+##  $ Day    : int  1 2 3 4 5 6 7 8 9 10 ...
+\end{verbatim}
+\begin{alltt}
+\hlkwd{ls}\hlstd{()}
+\end{alltt}
+\begin{verbatim}
+## [1] "airquality"
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
 The \Rcmd{data} command looks in the \Rpackage{datasets} package by default. If we wanted to get some data from another package we would need to state the name of the package explicitly. For example, 
-\begin{Schunk}
-\begin{Sinput}
-> data(anorexia, package="MASS") 
-\end{Sinput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{data}\hlstd{(anorexia,} \hlkwc{package}\hlstd{=}\hlstr{"MASS"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
 (The \Rpackage{MASS} package is already installed by default.)  
  
 Often we will be using a particular data set because it is good for demonstrating functions within a particular package. If we are loading the package using the \Rcmd{library} command, to get access to the functions, we will have also made the data available. This is why the data from the \Rpackage{datasets} is ready for use; this package is loaded by default whenever \R{} is started. 
@@ -159,12 +177,15 @@ Here are some pointers to look out for:\begin{itemize}
 \item Has \R{} tried to be too smart and interpretted plain text information as if you wanted a \Rclass{factor} instead? This occurs frequently with date values which are notorious for the variety of formats people choose. If you have a factor when you wanted just plain text, investigate the \Rcmd{as.character} command which changes the format to being character valued data. 
 \item Have a multitude of codes been used for variables like gender? If so, \R{} will decide that the variable is a \Rclass{factor} and list the different values the variable can take. The levels of the factor can be re-assigned using the \Rcmd{levels} command. See how this is done on \pageref{UseOfLevels} and note that two elements of the assignment can be the same if the current codes mean the same thing. 
 \item Have extra spaces crept into the codes for levels of factors somehow? This happens when an extra space occurs between words or is added on the end of a text string. Often, this problem is difficult to spot visually as we are talking about white space --- \R{} will find it though! Use the \Rcmd{levels} command to fix this if the problem is small, but consider using a find/replace tool in a spreadsheet application as an alternative. 
-\item Have numbers come into \R{} as text for some reason? This happens for a number of reasons. A blank space being entered in the cell instead of a code for a missing value for example. \R{} would see this as a character string `` ", not a empty cell. Another reason is that the missing value code is textual and not recognized by \R{}. There are ways around this problem using either find/replace techniques in your spreadsheet application to delete the missing value codes, or by changing the way the \Rcmd{read.table} or \Rcmd{read.csv} command reads your data file. See the help for these commands if this is the case. 
+\item Have numbers come into \R{} as text for some reason? This happens for a number of reasons. A blank space being entered in the cell instead of a code for a missing value for example. \R{} would see this as a character string `` ", not an empty cell. Another reason is that the missing value code is textual and not recognized by \R{}. There are ways around this problem using either find/replace techniques in your spreadsheet application to delete the missing value codes, or by changing the way the \Rcmd{read.table} or \Rcmd{read.csv} command reads your data file. See the help for these commands if this is the case. 
 \end{itemize} 
  
- 
- 
- 
+\section{Other packages} 
+
+ It is all too common to need to import data from a spreadsheet application where the data is not conveniently placed in the upper-left corner of the first sheet. There are a number of such spreadsheet applications, but the most commonly used one is Microsoft Excel.
+
+Data in spreadsheets is seldom ready for importing in the exact form we want it. If you need to extract a set of data that is in a named sheet or always appears in the same numbered sheet of a Microsoft Excel file, then you might investigate the \Rpkg{openxlsx} package. See Chapter~\ref{Additional} and the help page for the \Rcmd{read.xlsx} command.
+
  
 
 

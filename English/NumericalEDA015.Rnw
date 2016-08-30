@@ -6,6 +6,6 @@ Knowing how these commands work on simple sets of numbers is very useful for the
  
 When preparing reports it is unlikely that we would want a single statistic all that often. Rather, we are usually interested in exposing patterns or differences within the data. We do this graphically but we may need to extract the exact quantities plotted in the graph as well. 
  
-The \Rcmd{tapply} command is very useful for creating tables of results. It has three arguments; the main variable of interest, the grouping variable(s), and the function we want performed on each group within the data. It is of course, easier to show how the \Rcmd{tapply} command works in action so we'll use the air quality data again. 
+The \Rcmd{tapply} and \Rcmd{aggregate} commands are very useful for creating tables of results, sometimes referred to as \stressind{pivot tables}. The \Rcmd{tapply} command has three arguments; the main variable of interest, the grouping variable(s), and the function we want performed on each group within the data. In contrast, the \Rcmd{aggregate} command has a slightly different way of relating the response variable to one or more grouping variables. It is of course, easier to show how these commands work in action so we'll use the air quality data again and present various alternatives and the slightly different resulting output. 
  
-Let's say we want to know the \Rcmd{mean} Wind speed over the five months data were collected. 
+Let's say we want to know the \Rcmd{mean} Wind speed over the five months data were collected. We could use 

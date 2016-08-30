@@ -1,15 +1,3 @@
-## ----setup, include=FALSE------------------------------------------------
-rm(list = ls())
-if (!file.exists("Data")) dir.create("Data")
-if (!file.exists("figures")) dir.create("figures")
-if (!file.exists("tables")) dir.create("tables")
-if (!file.exists("Other")) dir.create("Other")
-set.seed(222664)
-options(width = 60,  digits = 4, continue="   ")
-
-## ----ChSetup, include=FALSE----------------------------------------------
-opts_chunk$set(fig.path='figures/ComplexGraphs', comment=NA, dev=c('pdf','postscript','svg'), prompt=T, out.width="0.7\\textwidth") 
-
 ## ----Hists12Z------------------------------------------------------------
 par(mfrow=c(4,3)) 
 for(Counter in 1:12){ 
@@ -31,17 +19,13 @@ boxplot(log(mag), xlab="log(Magnitude)", horizontal=TRUE)
 detach(quakes) 
 
 ## ----IrisInColour--------------------------------------------------------
-attach(iris) 
-plot(Sepal.Length~Sepal.Width, xlab="Sepal width", ylab="Sepal length", col=Species) 
-detach(iris) 
+plot(Sepal.Length~Sepal.Width, data=iris, xlab="Sepal width", ylab="Sepal length", col=Species) 
 
 ## ----IrisInSymbols-------------------------------------------------------
-attach(iris) 
-plot(Petal.Length~Petal.Width, xlab="Petal width", ylab="Petal length", pch=as.numeric(Species)) 
-detach(iris) 
+plot(Petal.Length~Petal.Width, data=iris, xlab="Petal width", ylab="Petal length", pch=as.numeric(Species)) 
 
 ## ----Colors, eval=FALSE--------------------------------------------------
-colors() 
+## colors()
 
 ## ----DeathsTSPlot--------------------------------------------------------
 plot(ldeaths, ylim=c(0,4000), xlab="Year", ylab="Number of deaths") 
@@ -49,13 +33,11 @@ lines(fdeaths, col="red")
 lines(mdeaths, col="blue") 
 
 ## ----QuakesPlaces--------------------------------------------------------
-attach(quakes) 
-plot(long, lat, xlim=c(160,190), ylim=c(-40,-10)) 
+plot(lat~long, data=quakes, xlim=c(160,190), ylim=c(-40,-10)) 
 abline(h=-30) 
 abline(h=-20, lty=1) 
 abline(v=180, lty=2) 
 abline(v=170, lty=3) 
-detach(quakes) 
 
 ## ----HistWithNormalCurve-------------------------------------------------
 hist(rnorm(1000)) 
@@ -64,10 +46,8 @@ curve(dnorm(x), -3,3, add=TRUE)
 ## ----AddPolyCurve--------------------------------------------------------
 Ozone.poly2 = lm(Ozone~poly(Wind,2, raw=TRUE), data=airquality) 
 Coeffs=coef(Ozone.poly2) 
-attach(airquality) 
-plot(Wind, Ozone) 
+plot(Ozone~Wind, data=airquality) 
 curve(Coeffs[1]+Coeffs[2]*x+Coeffs[2]*x^2, min(Wind), max(Wind), add=TRUE) 
-detach(airquality) 
 
 ## ----DeathsTSPlotLegend--------------------------------------------------
 plot(ldeaths, ylim=c(0,4000), xlab="Year", ylab="Number of deaths") 
@@ -92,7 +72,7 @@ title("Stack bar chart of age and gender", ylab="Count", xlab="Age")
 contour(volcano) 
 
 ## ----VolcanoExample, eval=FALSE------------------------------------------
-example(volcano) 
+## example(volcano)
 
 ## ----XYZContour----------------------------------------------------------
 xUnique=((0:100)-50)/10 
@@ -101,7 +81,4 @@ x=rep(xUnique, 101)
 y=rep(yUnique, each=101) 
 z=matrix(0.75*x^2 + 0.5*y^2-0.4*x*y+x-y-1, nrow=101) 
 contour(xUnique, yUnique, z) 
-
-## ----cleanup, include=FALSE----------------------------------------------
-rm(list = ls())
 

@@ -10,16 +10,17 @@
 This chapter explains how to create simple maps using some add-on packages. You will need to have installed the \Rpackage{maps}, \Rpackage{mapdata}, and  \Rpackage{ggmap} packages to complete the examples in this chapter. If you have not installed an add-on package before, you should take a look at Chapter~\ref{Additional} first. 
  
 After installing the packages, load them into your \R{} session using: 
-\begin{Schunk}
-\begin{Sinput}
-> library(maps) 
-> library(mapdata) 
-> library(ggmap) 
-\end{Sinput}
-\begin{Soutput}
-Loading required package: ggplot2
-\end{Soutput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{library}\hlstd{(maps)}
+\hlstd{> }\hlkwd{library}\hlstd{(mapdata)}
+\hlstd{> }\hlkwd{library}\hlstd{(ggmap)}
+\end{alltt}
+
+
+{\ttfamily\noindent\itshape\color{messagecolor}{Loading required package: ggplot2}}\end{kframe}
+\end{knitrout}
  
 \section{Creation of maps} 
  
@@ -30,14 +31,17 @@ I first created a map when I wanted a map of New Zealand (my home country) for a
 \caption{Map of New Zealand with a rectangle marked on it that bounds the area used in a subsequent map.} 
 \label{WholeNZ} 
 \begin{center} 
-\begin{Schunk}
-\begin{Sinput}
-> map("nzHires", ylim=c(-48,-34), xlim=c(166,179), fill=T, col=3) 
-> box() 
-> polygon(x=c(172, 179, 179, 172), y=c(-42,-42, -39,-39), border=1, lty=2) 
-\end{Sinput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{map}\hlstd{(}\hlstr{"nzHires"}\hlstd{,} \hlkwc{ylim}\hlstd{=}\hlkwd{c}\hlstd{(}\hlopt{-}\hlnum{48}\hlstd{,}\hlopt{-}\hlnum{34}\hlstd{),} \hlkwc{xlim}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{166}\hlstd{,}\hlnum{179}\hlstd{),} \hlkwc{fill}\hlstd{=T,} \hlkwc{col}\hlstd{=}\hlnum{3}\hlstd{)}
+\hlstd{> }\hlkwd{box}\hlstd{()}
+\hlstd{> }\hlkwd{polygon}\hlstd{(}\hlkwc{x}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{172}\hlstd{,} \hlnum{179}\hlstd{,} \hlnum{179}\hlstd{,} \hlnum{172}\hlstd{),} \hlkwc{y}\hlstd{=}\hlkwd{c}\hlstd{(}\hlopt{-}\hlnum{42}\hlstd{,}\hlopt{-}\hlnum{42}\hlstd{,} \hlopt{-}\hlnum{39}\hlstd{,}\hlopt{-}\hlnum{39}\hlstd{),} \hlkwc{border}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{lty}\hlstd{=}\hlnum{2}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=0.7\textwidth]{figures/MapsWholeNZ-1} 
 
-\includegraphics[width=0.7\textwidth]{figures/MapsWholeNZ-1} \end{Schunk}
+\end{knitrout}
 \SVGLink{MapsWholeNZ-1} 
 \end{center} 
 \end{exhibit} 
@@ -52,15 +56,18 @@ The \Rcmd{map.cities} function extracts data from a database of the world's citi
 \caption{Map showing the central part of New Zealand in order to show two cities in the lower North Island.} 
 \label{PartNZ} 
 \begin{center} 
-\begin{Schunk}
-\begin{Sinput}
-> map("nzHires", ylim=c(-42,-39), xlim=c(172,179), fill=T, col=3) 
-> box() 
-> map.cities(minpop=70000,maxpop=80000, pch=16, col=2, cex=2) 
-> map.cities(capitals=1, col=4, pch=19) 
-\end{Sinput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{map}\hlstd{(}\hlstr{"nzHires"}\hlstd{,} \hlkwc{ylim}\hlstd{=}\hlkwd{c}\hlstd{(}\hlopt{-}\hlnum{42}\hlstd{,}\hlopt{-}\hlnum{39}\hlstd{),} \hlkwc{xlim}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{172}\hlstd{,}\hlnum{179}\hlstd{),} \hlkwc{fill}\hlstd{=T,} \hlkwc{col}\hlstd{=}\hlnum{3}\hlstd{)}
+\hlstd{> }\hlkwd{box}\hlstd{()}
+\hlstd{> }\hlkwd{map.cities}\hlstd{(}\hlkwc{minpop}\hlstd{=}\hlnum{70000}\hlstd{,}\hlkwc{maxpop}\hlstd{=}\hlnum{80000}\hlstd{,} \hlkwc{pch}\hlstd{=}\hlnum{16}\hlstd{,} \hlkwc{col}\hlstd{=}\hlnum{2}\hlstd{,} \hlkwc{cex}\hlstd{=}\hlnum{2}\hlstd{)}
+\hlstd{> }\hlkwd{map.cities}\hlstd{(}\hlkwc{capitals}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{col}\hlstd{=}\hlnum{4}\hlstd{,} \hlkwc{pch}\hlstd{=}\hlnum{19}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=0.7\textwidth]{figures/MapsPartNZ-1} 
 
-\includegraphics[width=0.7\textwidth]{figures/MapsPartNZ-1} \end{Schunk}
+\end{knitrout}
 \SVGLink{MapsPartNZ-1} 
 \end{center} 
 \end{exhibit} 
@@ -80,30 +87,31 @@ You can see the way we would do this calculation using \R{} in Chapter~\ref{Scie
 The ability to search Google for specific locations is really useful, especially if you intend plotting maps with points of interest such as universities rather than just cities. Our first example does look for cities though, so that it builds on examples from previous sections in this chapter. 
  
 In mid-2015, I will attend the UseR conference in Aalborg, which is in Denmark. I know Denmark has a coastline and is bordered by Germany, but actually I don't know much else (especially where individual cities are!). I want ot know where the city of Aalborg is in relation to Copenhagen (the capital of Denmark). Witht he help of the \Rpackage{ggmap} package tapping into Google maps, I can find the latitute and longitude for both cities and then plot them on the map of Denmark as follows: 
-\begin{Schunk}
-\begin{Sinput}
-> Places = geocode(location=c("Aalborg", "Copenhagen")) 
-\end{Sinput}
-\begin{Soutput}
-Information from URL : http://maps.googleapis.com/maps/api/geocode/json?address=Aalborg&sensor=false
-\end{Soutput}
-\begin{Soutput}
-Information from URL : http://maps.googleapis.com/maps/api/geocode/json?address=Copenhagen&sensor=false
-\end{Soutput}
-\begin{Sinput}
-> Places 
-\end{Sinput}
-\begin{Soutput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlstd{Places} \hlkwb{=} \hlkwd{geocode}\hlstd{(}\hlkwc{location}\hlstd{=}\hlkwd{c}\hlstd{(}\hlstr{"Aalborg"}\hlstd{,} \hlstr{"Copenhagen"}\hlstd{))}
+\end{alltt}
+
+
+{\ttfamily\noindent\itshape\color{messagecolor}{Information from URL : http://maps.googleapis.com/maps/api/geocode/json?address=Aalborg\&sensor=false}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{Information from URL : http://maps.googleapis.com/maps/api/geocode/json?address=Copenhagen\&sensor=false}}\begin{alltt}
+\hlstd{> }\hlstd{Places}
+\end{alltt}
+\begin{verbatim}
      lon   lat
 1  9.922 57.05
 2 12.568 55.68
-\end{Soutput}
-\begin{Sinput}
-> map('worldHires', 'Denmark') 
-> title('Denmark') 
-> points(Places, pch=16) 
-\end{Sinput}
+\end{verbatim}
+\begin{alltt}
+\hlstd{> }\hlkwd{map}\hlstd{(}\hlstr{'worldHires'}\hlstd{,} \hlstr{'Denmark'}\hlstd{)}
+\hlstd{> }\hlkwd{title}\hlstd{(}\hlstr{'Denmark'}\hlstd{)}
+\hlstd{> }\hlkwd{points}\hlstd{(Places,} \hlkwc{pch}\hlstd{=}\hlnum{16}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=0.7\textwidth]{figures/MapsDenmark-1} 
 
-\includegraphics[width=0.7\textwidth]{figures/MapsDenmark-1} \end{Schunk}
+\end{knitrout}
 
 

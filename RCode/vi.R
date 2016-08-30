@@ -1,23 +1,11 @@
-## ----setup, include=FALSE------------------------------------------------
-rm(list = ls())
-if (!file.exists("Data")) dir.create("Data")
-if (!file.exists("figures")) dir.create("figures")
-if (!file.exists("tables")) dir.create("tables")
-if (!file.exists("Other")) dir.create("Other")
-set.seed(222664)
-options(width = 60,  digits = 4, continue="   ")
-
-## ----ChSetup, include=FALSE----------------------------------------------
-opts_chunk$set(fig.path='figures/VI', comment=NA, dev=c('pdf','postscript','svg'), prompt=T, out.width="0.7\\textwidth") 
-
 ## ----LoadPackage---------------------------------------------------------
 library(BrailleR) 
 
 ## ----SaveHistory, eval=FALSE---------------------------------------------
-savehistory("WhatIDidToday.txt") 
+## savehistory("WhatIDidToday.txt")
 
 ## ----TXTOut, eval=FALSE--------------------------------------------------
-txtOut() 
+## txtOut()
 
 ## ----CreateHist----------------------------------------------------------
 MyHist = hist(airquality$Wind, xlab="Average wind speed (mph)", main="", plot=FALSE) 
@@ -37,9 +25,9 @@ VI(boxplot(airquality$Wind, xlab="Average wind speed (mph)"))
 VI(dotplot(x)) 
 
 ## ----UniDesc, eval=FALSE-------------------------------------------------
-data(airquality) 
-Ozone=airquality$Ozone 
-UniDesc(Ozone, Folder="AirQuality") 
+## data(airquality)
+## Ozone=airquality$Ozone
+## UniDesc(Ozone, Folder="AirQuality")
 
 ## ----VIDataFrame---------------------------------------------------------
 summary(airquality) 
@@ -57,7 +45,4 @@ WhereXY(x,y2, grid=c(5,5))
 WhereXY(x,y2, grid=c(5,5)) 
 WhereXY(x,y3, grid=c(5,5)) 
 WhereXY(x,y4, grid=c(5,5)) 
-
-## ----cleanup, include=FALSE----------------------------------------------
-rm(list = ls())
 

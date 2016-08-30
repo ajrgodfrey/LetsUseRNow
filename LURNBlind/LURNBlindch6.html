@@ -10,7 +10,7 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,2,next,mathjax,html --> 
 <meta name="src" content="LURNBlind.tex" /> 
-<meta name="date" content="2016-08-08 12:16:00" /> 
+<meta name="date" content="2016-08-30 22:08:00" /> 
 <link rel="stylesheet" type="text/css" href="LURNBlind.css" /> 
 </head><body 
 >
@@ -21,16 +21,16 @@ href="LURNBlindch5.html#tailLURNBlindch5.html" >prev-tail</a>] [<a
 href="#tailLURNBlindch6.html">tail</a>] [<a 
 href="LURNBlind.html#LURNBlindch6.html" >up</a>] </p></div>
    <h2 class="chapterHead"><span class="titlemark">Chapter&#x00A0;6</span><br /><a 
- id="x8-400006"></a>LURN&#x2026; To Export a Dataset</h2>
+ id="x8-410006"></a>LURN&#x2026; To Export a Dataset</h2>
 <!--l. 7--><p class="noindent" >This chapter assumes you&#8217;ve got some data to export, and I mean data; not
 results from analyses which is discussed in Chapter&#x00A0;<a 
-href="LURNBlindch9.html#x11-650009">9<!--tex4ht:ref: StoreResults --></a>. You may also wish to use
+href="LURNBlindch9.html#x11-660009">9<!--tex4ht:ref: StoreResults --></a>. You may also wish to use
 this information once you know how to tabulate various numerical summaries,
 discussed in Chapter&#x00A0;<a 
-href="LURNBlindch8.html#x10-580008">8<!--tex4ht:ref: NumericalEDA --></a>.
+href="LURNBlindch8.html#x10-590008">8<!--tex4ht:ref: NumericalEDA --></a>.
 </p>
    <h3 class="sectionHead"><span class="titlemark">6.1   </span> <a 
- id="x8-410006.1"></a>Creating external files</h3>
+ id="x8-420006.1"></a>Creating external files</h3>
 <!--l. 11--><p class="noindent" >This section is just the inverse action of importing data from an external file as
 discussed in Chapter&#x00A0;<a 
 href="LURNBlindch4.html#x6-280004">4<!--tex4ht:ref: ImportData --></a>. All the <span 
@@ -42,48 +42,48 @@ href="LURNBlindch4.html#x6-280004">4<!--tex4ht:ref: ImportData --></a> you&#8217
 easily transferred and easily checked for their accuracy using other software. In
 particular, I prefer to create comma separated value (csv) files using the
 <a 
- id="dx8-41001"></a><span 
+ id="dx8-42001"></a><span 
 class="aett-12">write.csv() </span>command. If there was a <a 
- id="dx8-41002"></a><span 
+ id="dx8-42002"></a><span 
 class="aeti-12">data.frame </span>called <span 
 class="aett-12">Chickens </span>in my current
 workspace that I wanted to export for sharing with another user, I would issue the
 following command.
 </p>
-   <div class="fancyvrb" id="fancyvrb129">  <a 
- id="x8-41004r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb130">  <a 
+ id="x8-42004r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;write.csv(Chickens,</span><span 
 class="aett-12">&#x00A0;file="chickens.csv")</span></div>
 <!--l. 19--><p class="noindent" >If <span 
 class="aess-12">R </span>had created rownames for the <a 
- id="dx8-41005"></a><span 
+ id="dx8-42005"></a><span 
 class="aeti-12">data.frame</span>, I might not want to include them. A
 simple additional argument is all that is required.
 </p>
-   <div class="fancyvrb" id="fancyvrb130">  <a 
- id="x8-41007r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb131">  <a 
+ id="x8-42007r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;write.csv(Chickens,</span><span 
 class="aett-12">&#x00A0;file="chickens.csv",</span><span 
 class="aett-12">&#x00A0;row.names=FALSE)</span></div>
 <!--l. 26--><p class="indent" >   If another file type is required then the help page for <a 
- id="dx8-41008"></a><span 
+ id="dx8-42008"></a><span 
 class="aett-12">write.csv() </span>may be
 useful. This page also gives the help on the <a 
- id="dx8-41009"></a><span 
+ id="dx8-42009"></a><span 
 class="aett-12">write.table() </span>command.
 </p><!--l. 28--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">6.2   </span> <a 
- id="x8-420006.2"></a>Exporting data for use in alternative software</h3>
+ id="x8-430006.2"></a>Exporting data for use in alternative software</h3>
 <!--l. 30--><p class="noindent" >The better statistical software options allow users to import data from a range of
 sources and file types. If for some (very strange) reason you need to create files in
 a specific format for importing into another statistics package then you will need
 to investigate the <a 
- id="dx8-42001"></a><span 
+ id="dx8-43001"></a><span 
 class="aeti-12">foreign </span>package.
                                                                           
 

@@ -1,5 +1,4 @@
 <<SummaryVector>>= 
-attach(airquality) 
 min(Temp) 
 max(Wind) 
 median(Solar.R) 

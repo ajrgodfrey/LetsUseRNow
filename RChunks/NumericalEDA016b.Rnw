@@ -1,0 +1,3 @@
+<<Aggregate1>>= 
+aggregate(Wind~Month, data=airquality, mean) 
+@ 

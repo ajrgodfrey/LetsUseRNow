@@ -1,5 +1,3 @@
 <<IrisInColour>>= 
-attach(iris) 
-plot(Sepal.Length~Sepal.Width, xlab="Sepal width", ylab="Sepal length", col=Species) 
-detach(iris) 
+plot(Sepal.Length~Sepal.Width, data=iris, xlab="Sepal width", ylab="Sepal length", col=Species) 
 @ 

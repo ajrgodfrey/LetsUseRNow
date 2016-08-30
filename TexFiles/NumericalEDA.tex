@@ -12,21 +12,24 @@ In this chapter we see how to obtain and present simple numerical summaries suit
 \section{Obtaining basic numerical summaries of data} 
  
 The \Rcmd{summary} command is a very useful tool. It behaves differently for \R{} objects depending on the nature of the object it is working on. The air quality data we used for Chapter~\ref{SimpleGraphs} for demonstrating basic graphing techniques is a \Rclass{data.frame} object as evidenced by asking \R{} what class the object is using the \Rcmd{class} command 
-\begin{Schunk}
-\begin{Sinput}
-> class(airquality) 
-\end{Sinput}
-\begin{Soutput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{class}\hlstd{(airquality)}
+\end{alltt}
+\begin{verbatim}
 [1] "data.frame"
-\end{Soutput}
-\end{Schunk}
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
  
 Applying the \Rcmd{summary} command to the \Robject{air quality} data gives: 
-\begin{Schunk}
-\begin{Sinput}
-> summary(airquality) 
-\end{Sinput}
-\begin{Soutput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{summary}\hlstd{(airquality)}
+\end{alltt}
+\begin{verbatim}
      Ozone          Solar.R         Wind      
  Min.   :  1.0   Min.   :  7   Min.   : 1.70  
  1st Qu.: 18.0   1st Qu.:116   1st Qu.: 7.40  
@@ -43,93 +46,108 @@ Applying the \Rcmd{summary} command to the \Robject{air quality} data gives:
  3rd Qu.:85.0   3rd Qu.:8.00   3rd Qu.:23.0  
  Max.   :97.0   Max.   :9.00   Max.   :31.0  
                                              
-\end{Soutput}
-\end{Schunk}
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
 The \Rcmd{summary} command finds the common numeric summary statistics for the continuous-valued variables and does a particulary useless job on the variables for month and day. Well it's not really \R{}'s fault. The month didn't need to be stored numerically, but in any case we got what we asked for! It's not \R{}'s fault we asked to be told what the minimum day number was! 
  
 Notice that the \Rcmd{summary} command extracted the minimum, maximum, median and mean for the variables in the \Rclass{data.frame}. These are all available using corresponding \Rcmd{min}, \Rcmd{max}, \Rcmd{median}, and \Rcmd{mean} commands separately but they work in different ways on data frames. For example we might have thought to use the \Rcmd{mean} command on a \Rclass{data.frame}, but it is better practice to use the more specific \Rcmd{colMeans} command instead. 
-\begin{Schunk}
-\begin{Sinput}
-> colMeans(airquality[,1:4]) 
-\end{Sinput}
-\begin{Soutput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{colMeans}\hlstd{(airquality[,}\hlnum{1}\hlopt{:}\hlnum{4}\hlstd{])}
+\end{alltt}
+\begin{verbatim}
   Ozone Solar.R    Wind    Temp 
      NA      NA   9.958  77.882 
-\end{Soutput}
-\begin{Sinput}
-> colMeans(airquality[,1:4], na.rm=TRUE) 
-\end{Sinput}
-\begin{Soutput}
+\end{verbatim}
+\begin{alltt}
+\hlstd{> }\hlkwd{colMeans}\hlstd{(airquality[,}\hlnum{1}\hlopt{:}\hlnum{4}\hlstd{],} \hlkwc{na.rm}\hlstd{=}\hlnum{TRUE}\hlstd{)}
+\end{alltt}
+\begin{verbatim}
   Ozone Solar.R    Wind    Temp 
  42.129 185.932   9.958  77.882 
-\end{Soutput}
-\begin{Sinput}
-> mean(airquality[,1], na.rm=TRUE) 
-\end{Sinput}
-\begin{Soutput}
+\end{verbatim}
+\begin{alltt}
+\hlstd{> }\hlkwd{mean}\hlstd{(airquality[,}\hlnum{1}\hlstd{],} \hlkwc{na.rm}\hlstd{=}\hlnum{TRUE}\hlstd{)}
+\end{alltt}
+\begin{verbatim}
 [1] 42.13
-\end{Soutput}
-\end{Schunk}
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
 Note that I've told \R{} which columns of the \Robject{air quality} \Rclass{data.frame} to work with using the appropriate subscripting code. I've also needed to tell \R{} to ignore the missing data for the two variables \Robject{Ozone} and \Robject{Solar.R} using the \Rarg{na.rm=TRUE}. The output for the \Rcmd{summary} command did tell us how many values for each variable were missing. Recall that missing values are represented by a ``\code{NA}". 
  
 The \Rcmd{min} and \Rcmd{max} commands all work on the data by assuming we want the statistic for the whole list of numbers over all columns. For example 
-\begin{Schunk}
-\begin{Sinput}
-> #median(airquality[,1:4], na.rm=TRUE) 
-> min(airquality[,1:4], na.rm=TRUE) 
-\end{Sinput}
-\begin{Soutput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlcom{#median(airquality[,1:4], na.rm=TRUE) }
+\hlstd{> }\hlkwd{min}\hlstd{(airquality[,}\hlnum{1}\hlopt{:}\hlnum{4}\hlstd{],} \hlkwc{na.rm}\hlstd{=}\hlnum{TRUE}\hlstd{)}
+\end{alltt}
+\begin{verbatim}
 [1] 1
-\end{Soutput}
-\begin{Sinput}
-> max(airquality[,1:4], na.rm=TRUE) 
-\end{Sinput}
-\begin{Soutput}
+\end{verbatim}
+\begin{alltt}
+\hlstd{> }\hlkwd{max}\hlstd{(airquality[,}\hlnum{1}\hlopt{:}\hlnum{4}\hlstd{],} \hlkwc{na.rm}\hlstd{=}\hlnum{TRUE}\hlstd{)}
+\end{alltt}
+\begin{verbatim}
 [1] 334
-\end{Soutput}
-\end{Schunk}
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
  
 It used to be possible to ask \R{} to use the \Rcmd{median}, in a command like this, but as of version 2-14-0, an error message was returned instead of an answer. 
  
 We will need to see how to get the relevant medians, minima, and maxima for the columns separately later in this chapter, but for now let's see how the relevant summary measures can be obtained for a single column of the \Robject{air quality} data. The \Rcmd{attach} command allows us direct access to the variables by name. 
-\begin{Schunk}
-\begin{Sinput}
-> attach(airquality) 
-> min(Temp) 
-\end{Sinput}
-\begin{Soutput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{attach}\hlstd{(airquality)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{min}\hlstd{(Temp)}
+\end{alltt}
+\begin{verbatim}
 [1] 56
-\end{Soutput}
-\begin{Sinput}
-> max(Wind) 
-\end{Sinput}
-\begin{Soutput}
+\end{verbatim}
+\begin{alltt}
+\hlstd{> }\hlkwd{max}\hlstd{(Wind)}
+\end{alltt}
+\begin{verbatim}
 [1] 20.7
-\end{Soutput}
-\begin{Sinput}
-> median(Solar.R) 
-\end{Sinput}
-\begin{Soutput}
+\end{verbatim}
+\begin{alltt}
+\hlstd{> }\hlkwd{median}\hlstd{(Solar.R)}
+\end{alltt}
+\begin{verbatim}
 [1] NA
-\end{Soutput}
-\begin{Sinput}
-> median(Solar.R, na.rm=TRUE) 
-\end{Sinput}
-\begin{Soutput}
+\end{verbatim}
+\begin{alltt}
+\hlstd{> }\hlkwd{median}\hlstd{(Solar.R,} \hlkwc{na.rm}\hlstd{=}\hlnum{TRUE}\hlstd{)}
+\end{alltt}
+\begin{verbatim}
 [1] 205
-\end{Soutput}
-\end{Schunk}
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
 Notice that a consequence of missing values in our data is that some functions will return the \code{NA} value. If we want the quantity returned to be estimated using the available data we simply add the argument \Rarg{na.rm=TRUE} which removes the values denoted with the \code{NA}. 
  
 The first and third quartiles are not so easily extracted however. We can get the first and third quartiles from the five number summary by extracting elements of the output returned by the \Rcmd{fivenum} command. For example 
-\begin{Schunk}
-\begin{Sinput}
-> fivenum(Ozone) 
-\end{Sinput}
-\begin{Soutput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{fivenum}\hlstd{(Ozone)}
+\end{alltt}
+\begin{verbatim}
 [1]   1.0  18.0  31.5  63.5 168.0
-\end{Soutput}
-\end{Schunk}
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
 There are some minor differences between the methods used by the \Rcmd{summary} and \Rcmd{fivenum} commands for the first and third quartiles. See the relevant help page using \code{?fivenum} for an explanation. 
  
 Knowing how these commands work on simple sets of numbers is very useful for the more elegant presentations in the following sections. 
@@ -138,41 +156,79 @@ Knowing how these commands work on simple sets of numbers is very useful for the
  
 When preparing reports it is unlikely that we would want a single statistic all that often. Rather, we are usually interested in exposing patterns or differences within the data. We do this graphically but we may need to extract the exact quantities plotted in the graph as well. 
  
-The \Rcmd{tapply} command is very useful for creating tables of results. It has three arguments; the main variable of interest, the grouping variable(s), and the function we want performed on each group within the data. It is of course, easier to show how the \Rcmd{tapply} command works in action so we'll use the air quality data again. 
+The \Rcmd{tapply} and \Rcmd{aggregate} commands are very useful for creating tables of results, sometimes referred to as \stressind{pivot tables}. The \Rcmd{tapply} command has three arguments; the main variable of interest, the grouping variable(s), and the function we want performed on each group within the data. In contrast, the \Rcmd{aggregate} command has a slightly different way of relating the response variable to one or more grouping variables. It is of course, easier to show how these commands work in action so we'll use the air quality data again and present various alternatives and the slightly different resulting output. 
  
-Let's say we want to know the \Rcmd{mean} Wind speed over the five months data were collected. 
-\begin{Schunk}
-\begin{Sinput}
-> tapply(Wind, Month, mean) 
-\end{Sinput}
-\begin{Soutput}
+Let's say we want to know the \Rcmd{mean} Wind speed over the five months data were collected. We could use 
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{tapply}\hlstd{(Wind, Month, mean)}
+\end{alltt}
+\begin{verbatim}
      5      6      7      8      9 
 11.623 10.267  8.942  8.794 10.180 
-\end{Soutput}
-\end{Schunk}
-This does the job very nicely. We could ask for other quantities such as the minimum, maximum, or standard deviation within each month by referring to the relevant \R{} command in the third argument. 
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+or
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{aggregate}\hlstd{(Wind}\hlopt{~}\hlstd{Month,} \hlkwc{data}\hlstd{=airquality, mean)}
+\end{alltt}
+\begin{verbatim}
+  Month   Wind
+1     5 11.623
+2     6 10.267
+3     7  8.942
+4     8  8.794
+5     9 10.180
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+These commands do the job very nicely; choose the one that delivers the output in the way you want it. We could ask for other quantities such as the minimum, maximum, or standard deviation within each month by referring to the relevant \R{} command in the third argument. Note that the \Rcmd{aggregate} command allows specification of the \Rclass{data.frame} in which to find the variables in the \Rclass{formula}; this approach is commonplace when we fit models for our data and avoids the need to make use of the \Rcmd{attach} and \Rcmd{detach} commands.  
  
-If we had multiple response variables of interest, we would need to repeat the command for each one. If we had more than one way of asking for the grouping though, the \Rcmd{tapply} command is very useful indeed. The air quality data doesn't have a second factor we can use for this illustration, so I've created a second variable which asks if the day of the month is in the second half of the month. See what happens. 
-\begin{Schunk}
-\begin{Sinput}
-> tapply(Wind, list(Month, Day>15), mean) 
-\end{Sinput}
-\begin{Soutput}
+If we had multiple response variables of interest, we would need to repeat the command for each one. If we had more than one way of asking for the grouping though, the \Rcmd{tapply} command is very useful indeed as it presents a two-way pivot table. The air quality data doesn't have a second factor we can use for this illustration, so I've created a second variable which asks if the day of the month is in the second half of the month. In this case, the \Rcmd{tapply} and \Rcmd{aggregate} commands generate quite different outcomes.
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlstd{Day15} \hlkwb{=} \hlstd{Day} \hlopt{>} \hlnum{15}
+\hlstd{> }\hlkwd{tapply}\hlstd{(Wind,} \hlkwd{list}\hlstd{(Month, Day15), mean)}
+\end{alltt}
+\begin{verbatim}
    FALSE   TRUE
 5 11.313 11.912
 6 10.787  9.747
 7  9.360  8.550
 8  8.907  8.688
 9  9.547 10.813
-\end{Soutput}
-\end{Schunk}
+\end{verbatim}
+\begin{alltt}
+\hlstd{> }\hlkwd{aggregate}\hlstd{(Wind} \hlopt{~} \hlstd{Month} \hlopt{+} \hlstd{Day15,} \hlkwc{data}\hlstd{=airquality, mean)}
+\end{alltt}
+\begin{verbatim}
+   Month Day15   Wind
+1      5 FALSE 11.313
+2      6 FALSE 10.787
+3      7 FALSE  9.360
+4      8 FALSE  8.907
+5      9 FALSE  9.547
+6      5  TRUE 11.912
+7      6  TRUE  9.747
+8      7  TRUE  8.550
+9      8  TRUE  8.688
+10     9  TRUE 10.813
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
  
 If we wanted more than one statistic of interest, we would need to repeat the command and change the function being referenced in the third argument. We can use the \Rcmd{summary} command here though as it gives us more quantities. 
-\begin{Schunk}
-\begin{Sinput}
-> tapply(Wind, Month, summary) 
-\end{Sinput}
-\begin{Soutput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{tapply}\hlstd{(Wind, Month, summary)}
+\end{alltt}
+\begin{verbatim}
 $`5`
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
     5.7     8.9    11.5    11.6    14.0    20.1 
@@ -192,31 +248,36 @@ $`8`
 $`9`
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
    2.80    7.55   10.30   10.20   12.30   16.60 
-\end{Soutput}
-\end{Schunk}
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
  
 This printout isn't particularly attractive, but it is quick and informative. If presentation was more important than getting results efficiently, we would look to improve the appearance --- this means more difficult coding though. 
  
 There is one more feature of the \Rcmd{tapply} command that must be pointed out. The simple commands shown thus far use the default settings of the relevant functions. In particular, the \Rcmd{mean} command does not ignore missing values by default. 
-\begin{Schunk}
-\begin{Sinput}
-> tapply(Ozone, Month, mean) 
-\end{Sinput}
-\begin{Soutput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{tapply}\hlstd{(Ozone, Month, mean)}
+\end{alltt}
+\begin{verbatim}
  5  6  7  8  9 
 NA NA NA NA NA 
-\end{Soutput}
-\end{Schunk}
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
 We now know that there are missing \Robject{Ozone} observations in each month. We can add a fourth argument to the command which will be passed on to the function mentioned in the third argument. 
-\begin{Schunk}
-\begin{Sinput}
-> tapply(Ozone, Month, mean, na.rm=TRUE) 
-\end{Sinput}
-\begin{Soutput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{tapply}\hlstd{(Ozone, Month, mean,} \hlkwc{na.rm}\hlstd{=}\hlnum{TRUE}\hlstd{)}
+\end{alltt}
+\begin{verbatim}
     5     6     7     8     9 
 23.62 29.44 59.12 59.96 31.45 
-\end{Soutput}
-\end{Schunk}
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
 gives us the means of the observed data. 
  
 \section{Getting things printed how we want them} 
@@ -224,37 +285,43 @@ gives us the means of the observed data.
 We will often need to watch the way \R{} chooses to print out results. When a direct reference to data is sought, the order of the data is maintained. In our example using the \Rcmd{tapply} command above, the months were numeric values. The order was probably the most logical one as it was in chronological order. 
  
 If we had a long list of results and it was the extremes we wanted to focus attention towards, the \Rcmd{sort} and \Rcmd{rev} commands would be most useful. For example, say we want to order the monthly average wind speeds found above in ascending order, then we would use 
-\begin{Schunk}
-\begin{Sinput}
-> sort(tapply(Wind, Month, mean)) 
-\end{Sinput}
-\begin{Soutput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{sort}\hlstd{(}\hlkwd{tapply}\hlstd{(Wind, Month, mean))}
+\end{alltt}
+\begin{verbatim}
      8      7      9      6      5 
  8.794  8.942 10.180 10.267 11.623 
-\end{Soutput}
-\end{Schunk}
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
 So we now know that August has the smallest average wind speed and that May is the windiest month. 
  
 To get the data listed in reverse chronological order we would use: 
-\begin{Schunk}
-\begin{Sinput}
-> rev(tapply(Wind, Month, mean)) 
-\end{Sinput}
-\begin{Soutput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{rev}\hlstd{(}\hlkwd{tapply}\hlstd{(Wind, Month, mean))}
+\end{alltt}
+\begin{verbatim}
      9      8      7      6      5 
 10.180  8.794  8.942 10.267 11.623 
-\end{Soutput}
-\end{Schunk}
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
 and we can combine both commands to get the months ordered from windiest to least windy using: 
-\begin{Schunk}
-\begin{Sinput}
-> rev(sort(tapply(Wind, Month, mean))) 
-\end{Sinput}
-\begin{Soutput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{rev}\hlstd{(}\hlkwd{sort}\hlstd{(}\hlkwd{tapply}\hlstd{(Wind, Month, mean)))}
+\end{alltt}
+\begin{verbatim}
      5      6      9      7      8 
 11.623 10.267 10.180  8.942  8.794 
-\end{Soutput}
-\end{Schunk}
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
  
 \section{Correlation structure within a data set} 
 \label{CorrelationStructure} 
@@ -262,46 +329,52 @@ and we can combine both commands to get the months ordered from windiest to leas
 The summaries given thus far in this chapter all refer to variables as single objects. Often we have multivariate data and want to know more about it. Looking for inter-relationships among variables can be achieved using correlation coefficients; this gives us a numerical equivalent to the scatter plot matrices shown in Section~\ref{ScatterPlotMatrices}. 
  
 In fact, the commands used here resemble those used to generate the scatter plot matrix. I like to do this to save effort. My ability to copy and paste is better than my typing! 
-\begin{Schunk}
-\begin{Sinput}
-> cor(data.frame(Ozone, Solar.R, Wind, Temp)) 
-\end{Sinput}
-\begin{Soutput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{cor}\hlstd{(}\hlkwd{data.frame}\hlstd{(Ozone, Solar.R, Wind, Temp))}
+\end{alltt}
+\begin{verbatim}
         Ozone Solar.R   Wind   Temp
 Ozone       1      NA     NA     NA
 Solar.R    NA       1     NA     NA
 Wind       NA      NA  1.000 -0.458
 Temp       NA      NA -0.458  1.000
-\end{Soutput}
-\end{Schunk}
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
 Having said this, it is now obvious that the missing values in some variables is causing grief. An additional argument is required. 
-\begin{Schunk}
-\begin{Sinput}
-> cor(data.frame(Ozone, Solar.R, Wind, Temp),  
-   use = "pairwise.complete.obs") 
-\end{Sinput}
-\begin{Soutput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{cor}\hlstd{(}\hlkwd{data.frame}\hlstd{(Ozone, Solar.R, Wind, Temp),}
+\hlstd{   }\hlkwc{use} \hlstd{=} \hlstr{"pairwise.complete.obs"}\hlstd{)}
+\end{alltt}
+\begin{verbatim}
           Ozone  Solar.R     Wind    Temp
 Ozone    1.0000  0.34834 -0.60155  0.6984
 Solar.R  0.3483  1.00000 -0.05679  0.2758
 Wind    -0.6015 -0.05679  1.00000 -0.4580
 Temp     0.6984  0.27584 -0.45799  1.0000
-\end{Soutput}
-\end{Schunk}
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
 Often, \R{} will allow arguments to be abbreviated. Unfortunately, this isn't the case for this additional argument. It is the case for choosing the preferred correlation measure to be found though. The default is to calculate Pearson's correlation coefficient. My personal preference is to use both this measure and Spearman's rank correlation coefficient as it does not require the relationship to be linear, nor does it require the samples to be normally distributed. As well as finding Spearman's measure, I've decided that printing correlations to five decimal places is unnecessary so have restricted the output using the \Rcmd{round} command. 
-\begin{Schunk}
-\begin{Sinput}
-> round(cor(data.frame(Ozone, Solar.R, Wind, Temp),  
-   use = "pairwise.complete.obs", method = "s"), 3) 
-\end{Sinput}
-\begin{Soutput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{round}\hlstd{(}\hlkwd{cor}\hlstd{(}\hlkwd{data.frame}\hlstd{(Ozone, Solar.R, Wind, Temp),}
+\hlstd{   }\hlkwc{use} \hlstd{=} \hlstr{"pairwise.complete.obs"}\hlstd{,} \hlkwc{method} \hlstd{=} \hlstr{"s"}\hlstd{),} \hlnum{3}\hlstd{)}
+\end{alltt}
+\begin{verbatim}
          Ozone Solar.R   Wind   Temp
 Ozone    1.000   0.348 -0.590  0.774
 Solar.R  0.348   1.000 -0.001  0.207
 Wind    -0.590  -0.001  1.000 -0.447
 Temp     0.774   0.207 -0.447  1.000
-\end{Soutput}
-\end{Schunk}
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
  
  
  
@@ -313,35 +386,42 @@ Temp     0.774   0.207 -0.447  1.000
 In Section~\ref{DPlyRDataManipulation}, we saw how the \Rpkg{dplyr} package offers an alternative to base \R{} functionality for manipulating data. We now see that this package offers commands for summarising data. In particular, the commands: \Rcmd{group\_by}, \Rcmd{summarise}, and \Rcmd{count}. 
    
 You'll need to install the package (see Section~\ref{InstallPackages} for instructions) before running the function 
-\begin{Schunk}
-\begin{Sinput}
-> library(dplyr) 
-\end{Sinput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{library}\hlstd{(dplyr)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
 to gain access to the commands just listed. We will also make use of the \Rpkg{dplyr} data structure called a \Rclass{tbl\_df} instead of the common \Rclass{data.frame} using: 
-\begin{Schunk}
-\begin{Sinput}
-> airquality2=tbl_df(airquality) 
-\end{Sinput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlstd{airquality2}\hlkwb{=}\hlkwd{tbl_df}\hlstd{(airquality)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
  
  
 The \Rcmd{summarise}  and \Rcmd{group\_by} commands can be used instead of the \Rcmd{tapply} command introduced earlier in this chapter. To get the overall average wind speed from the \Robject{airquality} data, we could use: 
-\begin{Schunk}
-\begin{Sinput}
-> airquality %>% summarise(mean(Wind, na.rm = TRUE)) 
-\end{Sinput}
-\begin{Soutput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlstd{airquality} \hlopt{%>%} \hlkwd{summarise}\hlstd{(}\hlkwd{mean}\hlstd{(Wind,} \hlkwc{na.rm} \hlstd{=} \hlnum{TRUE}\hlstd{))}
+\end{alltt}
+\begin{verbatim}
   mean(Wind, na.rm = TRUE)
 1                    9.958
-\end{Soutput}
-\end{Schunk}
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
 which is more long-winded than just using the \Rcmd{mean} command alone. The value of \Rcmd{summarise} becomes more evident when we seek the means for groups within our data, such as: 
-\begin{Schunk}
-\begin{Sinput}
-> airquality%>% group_by(Month) %>% summarise(mean(Wind, na.rm = TRUE)) 
-\end{Sinput}
-\begin{Soutput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlstd{airquality}\hlopt{%>%} \hlkwd{group_by}\hlstd{(Month)} \hlopt{%>%} \hlkwd{summarise}\hlstd{(}\hlkwd{mean}\hlstd{(Wind,} \hlkwc{na.rm} \hlstd{=} \hlnum{TRUE}\hlstd{))}
+\end{alltt}
+\begin{verbatim}
 # A tibble: 5 x 2
   Month mean(Wind, na.rm = TRUE)
   <int>                    <dbl>
@@ -350,15 +430,17 @@ which is more long-winded than just using the \Rcmd{mean} command alone. The val
 3     7                    8.942
 4     8                    8.794
 5     9                   10.180
-\end{Soutput}
-\end{Schunk}
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
  
 We could use other functions seen in this chapter for alternative summary statistics within these functions. A common task is to check on how much data we have for each group of interest. We could use \Rcmd{summarise} and \Rcmd{length} to count up the data, but the \Rpkg{dplyr} package gives us the \Rcmd{count} function to make this even more efficient. 
-\begin{Schunk}
-\begin{Sinput}
-> airquality%>% count(Month) 
-\end{Sinput}
-\begin{Soutput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlstd{airquality}\hlopt{%>%} \hlkwd{count}\hlstd{(Month)}
+\end{alltt}
+\begin{verbatim}
 # A tibble: 5 x 2
   Month     n
   <int> <int>
@@ -367,18 +449,20 @@ We could use other functions seen in this chapter for alternative summary statis
 3     7    31
 4     8    31
 5     9    30
-\end{Soutput}
-\end{Schunk}
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
  
  
 As an illustration of the real power of the \stressind{pipe operator}, say we wanted to show the hottest months by their average temperature within the air quality data. One way to do this using commands from the \Rpkg{dplyr} package is to: 
-\begin{Schunk}
-\begin{Sinput}
-> Grouped = group_by(airquality, Month) 
-> Summarised = summarise(Grouped, AveTemp=mean(Temp, na.rm = TRUE)) 
-> arrange(Summarised, desc(AveTemp)) 
-\end{Sinput}
-\begin{Soutput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlstd{Grouped} \hlkwb{=} \hlkwd{group_by}\hlstd{(airquality, Month)}
+\hlstd{> }\hlstd{Summarised} \hlkwb{=} \hlkwd{summarise}\hlstd{(Grouped,} \hlkwc{AveTemp}\hlstd{=}\hlkwd{mean}\hlstd{(Temp,} \hlkwc{na.rm} \hlstd{=} \hlnum{TRUE}\hlstd{))}
+\hlstd{> }\hlkwd{arrange}\hlstd{(Summarised,} \hlkwd{desc}\hlstd{(AveTemp))}
+\end{alltt}
+\begin{verbatim}
 # A tibble: 5 x 2
   Month AveTemp
   <int>   <dbl>
@@ -387,17 +471,19 @@ As an illustration of the real power of the \stressind{pipe operator}, say we wa
 3     6   79.10
 4     9   76.90
 5     5   65.55
-\end{Soutput}
-\end{Schunk}
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
 Which has stored data at each step. Note in particular that a new variable was created by name in the \Rcmd{summarise} command; this helps in the subsequent \Rcmd{arrange} step. We might want to store the results at each step, but if we didn't want to, then we could use piping like this: 
-\begin{Schunk}
-\begin{Sinput}
-> airquality2 %>% 
-   group_by(Month) %>% 
-   summarise(AveTemp = mean(Temp, na.rm = TRUE))  %>% 
-   arrange(desc(AveTemp)) 
-\end{Sinput}
-\begin{Soutput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlstd{airquality2} \hlopt{%>%}
+\hlstd{   }\hlkwd{group_by}\hlstd{(Month)} \hlopt{%>%}
+\hlstd{   }\hlkwd{summarise}\hlstd{(}\hlkwc{AveTemp} \hlstd{=} \hlkwd{mean}\hlstd{(Temp,} \hlkwc{na.rm} \hlstd{=} \hlnum{TRUE}\hlstd{))}  \hlopt{%>%}
+\hlstd{   }\hlkwd{arrange}\hlstd{(}\hlkwd{desc}\hlstd{(AveTemp))}
+\end{alltt}
+\begin{verbatim}
 # A tibble: 5 x 2
   Month AveTemp
   <int>   <dbl>
@@ -406,8 +492,9 @@ Which has stored data at each step. Note in particular that a new variable was c
 3     6   79.10
 4     9   76.90
 5     5   65.55
-\end{Soutput}
-\end{Schunk}
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
  
 Note that commands that might be nested on one line in the standard way of combining commands can be split out onto multiple lines to make it even easier to see what has been managed by each command. This leaves room for comments to be added at the end of lines to help anyone else read the code being written. 
  
@@ -415,10 +502,12 @@ Note that commands that might be nested on one line in the standard way of combi
 \section{Closing} 
  
 If you are carrying on working with \R{} you might wish to remove direct access to the data sets we used in this chapter by issuing the following commands 
-\begin{Schunk}
-\begin{Sinput}
-> detach(airquality) 
-\end{Sinput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{detach}\hlstd{(airquality)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
 
 

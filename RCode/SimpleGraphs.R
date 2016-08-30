@@ -1,19 +1,7 @@
-## ----setup, include=FALSE------------------------------------------------
-rm(list = ls())
-if (!file.exists("Data")) dir.create("Data")
-if (!file.exists("figures")) dir.create("figures")
-if (!file.exists("tables")) dir.create("tables")
-if (!file.exists("Other")) dir.create("Other")
-set.seed(222664)
-options(width = 60,  digits = 4, continue="   ")
-
-## ----ChSetup, include=FALSE----------------------------------------------
-opts_chunk$set(fig.path='figures/SimpleGraphs', comment=NA, dev=c('pdf','postscript','svg'), prompt=T, out.width="0.8\\textwidth") 
-
 ## ----IntroAirQuality-----------------------------------------------------
 str(airquality) 
 
-## ----Attach--------------------------------------------------------------
+## ----AttachAirQuality----------------------------------------------------
 attach(airquality) 
 
 ## ----HistAirQualityWind--------------------------------------------------
@@ -44,10 +32,10 @@ qqnorm(Wind)
 qqline(Wind) 
 
 ## ----ScatterCode1, eval=FALSE--------------------------------------------
-plot(Wind, Temp) 
+## plot(Wind, Temp)
 
 ## ----ScatterCode2, eval=FALSE--------------------------------------------
-plot(Temp~Wind) 
+## plot(Temp~Wind)
 
 ## ----Scatter-------------------------------------------------------------
 plot(Wind, Temp) 
@@ -79,7 +67,4 @@ pie(summary(state.region))
 
 ## ----DetachAirQuality----------------------------------------------------
 detach(airquality) 
-
-## ----cleanup, include=FALSE----------------------------------------------
-rm(list = ls())
 

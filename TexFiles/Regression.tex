@@ -14,11 +14,13 @@ This chapter presents the most basic regression models. To really get the most o
 The easiest way to fit regression models is using data that are contained in a \Rclass{data.frame}. This means we can use the \Rcmd{attach} command to get at the separate components if we need them. An alternative is to have direct access to each variable independently within our current workspace. For neatness, I prefer to keep data in the \Rclass{data.frame} format. 
  
 We can use the \Robject{air quality} data described in Chapter~\ref{SimpleGraphs}. Recall that it is available from your current workspace as it is contained within the \Rpackage{datasets} package. Typing 
-\begin{Schunk}
-\begin{Sinput}
-> data(airquality) 
-\end{Sinput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{data}\hlstd{(airquality)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
 will make the data explicitly available to you in your current \R{} workspace. 
  
 We can look for relationships among the variables within this data set using the techniques described in Chapter~\ref{SimpleGraphs}. Note in particular the scatter plot matrix presented in Exhibit~\ref{AirQualityScatterPlotMatrix}. 
@@ -35,12 +37,13 @@ y=\alpha+\beta{}x +\epsilon
 
 
 A second common argument is the \Rarg{data} statement. This means that the model formula can be stated using variable names from within the \Rclass{data.frame} mentioned in the \Rarg{data} statement. Models to explain the amount of \Robject{Ozone} using \Robject{Wind} and subsequently \Robject{Temp} are as follows. 
-\begin{Schunk}
-\begin{Sinput}
-> Ozone.lm1 = lm(Ozone~Wind, data=airquality) 
-> Ozone.lm1 
-\end{Sinput}
-\begin{Soutput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlstd{Ozone.lm1} \hlkwb{=} \hlkwd{lm}\hlstd{(Ozone}\hlopt{~}\hlstd{Wind,} \hlkwc{data}\hlstd{=airquality)}
+\hlstd{> }\hlstd{Ozone.lm1}
+\end{alltt}
+\begin{verbatim}
 
 Call:
 lm(formula = Ozone ~ Wind, data = airquality)
@@ -48,11 +51,11 @@ lm(formula = Ozone ~ Wind, data = airquality)
 Coefficients:
 (Intercept)         Wind  
       96.87        -5.55  
-\end{Soutput}
-\begin{Sinput}
-> summary(Ozone.lm1) 
-\end{Sinput}
-\begin{Soutput}
+\end{verbatim}
+\begin{alltt}
+\hlstd{> }\hlkwd{summary}\hlstd{(Ozone.lm1)}
+\end{alltt}
+\begin{verbatim}
 
 Call:
 lm(formula = Ozone ~ Wind, data = airquality)
@@ -73,11 +76,11 @@ Residual standard error: 26.5 on 114 degrees of freedom
   (37 observations deleted due to missingness)
 Multiple R-squared:  0.362,	Adjusted R-squared:  0.356 
 F-statistic: 64.6 on 1 and 114 DF,  p-value: 9.27e-13
-\end{Soutput}
-\begin{Sinput}
-> anova(Ozone.lm1) 
-\end{Sinput}
-\begin{Soutput}
+\end{verbatim}
+\begin{alltt}
+\hlstd{> }\hlkwd{anova}\hlstd{(Ozone.lm1)}
+\end{alltt}
+\begin{verbatim}
 Analysis of Variance Table
 
 Response: Ozone
@@ -87,12 +90,12 @@ Residuals 114  79859     701
 ---
 Signif. codes:  
 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-\end{Soutput}
-\begin{Sinput}
-> Ozone.lm2 = lm(Ozone~Temp, data=airquality) 
-> summary(Ozone.lm2) 
-\end{Sinput}
-\begin{Soutput}
+\end{verbatim}
+\begin{alltt}
+\hlstd{> }\hlstd{Ozone.lm2} \hlkwb{=} \hlkwd{lm}\hlstd{(Ozone}\hlopt{~}\hlstd{Temp,} \hlkwc{data}\hlstd{=airquality)}
+\hlstd{> }\hlkwd{summary}\hlstd{(Ozone.lm2)}
+\end{alltt}
+\begin{verbatim}
 
 Call:
 lm(formula = Ozone ~ Temp, data = airquality)
@@ -113,11 +116,11 @@ Residual standard error: 23.7 on 114 degrees of freedom
   (37 observations deleted due to missingness)
 Multiple R-squared:  0.488,	Adjusted R-squared:  0.483 
 F-statistic:  109 on 1 and 114 DF,  p-value: <2e-16
-\end{Soutput}
-\begin{Sinput}
-> anova(Ozone.lm2) 
-\end{Sinput}
-\begin{Soutput}
+\end{verbatim}
+\begin{alltt}
+\hlstd{> }\hlkwd{anova}\hlstd{(Ozone.lm2)}
+\end{alltt}
+\begin{verbatim}
 Analysis of Variance Table
 
 Response: Ozone
@@ -127,36 +130,39 @@ Residuals 114  64110     562
 ---
 Signif. codes:  
 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-\end{Soutput}
-\end{Schunk}
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
 There are very good reasons for creating the new objects in this example. Aside from the use of the \Rcmd{summary} method and \Rcmd{anova} command to extract more useful information about the model, we will refer back to the object using other commands in subsequent sections of this chapter. It also means we can investigate the model object, and extract some quantities on their own. For example, it's common to want to extract the $R^2$ for a model. We can't do this from the model object itself, but we can from the \Rcmd{summary} of the model. 
-\begin{Schunk}
-\begin{Sinput}
-> names(Ozone.lm1) 
-\end{Sinput}
-\begin{Soutput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{names}\hlstd{(Ozone.lm1)}
+\end{alltt}
+\begin{verbatim}
  [1] "coefficients"  "residuals"     "effects"      
  [4] "rank"          "fitted.values" "assign"       
  [7] "qr"            "df.residual"   "na.action"    
 [10] "xlevels"       "call"          "terms"        
 [13] "model"        
-\end{Soutput}
-\begin{Sinput}
-> names(summary(Ozone.lm1)) 
-\end{Sinput}
-\begin{Soutput}
+\end{verbatim}
+\begin{alltt}
+\hlstd{> }\hlkwd{names}\hlstd{(}\hlkwd{summary}\hlstd{(Ozone.lm1))}
+\end{alltt}
+\begin{verbatim}
  [1] "call"          "terms"         "residuals"    
  [4] "coefficients"  "aliased"       "sigma"        
  [7] "df"            "r.squared"     "adj.r.squared"
 [10] "fstatistic"    "cov.unscaled"  "na.action"    
-\end{Soutput}
-\begin{Sinput}
-> summary(Ozone.lm1)$r.squared 
-\end{Sinput}
-\begin{Soutput}
+\end{verbatim}
+\begin{alltt}
+\hlstd{> }\hlkwd{summary}\hlstd{(Ozone.lm1)}\hlopt{$}\hlstd{r.squared}
+\end{alltt}
+\begin{verbatim}
 [1] 0.3619
-\end{Soutput}
-\end{Schunk}
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
  
  
  
@@ -168,25 +174,31 @@ Adding a fitted line to the scatter plot when a simple relationship has been fit
 \begin{center} 
 \caption{Two simple regressions with the straight line added onto the scatter plots.} 
 \label{RegLineAdded} 
-\begin{Schunk}
-\begin{Sinput}
-> attach(airquality) 
-> plot(Wind, Ozone) 
-> abline(Ozone.lm1) 
-\end{Sinput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{attach}\hlstd{(airquality)}
+\hlstd{> }\hlkwd{plot}\hlstd{(Wind, Ozone)}
+\hlstd{> }\hlkwd{abline}\hlstd{(Ozone.lm1)}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=0.7\textwidth]{figures/RegressionOzoneWindWithLine-1} 
 
-\includegraphics[width=0.7\textwidth]{figures/RegressionOzoneWindWithLine-1} \end{Schunk}
+\end{knitrout}
 \SVGLink{RegressionOzoneWindWithLine-1} 
-\begin{Schunk}
-\begin{Sinput}
-> plot(Temp, Ozone) 
-> abline(Ozone.lm2) 
-\end{Sinput}
-
-\includegraphics[width=0.7\textwidth]{figures/RegressionOzoneTempWithLine-1} \begin{Sinput}
-> detach(airquality) 
-\end{Sinput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{plot}\hlstd{(Temp, Ozone)}
+\hlstd{> }\hlkwd{abline}\hlstd{(Ozone.lm2)}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=0.7\textwidth]{figures/RegressionOzoneTempWithLine-1} 
+\begin{kframe}\begin{alltt}
+\hlstd{> }\hlkwd{detach}\hlstd{(airquality)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
 \SVGLink{RegressionOzoneTempWithLine-1} 
 \end{center} 
 \end{exhibit} 
@@ -205,49 +217,56 @@ The diagnostic plots for the inadequate model for \Robject{Ozone} being predicte
 \begin{center} 
 \caption{Residual plots for the simple regression using Wind to predict the Ozone level.} 
 \label{OzoneWindResidPlots} 
-\begin{Schunk}
-\begin{Sinput}
-> par(mfrow=c(2,2)) 
-> plot(Ozone.lm1) 
-\end{Sinput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{par}\hlstd{(}\hlkwc{mfrow}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{2}\hlstd{,}\hlnum{2}\hlstd{))}
+\hlstd{> }\hlkwd{plot}\hlstd{(Ozone.lm1)}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=0.7\textwidth]{figures/RegressionOzoneWindResidPlots-1} 
 
-\includegraphics[width=0.7\textwidth]{figures/RegressionOzoneWindResidPlots-1} \end{Schunk}
+\end{knitrout}
 \end{center} 
 \end{exhibit} 
 These plots are enhanced by \R{} to add more information than the basic user is familiar with. Additional lines are added to three of the plots to assist in diagnosing problems. We can see from this plot that the model is inadequate as there is a nonlinear relationship between the response and predictor, and further that the residuals might not have very constant variance. 
  
 It might be easier to extract just the information we want, so we can build simpler plots ourselves. We need to find the residuals, fitted values and leverages for the model. These are found using the \Rcmd{resid}, \Rcmd{fitted}, and \Rcmd{hatvalues} commands respectively. 
-\begin{Schunk}
-\begin{Sinput}
-> Ozone.resid1 = resid(Ozone.lm1) 
-> Ozone.fitted1 = fitted(Ozone.lm1) 
-> Ozone.lev1 = hatvalues(Ozone.lm1) 
-\end{Sinput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlstd{Ozone.resid1} \hlkwb{=} \hlkwd{resid}\hlstd{(Ozone.lm1)}
+\hlstd{> }\hlstd{Ozone.fitted1} \hlkwb{=} \hlkwd{fitted}\hlstd{(Ozone.lm1)}
+\hlstd{> }\hlstd{Ozone.lev1} \hlkwb{=} \hlkwd{hatvalues}\hlstd{(Ozone.lm1)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
 The various plots can be constructed using the \Rcmd{plot}, and \Rcmd{qqnorm} commands as needed, but if we want the information on the leverages in text form we will need to do tasks like 
-\begin{Schunk}
-\begin{Sinput}
-> mean(Ozone.lev1) 
-\end{Sinput}
-\begin{Soutput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{mean}\hlstd{(Ozone.lev1)}
+\end{alltt}
+\begin{verbatim}
 [1] 0.01724
-\end{Soutput}
-\begin{Sinput}
-> max(Ozone.lev1) 
-\end{Sinput}
-\begin{Soutput}
+\end{verbatim}
+\begin{alltt}
+\hlstd{> }\hlkwd{max}\hlstd{(Ozone.lev1)}
+\end{alltt}
+\begin{verbatim}
 [1] 0.08854
-\end{Soutput}
-\begin{Sinput}
-> Ozone.lev1[Ozone.lev1>2*mean(Ozone.lev1)] 
-\end{Sinput}
-\begin{Soutput}
+\end{verbatim}
+\begin{alltt}
+\hlstd{> }\hlstd{Ozone.lev1[Ozone.lev1}\hlopt{>}\hlnum{2}\hlopt{*}\hlkwd{mean}\hlstd{(Ozone.lev1)]}
+\end{alltt}
+\begin{verbatim}
       9      18      22      48     117     121     126 
 0.07994 0.05822 0.03951 0.08854 0.03703 0.04753 0.04256 
     148 
 0.03951 
-\end{Soutput}
-\end{Schunk}
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
 The last command in this block has printed out the 8 observations that have excess leverage on this model. We should probably see if these are days that had extremely high wind. This is not done as this model has already been shown to be poor at explaining the amount of \Robject{Ozone} in the atmosphere. 
  
  
@@ -256,12 +275,13 @@ The last command in this block has printed out the 8 observations that have exce
  
 Given the obvious curvature in the relationship between \Robject{Ozone} and \Robject{Wind} appears monotonic, we can probably try both transforming the variables, and polynomial regression to explain the relationship. We take advantage of the  
 fact that \R{} has an in-built way of producing polynomial terms for insertion into models, and use the \Rcmd{poly} function in this instance. This command needs to know which variable to work with and the degree of the polynomial desired. For example, to fit the quadratic model we would use the commands 
-\begin{Schunk}
-\begin{Sinput}
-> Ozone.poly2 = lm(Ozone~poly(Wind,2, raw=TRUE), data=airquality) 
-> summary(Ozone.poly2) 
-\end{Sinput}
-\begin{Soutput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlstd{Ozone.poly2} \hlkwb{=} \hlkwd{lm}\hlstd{(Ozone}\hlopt{~}\hlkwd{poly}\hlstd{(Wind,}\hlnum{2}\hlstd{,} \hlkwc{raw}\hlstd{=}\hlnum{TRUE}\hlstd{),} \hlkwc{data}\hlstd{=airquality)}
+\hlstd{> }\hlkwd{summary}\hlstd{(Ozone.poly2)}
+\end{alltt}
+\begin{verbatim}
 
 Call:
 lm(formula = Ozone ~ poly(Wind, 2, raw = TRUE), data = airquality)
@@ -287,22 +307,26 @@ Residual standard error: 23.9 on 113 degrees of freedom
   (37 observations deleted due to missingness)
 Multiple R-squared:  0.486,	Adjusted R-squared:  0.477 
 F-statistic: 53.4 on 2 and 113 DF,  p-value: <2e-16
-\end{Soutput}
-\end{Schunk}
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
 Note that in order to obtain a model with the correct coefficients for the polynomial terms in the model, we need to use the \Rarg{raw} argument, setting it to \code{TRUE}.  
  
 We usually justify the use of a quadratic form by determining there is no practical benefit in making the model more complicated. To do this, we need to investigate the model for the cubic form of the relationship using 
-\begin{Schunk}
-\begin{Sinput}
-> Ozone.poly3 = lm(Ozone~poly(Wind,3, raw=TRUE), data=airquality) 
-\end{Sinput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlstd{Ozone.poly3} \hlkwb{=} \hlkwd{lm}\hlstd{(Ozone}\hlopt{~}\hlkwd{poly}\hlstd{(Wind,}\hlnum{3}\hlstd{,} \hlkwc{raw}\hlstd{=}\hlnum{TRUE}\hlstd{),} \hlkwc{data}\hlstd{=airquality)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
 Rather than continuously investigate the summaries of the various models, we can employ the \Rcmd{anova} command to compare the models.  
-\begin{Schunk}
-\begin{Sinput}
-> anova(Ozone.lm1, Ozone.poly2, Ozone.poly3) 
-\end{Sinput}
-\begin{Soutput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{anova}\hlstd{(Ozone.lm1, Ozone.poly2, Ozone.poly3)}
+\end{alltt}
+\begin{verbatim}
 Analysis of Variance Table
 
 Model 1: Ozone ~ Wind
@@ -315,8 +339,9 @@ Model 3: Ozone ~ poly(Wind, 3, raw = TRUE)
 ---
 Signif. codes:  
 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-\end{Soutput}
-\end{Schunk}
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
 We can compare all three models created thus far because they are a series of nested models. We could not include the model using \Robject{Temp} as the predictor in this command for example. 
  
 On the basis of the output from our \Rcmd{anova} command, we might assume that the quadratic form was sufficient to explain the relationship between \Robject{Ozone} and \Robject{Wind} because there is little to be gained by adding the cubic term to our model. Validation of the chosen model via the residual analysis is suggested as a next step. 
@@ -324,13 +349,16 @@ On the basis of the output from our \Rcmd{anova} command, we might assume that t
 \section{Presenting the polynomial model's suitability in a graph} 
  
 The \Rcmd{abline} command demonstrated earlier is only useful for straight lines. We have seen that the quadratic function is better at explaining the relationship between \Robject{Ozone} and \Robject{Wind}. One solution is to store the fitted values from this model and plot them against the \Robject{Wind} variable, but this will only show the series of points not a smooth curve.  
-\begin{Schunk}
-\begin{Sinput}
-> plot(Ozone~Wind, data=airquality) 
-> points(airquality$Wind[!is.na(airquality$Ozone)], fitted(Ozone.poly2), col=2) 
-\end{Sinput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{plot}\hlstd{(Ozone}\hlopt{~}\hlstd{Wind,} \hlkwc{data}\hlstd{=airquality)}
+\hlstd{> }\hlkwd{points}\hlstd{(airquality}\hlopt{$}\hlstd{Wind[}\hlopt{!}\hlkwd{is.na}\hlstd{(airquality}\hlopt{$}\hlstd{Ozone)],} \hlkwd{fitted}\hlstd{(Ozone.poly2),} \hlkwc{col}\hlstd{=}\hlnum{2}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=0.7\textwidth]{figures/RegressionQuadAddPoints-1} 
 
-\includegraphics[width=0.7\textwidth]{figures/RegressionQuadAddPoints-1} \end{Schunk}
+\end{knitrout}
 \SVGLink{RegressionQuadAddPoints-1} 
  
 Note that the \Rcmd{points} command used here includes the \Rarg{col} argument to change the colour of the points to red --- the second colour in the list of colours.  
@@ -344,23 +372,28 @@ Another solution that plots a curve instead of points, is demonstrated in Sectio
 \section{Multiple regression models} 
  
 The addition of multiple terms on the right hand side of the formula in the \Rcmd{lm} command is very simple. We can put both \Robject{Wind} and \Robject{Temp} into a model as predictors using 
-\begin{Schunk}
-\begin{Sinput}
-> Ozone.lm3 = lm(Ozone~Wind+Temp, data=airquality) 
-\end{Sinput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlstd{Ozone.lm3} \hlkwb{=} \hlkwd{lm}\hlstd{(Ozone}\hlopt{~}\hlstd{Wind}\hlopt{+}\hlstd{Temp,} \hlkwc{data}\hlstd{=airquality)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
 If we want to combine the models for the quadratic form for \Robject{Wind} and the linear form of \Robject{Temp} we would 
-\begin{Schunk}
-\begin{Sinput}
-> Ozone.lm4 = lm(Ozone~poly(Wind,2)+Temp, data=airquality) 
-\end{Sinput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlstd{Ozone.lm4} \hlkwb{=} \hlkwd{lm}\hlstd{(Ozone}\hlopt{~}\hlkwd{poly}\hlstd{(Wind,}\hlnum{2}\hlstd{)}\hlopt{+}\hlstd{Temp,} \hlkwc{data}\hlstd{=airquality)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
 This then allows us the opportunity of using the \Rcmd{anova} command as demonstrated above to compare these two models and one constructed earlier which used only \Robject{Temp} as a predictor. 
-\begin{Schunk}
-\begin{Sinput}
-> anova(Ozone.lm2, Ozone.lm3, Ozone.lm4) 
-\end{Sinput}
-\begin{Soutput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{anova}\hlstd{(Ozone.lm2, Ozone.lm3, Ozone.lm4)}
+\end{alltt}
+\begin{verbatim}
 Analysis of Variance Table
 
 Model 1: Ozone ~ Temp
@@ -373,16 +406,18 @@ Model 3: Ozone ~ poly(Wind, 2) + Temp
 ---
 Signif. codes:  
 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-\end{Soutput}
-\end{Schunk}
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
  
 The creation of interaction variables is also simple in \R{} Changing the ``+" sign in the model to a ``*" sign tells \R{} that we want the two main variables and their interaction to be included. The interaction term uses a ``:" between the variable names in the output. 
-\begin{Schunk}
-\begin{Sinput}
-> Ozone.lm5 = lm(Ozone~poly(Wind,2)*Temp, data=airquality) 
-> summary(Ozone.lm5) 
-\end{Sinput}
-\begin{Soutput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlstd{Ozone.lm5} \hlkwb{=} \hlkwd{lm}\hlstd{(Ozone}\hlopt{~}\hlkwd{poly}\hlstd{(Wind,}\hlnum{2}\hlstd{)}\hlopt{*}\hlstd{Temp,} \hlkwc{data}\hlstd{=airquality)}
+\hlstd{> }\hlkwd{summary}\hlstd{(Ozone.lm5)}
+\end{alltt}
+\begin{verbatim}
 
 Call:
 lm(formula = Ozone ~ poly(Wind, 2) * Temp, data = airquality)
@@ -414,14 +449,16 @@ Residual standard error: 20 on 110 degrees of freedom
   (37 observations deleted due to missingness)
 Multiple R-squared:  0.65,	Adjusted R-squared:  0.634 
 F-statistic: 40.9 on 5 and 110 DF,  p-value: <2e-16
-\end{Soutput}
-\end{Schunk}
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
 Note that this model includes two interaction terms, and on the face of it, neither term looks like it is contributing towards explaining the amount of ozone in the atmosphere. This can be tested using 
-\begin{Schunk}
-\begin{Sinput}
-> anova(Ozone.lm5, Ozone.lm4) 
-\end{Sinput}
-\begin{Soutput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{anova}\hlstd{(Ozone.lm5, Ozone.lm4)}
+\end{alltt}
+\begin{verbatim}
 Analysis of Variance Table
 
 Model 1: Ozone ~ poly(Wind, 2) * Temp
@@ -429,8 +466,9 @@ Model 2: Ozone ~ poly(Wind, 2) + Temp
   Res.Df   RSS Df Sum of Sq    F Pr(>F)
 1    110 43801                         
 2    112 44213 -2      -412 0.52    0.6
-\end{Soutput}
-\end{Schunk}
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
  
 Multiple regression models can be checked using the approaches described in Section~\ref{RegValid} above, but it may also prove useful to plot residuals from the current model against each current and potential predictor variable in the data set. 
  

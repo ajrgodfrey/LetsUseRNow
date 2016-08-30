@@ -1,8 +1,6 @@
 <<AddPolyCurve>>= 
 Ozone.poly2 = lm(Ozone~poly(Wind,2, raw=TRUE), data=airquality) 
 Coeffs=coef(Ozone.poly2) 
-attach(airquality) 
-plot(Wind, Ozone) 
+plot(Ozone~Wind, data=airquality) 
 curve(Coeffs[1]+Coeffs[2]*x+Coeffs[2]*x^2, min(Wind), max(Wind), add=TRUE) 
-detach(airquality) 
 @ 

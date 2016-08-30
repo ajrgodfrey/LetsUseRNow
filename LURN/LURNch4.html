@@ -7,7 +7,7 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
 <!-- html,2,next --> 
 <meta name="src" content="LURN.tex"> 
-<meta name="date" content="2016-08-08 12:16:00"> 
+<meta name="date" content="2016-08-30 22:08:00"> 
 <link rel="stylesheet" type="text/css" href="LURN.css"> 
 </head><body 
 >
@@ -103,7 +103,7 @@ opened in Microsoft EXCEL.
 <!--l. 25--><p class="indent" >   To import a comma delimited file called <span 
 class="aett-12">chickens.csv</span>, you would issue the
 following command
-   <div class="fancyvrb" id="fancyvrb68">  <a 
+   <div class="fancyvrb" id="fancyvrb69">  <a 
  id="x6-29006r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
@@ -131,7 +131,7 @@ class="aett-12">row.names </span>attribute
 associated with the data in the file. If your data file already had a column
 for the names of the chickens as the first column, you would issue the
 command
-   <div class="fancyvrb" id="fancyvrb69">  <a 
+   <div class="fancyvrb" id="fancyvrb70">  <a 
  id="x6-29011r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
@@ -141,7 +141,7 @@ class="aett-12">&#x00A0;read.csv("chickens.csv",</span><span
 class="aett-12">&#x00A0;row.names=1)</span></div>
 <!--l. 38--><p class="noindent" >and if the data did not currently have any column headings you would issue the
 command
-   <div class="fancyvrb" id="fancyvrb70">  <a 
+   <div class="fancyvrb" id="fancyvrb71">  <a 
  id="x6-29013r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
@@ -164,28 +164,28 @@ currently working, use the <a
 class="aett-12">getwd() </span>command. Note that the output may look a
 little strange to some users, especially Windows users. What do I mean? Look at
 the following:
-   <div class="fancyvrb" id="fancyvrb71">  <a 
+   <div class="fancyvrb" id="fancyvrb72">  <a 
  id="x6-29017r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;getwd()</span></div>
 <!--l. 52--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb72"> <a 
+   <div class="fancyvrb" id="fancyvrb73"> <a 
  id="x6-29019r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1]</span><span 
 class="aett-12">&#x00A0;"C:/Users/ajgodfre/Documents/Research/Publications/LetsUseRNow"</span></div>
 <!--l. 57--><p class="indent" >   The full path to the working directory where this chapter was processed has
-been displayed, starting with the letter associated with the hard drive,
-followed by a colon. Then the fun begins. The folder structure is represented
-using forward slash signs, not the backslash used in Windows operating
-systems even though the processing of this work is done using a Windows
-machine. The rest should be as expected and you could find the right folder
-by looking in the appropriate place on your hard drive. The reason for
-<span 
-class="aess-12">R</span>&#8217;s use of the foward slash is not entirely simple to explain, but in short
-it is because the standard backslash symbols has a special use in <span 
-class="aess-12">R</span>.For
+been displayed, starting with the letter associated with the hard drive, followed by
+a colon. Then the fun begins. The folder structure is represented using forward
+slash signs, not the backslash used in Windows operating systems even
+though the processing of this work is done using a Windows machine.
+The rest should be as expected and you could find the right folder by
+looking in the appropriate place on your hard drive. The reason for <span 
+class="aess-12">R</span>&#8217;s
+use of the forward slash is not entirely simple to explain, but in short
+it is because the standard backslash symbol has a special use in <span 
+class="aess-12">R</span>. For
 the moment, the choice of slash versus backslash is not important. It is
 important when we need to type out the path to the location of a file for
 ourselves.
@@ -232,7 +232,7 @@ directory).
 class="aett-12">chickens.csv</span> in a subfolder called <span 
 class="aett-12">MyData</span>,
 we can use
-   <div class="fancyvrb" id="fancyvrb73">  <a 
+   <div class="fancyvrb" id="fancyvrb74">  <a 
  id="x6-30004r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
@@ -241,7 +241,7 @@ class="aett-12">&#x00A0;=</span><span
 class="aett-12">&#x00A0;read.csv("MyData/chickens.csv")</span></div>
 <!--l. 78--><p class="noindent" >to pull it into our current workspace. This is actually shorthand for the more
 complete form
-   <div class="fancyvrb" id="fancyvrb74">  <a 
+   <div class="fancyvrb" id="fancyvrb75">  <a 
  id="x6-30006r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
@@ -259,7 +259,7 @@ directory tree as our current working directory, we would use the shorthand
                                                                           
 symbol for the parent directory (one level up the directory tree). This is done
 using a double period.
-   <div class="fancyvrb" id="fancyvrb75">  <a 
+   <div class="fancyvrb" id="fancyvrb76">  <a 
  id="x6-30008r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
@@ -325,7 +325,7 @@ one. Data sets contained in the <a
 class="aeti-12">datasets </span>package are actually ready and waiting to
 be accessed, but often we want to bring the data into our current workspace using
 a command such as
-   <div class="fancyvrb" id="fancyvrb76">  <a 
+   <div class="fancyvrb" id="fancyvrb77">  <a 
  id="x6-33004r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
@@ -335,10 +335,14 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;str(airquality)</span></div>
 <!--l. 122--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb77"> <a 
+   <div class="fancyvrb" id="fancyvrb78"> <a 
  id="x6-33008r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#8217;data.frame&#8217;:        153</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="tctt-1200">'</span><span 
+class="aett-12">data.frame</span><span 
+class="tctt-1200">'</span><span 
+class="aett-12">:        153</span><span 
 class="aett-12">&#x00A0;obs.</span><span 
 class="aett-12">&#x00A0;of</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -472,13 +476,13 @@ class="aett-12">&#x00A0;9</span><span
 class="aett-12">&#x00A0;10</span><span 
 class="aett-12">&#x00A0;...</span></div>
 <!--l. 131--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb78"> <a 
+   <div class="fancyvrb" id="fancyvrb79"> <a 
  id="x6-33022r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;ls()</span></div>
 <!--l. 134--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb79"> <a 
+   <div class="fancyvrb" id="fancyvrb80"> <a 
  id="x6-33024r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1]</span><span 
@@ -490,7 +494,7 @@ class="aett-12">data() </span>command looks in the <a
 class="aeti-12">datasets </span>package by default. If we wanted to get
 some data from another package we would need to state the name of the package
 explicitly. For example,
-   <div class="fancyvrb" id="fancyvrb80">  <a 
+   <div class="fancyvrb" id="fancyvrb81">  <a 
  id="x6-33028r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
@@ -580,10 +584,10 @@ class="aett-12">levels() </span>command to fix this if the problem is small, but
       </li>
       <li class="itemize">Have numbers come into <span 
 class="aess-12">R </span>as text for some reason? This happens for
-      a number of reasons. A blank space being entered in the cell instead
-      of  a  code  for  a  missing  value  for  example.  <span 
-class="aess-12">R  </span>would  see  this  as  a
-      character string &#8220; ", not a empty cell. Another reason is that the missing
+      a number of reasons. A blank space being entered in the cell instead of
+      a code for a missing value for example. <span 
+class="aess-12">R </span>would see this as a character
+      string  &#8220;  ",  not  an  empty  cell.  Another  reason  is  that  the  missing
       value code is textual and not recognized by <span 
 class="aess-12">R</span>. There are ways around
       this problem using either find/replace techniques in your spreadsheet
@@ -594,6 +598,23 @@ class="aett-12">read.table() </span>or <a
  id="dx6-34009"></a><span 
 class="aett-12">read.csv() </span>command reads your data file. See
       the help for these commands if this is the case.</li></ul>
+<!--l. 165--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">4.7   </span> <a 
+ id="x6-350004.7"></a>Other packages</h3>
+<!--l. 167--><p class="noindent" >It is all too common to need to import data from a spreadsheet application where
+the data is not conveniently placed in the upper-left corner of the first sheet.
+There are a number of such spreadsheet applications, but the most commonly
+used one is Microsoft Excel.
+<!--l. 169--><p class="indent" >   Data in spreadsheets is seldom ready for importing in the exact form we want
+it. If you need to extract a set of data that is in a named sheet or always appears
+in the same numbered sheet of a Microsoft Excel file, then you might investigate
+the <a 
+ id="dx6-35001"></a><span 
+class="aeti-12">openxlsx </span>package. See Chapter&#x00A0;<a 
+href="LURNch14.html#x16-10900014">14<!--tex4ht:ref: Additional --></a> and the help page for the <a 
+ id="dx6-35002"></a><span 
+class="aett-12">read.xlsx()</span>
+command.
                                                                           
 
                                                                           

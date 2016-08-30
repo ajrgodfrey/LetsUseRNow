@@ -5,6 +5,7 @@ call LatexLURN.bat
 call pdfLURN.bat
 
 call JustSweaveLURN.bat
+
 ren lurnprint.aux lurn.aux
 ren lurnprint.idx lurn.idx
 ren lurnprint.toc lurn.toc

@@ -1,5 +1,5 @@
 
-<<setup, include=FALSE>>= 
+<<setup, include=FALSE, purl=FALSE>>= 
 rm(list = ls())
 if (!file.exists("Data")) dir.create("Data")
 if (!file.exists("figures")) dir.create("figures")

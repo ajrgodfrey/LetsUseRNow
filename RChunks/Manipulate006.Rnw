@@ -1,5 +1,5 @@
 <<Ordering>>= 
-Home=c("Jonathan", "Olivia", "Callum", "Annabelle", "Cordelia", "Hershey", "Quake") 
+Home=c("Jonathan", "Callum", "Annabelle", "Cordelia", "Hershey") 
 order(Home) 
 Home[order(Home)] 
 @ 

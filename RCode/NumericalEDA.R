@@ -1,15 +1,3 @@
-## ----setup, include=FALSE------------------------------------------------
-rm(list = ls())
-if (!file.exists("Data")) dir.create("Data")
-if (!file.exists("figures")) dir.create("figures")
-if (!file.exists("tables")) dir.create("tables")
-if (!file.exists("Other")) dir.create("Other")
-set.seed(222664)
-options(width = 60,  digits = 4, continue="   ")
-
-## ----ChSetup, include=FALSE----------------------------------------------
-opts_chunk$set(fig.path='figures/Numerical', comment=NA, dev=c('pdf','postscript','svg'), prompt=T, out.width="0.7\\textwidth") 
-
 ## ----CheckData-----------------------------------------------------------
 class(airquality) 
 
@@ -26,8 +14,10 @@ mean(airquality[,1], na.rm=TRUE)
 min(airquality[,1:4], na.rm=TRUE) 
 max(airquality[,1:4], na.rm=TRUE) 
 
-## ----SummaryVector-------------------------------------------------------
+## ----AttachAirQuality----------------------------------------------------
 attach(airquality) 
+
+## ----SummaryVector-------------------------------------------------------
 min(Temp) 
 max(Wind) 
 median(Solar.R) 
@@ -39,8 +29,13 @@ fivenum(Ozone)
 ## ----TApply1-------------------------------------------------------------
 tapply(Wind, Month, mean) 
 
+## ----Aggregate1----------------------------------------------------------
+aggregate(Wind~Month, data=airquality, mean) 
+
 ## ----TApply2-------------------------------------------------------------
-tapply(Wind, list(Month, Day>15), mean) 
+Day15 = Day > 15
+tapply(Wind, list(Month, Day15), mean) 
+aggregate(Wind ~ Month + Day15, data=airquality, mean) 
 
 ## ----TApply3-------------------------------------------------------------
 tapply(Wind, Month, summary) 
@@ -97,9 +92,6 @@ group_by(Month) %>%
 summarise(AveTemp = mean(Temp, na.rm = TRUE))  %>% 
 arrange(desc(AveTemp)) 
 
-## ----DropData------------------------------------------------------------
+## ----DetachAirQuality----------------------------------------------------
 detach(airquality) 
-
-## ----cleanup, include=FALSE----------------------------------------------
-rm(list = ls())
 

@@ -7,7 +7,7 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
 <!-- html,2,next --> 
 <meta name="src" content="LURN.tex"> 
-<meta name="date" content="2016-08-08 12:16:00"> 
+<meta name="date" content="2016-08-30 22:08:00"> 
 <link rel="stylesheet" type="text/css" href="LURN.css"> 
 </head><body 
 >
@@ -18,14 +18,14 @@ href="LURNch13.html#tailLURNch13.html" >prev-tail</a>] [<a
 href="#tailLURNch14.html">tail</a>] [<a 
 href="LURN.html#LURNch14.html" >up</a>] </p></div>
    <h2 class="chapterHead"><span class="titlemark">Chapter&#x00A0;14</span><br /><a 
- id="x16-10800014"></a>Extending <span 
+ id="x16-10900014"></a>Extending <span 
 class="aess-12">R </span>beyond the base installation</h2>
 <!--l. 9--><p class="noindent" >This chapter explains how you do some tasks that are not part of the basic
 installation of <span 
 class="aess-12">R</span>. This includes instructions on how to add extra functionality via
 add-on packages and pointers to some user interfaces.
    <h3 class="sectionHead"><span class="titlemark">14.1   </span> <a 
- id="x16-10900014.1"></a>Installing additional packages</h3>
+ id="x16-11000014.1"></a>Installing additional packages</h3>
 <!--l. 14--><p class="noindent" >Many <span 
 class="aess-12">R </span>users find that the vast range of functions that are built into the basic <span 
 class="aess-12">R</span>
@@ -48,14 +48,14 @@ system.
 <!--l. 18--><p class="indent" >   Installing an add-on package requires two actions. First, you must ask <span 
 class="aess-12">R </span>to
 install a package of a certain name, either using the <a 
- id="dx16-109001"></a><span 
+ id="dx16-110001"></a><span 
 class="aett-12">install.packages()</span>
 command or the Packages pull-down menu item.
 <!--l. 20--><p class="indent" >   The second task is necessary only once in each <span 
 class="aess-12">R </span>session. When you
 go to install a package from CRAN, <span 
 class="aess-12">R </span>will ask you to select a <a 
- id="dx16-109002"></a><span 
+ id="dx16-110002"></a><span 
 class="aeti-12">CRAN</span>
 <span 
 class="aeti-12">mirror</span>. This just wants you to choose which one of the servers scattered
@@ -65,8 +65,8 @@ towards.
 associated dialogue boxes. If you do not want to use the dialogue box approach
 for selecting a CRAN mirror, there is a text based alternative. If you
 type
-   <div class="fancyvrb" id="fancyvrb323">  <a 
- id="x16-109004r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb325">  <a 
+ id="x16-110004r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;chooseCRANmirror(FALSE)</span></div>
@@ -78,13 +78,13 @@ a cloud-based server anyway) then you could avoid reviewing the list
 
                                                                           
 using:
-   <div class="fancyvrb" id="fancyvrb324">  <a 
- id="x16-109006r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb326">  <a 
+ id="x16-110006r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;chooseCRANmirror(ind=1)</span></div>
 <!--l. 35--><p class="indent" >   Installation of individual packages can be achieved using the <a 
- id="dx16-109007"></a><span 
+ id="dx16-110007"></a><span 
 class="aett-12">install.packages()</span>
 command. Investigate its help page to ensure you get the most out of its
 use.
@@ -93,25 +93,25 @@ class="aett-12">dependencies</span>. There are many
 packages that rely on the work of other packages for their success. It&#8217;s probably a
 good idea to get into the habit of installing all dependent packages. For
 example:
-   <div class="fancyvrb" id="fancyvrb325">  <a 
- id="x16-109009r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb327">  <a 
+ id="x16-110009r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;install.packages("Dodge",</span><span 
 class="aett-12">&#x00A0;dependencies=TRUE)</span></div>
 <!--l. 43--><p class="noindent" >which will install the <a 
- id="dx16-109010"></a><span 
+ id="dx16-110010"></a><span 
 class="aeti-12">Dodge </span>package. If this package used another package that was
 not currently installed on your machine, that package would also have been
 downloaded and installed.
 <!--l. 45--><p class="noindent" >
    <h3 class="sectionHead"><span class="titlemark">14.2   </span> <a 
- id="x16-11000014.2"></a>Updating add-on packages</h3>
+ id="x16-11100014.2"></a>Updating add-on packages</h3>
 <!--l. 47--><p class="noindent" >If you want to be sure you have the latest version of the packages you have
 downloaded are being used, then every once in a while you should issue the
 command
-   <div class="fancyvrb" id="fancyvrb326">  <a 
- id="x16-110002r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb328">  <a 
+ id="x16-111002r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;update.packages(ask=FALSE)</span></div>
@@ -130,7 +130,7 @@ class="aess-12">R </span>session, then you will be prompted to do so before
 anything is downloaded.
 <!--l. 59--><p class="noindent" >
    <h3 class="sectionHead"><span class="titlemark">14.3   </span> <a 
- id="x16-11100014.3"></a>Using an enhanced graphical interface</h3>
+ id="x16-11200014.3"></a>Using an enhanced graphical interface</h3>
                                                                           
 
                                                                           
@@ -144,7 +144,7 @@ class="aess-12">R </span>Commander project. This interface
 has been given a lot of development over a number of years now and
 can support the needs of most introductory level statistical analyses. Its
 implementation is via the <a 
- id="dx16-111001"></a><span 
+ id="dx16-112001"></a><span 
 class="aeti-12">Rcmdr </span>add-on package downloadable from
 CRAN.
 <!--l. 65--><p class="indent" >   I don&#8217;t use this package as it is more suited to novice to intermediate <span 
@@ -157,7 +157,7 @@ class="aess-12">R</span>
 users like.
 <!--l. 67--><p class="noindent" >
    <h3 class="sectionHead"><span class="titlemark">14.4   </span> <a 
- id="x16-11200014.4"></a>Use of an integrated development environment (IDE)</h3>
+ id="x16-11300014.4"></a>Use of an integrated development environment (IDE)</h3>
 <!--l. 69--><p class="noindent" >The best integrated development environment (IDE) for <span 
 class="aess-12">R </span>users is <span 
 class="aess-12">R </span>Studio. Some
