@@ -42,7 +42,7 @@ SF = sf.test(Ozone)
 Results[6,] = c(SF$statistic, SF$p.value)
 
 ## ----NormalityTestsPrint, eval=FALSE-------------------------------------
-## Results
+Results
 
 ## ----NormPlot, fig.cap="The normality plot", fig.height=7----------------
 qqnorm(Ozone, main = "Normality Plot for Ozone")
@@ -59,5 +59,5 @@ Results[1,] = c(AG$statistic, AG$p.value)
 Results[2,] = c(AN$statistic, AN$p.value)
 
 ## ----MomentsTestsPrint, eval=FALSE---------------------------------------
-## Results
+Results
 

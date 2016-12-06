@@ -1,4 +1,3 @@
-library(knitr)
 
 # some chapters have no code chunks
 knit("Intro.rnw")

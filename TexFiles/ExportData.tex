@@ -11,21 +11,17 @@ This chapter assumes you've got some data to export, and I mean data; not result
 This section is just the inverse action of importing data from an external file as discussed in Chapter~\ref{ImportData}. All the \code{read} type commands have corresponding \code{write} commands. 
  
 If you read Chapter~\ref{ImportData} you'll know that my preference is to use files that are easily transferred and easily checked for their accuracy using other software. In particular, I prefer to create comma separated value (csv) files using the \Rcmd{write.csv} command. If there was a \Rclass{data.frame} called \Robject{Chickens} in my current workspace that I wanted to export for sharing with another user, I would issue the following command. 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlkwd{write.csv}\hlstd{(Chickens,} \hlkwc{file}\hlstd{=}\hlstr{"chickens.csv"}\hlstd{)}
-\end{alltt}
-\end{kframe}
-\end{knitrout}
+\begin{Schunk}
+\begin{Sinput}
+> write.csv(Chickens, file="chickens.csv") 
+\end{Sinput}
+\end{Schunk}
 If \R{} had created rownames for the \Rclass{data.frame}, I might not want to include them. A simple additional argument is all that is required. 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlkwd{write.csv}\hlstd{(Chickens,} \hlkwc{file}\hlstd{=}\hlstr{"chickens.csv"}\hlstd{,} \hlkwc{row.names}\hlstd{=}\hlnum{FALSE}\hlstd{)}
-\end{alltt}
-\end{kframe}
-\end{knitrout}
+\begin{Schunk}
+\begin{Sinput}
+> write.csv(Chickens, file="chickens.csv", row.names=FALSE) 
+\end{Sinput}
+\end{Schunk}
  
 If another file type is required then the help page for \Rcmd{write.csv} may be useful. This page also gives the help on the \Rcmd{write.table} command. 
  

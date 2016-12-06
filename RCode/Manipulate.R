@@ -57,7 +57,7 @@ airquality2 %>% arrange(desc(Temp))
 airquality %>% mutate(TempC = (Temp - 32) * 5 / 9) %>% head() 
 
 ## ----MutateAlt, eval=FALSE-----------------------------------------------
-## airquality$TempC = (airquality$Temp - 32) * 5 / 9
+airquality$TempC = (airquality$Temp - 32) * 5 / 9 
 
 ## ----TransmuteData-------------------------------------------------------
 airquality2 %>% transmute(TempC = (Temp - 32) * 5 / 9) 

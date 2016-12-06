@@ -18,6 +18,5 @@ copy LURNWeb.r+LURN.r LURNWorkhorse.r
 del "Rplots.pdf"
 
 move *.r .\RCode
-copy .\RCode\GenericSettings.r GenericSettings.r
 copy .\RCode\lurn.r lurn.r
 move .\RCode\LURN*.r .

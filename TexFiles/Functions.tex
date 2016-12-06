@@ -23,13 +23,11 @@ The best way to start is to turn a little script into a function if you know you
 \section{A mathematical function} 
  
 In Chapter~\ref{Calculus}, you can see how using a \Rclass{function} can make plotting a mathematical function a fairly simple task. Let's explain what is happening in the example used there, which was: 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlstd{> }\hlstd{MySine} \hlkwb{<-} \hlkwa{function}\hlstd{(}\hlkwc{x}\hlstd{)\{} \hlkwd{sin}\hlstd{(x)\}}
-\end{alltt}
-\end{kframe}
-\end{knitrout}
+\begin{Schunk}
+\begin{Sinput}
+> MySine <- function(x){ sin(x)} 
+\end{Sinput}
+\end{Schunk}
 This simple function takes one argument \Rarg{x} and uses its assigned value instead of \code{x} whenever the commands within the function ask for it. 
  
 We do not know what the value of the input arguments will be when the function is created. For simple cases like this one, we rely on the error handling of \R{} when it issues the commands that form the function. In this case, we are asking for the sine of the input values; if the input is a text string instead of a number, the \Rcmd{sin} command will fail, causing the newly created \code{MySine} command to fail as well. 
@@ -37,32 +35,28 @@ We do not know what the value of the input arguments will be when the function i
 Programmers will create bulletproof functions that cater for user errors like entering text instead of numbers in complex situations. When you are doing the simpler tasks where you can be sure that you will enter the right kind of value for your inputs, you can keep your functions simple. 
  
 Our example has only one command within the function. The commands included in the function are enclosed by curly brackets or braces, depending on what you call them. The last command issued within a function is the one that leads to establishing what will be returned to the user once the new function has done its work. In our first example, the last work done was to generate the sine of the input value. Look what happens if we do something else within the function. 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlstd{> }\hlstd{MySine2} \hlkwb{<-} \hlkwa{function}\hlstd{(}\hlkwc{x}\hlstd{)\{} \hlkwd{sin}\hlstd{(x)}
-\hlstd{   }\hlkwd{print}\hlstd{(x)\}}
-\hlstd{> }\hlkwd{MySine2}\hlstd{(pi}\hlopt{/}\hlnum{2}\hlstd{)}
-\end{alltt}
-\begin{verbatim}
+\begin{Schunk}
+\begin{Sinput}
+> MySine2 <- function(x){ sin(x) 
+   print(x)} 
+> MySine2(pi/2) 
+\end{Sinput}
+\begin{Soutput}
 [1] 1.571
-\end{verbatim}
-\end{kframe}
-\end{knitrout}
+\end{Soutput}
+\end{Schunk}
 The sine of $x$ was calculated, but it was not returned at the end of the function. 
 The \Rcmd{return} command included in the next example ensures we get the answer we want. 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlstd{> }\hlstd{MySine3} \hlkwb{<-} \hlkwa{function}\hlstd{(}\hlkwc{x}\hlstd{)\{} \hlkwd{return}\hlstd{(}\hlkwd{sin}\hlstd{(x))}
-\hlstd{   }\hlkwd{print}\hlstd{(x)\}}
-\hlstd{> }\hlkwd{MySine3}\hlstd{(pi}\hlopt{/}\hlnum{2}\hlstd{)}
-\end{alltt}
-\begin{verbatim}
+\begin{Schunk}
+\begin{Sinput}
+> MySine3 <- function(x){ return(sin(x)) 
+   print(x)} 
+> MySine3(pi/2) 
+\end{Sinput}
+\begin{Soutput}
 [1] 1
-\end{verbatim}
-\end{kframe}
-\end{knitrout}
+\end{Soutput}
+\end{Schunk}
 Now we see that the \Rcmd{print} command is redundant. 
  
  

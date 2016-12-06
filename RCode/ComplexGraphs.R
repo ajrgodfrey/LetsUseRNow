@@ -25,7 +25,7 @@ plot(Sepal.Length~Sepal.Width, data=iris, xlab="Sepal width", ylab="Sepal length
 plot(Petal.Length~Petal.Width, data=iris, xlab="Petal width", ylab="Petal length", pch=as.numeric(Species)) 
 
 ## ----Colors, eval=FALSE--------------------------------------------------
-## colors()
+colors() 
 
 ## ----DeathsTSPlot--------------------------------------------------------
 plot(ldeaths, ylim=c(0,4000), xlab="Year", ylab="Number of deaths") 
@@ -72,7 +72,7 @@ title("Stack bar chart of age and gender", ylab="Count", xlab="Age")
 contour(volcano) 
 
 ## ----VolcanoExample, eval=FALSE------------------------------------------
-## example(volcano)
+example(volcano) 
 
 ## ----XYZContour----------------------------------------------------------
 xUnique=((0:100)-50)/10 

@@ -26,17 +26,14 @@ The final graph appears in Exhibit~\ref{Hist12Z}, but there are a couple of func
 \begin{center} 
 \caption{Twelve samples of size 100 drawn from the standard normal distribution, plotted using separate histograms in a single window} 
 \label{Hists12Z} 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlstd{> }\hlkwd{par}\hlstd{(}\hlkwc{mfrow}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{4}\hlstd{,}\hlnum{3}\hlstd{))}
-\hlstd{> }\hlkwa{for}\hlstd{(Counter} \hlkwa{in} \hlnum{1}\hlopt{:}\hlnum{12}\hlstd{)\{}
-\hlstd{   }\hlkwd{hist}\hlstd{(}\hlkwd{rnorm}\hlstd{(}\hlnum{100}\hlstd{),} \hlkwc{main}\hlstd{=}\hlkwd{paste}\hlstd{(}\hlstr{"Sample"}\hlstd{, Counter))\}}
-\end{alltt}
-\end{kframe}
-\includegraphics[width=0.7\textwidth]{figures/ComplexGraphsHists12Z-1} 
+\begin{Schunk}
+\begin{Sinput}
+> par(mfrow=c(4,3)) 
+> for(Counter in 1:12){ 
+   hist(rnorm(100), main=paste("Sample", Counter))} 
+\end{Sinput}
 
-\end{knitrout}
+\includegraphics[width=0.7\textwidth]{figures/ComplexGraphsHists12Z-1} \end{Schunk}
 \SVGLink{ComplexGraphsHists12Z-1} 
 \end{center} 
 \end{exhibit} 
@@ -53,46 +50,41 @@ The \Rcmd{layout} command needs to interpret these labels as a matrix. It would 
 $$\begin{array}{cccc} 1&1&1&2\\ 1&1&1&3\\ 1&1&1&4\\ 5&5&6&6\\ \end{array}$$ 
  
 Getting this matrix in \R{} means identifying its contents, naming exactly how many rows or columns are needed and how to insert the values into the defined structure. We use the \Rcmd{matrix} command to create the object for our arrangement, and the \Rcmd{c} command to combine the labels into a single object. Arguments to the \Rcmd{matrix} command we need are either the \Rarg{nrow} or \Rarg{ncol} (one will do) and the \Rarg{byrow} switch that tells the \Rcmd{matrix} command to fill up the matrix by row until it is full. 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlstd{> }\hlstd{Arrangement.mat} \hlkwb{=} \hlkwd{matrix}\hlstd{(}\hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,}\hlnum{1}\hlstd{,}\hlnum{1}\hlstd{,}\hlnum{2}\hlstd{,}\hlnum{1}\hlstd{,}\hlnum{1}\hlstd{,}\hlnum{1}\hlstd{,}\hlnum{3}\hlstd{,}\hlnum{1}\hlstd{,}\hlnum{1}\hlstd{,}\hlnum{1}\hlstd{,}\hlnum{4}\hlstd{,}\hlnum{5}\hlstd{,}\hlnum{5}\hlstd{,}\hlnum{6}\hlstd{,}\hlnum{6}\hlstd{),} \hlkwc{byrow}\hlstd{=}\hlnum{TRUE}\hlstd{,} \hlkwc{nrow}\hlstd{=}\hlnum{4}\hlstd{)}
-\hlstd{> }\hlstd{Arrangement.mat}
-\end{alltt}
-\begin{verbatim}
+\begin{Schunk}
+\begin{Sinput}
+> Arrangement.mat = matrix(c(1,1,1,2,1,1,1,3,1,1,1,4,5,5,6,6), byrow=TRUE, nrow=4) 
+> Arrangement.mat 
+\end{Sinput}
+\begin{Soutput}
      [,1] [,2] [,3] [,4]
 [1,]    1    1    1    2
 [2,]    1    1    1    3
 [3,]    1    1    1    4
 [4,]    5    5    6    6
-\end{verbatim}
-\end{kframe}
-\end{knitrout}
+\end{Soutput}
+\end{Schunk}
  
 Having established the success of the code for the arrangement structure, we just open the graph window using the \Rcmd{layout} command, and add plots in the order our labels specify. The full set of instructions is given in Exhibit~\ref{LayThemOut}. Note that the graphs are chosen for the illustration of the \Rcmd{layout} command, not for the purposes of showing anything of interest in any of the graphs created. The \Robject{quakes} data set distributed with the base installation of \R{} is used in this illustration. 
 \begin{exhibit} 
 \begin{center} 
 \caption{A selection of differing size graphs combined into one graph window} 
 \label{LayThemOut} 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlstd{> }\hlkwd{attach}\hlstd{(quakes)}
-\hlstd{> }\hlkwd{layout}\hlstd{(Arrangement.mat)}
-\hlstd{> }\hlkwd{plot}\hlstd{(long, lat)}
-\hlstd{> }\hlkwd{plot}\hlstd{(depth, mag,} \hlkwc{ylim}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{4}\hlstd{,}\hlnum{6.5}\hlstd{))}
-\hlstd{> }\hlkwd{plot}\hlstd{(lat, mag,} \hlkwc{ylim}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{4}\hlstd{,}\hlnum{6.5}\hlstd{),} \hlkwc{cex}\hlstd{=}\hlnum{0.5}\hlstd{)}
-\hlstd{> }\hlkwd{plot}\hlstd{(long, mag,} \hlkwc{ylim}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{4}\hlstd{,}\hlnum{6.5}\hlstd{),} \hlkwc{cex}\hlstd{=}\hlnum{0.25}\hlstd{)}
-\hlstd{> }\hlkwd{boxplot}\hlstd{(mag,} \hlkwc{xlab}\hlstd{=}\hlstr{"Magnitude"}\hlstd{,} \hlkwc{horizontal}\hlstd{=}\hlnum{TRUE}\hlstd{)}
-\hlstd{> }\hlkwd{boxplot}\hlstd{(}\hlkwd{log}\hlstd{(mag),} \hlkwc{xlab}\hlstd{=}\hlstr{"log(Magnitude)"}\hlstd{,} \hlkwc{horizontal}\hlstd{=}\hlnum{TRUE}\hlstd{)}
-\end{alltt}
-\end{kframe}
-\includegraphics[width=0.7\textwidth]{figures/ComplexGraphsLayoutDiffSizes-1} 
-\begin{kframe}\begin{alltt}
-\hlstd{> }\hlkwd{detach}\hlstd{(quakes)}
-\end{alltt}
-\end{kframe}
-\end{knitrout}
+\begin{Schunk}
+\begin{Sinput}
+> attach(quakes) 
+> layout(Arrangement.mat) 
+> plot(long, lat) 
+> plot(depth, mag, ylim=c(4,6.5)) 
+> plot(lat, mag, ylim=c(4,6.5), cex=0.5) 
+> plot(long, mag, ylim=c(4,6.5), cex=0.25) 
+> boxplot(mag, xlab="Magnitude", horizontal=TRUE) 
+> boxplot(log(mag), xlab="log(Magnitude)", horizontal=TRUE) 
+\end{Sinput}
+
+\includegraphics[width=0.7\textwidth]{figures/ComplexGraphsLayoutDiffSizes-1} \begin{Sinput}
+> detach(quakes) 
+\end{Sinput}
+\end{Schunk}
 \SVGLink{ComplexGraphsLayoutDiffSizes-1} 
 \end{center} 
 \end{exhibit} 
@@ -109,15 +101,12 @@ The \Robject{iris} data supplied with \R{} for this example. It has five variabl
 \begin{center} 
 \caption{} 
 \label{IrisInColour} 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlstd{> }\hlkwd{plot}\hlstd{(Sepal.Length}\hlopt{~}\hlstd{Sepal.Width,} \hlkwc{data}\hlstd{=iris,} \hlkwc{xlab}\hlstd{=}\hlstr{"Sepal width"}\hlstd{,} \hlkwc{ylab}\hlstd{=}\hlstr{"Sepal length"}\hlstd{,} \hlkwc{col}\hlstd{=Species)}
-\end{alltt}
-\end{kframe}
-\includegraphics[width=0.7\textwidth]{figures/ComplexGraphsIrisInColour-1} 
+\begin{Schunk}
+\begin{Sinput}
+> plot(Sepal.Length~Sepal.Width, data=iris, xlab="Sepal width", ylab="Sepal length", col=Species) 
+\end{Sinput}
 
-\end{knitrout}
+\includegraphics[width=0.7\textwidth]{figures/ComplexGraphsIrisInColour-1} \end{Schunk}
 \SVGLink{ComplexGraphsIrisInColour-1} 
 \end{center} 
 \end{exhibit} 
@@ -126,15 +115,12 @@ The \Robject{iris} data supplied with \R{} for this example. It has five variabl
 \begin{center} 
 \caption{} 
 \label{IrisInSymbols} 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlstd{> }\hlkwd{plot}\hlstd{(Petal.Length}\hlopt{~}\hlstd{Petal.Width,} \hlkwc{data}\hlstd{=iris,} \hlkwc{xlab}\hlstd{=}\hlstr{"Petal width"}\hlstd{,} \hlkwc{ylab}\hlstd{=}\hlstr{"Petal length"}\hlstd{,} \hlkwc{pch}\hlstd{=}\hlkwd{as.numeric}\hlstd{(Species))}
-\end{alltt}
-\end{kframe}
-\includegraphics[width=0.7\textwidth]{figures/ComplexGraphsIrisInSymbols-1} 
+\begin{Schunk}
+\begin{Sinput}
+> plot(Petal.Length~Petal.Width, data=iris, xlab="Petal width", ylab="Petal length", pch=as.numeric(Species)) 
+\end{Sinput}
 
-\end{knitrout}
+\includegraphics[width=0.7\textwidth]{figures/ComplexGraphsIrisInSymbols-1} \end{Schunk}
 \SVGLink{ComplexGraphsIrisInSymbols-1} 
 \end{center} 
 \end{exhibit} 
@@ -142,13 +128,11 @@ Note that we needed to convert the species names to numbers using the \Rcmd{as.n
 %check them 
  
 \R{} seesm to have converted the species names to numbers when we called for different colours, starting with 1 for black, 2 for red, and 3 for green. As an aside, the colour can be specified by name or by a number. There are well over 600 named colours to choose from so the full list is therefore not printed here. Type 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlstd{> }\hlkwd{colors}\hlstd{()}
-\end{alltt}
-\end{kframe}
-\end{knitrout}
+\begin{Schunk}
+\begin{Sinput}
+> colors() 
+\end{Sinput}
+\end{Schunk}
 if you are really keen to know what they all are. If this list is still not sufficient to meet your needs, you can design your own colour using a combination of red, green, and blue components. This is explained under the help for the \Rcmd{par} command. 
  
 \section{Adding points to an existing graph} 
@@ -164,17 +148,14 @@ In Exhibit~\ref{LungsNoLegend}, we see a set of three commands. The first plots 
 \begin{center} 
 \caption{Deaths from lung diseases in the United Kingdom} 
 \label{LungsNoLegend} 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlstd{> }\hlkwd{plot}\hlstd{(ldeaths,} \hlkwc{ylim}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{0}\hlstd{,}\hlnum{4000}\hlstd{),} \hlkwc{xlab}\hlstd{=}\hlstr{"Year"}\hlstd{,} \hlkwc{ylab}\hlstd{=}\hlstr{"Number of deaths"}\hlstd{)}
-\hlstd{> }\hlkwd{lines}\hlstd{(fdeaths,} \hlkwc{col}\hlstd{=}\hlstr{"red"}\hlstd{)}
-\hlstd{> }\hlkwd{lines}\hlstd{(mdeaths,} \hlkwc{col}\hlstd{=}\hlstr{"blue"}\hlstd{)}
-\end{alltt}
-\end{kframe}
-\includegraphics[width=0.7\textwidth]{figures/ComplexGraphsDeathsTSPlot-1} 
+\begin{Schunk}
+\begin{Sinput}
+> plot(ldeaths, ylim=c(0,4000), xlab="Year", ylab="Number of deaths") 
+> lines(fdeaths, col="red") 
+> lines(mdeaths, col="blue") 
+\end{Sinput}
 
-\end{knitrout}
+\includegraphics[width=0.7\textwidth]{figures/ComplexGraphsDeathsTSPlot-1} \end{Schunk}
 \SVGLink{ComplexGraphsDeathsTSPlot-1} 
 \end{center} 
 \end{exhibit} 
@@ -193,19 +174,16 @@ The \Rcmd{plot} command creates the axes and plots the points for the earthquake
 \begin{center} 
 \caption{Horizontal and vertical lines added to a scatter plot} 
 \label{QuakesPlaces} 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlstd{> }\hlkwd{plot}\hlstd{(lat}\hlopt{~}\hlstd{long,} \hlkwc{data}\hlstd{=quakes,} \hlkwc{xlim}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{160}\hlstd{,}\hlnum{190}\hlstd{),} \hlkwc{ylim}\hlstd{=}\hlkwd{c}\hlstd{(}\hlopt{-}\hlnum{40}\hlstd{,}\hlopt{-}\hlnum{10}\hlstd{))}
-\hlstd{> }\hlkwd{abline}\hlstd{(}\hlkwc{h}\hlstd{=}\hlopt{-}\hlnum{30}\hlstd{)}
-\hlstd{> }\hlkwd{abline}\hlstd{(}\hlkwc{h}\hlstd{=}\hlopt{-}\hlnum{20}\hlstd{,} \hlkwc{lty}\hlstd{=}\hlnum{1}\hlstd{)}
-\hlstd{> }\hlkwd{abline}\hlstd{(}\hlkwc{v}\hlstd{=}\hlnum{180}\hlstd{,} \hlkwc{lty}\hlstd{=}\hlnum{2}\hlstd{)}
-\hlstd{> }\hlkwd{abline}\hlstd{(}\hlkwc{v}\hlstd{=}\hlnum{170}\hlstd{,} \hlkwc{lty}\hlstd{=}\hlnum{3}\hlstd{)}
-\end{alltt}
-\end{kframe}
-\includegraphics[width=0.7\textwidth]{figures/ComplexGraphsQuakesPlaces-1} 
+\begin{Schunk}
+\begin{Sinput}
+> plot(lat~long, data=quakes, xlim=c(160,190), ylim=c(-40,-10)) 
+> abline(h=-30) 
+> abline(h=-20, lty=1) 
+> abline(v=180, lty=2) 
+> abline(v=170, lty=3) 
+\end{Sinput}
 
-\end{knitrout}
+\includegraphics[width=0.7\textwidth]{figures/ComplexGraphsQuakesPlaces-1} \end{Schunk}
 \SVGLink{ComplexGraphsQuakesPlaces-1} 
 \end{center} 
 \end{exhibit} 
@@ -216,37 +194,32 @@ It is also possible to add a straight line that is niether vertical or horizonta
 \section{Adding a curve to a graph} 
  
 Use of \Rcmd{abline} is great if you have a straight line to add to a plot, but as soon as the line needs to be curved the problems begin. We will see that it isn't actually too difficult if we use the \Rcmd{curve} command. First, we add a curve representing the normal probability density function to a histogram of random values. 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlstd{> }\hlkwd{hist}\hlstd{(}\hlkwd{rnorm}\hlstd{(}\hlnum{1000}\hlstd{))}
-\hlstd{> }\hlkwd{curve}\hlstd{(}\hlkwd{dnorm}\hlstd{(x),} \hlopt{-}\hlnum{3}\hlstd{,}\hlnum{3}\hlstd{,} \hlkwc{add}\hlstd{=}\hlnum{TRUE}\hlstd{)}
-\end{alltt}
-\end{kframe}
-\includegraphics[width=0.7\textwidth]{figures/ComplexGraphsHistWithNormalCurve-1} 
+\begin{Schunk}
+\begin{Sinput}
+> hist(rnorm(1000)) 
+> curve(dnorm(x), -3,3, add=TRUE) 
+\end{Sinput}
 
-\end{knitrout}
+\includegraphics[width=0.7\textwidth]{figures/ComplexGraphsHistWithNormalCurve-1} \end{Schunk}
 \SVGLink{ComplexGraphsHistWithNormalCurve-1} 
  
 The \Rcmd{curve} function has four arguments in this example. First is the function being plotted, which in this case is \Rcmd{dnorm} ---the density function for the normal distribution. We then supply the range of values over which this function is to be evaluated using two arguments, and finally we ask that the curve be aded to the existing plot. There are other arguments that we could add, including \Rarg{n}, the number of points to be evaluated over the specified range. 
  
 The second example shown here is the addition of the quadratic fitted line for a regression model. We use the example given in Section~\ref{PolyReg}. 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlstd{> }\hlstd{Ozone.poly2} \hlkwb{=} \hlkwd{lm}\hlstd{(Ozone}\hlopt{~}\hlkwd{poly}\hlstd{(Wind,}\hlnum{2}\hlstd{,} \hlkwc{raw}\hlstd{=}\hlnum{TRUE}\hlstd{),} \hlkwc{data}\hlstd{=airquality)}
-\hlstd{> }\hlstd{Coeffs}\hlkwb{=}\hlkwd{coef}\hlstd{(Ozone.poly2)}
-\hlstd{> }\hlkwd{plot}\hlstd{(Ozone}\hlopt{~}\hlstd{Wind,} \hlkwc{data}\hlstd{=airquality)}
-\end{alltt}
-\end{kframe}
-\includegraphics[width=0.7\textwidth]{figures/ComplexGraphsAddPolyCurve-1} 
-\begin{kframe}\begin{alltt}
-\hlstd{> }\hlkwd{curve}\hlstd{(Coeffs[}\hlnum{1}\hlstd{]}\hlopt{+}\hlstd{Coeffs[}\hlnum{2}\hlstd{]}\hlopt{*}\hlstd{x}\hlopt{+}\hlstd{Coeffs[}\hlnum{2}\hlstd{]}\hlopt{*}\hlstd{x}\hlopt{^}\hlnum{2}\hlstd{,} \hlkwd{min}\hlstd{(Wind),} \hlkwd{max}\hlstd{(Wind),} \hlkwc{add}\hlstd{=}\hlnum{TRUE}\hlstd{)}
-\end{alltt}
+\begin{Schunk}
+\begin{Sinput}
+> Ozone.poly2 = lm(Ozone~poly(Wind,2, raw=TRUE), data=airquality) 
+> Coeffs=coef(Ozone.poly2) 
+> plot(Ozone~Wind, data=airquality) 
+\end{Sinput}
 
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{Error in curve(Coeffs[1] + Coeffs[2] * x + Coeffs[2] * x\textasciicircum{}2, min(Wind), : object 'Wind' not found}}\end{kframe}
-\end{knitrout}
+\includegraphics[width=0.7\textwidth]{figures/ComplexGraphsAddPolyCurve-1} \begin{Sinput}
+> curve(Coeffs[1]+Coeffs[2]*x+Coeffs[2]*x^2, min(Wind), max(Wind), add=TRUE) 
+\end{Sinput}
+\begin{Soutput}
+Error in curve(Coeffs[1] + Coeffs[2] * x + Coeffs[2] * x^2, min(Wind), : object 'Wind' not found
+\end{Soutput}
+\end{Schunk}
 \SVGLink{ComplexGraphsAddPolyCurve-1} 
  
 \section{Adding text to an existing graph} 
@@ -260,18 +233,15 @@ The second example shown here is the addition of the quadratic fitted line for a
 \begin{center} 
 \caption{Deaths from lung diseases in the United Kingdom (with legend added)} 
 \label{LungsLegend} 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlstd{> }\hlkwd{plot}\hlstd{(ldeaths,} \hlkwc{ylim}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{0}\hlstd{,}\hlnum{4000}\hlstd{),} \hlkwc{xlab}\hlstd{=}\hlstr{"Year"}\hlstd{,} \hlkwc{ylab}\hlstd{=}\hlstr{"Number of deaths"}\hlstd{)}
-\hlstd{> }\hlkwd{lines}\hlstd{(fdeaths,} \hlkwc{col}\hlstd{=}\hlstr{"red"}\hlstd{)}
-\hlstd{> }\hlkwd{lines}\hlstd{(mdeaths,} \hlkwc{col}\hlstd{=}\hlstr{"blue"}\hlstd{)}
-\hlstd{> }\hlkwd{legend}\hlstd{(}\hlstr{"topright"}\hlstd{,} \hlkwc{legend}\hlstd{=}\hlkwd{c}\hlstd{(}\hlstr{"Total"}\hlstd{,} \hlstr{"Men"}\hlstd{,} \hlstr{"Women"}\hlstd{),} \hlkwc{col}\hlstd{=}\hlkwd{c}\hlstd{(}\hlstr{"black"}\hlstd{,} \hlstr{"blue"}\hlstd{,} \hlstr{"red"}\hlstd{),} \hlkwc{lty}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,}\hlnum{1}\hlstd{,}\hlnum{1}\hlstd{))}
-\end{alltt}
-\end{kframe}
-\includegraphics[width=0.7\textwidth]{figures/ComplexGraphsDeathsTSPlotLegend-1} 
+\begin{Schunk}
+\begin{Sinput}
+> plot(ldeaths, ylim=c(0,4000), xlab="Year", ylab="Number of deaths") 
+> lines(fdeaths, col="red") 
+> lines(mdeaths, col="blue") 
+> legend("topright", legend=c("Total", "Men", "Women"), col=c("black", "blue", "red"), lty=c(1,1,1)) 
+\end{Sinput}
 
-\end{knitrout}
+\includegraphics[width=0.7\textwidth]{figures/ComplexGraphsDeathsTSPlotLegend-1} \end{Schunk}
 \SVGLink{ComplexGraphsDeathsTSPlotLegend-1} 
 \end{center} 
 \end{exhibit} 
@@ -282,30 +252,25 @@ The second example shown here is the addition of the quadratic fitted line for a
 A bar chart, as seen in Section~\ref{BarCharts}, has a bar showing the frequency of each level of a single factor. A \stressind{cluster bar chart} has a bar for each combination of two factors. The clustering indicates how the bars are grouped together. A \stressind{stack bar chart} on the other hand has a single bar for each level of one factor split into sections for each level of the second factor; it therefore appears to stack the bars on top of one another. 
  
 To create an example, we will first create a list of frequencies of outcomes and the two categorical variables required. The cluster bar chart and stack bar chart then appear in Exhibits~\ref{ClusterBarChart} and~\ref{StackBarChart} respectively. Our data consist of the counts of males and females of ages~17 to~20. 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlstd{> }\hlstd{Frequency}\hlkwb{=}\hlkwd{c}\hlstd{(}\hlnum{12}\hlstd{,}\hlnum{19}\hlstd{,} \hlnum{22}\hlstd{,} \hlnum{18}\hlstd{,} \hlnum{11}\hlstd{,}\hlnum{13}\hlstd{,} \hlnum{13}\hlstd{,} \hlnum{12}\hlstd{)}
-\hlstd{> }\hlstd{Gender}\hlkwb{=}\hlkwd{rep}\hlstd{(}\hlkwd{c}\hlstd{(}\hlstr{"Male"}\hlstd{,} \hlstr{"Female"}\hlstd{),} \hlnum{4}\hlstd{)}
-\hlstd{> }\hlstd{Age}\hlkwb{=}\hlkwd{rep}\hlstd{(}\hlkwd{c}\hlstd{(}\hlnum{17}\hlstd{,}\hlnum{18}\hlstd{,}\hlnum{19}\hlstd{,}\hlnum{20}\hlstd{),} \hlkwc{each}\hlstd{=}\hlnum{2}\hlstd{)}
-\end{alltt}
-\end{kframe}
-\end{knitrout}
+\begin{Schunk}
+\begin{Sinput}
+> Frequency=c(12,19, 22, 18, 11,13, 13, 12) 
+> Gender=rep(c("Male", "Female"), 4) 
+> Age=rep(c(17,18,19,20), each=2) 
+\end{Sinput}
+\end{Schunk}
 To create the two types of bar chart, we need to create a matrix for the counts to be used in the graphs. In this instance, this is done using the \Rcmd{tapply} command The actual plotting is done using the \Rcmd{barplot} command which recognizes it is working on this matrix and acts accordingly, including the ability to generate a legend for the graphs. 
 \begin{exhibit} 
 \begin{center} 
 \caption{An example of a cluster bar chart} 
 \label{ClusterBarChart} 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlstd{> }\hlkwd{barplot}\hlstd{(}\hlkwd{tapply}\hlstd{(Frequency,} \hlkwd{list}\hlstd{(Gender, Age), sum),} \hlkwc{col}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{2}\hlstd{,}\hlnum{4}\hlstd{),} \hlkwc{legend}\hlstd{=}\hlnum{TRUE}\hlstd{,} \hlkwc{beside}\hlstd{=}\hlnum{TRUE}\hlstd{)}
-\hlstd{> }\hlkwd{title}\hlstd{(}\hlstr{"Cluster bar chart of age and gender"}\hlstd{,} \hlkwc{ylab}\hlstd{=}\hlstr{"Count"}\hlstd{,} \hlkwc{xlab}\hlstd{=}\hlstr{"Age"}\hlstd{)}
-\end{alltt}
-\end{kframe}
-\includegraphics[width=0.7\textwidth]{figures/ComplexGraphsClusterBar-1} 
+\begin{Schunk}
+\begin{Sinput}
+> barplot(tapply(Frequency, list(Gender, Age), sum), col=c(2,4), legend=TRUE, beside=TRUE) 
+> title("Cluster bar chart of age and gender", ylab="Count", xlab="Age") 
+\end{Sinput}
 
-\end{knitrout}
+\includegraphics[width=0.7\textwidth]{figures/ComplexGraphsClusterBar-1} \end{Schunk}
 \SVGLink{ComplexGraphsClusterBar-1} 
 \end{center} 
 \end{exhibit} 
@@ -313,16 +278,13 @@ To create the two types of bar chart, we need to create a matrix for the counts 
 \begin{center} 
 \caption{An example of a stack bar chart} 
 \label{StackBarChart} 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlstd{> }\hlkwd{barplot}\hlstd{(}\hlkwd{tapply}\hlstd{(Frequency,} \hlkwd{list}\hlstd{(Gender, Age), sum),} \hlkwc{col}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{2}\hlstd{,}\hlnum{4}\hlstd{),} \hlkwc{legend}\hlstd{=}\hlnum{TRUE}\hlstd{)}
-\hlstd{> }\hlkwd{title}\hlstd{(}\hlstr{"Stack bar chart of age and gender"}\hlstd{,} \hlkwc{ylab}\hlstd{=}\hlstr{"Count"}\hlstd{,} \hlkwc{xlab}\hlstd{=}\hlstr{"Age"}\hlstd{)}
-\end{alltt}
-\end{kframe}
-\includegraphics[width=0.7\textwidth]{figures/ComplexGraphsStackBar-1} 
+\begin{Schunk}
+\begin{Sinput}
+> barplot(tapply(Frequency, list(Gender, Age), sum), col=c(2,4), legend=TRUE) 
+> title("Stack bar chart of age and gender", ylab="Count", xlab="Age") 
+\end{Sinput}
 
-\end{knitrout}
+\includegraphics[width=0.7\textwidth]{figures/ComplexGraphsStackBar-1} \end{Schunk}
 \SVGLink{ComplexGraphsStackBar-1} 
 \end{center} 
 \end{exhibit} 
@@ -340,27 +302,22 @@ Exhibit~\ref{MtEdenContour} shows the contour lines for the altitude of a volcan
 \begin{center} 
 \caption{Contour plot of Mt Eden, a volcano in Auckland, New Zealand.} 
 \label{MtEdenContour} 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlstd{> }\hlkwd{contour}\hlstd{(volcano)}
-\end{alltt}
-\end{kframe}
-\includegraphics[width=0.7\textwidth]{figures/ComplexGraphsMtEdenContour-1} 
+\begin{Schunk}
+\begin{Sinput}
+> contour(volcano) 
+\end{Sinput}
 
-\end{knitrout}
+\includegraphics[width=0.7\textwidth]{figures/ComplexGraphsMtEdenContour-1} \end{Schunk}
 \SVGLink{ComplexGraphsMtEdenContour-1} 
 \end{center} 
 \end{exhibit} 
  
 This provides a black and white image that has the contours marked with the value of the third variable. A coloured version of the plot is available using the \Rcmd{filled.contour} command in place of the \Rcmd{contour} command in Exhibit~\ref{MtEdenContour}. An even more impressive version of this plot can be obtained by looking at the example that accompanies the help for the \Robject{volcano} data. Typing: 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlstd{> }\hlkwd{example}\hlstd{(volcano)}
-\end{alltt}
-\end{kframe}
-\end{knitrout}
+\begin{Schunk}
+\begin{Sinput}
+> example(volcano) 
+\end{Sinput}
+\end{Schunk}
 generates the plot using the code given in the help file. 
  
 The \Robject{volcano} data is stored as a matrix of altitudes. The \Rcmd{contour} command uses this to interpolate the coordinates of the points where the altitude is constant. 
@@ -372,20 +329,17 @@ over the range $-5\leq x,y \leq 5$. All necessary codes are given in Exhibit~\re
 \begin{center} 
 \caption{Contour plot showing values of $z$, where $z=0.75x^2 + 0.5y^2 -0.4xy + x - y -1$} 
 \label{XYZContour} 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlstd{> }\hlstd{xUnique}\hlkwb{=}\hlstd{((}\hlnum{0}\hlopt{:}\hlnum{100}\hlstd{)}\hlopt{-}\hlnum{50}\hlstd{)}\hlopt{/}\hlnum{10}
-\hlstd{> }\hlstd{yUnique}\hlkwb{=}\hlstd{((}\hlnum{0}\hlopt{:}\hlnum{100}\hlstd{)}\hlopt{-}\hlnum{50}\hlstd{)}\hlopt{/}\hlnum{10}
-\hlstd{> }\hlstd{x}\hlkwb{=}\hlkwd{rep}\hlstd{(xUnique,} \hlnum{101}\hlstd{)}
-\hlstd{> }\hlstd{y}\hlkwb{=}\hlkwd{rep}\hlstd{(yUnique,} \hlkwc{each}\hlstd{=}\hlnum{101}\hlstd{)}
-\hlstd{> }\hlstd{z}\hlkwb{=}\hlkwd{matrix}\hlstd{(}\hlnum{0.75}\hlopt{*}\hlstd{x}\hlopt{^}\hlnum{2} \hlopt{+} \hlnum{0.5}\hlopt{*}\hlstd{y}\hlopt{^}\hlnum{2}\hlopt{-}\hlnum{0.4}\hlopt{*}\hlstd{x}\hlopt{*}\hlstd{y}\hlopt{+}\hlstd{x}\hlopt{-}\hlstd{y}\hlopt{-}\hlnum{1}\hlstd{,} \hlkwc{nrow}\hlstd{=}\hlnum{101}\hlstd{)}
-\hlstd{> }\hlkwd{contour}\hlstd{(xUnique, yUnique, z)}
-\end{alltt}
-\end{kframe}
-\includegraphics[width=0.7\textwidth]{figures/ComplexGraphsXYZContour-1} 
+\begin{Schunk}
+\begin{Sinput}
+> xUnique=((0:100)-50)/10 
+> yUnique=((0:100)-50)/10 
+> x=rep(xUnique, 101) 
+> y=rep(yUnique, each=101) 
+> z=matrix(0.75*x^2 + 0.5*y^2-0.4*x*y+x-y-1, nrow=101) 
+> contour(xUnique, yUnique, z) 
+\end{Sinput}
 
-\end{knitrout}
+\includegraphics[width=0.7\textwidth]{figures/ComplexGraphsXYZContour-1} \end{Schunk}
 \SVGLink{ComplexGraphsXYZContour-1} 
 \end{center} 
 \end{exhibit} 

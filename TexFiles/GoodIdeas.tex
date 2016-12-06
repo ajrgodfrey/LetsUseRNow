@@ -38,17 +38,17 @@ Running your \R{} programs on another computer is a great idea because it means 
  
 In the previous section I discussed the ability to use the \Rcmd{source} command to import a text file of commands into an \R{} session. 
  
-To continue with the rest of this section we need to know where to find \R{} on our local machine. On my computer this was \begin{center} \verb+C:\Program Files\R\R-+3.3.1 
+To continue with the rest of this section we need to know where to find \R{} on our local machine. On my computer this was \begin{center} \verb+C:\Program Files\R\R-+3.3.2 
 \end{center} 
  because I installed this version of \R{} using the default settings. This folder is often called \RHome{}. If you haven't installed \R{} using the default settings, you will need to find out where your \RHome{} is and remember it in the instructions that follow. 
  
-What we actually want is to find a file called \file{rterm.exe} which is in the \file{bin} subfolder. The full filename including its path is going to be \begin{center}\verb+C:\Program Files\R\R-+3.3.1\verb+\bin\Rterm.exe+\end{center} Note that this is the file that will run \R{} in a terminal window, not \file{rgui.exe} which is for the standard \R{} console. Note also that as from version 2.12.0, \R{} running under Windows had an extra element in the folder structure which depends on the machine you are using. Many Windows users are now moving to 64 bit operating systems and software, while others still use the older 32 bit software. Check your path carefully. 
+What we actually want is to find a file called \file{rterm.exe} which is in the \file{bin} subfolder. The full filename including its path is going to be \begin{center}\verb+C:\Program Files\R\R-+3.3.2\verb+\bin\Rterm.exe+\end{center} Note that this is the file that will run \R{} in a terminal window, not \file{rgui.exe} which is for the standard \R{} console. Note also that as from version 2.12.0, \R{} running under Windows had an extra element in the folder structure which depends on the machine you are using. Many Windows users are now moving to 64 bit operating systems and software, while others still use the older 32 bit software. Check your path carefully. 
  
 We now need to create a batch file. This is just a text file with the extension \file{bat} instead of the normal \file{txt}. If you open a text file it is readable in a text editor like notepad; a batch file is a set of commands that are executed when you run the file. On Windows, this is as simple as pressing \code{<Enter>} when the filename is highlighted in the Explorer window, or double clicking as if you were opening the file. 
  
 So let's start by creating a text file in the chosen working directory. Do this using the menus in Windows Explorer. Open the file so that we are able to add the following text.  
 \begin{center} 
-\verb+"C:\Program Files\R\R-+3.3.1\verb+\bin\Rterm.exe" < mycommands.R > myoutput.txt+ 
+\verb+"C:\Program Files\R\R-+3.3.2\verb+\bin\Rterm.exe" < mycommands.R > myoutput.txt+ 
 \end{center} 
  
 This single command has three parts; the first part in quotes is the full path to the program we want to run, and the quotes are essential. The second is the set of commands we want executed in that program, and the last is the file where we want the results to be saved. The symbols between the three parts are essential and the direction is important. This process is often called ``piping". The contents of the commands file are piped into \R{}., and the results are piped out to another file. 
@@ -71,7 +71,7 @@ If you do this, then the next logical thing to want to do is to have that \R{} s
  
 We need to make a batch file again, just like in the example on piping. This batch file will have just one line in it and it needs to be put in a folder that is on the system path. The single line is 
 \begin{center} 
-\verb+"C:\Program Files\R\R-+3.3.1\verb+\bin\R.exe" CMD BATCH --vanilla --quiet %1+ 
+\verb+"C:\Program Files\R\R-+3.3.2\verb+\bin\R.exe" CMD BATCH --vanilla --quiet %1+ 
 \end{center} 
  
 Now look for an \R{} script and select the default program to open it again. This time, browse for the batch file you just created. Now every time you click on an \R{} script, it will be processed by \R{}. All output including commands will be put into a file of the same name with an extension that has the three extra letters ``\code{out}" on the end. Use the process for file associations again to get this file opened automatically; use the viewer of your choice, whether  that be a text editor or a browser. 

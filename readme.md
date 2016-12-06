@@ -29,7 +29,7 @@ If you want to start a translation project, then again, please offer.
 - removed small snippet files that were duplicates, including use of GenericSettings.R file. 
 
 
-## August 2016
+### August 2016
 - First chapter of Korean files came in.
 - Discovered that we need to alter Sweave() commands to avoid encoding checks.  if we are processing files inside R using the standard Sweave() process; no changes made to any of the batch files are required as the knitr package seems to handle the various encoding variations properly. This was necessary to get Korean files processed correctly. Who knows what havoc this might create...
 - added DoAllKorean.bat
@@ -38,8 +38,11 @@ If you want to start a translation project, then again, please offer.
 - removed use of attach() and detach() on simple plot() commands
 - improved the presentation of the R scripts to drop chunks used for purposes of knitr and chapter setup and clean up.
 
+### September 2016
+- changed from \epsilon to \varepsilon in formulae. This made reading via mathjax and mathml possible.
+
+## December 2016 (Dublin)
+- added links to switch between blind and sighted versions
+- switched the creation of SVG to use the rvg package in R. This is definitely an improvement, but we really need to find out how to use the gridSVG package to deliver even better results.
 
 
- 
-## To do list
-- add links to switch between blind and sighted versions

@@ -1,5 +1,5 @@
 ## ----GetData, eval=FALSE-------------------------------------------------
-## data(airquality)
+data(airquality) 
 
 ## ----OzoneLM1------------------------------------------------------------
 Ozone.lm1 = lm(Ozone~Wind, data=airquality) 

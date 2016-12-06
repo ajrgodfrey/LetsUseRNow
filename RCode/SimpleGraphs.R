@@ -32,10 +32,10 @@ qqnorm(Wind)
 qqline(Wind) 
 
 ## ----ScatterCode1, eval=FALSE--------------------------------------------
-## plot(Wind, Temp)
+plot(Wind, Temp) 
 
 ## ----ScatterCode2, eval=FALSE--------------------------------------------
-## plot(Temp~Wind)
+plot(Temp~Wind) 
 
 ## ----Scatter-------------------------------------------------------------
 plot(Wind, Temp) 

@@ -11,7 +11,7 @@ HKEY_LOCAL_MACHINE\SOFTWARE\R-core\R ^| findstr /i "InstallPath"') do (
 :next
 set InstallPath=%InstallPath:~14%
 
-copy LURNPrint.r+LURN.r LURNWorkhorse.r
+copy LURNPrint.r+LURN.r+LURNMakeSVGPages.R LURNWorkhorse.r
 
 "%InstallPath%\bin\i386\rterm.exe" --internet2 --no-save --quiet < LURNWorkhorse.r > LURN.txt
 

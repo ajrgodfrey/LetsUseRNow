@@ -21,3 +21,5 @@ call HTMLBlind.bat
 call CleanUpFolder.bat
 
 move lurnPrint.pdf .\English\lurnPrint.pdf
+
+CrossLinks.jar

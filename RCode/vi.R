@@ -2,10 +2,10 @@
 library(BrailleR) 
 
 ## ----SaveHistory, eval=FALSE---------------------------------------------
-## savehistory("WhatIDidToday.txt")
+savehistory("WhatIDidToday.txt") 
 
 ## ----TXTOut, eval=FALSE--------------------------------------------------
-## txtOut()
+txtOut() 
 
 ## ----CreateHist----------------------------------------------------------
 MyHist = hist(airquality$Wind, xlab="Average wind speed (mph)", main="", plot=FALSE) 
@@ -25,9 +25,9 @@ VI(boxplot(airquality$Wind, xlab="Average wind speed (mph)"))
 VI(dotplot(x)) 
 
 ## ----UniDesc, eval=FALSE-------------------------------------------------
-## data(airquality)
-## Ozone=airquality$Ozone
-## UniDesc(Ozone, Folder="AirQuality")
+data(airquality) 
+Ozone=airquality$Ozone 
+UniDesc(Ozone, Folder="AirQuality") 
 
 ## ----VIDataFrame---------------------------------------------------------
 summary(airquality) 
