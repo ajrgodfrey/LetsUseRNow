@@ -1,4 +1,4 @@
- 
-This chapter illustrates the construction of some basic exploratory data analysis graphs. More complex graphs are considered in Chapter~\ref{ComplexGraphs}, although at times we will see graphs presented in conjunction with particular statistical analysis techniques. We concentrate on data taking continuous values initially, but a short section on graphs for discrete valued variables is included at the end. 
- 
-We will use the \Robject{air quality} data set that is distributed in the \Rpackage{datasets} package which is part of the default installation of \R{}. This data set is immediately accessible from your \R{} session and can be investigated using 
+
+This chapter illustrates the construction of some basic exploratory data analysis graphs. More complex graphs are considered in Chapter~\ref{ComplexGraphs}, although at times we will see graphs presented in conjunction with particular statistical analysis techniques in other chapters. In this chapter, we concentrate on data taking continuous values initially, but a short section on graphs for discrete valued variables is also included. 
+
+There are many ways to create statistical graphs. The traditional method uses one of the base \R{} packages, but in recent years, the \Rpkg{ggplot2} package has gained considerable attention. The presentation of both styles of graph are given throughout this chapter. You will need to ensure the \Rpkg{ggplot2} package is available for use in your \R{} session by issuing the command:

@@ -41,8 +41,14 @@ If you want to start a translation project, then again, please offer.
 ### September 2016
 - changed from \epsilon to \varepsilon in formulae. This made reading via mathjax and mathml possible.
 
-## December 2016 (Dublin)
+### December 2016 (Dublin)
 - added links to switch between blind and sighted versions
 - switched the creation of SVG to use the rvg package in R. This is definitely an improvement, but we really need to find out how to use the gridSVG package to deliver even better results.
 
 
+## March 2017
+
+Discovered how to add the alt tags in the HTML versions. 
+    - Sorted for title pages of the english versions only.
+    - creation of altgraphicx.sty and .4ht required. These sit in the root folder.
+    - updated the preamble needed to incorporate the new altgraphicx package.

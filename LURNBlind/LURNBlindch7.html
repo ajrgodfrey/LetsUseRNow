@@ -10,7 +10,7 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,2,next,mathjax,html --> 
 <meta name="src" content="LURNBlind.tex" /> 
-<meta name="date" content="2016-12-07 04:15:00" /> 
+<meta name="date" content="2017-03-26 11:07:00" /> 
 <link rel="stylesheet" type="text/css" href="LURNBlind.css" /> 
 </head><body 
 >
@@ -28,25 +28,28 @@ href="LURNBlind.html#LURNBlindch7.html" >up</a>] </p></div>
 graphs. More complex graphs are considered in Chapter&#x00A0;<a 
 href="LURNBlindch13.html#x15-9700013">13<!--tex4ht:ref: ComplexGraphs --></a>, although at times we
 will see graphs presented in conjunction with particular statistical analysis
-techniques. We concentrate on data taking continuous values initially, but a
-short section on graphs for discrete valued variables is included at the
-end.
-</p><!--l. 13--><p class="indent" >   We will use the <span 
-class="aett-12">air quality </span>data set that is distributed in the <a 
+techniques in other chapters. In this chapter, we concentrate on data taking
+continuous values initially, but a short section on graphs for discrete valued
+variables is also included.
+</p><!--l. 13--><p class="indent" >   There are many ways to create statistical graphs. The traditional method uses
+one of the base <span 
+class="aess-12">R </span>packages, but in recent years, the <a 
  id="dx9-44001"></a><span 
-class="aeti-12">datasets</span>
-package which is part of the default installation of <span 
-class="aess-12">R</span>. This data set is immediately
-accessible from your <span 
-class="aess-12">R </span>session and can be investigated using
+class="aeti-12">ggplot2 </span>package has gained
+considerable attention. The presentation of both styles of graph are given
+throughout this chapter. You will need to ensure the <a 
+ id="dx9-44002"></a><span 
+class="aeti-12">ggplot2 </span>package is available
+for use in your <span 
+class="aess-12">R </span>session by issuing the command:
 </p>
    <div class="fancyvrb" id="fancyvrb132">  <a 
- id="x9-44003r1"></a><span 
+ id="x9-44004r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;str(airquality)</span></div>
 <div class="fancyvrb" id="fancyvrb133"> <a 
- id="x9-44005r1"></a><span 
+ id="x9-44006r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#8217;data.frame&#8217;:        153</span><span 
 class="aett-12">&#x00A0;obs.</span><span 
@@ -55,7 +58,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;6</span><span 
 class="aett-12">&#x00A0;variables:</span>
 <br class="fancyvrb" /><a 
- id="x9-44007r2"></a><span 
+ id="x9-44008r2"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;$</span><span 
@@ -76,7 +79,7 @@ class="aett-12">&#x00A0;8</span><span
 class="aett-12">&#x00A0;NA</span><span 
 class="aett-12">&#x00A0;...</span>
 <br class="fancyvrb" /><a 
- id="x9-44009r3"></a><span 
+ id="x9-44010r3"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;$</span><span 
@@ -95,7 +98,7 @@ class="aett-12">&#x00A0;19</span><span
 class="aett-12">&#x00A0;194</span><span 
 class="aett-12">&#x00A0;...</span>
 <br class="fancyvrb" /><a 
- id="x9-44011r4"></a><span 
+ id="x9-44012r4"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;$</span><span 
@@ -117,7 +120,7 @@ class="aett-12">&#x00A0;20.1</span><span
 class="aett-12">&#x00A0;8.6</span><span 
 class="aett-12">&#x00A0;...</span>
 <br class="fancyvrb" /><a 
- id="x9-44013r5"></a><span 
+ id="x9-44014r5"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;$</span><span 
@@ -139,7 +142,7 @@ class="aett-12">&#x00A0;61</span><span
 class="aett-12">&#x00A0;69</span><span 
 class="aett-12">&#x00A0;...</span>
 <br class="fancyvrb" /><a 
- id="x9-44015r6"></a><span 
+ id="x9-44016r6"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;$</span><span 
@@ -159,7 +162,7 @@ class="aett-12">&#x00A0;5</span><span
 class="aett-12">&#x00A0;5</span><span 
 class="aett-12">&#x00A0;5</span><span 
 class="aett-12">&#x00A0;...</span><br class="fancyvrb" /><a 
- id="x9-44017r7"></a><span 
+ id="x9-44018r7"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;$</span><span 
@@ -185,14 +188,14 @@ class="aett-12">&#x00A0;...</span></div>
 class="aess-12">R </span>users to access the variables after issuing the command
 </p>
    <div class="fancyvrb" id="fancyvrb134">  <a 
- id="x9-44019r1"></a><span 
+ id="x9-44020r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;attach(airquality)</span></div>
 <!--l. 34--><p class="noindent" >The <a 
- id="dx9-44020"></a><span 
-class="aett-12">detach() </span>command undoes the <a 
  id="dx9-44021"></a><span 
+class="aett-12">detach() </span>command undoes the <a 
+ id="dx9-44022"></a><span 
 class="aett-12">attach() </span>command. To remove the
 &#8220;attachment", you will issue the command <span 
 class="aett-12">detach(airquality)</span>.

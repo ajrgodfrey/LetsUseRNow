@@ -1,0 +1,14 @@
+\end{center} 
+\end{exhibit} 
+
+\subsection[Using the ggplot2 package]{Using the \Rpkg{ggplot2} package}
+
+The \Rpkg{ggplot2} package builds a graph by adding components together. Sometimes the commands are a little less clear than we might see in the corresponding base \R{} graphics.
+
+
+
+ 
+\begin{exhibit} 
+\begin{center} 
+\caption{Histogram of Average wind speed in miles per hour at 0700 and 1000 hours at LaGuardia Airport. Obtained from the \Robject{air quality} data set.} 
+\label{AirQualityHistWindWithGGPlot} 

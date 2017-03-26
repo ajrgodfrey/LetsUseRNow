@@ -37,7 +37,7 @@ The following object is masked from 'package:utils':
     history
 \end{Soutput}
 \end{Schunk}
-This chapter was created using version 0.25.4 of the \Rpkg{BrailleR} package. This version of the package has a number of other packages that it depends on for functionality. When you make the \Rpkg{BrailleR} package available, you may see a few introduction messages that tell you about the other packages being loaded. You will be told about some default settings for the package that can be altered later to suit your needs. 
+This chapter was created using version 0.25.6 of the \Rpkg{BrailleR} package. This version of the package has a number of other packages that it depends on for functionality. When you make the \Rpkg{BrailleR} package available, you may see a few introduction messages that tell you about the other packages being loaded. You will be told about some default settings for the package that can be altered later to suit your needs. 
  
  
 \section{Creating a copy of the \R{} console window}\label{CreateCopyConsole} 
@@ -120,20 +120,35 @@ $main
 $xlab
 [1] "Average wind speed (mph)"
 
+$ylab
+[1] "Frequency"
+
+$NBars
+[1] 11
+
 $xaxp
 [1] 0 1 5
 
 $yaxp
 [1] 0 1 5
 
+$xTicks
+[1] 0.0 0.2 0.4 0.6 0.8 1.0
+
+$yTicks
+[1] 0.0 0.2 0.4 0.6 0.8 1.0
+
+$sub
+[1] ""
+
 attr(,"class")
-[1] "histogram"
+[1] "Augmented" "histogram"
 \end{Soutput}
 \begin{Sinput}
 > str(MyHist) 
 \end{Sinput}
 \begin{Soutput}
-List of 10
+List of 15
  $ breaks  : num [1:12] 0 2 4 6 8 10 12 14 16 18 ...
  $ counts  : int [1:11] 1 4 11 38 27 38 10 17 4 1 ...
  $ density : num [1:11] 0.00327 0.01307 0.03595 0.12418 0.08824 ...
@@ -142,15 +157,20 @@ List of 10
  $ equidist: logi TRUE
  $ main    : chr ""
  $ xlab    : chr "Average wind speed (mph)"
+ $ ylab    : chr "Frequency"
+ $ NBars   : int 11
  $ xaxp    : num [1:3] 0 1 5
  $ yaxp    : num [1:3] 0 1 5
- - attr(*, "class")= chr "histogram"
+ $ xTicks  : num [1:6] 0 0.2 0.4 0.6 0.8 1
+ $ yTicks  : num [1:6] 0 0.2 0.4 0.6 0.8 1
+ $ sub     : chr ""
+ - attr(*, "class")= chr [1:2] "Augmented" "histogram"
 \end{Soutput}
 \begin{Sinput}
 > class(MyHist) 
 \end{Sinput}
 \begin{Soutput}
-[1] "histogram"
+[1] "Augmented" "histogram"
 \end{Soutput}
 \end{Schunk}
  
@@ -195,7 +215,7 @@ Other functions exist for boxplots and dotplots. Try:
 This graph has a boxplot printed vertically
 but has no title
 "Average wind speed (mph)" appears on the x-axis.
-No label appears on the y-axis.
+"" appears on the y-axis.
 Tick marks for the y-axis are at: 5, 10, 15, and 20 
 This variable has 153 values.
 An outlier is marked at: 20.1 18.4 20.7 
@@ -277,12 +297,12 @@ Some \R{} output is arranged in nice tables that are easy for the sighted user t
 \begin{Soutput}
 
 The summary of each variable is
-Ozone: Min. 1   1st Qu. 18   Median 31.5   Mean 42.1   3rd Qu. 63.2   Max. 168   NA's 37  
-Solar.R: Min. 7   1st Qu. 116   Median 205   Mean 186   3rd Qu. 259   Max. 334   NA's 7  
-Wind: Min. 1.7   1st Qu. 7.4   Median 9.7   Mean 9.96   3rd Qu. 11.5   Max. 20.7  
-Temp: Min. 56   1st Qu. 72   Median 79   Mean 77.9   3rd Qu. 85   Max. 97  
-Month: Min. 5   1st Qu. 6   Median 7   Mean 6.99   3rd Qu. 8   Max. 9  
-Day: Min. 1   1st Qu. 8   Median 16   Mean 15.8   3rd Qu. 23   Max. 31  
+Ozone: Min. 1   1st Qu. 18   Median 31.5   Mean 42.1293103448276   3rd Qu. 63.25   Max. 168   NA's 37  
+Solar.R: Min. 7   1st Qu. 115.75   Median 205   Mean 185.931506849315   3rd Qu. 258.75   Max. 334   NA's 7  
+Wind: Min. 1.7   1st Qu. 7.4   Median 9.7   Mean 9.95751633986928   3rd Qu. 11.5   Max. 20.7  
+Temp: Min. 56   1st Qu. 72   Median 79   Mean 77.8823529411765   3rd Qu. 85   Max. 97  
+Month: Min. 5   1st Qu. 6   Median 7   Mean 6.99346405228758   3rd Qu. 8   Max. 9  
+Day: Min. 1   1st Qu. 8   Median 16   Mean 15.8039215686275   3rd Qu. 23   Max. 31  
 \end{Soutput}
 \end{Schunk}
  

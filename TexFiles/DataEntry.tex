@@ -164,7 +164,7 @@ It's also often necessary to understand how \R{} has stored an object. The \Rcmd
 > str(Names) 
 \end{Sinput}
 \begin{Soutput}
- chr [1:7] "Jonathan" "Elizabeth" "Peter" ...
+ chr [1:7] "Jonathan" "Elizabeth" "Peter" "Jenna" ...
 \end{Soutput}
 \end{Schunk}
 We can get the names of all the people that aren't me by 
@@ -238,7 +238,7 @@ The current time and date can be extracted using the \Rcmd{date} command but thi
 > date() 
 \end{Sinput}
 \begin{Soutput}
-[1] "Wed Dec 07 04:14:22 2016"
+[1] "Sun Mar 26 11:05:55 2017"
 \end{Soutput}
 \begin{Sinput}
 > class(date()) 
@@ -253,7 +253,7 @@ It might be useful to print this information as part of your documentation of an
 > Sys.Date() 
 \end{Sinput}
 \begin{Soutput}
-[1] "2016-12-07"
+[1] "2017-03-26"
 \end{Soutput}
 \begin{Sinput}
 > class(Sys.Date()) 

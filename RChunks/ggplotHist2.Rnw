@@ -1,0 +1,4 @@
+<<GGPlotHistWind>>=
+ggplot(airquality, aes(Wind)) + geom_histogram()
+@
+\SVGLink{SimpleGraphsGGPlotHistWind-1} 

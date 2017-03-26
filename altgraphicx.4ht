@@ -1,0 +1,2 @@
+\define@key{Gin}{alt}{\Configure{GraphicsAlt}{#1}}
+\endinput
