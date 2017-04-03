@@ -1,4 +1,10 @@
 <<HistAirQualityWind>>= 
 hist(Wind) 
-@ 
-\SVGLink{SimpleGraphsHistAirQualityWind-1} 
+@
+
+<<HistAirQualityWindSVG, include=FALSE>>= 
+temp = hist(Wind) 
+MakeAccessibleSVG(temp, "figures/SimpleGraphsHistAirQualityWind")
+@
+ 
+\SVGLink{SimpleGraphsHistAirQualityWind} 

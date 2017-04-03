@@ -7,6 +7,10 @@ attach(airquality)
 ## ----HistAirQualityWind--------------------------------------------------
 hist(Wind) 
 
+## ----HistAirQualityWindSVG, include=FALSE--------------------------------
+temp = hist(Wind) 
+MakeAccessibleSVG(temp, "figures/SimpleGraphsHistAirQualityWind")
+
 ## ----HistAirQualityWind2-------------------------------------------------
 hist(Wind, xlab="Average wind speed (mph)", main="") 
 

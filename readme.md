@@ -46,9 +46,13 @@ If you want to start a translation project, then again, please offer.
 - switched the creation of SVG to use the rvg package in R. This is definitely an improvement, but we really need to find out how to use the gridSVG package to deliver even better results.
 
 
-## March 2017
+### March 2017
 
 Discovered how to add the alt tags in the HTML versions. 
     - Sorted for title pages of the english versions only.
     - creation of altgraphicx.sty and .4ht required. These sit in the root folder.
     - updated the preamble needed to incorporate the new altgraphicx package.
+
+## April 2017
+
+- started use of the accessible graphs tool on the http version of the book. Must be viewed using a browser that handles SVG (not IE!) to work.

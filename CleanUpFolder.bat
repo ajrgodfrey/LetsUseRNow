@@ -17,6 +17,7 @@ del "Rplots.pdf"
 move *.tex .\TexFiles
 
 move .\Figures\*.svg .\SVgs
+move .\Figures\*.xml .\SVgs
 
 del lurn.txt
 del .\figures\*.* /q
