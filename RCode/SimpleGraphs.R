@@ -4,15 +4,17 @@ str(airquality)
 ## ----AttachAirQuality----------------------------------------------------
 attach(airquality) 
 
-## ----HistAirQualityWind--------------------------------------------------
+## ----HistAirQualityWind, echo=TRUE, fig.show="hide"----------------------
 hist(Wind) 
 
 ## ----HistAirQualityWindSVG, include=FALSE--------------------------------
-temp = hist(Wind) 
-MakeAccessibleSVG(temp, "figures/SimpleGraphsHistAirQualityWind")
+MakeAccessibleSVG(hist(Wind), "figures/SimpleGraphsHistAirQualityWind")
 
-## ----HistAirQualityWind2-------------------------------------------------
+## ----HistAirQualityWind2, fig.show="hide"--------------------------------
 hist(Wind, xlab="Average wind speed (mph)", main="") 
+
+## ----HistAirQualityWind2SVG, include=FALSE-------------------------------
+MakeAccessibleSVG(hist(Wind, xlab="Average wind speed (mph)", main="") , "figures/SimpleGraphsHistAirQualityWind2")
 
 ## ----Boxplot, echo=FALSE, fig.width=7, fig.height=5, eval=-1-------------
 windows(7, 5) 

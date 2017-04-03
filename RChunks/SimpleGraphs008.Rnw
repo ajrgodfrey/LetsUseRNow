@@ -1,10 +1,8 @@
-<<HistAirQualityWind>>= 
+<<HistAirQualityWind, echo=TRUE, fig.show="hide">>= 
 hist(Wind) 
 @
-
+\includegraphics[width=0.8\textwidth,alt={a histogram}]{figures/SimpleGraphsHistAirQualityWind-1} 
 <<HistAirQualityWindSVG, include=FALSE>>= 
-temp = hist(Wind) 
-MakeAccessibleSVG(temp, "figures/SimpleGraphsHistAirQualityWind")
+MakeAccessibleSVG(hist(Wind), "figures/SimpleGraphsHistAirQualityWind")
 @
- 
 \SVGLink{SimpleGraphsHistAirQualityWind} 
