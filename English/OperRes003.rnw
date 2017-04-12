@@ -11,10 +11,11 @@ Note that all examples are intentionally made reproducible through use of random
 The assignment problem assigns $n$ tasks to $n$ people. The objective function is often described in tabular or matrix form as a set of costs to be minimised. The constraints are that all tasks must be assigned and no person can complete more than one task. ``Dummy" tasks or people are added to the matrix if the number of tasks is not equal to the number of people. 
 
 The mathematical programming representation for the assignment problem has the objective function:\begin{equation}\label{OperResAssObj}
-\min{ \sum_i \sum_j {c_{ij}x_{ij}}} \qquad i,j=1,\ldots,n
+\min{ \sum_{i=1}^n {\sum_{j=1}^n {c_{ij}x_{ij}}}} \qquad i,j=1,\ldots,n
 \end{equation}
-subject to the constraints:\eqnarray*}
-\sum_j {x_{ij} &= 1, \quad \forall  i=1,\ldots,n\\
-\sum_i {x_{ij} &=1, \quad \forall j=1,\ldots,n\\
-x_{ij} &\in \{0,1\} \forall i,j
-\end{array*}
+subject to the constraints:
+\begin{eqnarray*}
+\sum_{j=1}^n {x_{ij}} &=1, \quad \forall  i=1,\ldots,n\\
+\sum_{i=1}^n {x_{ij}} &=1, \quad \forall j=1,\ldots,n\\
+x_{ij} &\in \{0,1\} \quad \forall i,j\\
+\end{eqnarray*}

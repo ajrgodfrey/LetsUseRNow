@@ -6,14 +6,14 @@ str(Nile)
 ## ----MakeTSTemp----------------------------------------------------------
 Temp.ts = as.ts(airquality$Temp) 
 
-## ----NilePlot, fig=TRUE--------------------------------------------------
+## ----NilePlot------------------------------------------------------------
 plot(Nile, xlab="Year", ylab="Flow") 
 
-## ----TSPlotsCompared, fig=TRUE-------------------------------------------
+## ----TSPlotsCompared-----------------------------------------------------
 plot(airquality$Temp, ylab="Temperature") 
 plot(Temp.ts, ylab="Temperature") 
 
-## ----FilterExample, fig=TRUE---------------------------------------------
+## ----FilterExample-------------------------------------------------------
 plot(Nile) 
 for(i in 1:4){ 
 w=4*i-1 # choose the window (3, 7,11,15) 
@@ -30,7 +30,7 @@ adf.test(Nile)
 pp.test(Nile) 
 kpss.test(Nile) 
 
-## ----NileACF, fig=T------------------------------------------------------
+## ----NileACF-------------------------------------------------------------
 acf(Nile) 
 
 ## ----NileACFNoPlot-------------------------------------------------------
@@ -40,21 +40,21 @@ pacf(Nile, plot=FALSE)
 ## ----getAustResData------------------------------------------------------
 str(austres) 
 
-## ----DecomposeAustRes, fig=TRUE------------------------------------------
+## ----DecomposeAustRes----------------------------------------------------
 AustRes.dec1 = decompose(austres) 
 Aust.dec2 =decompose(austres, type="mul") 
 
-## ----STLAustRes, fig=TRUE------------------------------------------------
+## ----STLAustRes----------------------------------------------------------
 AustRes.dec3 = stats::stl(austres, s.window="periodic") 
 AustRes.dec3 
 plot(AustRes.dec3) 
 
-## ----NileHoltWinters, fig=TRUE-------------------------------------------
+## ----NileHoltWinters-----------------------------------------------------
 Nile.hw1 = HoltWinters(Nile, beta=FALSE, gamma = FALSE) 
 Nile.hw1 
 plot(Nile.hw1) 
 
-## ----AustResHW, fig=TRUE-------------------------------------------------
+## ----AustResHW-----------------------------------------------------------
 AustRes.hw1 = HoltWinters(austres) 
 AustRes.hw1 
 plot(AustRes.hw1) 

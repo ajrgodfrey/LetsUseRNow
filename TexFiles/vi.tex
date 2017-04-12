@@ -15,11 +15,13 @@ Initially, the package was built on top of functionality I wrote to support my o
  
  
 You will need to install the \Rpackage{BrailleR} package before continuing on with the examples in this chapter. It is available from CRAN. Use the examples in Chapter~\ref{Additional} to help install this package. Then use the \Rcmd{library} command to make sure the package is ready for action. 
-\begin{Schunk}
-\begin{Sinput}
-> library(BrailleR) 
-\end{Sinput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{library}\hlstd{(BrailleR)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
 This chapter was created using version 0.25.6 of the \Rpkg{BrailleR} package. This version of the package has a number of other packages that it depends on for functionality. When you make the \Rpkg{BrailleR} package available, you may see a few introduction messages that tell you about the other packages being loaded. You will be told about some default settings for the package that can be altered later to suit your needs. 
  
  
@@ -36,21 +38,25 @@ There are three types of content printed in the console window.\begin{enumerate}
 The \Rcmd{sink} command does not currently record the commands or the errors and warning messages. It is therefore a valuable tool for those \R{} users that are confident about the validity of their scripts. 
  
 Saving the commands typed into an \R{} session can be achieved using the \Rcmd{savehistory} command. For example 
-\begin{Schunk}
-\begin{Sinput}
-> savehistory("WhatIDidToday.txt") 
-\end{Sinput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{savehistory}\hlstd{(}\hlstr{"WhatIDidToday.txt"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
 will save all the issued commands into a text file called \file{WhatIDidToday.txt} in the working directory.  
  
 If I just want to have everything I do during a session recorded for posterity, I want all contents of the console window to be saved. A plain text file is sufficient but it is possible to use add-on packages to create other file formats. 
  
 I have included a convenience function in the \Rpackage{BrailleR} package that starts a text file with the date and time in its filename. It gets saved in the current working directory. To get this file started, just type 
-\begin{Schunk}
-\begin{Sinput}
-> txtOut() 
-\end{Sinput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{txtOut}\hlstd{()}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
 In fact this command starts several files, one for the complete console and one for the issued commands. The command actually runs the \Rcmd{txtStart} command but specifies particular options for the user's convenience. If you are happy to use the defalt filename then you just need to hit <enter>, but if you want to specify the filename, you type the name, and then hit <Enter> twice (once for your file and once to get out of the filename requesting prompt). 
  
 See the help page for the \Rcmd{txtOut} command as it includes the history of the command and its relatives. The other related commands add comments to the text file or stop the processing entirely. Also note that the help page mentions how to get the packages needed for other file formats. 
@@ -64,20 +70,22 @@ You can open the text file that is being created and modified as you work in any
 Statistics is an inherently visual discipline. Many statistical analyses lead to a graphic representation of data that is easy for the sighted world to interpret. Through use of \R{} we can create functions that can interpret the graphs using text descriptions. We'll start with a histogram.  
  
 In most circumstances, the user will create a histogram using the \Rcmd{hist} command. This command takes data and creates a number of values needed to construct the histogram. We can see what has been created by storing these values in an object. For example: 
-\begin{Schunk}
-\begin{Sinput}
-> MyHist = hist(airquality$Wind, xlab="Average wind speed (mph)", main="", plot=FALSE) 
-\end{Sinput}
-\begin{Soutput}
-Warning in hist.default(x = airquality$Wind, xlab = "Average wind speed (mph)", : arguments 'main', 'xlab' are not made use of
-\end{Soutput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlstd{MyHist} \hlkwb{=} \hlkwd{hist}\hlstd{(airquality}\hlopt{$}\hlstd{Wind,} \hlkwc{xlab}\hlstd{=}\hlstr{"Average wind speed (mph)"}\hlstd{,} \hlkwc{main}\hlstd{=}\hlstr{""}\hlstd{,} \hlkwc{plot}\hlstd{=}\hlnum{FALSE}\hlstd{)}
+\end{alltt}
+
+
+{\ttfamily\noindent\color{warningcolor}{Warning in hist.default(x = airquality\$Wind, xlab = "{}Average wind speed (mph)"{}, : arguments 'main', 'xlab' are not made use of}}\end{kframe}
+\end{knitrout}
 The \Rarg{plot} argument stops the graph being plotted. We can get the graph anytime by issuing the \Rcmd{plot} command but we are only interested in seeing what \R{} has stored in the \Robject{MyHist} object at the moment.  
-\begin{Schunk}
-\begin{Sinput}
-> MyHist 
-\end{Sinput}
-\begin{Soutput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlstd{MyHist}
+\end{alltt}
+\begin{verbatim}
 $breaks
  [1]  0  2  4  6  8 10 12 14 16 18 20 22
 
@@ -126,11 +134,11 @@ $sub
 
 attr(,"class")
 [1] "Augmented" "histogram"
-\end{Soutput}
-\begin{Sinput}
-> str(MyHist) 
-\end{Sinput}
-\begin{Soutput}
+\end{verbatim}
+\begin{alltt}
+\hlstd{> }\hlkwd{str}\hlstd{(MyHist)}
+\end{alltt}
+\begin{verbatim}
 List of 15
  $ breaks  : num [1:12] 0 2 4 6 8 10 12 14 16 18 ...
  $ counts  : int [1:11] 1 4 11 38 27 38 10 17 4 1 ...
@@ -148,24 +156,27 @@ List of 15
  $ yTicks  : num [1:6] 0 0.2 0.4 0.6 0.8 1
  $ sub     : chr ""
  - attr(*, "class")= chr [1:2] "Augmented" "histogram"
-\end{Soutput}
-\begin{Sinput}
-> class(MyHist) 
-\end{Sinput}
-\begin{Soutput}
+\end{verbatim}
+\begin{alltt}
+\hlstd{> }\hlkwd{class}\hlstd{(MyHist)}
+\end{alltt}
+\begin{verbatim}
 [1] "Augmented" "histogram"
-\end{Soutput}
-\end{Schunk}
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
  
 The full print out has everything we need but is not in a friendly format. The \Rcmd{str} command gives us a condensed version of the data being stored but isn't sufficient, and the \Rcmd{class} command just tells us that this information is stored in an object of type \Rclass{histogram}. The class of the object is the most important as it is what tells \R{} how to work on the object when we use the \Rcmd{plot} command on the \Robject{MyHist} object. The \Rcmd{plot} command is actually a family of commands, one of which is purposely designed for histograms. The \Rcmd{plot.histogram} command is actually what constructs the graph when the user calls the \Rcmd{plot} command on an object of type \Rclass{histogram}. This family of commands is known as a \stressind{method}. 
  
 The \Rpackage{BrailleR} package includes a \stressind{method} for creating text interpretations in a similar way. The \Rcmd{VI} command is actually a family of commands that includes the \Rcmd{VI.histogram} command. When we issue the \Rcmd{VI} command on the \Robject{MyHist} object, the \Rcmd{VI.histogram} function does the work. Let's see what we get: 
-\begin{Schunk}
-\begin{Sinput}
-> VI(hist(airquality$Wind, xlab="Average wind speed (mph)", main="")) 
-\end{Sinput}
-
-\includegraphics[width=0.7\textwidth]{figures/VIVIHist-1} \begin{Soutput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{VI}\hlstd{(}\hlkwd{hist}\hlstd{(airquality}\hlopt{$}\hlstd{Wind,} \hlkwc{xlab}\hlstd{=}\hlstr{"Average wind speed (mph)"}\hlstd{,} \hlkwc{main}\hlstd{=}\hlstr{""}\hlstd{))}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=0.7\textwidth]{figures/VIVIHist-1} 
+\begin{kframe}\begin{verbatim}
 This is a histogram, with the title: 
 "Average wind speed (mph)" is marked on the x-axis.
 Tick marks for the x-axis are at: 0, 5, 10, 15, and 20 
@@ -184,17 +195,20 @@ mid = 15  count = 17
 mid = 17  count = 4 
 mid = 19  count = 1 
 mid = 21  count = 2
-\end{Soutput}
-\end{Schunk}
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
  
  
 Other functions exist for boxplots and dotplots. Try: 
-\begin{Schunk}
-\begin{Sinput}
-> VI(boxplot(airquality$Wind, xlab="Average wind speed (mph)")) 
-\end{Sinput}
-
-\includegraphics[width=0.7\textwidth]{figures/VIVIBoxplot-1} \begin{Soutput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{VI}\hlstd{(}\hlkwd{boxplot}\hlstd{(airquality}\hlopt{$}\hlstd{Wind,} \hlkwc{xlab}\hlstd{=}\hlstr{"Average wind speed (mph)"}\hlstd{))}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=0.7\textwidth]{figures/VIVIBoxplot-1} 
+\begin{kframe}\begin{verbatim}
 This graph has a boxplot printed vertically
 but has no title
 "Average wind speed (mph)" appears on the x-axis.
@@ -206,17 +220,19 @@ The whiskers extend to 1.7 and 16.6 from the ends of the box,
 which are at 7.4 and 11.5 
 The median, 9.7 is 56 % from the lower end of the box to the upper end.
 The upper whisker is 0.89 times the length of the lower whisker.
-\end{Soutput}
-\end{Schunk}
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
  and 
-\begin{Schunk}
-\begin{Sinput}
-> VI(dotplot(x)) 
-\end{Sinput}
-\begin{Soutput}
-Error in dotplot(x): object 'x' not found
-\end{Soutput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{VI}\hlstd{(}\hlkwd{dotplot}\hlstd{(x))}
+\end{alltt}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{Error in dotplot(x): object 'x' not found}}\end{kframe}
+\end{knitrout}
  
 The \Rcmd{dotplot} command is not part of base \R{} which uses the \Rcmd{stripchart} command instead. The \Rcmd{hist} and \Rcmd{boxplot} commands used here are actually commands from the \Rpkg{BrailleR} package that use the standard commands indirectly. At this point in time, I haven't worked out how to get the \Rcmd{stripchart} command to work as a \Rpkg{BrailleR} command so I needed to use a different name for my version. The \Rpkg{BrailleR} versions of these three commands store the additional information we need to get the text interpretation that is not possible from the standard version of the commands. 
  
@@ -228,13 +244,15 @@ The \Rcmd{UniDesc} function is designed to quickly generate a text summary of a 
 One obvious issue is that saving lots of files could become problematic. Default filenames are used and all files can be put into a folder of the user's choosing. 
  
 An example will help. Try 
-\begin{Schunk}
-\begin{Sinput}
-> data(airquality) 
-> Ozone=airquality$Ozone 
-> UniDesc(Ozone, Folder="AirQuality") 
-\end{Sinput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{data}\hlstd{(airquality)}
+\hlstd{> }\hlstd{Ozone}\hlkwb{=}\hlstd{airquality}\hlopt{$}\hlstd{Ozone}
+\hlstd{> }\hlkwd{UniDesc}\hlstd{(Ozone,} \hlkwc{Folder}\hlstd{=}\hlstr{"AirQuality"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
 Take a look in the \file{AirQuality} folder that has been created in your working directory. It has a number of files that all start with ``Ozone" --- the name of the variable being analysed.  You will also have three files stored in the current working directory which have the filename \file{Ozone-UniDesc.*} where the star is for the extension which is one of \file{html}, \file{R}, and \file{Rmd}. 
  
 The most useful one at first is the \file{Ozone-UniDesc.html} file. Open this file in a browser to see what analyses have been included. This file is specifically formatted for use with screen readers. I hope you find it valuable. If you are reading this document on the web, then the link \url{Ozone-UniDesc.html} will open it in your browser. \Sighted{The link will not work if you are using the \file{pdf} version of LURN.} 
@@ -252,11 +270,12 @@ Whenever the \Rcmd{VI} function is employed on an object that does not yet have 
 \section{Altering \R{} output to make it easier to read} 
  
 Some \R{} output is arranged in nice tables that are easy for the sighted user to read, but are difficult to understand if using synthesised  speech to read the information back to you. The \Rcmd{VI} command is used again here but is now employed on a \Rclass{data.frame} object. We'll compare it with the \Rcmd{summary} command used frequently. 
-\begin{Schunk}
-\begin{Sinput}
-> summary(airquality) 
-\end{Sinput}
-\begin{Soutput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{summary}\hlstd{(airquality)}
+\end{alltt}
+\begin{verbatim}
      Ozone          Solar.R         Wind      
  Min.   :  1.0   Min.   :  7   Min.   : 1.70  
  1st Qu.: 18.0   1st Qu.:116   1st Qu.: 7.40  
@@ -273,11 +292,11 @@ Some \R{} output is arranged in nice tables that are easy for the sighted user t
  3rd Qu.:85.0   3rd Qu.:8.00   3rd Qu.:23.0  
  Max.   :97.0   Max.   :9.00   Max.   :31.0  
                                              
-\end{Soutput}
-\begin{Sinput}
-> VI(airquality) 
-\end{Sinput}
-\begin{Soutput}
+\end{verbatim}
+\begin{alltt}
+\hlstd{> }\hlkwd{VI}\hlstd{(airquality)}
+\end{alltt}
+\begin{verbatim}
 
 The summary of each variable is
 Ozone: Min. 1   1st Qu. 18   Median 31.5   Mean 42.1293103448276   3rd Qu. 63.25   Max. 168   NA's 37  
@@ -286,8 +305,9 @@ Wind: Min. 1.7   1st Qu. 7.4   Median 9.7   Mean 9.95751633986928   3rd Qu. 11.5
 Temp: Min. 56   1st Qu. 72   Median 79   Mean 77.8823529411765   3rd Qu. 85   Max. 97  
 Month: Min. 5   1st Qu. 6   Median 7   Mean 6.99346405228758   3rd Qu. 8   Max. 9  
 Day: Min. 1   1st Qu. 8   Median 16   Mean 15.8039215686275   3rd Qu. 23   Max. 31  
-\end{Soutput}
-\end{Schunk}
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
  
 The output generated by the \Rcmd{summary} command is difficult to follow as variables are represented in columns while rows that are read aloud by a screen reader are for the sample statistics. 
  
@@ -304,24 +324,27 @@ When a sighted person looks at a scatter plot, they are looking for a number of 
 One possible way to describe how the data points are summarised at a glance is that the graphing window is broken up into areas and a rough guess at the density of points within each region is evaluated. If this evaluation of density can be guessed, it can be counted more exactly by a purposely written function. The \Rcmd{WhereXY} function does this counting for us. It assumes equal-sized rectangular regions in the graph window. We can choose how many regions but the illustrations here all use a 5$\times$5 grid. 
  
 Let's work with a number of examples, all based on a set of predetermined $x$-values and various possible $y$-values. 
-\begin{Schunk}
-\begin{Sinput}
-> x=(0:100)/100 
-> y1=5*x+rnorm(101) 
-> y2=(2*x-1)^2+rnorm(101)/6 
-> y3=11*x+rnorm(101) 
-> y4=y3; y4[100]=0 
-\end{Sinput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlstd{x}\hlkwb{=}\hlstd{(}\hlnum{0}\hlopt{:}\hlnum{100}\hlstd{)}\hlopt{/}\hlnum{100}
+\hlstd{> }\hlstd{y1}\hlkwb{=}\hlnum{5}\hlopt{*}\hlstd{x}\hlopt{+}\hlkwd{rnorm}\hlstd{(}\hlnum{101}\hlstd{)}
+\hlstd{> }\hlstd{y2}\hlkwb{=}\hlstd{(}\hlnum{2}\hlopt{*}\hlstd{x}\hlopt{-}\hlnum{1}\hlstd{)}\hlopt{^}\hlnum{2}\hlopt{+}\hlkwd{rnorm}\hlstd{(}\hlnum{101}\hlstd{)}\hlopt{/}\hlnum{6}
+\hlstd{> }\hlstd{y3}\hlkwb{=}\hlnum{11}\hlopt{*}\hlstd{x}\hlopt{+}\hlkwd{rnorm}\hlstd{(}\hlnum{101}\hlstd{)}
+\hlstd{> }\hlstd{y4}\hlkwb{=}\hlstd{y3; y4[}\hlnum{100}\hlstd{]}\hlkwb{=}\hlnum{0}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
  
 What we might guess from the above is that a graph of $(x,y_1)$ pairs would show quite a lot of noise; $(x,y_2)$ pairs are a parabola with some noise; $(x,y_3)$ pairs are for a straight line with some noise; and, $(x,y_4)$ pairs are the same as the previous straight line, but one point is some distance from the line. 
  
 The \Rcmd{WhereXY} command for each plot is now given. 
-\begin{Schunk}
-\begin{Sinput}
-> WhereXY(x,y2, grid=c(5,5)) 
-\end{Sinput}
-\begin{Soutput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{WhereXY}\hlstd{(x,y2,} \hlkwc{grid}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{5}\hlstd{,}\hlnum{5}\hlstd{))}
+\end{alltt}
+\begin{verbatim}
      1  2  3  4  5 Sum
 5    6  0  0  0  3   9
 4    3  1  0  0 12  16
@@ -329,11 +352,11 @@ The \Rcmd{WhereXY} command for each plot is now given.
 2    1 11 13 12  0  37
 1    0  2  7  2  0  11
 Sum 21 20 20 20 20 101
-\end{Soutput}
-\begin{Sinput}
-> WhereXY(x,y2, grid=c(5,5)) 
-\end{Sinput}
-\begin{Soutput}
+\end{verbatim}
+\begin{alltt}
+\hlstd{> }\hlkwd{WhereXY}\hlstd{(x,y2,} \hlkwc{grid}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{5}\hlstd{,}\hlnum{5}\hlstd{))}
+\end{alltt}
+\begin{verbatim}
      1  2  3  4  5 Sum
 5    6  0  0  0  3   9
 4    3  1  0  0 12  16
@@ -341,11 +364,11 @@ Sum 21 20 20 20 20 101
 2    1 11 13 12  0  37
 1    0  2  7  2  0  11
 Sum 21 20 20 20 20 101
-\end{Soutput}
-\begin{Sinput}
-> WhereXY(x,y3, grid=c(5,5)) 
-\end{Sinput}
-\begin{Soutput}
+\end{verbatim}
+\begin{alltt}
+\hlstd{> }\hlkwd{WhereXY}\hlstd{(x,y3,} \hlkwc{grid}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{5}\hlstd{,}\hlnum{5}\hlstd{))}
+\end{alltt}
+\begin{verbatim}
      1  2  3  4  5 Sum
 5    0  0  0  3 12  15
 4    0  0  4 13  8  25
@@ -353,11 +376,11 @@ Sum 21 20 20 20 20 101
 2   14 12  1  0  0  27
 1    7  1  0  0  0   8
 Sum 21 20 20 20 20 101
-\end{Soutput}
-\begin{Sinput}
-> WhereXY(x,y4, grid=c(5,5)) 
-\end{Sinput}
-\begin{Soutput}
+\end{verbatim}
+\begin{alltt}
+\hlstd{> }\hlkwd{WhereXY}\hlstd{(x,y4,} \hlkwc{grid}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{5}\hlstd{,}\hlnum{5}\hlstd{))}
+\end{alltt}
+\begin{verbatim}
      1  2  3  4  5 Sum
 5    0  0  0  3 11  14
 4    0  0  4 13  8  25
@@ -365,8 +388,9 @@ Sum 21 20 20 20 20 101
 2   14 12  1  0  0  27
 1    7  1  0  0  1   9
 Sum 21 20 20 20 20 101
-\end{Soutput}
-\end{Schunk}
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
  
 We might also alter the number of cells in the grid to see how sensitive we want to make our investigation. Personal preferences will determine which combination of rows and columns works best. 
  

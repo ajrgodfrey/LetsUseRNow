@@ -4,3 +4,12 @@ Note that the print out of the solution didn't actually tell us which task was t
 
 The transportation problem aims to satisfy the demands of a set of customers by optimising the selection of the supplier who will meet each customer's demands. The mathematical program for this problem has a cost matrix and upper bounds on supply and lower bounds on demands. The optimisation is a minimisation exercise so the demand is kept as low as is required so the lower bounds are (in essence) equality constraints as a consequence.
 
+The objective function is:\begin{equation}\label{OperResTransObj}
+\min{ \sum_{i=1}^m{ \sum_{j=1}^n{
+c_{ij}x_{ij}
+}}}\end{equation}
+and the constraints are:
+\begin{eqnarray*} \sum_{j=1}^n { x_{ij}} \le s_i& \quad \forall i=1,\ldots,m\\
+\sum_{i=1}^m { x_{ij}} \ge d_j& \quad \forall j=1,\ldots,n\\
+x_{ij} \ge 0& \quad \forall i,j\\
+\end{eqnarray*} 

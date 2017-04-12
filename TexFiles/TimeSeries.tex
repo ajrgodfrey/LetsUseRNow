@@ -19,34 +19,38 @@ Given this proliferation of textbooks on the topic of time series analysis, it i
 The basic univariate time series, with no missing data is stored in \R{} as a time series object. This is marginally different to a vector in that it has a time stamp or index associated with each observation in the series. 
  
 We will use several time series data sets that are available within the default installation of \R{}.  
-\begin{Schunk}
-\begin{Sinput}
-> str(LakeHuron) 
-\end{Sinput}
-\begin{Soutput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{str}\hlstd{(LakeHuron)}
+\end{alltt}
+\begin{verbatim}
  Time-Series [1:98] from 1875 to 1972: 580 582 581 581 580 ...
-\end{Soutput}
-\begin{Sinput}
-> str(lynx) 
-\end{Sinput}
-\begin{Soutput}
+\end{verbatim}
+\begin{alltt}
+\hlstd{> }\hlkwd{str}\hlstd{(lynx)}
+\end{alltt}
+\begin{verbatim}
  Time-Series [1:114] from 1821 to 1934: 269 321 585 871 1475 ...
-\end{Soutput}
-\begin{Sinput}
-> str(Nile) 
-\end{Sinput}
-\begin{Soutput}
+\end{verbatim}
+\begin{alltt}
+\hlstd{> }\hlkwd{str}\hlstd{(Nile)}
+\end{alltt}
+\begin{verbatim}
  Time-Series [1:100] from 1871 to 1970: 1120 1160 963 1210 1160 1160 813 1230 1370 1140 ...
-\end{Soutput}
-\end{Schunk}
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
 The first is for the level of Lake Huron; the second is the number of lynx that were trapped in Canada; and the third is the flow of the River Nile. More detailed information for all of these series is available using the relevant help function for the series. 
  
 You can use the Rcmd{as.ts} command to convert a vector of observations to a time series object. For example, the Robject{airquality} data is recorded in time order. We might want to treat the observed temperatures as a time series by converting it using: 
-\begin{Schunk}
-\begin{Sinput}
-> Temp.ts = as.ts(airquality$Temp) 
-\end{Sinput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlstd{Temp.ts} \hlkwb{=} \hlkwd{as.ts}\hlstd{(airquality}\hlopt{$}\hlstd{Temp)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
  
 \section{Time series plots} 
  
@@ -55,12 +59,15 @@ We have seen the flexibility of the \Rcmd{plot} command in previous chapters, an
 \begin{center} 
 \caption{Time series plot for the annual flow of the River Nile.} 
 \label{NileTSPlot} 
-\begin{Schunk}
-\begin{Sinput}
-> plot(Nile, xlab="Year", ylab="Flow") 
-\end{Sinput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{plot}\hlstd{(Nile,} \hlkwc{xlab}\hlstd{=}\hlstr{"Year"}\hlstd{,} \hlkwc{ylab}\hlstd{=}\hlstr{"Flow"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=0.7\textwidth]{figures/TimeSeriesNilePlot-1} 
 
-\includegraphics[width=0.7\textwidth]{figures/TimeSeriesNilePlot-1} \end{Schunk}
+\end{knitrout}
 \SVGLink{TimeSeriesNilePlot-1} 
 \end{center} 
 \end{exhibit} 
@@ -71,16 +78,20 @@ Having the class assigned to our data means the plot was enhanced slightly. Chec
 \begin{center} 
 \caption{Comparison of use of \Rcmd{plot} on a vector and a time series object.} 
 \label{TSPlotsCompared} 
-\begin{Schunk}
-\begin{Sinput}
-> plot(airquality$Temp, ylab="Temperature") 
-\end{Sinput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{plot}\hlstd{(airquality}\hlopt{$}\hlstd{Temp,} \hlkwc{ylab}\hlstd{=}\hlstr{"Temperature"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=0.7\textwidth]{figures/TimeSeriesTSPlotsCompared-1} 
+\begin{kframe}\begin{alltt}
+\hlstd{> }\hlkwd{plot}\hlstd{(Temp.ts,} \hlkwc{ylab}\hlstd{=}\hlstr{"Temperature"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=0.7\textwidth]{figures/TimeSeriesTSPlotsCompared-2} 
 
-\includegraphics[width=0.7\textwidth]{figures/TimeSeriesTSPlotsCompared-1} \begin{Sinput}
-> plot(Temp.ts, ylab="Temperature") 
-\end{Sinput}
-
-\includegraphics[width=0.7\textwidth]{figures/TimeSeriesTSPlotsCompared-2} \end{Schunk}
+\end{knitrout}
 \SVGLink{TSPlotsCompared-1} 
 \SVGLink{TSPlotsCompared-2} 
 \end{center} 
@@ -96,21 +107,23 @@ Exhibit~\ref{FilterExample} shows how different amounts of data can be averaged 
 \begin{center} 
 \caption{Comparison of different amounts of smoothing a time series.} 
 \label{FilterExample} 
-\begin{Schunk}
-\begin{Sinput}
-> plot(Nile) 
-\end{Sinput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{plot}\hlstd{(Nile)}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=0.7\textwidth]{figures/TimeSeriesFilterExample-1} 
+\begin{kframe}\begin{alltt}
+\hlstd{> }\hlkwa{for}\hlstd{(i} \hlkwa{in} \hlnum{1}\hlopt{:}\hlnum{4}\hlstd{)\{}
+\hlstd{   }\hlstd{w}\hlkwb{=}\hlnum{4}\hlopt{*}\hlstd{i}\hlopt{-}\hlnum{1} \hlcom{# choose the window (3, 7,11,15) }
+\hlstd{   }\hlkwd{lines}\hlstd{( (}\hlkwd{start}\hlstd{(Nile)[}\hlnum{1}\hlstd{])}\hlopt{:}\hlkwd{end}\hlstd{(Nile)[}\hlnum{1}\hlstd{],} \hlkwd{filter}\hlstd{(Nile,} \hlkwd{rep}\hlstd{(}\hlnum{1}\hlopt{/}\hlstd{w, w),} \hlkwc{sides}\hlstd{=}\hlnum{1}\hlstd{),} \hlkwc{col}\hlstd{=i}\hlopt{+}\hlnum{2}\hlstd{)}
+\hlstd{   }\hlstd{\}}
+\end{alltt}
 
-\includegraphics[width=0.7\textwidth]{figures/TimeSeriesFilterExample-1} \begin{Sinput}
-> for(i in 1:4){ 
-   w=4*i-1 # choose the window (3, 7,11,15) 
-   lines( (start(Nile)[1]):end(Nile)[1], filter(Nile, rep(1/w, w), sides=1), col=i+2) 
-   } 
-\end{Sinput}
-\begin{Soutput}
-Error in UseMethod("filter_"): no applicable method for 'filter_' applied to an object of class "ts"
-\end{Soutput}
-\end{Schunk}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{Error in UseMethod("{}filter\_"{}): no applicable method for 'filter\_' applied to an object of class "{}ts"{}}}\end{kframe}
+\end{knitrout}
 \SVGLink{FilterExample-1} 
 \end{center} 
 \end{exhibit} 
@@ -124,40 +137,42 @@ A \stressind{white noise} series of normally distributed data with mean zero and
  
  
 The \Rcmd{Box.test} function tests for non-stationarity. 
-\begin{Schunk}
-\begin{Sinput}
-> Box.test(Nile, lag=20) 
-\end{Sinput}
-\begin{Soutput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{Box.test}\hlstd{(Nile,} \hlkwc{lag}\hlstd{=}\hlnum{20}\hlstd{)}
+\end{alltt}
+\begin{verbatim}
 
 	Box-Pierce test
 
 data:  Nile
 X-squared = 120, df = 20, p-value = 1e-15
-\end{Soutput}
-\end{Schunk}
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
 while several other tests exist in add-on packages which can be accessed by loading the  Rpkg{tseries} and \Rpkgforecast} packages. 
-\begin{Schunk}
-\begin{Sinput}
-> library(tseries) 
-> library(forecast) 
-> adf.test(Nile) 
-\end{Sinput}
-\begin{Soutput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{library}\hlstd{(tseries)}
+\hlstd{> }\hlkwd{library}\hlstd{(forecast)}
+\hlstd{> }\hlkwd{adf.test}\hlstd{(Nile)}
+\end{alltt}
+\begin{verbatim}
 
 	Augmented Dickey-Fuller Test
 
 data:  Nile
 Dickey-Fuller = -3.4, Lag order = 4, p-value = 0.06
 alternative hypothesis: stationary
-\end{Soutput}
-\begin{Sinput}
-> pp.test(Nile) 
-\end{Sinput}
-\begin{Soutput}
-Warning in pp.test(Nile): p-value smaller than printed p-value
-\end{Soutput}
-\begin{Soutput}
+\end{verbatim}
+\begin{alltt}
+\hlstd{> }\hlkwd{pp.test}\hlstd{(Nile)}
+\end{alltt}
+
+
+{\ttfamily\noindent\color{warningcolor}{Warning in pp.test(Nile): p-value smaller than printed p-value}}\begin{verbatim}
 
 	Phillips-Perron Unit Root Test
 
@@ -165,22 +180,22 @@ data:  Nile
 Dickey-Fuller Z(alpha) = -65, Truncation lag
 parameter = 3, p-value = 0.01
 alternative hypothesis: stationary
-\end{Soutput}
-\begin{Sinput}
-> kpss.test(Nile) 
-\end{Sinput}
-\begin{Soutput}
-Warning in kpss.test(Nile): p-value smaller than printed p-value
-\end{Soutput}
-\begin{Soutput}
+\end{verbatim}
+\begin{alltt}
+\hlstd{> }\hlkwd{kpss.test}\hlstd{(Nile)}
+\end{alltt}
+
+
+{\ttfamily\noindent\color{warningcolor}{Warning in kpss.test(Nile): p-value smaller than printed p-value}}\begin{verbatim}
 
 	KPSS Test for Level Stationarity
 
 data:  Nile
 KPSS Level = 1.3, Truncation lag parameter = 2,
 p-value = 0.01
-\end{Soutput}
-\end{Schunk}
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
 Each test is looking at a different facet of what might indicate how a series might not be stationary. Check out the null hypothesis and alternative for each test on its help page. 
  
  
@@ -195,22 +210,26 @@ The autocorrelation and partial autocorrelation function values can be obtained 
 \begin{center} 
 \caption{Autocorrelation function for the annual flow of the River Nile.} 
 \label{NileACF} 
-\begin{Schunk}
-\begin{Sinput}
-> acf(Nile) 
-\end{Sinput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{acf}\hlstd{(Nile)}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=0.7\textwidth]{figures/TimeSeriesNileACF-1} 
 
-\includegraphics[width=0.7\textwidth]{figures/TimeSeriesNileACF-1} \end{Schunk}
+\end{knitrout}
 \SVGLink{TimeSeriesNileACF-1} 
 \end{center} 
 \end{exhibit} 
  
 To obtain the values of the autocorrelation function (or partial autocorrelation function) in text form, we add an argument to stop the results being plotted. 
-\begin{Schunk}
-\begin{Sinput}
-> acf(Nile, plot=FALSE) 
-\end{Sinput}
-\begin{Soutput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{acf}\hlstd{(Nile,} \hlkwc{plot}\hlstd{=}\hlnum{FALSE}\hlstd{)}
+\end{alltt}
+\begin{verbatim}
 
 Autocorrelations of series 'Nile', by lag
 
@@ -220,11 +239,11 @@ Autocorrelations of series 'Nile', by lag
 0.090 0.215 0.213 0.237 0.195 0.154 0.195 0.136 0.190 0.154 
    20 
 0.114 
-\end{Soutput}
-\begin{Sinput}
-> pacf(Nile, plot=FALSE) 
-\end{Sinput}
-\begin{Soutput}
+\end{verbatim}
+\begin{alltt}
+\hlstd{> }\hlkwd{pacf}\hlstd{(Nile,} \hlkwc{plot}\hlstd{=}\hlnum{FALSE}\hlstd{)}
+\end{alltt}
+\begin{verbatim}
 
 Partial autocorrelations of series 'Nile', by lag
 
@@ -234,39 +253,45 @@ Partial autocorrelations of series 'Nile', by lag
 -0.148 -0.065  0.190  0.087  0.065 -0.053 -0.030  0.073 
     17     18     19     20 
  0.017  0.115 -0.124 -0.059 
-\end{Soutput}
-\end{Schunk}
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
  
 \section{Decomposition into seasonal and trend components} 
  
 The basic idea of the decompositions presented in this section is to explain the observed time series values $y_t$ in terms of a trend $T_t$, a seasonal component $S_t$ and residual error. 
  
 Obviously we need a series that has a seasonal component such as the Australian resident numbers measured quarterly from  1971 to 1994. 
-\begin{Schunk}
-\begin{Sinput}
-> str(austres) 
-\end{Sinput}
-\begin{Soutput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlkwd{str}\hlstd{(austres)}
+\end{alltt}
+\begin{verbatim}
  Time-Series [1:89] from 1971 to 1993: 13067 13130 13198 13254 13304 ...
-\end{Soutput}
-\end{Schunk}
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
  
  
 The \Rcmd{decompose} function can create two forms of the decomposition, one of which is additive and the other is multiplicative. 
-\begin{Schunk}
-\begin{Sinput}
-> AustRes.dec1 = decompose(austres) 
-> Aust.dec2 =decompose(austres, type="mul") 
-\end{Sinput}
-\end{Schunk}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlstd{AustRes.dec1} \hlkwb{=} \hlkwd{decompose}\hlstd{(austres)}
+\hlstd{> }\hlstd{Aust.dec2} \hlkwb{=}\hlkwd{decompose}\hlstd{(austres,} \hlkwc{type}\hlstd{=}\hlstr{"mul"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
 The Rcmd{stl} command uses loess smoothing to estimate the trend component before finding the seasonal components and the resulting error terms, and is a slightly more advanced process than that offered by \Rcmd{decompose(}. N.B. there is an \Rcmd{stl} command in the \Rpkg{stats} package and another in the \Rpkg{forecast} package. We use the simpler one here but need to force \R{} to do so just in case the \Rpkg{forecast} package version has precedence. 
  
-\begin{Schunk}
-\begin{Sinput}
-> AustRes.dec3 = stats::stl(austres, s.window="periodic") 
-> AustRes.dec3 
-\end{Sinput}
-\begin{Soutput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlstd{AustRes.dec3} \hlkwb{=} \hlstd{stats}\hlopt{::}\hlkwd{stl}\hlstd{(austres,} \hlkwc{s.window}\hlstd{=}\hlstr{"periodic"}\hlstd{)}
+\hlstd{> }\hlstd{AustRes.dec3}
+\end{alltt}
+\begin{verbatim}
  Call:
  stats::stl(x = austres, s.window = "periodic")
 
@@ -361,12 +386,14 @@ Components
 1992 Q4   0.2031 17573   -4.7695
 1993 Q1   8.8756 17618    0.7089
 1993 Q2  -0.9674 17662    0.7065
-\end{Soutput}
-\begin{Sinput}
-> plot(AustRes.dec3) 
-\end{Sinput}
+\end{verbatim}
+\begin{alltt}
+\hlstd{> }\hlkwd{plot}\hlstd{(AustRes.dec3)}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=0.7\textwidth]{figures/TimeSeriesSTLAustRes-1} 
 
-\includegraphics[width=0.7\textwidth]{figures/TimeSeriesSTLAustRes-1} \end{Schunk}
+\end{knitrout}
  
 \section{Exponential smoothing} 
  
@@ -378,12 +405,13 @@ Substituting for $\hat{y}_t$ in terms of terms at time ***t-1*** shows how older
 The \Rcmd{HoltWinters} command is used for a wide range of models that include the exponential smoother above and allows for trend and seasonality components to be introduced. 
 Starting with the Nile data: 
  
-\begin{Schunk}
-\begin{Sinput}
-> Nile.hw1 = HoltWinters(Nile, beta=FALSE, gamma = FALSE) 
-> Nile.hw1 
-\end{Sinput}
-\begin{Soutput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlstd{Nile.hw1} \hlkwb{=} \hlkwd{HoltWinters}\hlstd{(Nile,} \hlkwc{beta}\hlstd{=}\hlnum{FALSE}\hlstd{,} \hlkwc{gamma} \hlstd{=} \hlnum{FALSE}\hlstd{)}
+\hlstd{> }\hlstd{Nile.hw1}
+\end{alltt}
+\begin{verbatim}
 Holt-Winters exponential smoothing without trend and without seasonal component.
 
 Call:
@@ -397,12 +425,14 @@ Smoothing parameters:
 Coefficients:
   [,1]
 a  805
-\end{Soutput}
-\begin{Sinput}
-> plot(Nile.hw1) 
-\end{Sinput}
+\end{verbatim}
+\begin{alltt}
+\hlstd{> }\hlkwd{plot}\hlstd{(Nile.hw1)}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=0.7\textwidth]{figures/TimeSeriesNileHoltWinters-1} 
 
-\includegraphics[width=0.7\textwidth]{figures/TimeSeriesNileHoltWinters-1} \end{Schunk}
+\end{knitrout}
 Note that we must explicitly set \Rarg{beta} and \Rarg{gamma} to \Rarg{FALSE} to get the simple exponential smoother. 
  
  
@@ -416,12 +446,13 @@ for the additive model and
 $$\mu_t = \alpha \frac{y_t }{ S_{t-p}} + (1-\alpha) (\mu_{t-1} + \beta_{t-1})$$ 
 for the multiplicative model. 
  
-\begin{Schunk}
-\begin{Sinput}
-> AustRes.hw1 = HoltWinters(austres) 
-> AustRes.hw1 
-\end{Sinput}
-\begin{Soutput}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{> }\hlstd{AustRes.hw1} \hlkwb{=} \hlkwd{HoltWinters}\hlstd{(austres)}
+\hlstd{> }\hlstd{AustRes.hw1}
+\end{alltt}
+\begin{verbatim}
 Holt-Winters exponential smoothing with trend and additive seasonal component.
 
 Call:
@@ -440,16 +471,17 @@ s1    -4.3828
 s2     0.5476
 s3     3.8737
 s4    -1.1967
-\end{Soutput}
-\begin{Sinput}
-> plot(AustRes.hw1) 
-\end{Sinput}
-
-\includegraphics[width=0.7\textwidth]{figures/TimeSeriesAustResHW-1} \begin{Sinput}
-> AustRes.hw2 = HoltWinters(austres, seasonal="mult") 
-> AustRes.hw2 
-\end{Sinput}
-\begin{Soutput}
+\end{verbatim}
+\begin{alltt}
+\hlstd{> }\hlkwd{plot}\hlstd{(AustRes.hw1)}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=0.7\textwidth]{figures/TimeSeriesAustResHW-1} 
+\begin{kframe}\begin{alltt}
+\hlstd{> }\hlstd{AustRes.hw2} \hlkwb{=} \hlkwd{HoltWinters}\hlstd{(austres,} \hlkwc{seasonal}\hlstd{=}\hlstr{"mult"}\hlstd{)}
+\hlstd{> }\hlstd{AustRes.hw2}
+\end{alltt}
+\begin{verbatim}
 Holt-Winters exponential smoothing with trend and multiplicative seasonal component.
 
 Call:
@@ -468,12 +500,14 @@ s1 9.997e-01
 s2 1.000e+00
 s3 1.000e+00
 s4 9.999e-01
-\end{Soutput}
-\begin{Sinput}
-> plot(AustRes.hw2) 
-\end{Sinput}
+\end{verbatim}
+\begin{alltt}
+\hlstd{> }\hlkwd{plot}\hlstd{(AustRes.hw2)}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=0.7\textwidth]{figures/TimeSeriesAustResHW-2} 
 
-\includegraphics[width=0.7\textwidth]{figures/TimeSeriesAustResHW-2} \end{Schunk}
+\end{knitrout}
  
  
  

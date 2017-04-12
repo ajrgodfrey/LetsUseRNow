@@ -1,0 +1,11 @@
+## ----ORAssignment--------------------------------------------------------
+require(lpSolve)
+set.seed(3010)
+APCost.mat = matrix(sample(10:100, 16), nrow=4)
+APCost.mat
+Sol = lp.assign(APCost.mat)
+names(Sol)
+Sol$solution
+Sol$objval
+Sol
+

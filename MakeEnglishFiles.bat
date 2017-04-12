@@ -56,4 +56,4 @@ copy .\RChunks\GenericSettings.Rnw + .\English\TimeSeries001.Rnw + .\RChunks\Tim
 copy .\RChunks\GenericSettings.Rnw + .\English\VI001.Rnw + .\RChunks\VI002.Rnw + .\English\VI003.Rnw + .\RChunks\VI004.Rnw + .\English\VI005.Rnw + .\RChunks\VI006.Rnw + .\English\VI007.Rnw + .\RChunks\VI008.Rnw + .\English\VI009.Rnw + .\RChunks\VI010.Rnw + .\English\VI011.Rnw + .\RChunks\VI012.Rnw + .\English\VI013.Rnw + .\RChunks\VI014.Rnw + .\English\VI015.Rnw + .\RChunks\VI016.Rnw + .\English\and.Rnw + .\RChunks\VI018.Rnw + .\English\VI019.Rnw + .\RChunks\VI020.Rnw + .\English\VI021.Rnw + .\RChunks\VI022.Rnw + .\English\VI023.Rnw + .\RChunks\VI024.Rnw + .\English\VI025.Rnw + .\RChunks\VI026.Rnw + .\English\VI027.Rnw + .\RChunks\CleanUp.Rnw VI.Rnw
 
 
-copy .\RChunks\GenericSettings.Rnw + .\RChunks\OperRes002.Rnw + .\English\OperRes003.Rnw + .\RChunks\OperResAssignment.Rnw + .\English\OperRes005.Rnw + .\RChunks\CleanUp.Rnw OperRes.Rnw
+copy .\RChunks\GenericSettings.Rnw + .\English\OperRes001.Rnw + .\RChunks\OperRes002.Rnw + .\English\OperRes003.Rnw + .\RChunks\OperResAssignment.Rnw + .\English\OperRes005.Rnw + .\RChunks\OperResTransport.Rnw + .\RChunks\CleanUp.Rnw OperRes.Rnw
