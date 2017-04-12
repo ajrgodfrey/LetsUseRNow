@@ -1,4 +1,4 @@
-<<NileHoltWinters, fig=TRUE>>= 
+<<NileHoltWinters>>= 
 Nile.hw1 = HoltWinters(Nile, beta=FALSE, gamma = FALSE) 
 Nile.hw1 
 plot(Nile.hw1) 

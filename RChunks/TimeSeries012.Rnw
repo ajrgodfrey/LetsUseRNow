@@ -1,4 +1,4 @@
-<<FilterExample, fig=TRUE>>= 
+<<FilterExample>>= 
 plot(Nile) 
 for(i in 1:4){ 
 w=4*i-1 # choose the window (3, 7,11,15) 

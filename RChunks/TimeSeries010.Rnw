@@ -1,4 +1,4 @@
-<<TSPlotsCompared, fig=TRUE>>= 
+<<TSPlotsCompared>>= 
 plot(airquality$Temp, ylab="Temperature") 
 plot(Temp.ts, ylab="Temperature") 
 @ 

@@ -1,4 +1,4 @@
-<<AustResHW, fig=TRUE>>= 
+<<AustResHW>>= 
 AustRes.hw1 = HoltWinters(austres) 
 AustRes.hw1 
 plot(AustRes.hw1) 

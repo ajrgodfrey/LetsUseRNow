@@ -1,0 +1,4 @@
+<<ChSetup, include=FALSE, purl=FALSE>>=
+opts_chunk$set(fig.path='figures/OperRes', out.width="0.7\\textwidth") 
+require(lpSolve)
+@ 

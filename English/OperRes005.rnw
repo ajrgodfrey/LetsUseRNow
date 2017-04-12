@@ -1,0 +1,6 @@
+Note that the print out of the solution didn't actually tell us which task was to be completed by which person so we needed to look for the matrix of the final values for the decision variables. There are plenty of additional items stored as part of the solution, many of which you may never need. It is assumed that if your needs run to the advanced ideas using these items that you will now know where to find the necessary information to solve your own problems.
+
+\section{The transportation problem}
+
+The transportation problem aims to satisfy the demands of a set of customers by optimising the selection of the supplier who will meet each customer's demands. The mathematical program for this problem has a cost matrix and upper bounds on supply and lower bounds on demands. The optimisation is a minimisation exercise so the demand is kept as low as is required so the lower bounds are (in essence) equality constraints as a consequence.
+

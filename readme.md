@@ -42,7 +42,7 @@ If you want to start a translation project, then again, please offer.
 - changed from \epsilon to \varepsilon in formulae. This made reading via mathjax and mathml possible.
 
 ### December 2016 (Dublin)
-- added links to switch between blind and sighted versions
+- added links to switch between blind and sighted versions; thanks got ot Voica for hte tool.
 - switched the creation of SVG to use the rvg package in R. This is definitely an improvement, but we really need to find out how to use the gridSVG package to deliver even better results.
 
 
@@ -56,3 +56,4 @@ Discovered how to add the alt tags in the HTML versions.
 ## April 2017
 
 - started use of the accessible graphs tool on the http version of the book. Must be viewed using a browser that handles SVG (not IE!) to work.
+- added a chapter to present my exploration into Operations Research problems; just for fun really as it harks back to the old days.

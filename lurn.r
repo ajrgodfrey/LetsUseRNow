@@ -55,6 +55,8 @@ knit("Scientific.rnw")
 purl("Scientific.rnw")
 knit("LinearAlgebra.rnw")
 purl("LinearAlgebra.rnw")
+knit("OperRes.rnw")
+purl("OperRes.rnw")
 
 # advanced
 knit("Functions.Rnw")
