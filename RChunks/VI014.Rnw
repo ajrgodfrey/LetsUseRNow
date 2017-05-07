@@ -1,3 +1,7 @@
-<<VIHist>>= 
+<<Hist>>= 
 VI(hist(airquality$Wind, xlab="Average wind speed (mph)", main="")) 
+@
+<<HistSVG, echo=FALSE, results="hide">>= 
+MakeAccessibleSVG(hist(airquality$Wind, xlab="Average wind speed (mph)", main=""), "figures/VIHistAirQualityWind") 
 @ 
+\SVGLink{VIHistAirQualityWind} 

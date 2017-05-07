@@ -1,4 +1,4 @@
-## ----HistRand10000Z, eval=2, fig=TRUE, results='hide', include=FALSE-----
+## ----HistRand10000Z, eval=2, results='hide', include=FALSE---------------
 x11() 
 hist(rnorm(10000), xlab="x", main="") 
 savePlot(".\\figures\\HistRandValsStandNorm.eps", type = "eps") 

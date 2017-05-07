@@ -19,16 +19,13 @@ Before we embark on doing those fun things we want to do, we need to learn how t
 \section{Plotting functions} 
  
 This can be a lot of fun if you set things up right to start with. We create a \Rclass{function} to represent the mathematical expression using the \Rcmd{function} command, then plot it using either the \Rcmd{plot.function} or \Rcmd{curve} commands. 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlstd{> }\hlstd{MySine} \hlkwb{<-} \hlkwa{function}\hlstd{(}\hlkwc{x}\hlstd{)\{} \hlkwd{sin}\hlstd{(x)\}}
-\hlstd{> }\hlkwd{curve}\hlstd{(MySine,} \hlopt{-}\hlnum{4}\hlopt{*}\hlstd{pi,} \hlnum{2}\hlopt{*}\hlstd{pi,} \hlkwc{n} \hlstd{=} \hlnum{2001}\hlstd{)}
-\end{alltt}
-\end{kframe}
-\includegraphics[width=0.7\textwidth]{figures/CalculusSineCurve-1} 
+\begin{Schunk}
+\begin{Sinput}
+> MySine <- function(x){ sin(x)} 
+> curve(MySine, -4*pi, 2*pi, n = 2001) 
+\end{Sinput}
 
-\end{knitrout}
+\includegraphics[width=0.7\textwidth]{figures/CalculusSineCurve-1} \end{Schunk}
 \SVGLink{CalculusSineCurve-1} 
  
 You can use any valid mathematical expression in the \Rclass{function} you create. You might find it useful to test your idea= values for your inputs that are easy to work with, such as zero and one. You could then use integers, including negative integers, but  it could be easier to test your functions using values that lead to identifiable results such as multiples of $\pi$ when working with trignometric functions. For example: 
@@ -47,17 +44,15 @@ It can handle arithmetic operators $+$, $-$, $*$, $/$ and \^, and the single-var
 \Rcmd{dnorm}, \Rcmd{asin} (inverse sine), \Rcmd{acos} (inverse cosine), \Rcmd{atan} (inverse tangent), and various \Rcmd{gamma} functions. The functions \Rcmd{pnorm} and \Rcmd{dnorm} are restricted to the standard normal distribution. 
  
 The easiest way to find the derivative of an expression is to store the mathematical function using the \Rcmd{expression} command, and then use the \Rcmd{D} or \Rcmd{deriv} commands. 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlstd{> }\hlstd{y}\hlkwb{=}\hlkwd{expression}\hlstd{(}\hlkwd{exp}\hlstd{(}\hlnum{2}\hlopt{*}\hlstd{x))}
-\hlstd{> }\hlkwd{D}\hlstd{(y,}\hlstr{"x"}\hlstd{)}
-\end{alltt}
-\begin{verbatim}
+\begin{Schunk}
+\begin{Sinput}
+> y=expression(exp(2*x)) 
+> D(y,"x") 
+\end{Sinput}
+\begin{Soutput}
 exp(2 * x) * 2
-\end{verbatim}
-\end{kframe}
-\end{knitrout}
+\end{Soutput}
+\end{Schunk}
 The second argument to the \Rcmd{D} function needs quote marks around it. 
  
 

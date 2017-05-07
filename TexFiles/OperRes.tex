@@ -25,26 +25,25 @@ subject to the constraints:
 \sum_{i=1}^n {x_{ij}} &=1, \quad \forall j=1,\ldots,n\\
 x_{ij} &\in \{0,1\} \quad \forall i,j\\
 \end{eqnarray*}
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlstd{> }\hlkwd{require}\hlstd{(lpSolve)}
-\hlstd{> }\hlkwd{set.seed}\hlstd{(}\hlnum{3010}\hlstd{)}
-\hlstd{> }\hlstd{APCost.mat} \hlkwb{=} \hlkwd{matrix}\hlstd{(}\hlkwd{sample}\hlstd{(}\hlnum{10}\hlopt{:}\hlnum{100}\hlstd{,} \hlnum{16}\hlstd{),} \hlkwc{nrow}\hlstd{=}\hlnum{4}\hlstd{)}
-\hlstd{> }\hlstd{APCost.mat}
-\end{alltt}
-\begin{verbatim}
+\begin{Schunk}
+\begin{Sinput}
+> require(lpSolve)
+> set.seed(3010)
+> APCost.mat = matrix(sample(10:100, 16), nrow=4)
+> APCost.mat
+\end{Sinput}
+\begin{Soutput}
      [,1] [,2] [,3] [,4]
 [1,]   24   45   25   31
 [2,]   21   46   86   55
 [3,]   87   35   99   12
 [4,]   60   88   10   97
-\end{verbatim}
-\begin{alltt}
-\hlstd{> }\hlstd{Sol} \hlkwb{=} \hlkwd{lp.assign}\hlstd{(APCost.mat)}
-\hlstd{> }\hlkwd{names}\hlstd{(Sol)}
-\end{alltt}
-\begin{verbatim}
+\end{Soutput}
+\begin{Sinput}
+> Sol = lp.assign(APCost.mat)
+> names(Sol)
+\end{Sinput}
+\begin{Soutput}
  [1] "direction"      "rcount"         "ccount"        
  [4] "costs"          "rsigns"         "rrhs"          
  [7] "csigns"         "crhs"           "objval"        
@@ -52,31 +51,30 @@ x_{ij} &\in \{0,1\} \quad \forall i,j\\
 [13] "presolve"       "compute.sens"   "sens.coef.from"
 [16] "sens.coef.to"   "duals"          "duals.from"    
 [19] "duals.to"       "status"        
-\end{verbatim}
-\begin{alltt}
-\hlstd{> }\hlstd{Sol}\hlopt{$}\hlstd{solution}
-\end{alltt}
-\begin{verbatim}
+\end{Soutput}
+\begin{Sinput}
+> Sol$solution
+\end{Sinput}
+\begin{Soutput}
      [,1] [,2] [,3] [,4]
 [1,]    0    1    0    0
 [2,]    1    0    0    0
 [3,]    0    0    0    1
 [4,]    0    0    1    0
-\end{verbatim}
-\begin{alltt}
-\hlstd{> }\hlstd{Sol}\hlopt{$}\hlstd{objval}
-\end{alltt}
-\begin{verbatim}
+\end{Soutput}
+\begin{Sinput}
+> Sol$objval
+\end{Sinput}
+\begin{Soutput}
 [1] 88
-\end{verbatim}
-\begin{alltt}
-\hlstd{> }\hlstd{Sol}
-\end{alltt}
-\begin{verbatim}
+\end{Soutput}
+\begin{Sinput}
+> Sol
+\end{Sinput}
+\begin{Soutput}
 Success: the objective function is 88 
-\end{verbatim}
-\end{kframe}
-\end{knitrout}
+\end{Soutput}
+\end{Schunk}
 Note that the print out of the solution didn't actually tell us which task was to be completed by which person so we needed to look for the matrix of the final values for the decision variables. There are plenty of additional items stored as part of the solution, many of which you may never need. It is assumed that if your needs run to the advanced ideas using these items that you will now know where to find the necessary information to solve your own problems.
 
 \section{The transportation problem}
@@ -92,5 +90,49 @@ and the constraints are:
 \sum_{i=1}^m { x_{ij}} \ge d_j& \quad \forall j=1,\ldots,n\\
 x_{ij} \ge 0& \quad \forall i,j\\
 \end{eqnarray*} 
+\begin{Schunk}
+\begin{Sinput}
+> require(lpSolve)
+> set.seed(3010)
+> TPCost.mat = matrix(sample(10:100, 30), nrow = 5)
+> TPCost.mat
+\end{Sinput}
+\begin{Soutput}
+     [,1] [,2] [,3] [,4] [,5] [,6]
+[1,]   24   46   99   97   85   19
+[2,]   21   35   10   47   93   91
+[3,]   87   88   31   59   95   64
+[4,]   60   25   55   40   48   27
+[5,]   45   86   12   11   61   81
+\end{Soutput}
+\begin{Sinput}
+> DemandSigns = rep (">", 6)
+> DemandLimits = sample(50:300, 6)
+> DemandLimits
+\end{Sinput}
+\begin{Soutput}
+[1] 201 185 145 207  80  59
+\end{Soutput}
+\begin{Sinput}
+> SupplySigns = rep ("<", 5)
+> SupplyLimits = sample(100:500, 5)
+> SupplyLimits
+\end{Sinput}
+\begin{Soutput}
+[1] 457 376 351 132 388
+\end{Soutput}
+\begin{Sinput}
+> Sol = lp.transport (TPCost.mat, "min", SupplySigns, SupplyLimits, DemandSigns, DemandLimits, compute.sens=0)
+> Sol$solution
+\end{Sinput}
+\begin{Soutput}
+     [,1] [,2] [,3] [,4] [,5] [,6]
+[1,]    0    0    0    0    0   59
+[2,]  201  133   42    0    0    0
+[3,]    0    0    0    0    0    0
+[4,]    0   52    0    0   80    0
+[5,]    0    0  103  207    0    0
+\end{Soutput}
+\end{Schunk}
 
 

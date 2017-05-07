@@ -49,69 +49,59 @@ The \Rcmd{x11} command can be replaced by a number of others which are all alias
  
 One simple way to redirect the output from the main \R{} window is to use the \Rcmd{sink} command. In this case, you will type in or execute commands as per normal but not see any of the output as this is appended to a separate text file. Try the following code on for size. 
  
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlstd{> }\hlstd{x}\hlkwb{=}\hlnum{1}\hlopt{:}\hlnum{20}
-\hlstd{> }\hlstd{x}
-\end{alltt}
-\begin{verbatim}
+\begin{Schunk}
+\begin{Sinput}
+> x=1:20 
+> x 
+\end{Sinput}
+\begin{Soutput}
  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18
 [19] 19 20
-\end{verbatim}
-\end{kframe}
-\end{knitrout}
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlstd{> }\hlkwd{sink}\hlstd{(}\hlstr{".\textbackslash{}\textbackslash{}other\textbackslash{}\textbackslash{}JustPrintX.txt"}\hlstd{)}
-\hlstd{> }\hlstd{x}
-\hlstd{> }\hlcom{## sink()}
-\end{alltt}
-\end{kframe}
-\end{knitrout}
+\end{Soutput}
+\end{Schunk}
+\begin{Schunk}
+\begin{Sinput}
+> sink(".\\other\\JustPrintX.txt")
+> x
+> ## sink()
+\end{Sinput}
+\end{Schunk}
  
 This creates a text file called \file{JustPrintX.txt} in a subfolder called \file{other}, within the current working directory (which I created earlier). The file is worth looking at because it should show exactly what would have been printed in the \R{} window if the sink were not active. Note that the second use of \code{sink()} stops the sink from being active. 
  
 Just typing the name of an object implicitly calls the relevant \Rcmd{print} function for that object type. This does not work when a sink is active however, so we must use the \Rcmd{print} command explicitly to get the output into our sink file. For example 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlstd{> }\hlkwd{sink}\hlstd{(}\hlstr{".\textbackslash{}\textbackslash{}other\textbackslash{}\textbackslash{}JustPrintX2.txt"}\hlstd{)}
-\hlstd{> }\hlkwd{print}\hlstd{(x)}
-\end{alltt}
-\begin{verbatim}
+\begin{Schunk}
+\begin{Sinput}
+> sink(".\\other\\JustPrintX2.txt")
+> print(x)
+\end{Sinput}
+\begin{Soutput}
  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18
 [19] 19 20
-\end{verbatim}
-\begin{alltt}
-\hlstd{> }\hlcom{## sink()}
-\end{alltt}
-\end{kframe}
-\end{knitrout}
+\end{Soutput}
+\begin{Sinput}
+> ## sink()
+\end{Sinput}
+\end{Schunk}
 Check this file out and note the contents are what we might expect. It's cleaner to use the \Rcmd{cat} command in place of the \Rcmd{print} command here though. For example 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlstd{> }\hlkwd{sink}\hlstd{(}\hlstr{".\textbackslash{}\textbackslash{}other\textbackslash{}\textbackslash{}JustPrintX3.txt"}\hlstd{)}
-\hlstd{> }\hlkwd{cat}\hlstd{(x)}
-\end{alltt}
-\begin{verbatim}
+\begin{Schunk}
+\begin{Sinput}
+> sink(".\\other\\JustPrintX3.txt")
+> cat(x)
+\end{Sinput}
+\begin{Soutput}
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
-\end{verbatim}
-\begin{alltt}
-\hlstd{> }\hlcom{## sink()}
-\end{alltt}
-\end{kframe}
-\end{knitrout}
+\end{Soutput}
+\begin{Sinput}
+> ## sink()
+\end{Sinput}
+\end{Schunk}
 An even quicker method useful for a single result is to use the \Rcmd{cat} command's full potential: 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlstd{> }\hlkwd{cat}\hlstd{(x,} \hlkwc{file}\hlstd{=}\hlstr{".\textbackslash{}\textbackslash{}other\textbackslash{}\textbackslash{}JustCatX.txt"}\hlstd{)}
-\end{alltt}
-\end{kframe}
-\end{knitrout}
+\begin{Schunk}
+\begin{Sinput}
+> cat(x, file=".\\other\\JustCatX.txt") 
+\end{Sinput}
+\end{Schunk}
  
  
 \section{Saving the entire \R{} Console} 

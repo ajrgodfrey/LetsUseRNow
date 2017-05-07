@@ -14,6 +14,7 @@ del LURN.idv
 del LURN.xref
 
 copy LURN.html Front.html
+copy LURN.html index.html
 
 del .\LURN\*.* /q
 

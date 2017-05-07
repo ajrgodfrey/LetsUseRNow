@@ -18,6 +18,8 @@ move *.tex .\TexFiles
 
 move .\Figures\*.svg .\SVgs
 move .\Figures\*.xml .\SVgs
+move .\Figures\*.html .\SVgs
+move .\Figures\*.js .\SVgs
 
 del lurn.txt
 del .\figures\*.* /q

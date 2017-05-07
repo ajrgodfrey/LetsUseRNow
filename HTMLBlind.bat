@@ -14,6 +14,7 @@ del LURNBlind.idv
 del LURNBlind.xref
 
 copy LURNBlind.html Front.html
+copy LURNBlind.html index.html
 
 del .\LURNBlind\*.* /q
 

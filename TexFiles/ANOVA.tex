@@ -37,12 +37,11 @@ There are two different situations where a two-way analysis of variance is calle
 \label{RCBAnalysis} 
  
 We use the \Robject{sleep} data used to show the analysis of paired data in Section\ref{PairedSamplesTTest}, which has two measurements on ten individuals. As the two observations on each person are often thought to be related, we use the known structure of the experiment's design to incorporate this knowledge. The individual people are therefore thought of as a blocking variable. Rather than using the \Rcmd{attach} command, we employ the \Rargument{data} argument inside the \Rcmd{aov} command. As before, we use the \Rcmd{summary} method to present the analysis: 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlstd{> }\hlkwd{summary}\hlstd{(}\hlkwd{aov}\hlstd{(extra}\hlopt{~}\hlstd{ID}\hlopt{+}\hlstd{group,} \hlkwc{data}\hlstd{=sleep))}
-\end{alltt}
-\begin{verbatim}
+\begin{Schunk}
+\begin{Sinput}
+> summary(aov(extra~ID+group, data=sleep)) 
+\end{Sinput}
+\begin{Soutput}
             Df Sum Sq Mean Sq F value Pr(>F)   
 ID           9   58.1    6.45    8.53 0.0019 **
 group        1   12.5   12.48   16.50 0.0028 **
@@ -50,9 +49,8 @@ Residuals    9    6.8    0.76
 ---
 Signif. codes:  
 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-\end{verbatim}
-\end{kframe}
-\end{knitrout}
+\end{Soutput}
+\end{Schunk}
  
 The \Robject{group} variable is the treatment variable for this data set. Note that (depending on the level of significance required) leaving the \Robject{ID} variable out of the analysis could lead to a different conclusion for this experiment. The above analysis shows that there were differences among the ten individuals as well as a significant difference between the two treatments. 
  

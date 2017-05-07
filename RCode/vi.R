@@ -15,8 +15,11 @@ MyHist
 str(MyHist) 
 class(MyHist) 
 
-## ----VIHist--------------------------------------------------------------
+## ----Hist----------------------------------------------------------------
 VI(hist(airquality$Wind, xlab="Average wind speed (mph)", main="")) 
+
+## ----HistSVG, echo=FALSE, results="hide"---------------------------------
+MakeAccessibleSVG(hist(airquality$Wind, xlab="Average wind speed (mph)", main=""), "figures/VIHistAirQualityWind") 
 
 ## ----VIBoxplot-----------------------------------------------------------
 VI(boxplot(airquality$Wind, xlab="Average wind speed (mph)")) 

@@ -15,83 +15,74 @@ This chapter is all about finding confidence intervals and performing hypothesis
 The \Rpackage{datasets} package contains a set of annual precipitation values (in inches) for 70 U.S. cities. If we could assume this set to be a random sample (and we will even if it is not true), then we can find a confidence interval for the mean annual precipitation for U.S. cities on the whole. 
  
 You could use a manual approach to find the 95\% confidence interval for the population mean ($\mu$) yourself using the \Rcmd{mean}, \Rcmd{sd}, \Rcmd{length}, and \Rcmd{qt} commands as follows:  
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlstd{> }\hlkwd{mean}\hlstd{(precip)}
-\end{alltt}
-\begin{verbatim}
+\begin{Schunk}
+\begin{Sinput}
+> mean(precip) 
+\end{Sinput}
+\begin{Soutput}
 [1] 34.89
-\end{verbatim}
-\begin{alltt}
-\hlstd{> }\hlkwd{sd}\hlstd{(precip)}
-\end{alltt}
-\begin{verbatim}
+\end{Soutput}
+\begin{Sinput}
+> sd(precip) 
+\end{Sinput}
+\begin{Soutput}
 [1] 13.71
-\end{verbatim}
-\begin{alltt}
-\hlstd{> }\hlkwd{length}\hlstd{(precip)}
-\end{alltt}
-\begin{verbatim}
+\end{Soutput}
+\begin{Sinput}
+> length(precip) 
+\end{Sinput}
+\begin{Soutput}
 [1] 70
-\end{verbatim}
-\begin{alltt}
-\hlstd{> }\hlkwd{qt}\hlstd{(}\hlnum{0.975}\hlstd{,} \hlkwd{length}\hlstd{(precip)}\hlopt{-}\hlnum{1}\hlstd{)}
-\end{alltt}
-\begin{verbatim}
+\end{Soutput}
+\begin{Sinput}
+> qt(0.975, length(precip)-1) 
+\end{Sinput}
+\begin{Soutput}
 [1] 1.995
-\end{verbatim}
-\end{kframe}
-\end{knitrout}
+\end{Soutput}
+\end{Schunk}
 Note the use of the \Rcmd{qt} command here. It has two arguments; one for the level of confidence (95\% confidence relates to an upper tail area of 0.025) and the degrees of freedom (based on the sample size). The 95\% confidence interval is therefore found using 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlstd{> }\hlkwd{mean}\hlstd{(precip)} \hlopt{-} \hlkwd{qt}\hlstd{(}\hlnum{0.975}\hlstd{,} \hlkwd{length}\hlstd{(precip)}\hlopt{-}\hlnum{1}\hlstd{)} \hlopt{*} \hlkwd{sd}\hlstd{(precip)} \hlopt{/} \hlkwd{sqrt}\hlstd{(}\hlkwd{length}\hlstd{(precip))}
-\end{alltt}
-\begin{verbatim}
+\begin{Schunk}
+\begin{Sinput}
+> mean(precip) - qt(0.975, length(precip)-1) * sd(precip) / sqrt(length(precip)) 
+\end{Sinput}
+\begin{Soutput}
 [1] 31.62
-\end{verbatim}
-\begin{alltt}
-\hlstd{> }\hlkwd{mean}\hlstd{(precip)} \hlopt{+} \hlkwd{qt}\hlstd{(}\hlnum{0.975}\hlstd{,} \hlkwd{length}\hlstd{(precip)}\hlopt{-}\hlnum{1}\hlstd{)} \hlopt{*} \hlkwd{sd}\hlstd{(precip)} \hlopt{/} \hlkwd{sqrt}\hlstd{(}\hlkwd{length}\hlstd{(precip))}
-\end{alltt}
-\begin{verbatim}
+\end{Soutput}
+\begin{Sinput}
+> mean(precip) + qt(0.975, length(precip)-1) * sd(precip) / sqrt(length(precip)) 
+\end{Sinput}
+\begin{Soutput}
 [1] 38.15
-\end{verbatim}
-\end{kframe}
-\end{knitrout}
+\end{Soutput}
+\end{Schunk}
 or, with a nicer (quicker) command: 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlstd{> }\hlkwd{mean}\hlstd{(precip)} \hlopt{+} \hlkwd{c}\hlstd{(}\hlopt{-}\hlnum{1}\hlstd{,}\hlnum{1}\hlstd{)} \hlopt{*} \hlkwd{qt}\hlstd{(}\hlnum{0.975}\hlstd{,} \hlkwd{length}\hlstd{(precip)}\hlopt{-}\hlnum{1}\hlstd{)} \hlopt{*} \hlkwd{sd}\hlstd{(precip)} \hlopt{/} \hlkwd{sqrt}\hlstd{(}\hlkwd{length}\hlstd{(precip))}
-\end{alltt}
-\begin{verbatim}
+\begin{Schunk}
+\begin{Sinput}
+> mean(precip) + c(-1,1) * qt(0.975, length(precip)-1) * sd(precip) / sqrt(length(precip)) 
+\end{Sinput}
+\begin{Soutput}
 [1] 31.62 38.15
-\end{verbatim}
-\end{kframe}
-\end{knitrout}
+\end{Soutput}
+\end{Schunk}
 These calculations include all the commands needed for a hypothesis test, except the need to find the specific $p$-value of a hypothesis test. Let's test the notion that the annual precipitation is actually greater than 30 inches per annum. This is a one-sided hypothesis test where the null hypothesis is that $\mu=30$. 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlstd{> }\hlstd{TestStat}\hlkwb{=} \hlstd{(}\hlkwd{mean}\hlstd{(precip)}\hlopt{-}\hlnum{30}\hlstd{)}\hlopt{/}\hlstd{(}\hlkwd{sd}\hlstd{(precip)} \hlopt{/} \hlkwd{sqrt}\hlstd{(}\hlkwd{length}\hlstd{(precip)))}
-\hlstd{> }\hlkwd{pt}\hlstd{(TestStat,} \hlkwd{length}\hlstd{(precip)}\hlopt{-}\hlnum{1}\hlstd{,} \hlkwc{lower.tail}\hlstd{=}\hlnum{FALSE}\hlstd{)}
-\end{alltt}
-\begin{verbatim}
+\begin{Schunk}
+\begin{Sinput}
+> TestStat= (mean(precip)-30)/(sd(precip) / sqrt(length(precip))) 
+> pt(TestStat, length(precip)-1, lower.tail=FALSE) 
+\end{Sinput}
+\begin{Soutput}
 [1] 0.001976
-\end{verbatim}
-\end{kframe}
-\end{knitrout}
+\end{Soutput}
+\end{Schunk}
  Note that the \Rcmd{pt} command required us to think about the degrees of freedom and that the upper tail area was important to us. We now see that the null hypothesis is rejected as the $p$-value is very small. 
  
 These calculations are fine, but there is a quicker way! The \Rcmd{t.test} command does it all for us --- both confidence interval and hypothesis test. 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlstd{> }\hlkwd{t.test}\hlstd{(precip)}
-\end{alltt}
-\begin{verbatim}
+\begin{Schunk}
+\begin{Sinput}
+> t.test(precip) 
+\end{Sinput}
+\begin{Soutput}
 
 	One Sample t-test
 
@@ -103,16 +94,14 @@ alternative hypothesis: true mean is not equal to 0
 sample estimates:
 mean of x 
     34.89 
-\end{verbatim}
-\end{kframe}
-\end{knitrout}
+\end{Soutput}
+\end{Schunk}
 This gives a confidence interval with the default level of confidence (95\%), while 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlstd{> }\hlkwd{t.test}\hlstd{(precip,} \hlkwc{mu}\hlstd{=}\hlnum{30}\hlstd{,} \hlkwc{alternative}\hlstd{=}\hlstr{"greater"}\hlstd{)}
-\end{alltt}
-\begin{verbatim}
+\begin{Schunk}
+\begin{Sinput}
+> t.test(precip, mu=30, alternative="greater") 
+\end{Sinput}
+\begin{Soutput}
 
 	One Sample t-test
 
@@ -124,9 +113,8 @@ alternative hypothesis: true mean is greater than 30
 sample estimates:
 mean of x 
     34.89 
-\end{verbatim}
-\end{kframe}
-\end{knitrout}
+\end{Soutput}
+\end{Schunk}
 gives us the results for a one-sided hypothesis test and the corresponding confidence interval. 
  
 The \Rcmd{t.test} command is used for many $t$-tests, notably for comparing two population means, whether the data are paired or not. 
@@ -145,21 +133,18 @@ The \Robject{sleep} data that is in the \Rpackage{datasets} package has two reco
 The data set lists the twenty observations in a single column. This is a little unusual for paired data that will be analyzed using the \Rcmd{t.test} command. Caution must be expressed because the variable that shows how the observations are paired is not stated. If the observations are not ordered the same for each group, then the paring will be done incorrectly. If for any reason you cannot be sure of the ordering of the data then the use of the \Rcmd{aov} command as discussed in Section~\ref{RCBAnalysis} is strongly advised. 
  
 Using the \Rcmd{attach} command to be able to refer to the variables directly speeds up this process. 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlstd{> }\hlkwd{attach}\hlstd{(sleep)}
-\end{alltt}
-\end{kframe}
-\end{knitrout}
+\begin{Schunk}
+\begin{Sinput}
+> attach(sleep) 
+\end{Sinput}
+\end{Schunk}
  
 We employ the \Rcmd{t.test} command with the \Rarg{paired} argument set to \Rarg{TRUE}. We can use either of two approaches. Either we separate the two groups apart using subscripting 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlstd{> }\hlkwd{t.test}\hlstd{(extra[group}\hlopt{==}\hlstr{"1"}\hlstd{], extra[group}\hlopt{==}\hlstr{"2"}\hlstd{],} \hlkwc{paired}\hlstd{=}\hlnum{TRUE}\hlstd{)}
-\end{alltt}
-\begin{verbatim}
+\begin{Schunk}
+\begin{Sinput}
+> t.test(extra[group=="1"], extra[group=="2"], paired=TRUE) 
+\end{Sinput}
+\begin{Soutput}
 
 	Paired t-test
 
@@ -171,17 +156,15 @@ alternative hypothesis: true difference in means is not equal to 0
 sample estimates:
 mean of the differences 
                   -1.58 
-\end{verbatim}
-\end{kframe}
-\end{knitrout}
+\end{Soutput}
+\end{Schunk}
  
 which is the way we would normally work when we have the two measurements stored using two distinct variables; or, use the formula approach: 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlstd{> }\hlkwd{t.test}\hlstd{(extra}\hlopt{~}\hlstd{group,} \hlkwc{paired}\hlstd{=}\hlnum{TRUE}\hlstd{)}
-\end{alltt}
-\begin{verbatim}
+\begin{Schunk}
+\begin{Sinput}
+> t.test(extra~group, paired=TRUE) 
+\end{Sinput}
+\begin{Soutput}
 
 	Paired t-test
 
@@ -193,18 +176,15 @@ alternative hypothesis: true difference in means is not equal to 0
 sample estimates:
 mean of the differences 
                   -1.58 
-\end{verbatim}
-\end{kframe}
-\end{knitrout}
+\end{Soutput}
+\end{Schunk}
  
 You could of course alter the analysis by adding arguments to these commands to suit your needs. Experiment a little before detaching the \Robject{sleep} data using the \Rcmd{detach} command: 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlstd{> }\hlkwd{detach}\hlstd{(sleep)}
-\end{alltt}
-\end{kframe}
-\end{knitrout}
+\begin{Schunk}
+\begin{Sinput}
+> detach(sleep) 
+\end{Sinput}
+\end{Schunk}
  
  
 \section{Confidence intervals and hypothesis tests for a proportion from one population} 
@@ -222,13 +202,12 @@ If we require a formal hypothesis test for the significance of the correlation c
 There are problems with cherry-picking one pair of variables from a set to perform a post hoc test like this. We should probably consider finding the significance of all correlations of interest and adjusting the way we think about the likelihood of getting the set of hypothesis tests we observe as a combination using a \stressind{Bonn Ferroni adjustment} in our analysis; that is beyond the scope of this exposition so for the moment just assume we are (and were before data was collected) interested in only the correlation that exists between a single pair of variables. We use the \Robject{Ozone} and \Robject{Wind} variables from the \Robject{airquality} data. 
  
 To test the notion that there is zero correlation between the two variables we would probably consider using Pearson's correlation coefficient which measures the strength of the linear relationship between a pair of variables, but use of Spearman's rank correlation coefficient will measure the strength of any monotonic relationship that might exist. I prefer to use both at the same time in many circumstances. 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlstd{> }\hlkwd{attach}\hlstd{(airquality)}
-\hlstd{> }\hlkwd{cor.test}\hlstd{(Ozone, Wind)}
-\end{alltt}
-\begin{verbatim}
+\begin{Schunk}
+\begin{Sinput}
+> attach(airquality) 
+> cor.test(Ozone, Wind) 
+\end{Sinput}
+\begin{Soutput}
 
 	Pearson's product-moment correlation
 
@@ -240,13 +219,14 @@ alternative hypothesis: true correlation is not equal to 0
 sample estimates:
     cor 
 -0.6015 
-\end{verbatim}
-\begin{alltt}
-\hlstd{> }\hlkwd{cor.test}\hlstd{(Ozone, Wind,} \hlkwc{method}\hlstd{=}\hlstr{"spearman"}\hlstd{)}
-\end{alltt}
-
-
-{\ttfamily\noindent\color{warningcolor}{Warning in cor.test.default(Ozone, Wind, method = "{}spearman"{}): Cannot compute exact p-value with ties}}\begin{verbatim}
+\end{Soutput}
+\begin{Sinput}
+> cor.test(Ozone, Wind, method="spearman") 
+\end{Sinput}
+\begin{Soutput}
+Warning in cor.test.default(Ozone, Wind, method = "spearman"): Cannot compute exact p-value with ties
+\end{Soutput}
+\begin{Soutput}
 
 	Spearman's rank correlation rho
 
@@ -256,12 +236,11 @@ alternative hypothesis: true rho is not equal to 0
 sample estimates:
     rho 
 -0.5902 
-\end{verbatim}
-\begin{alltt}
-\hlstd{> }\hlkwd{detach}\hlstd{(airquality)}
-\end{alltt}
-\end{kframe}
-\end{knitrout}
+\end{Soutput}
+\begin{Sinput}
+> detach(airquality) 
+\end{Sinput}
+\end{Schunk}
 So it seems the two variables are correlated and have a monotonic relationship that implies that as wind increases the amount of ozone decreases and that this relationship is fairly linear. We will look at this relationship again when we look at linear regression in Chapter~\ref{Regression}. 
  
  

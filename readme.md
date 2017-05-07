@@ -39,10 +39,12 @@ If you want to start a translation project, then again, please offer.
 - improved the presentation of the R scripts to drop chunks used for purposes of knitr and chapter setup and clean up.
 
 ### September 2016
+
 - changed from \epsilon to \varepsilon in formulae. This made reading via mathjax and mathml possible.
 
 ### December 2016 (Dublin)
-- added links to switch between blind and sighted versions; thanks got ot Voica for hte tool.
+
+- added links to switch between blind and sighted versions; thanks go to Voica for the tool.
 - switched the creation of SVG to use the rvg package in R. This is definitely an improvement, but we really need to find out how to use the gridSVG package to deliver even better results.
 
 
@@ -53,7 +55,11 @@ Discovered how to add the alt tags in the HTML versions.
     - creation of altgraphicx.sty and .4ht required. These sit in the root folder.
     - updated the preamble needed to incorporate the new altgraphicx package.
 
-## April 2017
+### April 2017
 
 - started use of the accessible graphs tool on the http version of the book. Must be viewed using a browser that handles SVG (not IE!) to work.
 - added a chapter to present my exploration into Operations Research problems; just for fun really as it harks back to the old days.
+
+## May 2017
+
+- improved access to the accessible SVG content by using BrailleR::BrowseSVG() on all files in figures folder before moving all necessary files over to SVGs folder

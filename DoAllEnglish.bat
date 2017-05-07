@@ -6,16 +6,10 @@ call pdfLURN.bat
 
 call JustSweaveLURN.bat
 
-ren lurnprint.aux lurn.aux
-ren lurnprint.idx lurn.idx
-ren lurnprint.toc lurn.toc
-ren lurnprint.ind lurn.ind
+call rename1.bat
 call html.bat
 
-ren lurn.aux LURNBlind.aux
-ren lurn.idx LURNBlind.idx 
-ren lurn.toc LURNBlind.toc 
-ren lurn.ind LURNBlind.ind
+call rename2.bat
 call HTMLBlind.bat
 
 call CleanUpFolder.bat
