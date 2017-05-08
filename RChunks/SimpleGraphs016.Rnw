@@ -4,4 +4,3 @@
 windows(7, 2.5) 
 dotchart(Wind) 
 @ 
-\SVGLink{SimpleGraphsDotPlot-1} 

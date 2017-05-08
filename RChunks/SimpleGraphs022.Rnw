@@ -4,4 +4,3 @@
 qqnorm(Wind) 
 qqline(Wind) 
 @ 
-\SVGLink{SimpleGraphsNormPlot-1} 

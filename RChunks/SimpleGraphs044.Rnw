@@ -3,4 +3,3 @@
 <<StateRegionPieChart, fig.width=7, fig.height=7>>= 
 pie(summary(state.region)) 
 @ 
-\SVGLink{SimpleGraphsStateRegionPieChart-1} 

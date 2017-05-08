@@ -65,4 +65,10 @@ Discovered how to add the alt tags in the HTML versions.
 - improved access to the accessible SVG content by using BrailleR::BrowseSVG() on all files in figures folder before moving all necessary files over to SVGs folder
 - Issue with aspect ratio exposed with addition of accessible boxplot.
 s- added filenames to RChunk and English Rnw files for easier tracking of problems
+- removed links to svg files that are not using the interactive exploration for accessibility
+
+
+## Issues to think about and work on
+
+- aspect ratios in accessible SVG content do not match aspect ratios in corresponding graph
 

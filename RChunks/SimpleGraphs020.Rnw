@@ -3,4 +3,3 @@
 <<LinePlot2>>= 
 plot(Temp, ylim=c(50,100), type="l") 
 @ 
-\SVGLink{SimpleGraphsLinePlot2-1} 

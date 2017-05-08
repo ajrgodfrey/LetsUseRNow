@@ -1,6 +1,13 @@
 % filename SimpleGraphs014.Rnw 
 
-<<CompBoxplot>>= 
+<<CompBoxplotAirQualityWind, fig.show="hide">>= 
 boxplot(Wind~Month, xlab="Month", ylab="Wind speed (mph)") 
 @ 
-\SVGLink{SimpleGraphsCompBoxplot-1} 
+\includegraphics[width=0.8\textwidth,alt={a comparative boxplot}]{figures/SimpleGraphsCompBoxplotAirQualityWind-1} 
+
+<<CompBoxplotAirQualityWindSVG, echo=FALSE, include=FALSE, messages=FALSE, warnings=FALSE, results="hide", fig.show="hide">>= 
+MakeAccessibleSVG(boxplot(Wind~Month, xlab="Month", ylab="Wind speed (mph)"), "figures/SimpleGraphsCompBoxplotAirQualityWind") 
+@ 
+
+\SVGLink{SimpleGraphsCompBoxplotAirQualityWind} 
+

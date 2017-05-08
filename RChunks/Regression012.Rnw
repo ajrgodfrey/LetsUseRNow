@@ -5,4 +5,3 @@ plot(Temp, Ozone)
 abline(Ozone.lm2) 
 detach(airquality) 
 @ 
-\SVGLink{RegressionOzoneTempWithLine-1} 

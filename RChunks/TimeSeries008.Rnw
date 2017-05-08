@@ -3,3 +3,7 @@
 <<NilePlot>>= 
 plot(Nile, xlab="Year", ylab="Flow") 
 @ 
+
+<<NilePlotSVG>>= 
+TimeSeriesPlot(Nile, xlab="Year", ylab="Flow") 
+@
