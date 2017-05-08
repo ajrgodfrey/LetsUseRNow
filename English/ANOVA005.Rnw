@@ -1,3 +1,5 @@
+% filename ANOVA005.Rnw 
+
  
 The \Robject{group} variable is the treatment variable for this data set. Note that (depending on the level of significance required) leaving the \Robject{ID} variable out of the analysis could lead to a different conclusion for this experiment. The above analysis shows that there were differences among the ten individuals as well as a significant difference between the two treatments. 
  

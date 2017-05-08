@@ -1,3 +1,5 @@
+% filename Scientific005.Rnw 
+
 So our experiment shows us that \R{} is working in radians. 
  
 The functions \Rcmd{sin}, \Rcmd{cos}, and \Rcmd{tan} give the sine, cosine, and tangent respectively. To find the inverse sine, sometimes called the arcsine, we use the \Rcmd{asin} command. The hyperbolic functions associated with these functions also exist; use \Rcmd{sinh}, \Rcmd{cosh} and \Rcmd{tanh} and for the inverse, just add an extra \code{a} before the command named here. 

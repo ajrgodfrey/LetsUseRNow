@@ -1,2 +1,4 @@
+% filename AirQualityIntro.Rnw 
+
  
 We will use the \Robject{air quality} data set that is distributed in the \Rpackage{datasets} package which is part of the default installation of \R{}. This data set is immediately accessible from your \R{} session and can be investigated using 

@@ -1,2 +1,4 @@
+% filename Functions007.Rnw 
+
 The sine of $x$ was calculated, but it was not returned at the end of the function. 
 The \Rcmd{return} command included in the next example ensures we get the answer we want. 

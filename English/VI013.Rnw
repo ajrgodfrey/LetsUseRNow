@@ -1,3 +1,5 @@
+% filename VI013.Rnw 
+
  
 The full print out has everything we need but is not in a friendly format. The \Rcmd{str} command gives us a condensed version of the data being stored but isn't sufficient, and the \Rcmd{class} command just tells us that this information is stored in an object of type \Rclass{histogram}. The class of the object is the most important as it is what tells \R{} how to work on the object when we use the \Rcmd{plot} command on the \Robject{MyHist} object. The \Rcmd{plot} command is actually a family of commands, one of which is purposely designed for histograms. The \Rcmd{plot.histogram} command is actually what constructs the graph when the user calls the \Rcmd{plot} command on an object of type \Rclass{histogram}. This family of commands is known as a \stressind{method}. 
  

@@ -1,3 +1,5 @@
+% filename LinearAlgebra033.Rnw 
+
  
 The trace of a matrix is not so easily found. There is a command that is called \Rcmd{trace} but this is not an algebraic function. If you want the trace of the matrix, you will need to sum the eigenvalues of the matrix. 
  

@@ -1,10 +1,18 @@
+% filename GenericSettings.Rnw 
 
+
+
+% filename NumericalEDA001.Rnw 
 
  
 %\setcounter{chapter}{} 
 \chapter{LURN\ldots{} To Examine Data Numerically} 
 \label{NumericalEDA} 
  
+% filename NumericalEDA002.Rnw 
+
+
+% filename NumericalEDA003.Rnw 
 
  
 In this chapter we see how to obtain and present simple numerical summaries suitable for describing data. The same data set used in Chapter~\ref{SimpleGraphs} on creating graphs is used again. 
@@ -12,6 +20,8 @@ In this chapter we see how to obtain and present simple numerical summaries suit
 \section{Obtaining basic numerical summaries of data} 
  
 The \Rcmd{summary} command is a very useful tool. It behaves differently for \R{} objects depending on the nature of the object it is working on. The air quality data we used for Chapter~\ref{SimpleGraphs} for demonstrating basic graphing techniques is a \Rclass{data.frame} object as evidenced by asking \R{} what class the object is using the \Rcmd{class} command 
+% filename NumericalEDA004.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > class(airquality) 
@@ -20,8 +30,12 @@ The \Rcmd{summary} command is a very useful tool. It behaves differently for \R{
 [1] "data.frame"
 \end{Soutput}
 \end{Schunk}
+% filename NumericalEDA005.Rnw 
+
  
 Applying the \Rcmd{summary} command to the \Robject{air quality} data gives: 
+% filename NumericalEDA006.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > summary(airquality) 
@@ -45,9 +59,13 @@ Applying the \Rcmd{summary} command to the \Robject{air quality} data gives:
                                              
 \end{Soutput}
 \end{Schunk}
+% filename NumericalEDA007.Rnw 
+
 The \Rcmd{summary} command finds the common numeric summary statistics for the continuous-valued variables and does a particulary useless job on the variables for month and day. Well it's not really \R{}'s fault. The month didn't need to be stored numerically, but in any case we got what we asked for! It's not \R{}'s fault we asked to be told what the minimum day number was! 
  
 Notice that the \Rcmd{summary} command extracted the minimum, maximum, median and mean for the variables in the \Rclass{data.frame}. These are all available using corresponding \Rcmd{min}, \Rcmd{max}, \Rcmd{median}, and \Rcmd{mean} commands separately but they work in different ways on data frames. For example we might have thought to use the \Rcmd{mean} command on a \Rclass{data.frame}, but it is better practice to use the more specific \Rcmd{colMeans} command instead. 
+% filename NumericalEDA008.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > colMeans(airquality[,1:4]) 
@@ -70,9 +88,13 @@ Notice that the \Rcmd{summary} command extracted the minimum, maximum, median an
 [1] 42.13
 \end{Soutput}
 \end{Schunk}
+% filename NumericalEDA009.Rnw 
+
 Note that I've told \R{} which columns of the \Robject{air quality} \Rclass{data.frame} to work with using the appropriate subscripting code. I've also needed to tell \R{} to ignore the missing data for the two variables \Robject{Ozone} and \Robject{Solar.R} using the \Rarg{na.rm=TRUE}. The output for the \Rcmd{summary} command did tell us how many values for each variable were missing. Recall that missing values are represented by a ``\code{NA}". 
  
 The \Rcmd{min} and \Rcmd{max} commands all work on the data by assuming we want the statistic for the whole list of numbers over all columns. For example 
+% filename NumericalEDA010.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > #median(airquality[,1:4], na.rm=TRUE) 
@@ -88,15 +110,21 @@ The \Rcmd{min} and \Rcmd{max} commands all work on the data by assuming we want 
 [1] 334
 \end{Soutput}
 \end{Schunk}
+% filename NumericalEDA011.Rnw 
+
  
 It used to be possible to ask \R{} to use the \Rcmd{median}, in a command like this, but as of version 2-14-0, an error message was returned instead of an answer. 
  
 We will need to see how to get the relevant medians, minima, and maxima for the columns separately later in this chapter, but for now let's see how the relevant summary measures can be obtained for a single column of the \Robject{air quality} data. The \Rcmd{attach} command allows us direct access to the variables by name. 
+% filename AttachAirquality.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > attach(airquality) 
 \end{Sinput}
 \end{Schunk}
+% filename NumericalEDA012.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > min(Temp) 
@@ -123,9 +151,13 @@ We will need to see how to get the relevant medians, minima, and maxima for the 
 [1] 205
 \end{Soutput}
 \end{Schunk}
+% filename NumericalEDA013.Rnw 
+
 Notice that a consequence of missing values in our data is that some functions will return the \code{NA} value. If we want the quantity returned to be estimated using the available data we simply add the argument \Rarg{na.rm=TRUE} which removes the values denoted with the \code{NA}. 
  
 The first and third quartiles are not so easily extracted however. We can get the first and third quartiles from the five number summary by extracting elements of the output returned by the \Rcmd{fivenum} command. For example 
+% filename NumericalEDA014.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > fivenum(Ozone) 
@@ -134,6 +166,8 @@ The first and third quartiles are not so easily extracted however. We can get th
 [1]   1.0  18.0  31.5  63.5 168.0
 \end{Soutput}
 \end{Schunk}
+% filename NumericalEDA015.Rnw 
+
 There are some minor differences between the methods used by the \Rcmd{summary} and \Rcmd{fivenum} commands for the first and third quartiles. See the relevant help page using \code{?fivenum} for an explanation. 
  
 Knowing how these commands work on simple sets of numbers is very useful for the more elegant presentations in the following sections. 
@@ -145,6 +179,8 @@ When preparing reports it is unlikely that we would want a single statistic all 
 The \Rcmd{tapply} and \Rcmd{aggregate} commands are very useful for creating tables of results, sometimes referred to as \stressind{pivot tables}. The \Rcmd{tapply} command has three arguments; the main variable of interest, the grouping variable(s), and the function we want performed on each group within the data. In contrast, the \Rcmd{aggregate} command has a slightly different way of relating the response variable to one or more grouping variables. It is of course, easier to show how these commands work in action so we'll use the air quality data again and present various alternatives and the slightly different resulting output. 
  
 Let's say we want to know the \Rcmd{mean} Wind speed over the five months data were collected. We could use 
+% filename NumericalEDA016a.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > tapply(Wind, Month, mean) 
@@ -154,7 +190,11 @@ Let's say we want to know the \Rcmd{mean} Wind speed over the five months data w
 11.623 10.267  8.942  8.794 10.180 
 \end{Soutput}
 \end{Schunk}
+% filename or.Rnw 
+
 or
+% filename NumericalEDA016b.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > aggregate(Wind~Month, data=airquality, mean) 
@@ -168,9 +208,13 @@ or
 5     9 10.180
 \end{Soutput}
 \end{Schunk}
+% filename NumericalEDA017.Rnw 
+
 These commands do the job very nicely; choose the one that delivers the output in the way you want it. We could ask for other quantities such as the minimum, maximum, or standard deviation within each month by referring to the relevant \R{} command in the third argument. Note that the \Rcmd{aggregate} command allows specification of the \Rclass{data.frame} in which to find the variables in the \Rclass{formula}; this approach is commonplace when we fit models for our data and avoids the need to make use of the \Rcmd{attach} and \Rcmd{detach} commands.  
  
 If we had multiple response variables of interest, we would need to repeat the command for each one. If we had more than one way of asking for the grouping though, the \Rcmd{tapply} command is very useful indeed as it presents a two-way pivot table. The air quality data doesn't have a second factor we can use for this illustration, so I've created a second variable which asks if the day of the month is in the second half of the month. In this case, the \Rcmd{tapply} and \Rcmd{aggregate} commands generate quite different outcomes.
+% filename NumericalEDA018.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > Day15 = Day > 15
@@ -201,8 +245,12 @@ If we had multiple response variables of interest, we would need to repeat the c
 10     9  TRUE 10.813
 \end{Soutput}
 \end{Schunk}
+% filename NumericalEDA019.Rnw 
+
  
 If we wanted more than one statistic of interest, we would need to repeat the command and change the function being referenced in the third argument. We can use the \Rcmd{summary} command here though as it gives us more quantities. 
+% filename NumericalEDA020.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > tapply(Wind, Month, summary) 
@@ -229,10 +277,14 @@ $`9`
    2.80    7.55   10.30   10.18   12.32   16.60 
 \end{Soutput}
 \end{Schunk}
+% filename NumericalEDA021.Rnw 
+
  
 This printout isn't particularly attractive, but it is quick and informative. If presentation was more important than getting results efficiently, we would look to improve the appearance --- this means more difficult coding though. 
  
 There is one more feature of the \Rcmd{tapply} command that must be pointed out. The simple commands shown thus far use the default settings of the relevant functions. In particular, the \Rcmd{mean} command does not ignore missing values by default. 
+% filename NumericalEDA022.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > tapply(Ozone, Month, mean) 
@@ -242,7 +294,11 @@ There is one more feature of the \Rcmd{tapply} command that must be pointed out.
 NA NA NA NA NA 
 \end{Soutput}
 \end{Schunk}
+% filename NumericalEDA023.Rnw 
+
 We now know that there are missing \Robject{Ozone} observations in each month. We can add a fourth argument to the command which will be passed on to the function mentioned in the third argument. 
+% filename NumericalEDA024.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > tapply(Ozone, Month, mean, na.rm=TRUE) 
@@ -252,6 +308,8 @@ We now know that there are missing \Robject{Ozone} observations in each month. W
 23.62 29.44 59.12 59.96 31.45 
 \end{Soutput}
 \end{Schunk}
+% filename NumericalEDA025.Rnw 
+
 gives us the means of the observed data. 
  
 \section{Getting things printed how we want them} 
@@ -259,6 +317,8 @@ gives us the means of the observed data.
 We will often need to watch the way \R{} chooses to print out results. When a direct reference to data is sought, the order of the data is maintained. In our example using the \Rcmd{tapply} command above, the months were numeric values. The order was probably the most logical one as it was in chronological order. 
  
 If we had a long list of results and it was the extremes we wanted to focus attention towards, the \Rcmd{sort} and \Rcmd{rev} commands would be most useful. For example, say we want to order the monthly average wind speeds found above in ascending order, then we would use 
+% filename NumericalEDA026.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > sort(tapply(Wind, Month, mean)) 
@@ -268,9 +328,13 @@ If we had a long list of results and it was the extremes we wanted to focus atte
  8.794  8.942 10.180 10.267 11.623 
 \end{Soutput}
 \end{Schunk}
+% filename NumericalEDA027.Rnw 
+
 So we now know that August has the smallest average wind speed and that May is the windiest month. 
  
 To get the data listed in reverse chronological order we would use: 
+% filename NumericalEDA028.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > rev(tapply(Wind, Month, mean)) 
@@ -280,7 +344,11 @@ To get the data listed in reverse chronological order we would use:
 10.180  8.794  8.942 10.267 11.623 
 \end{Soutput}
 \end{Schunk}
+% filename NumericalEDA029.Rnw 
+
 and we can combine both commands to get the months ordered from windiest to least windy using: 
+% filename NumericalEDA030.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > rev(sort(tapply(Wind, Month, mean))) 
@@ -290,6 +358,8 @@ and we can combine both commands to get the months ordered from windiest to leas
 11.623 10.267 10.180  8.942  8.794 
 \end{Soutput}
 \end{Schunk}
+% filename NumericalEDA031.Rnw 
+
  
 \section{Correlation structure within a data set} 
 \label{CorrelationStructure} 
@@ -297,6 +367,8 @@ and we can combine both commands to get the months ordered from windiest to leas
 The summaries given thus far in this chapter all refer to variables as single objects. Often we have multivariate data and want to know more about it. Looking for inter-relationships among variables can be achieved using correlation coefficients; this gives us a numerical equivalent to the scatter plot matrices shown in Section~\ref{ScatterPlotMatrices}. 
  
 In fact, the commands used here resemble those used to generate the scatter plot matrix. I like to do this to save effort. My ability to copy and paste is better than my typing! 
+% filename NumericalEDA032.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > cor(data.frame(Ozone, Solar.R, Wind, Temp)) 
@@ -309,7 +381,11 @@ Wind       NA      NA  1.000 -0.458
 Temp       NA      NA -0.458  1.000
 \end{Soutput}
 \end{Schunk}
+% filename NumericalEDA033.Rnw 
+
 Having said this, it is now obvious that the missing values in some variables is causing grief. An additional argument is required. 
+% filename NumericalEDA034.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > cor(data.frame(Ozone, Solar.R, Wind, Temp),  
@@ -323,7 +399,11 @@ Wind    -0.6015 -0.05679  1.00000 -0.4580
 Temp     0.6984  0.27584 -0.45799  1.0000
 \end{Soutput}
 \end{Schunk}
+% filename NumericalEDA035.Rnw 
+
 Often, \R{} will allow arguments to be abbreviated. Unfortunately, this isn't the case for this additional argument. It is the case for choosing the preferred correlation measure to be found though. The default is to calculate Pearson's correlation coefficient. My personal preference is to use both this measure and Spearman's rank correlation coefficient as it does not require the relationship to be linear, nor does it require the samples to be normally distributed. As well as finding Spearman's measure, I've decided that printing correlations to five decimal places is unnecessary so have restricted the output using the \Rcmd{round} command. 
+% filename NumericalEDA036.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > round(cor(data.frame(Ozone, Solar.R, Wind, Temp),  
@@ -337,6 +417,8 @@ Wind    -0.590  -0.001  1.000 -0.447
 Temp     0.774   0.207 -0.447  1.000
 \end{Soutput}
 \end{Schunk}
+% filename NumericalEDA037.Rnw 
+
  
  
  
@@ -348,20 +430,30 @@ Temp     0.774   0.207 -0.447  1.000
 In Section~\ref{DPlyRDataManipulation}, we saw how the \Rpkg{dplyr} package offers an alternative to base \R{} functionality for manipulating data. We now see that this package offers commands for summarising data. In particular, the commands: \Rcmd{group\_by}, \Rcmd{summarise}, and \Rcmd{count}. 
    
 You'll need to install the package (see Section~\ref{InstallPackages} for instructions) before running the function 
+% filename dplyr.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > library(dplyr) 
 \end{Sinput}
 \end{Schunk}
+% filename NumericalEDA039.Rnw 
+
 to gain access to the commands just listed. We will also make use of the \Rpkg{dplyr} data structure called a \Rclass{tbl\_df} instead of the common \Rclass{data.frame} using: 
+% filename NumericalEDA040.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > airquality2=tbl_df(airquality) 
 \end{Sinput}
 \end{Schunk}
+% filename NumericalEDA041.Rnw 
+
  
  
 The \Rcmd{summarise}  and \Rcmd{group\_by} commands can be used instead of the \Rcmd{tapply} command introduced earlier in this chapter. To get the overall average wind speed from the \Robject{airquality} data, we could use: 
+% filename NumericalEDA042.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > airquality %>% summarise(mean(Wind, na.rm = TRUE)) 
@@ -371,7 +463,11 @@ The \Rcmd{summarise}  and \Rcmd{group\_by} commands can be used instead of the \
 1                    9.958
 \end{Soutput}
 \end{Schunk}
+% filename NumericalEDA043.Rnw 
+
 which is more long-winded than just using the \Rcmd{mean} command alone. The value of \Rcmd{summarise} becomes more evident when we seek the means for groups within our data, such as: 
+% filename NumericalEDA044.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > airquality%>% group_by(Month) %>% summarise(mean(Wind, na.rm = TRUE)) 
@@ -387,8 +483,12 @@ which is more long-winded than just using the \Rcmd{mean} command alone. The val
 5     9                     10.180
 \end{Soutput}
 \end{Schunk}
+% filename NumericalEDA045.Rnw 
+
  
 We could use other functions seen in this chapter for alternative summary statistics within these functions. A common task is to check on how much data we have for each group of interest. We could use \Rcmd{summarise} and \Rcmd{length} to count up the data, but the \Rpkg{dplyr} package gives us the \Rcmd{count} function to make this even more efficient. 
+% filename NumericalEDA046.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > airquality%>% count(Month) 
@@ -404,9 +504,13 @@ We could use other functions seen in this chapter for alternative summary statis
 5     9    30
 \end{Soutput}
 \end{Schunk}
+% filename NumericalEDA047.Rnw 
+
  
  
 As an illustration of the real power of the \stressind{pipe operator}, say we wanted to show the hottest months by their average temperature within the air quality data. One way to do this using commands from the \Rpkg{dplyr} package is to: 
+% filename NumericalEDA048.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > Grouped = group_by(airquality, Month) 
@@ -424,7 +528,11 @@ As an illustration of the real power of the \stressind{pipe operator}, say we wa
 5     5   65.55
 \end{Soutput}
 \end{Schunk}
+% filename NumericalEDA049.Rnw 
+
 Which has stored data at each step. Note in particular that a new variable was created by name in the \Rcmd{summarise} command; this helps in the subsequent \Rcmd{arrange} step. We might want to store the results at each step, but if we didn't want to, then we could use piping like this: 
+% filename NumericalEDA050.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > airquality2 %>% 
@@ -443,6 +551,8 @@ Which has stored data at each step. Note in particular that a new variable was c
 5     5   65.55
 \end{Soutput}
 \end{Schunk}
+% filename NumericalEDA051.Rnw 
+
  
 Note that commands that might be nested on one line in the standard way of combining commands can be split out onto multiple lines to make it even easier to see what has been managed by each command. This leaves room for comments to be added at the end of lines to help anyone else read the code being written. 
  
@@ -450,10 +560,14 @@ Note that commands that might be nested on one line in the standard way of combi
 \section{Closing} 
  
 If you are carrying on working with \R{} you might wish to remove direct access to the data sets we used in this chapter by issuing the following commands 
+% filename DetachAirQuality.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > detach(airquality) 
 \end{Sinput}
 \end{Schunk}
+% filename CleanUp.Rnw 
+
 
 

@@ -1,3 +1,5 @@
+% filename TimeSeries021.Rnw 
+
  
 \section{Decomposition into seasonal and trend components} 
  

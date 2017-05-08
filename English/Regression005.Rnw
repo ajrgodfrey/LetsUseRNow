@@ -1,3 +1,5 @@
+% filename Regression005.Rnw 
+
 will make the data explicitly available to you in your current \R{} workspace. 
  
 We can look for relationships among the variables within this data set using the techniques described in Chapter~\ref{SimpleGraphs}. Note in particular the scatter plot matrix presented in Exhibit~\ref{AirQualityScatterPlotMatrix}. 

@@ -1,3 +1,5 @@
+% filename TimeSeries017.Rnw 
+
 Each test is looking at a different facet of what might indicate how a series might not be stationary. Check out the null hypothesis and alternative for each test on its help page. 
  
  

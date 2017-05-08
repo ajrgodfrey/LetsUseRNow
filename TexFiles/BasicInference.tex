@@ -1,10 +1,18 @@
+% filename GenericSettings.Rnw 
 
+
+
+% filename BasicInference001.Rnw 
 
 % use sleep data for paired test. 
 %\setcounter{chapter}{} 
 \chapter{LURN\ldots{} To Do Basic Inference} 
 \label{BasicInference} 
  
+% filename BasicInference002.Rnw 
+
+
+% filename BasicInference003.Rnw 
 
  
 This chapter is all about finding confidence intervals and performing hypothesis tests. While many textbooks separate these activities there is little point doing so when it comes time to using \R{} as both are done at the same time in the majority of cases. 
@@ -15,6 +23,8 @@ This chapter is all about finding confidence intervals and performing hypothesis
 The \Rpackage{datasets} package contains a set of annual precipitation values (in inches) for 70 U.S. cities. If we could assume this set to be a random sample (and we will even if it is not true), then we can find a confidence interval for the mean annual precipitation for U.S. cities on the whole. 
  
 You could use a manual approach to find the 95\% confidence interval for the population mean ($\mu$) yourself using the \Rcmd{mean}, \Rcmd{sd}, \Rcmd{length}, and \Rcmd{qt} commands as follows:  
+% filename BasicInference004.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > mean(precip) 
@@ -41,7 +51,11 @@ You could use a manual approach to find the 95\% confidence interval for the pop
 [1] 1.995
 \end{Soutput}
 \end{Schunk}
+% filename BasicInference005.Rnw 
+
 Note the use of the \Rcmd{qt} command here. It has two arguments; one for the level of confidence (95\% confidence relates to an upper tail area of 0.025) and the degrees of freedom (based on the sample size). The 95\% confidence interval is therefore found using 
+% filename BasicInference006.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > mean(precip) - qt(0.975, length(precip)-1) * sd(precip) / sqrt(length(precip)) 
@@ -56,7 +70,11 @@ Note the use of the \Rcmd{qt} command here. It has two arguments; one for the le
 [1] 38.15
 \end{Soutput}
 \end{Schunk}
+% filename BasicInference007.Rnw 
+
 or, with a nicer (quicker) command: 
+% filename BasicInference008.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > mean(precip) + c(-1,1) * qt(0.975, length(precip)-1) * sd(precip) / sqrt(length(precip)) 
@@ -65,7 +83,11 @@ or, with a nicer (quicker) command:
 [1] 31.62 38.15
 \end{Soutput}
 \end{Schunk}
+% filename BasicInference009.Rnw 
+
 These calculations include all the commands needed for a hypothesis test, except the need to find the specific $p$-value of a hypothesis test. Let's test the notion that the annual precipitation is actually greater than 30 inches per annum. This is a one-sided hypothesis test where the null hypothesis is that $\mu=30$. 
+% filename BasicInference010.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > TestStat= (mean(precip)-30)/(sd(precip) / sqrt(length(precip))) 
@@ -75,9 +97,13 @@ These calculations include all the commands needed for a hypothesis test, except
 [1] 0.001976
 \end{Soutput}
 \end{Schunk}
+% filename BasicInference011.Rnw 
+
  Note that the \Rcmd{pt} command required us to think about the degrees of freedom and that the upper tail area was important to us. We now see that the null hypothesis is rejected as the $p$-value is very small. 
  
 These calculations are fine, but there is a quicker way! The \Rcmd{t.test} command does it all for us --- both confidence interval and hypothesis test. 
+% filename BasicInference012.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > t.test(precip) 
@@ -96,7 +122,11 @@ mean of x
     34.89 
 \end{Soutput}
 \end{Schunk}
+% filename BasicInference013.Rnw 
+
 This gives a confidence interval with the default level of confidence (95\%), while 
+% filename BasicInference014.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > t.test(precip, mu=30, alternative="greater") 
@@ -115,6 +145,8 @@ mean of x
     34.89 
 \end{Soutput}
 \end{Schunk}
+% filename BasicInference015.Rnw 
+
 gives us the results for a one-sided hypothesis test and the corresponding confidence interval. 
  
 The \Rcmd{t.test} command is used for many $t$-tests, notably for comparing two population means, whether the data are paired or not. 
@@ -133,13 +165,19 @@ The \Robject{sleep} data that is in the \Rpackage{datasets} package has two reco
 The data set lists the twenty observations in a single column. This is a little unusual for paired data that will be analyzed using the \Rcmd{t.test} command. Caution must be expressed because the variable that shows how the observations are paired is not stated. If the observations are not ordered the same for each group, then the paring will be done incorrectly. If for any reason you cannot be sure of the ordering of the data then the use of the \Rcmd{aov} command as discussed in Section~\ref{RCBAnalysis} is strongly advised. 
  
 Using the \Rcmd{attach} command to be able to refer to the variables directly speeds up this process. 
+% filename BasicInference016.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > attach(sleep) 
 \end{Sinput}
 \end{Schunk}
+% filename BasicInference017.Rnw 
+
  
 We employ the \Rcmd{t.test} command with the \Rarg{paired} argument set to \Rarg{TRUE}. We can use either of two approaches. Either we separate the two groups apart using subscripting 
+% filename BasicInference018.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > t.test(extra[group=="1"], extra[group=="2"], paired=TRUE) 
@@ -158,8 +196,12 @@ mean of the differences
                   -1.58 
 \end{Soutput}
 \end{Schunk}
+% filename BasicInference019.Rnw 
+
  
 which is the way we would normally work when we have the two measurements stored using two distinct variables; or, use the formula approach: 
+% filename BasicInference020.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > t.test(extra~group, paired=TRUE) 
@@ -178,13 +220,19 @@ mean of the differences
                   -1.58 
 \end{Soutput}
 \end{Schunk}
+% filename BasicInference021.Rnw 
+
  
 You could of course alter the analysis by adding arguments to these commands to suit your needs. Experiment a little before detaching the \Robject{sleep} data using the \Rcmd{detach} command: 
+% filename BasicInference022.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > detach(sleep) 
 \end{Sinput}
 \end{Schunk}
+% filename BasicInference023.Rnw 
+
  
  
 \section{Confidence intervals and hypothesis tests for a proportion from one population} 
@@ -202,6 +250,8 @@ If we require a formal hypothesis test for the significance of the correlation c
 There are problems with cherry-picking one pair of variables from a set to perform a post hoc test like this. We should probably consider finding the significance of all correlations of interest and adjusting the way we think about the likelihood of getting the set of hypothesis tests we observe as a combination using a \stressind{Bonn Ferroni adjustment} in our analysis; that is beyond the scope of this exposition so for the moment just assume we are (and were before data was collected) interested in only the correlation that exists between a single pair of variables. We use the \Robject{Ozone} and \Robject{Wind} variables from the \Robject{airquality} data. 
  
 To test the notion that there is zero correlation between the two variables we would probably consider using Pearson's correlation coefficient which measures the strength of the linear relationship between a pair of variables, but use of Spearman's rank correlation coefficient will measure the strength of any monotonic relationship that might exist. I prefer to use both at the same time in many circumstances. 
+% filename BasicInference024.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > attach(airquality) 
@@ -241,6 +291,8 @@ sample estimates:
 > detach(airquality) 
 \end{Sinput}
 \end{Schunk}
+% filename BasicInference025.Rnw 
+
 So it seems the two variables are correlated and have a monotonic relationship that implies that as wind increases the amount of ozone decreases and that this relationship is fairly linear. We will look at this relationship again when we look at linear regression in Chapter~\ref{Regression}. 
  
  
@@ -260,5 +312,7 @@ norm test package here.
 We can use the \Rcmd{ks.test} function for the Kolmogorov-Smirnov test. It is suitable for comparing two samples, or a single sample against a theoretical distribution. 
 %% unfinished 
  
+% filename CleanUp.Rnw 
+
 
 

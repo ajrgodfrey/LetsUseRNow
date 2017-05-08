@@ -1,3 +1,5 @@
+% filename TimeSeries019.Rnw 
+
 \SVGLink{TimeSeriesNileACF-1} 
 \end{center} 
 \end{exhibit} 

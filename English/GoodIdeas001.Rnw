@@ -1,3 +1,5 @@
+% filename GoodIdeas001.Rnw 
+
 %\setcounter{chapter}{} 
 \chapter{LURN\ldots{} To Become More Efficient in your Workplace} 
 \label{GoodIdeas} 

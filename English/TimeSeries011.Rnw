@@ -1,3 +1,5 @@
+% filename TimeSeries011.Rnw 
+
 \SVGLink{TSPlotsCompared-1} 
 \SVGLink{TSPlotsCompared-2} 
 \end{center} 

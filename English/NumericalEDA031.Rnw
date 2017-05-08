@@ -1,3 +1,5 @@
+% filename NumericalEDA031.Rnw 
+
  
 \section{Correlation structure within a data set} 
 \label{CorrelationStructure} 

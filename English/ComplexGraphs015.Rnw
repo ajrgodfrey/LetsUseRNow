@@ -1,3 +1,5 @@
+% filename ComplexGraphs015.Rnw 
+
 if you are really keen to know what they all are. If this list is still not sufficient to meet your needs, you can design your own colour using a combination of red, green, and blue components. This is explained under the help for the \Rcmd{par} command. 
  
 \section{Adding points to an existing graph} 

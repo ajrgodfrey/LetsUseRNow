@@ -1,3 +1,5 @@
+% filename LinearAlgebra031.Rnw 
+
  
 \section{Determinants and traces} 
  

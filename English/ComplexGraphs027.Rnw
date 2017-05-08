@@ -1,3 +1,5 @@
+% filename ComplexGraphs027.Rnw 
+
 To create the two types of bar chart, we need to create a matrix for the counts to be used in the graphs. In this instance, this is done using the \Rcmd{tapply} command The actual plotting is done using the \Rcmd{barplot} command which recognizes it is working on this matrix and acts accordingly, including the ability to generate a legend for the graphs. 
 \begin{exhibit} 
 \begin{center} 

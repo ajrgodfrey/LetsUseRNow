@@ -1,3 +1,5 @@
+% filename OperRes001.rnw 
+
 %\setcounter{chapter}{}
 \chapter{LURN\ldots{} To Solve Operations Research Problems}
 \label{OperRes}

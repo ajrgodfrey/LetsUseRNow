@@ -1,3 +1,5 @@
+% filename Regression037.Rnw 
+
  
 Multiple regression models can be checked using the approaches described in Section~\ref{RegValid} above, but it may also prove useful to plot residuals from the current model against each current and potential predictor variable in the data set. 
  

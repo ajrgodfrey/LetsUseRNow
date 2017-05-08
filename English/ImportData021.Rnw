@@ -1,3 +1,5 @@
+% filename ImportData021.Rnw 
+
 (The \Rpackage{MASS} package is already installed by default.)  
  
 Often we will be using a particular data set because it is good for demonstrating functions within a particular package. If we are loading the package using the \Rcmd{library} command, to get access to the functions, we will have also made the data available. This is why the data from the \Rpackage{datasets} is ready for use; this package is loaded by default whenever \R{} is started. 

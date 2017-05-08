@@ -10,11 +10,11 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,2,next,mathjax,html --> 
 <meta name="src" content="LURNBlind.tex" /> 
-<meta name="date" content="2017-05-08 12:02:00" /> 
+<meta name="date" content="2017-05-08 13:17:00" /> 
 <link rel="stylesheet" type="text/css" href="LURNBlind.css" /> 
 </head><body 
 >
-   <!--l. 7--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 11--><div class="crosslinks"><p class="noindent">[<a 
 href="../LURN/LURNch18.html">Version for sighted users</a>] [<a 
 
 href="LURNBlindch19.html" >next</a>] [<a 
@@ -24,13 +24,13 @@ href="#tailLURNBlindch18.html">tail</a>] [<a
 href="LURNBlind.html#LURNBlindch18.html" >up</a>] </p></div>
    <h2 class="chapterHead"><span class="titlemark">Chapter&#x00A0;18</span><br /><a 
  id="x20-12800018"></a>LURN&#x2026; To Use R for Basic Calculus Tasks</h2>
-<!--l. 12--><p class="noindent" >This chapter explains how various tasks in introductory calculus can be
+<!--l. 20--><p class="noindent" >This chapter explains how various tasks in introductory calculus can be
 undertaken using <span 
 class="aess-12">R</span>.
 </p>
    <h3 class="sectionHead"><span class="titlemark">18.1   </span> <a 
  id="x20-12900018.1"></a>Creating mathematical expressions</h3>
-<!--l. 17--><p class="noindent" >Before we embark on doing those fun things we want to do, we need to learn how
+<!--l. 25--><p class="noindent" >Before we embark on doing those fun things we want to do, we need to learn how
 to store a mathematical expression as an object in <span 
 class="aess-12">R</span>. There are many keywords
 that appear in these expressions which are translated to symbols when seen
@@ -38,11 +38,11 @@ printed in a graph window but remain in ordinary text in <span
 class="aess-12">R </span>commands.
 Such symbols include Greek letters, hats and bars, all of which have a
 meaning.
-</p><!--l. 19--><p class="noindent" >
+</p><!--l. 27--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">18.2   </span> <a 
  id="x20-13000018.2"></a>Plotting functions</h3>
-<!--l. 21--><p class="noindent" >This can be a lot of fun if you set things up right to start with. We create a
+<!--l. 29--><p class="noindent" >This can be a lot of fun if you set things up right to start with. We create a
 <a 
  id="dx20-130001"></a><span 
 class="aeti-12">function </span>to represent the mathematical expression using the <a 
@@ -54,6 +54,7 @@ class="aett-12">plot.function() </span>or <a
  id="dx20-130004"></a><span 
 class="aett-12">curve()</span>
 commands.
+</p><!--l. 33--><p class="indent" >
 </p>
    <div class="fancyvrb" id="fancyvrb378">  <a 
  id="x20-130006r1"></a><span 
@@ -75,27 +76,27 @@ class="aett-12">&#x00A0;2001)</span></div>
                                                                           
 
                                                                           
-<!--l. 28--><p class="indent" >   <img 
+<!--l. 38--><p class="indent" >   <img 
 src="LURNBlind42x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt"  /><!--tex4ht:graphics  
 name="LURNBlind42x.png" src="figures/CalculusSineCurve-1.eps"  
 -->
-<a 
+</p><!--l. 41--><p class="indent" >   <a 
 href="../SVGs/CalculusSineCurve-1.html" >link to accessible SVG file: (requires correct browser)</a>
-</p><!--l. 31--><p class="indent" >   You can use any valid mathematical expression in the <a 
+</p><!--l. 43--><p class="indent" >   You can use any valid mathematical expression in the <a 
  id="dx20-130009"></a><span 
 class="aeti-12">function </span>you create. You
-might find it useful to test your idea= values for your inputs that are easy to
-work with, such as zero and one. You could then use integers, including
-negative integers, but it could be easier to test your functions using values
-that lead to identifiable results such as multiples of <span 
-class="cmmi-12">&#x03C0; </span>when working with
-trignometric functions. For example: «EvalMySine» MySine(c((0:4)*pi/2))
-@
-</p><!--l. 40--><p class="noindent" >
+might find it useful to test your idea= values for your inputs that are easy to work
+with, such as zero and one. You could then use integers, including negative
+integers, but it could be easier to test your functions using values that lead to
+identifiable results such as multiples of <span 
+class="cmmi-12">&#x03C0; </span>when working with trignometric
+functions. For example:
+</p><!--l. 46--><p class="indent" >   «EvalMySine» MySine(c((0:4)*pi/2)) @
+</p><!--l. 56--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">18.3   </span> <a 
  id="x20-13100018.3"></a>Differentiation</h3>
-<!--l. 42--><p class="noindent" >The internal code used for differentiation in <span 
+<!--l. 58--><p class="noindent" >The internal code used for differentiation in <span 
 class="aess-12">R </span>is not as comprehensive as other
 mathematical software. It can handle arithmetic operators <span 
 class="cmr-12">+</span>, <span 
@@ -140,10 +141,10 @@ class="aett-12">pnorm() </span>and <a
  id="dx20-131016"></a><span 
 class="aett-12">dnorm() </span>are restricted to the standard normal
 distribution.
-</p><!--l. 46--><p class="indent" >   The easiest way to find the derivative of an expression is to store the
                                                                           
 
                                                                           
+</p><!--l. 62--><p class="indent" >   The easiest way to find the derivative of an expression is to store the
 mathematical function using the <a 
  id="dx20-131017"></a><span 
 class="aett-12">expression() </span>command, and then use the <a 
@@ -152,6 +153,7 @@ class="aett-12">D()</span>
 or <a 
  id="dx20-131019"></a><span 
 class="aett-12">deriv() </span>commands.
+</p><!--l. 66--><p class="indent" >
 </p>
    <div class="fancyvrb" id="fancyvrb379">  <a 
  id="x20-131021r1"></a><span 
@@ -162,7 +164,7 @@ class="aett-12">&#x00A0;y=expression(exp(2*x))</span><br class="fancyvrb" /><a
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;D(y,"x")</span></div>
-<!--l. 52--><p class="noindent" >
+<!--l. 70--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb380"> <a 
  id="x20-131025r1"></a><span 
@@ -172,14 +174,15 @@ class="aett-12">&#x00A0;*</span><span
 class="aett-12">&#x00A0;x)</span><span 
 class="aett-12">&#x00A0;*</span><span 
 class="aett-12">&#x00A0;2</span></div>
-<!--l. 56--><p class="noindent" >The second argument to the <a 
+<!--l. 76--><p class="indent" >   The second argument to the <a 
  id="dx20-131026"></a><span 
-class="aett-12">D() </span>function needs quote marks around it.
+class="aett-12">D() </span>function needs quote marks around
+it.
                                                                           
 
                                                                           
 </p>
-   <!--l. 6--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 10--><div class="crosslinks"><p class="noindent">[<a 
 href="../LURN/LURNch18.html">Version for sighted users</a>] [<a 
 
 href="LURNBlindch19.html" >next</a>] [<a 
@@ -187,6 +190,6 @@ href="LURNBlindch17.html" >prev</a>] [<a
 href="LURNBlindch17.html#tailLURNBlindch17.html" >prev-tail</a>] [<a 
 href="LURNBlindch18.html" >front</a>] [<a 
 href="LURNBlind.html#LURNBlindch18.html" >up</a>] </p></div>
-<!--l. 6--><p class="indent" >   <a 
+<!--l. 10--><p class="indent" >   <a 
  id="tailLURNBlindch18.html"></a>  </p> 
 </body></html> 

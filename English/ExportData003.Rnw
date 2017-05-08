@@ -1,3 +1,5 @@
+% filename ExportData003.Rnw 
+
  
 This chapter assumes you've got some data to export, and I mean data; not results from analyses which is discussed in Chapter~\ref{StoreResults}. You may also wish to use this information once you know how to tabulate various numerical summaries, discussed in Chapter~\ref{NumericalEDA}. 
  

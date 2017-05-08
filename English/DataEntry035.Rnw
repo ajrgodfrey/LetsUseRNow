@@ -1,3 +1,5 @@
+% filename DataEntry035.Rnw 
+
 Whatever you do you should observe the way your series is coming out. I would have expected the \Rarg{each} to be used in the last example not \Rarg{times} for example --- always check. 
  
 \section{An incomplete pattern} 

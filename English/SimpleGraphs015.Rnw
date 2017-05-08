@@ -1,3 +1,5 @@
+% filename SimpleGraphs015.Rnw 
+
 \end{center} 
 \end{exhibit} 
 The comparative boxplot is created using a formula to describe the relationship between the two variables that are referred to in our graph. The use of the tilde symbol between \Robject{Wind} and \Robject{Month} could be read as something like ``average wind speed depends on the month" --- well a theory that might be illustrated in our graph anyway. Certainly it is the potential for this relationship to exist that may be exposed through use of the comparative boxplot. 

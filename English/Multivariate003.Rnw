@@ -1,3 +1,5 @@
+% filename Multivariate003.Rnw 
+
  
 This chapter explains the commands needed to conduct a number of multivariate analyses. Little of the theory behind the various techniques is given here and the reader is assumed to know that the analysis they wish to conduct is actually appropriate for their objectives. 
  

@@ -1,3 +1,5 @@
+% filename ANOVA001.Rnw 
+
 % chickwts data for one way 
 % cabbages from MASS package for two way 
 %\setcounter{chapter}{} 

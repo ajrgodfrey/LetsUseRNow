@@ -7,11 +7,11 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
 <!-- html,2,next --> 
 <meta name="src" content="LURN.tex"> 
-<meta name="date" content="2017-05-08 12:02:00"> 
+<meta name="date" content="2017-05-08 13:16:00"> 
 <link rel="stylesheet" type="text/css" href="LURN.css"> 
 </head><body 
 >
-   <!--l. 3--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 7--><div class="crosslinks"><p class="noindent">[<a 
 href="../LURNblind/LURNBlindch6.html">Version for blind users</a>] [<a 
 
 href="LURNch7.html" >next</a>] [<a 
@@ -21,7 +21,7 @@ href="#tailLURNch6.html">tail</a>] [<a
 href="LURN.html#LURNch6.html" >up</a>] </p></div>
    <h2 class="chapterHead"><span class="titlemark">Chapter&#x00A0;6</span><br /><a 
  id="x8-410006"></a>LURN&#x2026; To Export a Dataset</h2>
-<!--l. 7--><p class="noindent" >This chapter assumes you&#8217;ve got some data to export, and I mean data; not
+<!--l. 13--><p class="noindent" >This chapter assumes you&#8217;ve got some data to export, and I mean data; not
 results from analyses which is discussed in Chapter&#x00A0;<a 
 href="LURNch9.html#x11-660009">9<!--tex4ht:ref: StoreResults --></a>. You may also wish to use
 this information once you know how to tabulate various numerical summaries,
@@ -29,13 +29,13 @@ discussed in Chapter&#x00A0;<a
 href="LURNch8.html#x10-590008">8<!--tex4ht:ref: NumericalEDA --></a>.
    <h3 class="sectionHead"><span class="titlemark">6.1   </span> <a 
  id="x8-420006.1"></a>Creating external files</h3>
-<!--l. 11--><p class="noindent" >This section is just the inverse action of importing data from an external file as
+<!--l. 17--><p class="noindent" >This section is just the inverse action of importing data from an external file as
 discussed in Chapter&#x00A0;<a 
 href="LURNch4.html#x6-280004">4<!--tex4ht:ref: ImportData --></a>. All the <span 
 class="aett-12">read </span>type commands have corresponding <span 
 class="aett-12">write</span>
 commands.
-<!--l. 13--><p class="indent" >   If you read Chapter&#x00A0;<a 
+<!--l. 19--><p class="indent" >   If you read Chapter&#x00A0;<a 
 href="LURNch4.html#x6-280004">4<!--tex4ht:ref: ImportData --></a> you&#8217;ll know that my preference is to use files that are
 easily transferred and easily checked for their accuracy using other software. In
 particular, I prefer to create comma separated value (csv) files using the
@@ -47,17 +47,19 @@ class="aeti-12">data.frame </span>called <span
 class="aett-12">Chickens </span>in my current
 workspace that I wanted to export for sharing with another user, I would issue the
 following command.
+<!--l. 23--><p class="indent" >
    <div class="fancyvrb" id="fancyvrb130">  <a 
  id="x8-42004r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;write.csv(Chickens,</span><span 
 class="aett-12">&#x00A0;file="chickens.csv")</span></div>
-<!--l. 19--><p class="noindent" >If <span 
+<!--l. 29--><p class="indent" >   If <span 
 class="aess-12">R </span>had created rownames for the <a 
  id="dx8-42005"></a><span 
-class="aeti-12">data.frame</span>, I might not want to include them. A
-simple additional argument is all that is required.
+class="aeti-12">data.frame</span>, I might not want to include
+them. A simple additional argument is all that is required.
+<!--l. 33--><p class="indent" >
    <div class="fancyvrb" id="fancyvrb131">  <a 
  id="x8-42007r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
@@ -65,16 +67,16 @@ class="aett-12">&#x00A0;&#x003E;</span><span
 class="aett-12">&#x00A0;write.csv(Chickens,</span><span 
 class="aett-12">&#x00A0;file="chickens.csv",</span><span 
 class="aett-12">&#x00A0;row.names=FALSE)</span></div>
-<!--l. 26--><p class="indent" >   If another file type is required then the help page for <a 
+<!--l. 40--><p class="indent" >   If another file type is required then the help page for <a 
  id="dx8-42008"></a><span 
 class="aett-12">write.csv() </span>may be
 useful. This page also gives the help on the <a 
  id="dx8-42009"></a><span 
 class="aett-12">write.table() </span>command.
-<!--l. 28--><p class="noindent" >
+<!--l. 42--><p class="noindent" >
    <h3 class="sectionHead"><span class="titlemark">6.2   </span> <a 
  id="x8-430006.2"></a>Exporting data for use in alternative software</h3>
-<!--l. 30--><p class="noindent" >The better statistical software options allow users to import data from a range of
+<!--l. 44--><p class="noindent" >The better statistical software options allow users to import data from a range of
 sources and file types. If for some (very strange) reason you need to create files in
 a specific format for importing into another statistics package then you will need
 to investigate the <a 
@@ -83,7 +85,7 @@ class="aeti-12">foreign </span>package.
                                                                           
 
                                                                           
-   <!--l. 4--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 8--><div class="crosslinks"><p class="noindent">[<a 
 href="../LURNblind/LURNBlindch6.html">Version for blind users</a>] [<a 
 
 href="LURNch7.html" >next</a>] [<a 
@@ -91,6 +93,6 @@ href="LURNch5.html" >prev</a>] [<a
 href="LURNch5.html#tailLURNch5.html" >prev-tail</a>] [<a 
 href="LURNch6.html" >front</a>] [<a 
 href="LURN.html#LURNch6.html" >up</a>] </p></div>
-<!--l. 4--><p class="indent" >   <a 
+<!--l. 8--><p class="indent" >   <a 
  id="tailLURNch6.html"></a>   
 </body></html> 

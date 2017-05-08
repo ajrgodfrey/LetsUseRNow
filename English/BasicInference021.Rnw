@@ -1,2 +1,4 @@
+% filename BasicInference021.Rnw 
+
  
 You could of course alter the analysis by adding arguments to these commands to suit your needs. Experiment a little before detaching the \Robject{sleep} data using the \Rcmd{detach} command: 

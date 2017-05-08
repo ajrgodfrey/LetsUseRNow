@@ -1,3 +1,5 @@
+% filename DataEntry023.Rnw 
+
 In this situation the exclamation mark should be read as ``not" and therefore picks up the elements where the logical variable is set to \code{FALSE}. 
  
 \section{A note on subscripting} 

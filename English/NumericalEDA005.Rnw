@@ -1,2 +1,4 @@
+% filename NumericalEDA005.Rnw 
+
  
 Applying the \Rcmd{summary} command to the \Robject{air quality} data gives: 

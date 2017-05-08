@@ -1,3 +1,5 @@
+% filename Regression003.Rnw 
+
  
 This chapter presents the most basic regression models. To really get the most out of \R{} and regression techniques (such as those taught in second or later statistics courses) you will need to look for guidance from a suitable textbook, many of which incorporate use of \R{} as the preferred software tool. 
  

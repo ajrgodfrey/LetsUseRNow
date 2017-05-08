@@ -1,3 +1,5 @@
+% filename Manipulate003.Rnw 
+
  
 This chapter explains how to rearrange your data to meet your needs. Basic sorting, data extraction and re-combination are discussed. 
  

@@ -1,3 +1,5 @@
+% filename Regression019.Rnw 
+
 The last command in this block has printed out the \Sexpr{length(Ozone.lev1[Ozone.lev1>2*mean(Ozone.lev1)])} observations that have excess leverage on this model. We should probably see if these are days that had extremely high wind. This is not done as this model has already been shown to be poor at explaining the amount of \Robject{Ozone} in the atmosphere. 
  
  

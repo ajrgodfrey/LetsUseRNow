@@ -1,3 +1,5 @@
+% filename Manipulate013.Rnw 
+
  
 \section{Extracting data using information on one variable} 
  

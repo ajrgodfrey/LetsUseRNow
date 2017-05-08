@@ -1,3 +1,5 @@
+% filename Maps001.Rnw 
+
 % check visuals of maps 
 %\setcounter{chapter}{} 
 \chapter{LURN\ldots{} To create maps} 

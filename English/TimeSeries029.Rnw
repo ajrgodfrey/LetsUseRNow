@@ -1,3 +1,5 @@
+% filename TimeSeries029.Rnw 
+
 Note that we must explicitly set \Rarg{beta} and \Rarg{gamma} to \Rarg{FALSE} to get the simple exponential smoother. 
  
  

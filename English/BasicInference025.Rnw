@@ -1,3 +1,5 @@
+% filename BasicInference025.Rnw 
+
 So it seems the two variables are correlated and have a monotonic relationship that implies that as wind increases the amount of ozone decreases and that this relationship is fairly linear. We will look at this relationship again when we look at linear regression in Chapter~\ref{Regression}. 
  
  

@@ -1,3 +1,5 @@
+% filename NumericalEDA015.Rnw 
+
 There are some minor differences between the methods used by the \Rcmd{summary} and \Rcmd{fivenum} commands for the first and third quartiles. See the relevant help page using \code{?fivenum} for an explanation. 
  
 Knowing how these commands work on simple sets of numbers is very useful for the more elegant presentations in the following sections. 

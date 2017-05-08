@@ -1,1 +1,3 @@
+% filename Additional005.Rnw 
+
 you will be given a list of the available CRAN mirrors and a different prompt. Type in the number linked to the CRAN mirror you prefer and press the Enter key. If you want to choose the first item on the list (which is a cloud-based server anyway) then you could avoid reviewing the list using:

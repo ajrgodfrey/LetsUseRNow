@@ -1,3 +1,5 @@
+% filename SimpleGraphs033.Rnw 
+
 Given this variable is a \Rclass{factor} with four levels it is well suited to presentation in a bar chart, as seen in Exhibit~\ref{StateRegionBarChart}. 
  
 \begin{exhibit} 

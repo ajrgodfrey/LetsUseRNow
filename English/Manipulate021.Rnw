@@ -1,3 +1,5 @@
+% filename Manipulate021.Rnw 
+
  
  
 \section{Use of dplyr for data manipulation} 

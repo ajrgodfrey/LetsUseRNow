@@ -1,3 +1,5 @@
+% filename NumericalEDA025.Rnw 
+
 gives us the means of the observed data. 
  
 \section{Getting things printed how we want them} 

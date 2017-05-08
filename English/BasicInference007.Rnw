@@ -1,1 +1,3 @@
+% filename BasicInference007.Rnw 
+
 or, with a nicer (quicker) command: 

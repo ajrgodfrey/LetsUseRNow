@@ -1,3 +1,5 @@
+% filename NumericalEDA017.Rnw 
+
 These commands do the job very nicely; choose the one that delivers the output in the way you want it. We could ask for other quantities such as the minimum, maximum, or standard deviation within each month by referring to the relevant \R{} command in the third argument. Note that the \Rcmd{aggregate} command allows specification of the \Rclass{data.frame} in which to find the variables in the \Rclass{formula}; this approach is commonplace when we fit models for our data and avoids the need to make use of the \Rcmd{attach} and \Rcmd{detach} commands.  
  
 If we had multiple response variables of interest, we would need to repeat the command for each one. If we had more than one way of asking for the grouping though, the \Rcmd{tapply} command is very useful indeed as it presents a two-way pivot table. The air quality data doesn't have a second factor we can use for this illustration, so I've created a second variable which asks if the day of the month is in the second half of the month. In this case, the \Rcmd{tapply} and \Rcmd{aggregate} commands generate quite different outcomes.

@@ -1,3 +1,5 @@
+% filename LinearAlgebra017.Rnw 
+
 which retains the size of the vector or matrix. Also note that pre-multiplying by a scalar is equivalent to post-multiplying by a scalar, as should have been expected. This is of course different to matrix multiplication. 
  
 Matrix operations use different symbols from simple arithmetic operators to distinguish the different results that might be desired. For example, 

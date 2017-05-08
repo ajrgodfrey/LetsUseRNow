@@ -1,3 +1,5 @@
+% filename Calculus003.Rnw 
+
  
 This chapter explains how various tasks in introductory calculus can be undertaken using \R{}. 
  

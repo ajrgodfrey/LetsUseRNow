@@ -1,3 +1,5 @@
+% filename Manipulate029.Rnw 
+
 extracts the rows of the \Robject{airquality} data that meet the combinations of conditions specified.  
 Use of \Rcmd{filter} means we don't need the \Rclass{data.frame} attached, or to gain access to the variables in it using the dollar notation; we also don't need the square brackets for common subscripting tasks. We could have stored the outcome in a new \Rclass{data.frame} if we wished. 
  

@@ -1,1 +1,3 @@
+% filename KeepUseful011.Rnw 
+
 \item That should have built and installed the package for you. Gain access to it using: 

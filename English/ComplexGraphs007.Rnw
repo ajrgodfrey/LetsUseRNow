@@ -1,3 +1,5 @@
+% filename ComplexGraphs007.Rnw 
+
  
 Having established the success of the code for the arrangement structure, we just open the graph window using the \Rcmd{layout} command, and add plots in the order our labels specify. The full set of instructions is given in Exhibit~\ref{LayThemOut}. Note that the graphs are chosen for the illustration of the \Rcmd{layout} command, not for the purposes of showing anything of interest in any of the graphs created. The \Robject{quakes} data set distributed with the base installation of \R{} is used in this illustration. 
 \begin{exhibit} 

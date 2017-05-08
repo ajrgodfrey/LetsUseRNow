@@ -1,3 +1,5 @@
+% filename ImportData017.Rnw 
+
  
 Relative paths are therefore quite useful because they avoid having to type out long paths. The full specification of apath might also become a problem when files for a project are moved from one storage device to another. For example, you might want to take your work to a friend, tutor, or colleague on a  memory stick or other portable storage medium. Relative path referencing makes your work very transferable and transportable. 
  

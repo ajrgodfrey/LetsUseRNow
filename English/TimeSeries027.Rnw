@@ -1,3 +1,5 @@
+% filename TimeSeries027.Rnw 
+
  
 \section{Exponential smoothing} 
  

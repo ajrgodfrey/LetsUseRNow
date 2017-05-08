@@ -1,1 +1,3 @@
+% filename LinearAlgebra035.Rnw 
+
 If we only wanted the eigenvalues, we could add the argument \Rarg{only.values=TRUE}; if the eigenvectors were of interest, then we would need to extract the second element of the above result: 

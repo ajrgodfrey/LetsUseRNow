@@ -1,2 +1,4 @@
+% filename Manipulate017.Rnw 
+
  
 If we want to know how many observations have an exact value, we use \Roperator{==} not a single equals sign because it has a different meaning in \R{}. The double equals sign is the one used for comparisons. For example, the number of days when the temperature was recorded as $69\deg$F can be found using: 

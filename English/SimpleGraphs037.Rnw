@@ -1,3 +1,5 @@
+% filename SimpleGraphs037.Rnw 
+
 These values are then plotted in Exhibit~\ref{StateRegionBarChart2}. 
 \begin{exhibit} 
 \begin{center} 

@@ -1,3 +1,5 @@
+% filename Multivariate005.Rnw 
+
  
 \section{Multidimensional scaling} 
  

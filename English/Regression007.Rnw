@@ -1,1 +1,3 @@
+% filename Regression007.Rnw 
+
 There are very good reasons for creating the new objects in this example. Aside from the use of the \Rcmd{summary} method and \Rcmd{anova} command to extract more useful information about the model, we will refer back to the object using other commands in subsequent sections of this chapter. It also means we can investigate the model object, and extract some quantities on their own. For example, it's common to want to extract the $R^2$ for a model. We can't do this from the model object itself, but we can from the \Rcmd{summary} of the model. 

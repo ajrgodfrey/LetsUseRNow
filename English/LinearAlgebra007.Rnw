@@ -1,3 +1,5 @@
+% filename LinearAlgebra007.Rnw 
+
 Notice that I've used a capital letter for the matrix version of the same set of numbers here which is possible because \R{} is case sensitive. The \Rarg{ncol} argument can be replaced by using the \Rarg{nrow} argument if a row vector is required. 
  
 \section{Creating some simple matrix structures} 

@@ -1,3 +1,5 @@
+% filename KeepUseful003.Rnw 
+
  
 This chapter is my dumping ground for all the little hints I have used once and put somewhere safe, only to find that safe means hard to find later. 
  

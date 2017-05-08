@@ -1,3 +1,5 @@
+% filename NumericalEDA021.Rnw 
+
  
 This printout isn't particularly attractive, but it is quick and informative. If presentation was more important than getting results efficiently, we would look to improve the appearance --- this means more difficult coding though. 
  

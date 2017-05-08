@@ -1,3 +1,5 @@
+% filename SimpleGraphs027.Rnw 
+
 The tilde symbol is often read as ``\ldots is distributed as\ldots" but we might simplify this to be read as ``follows". This makes some sense as we generally create a scatter plot to see if one variable follows the other; in this case we are seeing if temperature depends on wind speed in some way. 
  
 \begin{exhibit} 

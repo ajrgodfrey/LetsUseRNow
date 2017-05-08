@@ -1,3 +1,5 @@
+% filename BasicInference001.Rnw 
+
 % use sleep data for paired test. 
 %\setcounter{chapter}{} 
 \chapter{LURN\ldots{} To Do Basic Inference} 

@@ -1,3 +1,5 @@
+% filename Manipulate015.Rnw 
+
 An explanation of this command is given in Section~\ref{DataFromPackages}. This data set has its own help page that can be viewed by typing \code{?airquality} at the \R{} prompt. 
  
  

@@ -1,1 +1,3 @@
+% filename KeepUseful009.Rnw 
+
 \item Build and install the NewPackage  package: 

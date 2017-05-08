@@ -1,3 +1,5 @@
+% filename VI007.Rnw 
+
 will save all the issued commands into a text file called \file{WhatIDidToday.txt} in the working directory.  
  
 If I just want to have everything I do during a session recorded for posterity, I want all contents of the console window to be saved. A plain text file is sufficient but it is possible to use add-on packages to create other file formats. 

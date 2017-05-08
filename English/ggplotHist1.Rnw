@@ -1,3 +1,5 @@
+% filename ggplotHist1.Rnw 
+
 \end{center} 
 \end{exhibit} 
 

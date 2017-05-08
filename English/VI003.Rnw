@@ -1,3 +1,5 @@
+% filename VI003.Rnw 
+
  
 This chapter explains how the \Rpackage{BrailleR} add-on package can be used by blind people to get many tasks done quickly and effectively. In general, the package does three things:\begin{enumerate} 
 \item creates a copy of hte R console/terminal in a text file including all standard output. 

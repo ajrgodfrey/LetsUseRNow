@@ -1,3 +1,5 @@
+% filename ComplexGraphs023.Rnw 
+
 \SVGLink{ComplexGraphsAddPolyCurve-1} 
  
 \section{Adding text to an existing graph} 

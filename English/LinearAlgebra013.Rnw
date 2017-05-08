@@ -1,3 +1,5 @@
+% filename LinearAlgebra013.Rnw 
+
 Notice that the Hilbert matrix is created by adding two matrices together and then a constant is subtracted from all elements of the result. 
  
 \section{Matrix and vector calculations} 

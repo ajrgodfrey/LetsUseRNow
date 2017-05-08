@@ -1,1 +1,3 @@
+% filename NumericalEDA049.Rnw 
+
 Which has stored data at each step. Note in particular that a new variable was created by name in the \Rcmd{summarise} command; this helps in the subsequent \Rcmd{arrange} step. We might want to store the results at each step, but if we didn't want to, then we could use piping like this: 

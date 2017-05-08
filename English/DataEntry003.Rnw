@@ -1,3 +1,5 @@
+% filename DataEntry003.Rnw 
+
  
 The purpose of this chapter is to show the novice \R{} user how \R{} stores data by introducing the shortcuts that make data entry a fairly simple task. 
  

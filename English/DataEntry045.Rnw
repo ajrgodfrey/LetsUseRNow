@@ -1,3 +1,5 @@
+% filename DataEntry045.Rnw 
+
 As it happens, we didn't need to actually explicitly state the month number when the variable was first created, but it is good practice to keep things logical! 
  
 \section{Larger data objects} 

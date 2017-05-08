@@ -1,2 +1,4 @@
+% filename BasicInference017.Rnw 
+
  
 We employ the \Rcmd{t.test} command with the \Rarg{paired} argument set to \Rarg{TRUE}. We can use either of two approaches. Either we separate the two groups apart using subscripting 

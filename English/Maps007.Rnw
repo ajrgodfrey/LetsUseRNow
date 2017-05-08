@@ -1,3 +1,5 @@
+% filename Maps007.Rnw 
+
 \SVGLink{MapsWholeNZ-1} 
 \end{center} 
 \end{exhibit} 

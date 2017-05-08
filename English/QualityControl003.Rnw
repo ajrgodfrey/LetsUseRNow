@@ -1,3 +1,5 @@
+% filename QualityControl003.Rnw 
+
  
 This chapter takes a basic look at the methods of quality control. This material is not always taught in first year statistics courses and is often one of those topics that some people think can be ignored. I guess you can tell what I think given the inclusion of this topic in this document. Like many other topics, you'll need to consult a suitable textbook for a thorough examination of the topic. Some would call quality control or quality improvement a discipline not just a topic. 
  

@@ -1,1 +1,3 @@
+% filename Regression023.Rnw 
+
 Rather than continuously investigate the summaries of the various models, we can employ the \Rcmd{anova} command to compare the models.  

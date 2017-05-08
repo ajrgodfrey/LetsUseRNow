@@ -1,3 +1,5 @@
+% filename NumericalEDA009.Rnw 
+
 Note that I've told \R{} which columns of the \Robject{air quality} \Rclass{data.frame} to work with using the appropriate subscripting code. I've also needed to tell \R{} to ignore the missing data for the two variables \Robject{Ozone} and \Robject{Solar.R} using the \Rarg{na.rm=TRUE}. The output for the \Rcmd{summary} command did tell us how many values for each variable were missing. Recall that missing values are represented by a ``\code{NA}". 
  
 The \Rcmd{min} and \Rcmd{max} commands all work on the data by assuming we want the statistic for the whole list of numbers over all columns. For example 

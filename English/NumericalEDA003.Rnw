@@ -1,3 +1,5 @@
+% filename NumericalEDA003.Rnw 
+
  
 In this chapter we see how to obtain and present simple numerical summaries suitable for describing data. The same data set used in Chapter~\ref{SimpleGraphs} on creating graphs is used again. 
  

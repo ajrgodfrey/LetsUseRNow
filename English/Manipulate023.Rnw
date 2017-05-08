@@ -1,1 +1,3 @@
+% filename Manipulate023.Rnw 
+
 to gain access to the commands just listed. Note that the \Rcmd{head} command is used in many of the following examples to ensure that only a handful of rows are printed out instead of the full result. An alternative is to create a new data structure using the \Rcmd{tbl\_df} command. Let's make a second copy of the air quality data that is the same as the original except for being made ready for use with the \Rpkg{dplyr} functions. 

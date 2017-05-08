@@ -1,3 +1,5 @@
+% filename StoreResults005.Rnw 
+
  
 It should be fairly obvious what each command does so the only one that really needs further explanation is the \Rcmd{savePlot} command. The first argument is the intended filename for our graph. The filename may need some further explanation. It is in several parts --- \code{$.\backslash\backslash$figures$\backslash\backslash$HistRandValsStandNorm.eps} has a path, a filename and the extension. 
  

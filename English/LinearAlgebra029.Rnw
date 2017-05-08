@@ -1,3 +1,5 @@
+% filename LinearAlgebra029.Rnw 
+
 Like many other applications, \R{} does not recognize the number zero very well. This is due to the way decimal numbers are stored. 
  
  

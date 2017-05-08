@@ -1,3 +1,5 @@
+% filename BasicInference015.Rnw 
+
 gives us the results for a one-sided hypothesis test and the corresponding confidence interval. 
  
 The \Rcmd{t.test} command is used for many $t$-tests, notably for comparing two population means, whether the data are paired or not. 

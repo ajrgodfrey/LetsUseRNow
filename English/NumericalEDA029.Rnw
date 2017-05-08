@@ -1,1 +1,3 @@
+% filename NumericalEDA029.Rnw 
+
 and we can combine both commands to get the months ordered from windiest to least windy using: 

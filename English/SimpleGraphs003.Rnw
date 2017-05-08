@@ -1,3 +1,5 @@
+% filename SimpleGraphs003.Rnw 
+
 
 This chapter illustrates the construction of some basic exploratory data analysis graphs. More complex graphs are considered in Chapter~\ref{ComplexGraphs}, although at times we will see graphs presented in conjunction with particular statistical analysis techniques in other chapters. In this chapter, we concentrate on data taking continuous values initially, but a short section on graphs for discrete valued variables is also included. 
 

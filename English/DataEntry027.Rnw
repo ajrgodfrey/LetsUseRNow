@@ -1,3 +1,5 @@
+% filename DataEntry027.Rnw 
+
 extracts the second and third names. The set of names entered is a \Rclass{vector} and has only one subscript to monitor. We will see how to subscript elements within a \Rclass{matrix} or \Rclass{data.frame} later. 
  
 It's also often necessary to understand how \R{} has stored an object. The \Rcmd{class} command is useful, and so is the \Rcmd{str} command. For example 

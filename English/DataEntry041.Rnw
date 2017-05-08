@@ -1,3 +1,5 @@
+% filename DataEntry041.Rnw 
+
  
 This print out is different to what needs to happen when we want to store numerical values that represent the times and dates particular observations were taken. The base distribution of \R{} does not cater for extracting the date and time in simple numeric terms. This can be achieved, but is beyond the scope of this chapter. It may prove best to store a date using its three constituent parts (day, month, and year) as separate numeric variables. Times should be stored using 24-hour format and be careful not to use a separator between the hour and minute values. Mathematical operations should not be done on these variables unless we convert the minutes to decimal fractions of an hour. In any situation you should decide what you will do with the data before choosing the format you wish to store it in. 
  

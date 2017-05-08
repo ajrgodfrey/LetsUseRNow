@@ -1,3 +1,5 @@
+% filename DataEntry033.Rnw 
+
 These two variables can be brought together with the corresponding data using the \Rcmd{data.frame} command illustrated later in this chapter. 
  
 \section{Less pattern and more repetition} 

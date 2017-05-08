@@ -1,3 +1,5 @@
+% filename BasicInference023.Rnw 
+
  
  
 \section{Confidence intervals and hypothesis tests for a proportion from one population} 

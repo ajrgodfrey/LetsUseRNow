@@ -1,2 +1,4 @@
+% filename NumericalEDA019.Rnw 
+
  
 If we wanted more than one statistic of interest, we would need to repeat the command and change the function being referenced in the third argument. We can use the \Rcmd{summary} command here though as it gives us more quantities. 

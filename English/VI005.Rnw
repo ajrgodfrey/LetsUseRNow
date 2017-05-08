@@ -1,3 +1,5 @@
+% filename VI005.Rnw 
+
 This chapter was created using version \Sexpr{packageVersion("BrailleR")} of the \Rpkg{BrailleR} package. This version of the package has a number of other packages that it depends on for functionality. When you make the \Rpkg{BrailleR} package available, you may see a few introduction messages that tell you about the other packages being loaded. You will be told about some default settings for the package that can be altered later to suit your needs. 
  
  

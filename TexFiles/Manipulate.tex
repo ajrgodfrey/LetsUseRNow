@@ -1,4 +1,8 @@
+% filename GenericSettings.Rnw 
 
+
+
+% filename Manipulate001.Rnw 
 
 % sample commands for dplyr section need completion 
 % use string splitting to split a date and time up into useful parts. 
@@ -9,6 +13,10 @@
 \chapter{LURN\ldots{} To Manipulate your Datasets} 
 \label{Manipulate} 
  
+% filename Manipulate002.Rnw 
+
+
+% filename Manipulate003.Rnw 
 
  
 This chapter explains how to rearrange your data to meet your needs. Basic sorting, data extraction and re-combination are discussed. 
@@ -21,6 +29,8 @@ This chapter starts using the functionality that is built into \R{}, but we also
 \section{Sorting the data into a different order} 
  
 The \Rcmd{sort} command is illustrated in this section. It works for sorting a single vector of numeric values into ascending or descending order. 
+% filename Manipulate004.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > x=round(rnorm(10),2) 
@@ -38,9 +48,13 @@ The \Rcmd{sort} command is illustrated in this section. It works for sorting a s
 [10] -0.89
 \end{Soutput}
 \end{Schunk}
+% filename Manipulate005.Rnw 
+
  
  
 We use the \Rcmd{order} command to work with data that are non-numeric vectors, as well as data in \Rclass{matrix} or \Rclass{data.frame} format. For example, we first sort the names of me and my three children initially given in descending order of age. 
+% filename Manipulate006.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > Home=c("Jonathan", "Callum", "Annabelle", "Cordelia", "Hershey") 
@@ -57,10 +71,14 @@ We use the \Rcmd{order} command to work with data that are non-numeric vectors, 
 [5] "Jonathan" 
 \end{Soutput}
 \end{Schunk}
+% filename Manipulate007.Rnw 
+
  
 So we see that the \Rcmd{order} command doesn't actually do the re-ordering after all, but that we need to use the subscripts to extract the elements (the full set) from the pre-existing set. 
  
 We do need to take note of how the upper and lower case letters will be ordered. 
+% filename Manipulate008.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > SomeLetters=c("A", "B", "a", "c", "b", "C") 
@@ -70,8 +88,12 @@ We do need to take note of how the upper and lower case letters will be ordered.
 [1] "a" "A" "b" "B" "c" "C"
 \end{Soutput}
 \end{Schunk}
+% filename Manipulate009.Rnw 
+
  
 The \Rcmd{order} command can prove a useful method of re-ordering experimental data if the run order has been stored as a variable. To illustrate this point we create a \Rclass{data.frame} with two elements. 
+% filename Manipulate010.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > x=round(rnorm(10),2) 
@@ -85,8 +107,12 @@ The \Rcmd{order} command can prove a useful method of re-ordering experimental d
 > RunOrder=sample(10) 
 \end{Sinput}
 \end{Schunk}
+% filename Manipulate011.Rnw 
+
  
 Note that the \Rcmd{sample} command used here has created a random permutation of the numbers one to ten. 
+% filename Manipulate012.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > RunOrder 
@@ -112,21 +138,29 @@ Note that the \Rcmd{sample} command used here has created a random permutation o
 3   0.53       10
 \end{Soutput}
 \end{Schunk}
+% filename Manipulate013.Rnw 
+
  
 \section{Extracting data using information on one variable} 
  
  
 To illustrate the extraction of a set of observations from a \Rclass{data.frame}, we make use of one of the internal datasets provided with the base installation of \R{}. We retreiv the \Robject{airquality} dat using: 
+% filename Manipulate014.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > data(airquality) 
 \end{Sinput}
 \end{Schunk}
+% filename Manipulate015.Rnw 
+
 An explanation of this command is given in Section~\ref{DataFromPackages}. This data set has its own help page that can be viewed by typing \code{?airquality} at the \R{} prompt. 
  
  
 We can ask for the rows of this data that match specified details using subscripting. Various operators exist for numerical comparisons; the simplest of which are \Roperator{<} and  \Roperator{>}. 
 For the purposes of brevity in our examples that follow, we use the \Rcmd{nrow} command to show how many observations in the data meet the specified conditions. The following commands extract hte number of days where the wind speed was less than ten miles per hour and then the temperature was less than $60\deg$F. 
+% filename Manipulate016.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > nrow(airquality[airquality$Wind<10,]) 
@@ -141,8 +175,12 @@ For the purposes of brevity in our examples that follow, we use the \Rcmd{nrow} 
 [1] 8
 \end{Soutput}
 \end{Schunk}
+% filename Manipulate017.Rnw 
+
  
 If we want to know how many observations have an exact value, we use \Roperator{==} not a single equals sign because it has a different meaning in \R{}. The double equals sign is the one used for comparisons. For example, the number of days when the temperature was recorded as $69\deg$F can be found using: 
+% filename Manipulate018.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > nrow(airquality[airquality$Temp==69,]) 
@@ -151,12 +189,16 @@ If we want to know how many observations have an exact value, we use \Roperator{
 [1] 3
 \end{Soutput}
 \end{Schunk}
+% filename Manipulate019.Rnw 
+
  
  
  
 \section{Extracting data using information on more than one variable} 
  
 To print out the rows of the \Robject{airquality}  \Rclass{data.frame} where the temperature was less than 60 degrees and the wind was less than ten miles per hour, we would use the \Roperator{\&} operator between the two conditions that identify which rows are required. 
+% filename Manipulate020.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > airquality[airquality$Wind<10&airquality$Temp<60,] 
@@ -167,6 +209,8 @@ To print out the rows of the \Robject{airquality}  \Rclass{data.frame} where the
 27    NA      NA  8.0   57     5  27
 \end{Soutput}
 \end{Schunk}
+% filename Manipulate021.Rnw 
+
  
  
 \section{Use of dplyr for data manipulation} 
@@ -175,6 +219,8 @@ To print out the rows of the \Robject{airquality}  \Rclass{data.frame} where the
 The \Rpkg{dplyr} package is an alternative to the basic \R{} functionality shown in this chapter. The package creator (Hadley Wickham) wants his package to make data manipulation easier for the end-user, and more fficient with respect to computation time. He has simplified data manipulations to a small set of commands: \Rcmd{filter}, \Rcmd{arrange}, \Rcmd{sample\_n}, \Rcmd{sample\_frac}, \Rcmd{mutate}, and \Rcmd{transmute} are discussed here, while the others will be discussed in Section~\ref{DPlyRDataSummarisation}  where they are more relevant. 
  
 You'll need to install the package (see Section~\ref{InstallPackages} for instructions) before running the function 
+% filename dplyr.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > library(dplyr) 
@@ -194,13 +240,21 @@ The following objects are masked from 'package:base':
     intersect, setdiff, setequal, union
 \end{Soutput}
 \end{Schunk}
+% filename Manipulate023.Rnw 
+
 to gain access to the commands just listed. Note that the \Rcmd{head} command is used in many of the following examples to ensure that only a handful of rows are printed out instead of the full result. An alternative is to create a new data structure using the \Rcmd{tbl\_df} command. Let's make a second copy of the air quality data that is the same as the original except for being made ready for use with the \Rpkg{dplyr} functions. 
+% filename Manipulate024.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > airquality2 = tbl_df(airquality) 
 \end{Sinput}
 \end{Schunk}
+% filename Manipulate025.Rnw 
+
 and then see the structure of the data using the \Rcmd{glimpse} function that is a substitute for the \Rcmd{str} command we've used previously. 
+% filename Manipulate026.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > glimpse(airquality) 
@@ -216,9 +270,13 @@ $ Month   <int> 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, ...
 $ Day     <int> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, ...
 \end{Soutput}
 \end{Schunk}
+% filename Manipulate027.Rnw 
+
 The \Rcmd{glimpse} command works on a \Rclass{data.frame} or the new structure called a \Rclass{tbl\_df} equally well. 
   
 The \Rcmd{filter} and \Rcmd{arrange} commands make many of the examples seen earlier in this chapter much easier. The \Rcmd{filter} command is for extraction, while \Rcmd{arrange} is for rearrangement. For example, 
+% filename Manipulate028.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > filter(airquality, Wind<10&Temp<60) 
@@ -229,10 +287,14 @@ The \Rcmd{filter} and \Rcmd{arrange} commands make many of the examples seen ear
 2    NA      NA  8.0   57     5  27
 \end{Soutput}
 \end{Schunk}
+% filename Manipulate029.Rnw 
+
 extracts the rows of the \Robject{airquality} data that meet the combinations of conditions specified.  
 Use of \Rcmd{filter} means we don't need the \Rclass{data.frame} attached, or to gain access to the variables in it using the dollar notation; we also don't need the square brackets for common subscripting tasks. We could have stored the outcome in a new \Rclass{data.frame} if we wished. 
  
 Perhaps the greatest gift of the \Rpkg{dplyr} package is its popularising a different way of combining commands, called the \stressind{pipe operator}. The last command issued can be re-written as: 
+% filename Manipulate030.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > airquality %>% filter(Wind<10&Temp<60) 
@@ -243,10 +305,14 @@ Perhaps the greatest gift of the \Rpkg{dplyr} package is its popularising a diff
 2    NA      NA  8.0   57     5  27
 \end{Soutput}
 \end{Schunk}
+% filename Manipulate031.Rnw 
+
 This way of presenting commands is considered to be easier to read by many users which helps with the popularity of the \Rpkg{dplyr}  package. The \stressind{pipe operator} comes from another package called \Rpkg{magrittr} so its use is not limited to the commands found in the \Rpkg{dplyr} package.  
 This way of presenting multiple commands is called ``chaining" in many resources. I like the simplicity that this offers so I have tried to use the \stressind{pipe operator} as often as I can from here on. 
   
 The \Rcmd{filter} command is useful if we know the values a variable takes, but at times we just want to know more about the observations that are best or worst according to one (or more) variables. For example, if we wanted to find the hottest days, we can use the \Rcmd{arrange} command instead of the \Rcmd{order} command seen earlier. 
+% filename Manipulate032.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > airquality2 %>% arrange(desc(Temp)) 
@@ -268,11 +334,15 @@ The \Rcmd{filter} command is useful if we know the values a variable takes, but 
 # ... with 143 more rows
 \end{Soutput}
 \end{Schunk}
+% filename Manipulate033.Rnw 
+
 We can add more variables to sort the data by if we like. We used the \Rarg{desc} to get the temperatures to be in descending order in this example. 
  
 The temperatures just listed are measured on the Fahrenheit scale. I live in a country that uses the centigrade scale so a conversion is needed to make these results more interpretable. Enter the \Rcmd{mutate} and  
 \Rcmd{transmute} commands.  
  
+% filename Manipulate034.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > airquality %>% mutate(TempC = (Temp - 32) * 5 / 9) %>% head() 
@@ -287,18 +357,26 @@ The temperatures just listed are measured on the Fahrenheit scale. I live in a c
 6    28      NA 14.9   66     5   6 18.89
 \end{Soutput}
 \end{Schunk}
+% filename Manipulate035.Rnw 
+
 will create a new column in the returned data. N.B. the new data was not stored in a new object so this command's effect was purely temporary. 
  
 Again, notice that we didn't need to do all that much to add a new column and that this code is perhaps a little simpler than the alternative: 
+% filename Manipulate036.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > airquality$TempC = (airquality$Temp - 32) * 5 / 9 
 \end{Sinput}
 \end{Schunk}
+% filename Manipulate037.Rnw 
+
 which we saw earlier. The main difference between the two commands is that this one will add the new colun to the original \Rclass{data.frame}. 
 In this instance the difference is probably fairly trivial, but when we use much larger data sets, the storage of results is important because of speed and memory usage concerns. 
  
 The command 
+% filename Manipulate038.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > airquality2 %>% transmute(TempC = (Temp - 32) * 5 / 9) 
@@ -320,10 +398,14 @@ The command
 # ... with 143 more rows
 \end{Soutput}
 \end{Schunk}
+% filename Manipulate039.Rnw 
+
 creates the new variable as a stand alone object. It hasn't been stored as an object so is only temporarily available.  
  
 Finally, the \Rpkg{dplyr} package also gives users two simple ways to extract a random sample from a \Rclass{data.frame}. The commands \Rcmd{sample\_n} and  \Rcmd{sample\_frac} 
 extract a sample of a predetermined size and a specified fraction respectively. For example: 
+% filename Manipulate040.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > airquality %>% sample_n(4) 
@@ -336,7 +418,11 @@ extract a sample of a predetermined size and a specified fraction respectively. 
 18      6      78 18.4   57     5  18
 \end{Soutput}
 \end{Schunk}
+% filename and.Rnw 
+
  and 
+% filename Manipulate042.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > airquality %>% sample_frac(0.05) 
@@ -353,8 +439,12 @@ extract a sample of a predetermined size and a specified fraction respectively. 
 68     77     276  5.1   88     7   7
 \end{Soutput}
 \end{Schunk}
+% filename Manipulate043.Rnw 
+
  
 The \Rpkg{dplyr}  package is under active development and so we should expect more functionality to become available, but there is also work being done to make the processing of data even faster so that it can handle huge data sets. 
  
+% filename CleanUp.Rnw 
+
 
 

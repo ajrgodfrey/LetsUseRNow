@@ -1,3 +1,5 @@
+% filename ExportData007.Rnw 
+
  
 If another file type is required then the help page for \Rcmd{write.csv} may be useful. This page also gives the help on the \Rcmd{write.table} command. 
  

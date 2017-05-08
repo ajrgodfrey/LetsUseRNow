@@ -1,3 +1,5 @@
+% filename Manipulate005.Rnw 
+
  
  
 We use the \Rcmd{order} command to work with data that are non-numeric vectors, as well as data in \Rclass{matrix} or \Rclass{data.frame} format. For example, we first sort the names of me and my three children initially given in descending order of age. 

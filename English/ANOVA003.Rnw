@@ -1,3 +1,5 @@
+% filename ANOVA003.Rnw 
+
  
 This chapter explains the basic use of the Analysis of variance (ANOVA) model for analyzing appropriate data. This is commonly (but not always) obtained through experimentation. To truly learn about the appropriate analysis of experimental data you will need to consult a suitable textbook on experimental design. 
  

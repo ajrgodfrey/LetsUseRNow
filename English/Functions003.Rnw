@@ -1,3 +1,5 @@
+% filename Functions003.Rnw 
+
  
 This chapter explains how to construct functions to do those jobs that get repeated without having to repeat them yourself. One key method for making any \R{} user more efficient is the creation of functions.  
  

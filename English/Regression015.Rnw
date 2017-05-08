@@ -1,3 +1,5 @@
+% filename Regression015.Rnw 
+
 \end{center} 
 \end{exhibit} 
 These plots are enhanced by \R{} to add more information than the basic user is familiar with. Additional lines are added to three of the plots to assist in diagnosing problems. We can see from this plot that the model is inadequate as there is a nonlinear relationship between the response and predictor, and further that the residuals might not have very constant variance. 

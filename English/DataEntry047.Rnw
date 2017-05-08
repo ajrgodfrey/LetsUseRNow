@@ -1,1 +1,3 @@
+% filename DataEntry047.Rnw 
+
 We would usually assign the results of this command to a named object for storage. 

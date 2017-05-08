@@ -1,3 +1,5 @@
+% filename Functions005.Rnw 
+
 This simple function takes one argument \Rarg{x} and uses its assigned value instead of \code{x} whenever the commands within the function ask for it. 
  
 We do not know what the value of the input arguments will be when the function is created. For simple cases like this one, we rely on the error handling of \R{} when it issues the commands that form the function. In this case, we are asking for the sine of the input values; if the input is a text string instead of a number, the \Rcmd{sin} command will fail, causing the newly created \code{MySine} command to fail as well. 

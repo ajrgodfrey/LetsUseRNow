@@ -1,10 +1,18 @@
+% filename GenericSettings.Rnw 
 
+
+
+% filename Functions001.Rnw 
 
 % for loop variables are retained for later use. 
 %\setcounter{chapter}{} 
 \chapter{LURN\ldots{} To write functions to do what you want} 
 \label{Functions} 
  
+% filename Functions002.Rnw 
+
+
+% filename Functions003.Rnw 
 
  
 This chapter explains how to construct functions to do those jobs that get repeated without having to repeat them yourself. One key method for making any \R{} user more efficient is the creation of functions.  
@@ -23,11 +31,15 @@ The best way to start is to turn a little script into a function if you know you
 \section{A mathematical function} 
  
 In Chapter~\ref{Calculus}, you can see how using a \Rclass{function} can make plotting a mathematical function a fairly simple task. Let's explain what is happening in the example used there, which was: 
+% filename Functions004.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > MySine <- function(x){ sin(x)} 
 \end{Sinput}
 \end{Schunk}
+% filename Functions005.Rnw 
+
 This simple function takes one argument \Rarg{x} and uses its assigned value instead of \code{x} whenever the commands within the function ask for it. 
  
 We do not know what the value of the input arguments will be when the function is created. For simple cases like this one, we rely on the error handling of \R{} when it issues the commands that form the function. In this case, we are asking for the sine of the input values; if the input is a text string instead of a number, the \Rcmd{sin} command will fail, causing the newly created \code{MySine} command to fail as well. 
@@ -35,6 +47,8 @@ We do not know what the value of the input arguments will be when the function i
 Programmers will create bulletproof functions that cater for user errors like entering text instead of numbers in complex situations. When you are doing the simpler tasks where you can be sure that you will enter the right kind of value for your inputs, you can keep your functions simple. 
  
 Our example has only one command within the function. The commands included in the function are enclosed by curly brackets or braces, depending on what you call them. The last command issued within a function is the one that leads to establishing what will be returned to the user once the new function has done its work. In our first example, the last work done was to generate the sine of the input value. Look what happens if we do something else within the function. 
+% filename Functions006.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > MySine2 <- function(x){ sin(x) 
@@ -45,8 +59,12 @@ Our example has only one command within the function. The commands included in t
 [1] 1.571
 \end{Soutput}
 \end{Schunk}
+% filename Functions007.Rnw 
+
 The sine of $x$ was calculated, but it was not returned at the end of the function. 
 The \Rcmd{return} command included in the next example ensures we get the answer we want. 
+% filename Functions008.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > MySine3 <- function(x){ return(sin(x)) 
@@ -57,9 +75,13 @@ The \Rcmd{return} command included in the next example ensures we get the answer
 [1] 1
 \end{Soutput}
 \end{Schunk}
+% filename Functions009.Rnw 
+
 Now we see that the \Rcmd{print} command is redundant. 
  
  
  
+% filename CleanUp.Rnw 
+
 
 

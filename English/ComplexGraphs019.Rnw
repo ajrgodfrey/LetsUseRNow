@@ -1,3 +1,5 @@
+% filename ComplexGraphs019.Rnw 
+
 \SVGLink{ComplexGraphsQuakesPlaces-1} 
 \end{center} 
 \end{exhibit} 

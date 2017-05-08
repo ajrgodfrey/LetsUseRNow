@@ -1,3 +1,5 @@
+% filename TimeSeries003.Rnw 
+
  
 This chapter focuses on some simple time series approaches for univariate time series. At this stage multivariate time series are not included, but could be in future depending on demand. In any case, the methods shown here are certainly not meant to be a comprehensive elucidation of all time series methods. Dealing with just the most commonly taught (and therefore the simplest) methods takes up enough space.  
  

@@ -1,3 +1,5 @@
+% filename QualityControl005.Rnw 
+
  
 I've used version \Sexpr{packageVersion("qcc")} of the \Rpkg{qcc} package for the work in this chapter. Please note that other packages have been developed that will also produce control charts and other quality improvement analyses. 
  

@@ -1,3 +1,5 @@
+% filename NumericalEDA011.Rnw 
+
  
 It used to be possible to ask \R{} to use the \Rcmd{median}, in a command like this, but as of version 2-14-0, an error message was returned instead of an answer. 
  

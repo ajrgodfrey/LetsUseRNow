@@ -1,3 +1,5 @@
+% filename ComplexGraphs003.Rnw 
+
  
 This chapter assumes an understanding of the material in Chapter~\ref{SimpleGraphs} on creating simple graphs. That material included adding simple elements of good graphing practice, like meaningful titles and axis labels. In this chapter we see colour, multiple graphs in one window, multiple sets of points on a single set of axes, adding extra points or lines, and introduces colour, different symbols and the legends that will then become necessary additions. 
  

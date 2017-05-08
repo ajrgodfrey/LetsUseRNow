@@ -1,3 +1,5 @@
+% filename OperRes003.rnw 
+
 
 This chapter explains how to find solutions to several problems in Operations Research. More specifically, they are problems in Linear Programming (LP) and Integer Programming (IP) where the solution is found as the optimal value of an objective function subject to the existence of various constraints, all of which are expressed as linear functions. The difference between LP and IP is the possible values for the decision variables under consideration.
 

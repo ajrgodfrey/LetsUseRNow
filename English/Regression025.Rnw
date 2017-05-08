@@ -1,3 +1,5 @@
+% filename Regression025.Rnw 
+
 We can compare all three models created thus far because they are a series of nested models. We could not include the model using \Robject{Temp} as the predictor in this command for example. 
  
 On the basis of the output from our \Rcmd{anova} command, we might assume that the quadratic form was sufficient to explain the relationship between \Robject{Ozone} and \Robject{Wind} because there is little to be gained by adding the cubic term to our model. Validation of the chosen model via the residual analysis is suggested as a next step. 

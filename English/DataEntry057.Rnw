@@ -1,3 +1,5 @@
+% filename DataEntry057.Rnw 
+
  
 I've used a full printout of the resulting \Rclass{data.frame} instead of using the \Rcmd{str} command to show what \R{} has created because the \Rcmd{str} command gives additional information that we do not require at this point. 
  

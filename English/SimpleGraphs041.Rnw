@@ -1,3 +1,5 @@
+% filename SimpleGraphs041.Rnw 
+
 and re-create the bar chart accordingly (see Exhibit~\ref{StateRegionBarChartImp}). 
 \begin{exhibit} 
 \begin{center} 

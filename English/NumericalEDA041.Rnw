@@ -1,3 +1,5 @@
+% filename NumericalEDA041.Rnw 
+
  
  
 The \Rcmd{summarise}  and \Rcmd{group\_by} commands can be used instead of the \Rcmd{tapply} command introduced earlier in this chapter. To get the overall average wind speed from the \Robject{airquality} data, we could use: 

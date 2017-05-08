@@ -1,3 +1,5 @@
+% filename BasicInference003.Rnw 
+
  
 This chapter is all about finding confidence intervals and performing hypothesis tests. While many textbooks separate these activities there is little point doing so when it comes time to using \R{} as both are done at the same time in the majority of cases. 
  

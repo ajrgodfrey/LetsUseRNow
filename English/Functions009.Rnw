@@ -1,3 +1,5 @@
+% filename Functions009.Rnw 
+
 Now we see that the \Rcmd{print} command is redundant. 
  
  

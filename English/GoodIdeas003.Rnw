@@ -1,3 +1,5 @@
+% filename GoodIdeas003.Rnw 
+
  
 This chapter is aimed at the efficient use of \R{}. To make use of the functionality described here you must have read the material on storing your results in Chapter~\ref{StoreResults}. 
  

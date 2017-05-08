@@ -1,3 +1,5 @@
+% filename Calculus001.Rnw 
+
 % simplify, substitute factorise etc. 
 % uniroot 
  

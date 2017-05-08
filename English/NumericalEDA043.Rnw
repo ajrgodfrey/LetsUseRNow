@@ -1,1 +1,3 @@
+% filename NumericalEDA043.Rnw 
+
 which is more long-winded than just using the \Rcmd{mean} command alone. The value of \Rcmd{summarise} becomes more evident when we seek the means for groups within our data, such as: 

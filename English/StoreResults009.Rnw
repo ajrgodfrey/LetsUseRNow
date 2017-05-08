@@ -1,3 +1,5 @@
+% filename StoreResults009.Rnw 
+
  
 This creates a text file called \file{JustPrintX.txt} in a subfolder called \file{other}, within the current working directory (which I created earlier). The file is worth looking at because it should show exactly what would have been printed in the \R{} window if the sink were not active. Note that the second use of \code{sink()} stops the sink from being active. 
  

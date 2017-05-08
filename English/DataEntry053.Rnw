@@ -1,3 +1,5 @@
+% filename DataEntry053.Rnw 
+
  
 Notice that as well as the result we wanted, \R{} has also printed the levels of the \Robject{Names} variable. This is because this variable has been determined to be a factor. 
  

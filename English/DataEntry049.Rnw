@@ -1,2 +1,4 @@
+% filename DataEntry049.Rnw 
+
  
 Now we can see why we should not confuse \code{names} and \Robject{Names}. We can ask for the names of the variables in a \Rclass{data.frame} using the \Rcmd{names} command. For example 

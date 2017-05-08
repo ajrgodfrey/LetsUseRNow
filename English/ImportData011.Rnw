@@ -1,3 +1,5 @@
+% filename ImportData011.Rnw 
+
  
 The full path to the working directory where this chapter was processed has been displayed, starting with the letter associated with the hard drive, followed by a colon. Then the fun begins. The folder structure is represented using forward slash signs, not the backslash used in Windows operating systems even though the processing of this work is done using a Windows machine. The rest should be as expected and you could find the right folder by looking in the appropriate place on your hard drive. The reason for \R{}'s use of the forward slash is not entirely simple to explain, but in short it is because the standard backslash symbol has a special use  in \R{}. For the moment, the choice of slash versus backslash is not important. It is important when we need to type out the path to the location of a file for ourselves. 
  

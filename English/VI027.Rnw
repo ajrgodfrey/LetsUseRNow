@@ -1,3 +1,5 @@
+% filename VI027.Rnw 
+
  
 We might also alter the number of cells in the grid to see how sensitive we want to make our investigation. Personal preferences will determine which combination of rows and columns works best. 
  

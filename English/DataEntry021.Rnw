@@ -1,3 +1,5 @@
+% filename DataEntry021.Rnw 
+
 Note here that the brackets used are square brackets. Use round brackets for functions, square for elements of an object. 
  
 It's pretty simple to extract the dog's name: 

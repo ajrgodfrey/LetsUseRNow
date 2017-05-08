@@ -1,3 +1,5 @@
+% filename Intro003.Rnw 
+
  
 \R{} is a statistical programming language and environment. The up-front learning curve is somewhat steeper than other statistical software systems as \R{} does not have the Graphical User Interface (GUI) that other packages have; browsing the menus for inspiration is not an option. 
  

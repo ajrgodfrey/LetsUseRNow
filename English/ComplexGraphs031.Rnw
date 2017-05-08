@@ -1,3 +1,5 @@
+% filename ComplexGraphs031.Rnw 
+
 \SVGLink{ComplexGraphsStackBar-1} 
 \end{center} 
 \end{exhibit} 

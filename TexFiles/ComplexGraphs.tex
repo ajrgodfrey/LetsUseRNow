@@ -1,9 +1,17 @@
+% filename GenericSettings.Rnw 
 
+
+
+% filename ComplexGraphs001.Rnw 
 
 %\setcounter{chapter}{} 
 \chapter{LURN\ldots{} To Create Complex Graphs} 
 \label{ComplexGraphs} 
  
+% filename ComplexGraphs002.Rnw 
+
+
+% filename ComplexGraphs003.Rnw 
 
  
 This chapter assumes an understanding of the material in Chapter~\ref{SimpleGraphs} on creating simple graphs. That material included adding simple elements of good graphing practice, like meaningful titles and axis labels. In this chapter we see colour, multiple graphs in one window, multiple sets of points on a single set of axes, adding extra points or lines, and introduces colour, different symbols and the legends that will then become necessary additions. 
@@ -26,6 +34,8 @@ The final graph appears in Exhibit~\ref{Hist12Z}, but there are a couple of func
 \begin{center} 
 \caption{Twelve samples of size 100 drawn from the standard normal distribution, plotted using separate histograms in a single window} 
 \label{Hists12Z} 
+% filename ComplexGraphs004.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > par(mfrow=c(4,3)) 
@@ -34,6 +44,8 @@ The final graph appears in Exhibit~\ref{Hist12Z}, but there are a couple of func
 \end{Sinput}
 
 \includegraphics[width=0.7\textwidth]{figures/ComplexGraphsHists12Z-1} \end{Schunk}
+% filename ComplexGraphs005.Rnw 
+
 \SVGLink{ComplexGraphsHists12Z-1} 
 \end{center} 
 \end{exhibit} 
@@ -50,6 +62,8 @@ The \Rcmd{layout} command needs to interpret these labels as a matrix. It would 
 $$\begin{array}{cccc} 1&1&1&2\\ 1&1&1&3\\ 1&1&1&4\\ 5&5&6&6\\ \end{array}$$ 
  
 Getting this matrix in \R{} means identifying its contents, naming exactly how many rows or columns are needed and how to insert the values into the defined structure. We use the \Rcmd{matrix} command to create the object for our arrangement, and the \Rcmd{c} command to combine the labels into a single object. Arguments to the \Rcmd{matrix} command we need are either the \Rarg{nrow} or \Rarg{ncol} (one will do) and the \Rarg{byrow} switch that tells the \Rcmd{matrix} command to fill up the matrix by row until it is full. 
+% filename ComplexGraphs006.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > Arrangement.mat = matrix(c(1,1,1,2,1,1,1,3,1,1,1,4,5,5,6,6), byrow=TRUE, nrow=4) 
@@ -63,12 +77,16 @@ Getting this matrix in \R{} means identifying its contents, naming exactly how m
 [4,]    5    5    6    6
 \end{Soutput}
 \end{Schunk}
+% filename ComplexGraphs007.Rnw 
+
  
 Having established the success of the code for the arrangement structure, we just open the graph window using the \Rcmd{layout} command, and add plots in the order our labels specify. The full set of instructions is given in Exhibit~\ref{LayThemOut}. Note that the graphs are chosen for the illustration of the \Rcmd{layout} command, not for the purposes of showing anything of interest in any of the graphs created. The \Robject{quakes} data set distributed with the base installation of \R{} is used in this illustration. 
 \begin{exhibit} 
 \begin{center} 
 \caption{A selection of differing size graphs combined into one graph window} 
 \label{LayThemOut} 
+% filename ComplexGraphs008.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > attach(quakes) 
@@ -85,6 +103,8 @@ Having established the success of the code for the arrangement structure, we jus
 > detach(quakes) 
 \end{Sinput}
 \end{Schunk}
+% filename ComplexGraphs009.Rnw 
+
 \SVGLink{ComplexGraphsLayoutDiffSizes-1} 
 \end{center} 
 \end{exhibit} 
@@ -101,12 +121,16 @@ The \Robject{iris} data supplied with \R{} for this example. It has five variabl
 \begin{center} 
 \caption{} 
 \label{IrisInColour} 
+% filename ComplexGraphs010.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > plot(Sepal.Length~Sepal.Width, data=iris, xlab="Sepal width", ylab="Sepal length", col=Species) 
 \end{Sinput}
 
 \includegraphics[width=0.7\textwidth]{figures/ComplexGraphsIrisInColour-1} \end{Schunk}
+% filename ComplexGraphs011.Rnw 
+
 \SVGLink{ComplexGraphsIrisInColour-1} 
 \end{center} 
 \end{exhibit} 
@@ -115,12 +139,16 @@ The \Robject{iris} data supplied with \R{} for this example. It has five variabl
 \begin{center} 
 \caption{} 
 \label{IrisInSymbols} 
+% filename ComplexGraphs012.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > plot(Petal.Length~Petal.Width, data=iris, xlab="Petal width", ylab="Petal length", pch=as.numeric(Species)) 
 \end{Sinput}
 
 \includegraphics[width=0.7\textwidth]{figures/ComplexGraphsIrisInSymbols-1} \end{Schunk}
+% filename ComplexGraphs013.Rnw 
+
 \SVGLink{ComplexGraphsIrisInSymbols-1} 
 \end{center} 
 \end{exhibit} 
@@ -128,11 +156,15 @@ Note that we needed to convert the species names to numbers using the \Rcmd{as.n
 %check them 
  
 \R{} seesm to have converted the species names to numbers when we called for different colours, starting with 1 for black, 2 for red, and 3 for green. As an aside, the colour can be specified by name or by a number. There are well over 600 named colours to choose from so the full list is therefore not printed here. Type 
+% filename ComplexGraphs014.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > colors() 
 \end{Sinput}
 \end{Schunk}
+% filename ComplexGraphs015.Rnw 
+
 if you are really keen to know what they all are. If this list is still not sufficient to meet your needs, you can design your own colour using a combination of red, green, and blue components. This is explained under the help for the \Rcmd{par} command. 
  
 \section{Adding points to an existing graph} 
@@ -148,6 +180,8 @@ In Exhibit~\ref{LungsNoLegend}, we see a set of three commands. The first plots 
 \begin{center} 
 \caption{Deaths from lung diseases in the United Kingdom} 
 \label{LungsNoLegend} 
+% filename ComplexGraphs016.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > plot(ldeaths, ylim=c(0,4000), xlab="Year", ylab="Number of deaths") 
@@ -156,6 +190,8 @@ In Exhibit~\ref{LungsNoLegend}, we see a set of three commands. The first plots 
 \end{Sinput}
 
 \includegraphics[width=0.7\textwidth]{figures/ComplexGraphsDeathsTSPlot-1} \end{Schunk}
+% filename ComplexGraphs017.Rnw 
+
 \SVGLink{ComplexGraphsDeathsTSPlot-1} 
 \end{center} 
 \end{exhibit} 
@@ -174,6 +210,8 @@ The \Rcmd{plot} command creates the axes and plots the points for the earthquake
 \begin{center} 
 \caption{Horizontal and vertical lines added to a scatter plot} 
 \label{QuakesPlaces} 
+% filename ComplexGraphs018.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > plot(lat~long, data=quakes, xlim=c(160,190), ylim=c(-40,-10)) 
@@ -184,6 +222,8 @@ The \Rcmd{plot} command creates the axes and plots the points for the earthquake
 \end{Sinput}
 
 \includegraphics[width=0.7\textwidth]{figures/ComplexGraphsQuakesPlaces-1} \end{Schunk}
+% filename ComplexGraphs019.Rnw 
+
 \SVGLink{ComplexGraphsQuakesPlaces-1} 
 \end{center} 
 \end{exhibit} 
@@ -194,6 +234,8 @@ It is also possible to add a straight line that is niether vertical or horizonta
 \section{Adding a curve to a graph} 
  
 Use of \Rcmd{abline} is great if you have a straight line to add to a plot, but as soon as the line needs to be curved the problems begin. We will see that it isn't actually too difficult if we use the \Rcmd{curve} command. First, we add a curve representing the normal probability density function to a histogram of random values. 
+% filename ComplexGraphs020.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > hist(rnorm(1000)) 
@@ -201,11 +243,15 @@ Use of \Rcmd{abline} is great if you have a straight line to add to a plot, but 
 \end{Sinput}
 
 \includegraphics[width=0.7\textwidth]{figures/ComplexGraphsHistWithNormalCurve-1} \end{Schunk}
+% filename ComplexGraphs021.Rnw 
+
 \SVGLink{ComplexGraphsHistWithNormalCurve-1} 
  
 The \Rcmd{curve} function has four arguments in this example. First is the function being plotted, which in this case is \Rcmd{dnorm} ---the density function for the normal distribution. We then supply the range of values over which this function is to be evaluated using two arguments, and finally we ask that the curve be aded to the existing plot. There are other arguments that we could add, including \Rarg{n}, the number of points to be evaluated over the specified range. 
  
 The second example shown here is the addition of the quadratic fitted line for a regression model. We use the example given in Section~\ref{PolyReg}. 
+% filename ComplexGraphs022.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > Ozone.poly2 = lm(Ozone~poly(Wind,2, raw=TRUE), data=airquality) 
@@ -220,6 +266,8 @@ The second example shown here is the addition of the quadratic fitted line for a
 Error in curve(Coeffs[1] + Coeffs[2] * x + Coeffs[2] * x^2, min(Wind), : object 'Wind' not found
 \end{Soutput}
 \end{Schunk}
+% filename ComplexGraphs023.Rnw 
+
 \SVGLink{ComplexGraphsAddPolyCurve-1} 
  
 \section{Adding text to an existing graph} 
@@ -233,6 +281,8 @@ Error in curve(Coeffs[1] + Coeffs[2] * x + Coeffs[2] * x^2, min(Wind), : object 
 \begin{center} 
 \caption{Deaths from lung diseases in the United Kingdom (with legend added)} 
 \label{LungsLegend} 
+% filename ComplexGraphs024.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > plot(ldeaths, ylim=c(0,4000), xlab="Year", ylab="Number of deaths") 
@@ -242,6 +292,8 @@ Error in curve(Coeffs[1] + Coeffs[2] * x + Coeffs[2] * x^2, min(Wind), : object 
 \end{Sinput}
 
 \includegraphics[width=0.7\textwidth]{figures/ComplexGraphsDeathsTSPlotLegend-1} \end{Schunk}
+% filename ComplexGraphs025.Rnw 
+
 \SVGLink{ComplexGraphsDeathsTSPlotLegend-1} 
 \end{center} 
 \end{exhibit} 
@@ -252,6 +304,8 @@ Error in curve(Coeffs[1] + Coeffs[2] * x + Coeffs[2] * x^2, min(Wind), : object 
 A bar chart, as seen in Section~\ref{BarCharts}, has a bar showing the frequency of each level of a single factor. A \stressind{cluster bar chart} has a bar for each combination of two factors. The clustering indicates how the bars are grouped together. A \stressind{stack bar chart} on the other hand has a single bar for each level of one factor split into sections for each level of the second factor; it therefore appears to stack the bars on top of one another. 
  
 To create an example, we will first create a list of frequencies of outcomes and the two categorical variables required. The cluster bar chart and stack bar chart then appear in Exhibits~\ref{ClusterBarChart} and~\ref{StackBarChart} respectively. Our data consist of the counts of males and females of ages~17 to~20. 
+% filename ComplexGraphs026.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > Frequency=c(12,19, 22, 18, 11,13, 13, 12) 
@@ -259,11 +313,15 @@ To create an example, we will first create a list of frequencies of outcomes and
 > Age=rep(c(17,18,19,20), each=2) 
 \end{Sinput}
 \end{Schunk}
+% filename ComplexGraphs027.Rnw 
+
 To create the two types of bar chart, we need to create a matrix for the counts to be used in the graphs. In this instance, this is done using the \Rcmd{tapply} command The actual plotting is done using the \Rcmd{barplot} command which recognizes it is working on this matrix and acts accordingly, including the ability to generate a legend for the graphs. 
 \begin{exhibit} 
 \begin{center} 
 \caption{An example of a cluster bar chart} 
 \label{ClusterBarChart} 
+% filename ComplexGraphs028.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > barplot(tapply(Frequency, list(Gender, Age), sum), col=c(2,4), legend=TRUE, beside=TRUE) 
@@ -271,6 +329,8 @@ To create the two types of bar chart, we need to create a matrix for the counts 
 \end{Sinput}
 
 \includegraphics[width=0.7\textwidth]{figures/ComplexGraphsClusterBar-1} \end{Schunk}
+% filename ComplexGraphs029.Rnw 
+
 \SVGLink{ComplexGraphsClusterBar-1} 
 \end{center} 
 \end{exhibit} 
@@ -278,6 +338,8 @@ To create the two types of bar chart, we need to create a matrix for the counts 
 \begin{center} 
 \caption{An example of a stack bar chart} 
 \label{StackBarChart} 
+% filename ComplexGraphs030.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > barplot(tapply(Frequency, list(Gender, Age), sum), col=c(2,4), legend=TRUE) 
@@ -285,6 +347,8 @@ To create the two types of bar chart, we need to create a matrix for the counts 
 \end{Sinput}
 
 \includegraphics[width=0.7\textwidth]{figures/ComplexGraphsStackBar-1} \end{Schunk}
+% filename ComplexGraphs031.Rnw 
+
 \SVGLink{ComplexGraphsStackBar-1} 
 \end{center} 
 \end{exhibit} 
@@ -302,22 +366,30 @@ Exhibit~\ref{MtEdenContour} shows the contour lines for the altitude of a volcan
 \begin{center} 
 \caption{Contour plot of Mt Eden, a volcano in Auckland, New Zealand.} 
 \label{MtEdenContour} 
+% filename ComplexGraphs032.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > contour(volcano) 
 \end{Sinput}
 
 \includegraphics[width=0.7\textwidth]{figures/ComplexGraphsMtEdenContour-1} \end{Schunk}
+% filename ComplexGraphs033.Rnw 
+
 \SVGLink{ComplexGraphsMtEdenContour-1} 
 \end{center} 
 \end{exhibit} 
  
 This provides a black and white image that has the contours marked with the value of the third variable. A coloured version of the plot is available using the \Rcmd{filled.contour} command in place of the \Rcmd{contour} command in Exhibit~\ref{MtEdenContour}. An even more impressive version of this plot can be obtained by looking at the example that accompanies the help for the \Robject{volcano} data. Typing: 
+% filename ComplexGraphs034.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > example(volcano) 
 \end{Sinput}
 \end{Schunk}
+% filename ComplexGraphs035.Rnw 
+
 generates the plot using the code given in the help file. 
  
 The \Robject{volcano} data is stored as a matrix of altitudes. The \Rcmd{contour} command uses this to interpolate the coordinates of the points where the altitude is constant. 
@@ -329,6 +401,8 @@ over the range $-5\leq x,y \leq 5$. All necessary codes are given in Exhibit~\re
 \begin{center} 
 \caption{Contour plot showing values of $z$, where $z=0.75x^2 + 0.5y^2 -0.4xy + x - y -1$} 
 \label{XYZContour} 
+% filename ComplexGraphs036.Rnw 
+
 \begin{Schunk}
 \begin{Sinput}
 > xUnique=((0:100)-50)/10 
@@ -340,6 +414,8 @@ over the range $-5\leq x,y \leq 5$. All necessary codes are given in Exhibit~\re
 \end{Sinput}
 
 \includegraphics[width=0.7\textwidth]{figures/ComplexGraphsXYZContour-1} \end{Schunk}
+% filename ComplexGraphs037.Rnw 
+
 \SVGLink{ComplexGraphsXYZContour-1} 
 \end{center} 
 \end{exhibit} 
@@ -348,5 +424,7 @@ Note the \Rcmd{contour} function needed to know the unique values of the $x$ and
  
  
  
+% filename CleanUp.Rnw 
+
 
 

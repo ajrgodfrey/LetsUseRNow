@@ -1,1 +1,3 @@
+% filename Regression031.Rnw 
+
 This then allows us the opportunity of using the \Rcmd{anova} command as demonstrated above to compare these two models and one constructed earlier which used only \Robject{Temp} as a predictor. 

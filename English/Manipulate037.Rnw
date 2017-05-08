@@ -1,3 +1,5 @@
+% filename Manipulate037.Rnw 
+
 which we saw earlier. The main difference between the two commands is that this one will add the new colun to the original \Rclass{data.frame}. 
 In this instance the difference is probably fairly trivial, but when we use much larger data sets, the storage of results is important because of speed and memory usage concerns. 
  

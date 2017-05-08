@@ -1,3 +1,5 @@
+% filename VI021.Rnw 
+
 Take a look in the \file{AirQuality} folder that has been created in your working directory. It has a number of files that all start with ``Ozone" --- the name of the variable being analysed.  You will also have three files stored in the current working directory which have the filename \file{Ozone-UniDesc.*} where the star is for the extension which is one of \file{html}, \file{R}, and \file{Rmd}. 
  
 The most useful one at first is the \file{Ozone-UniDesc.html} file. Open this file in a browser to see what analyses have been included. This file is specifically formatted for use with screen readers. I hope you find it valuable. If you are reading this document on the web, then the link \url{Ozone-UniDesc.html} will open it in your browser. \Sighted{The link will not work if you are using the \file{pdf} version of LURN.} 

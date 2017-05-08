@@ -1,1 +1,3 @@
+% filename ImportData019.Rnw 
+
 The \Rcmd{data} command looks in the \Rpackage{datasets} package by default. If we wanted to get some data from another package we would need to state the name of the package explicitly. For example, 

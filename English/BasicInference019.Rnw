@@ -1,2 +1,4 @@
+% filename BasicInference019.Rnw 
+
  
 which is the way we would normally work when we have the two measurements stored using two distinct variables; or, use the formula approach: 

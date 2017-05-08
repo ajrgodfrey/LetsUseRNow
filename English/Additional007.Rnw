@@ -1,3 +1,5 @@
+% filename Additional007.Rnw 
+
 
 Installation of individual packages can be achieved using the \Rcmd{install.packages} command. Investigate its help page to ensure you get the most out of its use. 
 

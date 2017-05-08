@@ -1,3 +1,5 @@
+% filename ComplexGraphs035.Rnw 
+
 generates the plot using the code given in the help file. 
  
 The \Robject{volcano} data is stored as a matrix of altitudes. The \Rcmd{contour} command uses this to interpolate the coordinates of the points where the altitude is constant. 

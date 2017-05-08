@@ -1,3 +1,5 @@
+% filename TimeSeries001.Rnw 
+
 %\setcounter{chapter}{} 
 % commands to check for inclusion 
 % filter(), HoltWinters(), spectrum(), Box.test(), lag.plot(), monthplot(), tsdiag(),  

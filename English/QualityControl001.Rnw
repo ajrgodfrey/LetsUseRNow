@@ -1,3 +1,5 @@
+% filename QualityControl001.Rnw 
+
 %\setcounter{chapter}{} 
 \chapter{LURN\ldots{} To Analyze Quality Control Data} 
 \label{QualityControl} 

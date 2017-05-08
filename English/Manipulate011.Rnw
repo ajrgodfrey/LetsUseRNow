@@ -1,2 +1,4 @@
+% filename Manipulate011.Rnw 
+
  
 Note that the \Rcmd{sample} command used here has created a random permutation of the numbers one to ten. 

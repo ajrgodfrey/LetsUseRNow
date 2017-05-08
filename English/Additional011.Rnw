@@ -1,3 +1,5 @@
+% filename Additional011.Rnw 
+
 Note that the \Rarg{ask} argument is set to \code{FALSE} here. The default action is to ask the user if they want a particular package updated. I find this frustrating, especially if it's been a while since I updated my packages.
 
 You do not need to do this task very often. I would recommend doing it after installing a new version of \R{}, or if you see a warning message about the version of a package you use.

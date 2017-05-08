@@ -1,3 +1,5 @@
+% filename ComplexGraphs021.Rnw 
+
 \SVGLink{ComplexGraphsHistWithNormalCurve-1} 
  
 The \Rcmd{curve} function has four arguments in this example. First is the function being plotted, which in this case is \Rcmd{dnorm} ---the density function for the normal distribution. We then supply the range of values over which this function is to be evaluated using two arguments, and finally we ask that the curve be aded to the existing plot. There are other arguments that we could add, including \Rarg{n}, the number of points to be evaluated over the specified range. 

@@ -1,3 +1,5 @@
+% filename Additional003.Rnw 
+
 
 This chapter explains how you do some tasks that are not part of the basic installation of \R{}. This includes instructions on how to add extra functionality via add-on packages and pointers to some user interfaces.
 

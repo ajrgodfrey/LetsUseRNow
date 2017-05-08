@@ -1,1 +1,3 @@
+% filename SimpleGraphs005.Rnw 
+
 It is common for \R{} users to access the variables after issuing the command 

@@ -1,3 +1,5 @@
+% filename TimeSeries005.Rnw 
+
 The first is for the level of Lake Huron; the second is the number of lynx that were trapped in Canada; and the third is the flow of the River Nile. More detailed information for all of these series is available using the relevant help function for the series. 
  
 You can use the Rcmd{as.ts} command to convert a vector of observations to a time series object. For example, the Robject{airquality} data is recorded in time order. We might want to treat the observed temperatures as a time series by converting it using: 

@@ -1,3 +1,5 @@
+% filename Regression021.Rnw 
+
 Note that in order to obtain a model with the correct coefficients for the polynomial terms in the model, we need to use the \Rarg{raw} argument, setting it to \code{TRUE}.  
  
 We usually justify the use of a quadratic form by determining there is no practical benefit in making the model more complicated. To do this, we need to investigate the model for the cubic form of the relationship using 

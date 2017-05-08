@@ -1,1 +1,3 @@
+% filename DataEntry039.Rnw 
+
 It might be useful to print this information as part of your documentation of an analysis. We can come back to an \R{} session at a later time and to keep track of when we do things might prove useful. You can see from the output given here the exact time and date this document was compiled. This format is not to be confused with what we would store or manipulate; it is just a print out of the current time and date. The \Rcmd{Sys.Date} command stores the same information as number. 

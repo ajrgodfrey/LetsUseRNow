@@ -1,3 +1,5 @@
+% filename Scientific003.Rnw 
+
  
 This chapter explains how to use \R{} as a scientific calculator, including its use of trigonometric functions. We'll also plot some of the functions for illustrative purposes.  
  

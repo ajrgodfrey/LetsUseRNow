@@ -1,3 +1,5 @@
+% filename Manipulate007.Rnw 
+
  
 So we see that the \Rcmd{order} command doesn't actually do the re-ordering after all, but that we need to use the subscripts to extract the elements (the full set) from the pre-existing set. 
  

@@ -10,11 +10,11 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,2,next,mathjax,html --> 
 <meta name="src" content="LURNBlind.tex" /> 
-<meta name="date" content="2017-05-08 12:02:00" /> 
+<meta name="date" content="2017-05-08 13:17:00" /> 
 <link rel="stylesheet" type="text/css" href="LURNBlind.css" /> 
 </head><body 
 >
-   <!--l. 4--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 8--><div class="crosslinks"><p class="noindent">[<a 
 href="../LURN/LURNch15.html">Version for sighted users</a>] [<a 
 
 href="LURNBlindch16.html" >next</a>] [<a 
@@ -24,7 +24,7 @@ href="#tailLURNBlindch15.html">tail</a>] [<a
 href="LURNBlind.html#LURNBlindch15.html" >up</a>] </p></div>
    <h2 class="chapterHead"><span class="titlemark">Chapter&#x00A0;15</span><br /><a 
  id="x17-11400015"></a>LURN&#x2026; To use the BrailleR add-on package</h2>
-<!--l. 9--><p class="noindent" >This chapter explains how the <a 
+<!--l. 17--><p class="noindent" >This chapter explains how the <a 
  id="dx17-114001"></a><span 
 class="aeti-12">BrailleR </span>add-on package can be used by blind
 people to get many tasks done quickly and effectively. In general, the package does
@@ -44,11 +44,11 @@ three things:
       R commands to survive. Sighted people have the benefit of graphical
       user interfaces (GUI) to help them, but none of them are accessible by
       screen reading software.</li></ol>
-<!--l. 14--><p class="noindent" >Initially, the package was built on top of functionality I wrote to support my own
+<!--l. 22--><p class="noindent" >Initially, the package was built on top of functionality I wrote to support my own
 work practices, but additions to meet the needs of other blind <span 
 class="aess-12">R </span>users have been
 made on request.
-</p><!--l. 17--><p class="indent" >   You will need to install the <a 
+</p><!--l. 25--><p class="indent" >   You will need to install the <a 
  id="dx17-114008"></a><span 
 class="aeti-12">BrailleR </span>package before continuing on with the
 examples in this chapter. It is available from CRAN. Use the examples in
@@ -63,16 +63,16 @@ make sure the package is ready for action.
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;library(BrailleR)</span></div>
-<!--l. 23--><p class="noindent" >This chapter was created using version 0.25.7 of the <a 
+<!--l. 35--><p class="indent" >   This chapter was created using version 0.25.7 of the <a 
  id="dx17-114012"></a><span 
-class="aeti-12">BrailleR </span>package. This version of
-the package has a number of other packages that it depends on for functionality.
-When you make the <a 
+class="aeti-12">BrailleR </span>package. This
+version of the package has a number of other packages that it depends on for
+functionality. When you make the <a 
  id="dx17-114013"></a><span 
-class="aeti-12">BrailleR </span>package available, you may see a few introduction
-messages that tell you about the other packages being loaded. You will be told
-about some default settings for the package that can be altered later to suit your
-needs.
+class="aeti-12">BrailleR </span>package available, you may see a few
+introduction messages that tell you about the other packages being loaded. You
+will be told about some default settings for the package that can be altered later
+to suit your needs.
 </p>
    <h3 class="sectionHead"><span class="titlemark">15.1   </span> <a 
  id="x17-11500015.1"></a>Creating a copy of the <span 
@@ -80,12 +80,12 @@ class="aess-12">R </span>console window</h3>
                                                                           
 
                                                                           
-<!--l. 28--><p class="noindent" >In Chapter&#x00A0;<a 
+<!--l. 40--><p class="noindent" >In Chapter&#x00A0;<a 
 href="LURNBlindch2.html#x4-50002">2<!--tex4ht:ref: BlindUse --></a> I mentioned the need to save the content of the console window to a
 text file to be able to copy and paste its content to a report or document. One
 major feature of the BrailleR package is that this functionality can be done easily
 and efficiently.
-</p><!--l. 30--><p class="indent" >   There are three types of content printed in the console window.
+</p><!--l. 42--><p class="indent" >   There are three types of content printed in the console window.
       </p><ol  class="enumerate1" >
       <li 
   class="enumerate" id="x17-115002x1">The commands we type,
@@ -95,79 +95,82 @@ and efficiently.
       </li>
       <li 
   class="enumerate" id="x17-115006x3">Any error or warning messages that arise from our commands.</li></ol>
-<!--l. 36--><p class="indent" >   The <a 
+<!--l. 48--><p class="indent" >   The <a 
  id="dx17-115007"></a><span 
 class="aett-12">sink() </span>command does not currently record the commands or the errors
 and warning messages. It is therefore a valuable tool for those <span 
 class="aess-12">R </span>users that are
 confident about the validity of their scripts.
-</p><!--l. 38--><p class="indent" >   Saving the commands typed into an <span 
+</p><!--l. 50--><p class="indent" >   Saving the commands typed into an <span 
 class="aess-12">R </span>session can be achieved using the
 <a 
  id="dx17-115008"></a><span 
 class="aett-12">savehistory() </span>command. For example
+</p><!--l. 54--><p class="indent" >
 </p>
    <div class="fancyvrb" id="fancyvrb332">  <a 
  id="x17-115010r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;savehistory("WhatIDidToday.txt")</span></div>
-<!--l. 44--><p class="noindent" >will save all the issued commands into a text file called <span 
-class="aett-12">WhatIDidToday.txt</span> in the
-working directory.
-</p><!--l. 46--><p class="indent" >   If I just want to have everything I do during a session recorded for posterity, I
+<!--l. 60--><p class="indent" >   will save all the issued commands into a text file called <span 
+class="aett-12">WhatIDidToday.txt</span> in
+the working directory.
+</p><!--l. 62--><p class="indent" >   If I just want to have everything I do during a session recorded for posterity, I
 want all contents of the console window to be saved. A plain text file is
 sufficient but it is possible to use add-on packages to create other file
 formats.
-</p><!--l. 48--><p class="indent" >   I have included a convenience function in the <a 
+</p><!--l. 64--><p class="indent" >   I have included a convenience function in the <a 
  id="dx17-115011"></a><span 
 class="aeti-12">BrailleR </span>package that starts a
 text file with the date and time in its filename. It gets saved in the current
 working directory. To get this file started, just type
+</p><!--l. 68--><p class="indent" >
 </p>
    <div class="fancyvrb" id="fancyvrb333">  <a 
  id="x17-115013r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;txtOut()</span></div>
-<!--l. 54--><p class="noindent" >In fact this command starts several files, one for the complete console and one for the
-issued commands. The command actually runs the <a 
+<!--l. 74--><p class="indent" >   In fact this command starts several files, one for the complete console and one
+for the issued commands. The command actually runs the <a 
  id="dx17-115014"></a><span 
-class="aett-12">txtStart() </span>command but
-specifies particular options for the user&#8217;s convenience. If you are happy to
+class="aett-12">txtStart() </span>command
+but specifies particular options for the user&#8217;s convenience. If you are happy to
 use the defalt filename then you just need to hit &#x003C;enter&#x003E;, but if you
-want to specify the filename, you type the name, and then hit &#x003C;Enter&#x003E;
-twice (once for your file and once to get out of the filename requesting
-prompt).
                                                                           
 
                                                                           
-</p><!--l. 56--><p class="indent" >   See the help page for the <a 
+want to specify the filename, you type the name, and then hit &#x003C;Enter&#x003E;
+twice (once for your file and once to get out of the filename requesting
+prompt).
+</p><!--l. 76--><p class="indent" >   See the help page for the <a 
  id="dx17-115015"></a><span 
 class="aett-12">txtOut() </span>command as it includes the history of the
 command and its relatives. The other related commands add comments to the
 text file or stop the processing entirely. Also note that the help page mentions how
 to get the packages needed for other file formats.
-</p><!--l. 59--><p class="indent" >   You can open the text file that is being created and modified as you work in
+</p><!--l. 79--><p class="indent" >   You can open the text file that is being created and modified as you work in
 any browser. Once you have the file open and have done some work, you must
 refresh your browser to see the latest changes. Keep the browser open as you work
 and remember to refresh often to keep on top of what is happening with complete
 access via your screen reader.
-</p><!--l. 61--><p class="noindent" >
+</p><!--l. 81--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">15.2   </span> <a 
  id="x17-11600015.2"></a>Text interpretation of graphs</h3>
-<!--l. 64--><p class="noindent" >Statistics is an inherently visual discipline. Many statistical analyses lead to a
+<!--l. 84--><p class="noindent" >Statistics is an inherently visual discipline. Many statistical analyses lead to a
 graphic representation of data that is easy for the sighted world to interpret.
 Through use of <span 
 class="aess-12">R </span>we can create functions that can interpret the graphs using text
 descriptions. We&#8217;ll start with a histogram.
-</p><!--l. 66--><p class="indent" >   In most circumstances, the user will create a histogram using the <a 
+</p><!--l. 86--><p class="indent" >   In most circumstances, the user will create a histogram using the <a 
  id="dx17-116001"></a><span 
 class="aett-12">hist()</span>
 command. This command takes data and creates a number of values needed to
 construct the histogram. We can see what has been created by storing these values
 in an object. For example:
+</p><!--l. 90--><p class="indent" >
 </p>
    <div class="fancyvrb" id="fancyvrb334">  <a 
  id="x17-116003r1"></a><span 
@@ -182,7 +185,7 @@ class="aett-12">&#x00A0;speed</span><span
 class="aett-12">&#x00A0;(mph)",</span><span 
 class="aett-12">&#x00A0;main="",</span><span 
 class="aett-12">&#x00A0;plot=FALSE)</span></div>
-<!--l. 71--><p class="noindent" >
+<!--l. 93--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb335"> <a 
  id="x17-116005r1"></a><span 
@@ -207,25 +210,26 @@ class="aett-12">&#x00A0;not</span><span
 class="aett-12">&#x00A0;made</span><span 
 class="aett-12">&#x00A0;use</span><span 
 class="aett-12">&#x00A0;of</span></div>
-<!--l. 75--><p class="noindent" >The <span 
-class="aett-12">plot </span>argument stops the graph being plotted. We can get the graph anytime by
-issuing the <a 
+<!--l. 99--><p class="indent" >   The <span 
+class="aett-12">plot </span>argument stops the graph being plotted. We can get the graph
+anytime by issuing the <a 
  id="dx17-116006"></a><span 
-class="aett-12">plot() </span>command but we are only interested in seeing what <span 
-class="aess-12">R </span>has
-stored in the <span 
+class="aett-12">plot() </span>command but we are only interested in seeing what
+<span 
+class="aess-12">R </span>has stored in the <span 
 class="aett-12">MyHist </span>object at the moment.
+</p><!--l. 103--><p class="indent" >
 </p>
    <div class="fancyvrb" id="fancyvrb336">  <a 
  id="x17-116008r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;MyHist</span></div>
-<!--l. 80--><p class="noindent" >
-</p>
                                                                           
 
                                                                           
+<!--l. 106--><p class="noindent" >
+</p>
    <div class="fancyvrb" id="fancyvrb337"> <a 
  id="x17-116010r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
@@ -474,14 +478,14 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;[1]</span><span 
 class="aett-12">&#x00A0;"Augmented"</span><span 
 class="aett-12">&#x00A0;"histogram"</span></div>
-<!--l. 130--><p class="noindent" >
+<!--l. 156--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb338"> <a 
  id="x17-116106r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;str(MyHist)</span></div>
-<!--l. 133--><p class="noindent" >
+<!--l. 159--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb339"> <a 
  id="x17-116108r1"></a><span 
@@ -717,14 +721,14 @@ class="aett-12">&#x00A0;chr</span><span
 class="aett-12">&#x00A0;[1:2]</span><span 
 class="aett-12">&#x00A0;"Augmented"</span><span 
 class="aett-12">&#x00A0;"histogram"</span></div>
-<!--l. 152--><p class="noindent" >
+<!--l. 178--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb340"> <a 
  id="x17-116142r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;class(MyHist)</span></div>
-<!--l. 155--><p class="noindent" >
+<!--l. 181--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb341"> <a 
  id="x17-116144r1"></a><span 
@@ -732,7 +736,10 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;[1]</span><span 
 class="aett-12">&#x00A0;"Augmented"</span><span 
 class="aett-12">&#x00A0;"histogram"</span></div>
-<!--l. 160--><p class="indent" >   The full print out has everything we need but is not in a friendly format. The
+                                                                          
+
+                                                                          
+<!--l. 188--><p class="indent" >   The full print out has everything we need but is not in a friendly format. The
 <a 
  id="dx17-116145"></a><span 
 class="aett-12">str() </span>command gives us a condensed version of the data being stored but isn&#8217;t
@@ -746,9 +753,6 @@ is what tells <span
 class="aess-12">R </span>how to work on the object when we use the <a 
  id="dx17-116148"></a><span 
 class="aett-12">plot() </span>command on
-                                                                          
-
-                                                                          
 the <span 
 class="aett-12">MyHist </span>object. The <a 
  id="dx17-116149"></a><span 
@@ -765,7 +769,7 @@ class="aeti-12">histogram</span>. This family of commands is known as a
 <a 
  id="dx17-116153"></a><span 
 class="aeti-12">method</span>.
-</p><!--l. 162--><p class="indent" >   The <a 
+</p><!--l. 190--><p class="indent" >   The <a 
  id="dx17-116154"></a><span 
 class="aeti-12">BrailleR </span>package includes a <a 
  id="dx17-116155"></a><span 
@@ -783,6 +787,7 @@ object, the <a
  id="dx17-116159"></a><span 
 class="aett-12">VI.histogram() </span>function does the work. Let&#8217;s see what we
 get:
+</p><!--l. 194--><p class="indent" >
 </p>
    <div class="fancyvrb" id="fancyvrb342">  <a 
  id="x17-116161r1"></a><span 
@@ -794,7 +799,7 @@ class="aett-12">&#x00A0;wind</span><span
 class="aett-12">&#x00A0;speed</span><span 
 class="aett-12">&#x00A0;(mph)",</span><span 
 class="aett-12">&#x00A0;main=""))</span></div>
-<!--l. 167--><p class="noindent" >
+<!--l. 197--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb343"> <a 
  id="x17-116163r1"></a><span 
@@ -996,13 +1001,14 @@ class="aett-12">&#x00A0;2</span></div>
                                                                           
 
                                                                           
-<!--l. 188--><p class="noindent" ><img 
+<!--l. 218--><p class="noindent" ><img 
 src="LURNBlind36x.png" alt="a histogram" class="graphics" width="312.00119pt" height="312.00511pt"  /><!--tex4ht:graphics  
 name="LURNBlind36x.png" src="figures/VIHist-1.eps"  
 -->
-</p><!--l. 190--><p class="indent" >   <a 
+</p><!--l. 220--><p class="indent" >   <a 
 href="../SVGs/VIHistAirQualityWind.html" >link to accessible SVG file: (requires correct browser)</a>
-</p><!--l. 193--><p class="indent" >   Other functions exist for boxplots and dotplots. Try:
+</p><!--l. 225--><p class="indent" >   Other functions exist for boxplots and dotplots. Try:
+</p><!--l. 229--><p class="indent" >
 </p>
    <div class="fancyvrb" id="fancyvrb344">  <a 
  id="x17-116199r1"></a><span 
@@ -1016,7 +1022,7 @@ class="aett-12">&#x00A0;(mph)"))</span></div>
                                                                           
 
                                                                           
-<!--l. 199--><p class="indent" >   <img 
+<!--l. 233--><p class="indent" >   <img 
 src="LURNBlind37x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt"  /><!--tex4ht:graphics  
 name="LURNBlind37x.png" src="figures/VIVIBoxplot-1.eps"  
 -->
@@ -1148,14 +1154,15 @@ class="aett-12">&#x00A0;of</span><span
 class="aett-12">&#x00A0;the</span><span 
 class="aett-12">&#x00A0;lower</span><span 
 class="aett-12">&#x00A0;whisker.</span></div>
-<!--l. 213--><p class="noindent" >and
+<!--l. 249--><p class="indent" >   and
+</p><!--l. 253--><p class="indent" >
 </p>
    <div class="fancyvrb" id="fancyvrb346">  <a 
  id="x17-116223r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;VI(dotplot(x))</span></div>
-<!--l. 218--><p class="noindent" >
+<!--l. 256--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb347"> <a 
  id="x17-116225r1"></a><span 
@@ -1167,7 +1174,7 @@ class="aett-12">&#x00A0;object</span><span
 class="aett-12">&#x00A0;&#8217;x&#8217;</span><span 
 class="aett-12">&#x00A0;not</span><span 
 class="aett-12">&#x00A0;found</span></div>
-<!--l. 223--><p class="indent" >   The <a 
+<!--l. 263--><p class="indent" >   The <a 
  id="dx17-116226"></a><span 
 class="aett-12">dotplot() </span>command is not part of base <span 
 class="aess-12">R </span>which uses the <a 
@@ -1181,12 +1188,12 @@ class="aett-12">boxplot() </span>commands used here are actually
 commands from the <a 
  id="dx17-116230"></a><span 
 class="aeti-12">BrailleR </span>package that use the standard commands indirectly.
-At this point in time, I haven&#8217;t worked out how to get the <a 
- id="dx17-116231"></a><span 
-class="aett-12">stripchart()</span>
                                                                           
 
                                                                           
+At this point in time, I haven&#8217;t worked out how to get the <a 
+ id="dx17-116231"></a><span 
+class="aett-12">stripchart()</span>
 command to work as a <a 
  id="dx17-116232"></a><span 
 class="aeti-12">BrailleR </span>command so I needed to use a different name for
@@ -1195,11 +1202,11 @@ my version. The <a
 class="aeti-12">BrailleR </span>versions of these three commands store the additional
 information we need to get the text interpretation that is not possible from the
 standard version of the commands.
-</p><!--l. 226--><p class="noindent" >
+</p><!--l. 266--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">15.3   </span> <a 
  id="x17-11700015.3"></a>Basic descriptions of variables</h3>
-<!--l. 228--><p class="noindent" >The <a 
+<!--l. 268--><p class="noindent" >The <a 
  id="dx17-117001"></a><span 
 class="aett-12">UniDesc() </span>function is designed to quickly generate a text summary of a
 single variable. It also saves several graphs. It can also save the text in a file and
@@ -1209,10 +1216,11 @@ class="aett-12">VI() </span>command from the <a
  id="dx17-117003"></a><span 
 class="aeti-12">BrailleR </span>package to add text descriptions to the
 output file.
-</p><!--l. 230--><p class="indent" >   One obvious issue is that saving lots of files could become problematic.
+</p><!--l. 270--><p class="indent" >   One obvious issue is that saving lots of files could become problematic.
 Default filenames are used and all files can be put into a folder of the user&#8217;s
 choosing.
-</p><!--l. 232--><p class="indent" >   An example will help. Try
+</p><!--l. 272--><p class="indent" >   An example will help. Try
+</p><!--l. 276--><p class="indent" >
 </p>
    <div class="fancyvrb" id="fancyvrb348">  <a 
  id="x17-117005r1"></a><span 
@@ -1229,17 +1237,17 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;UniDesc(Ozone,</span><span 
 class="aett-12">&#x00A0;Folder="AirQuality")</span></div>
-<!--l. 240--><p class="noindent" >Take a look in the <span 
-class="aett-12">AirQuality</span> folder that has been created in your working directory.
-It has a number of files that all start with &#8220;Ozone" &#8212; the name of the variable
-being analysed. You will also have three files stored in the current working
-directory which have the filename <span 
-class="aett-12">Ozone-UniDesc.*</span> where the star is for the
-extension which is one of <span 
+<!--l. 284--><p class="indent" >   Take a look in the <span 
+class="aett-12">AirQuality</span> folder that has been created in your working
+directory. It has a number of files that all start with &#8220;Ozone" &#8212; the name of the
+variable being analysed. You will also have three files stored in the current
+working directory which have the filename <span 
+class="aett-12">Ozone-UniDesc.*</span> where the star is for
+the extension which is one of <span 
 class="aett-12">html</span>, <span 
 class="aett-12">R</span>, and <span 
 class="aett-12">Rmd</span>.
-</p><!--l. 242--><p class="indent" >   The most useful one at first is the <span 
+</p><!--l. 286--><p class="indent" >   The most useful one at first is the <span 
 class="aett-12">Ozone-UniDesc.html</span> file. Open this file in a
 browser to see what analyses have been included. This file is specifically formatted
 for use with screen readers. I hope you find it valuable. If you are reading this
@@ -1249,22 +1257,22 @@ class="aett-12">Ozone-UniDesc.html</span></a> will open it in
 your browser. The link will not work if you are using the <span 
 class="aett-12">pdf</span> version of
 LURN.
-</p><!--l. 244--><p class="indent" >   The commands used to generate parts of this HTML document are given in
+</p><!--l. 288--><p class="indent" >   The commands used to generate parts of this HTML document are given in
 the <span 
 class="aess-12">R </span>script file; the third file is called an <span 
 class="aess-12">R </span>markdown document. This is the file
 that gets converted into the other two files. It might prove useful to learn how to
 write this kind of file for yourself one day.
-</p><!--l. 246--><p class="indent" >   In the <span 
+</p><!--l. 290--><p class="indent" >   In the <span 
 class="aett-12">airquality</span> subfolder you will find that graphs have been saved in a
 variety of formats. They each have their uses and hopefully the filetype you need
+                                                                          
+
+                                                                          
 is there. Special attention is made for those users of <span class="LATEX">L<span class="A">A</span><span class="TEX">T<span 
 class="E">E</span>X</span></span> who need specific
 formats for graphics. Some more advanced information is presented in <span class="LATEX">L<span class="A">A</span><span class="TEX">T<span 
 class="E">E</span>X</span></span>
-                                                                          
-
-                                                                          
 formatted tables and put into files with the <span 
 class="aett-12">tex</span> extension. For example, the
 content of Table&#x00A0;<a 
@@ -1335,7 +1343,7 @@ class="content">Tests for normality: Variable is Ozone.</span></div><!--tex4ht:l
                                                                           
    </div><hr class="endfloat" />
    </div>
-<!--l. 250--><p class="indent" >   Whenever the <a 
+<!--l. 294--><p class="indent" >   Whenever the <a 
  id="dx17-117011"></a><span 
 class="aett-12">VI() </span>function is employed on an object that does not yet have
 an explicit function tied to it, then you will be told that this is the case. This
@@ -1345,7 +1353,7 @@ like any extra functionality.
    <h3 class="sectionHead"><span class="titlemark">15.4   </span> <a 
  id="x17-11800015.4"></a>Altering <span 
 class="aess-12">R </span>output to make it easier to read</h3>
-<!--l. 256--><p class="noindent" >Some <span 
+<!--l. 300--><p class="noindent" >Some <span 
 class="aess-12">R </span>output is arranged in nice tables that are easy for the sighted user to
 read, but are difficult to understand if using synthesised speech to read the
 information back to you. The <a 
@@ -1357,13 +1365,14 @@ class="aeti-12">data.frame </span>object. We&#8217;ll compare it with the <a
  id="dx17-118003"></a><span 
 class="aett-12">summary() </span>command
 used frequently.
+</p><!--l. 304--><p class="indent" >
 </p>
    <div class="fancyvrb" id="fancyvrb349">  <a 
  id="x17-118005r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;summary(airquality)</span></div>
-<!--l. 261--><p class="noindent" >
+<!--l. 307--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb350"> <a 
  id="x17-118007r1"></a><span 
@@ -1660,17 +1669,17 @@ class="aett-12">&#x00A0;:31.0</span><br class="fancyvrb" /><a
  id="x17-118037r16"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span></div>
-<!--l. 279--><p class="noindent" >
+<!--l. 325--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb351"> <a 
  id="x17-118039r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;VI(airquality)</span></div>
-<!--l. 282--><p class="noindent" >
                                                                           
 
                                                                           
+<!--l. 328--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb352"> <a 
  id="x17-118041r1"></a><span 
@@ -1860,29 +1869,29 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;Max.</span><span 
 class="aett-12">&#x00A0;31</span></div>
-<!--l. 294--><p class="indent" >   The output generated by the <a 
+<!--l. 342--><p class="indent" >   The output generated by the <a 
  id="dx17-118056"></a><span 
 class="aett-12">summary() </span>command is difficult to follow as
 variables are represented in columns while rows that are read aloud by a screen
 reader are for the sample statistics.
-</p><!--l. 296--><p class="indent" >   The <a 
+</p><!--l. 344--><p class="indent" >   The <a 
  id="dx17-118057"></a><span 
 class="aett-12">VI() </span>method has given us a summary of the variables one by one. This
 should prove easier to navigate and interpret as either a braille or screen reader
 user.
-</p><!--l. 298--><p class="noindent" >
+</p><!--l. 346--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">15.5   </span> <a 
  id="x17-11900015.5"></a>Reading a scatter plot</h3>
-<!--l. 301--><p class="noindent" >One challenge facing blind people is the inability to glance at a graph and
+<!--l. 349--><p class="noindent" >One challenge facing blind people is the inability to glance at a graph and
 understand what is intended just as sighted people can. The most difficult graphs
 to deal with are multidimensional representations of data. Two dimensional
 scatter plots are the first example of such graphs.
-</p><!--l. 304--><p class="indent" >   When a sighted person looks at a scatter plot, they are looking for a number of
+</p><!--l. 352--><p class="indent" >   When a sighted person looks at a scatter plot, they are looking for a number of
 things. A relationship between the variables is the most common thing to look for,
 but there is also a need to identify points that are unusual in the context of the
 data presented.
-</p><!--l. 306--><p class="indent" >   One possible way to describe how the data points are summarised
+</p><!--l. 354--><p class="indent" >   One possible way to describe how the data points are summarised
 at a glance is that the graphing window is broken up into areas and a
 rough guess at the density of points within each region is evaluated. If this
 evaluation of density can be guessed, it can be counted more exactly by a
@@ -1893,14 +1902,15 @@ us. It assumes equal-sized rectangular regions in the graph window. We
 can choose how many regions but the illustrations here all use a 5<span 
 class="cmsy-10x-x-120">&#x00D7;</span>5
 grid.
-</p><!--l. 308--><p class="indent" >   Let&#8217;s work with a number of examples, all based on a set of predetermined
+</p><!--l. 356--><p class="indent" >   Let&#8217;s work with a number of examples, all based on a set of predetermined
 <span 
 class="cmmi-12">x</span>-values and various possible <span 
 class="cmmi-12">y</span>-values.
-</p>
+</p><!--l. 360--><p class="indent" >
                                                                           
 
                                                                           
+</p>
    <div class="fancyvrb" id="fancyvrb353">  <a 
  id="x17-119003r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1924,7 +1934,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;y4=y3;</span><span 
 class="aett-12">&#x00A0;y4[100]=0</span></div>
-<!--l. 319--><p class="indent" >   What we might guess from the above is that a graph of <span 
+<!--l. 371--><p class="indent" >   What we might guess from the above is that a graph of <span 
 class="cmr-12">(</span><span 
 class="cmmi-12">x,y</span><sub><span 
 class="cmr-8">1</span></sub><span 
@@ -1945,9 +1955,10 @@ class="cmr-8">4</span></sub><span
 class="cmr-12">) </span>pairs are the same
 as the previous straight line, but one point is some distance from the
 line.
-</p><!--l. 321--><p class="indent" >   The <a 
+</p><!--l. 373--><p class="indent" >   The <a 
  id="dx17-119012"></a><span 
 class="aett-12">WhereXY() </span>command for each plot is now given.
+</p><!--l. 377--><p class="indent" >
 </p>
    <div class="fancyvrb" id="fancyvrb354">  <a 
  id="x17-119014r1"></a><span 
@@ -1955,7 +1966,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;WhereXY(x,y2,</span><span 
 class="aett-12">&#x00A0;grid=c(5,5))</span></div>
-<!--l. 326--><p class="noindent" >
+<!--l. 380--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb355"> <a 
  id="x17-119016r1"></a><span 
@@ -2067,7 +2078,7 @@ class="aett-12">&#x00A0;20</span><span
 class="aett-12">&#x00A0;20</span><span 
 class="aett-12">&#x00A0;20</span><span 
 class="aett-12">&#x00A0;101</span></div>
-<!--l. 335--><p class="noindent" >
+<!--l. 389--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb356"> <a 
  id="x17-119030r1"></a><span 
@@ -2075,7 +2086,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;WhereXY(x,y2,</span><span 
 class="aett-12">&#x00A0;grid=c(5,5))</span></div>
-<!--l. 338--><p class="noindent" >
+<!--l. 392--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb357"> <a 
  id="x17-119032r1"></a><span 
@@ -2187,7 +2198,7 @@ class="aett-12">&#x00A0;20</span><span
 class="aett-12">&#x00A0;20</span><span 
 class="aett-12">&#x00A0;20</span><span 
 class="aett-12">&#x00A0;101</span></div>
-<!--l. 347--><p class="noindent" >
+<!--l. 401--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb358"> <a 
  id="x17-119046r1"></a><span 
@@ -2195,7 +2206,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;WhereXY(x,y3,</span><span 
 class="aett-12">&#x00A0;grid=c(5,5))</span></div>
-<!--l. 350--><p class="noindent" >
+<!--l. 404--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb359"> <a 
  id="x17-119048r1"></a><span 
@@ -2307,10 +2318,10 @@ class="aett-12">&#x00A0;20</span><span
 class="aett-12">&#x00A0;20</span><span 
 class="aett-12">&#x00A0;20</span><span 
 class="aett-12">&#x00A0;101</span></div>
-<!--l. 359--><p class="noindent" >
                                                                           
 
                                                                           
+<!--l. 413--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb360"> <a 
  id="x17-119062r1"></a><span 
@@ -2318,7 +2329,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;WhereXY(x,y4,</span><span 
 class="aett-12">&#x00A0;grid=c(5,5))</span></div>
-<!--l. 362--><p class="noindent" >
+<!--l. 416--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb361"> <a 
  id="x17-119064r1"></a><span 
@@ -2430,14 +2441,14 @@ class="aett-12">&#x00A0;20</span><span
 class="aett-12">&#x00A0;20</span><span 
 class="aett-12">&#x00A0;20</span><span 
 class="aett-12">&#x00A0;101</span></div>
-<!--l. 373--><p class="indent" >   We might also alter the number of cells in the grid to see how sensitive we
+<!--l. 429--><p class="indent" >   We might also alter the number of cells in the grid to see how sensitive we
 want to make our investigation. Personal preferences will determine which
 combination of rows and columns works best.
-</p><!--l. 375--><p class="noindent" >
+</p><!--l. 431--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">15.6   </span> <a 
  id="x17-12000015.6"></a>What else?</h3>
-<!--l. 377--><p class="noindent" >Future developments in the BrailleR package will be made to meet demand. If you
+<!--l. 433--><p class="noindent" >Future developments in the BrailleR package will be made to meet demand. If you
 do want some additional functionality that you think is likely to be wanted by
 others then please do add to the wish list. Current ideas on the wish list include:
 </p>
@@ -2454,7 +2465,7 @@ class="aett-12">VI() </span>command.
                                                                           
 
                                                                           
-   <!--l. 5--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 9--><div class="crosslinks"><p class="noindent">[<a 
 href="../LURN/LURNch15.html">Version for sighted users</a>] [<a 
 
 href="LURNBlindch16.html" >next</a>] [<a 
@@ -2462,6 +2473,6 @@ href="LURNBlindch14.html" >prev</a>] [<a
 href="LURNBlindch14.html#tailLURNBlindch14.html" >prev-tail</a>] [<a 
 href="LURNBlindch15.html" >front</a>] [<a 
 href="LURNBlind.html#LURNBlindch15.html" >up</a>] </p></div>
-<!--l. 5--><p class="indent" >   <a 
+<!--l. 9--><p class="indent" >   <a 
  id="tailLURNBlindch15.html"></a>  </p> 
 </body></html> 

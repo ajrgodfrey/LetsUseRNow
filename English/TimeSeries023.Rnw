@@ -1,3 +1,5 @@
+% filename TimeSeries023.Rnw 
+
  
  
 The \Rcmd{decompose} function can create two forms of the decomposition, one of which is additive and the other is multiplicative. 

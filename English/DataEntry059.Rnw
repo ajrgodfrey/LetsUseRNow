@@ -1,3 +1,5 @@
+% filename DataEntry059.Rnw 
+
  
 I like to create random data when planning an analysis. In this instance, the data are normally distributed which is not particularly important, but they are random which is important. There are many other functions that generate random data from other distributions; by convention, these functions all start with a letter ``r" followed by a shortened form of the distribution's name.  
  

@@ -1,2 +1,4 @@
+% filename Regression033.Rnw 
+
  
 The creation of interaction variables is also simple in \R{} Changing the ``+" sign in the model to a ``*" sign tells \R{} that we want the two main variables and their interaction to be included. The interaction term uses a ``:" between the variable names in the output. 

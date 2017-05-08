@@ -1,3 +1,5 @@
+% filename LinearAlgebra003.Rnw 
+
  
 This chapter explains how some tasks commonly taught in introductory algebra courses can be undertaken using \R{}. The functionality is built into \R{} because so many tasks in statistical analyses require manipulation of vectors and matrices, although much of this work is hidden behind other commands and functions. 
  

@@ -1,3 +1,5 @@
+% filename Manipulate001.Rnw 
+
 % sample commands for dplyr section need completion 
 % use string splitting to split a date and time up into useful parts. 
 % rearrange long table to short form and back 
