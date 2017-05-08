@@ -1,5 +1,10 @@
-<<Boxplot, echo=FALSE, fig.width=7, fig.height=5, eval=-1>>= 
+<<BoxplotAirQualityWind, echo=FALSE, fig.width=7, fig.height=5, eval=-1, fig.show="hide">>= 
 windows(7, 5) 
 boxplot(Wind, horizontal=TRUE, xlab="Wind speed (mph)") 
 @ 
-\SVGLink{SimpleGraphsBoxplot-1} 
+\includegraphics[width=0.8\textwidth,alt={a boxplot}]{figures/SimpleGraphsBoxplotAirQualityWind-1} 
+<<BoxplotAirQualityWindSVG, echo=FALSE, include=FALSE, messages=FALSE, warnings=FALSE, results="hide", fig.show="hide">>= 
+MakeAccessibleSVG(boxplot(Wind, horizontal=TRUE, xlab="Wind speed (mph)"), "figures/SimpleGraphsBoxplotAirQualityWind")
+@ 
+\SVGLink{SimpleGraphsBoxplotAirQualityWind} 
+

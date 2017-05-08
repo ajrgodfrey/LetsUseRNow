@@ -2,7 +2,7 @@
 hist(Wind, xlab="Average wind speed (mph)", main="") 
 @ 
 \includegraphics[width=0.8\textwidth,alt={a histogram}]{figures/SimpleGraphsHistAirQualityWind2-1} 
-<<HistAirQualityWind2SVG, include=FALSE>>= 
+<<HistAirQualityWind2SVG, echo=FALSE, include=FALSE, messages=FALSE, warnings=FALSE, results="hide">>= 
 MakeAccessibleSVG(hist(Wind, xlab="Average wind speed (mph)", main="") , "figures/SimpleGraphsHistAirQualityWind2")
 @ 
 \SVGLink{SimpleGraphsHistAirQualityWind2} 

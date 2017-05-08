@@ -15,10 +15,10 @@ MyHist
 str(MyHist) 
 class(MyHist) 
 
-## ----Hist----------------------------------------------------------------
+## ----Hist, fig.show="hide"-----------------------------------------------
 VI(hist(airquality$Wind, xlab="Average wind speed (mph)", main="")) 
 
-## ----HistSVG, echo=FALSE, results="hide"---------------------------------
+## ----HistSVG, echo=FALSE, include=FALSE, messages=FALSE, warnings=FALSE, results="hide"----
 MakeAccessibleSVG(hist(airquality$Wind, xlab="Average wind speed (mph)", main=""), "figures/VIHistAirQualityWind") 
 
 ## ----VIBoxplot-----------------------------------------------------------

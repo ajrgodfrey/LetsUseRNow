@@ -1,7 +1,8 @@
-<<Hist>>= 
+<<Hist, fig.show="hide">>= 
 VI(hist(airquality$Wind, xlab="Average wind speed (mph)", main="")) 
 @
-<<HistSVG, echo=FALSE, results="hide">>= 
+\includegraphics[width=0.8\textwidth,alt={a histogram}]{figures/VIHist-1} 
+<<HistSVG, echo=FALSE, include=FALSE, messages=FALSE, warnings=FALSE, results="hide">>= 
 MakeAccessibleSVG(hist(airquality$Wind, xlab="Average wind speed (mph)", main=""), "figures/VIHistAirQualityWind") 
 @ 
 \SVGLink{VIHistAirQualityWind} 

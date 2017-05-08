@@ -4,21 +4,24 @@ str(airquality)
 ## ----AttachAirQuality----------------------------------------------------
 attach(airquality) 
 
-## ----HistAirQualityWind, echo=TRUE, fig.show="hide"----------------------
+## ----HistAirQualityWind, fig.show="hide"---------------------------------
 hist(Wind) 
 
-## ----HistAirQualityWindSVG, include=FALSE--------------------------------
+## ----HistAirQualityWindSVG, echo=FALSE, include=FALSE, messages=FALSE, warnings=FALSE, results="hide", fig.show="hide"----
 MakeAccessibleSVG(hist(Wind), "figures/SimpleGraphsHistAirQualityWind")
 
 ## ----HistAirQualityWind2, fig.show="hide"--------------------------------
 hist(Wind, xlab="Average wind speed (mph)", main="") 
 
-## ----HistAirQualityWind2SVG, include=FALSE-------------------------------
+## ----HistAirQualityWind2SVG, echo=FALSE, include=FALSE, messages=FALSE, warnings=FALSE, results="hide"----
 MakeAccessibleSVG(hist(Wind, xlab="Average wind speed (mph)", main="") , "figures/SimpleGraphsHistAirQualityWind2")
 
-## ----Boxplot, echo=FALSE, fig.width=7, fig.height=5, eval=-1-------------
+## ----BoxplotAirQualityWind, echo=FALSE, fig.width=7, fig.height=5, eval=-1, fig.show="hide"----
 windows(7, 5) 
 boxplot(Wind, horizontal=TRUE, xlab="Wind speed (mph)") 
+
+## ----BoxplotAirQualityWindSVG, echo=FALSE, include=FALSE, messages=FALSE, warnings=FALSE, results="hide", fig.show="hide"----
+MakeAccessibleSVG(boxplot(Wind, horizontal=TRUE, xlab="Wind speed (mph)"), "figures/SimpleGraphsBoxplotAirQualityWind")
 
 ## ----CompBoxplot---------------------------------------------------------
 boxplot(Wind~Month, xlab="Month", ylab="Wind speed (mph)") 
