@@ -1,3 +1,5 @@
+% filename ggplotHist2.Rnw 
+
 <<GGPlotHistWind>>=
 ggplot(airquality, aes(Wind)) + geom_histogram()
 @

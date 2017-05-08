@@ -1,3 +1,5 @@
+% filename DataEntry056.Rnw 
+
 <<CreateDF4>>= 
 MyThirdDF = expand.grid(h=c(60,80), w=c(100, 300), sex=c("Male", "Female")) 
 MyThirdDF 

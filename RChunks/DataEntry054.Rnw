@@ -1,3 +1,5 @@
+% filename DataEntry054.Rnw 
+
 <<CreateDF3>>= 
 Year = c(1971, 1945, 1925, 2003, 2010, 2012, 2013) 
 Month = c("October", "October", "July", "October", "April", "June", "June") 

@@ -1,3 +1,5 @@
+% filename BasicInference022.Rnw 
+
 <<DropData>>= 
 detach(sleep) 
 @ 

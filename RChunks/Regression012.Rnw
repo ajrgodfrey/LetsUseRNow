@@ -1,3 +1,5 @@
+% filename Regression012.Rnw 
+
 <<OzoneTempWithLine>>= 
 plot(Temp, Ozone) 
 abline(Ozone.lm2) 

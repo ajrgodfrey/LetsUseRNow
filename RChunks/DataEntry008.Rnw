@@ -1,3 +1,5 @@
+% filename DataEntry008.Rnw 
+
 <<BasicMath>>= 
 x=sqrt(169) 
 y=log(500) 

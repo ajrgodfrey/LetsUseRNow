@@ -1,3 +1,5 @@
+% filename TimeSeries022.Rnw 
+
 <<getAustResData>>= 
 str(austres) 
 @ 

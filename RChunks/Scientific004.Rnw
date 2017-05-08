@@ -1,3 +1,5 @@
+% filename Scientific004.Rnw 
+
 <<BasicTrig>>= 
 pi 
 sin(pi/6) 

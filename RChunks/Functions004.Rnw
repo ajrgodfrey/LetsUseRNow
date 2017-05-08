@@ -1,3 +1,5 @@
+% filename Functions004.Rnw 
+
 <<SineCurve>>= 
 MySine <- function(x){ sin(x)} 
 @ 

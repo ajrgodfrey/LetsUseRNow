@@ -1,3 +1,5 @@
+% filename ComplexGraphs032.Rnw 
+
 <<MtEdenContour>>= 
 contour(volcano) 
 @ 

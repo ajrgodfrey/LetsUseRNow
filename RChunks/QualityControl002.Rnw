@@ -1,3 +1,5 @@
+% filename QualityControl002.Rnw 
+
 <<ChSetup, include=FALSE, purl=FALSE>>=
 opts_chunk$set(fig.path='figures/QualityControl', tidy=FALSE, out.width="0.7\\textwidth") 
 @ 

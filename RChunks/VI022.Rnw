@@ -1,3 +1,5 @@
+% filename VI022.Rnw 
+
 <<VIDataFrame>>= 
 summary(airquality) 
 VI(airquality) 

@@ -1,3 +1,5 @@
+% filename DataEntry018.Rnw 
+
 <<EnterLogical>>= 
 Human = c(TRUE, TRUE, TRUE, FALSE, TRUE, TRUE, TRUE) 
 @ 

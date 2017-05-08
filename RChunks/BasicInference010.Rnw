@@ -1,3 +1,5 @@
+% filename BasicInference010.Rnw 
+
 <<FirstHypTest>>= 
 TestStat= (mean(precip)-30)/(sd(precip) / sqrt(length(precip))) 
 pt(TestStat, length(precip)-1, lower.tail=FALSE) 

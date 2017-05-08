@@ -1,3 +1,5 @@
+% filename Manipulate032.Rnw 
+
 <<HottestDays>>= 
 airquality2 %>% arrange(desc(Temp)) 
 @ 

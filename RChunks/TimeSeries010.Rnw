@@ -1,3 +1,5 @@
+% filename TimeSeries010.Rnw 
+
 <<TSPlotsCompared>>= 
 plot(airquality$Temp, ylab="Temperature") 
 plot(Temp.ts, ylab="Temperature") 

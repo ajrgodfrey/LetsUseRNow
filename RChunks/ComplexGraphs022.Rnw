@@ -1,3 +1,5 @@
+% filename ComplexGraphs022.Rnw 
+
 <<AddPolyCurve>>= 
 Ozone.poly2 = lm(Ozone~poly(Wind,2, raw=TRUE), data=airquality) 
 Coeffs=coef(Ozone.poly2) 

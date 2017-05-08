@@ -1,3 +1,5 @@
+% filename Maps010.Rnw 
+
 <<Denmark>>= 
 Places = geocode(location=c("Aalborg", "Copenhagen")) 
 Places 

@@ -1,3 +1,5 @@
+% filename ComplexGraphs016.Rnw 
+
 <<DeathsTSPlot>>= 
 plot(ldeaths, ylim=c(0,4000), xlab="Year", ylab="Number of deaths") 
 lines(fdeaths, col="red") 

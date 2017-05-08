@@ -1,3 +1,5 @@
+% filename ComplexGraphs036.Rnw 
+
 <<XYZContour>>= 
 xUnique=((0:100)-50)/10 
 yUnique=((0:100)-50)/10 

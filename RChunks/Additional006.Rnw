@@ -1,3 +1,5 @@
+% filename Additional006.Rnw 
+
 <<ChooseCloud, eval=FALSE>>=
 chooseCRANmirror(ind=1)
 @

@@ -1,3 +1,5 @@
+% filename LinearAlgebra006.Rnw 
+
 <<CreateMatrix>>= 
 X=matrix(x, ncol=1) 
 class(X) 

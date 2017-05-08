@@ -1,3 +1,5 @@
+% filename StoreResults006.Rnw 
+
 <<CreateX>>= 
 x=1:20 
 x 

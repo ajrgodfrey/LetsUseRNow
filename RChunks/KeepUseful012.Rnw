@@ -1,3 +1,5 @@
+% filename KeepUseful012.Rnw 
+
 <<eval=FALSE>>= 
 library(NewPackage) 
 @ 

@@ -1,3 +1,5 @@
+% filename DataEntry014.Rnw 
+
 <<Suare10qIntegers>>= 
 y=(1:10)^2 
 y 

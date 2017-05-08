@@ -1,3 +1,5 @@
+% filename SimpleGraphs004.Rnw 
+
 <<IntroAirQuality>>= 
 str(airquality) 
 @ 

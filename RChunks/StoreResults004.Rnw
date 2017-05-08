@@ -1,3 +1,5 @@
+% filename StoreResults004.Rnw 
+
 <<HistRand10000Z, eval=2, results='hide', include=FALSE>>= 
 x11() 
 hist(rnorm(10000), xlab="x", main="") 

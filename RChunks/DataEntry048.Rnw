@@ -1,3 +1,5 @@
+% filename DataEntry048.Rnw 
+
 <<CreateDF2>>= 
 MyFirstDF = data.frame(Names, Human) 
 str(MyFirstDF) 

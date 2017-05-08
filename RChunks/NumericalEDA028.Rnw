@@ -1,3 +1,5 @@
+% filename NumericalEDA028.Rnw 
+
 <<SortedTApply2>>= 
 rev(tapply(Wind, Month, mean)) 
 @ 

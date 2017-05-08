@@ -1,3 +1,5 @@
+% filename DataEntry024.Rnw 
+
 <<UseSubscript>>= 
 Names[1] 
 @ 

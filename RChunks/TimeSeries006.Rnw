@@ -1,3 +1,5 @@
+% filename TimeSeries006.Rnw 
+
 <<MakeTSTemp>>= 
 Temp.ts = as.ts(airquality$Temp) 
 @ 

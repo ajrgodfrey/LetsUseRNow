@@ -1,3 +1,5 @@
+% filename DataEntry040.Rnw 
+
 <<Dates2>>= 
 Sys.Date() 
 class(Sys.Date()) 

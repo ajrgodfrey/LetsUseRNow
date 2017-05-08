@@ -1,3 +1,5 @@
+% filename StoreResults008.Rnw 
+
 <<CreateSinkFile, eval=-3, results='hide'>>= 
 sink(".\\other\\JustPrintX.txt") 
 x 

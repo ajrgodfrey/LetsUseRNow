@@ -1,3 +1,5 @@
+% filename KeepUseful006.Rnw 
+
 <<eval=FALSE>>= 
 library(devtools) 
 @ 

@@ -1,3 +1,5 @@
+% filename SimpleGraphs038.Rnw 
+
 <<StateRegionBarChart2>>= 
 barplot(summary(state.region)) 
 @ 

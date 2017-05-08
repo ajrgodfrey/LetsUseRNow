@@ -1,3 +1,5 @@
+% filename NumericalEDA008.Rnw 
+
 <<MeansDF>>= 
 colMeans(airquality[,1:4]) 
 colMeans(airquality[,1:4], na.rm=TRUE) 

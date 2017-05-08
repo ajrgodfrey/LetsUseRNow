@@ -1,3 +1,5 @@
+% filename TimeSeries004.Rnw 
+
 <<IntroData>>= 
 str(LakeHuron) 
 str(lynx) 

@@ -1,3 +1,5 @@
+% filename NumericalEDA036.Rnw 
+
 <<Correlations4>>= 
 round(cor(data.frame(Ozone, Solar.R, Wind, Temp),  
 use = "pairwise.complete.obs", method = "s"), 3) 

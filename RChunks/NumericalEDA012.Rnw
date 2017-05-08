@@ -1,3 +1,5 @@
+% filename NumericalEDA012.Rnw 
+
 <<SummaryVector>>= 
 min(Temp) 
 max(Wind) 

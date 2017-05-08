@@ -1,3 +1,5 @@
+% filename Regression024.Rnw 
+
 <<OzoneANOVA>>= 
 anova(Ozone.lm1, Ozone.poly2, Ozone.poly3) 
 @ 

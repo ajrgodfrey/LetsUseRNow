@@ -1,3 +1,5 @@
+% filename KeepUseful008.Rnw 
+
 <<eval=FALSE>>= 
 setwd("C:/Users/My Documents/Downloads/") 
 @ 

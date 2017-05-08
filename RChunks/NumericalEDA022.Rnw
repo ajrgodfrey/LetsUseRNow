@@ -1,3 +1,5 @@
+% filename NumericalEDA022.Rnw 
+
 <<TApply4>>= 
 tapply(Ozone, Month, mean) 
 @ 

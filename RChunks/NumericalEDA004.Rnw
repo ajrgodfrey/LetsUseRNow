@@ -1,3 +1,5 @@
+% filename NumericalEDA004.Rnw 
+
 <<CheckData>>= 
 class(airquality) 
 @ 

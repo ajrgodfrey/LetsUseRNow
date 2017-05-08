@@ -1,3 +1,5 @@
+% filename NumericalEDA048.Rnw 
+
 <<FindHottestMonths>>= 
 Grouped = group_by(airquality, Month) 
 Summarised = summarise(Grouped, AveTemp=mean(Temp, na.rm = TRUE)) 

@@ -1,3 +1,5 @@
+% filename NumericalEDA016b.Rnw 
+
 <<Aggregate1>>= 
 aggregate(Wind~Month, data=airquality, mean) 
 @ 

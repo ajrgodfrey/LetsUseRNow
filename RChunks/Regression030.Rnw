@@ -1,3 +1,5 @@
+% filename Regression030.Rnw 
+
 <<OzoneLM4>>= 
 Ozone.lm4 = lm(Ozone~poly(Wind,2)+Temp, data=airquality) 
 @ 

@@ -1,3 +1,5 @@
+% filename Manipulate006.Rnw 
+
 <<Ordering>>= 
 Home=c("Jonathan", "Callum", "Annabelle", "Cordelia", "Hershey") 
 order(Home) 

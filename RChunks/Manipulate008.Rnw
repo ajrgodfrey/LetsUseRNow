@@ -1,3 +1,5 @@
+% filename Manipulate008.Rnw 
+
 <<Ordering2>>= 
 SomeLetters=c("A", "B", "a", "c", "b", "C") 
 SomeLetters[order(SomeLetters)] 

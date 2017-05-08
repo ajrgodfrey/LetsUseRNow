@@ -1,3 +1,5 @@
+% filename Regression036.Rnw 
+
 <<OzoneANOVA3>>= 
 anova(Ozone.lm5, Ozone.lm4) 
 @ 

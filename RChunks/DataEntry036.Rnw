@@ -1,3 +1,5 @@
+% filename DataEntry036.Rnw 
+
 <<CreatePattern3>>= 
 rep(c(1,2,4), times=3, length.out=8) 
 @ 

@@ -1,3 +1,5 @@
+% filename BasicInference004.Rnw 
+
 <<BasicStats>>= 
 mean(precip) 
 sd(precip) 

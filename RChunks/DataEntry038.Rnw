@@ -1,3 +1,5 @@
+% filename DataEntry038.Rnw 
+
 <<Dates>>= 
 date() 
 class(date()) 

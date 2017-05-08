@@ -1,3 +1,5 @@
+% filename VI010.Rnw 
+
 <<CreateHist>>= 
 MyHist = hist(airquality$Wind, xlab="Average wind speed (mph)", main="", plot=FALSE) 
 @ 

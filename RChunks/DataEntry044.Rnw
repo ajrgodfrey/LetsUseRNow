@@ -1,3 +1,5 @@
+% filename DataEntry044.Rnw 
+
 <<UseLevels>>= 
 levels(Months) = c("Mar", "Jun", "Sep", "Dec") 
 Months 

@@ -1,3 +1,5 @@
+% filename Functions006.Rnw 
+
 <<MySine2>>= 
 MySine2 <- function(x){ sin(x) 
 print(x)} 

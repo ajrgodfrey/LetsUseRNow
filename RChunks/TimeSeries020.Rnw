@@ -1,3 +1,5 @@
+% filename TimeSeries020.Rnw 
+
 <<NileACFNoPlot>>= 
 acf(Nile, plot=FALSE) 
 pacf(Nile, plot=FALSE) 

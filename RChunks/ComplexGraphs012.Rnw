@@ -1,3 +1,5 @@
+% filename ComplexGraphs012.Rnw 
+
 <<IrisInSymbols>>= 
 plot(Petal.Length~Petal.Width, data=iris, xlab="Petal width", ylab="Petal length", pch=as.numeric(Species)) 
 @ 

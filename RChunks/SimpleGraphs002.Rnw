@@ -1,3 +1,5 @@
+% filename SimpleGraphs002.Rnw 
+
 <<ChSetup, include=FALSE, purl=FALSE>>=
 opts_chunk$set(fig.path='figures/SimpleGraphs', out.width="0.8\\textwidth") 
 require(BrailleR)

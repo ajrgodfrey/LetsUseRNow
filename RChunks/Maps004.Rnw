@@ -1,3 +1,5 @@
+% filename Maps004.Rnw 
+
 <<MapsPackage>>= 
 library(maps) 
 library(mapdata) 

@@ -1,3 +1,5 @@
+% filename ImportData016.Rnw 
+
 <<ImportCSVSOtherFolder, eval=FALSE>>= 
 Chickens = read.csv("../MyData/chickens.csv") 
 @ 

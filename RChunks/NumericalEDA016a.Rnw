@@ -1,3 +1,5 @@
+% filename NumericalEDA016a.Rnw 
+
 <<TApply1>>= 
 tapply(Wind, Month, mean) 
 @ 

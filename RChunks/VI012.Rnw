@@ -1,3 +1,5 @@
+% filename VI012.Rnw 
+
 <<ShowPrintHist>>= 
 MyHist 
 str(MyHist) 

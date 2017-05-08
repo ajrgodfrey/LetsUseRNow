@@ -1,3 +1,5 @@
+% filename LinearAlgebra026.Rnw 
+
 <<GetGInverse>>= 
 M 
 require(MASS) 

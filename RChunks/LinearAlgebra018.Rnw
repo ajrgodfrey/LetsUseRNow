@@ -1,3 +1,5 @@
+% filename LinearAlgebra018.Rnw 
+
 <<MatrixElementMult>>= 
 A=matrix(1:4, nrow=2) 
 B=matrix(7:10, nrow=2) 

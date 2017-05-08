@@ -1,3 +1,5 @@
+% filename DataEntry004.Rnw 
+
 <<Assignment>>= 
 x=100/7 
 x 

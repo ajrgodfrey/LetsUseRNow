@@ -1,3 +1,5 @@
+% filename ComplexGraphs008.Rnw 
+
 <<LayoutDiffSizes>>= 
 attach(quakes) 
 layout(Arrangement.mat) 

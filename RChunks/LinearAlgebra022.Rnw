@@ -1,3 +1,5 @@
+% filename LinearAlgebra022.Rnw 
+
 <<MultiplyMatrices>>= 
 y=c(3,4) 
 A%*%y 

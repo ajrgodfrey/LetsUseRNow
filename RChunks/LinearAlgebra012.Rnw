@@ -1,3 +1,5 @@
+% filename LinearAlgebra012.Rnw 
+
 <<CreateHilbert>>= 
 row(I3) 
 Hilb3=row(I3)+col(I3)-1 

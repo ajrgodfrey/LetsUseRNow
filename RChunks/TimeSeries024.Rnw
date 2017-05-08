@@ -1,3 +1,5 @@
+% filename TimeSeries024.Rnw 
+
 <<DecomposeAustRes>>= 
 AustRes.dec1 = decompose(austres) 
 Aust.dec2 =decompose(austres, type="mul") 

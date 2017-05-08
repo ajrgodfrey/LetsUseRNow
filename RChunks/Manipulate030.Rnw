@@ -1,3 +1,5 @@
+% filename Manipulate030.Rnw 
+
 <<GrabRows5>>= 
 airquality %>% filter(Wind<10&Temp<60) 
 @ 

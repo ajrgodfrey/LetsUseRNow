@@ -1,3 +1,5 @@
+% filename Regression010.Rnw 
+
 <<OzoneWindWithLine>>= 
 attach(airquality) 
 plot(Wind, Ozone) 

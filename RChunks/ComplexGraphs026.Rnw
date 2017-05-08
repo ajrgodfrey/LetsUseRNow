@@ -1,3 +1,5 @@
+% filename ComplexGraphs026.Rnw 
+
 <<CreateSomeData>>= 
 Frequency=c(12,19, 22, 18, 11,13, 13, 12) 
 Gender=rep(c("Male", "Female"), 4) 

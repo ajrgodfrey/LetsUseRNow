@@ -1,3 +1,5 @@
+% filename NumericalEDA032.Rnw 
+
 <<Correlations>>= 
 cor(data.frame(Ozone, Solar.R, Wind, Temp)) 
 @ 

@@ -1,3 +1,5 @@
+% filename VI026.Rnw 
+
 <<WhereXY>>= 
 WhereXY(x,y2, grid=c(5,5)) 
 WhereXY(x,y2, grid=c(5,5)) 

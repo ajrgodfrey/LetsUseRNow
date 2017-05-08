@@ -1,3 +1,5 @@
+% filename DataEntry016.Rnw 
+
 <<EnterText>>= 
 Names = c("Jonathan", "Elizabeth", "Peter", "Jenna", "Callum", "Annabelle", "Cordelia") 
 Names 

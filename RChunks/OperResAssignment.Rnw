@@ -1,3 +1,5 @@
+% filename OperResAssignment.Rnw 
+
 <<ORAssignment>>=
 require(lpSolve)
 set.seed(3010)

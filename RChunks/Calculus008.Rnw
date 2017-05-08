@@ -1,3 +1,5 @@
+% filename Calculus008.Rnw 
+
 <<Derivation>>= 
 y=expression(exp(2*x)) 
 D(y,"x") 

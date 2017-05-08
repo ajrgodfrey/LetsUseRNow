@@ -1,3 +1,5 @@
+% filename ImportData020.Rnw 
+
 <<PullData2>>= 
 data(anorexia, package="MASS") 
 @ 

@@ -1,3 +1,5 @@
+% filename VI016.Rnw 
+
 <<VIBoxplot>>= 
 VI(boxplot(airquality$Wind, xlab="Average wind speed (mph)")) 
 @ 

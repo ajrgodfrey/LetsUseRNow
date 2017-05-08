@@ -1,3 +1,5 @@
+% filename SimpleGraphs024.Rnw 
+
 <<ScatterCode1, eval=FALSE>>= 
 plot(Wind, Temp) 
 @ 

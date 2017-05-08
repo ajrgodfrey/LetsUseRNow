@@ -1,3 +1,5 @@
+% filename ComplexGraphs010.Rnw 
+
 <<IrisInColour>>= 
 plot(Sepal.Length~Sepal.Width, data=iris, xlab="Sepal width", ylab="Sepal length", col=Species) 
 @ 

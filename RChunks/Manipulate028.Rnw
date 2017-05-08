@@ -1,3 +1,5 @@
+% filename Manipulate028.Rnw 
+
 <<GrabRows4>>= 
 filter(airquality, Wind<10&Temp<60) 
 @ 

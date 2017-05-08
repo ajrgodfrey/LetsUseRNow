@@ -1,3 +1,5 @@
+% filename Manipulate038.Rnw 
+
 <<TransmuteData>>= 
 airquality2 %>% transmute(TempC = (Temp - 32) * 5 / 9) 
 @ 

@@ -1,3 +1,5 @@
+% filename NumericalEDA050.Rnw 
+
 <<FindHottestMonthsPiping>>= 
 airquality2 %>% 
 group_by(Month) %>% 

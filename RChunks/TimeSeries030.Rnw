@@ -1,3 +1,5 @@
+% filename TimeSeries030.Rnw 
+
 <<AustResHW>>= 
 AustRes.hw1 = HoltWinters(austres) 
 AustRes.hw1 

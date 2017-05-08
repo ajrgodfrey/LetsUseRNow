@@ -1,3 +1,5 @@
+% filename Manipulate014.Rnw 
+
 <<GetData>>= 
 data(airquality) 
 @ 

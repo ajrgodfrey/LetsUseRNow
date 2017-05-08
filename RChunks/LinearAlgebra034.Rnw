@@ -1,3 +1,5 @@
+% filename LinearAlgebra034.Rnw 
+
 <<FullEigen>>= 
 H4=matrix(-1,nrow=4, ncol=4) 
 H4=H4+row(H4)+col(H4) 

@@ -1,3 +1,5 @@
+% filename KeepUseful004.Rnw 
+
 <<eval=FALSE>>= 
 install.packages("devtools") 
 @ 

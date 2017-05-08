@@ -1,3 +1,5 @@
+% filename LinearAlgebra028.Rnw 
+
 <<ShowIdentity>>= 
 M%*%ginv(M) 
 @ 

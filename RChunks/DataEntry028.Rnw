@@ -1,3 +1,5 @@
+% filename DataEntry028.Rnw 
+
 <<CheckData>>= 
 class(Names) 
 str(Names) 

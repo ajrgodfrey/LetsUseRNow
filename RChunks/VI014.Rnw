@@ -1,3 +1,5 @@
+% filename VI014.Rnw 
+
 <<Hist, fig.show="hide">>= 
 VI(hist(airquality$Wind, xlab="Average wind speed (mph)", main="")) 
 @

@@ -1,3 +1,5 @@
+% filename Calculus006.Rnw 
+
 <<EvalMySine>> 
 MySine(c((0:4)*pi/2)) 
 @ 

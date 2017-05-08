@@ -1,3 +1,5 @@
+% filename Multivariate002.Rnw 
+
 <<ChSetup, include=FALSE, purl=FALSE>>=
 opts_chunk$set(fig.path='figures/Multivariate', out.width="0.7\\textwidth") 
 @ 

@@ -1,3 +1,5 @@
+% filename SimpleGraphs018.Rnw 
+
 <<LinePlot>>= 
 plot(Temp, ylim=c(50,100)) 
 @ 

@@ -1,3 +1,5 @@
+% filename LinearAlgebra020.Rnw 
+
 <<MatrixMult>>= 
 A%*%B 
 B%*%A 

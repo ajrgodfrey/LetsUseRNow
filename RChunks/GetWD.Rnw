@@ -1,3 +1,5 @@
+% filename GetWD.Rnw 
+
 <<GetWD>>= 
 getwd() 
 @ 

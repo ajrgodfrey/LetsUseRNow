@@ -1,3 +1,5 @@
+% filename DataEntry012.Rnw 
+
 <<EnterSeq>>= 
 x=1:10 
 x 

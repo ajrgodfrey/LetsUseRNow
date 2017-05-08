@@ -1,3 +1,5 @@
+% filename BasicInference012.Rnw 
+
 <<TTest1>>= 
 t.test(precip) 
 @ 

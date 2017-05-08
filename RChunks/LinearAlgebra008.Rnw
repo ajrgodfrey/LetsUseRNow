@@ -1,3 +1,5 @@
+% filename LinearAlgebra008.Rnw 
+
 <<CreateIdentity>>= 
 I3=diag(3) 
 I3 

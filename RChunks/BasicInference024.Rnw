@@ -1,3 +1,5 @@
+% filename BasicInference024.Rnw 
+
 <<Correlations>>= 
 attach(airquality) 
 cor.test(Ozone, Wind) 

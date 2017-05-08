@@ -1,3 +1,5 @@
+% filename SimpleGraphs008.Rnw 
+
 <<HistAirQualityWind, fig.show="hide">>= 
 hist(Wind) 
 @

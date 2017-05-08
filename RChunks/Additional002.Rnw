@@ -1,3 +1,5 @@
+% filename Additional002.Rnw 
+
 <<ChSetup, include = FALSE, purl=FALSE>>=
 opts_chunk$set(fig.path='figures/Additional', out.width="0.7\\textwidth")
 @

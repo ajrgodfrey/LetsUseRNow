@@ -1,3 +1,5 @@
+% filename LinearAlgebra030.Rnw 
+
 <<SolveLinearSet>>= 
 A 
 b=c(5,7) 

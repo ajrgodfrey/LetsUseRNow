@@ -1,3 +1,5 @@
+% filename BasicInference016.Rnw 
+
 <<GetData>>= 
 attach(sleep) 
 @ 

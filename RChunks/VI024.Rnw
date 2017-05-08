@@ -1,3 +1,5 @@
+% filename VI024.Rnw 
+
 <<CreateVars>>= 
 x=(0:100)/100 
 y1=5*x+rnorm(101) 

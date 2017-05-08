@@ -1,3 +1,5 @@
+% filename DataEntry022.Rnw 
+
 <<UseLogical2>>= 
 Names[!Human] 
 @ 

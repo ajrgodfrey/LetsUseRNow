@@ -1,3 +1,5 @@
+% filename SimpleGraphs010.Rnw 
+
 <<HistAirQualityWind2, fig.show="hide">>= 
 hist(Wind, xlab="Average wind speed (mph)", main="") 
 @ 

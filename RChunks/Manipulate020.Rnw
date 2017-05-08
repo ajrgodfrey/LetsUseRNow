@@ -1,3 +1,5 @@
+% filename Manipulate020.Rnw 
+
 <<GrabRows2>>= 
 airquality[airquality$Wind<10&airquality$Temp<60,] 
 @ 

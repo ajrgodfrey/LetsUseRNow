@@ -1,3 +1,5 @@
+% filename ExportData004.Rnw 
+
 <<WriteCSV, eval=FALSE>>= 
 write.csv(Chickens, file="chickens.csv") 
 @ 

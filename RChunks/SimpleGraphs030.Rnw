@@ -1,3 +1,5 @@
+% filename SimpleGraphs030.Rnw 
+
 <<MatrixPlot>>= 
 pairs(data.frame(Ozone, Solar.R, Wind, Temp)) 
 @ 

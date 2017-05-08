@@ -1,3 +1,5 @@
+% filename TimeSeries008.Rnw 
+
 <<NilePlot>>= 
 plot(Nile, xlab="Year", ylab="Flow") 
 @ 

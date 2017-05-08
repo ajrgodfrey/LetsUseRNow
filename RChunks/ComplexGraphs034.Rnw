@@ -1,3 +1,5 @@
+% filename ComplexGraphs034.Rnw 
+
 <<VolcanoExample, eval=FALSE>>= 
 example(volcano) 
 @ 

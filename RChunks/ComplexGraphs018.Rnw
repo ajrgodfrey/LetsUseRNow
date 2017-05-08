@@ -1,3 +1,5 @@
+% filename ComplexGraphs018.Rnw 
+
 <<QuakesPlaces>>= 
 plot(lat~long, data=quakes, xlim=c(160,190), ylim=c(-40,-10)) 
 abline(h=-30) 

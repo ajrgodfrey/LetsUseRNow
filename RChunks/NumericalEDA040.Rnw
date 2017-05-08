@@ -1,3 +1,5 @@
+% filename NumericalEDA040.Rnw 
+
 <<tblAirQuality>>= 
 airquality2=tbl_df(airquality) 
 @  

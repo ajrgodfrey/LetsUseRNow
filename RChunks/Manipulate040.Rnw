@@ -1,3 +1,5 @@
+% filename Manipulate040.Rnw 
+
 <<ExtractSampleN>>= 
 airquality %>% sample_n(4) 
 @ 

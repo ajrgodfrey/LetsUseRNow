@@ -1,3 +1,5 @@
+% filename StoreResults014.Rnw 
+
 <<CreateSinkFile4>>= 
 cat(x, file=".\\other\\JustCatX.txt") 
 @ 

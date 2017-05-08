@@ -1,3 +1,5 @@
+% filename NumericalEDA014.Rnw 
+
 <<Quartiles>>= 
 fivenum(Ozone) 
 @ 

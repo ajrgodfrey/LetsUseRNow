@@ -1,3 +1,5 @@
+% filename ImportData018.Rnw 
+
 <<PullData>>= 
 data(airquality) 
 str(airquality) 

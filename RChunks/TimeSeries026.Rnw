@@ -1,3 +1,5 @@
+% filename TimeSeries026.Rnw 
+
 <<STLAustRes>>= 
 AustRes.dec3 = stats::stl(austres, s.window="periodic") 
 AustRes.dec3 
