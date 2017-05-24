@@ -10,7 +10,7 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,2,next,mathjax,html --> 
 <meta name="src" content="LURNBlind.tex" /> 
-<meta name="date" content="2017-05-08 13:17:00" /> 
+<meta name="date" content="2017-05-24 15:07:00" /> 
 <link rel="stylesheet" type="text/css" href="LURNBlind.css" /> 
 </head><body 
 >
@@ -23,7 +23,7 @@ href="LURNBlindch19.html#tailLURNBlindch19.html" >prev-tail</a>] [<a
 href="#tailLURNBlindch20.html">tail</a>] [<a 
 href="LURNBlind.html#LURNBlindch20.html" >up</a>] </p></div>
    <h2 class="chapterHead"><span class="titlemark">Chapter&#x00A0;20</span><br /><a 
- id="x22-14000020"></a>LURN&#x2026; To Solve Operations Research Problems</h2>
+ id="x22-14200020"></a>LURN&#x2026; To Solve Operations Research Problems</h2>
 <!--l. 16--><p class="noindent" >This chapter explains how to find solutions to several problems in Operations
 Research. More specifically, they are problems in Linear Programming
 (LP) and Integer Programming (IP) where the solution is found as the
@@ -33,26 +33,26 @@ between LP and IP is the possible values for the decision variables under
 consideration.
 </p><!--l. 18--><p class="indent" >   To benefit the most from this chapter, you ought to be familiar with basic
 manipulation of vectors and matrices, as seen in Chapter&#x00A0;<a 
-href="LURNBlindch19.html#x21-13200019">19<!--tex4ht:ref: Algebra --></a> and be ready to
+href="LURNBlindch19.html#x21-13400019">19<!--tex4ht:ref: Algebra --></a> and be ready to
 install an additional package using the methods outlined in Chapter&#x00A0;<a 
-href="LURNBlindch14.html#x16-10900014">14<!--tex4ht:ref: Additional --></a>. You will
+href="LURNBlindch14.html#x16-11000014">14<!--tex4ht:ref: Additional --></a>. You will
 need to install the <a 
- id="dx22-140001"></a><span 
+ id="dx22-142001"></a><span 
 class="aeti-12">lpSolve </span>package and make sure it is ready for use by
 calling the <a 
- id="dx22-140002"></a><span 
+ id="dx22-142002"></a><span 
 class="aett-12">require() </span>command as seen in the examples in this chapter.
 Note that this need only be done once, but the command is repeated as a
 reminder.
 </p><!--l. 20--><p class="indent" >   Note that all examples are intentionally made reproducible through use of
 random number generation. You will need to make sure you reset the random
 number generator&#8217;s seed value using the <a 
- id="dx22-140003"></a><span 
+ id="dx22-142003"></a><span 
 class="aett-12">set.seed() </span>commands that appear in
 the examples.
 </p>
    <h3 class="sectionHead"><span class="titlemark">20.1   </span> <a 
- id="x22-14100020.1"></a>The Assignment Problem</h3>
+ id="x22-14300020.1"></a>The Assignment Problem</h3>
 <!--l. 25--><p class="noindent" >The assignment problem assigns <span 
 class="cmmi-12">n </span>tasks to <span 
 class="cmmi-12">n </span>people. The objective function is
@@ -67,16 +67,16 @@ has the objective function:
 class="equation"><tr><td>
    <center class="math-display" >
 <img 
-src="LURNBlind44x.png" alt="    &#x2211;n  &#x2211;n
+src="LURNBlind48x.png" alt="    &#x2211;n  &#x2211;n
 min         cijxij    i,j = 1,...,n
      i=1 j=1
 " class="math-display"  /><a 
- id="x22-141001r1"></a></center></td><td class="equation-label">(20.1)</td></tr></table>
+ id="x22-143001r1"></a></center></td><td class="equation-label">(20.1)</td></tr></table>
 <!--l. 29--><p class="nopar" >
 subject to the constraints: </p><div class="eqnarray">
    <center class="math-display" >
 <img 
-src="LURNBlind45x.png" alt=" n
+src="LURNBlind49x.png" alt=" n
 &#x2211;
     xij  = 1,  &#x2200;i = 1,...,n
 j=1
@@ -89,17 +89,17 @@ j=1
 </div>
 <!--l. 39--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb442"> <a 
- id="x22-141004r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb450"> <a 
+ id="x22-143004r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;require(lpSolve)</span><br class="fancyvrb" /><a 
- id="x22-141006r2"></a><span 
+ id="x22-143006r2"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;set.seed(3010)</span>
 <br class="fancyvrb" /><a 
- id="x22-141008r3"></a><span 
+ id="x22-143008r3"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;APCost.mat</span><span 
@@ -107,14 +107,14 @@ class="aett-12">&#x00A0;=</span><span
 class="aett-12">&#x00A0;matrix(sample(10:100,</span><span 
 class="aett-12">&#x00A0;16),</span><span 
 class="aett-12">&#x00A0;nrow=4)</span><br class="fancyvrb" /><a 
- id="x22-141010r4"></a><span 
+ id="x22-143010r4"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;APCost.mat</span></div>
 <!--l. 45--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb443"> <a 
- id="x22-141012r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb451"> <a 
+ id="x22-143012r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -125,7 +125,7 @@ class="aett-12">&#x00A0;[,1]</span><span
 class="aett-12">&#x00A0;[,2]</span><span 
 class="aett-12">&#x00A0;[,3]</span><span 
 class="aett-12">&#x00A0;[,4]</span><br class="fancyvrb" /><a 
- id="x22-141014r2"></a><span 
+ id="x22-143014r2"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1,]</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -141,7 +141,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;31</span>
 <br class="fancyvrb" /><a 
- id="x22-141016r3"></a><span 
+ id="x22-143016r3"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[2,]</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -156,7 +156,7 @@ class="aett-12">&#x00A0;86</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;55</span><br class="fancyvrb" /><a 
- id="x22-141018r4"></a><span 
+ id="x22-143018r4"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[3,]</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -171,7 +171,7 @@ class="aett-12">&#x00A0;99</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;12</span><br class="fancyvrb" /><a 
- id="x22-141020r5"></a><span 
+ id="x22-143020r5"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[4,]</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -188,14 +188,14 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;97</span></div>
 <!--l. 52--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb444"> <a 
- id="x22-141022r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb452"> <a 
+ id="x22-143022r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;Sol</span><span 
 class="aett-12">&#x00A0;=</span><span 
 class="aett-12">&#x00A0;lp.assign(APCost.mat)</span><br class="fancyvrb" /><a 
- id="x22-141024r2"></a><span 
+ id="x22-143024r2"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;names(Sol)</span></div>
@@ -204,8 +204,8 @@ class="aett-12">&#x00A0;names(Sol)</span></div>
 
                                                                           
 </p>
-   <div class="fancyvrb" id="fancyvrb445"> <a 
- id="x22-141026r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb453"> <a 
+ id="x22-143026r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1]</span><span 
@@ -226,7 +226,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;"ccount"</span>
 <br class="fancyvrb" /><a 
- id="x22-141028r2"></a><span 
+ id="x22-143028r2"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[4]</span><span 
@@ -251,7 +251,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;"rrhs"</span>
 <br class="fancyvrb" /><a 
- id="x22-141030r3"></a><span 
+ id="x22-143030r3"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[7]</span><span 
@@ -277,7 +277,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;"objval"</span>
 <br class="fancyvrb" /><a 
- id="x22-141032r4"></a><span 
+ id="x22-143032r4"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[10]</span><span 
 class="aett-12">&#x00A0;"int.count"</span><span 
@@ -295,7 +295,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;"solution"</span>
 <br class="fancyvrb" /><a 
- id="x22-141034r5"></a><span 
+ id="x22-143034r5"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[13]</span><span 
 class="aett-12">&#x00A0;"presolve"</span><span 
@@ -310,7 +310,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;"sens.coef.from"</span>
 <br class="fancyvrb" /><a 
- id="x22-141036r6"></a><span 
+ id="x22-143036r6"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[16]</span><span 
 class="aett-12">&#x00A0;"sens.coef.to"</span><span 
@@ -327,7 +327,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;"duals.from"</span><br class="fancyvrb" /><a 
- id="x22-141038r7"></a><span 
+ id="x22-143038r7"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[19]</span><span 
 class="aett-12">&#x00A0;"duals.to"</span><span 
@@ -340,15 +340,15 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;"status"</span></div>
 <!--l. 65--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb446"> <a 
- id="x22-141040r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb454"> <a 
+ id="x22-143040r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;Sol$solution</span></div>
 <!--l. 68--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb447"> <a 
- id="x22-141042r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb455"> <a 
+ id="x22-143042r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -359,7 +359,7 @@ class="aett-12">&#x00A0;[,1]</span><span
 class="aett-12">&#x00A0;[,2]</span><span 
 class="aett-12">&#x00A0;[,3]</span><span 
 class="aett-12">&#x00A0;[,4]</span><br class="fancyvrb" /><a 
- id="x22-141044r2"></a><span 
+ id="x22-143044r2"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1,]</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -379,7 +379,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0</span>
 <br class="fancyvrb" /><a 
- id="x22-141046r3"></a><span 
+ id="x22-143046r3"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[2,]</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -398,7 +398,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0</span><br class="fancyvrb" /><a 
- id="x22-141048r4"></a><span 
+ id="x22-143048r4"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[3,]</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -417,7 +417,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;1</span><br class="fancyvrb" /><a 
- id="x22-141050r5"></a><span 
+ id="x22-143050r5"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[4,]</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -438,29 +438,29 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;0</span></div>
 <!--l. 75--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb448"> <a 
- id="x22-141052r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb456"> <a 
+ id="x22-143052r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;Sol$objval</span></div>
 <!--l. 78--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb449"> <a 
- id="x22-141054r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb457"> <a 
+ id="x22-143054r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1]</span><span 
 class="aett-12">&#x00A0;88</span></div>
 <!--l. 81--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb450"> <a 
- id="x22-141056r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb458"> <a 
+ id="x22-143056r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;Sol</span></div>
 <!--l. 84--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb451"> <a 
- id="x22-141058r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb459"> <a 
+ id="x22-143058r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;Success:</span><span 
 class="aett-12">&#x00A0;the</span><span 
@@ -481,7 +481,7 @@ problems.
 </p><!--l. 92--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">20.2   </span> <a 
- id="x22-14200020.2"></a>The transportation problem</h3>
+ id="x22-14400020.2"></a>The transportation problem</h3>
 <!--l. 94--><p class="noindent" >The transportation problem aims to satisfy the demands of a set of customers by
 optimising the selection of the supplier who will meet each customer&#8217;s demands.
 The mathematical program for this problem has a cost matrix and upper bounds
@@ -494,16 +494,16 @@ essence) equality constraints as a consequence.
 class="equation"><tr><td>
    <center class="math-display" >
 <img 
-src="LURNBlind46x.png" alt="    &#x2211;m  &#x2211;n
+src="LURNBlind50x.png" alt="    &#x2211;m  &#x2211;n
 min        cijxij
     i=1 j=1
 " class="math-display"  /><a 
- id="x22-142001r2"></a></center></td><td class="equation-label">(20.2)</td></tr></table>
+ id="x22-144001r2"></a></center></td><td class="equation-label">(20.2)</td></tr></table>
 <!--l. 99--><p class="nopar" >
 and the constraints are: </p><div class="eqnarray">
    <center class="math-display" >
 <img 
-src="LURNBlind47x.png" alt="&#x2211;n
+src="LURNBlind51x.png" alt="&#x2211;n
     xij &#x2264; si   &#x2200;i = 1,...,m
 j=1
  m
@@ -515,17 +515,17 @@ i=1
 </div>
 <!--l. 108--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb452"> <a 
- id="x22-142004r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb460"> <a 
+ id="x22-144004r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;require(lpSolve)</span><br class="fancyvrb" /><a 
- id="x22-142006r2"></a><span 
+ id="x22-144006r2"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;set.seed(3010)</span>
 <br class="fancyvrb" /><a 
- id="x22-142008r3"></a><span 
+ id="x22-144008r3"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;TPCost.mat</span><span 
@@ -535,14 +535,14 @@ class="aett-12">&#x00A0;30),</span><span
 class="aett-12">&#x00A0;nrow</span><span 
 class="aett-12">&#x00A0;=</span><span 
 class="aett-12">&#x00A0;5)</span><br class="fancyvrb" /><a 
- id="x22-142010r4"></a><span 
+ id="x22-144010r4"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;TPCost.mat</span></div>
 <!--l. 114--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb453"> <a 
- id="x22-142012r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb461"> <a 
+ id="x22-144012r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -555,7 +555,7 @@ class="aett-12">&#x00A0;[,3]</span><span
 class="aett-12">&#x00A0;[,4]</span><span 
 class="aett-12">&#x00A0;[,5]</span><span 
 class="aett-12">&#x00A0;[,6]</span><br class="fancyvrb" /><a 
- id="x22-142014r2"></a><span 
+ id="x22-144014r2"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1,]</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -577,7 +577,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;19</span>
 <br class="fancyvrb" /><a 
- id="x22-142016r3"></a><span 
+ id="x22-144016r3"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[2,]</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -598,7 +598,7 @@ class="aett-12">&#x00A0;93</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;91</span><br class="fancyvrb" /><a 
- id="x22-142018r4"></a><span 
+ id="x22-144018r4"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[3,]</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -620,7 +620,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;64</span>
 <br class="fancyvrb" /><a 
- id="x22-142020r5"></a><span 
+ id="x22-144020r5"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[4,]</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -641,7 +641,7 @@ class="aett-12">&#x00A0;48</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;27</span><br class="fancyvrb" /><a 
- id="x22-142022r6"></a><span 
+ id="x22-144022r6"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[5,]</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -664,8 +664,8 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;81</span></div>
 <!--l. 122--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb454"> <a 
- id="x22-142024r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb462"> <a 
+ id="x22-144024r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;DemandSigns</span><span 
@@ -673,21 +673,21 @@ class="aett-12">&#x00A0;=</span><span
 class="aett-12">&#x00A0;rep</span><span 
 class="aett-12">&#x00A0;("&#x003E;",</span><span 
 class="aett-12">&#x00A0;6)</span><br class="fancyvrb" /><a 
- id="x22-142026r2"></a><span 
+ id="x22-144026r2"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;DemandLimits</span><span 
 class="aett-12">&#x00A0;=</span><span 
 class="aett-12">&#x00A0;sample(50:300,</span><span 
 class="aett-12">&#x00A0;6)</span><br class="fancyvrb" /><a 
- id="x22-142028r3"></a><span 
+ id="x22-144028r3"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;DemandLimits</span></div>
 <!--l. 127--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb455"> <a 
- id="x22-142030r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb463"> <a 
+ id="x22-144030r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1]</span><span 
 class="aett-12">&#x00A0;201</span><span 
@@ -700,8 +700,8 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;59</span></div>
 <!--l. 130--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb456"> <a 
- id="x22-142032r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb464"> <a 
+ id="x22-144032r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;SupplySigns</span><span 
@@ -709,21 +709,21 @@ class="aett-12">&#x00A0;=</span><span
 class="aett-12">&#x00A0;rep</span><span 
 class="aett-12">&#x00A0;("&#x003C;",</span><span 
 class="aett-12">&#x00A0;5)</span><br class="fancyvrb" /><a 
- id="x22-142034r2"></a><span 
+ id="x22-144034r2"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;SupplyLimits</span><span 
 class="aett-12">&#x00A0;=</span><span 
 class="aett-12">&#x00A0;sample(100:500,</span><span 
 class="aett-12">&#x00A0;5)</span><br class="fancyvrb" /><a 
- id="x22-142036r3"></a><span 
+ id="x22-144036r3"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;SupplyLimits</span></div>
 <!--l. 135--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb457"> <a 
- id="x22-142038r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb465"> <a 
+ id="x22-144038r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1]</span><span 
 class="aett-12">&#x00A0;457</span><span 
@@ -736,8 +736,8 @@ class="aett-12">&#x00A0;388</span></div>
 
                                                                           
 </p>
-   <div class="fancyvrb" id="fancyvrb458"> <a 
- id="x22-142040r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb466"> <a 
+ id="x22-144040r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;Sol</span><span 
@@ -751,14 +751,14 @@ class="aett-12">&#x00A0;DemandSigns,</span><span
 class="aett-12">&#x00A0;DemandLimits,</span><span 
 class="aett-12">&#x00A0;compute.sens=0)</span>
 <br class="fancyvrb" /><a 
- id="x22-142042r2"></a><span 
+ id="x22-144042r2"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;Sol$solution</span></div>
 <!--l. 142--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb459"> <a 
- id="x22-142044r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb467"> <a 
+ id="x22-144044r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -771,7 +771,7 @@ class="aett-12">&#x00A0;[,3]</span><span
 class="aett-12">&#x00A0;[,4]</span><span 
 class="aett-12">&#x00A0;[,5]</span><span 
 class="aett-12">&#x00A0;[,6]</span><br class="fancyvrb" /><a 
- id="x22-142046r2"></a><span 
+ id="x22-144046r2"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1,]</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -798,7 +798,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;59</span>
 <br class="fancyvrb" /><a 
- id="x22-142048r3"></a><span 
+ id="x22-144048r3"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[2,]</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -820,7 +820,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0</span><br class="fancyvrb" /><a 
- id="x22-142050r4"></a><span 
+ id="x22-144050r4"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[3,]</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -848,7 +848,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0</span>
 <br class="fancyvrb" /><a 
- id="x22-142052r5"></a><span 
+ id="x22-144052r5"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[4,]</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -873,7 +873,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0</span><br class="fancyvrb" /><a 
- id="x22-142054r6"></a><span 
+ id="x22-144054r6"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[5,]</span><span 
 class="aett-12">&#x00A0;</span><span 

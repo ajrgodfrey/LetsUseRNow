@@ -89,7 +89,12 @@ Note that the figure created has default settings for the main title, axis label
 
 \end{center} 
 \end{exhibit} 
- 
+
+\Blind{\subsection*{A note on the visual appearance of the standard histogram for blind users}
+
+A histogram uses rectangles to represent the counts or relative frequencies of observations falling in each subrange of the numeric variable being investigated. The rectangles are standing side by side with their bottom end at the zero mark of the vertical axis. The widths of the rectangles are usually constant, but this can be altered by the user. A sighted person uses the heights and therefore the areas of the rectangles to help determine the overall shape of the distribution, the presence of gaps in the data, and any outliers that might be present. As with most graphs created by the base graphics package, the axes do not join at the bottom left corner and are separated from the area where the data are being plotted. Tick marks are automatically chosen for the data, and the axes may not extend past the ends of variables being plotted. The vertical axis for frequency always starts at zero.
+} 
+
 \section{Basic annotations to graphs} 
  
 \begin{exhibit} 
@@ -135,7 +140,12 @@ Exhibit~\ref{AirQualityBoxplot} shows us the boxplot for the average wind speed 
 \label{AirQualityBoxplot} 
 % filename SimpleGraphs012.Rnw 
 
-
+\begin{Schunk}
+\begin{Sinput}
+> ## windows(7, 5)
+> boxplot(Wind, horizontal=TRUE, xlab="Wind speed (mph)")
+\end{Sinput}
+\end{Schunk}
 \includegraphics[width=0.8\textwidth,alt={a boxplot}]{figures/SimpleGraphsBoxplotAirQualityWind-1} 
 
 \SVGLink{SimpleGraphsBoxplotAirQualityWind} 
@@ -162,9 +172,13 @@ For the purposes of illustration, I want to show the distribution of the daily a
 \begin{Sinput}
 > boxplot(Wind~Month, xlab="Month", ylab="Wind speed (mph)") 
 \end{Sinput}
+\end{Schunk}
+\includegraphics[width=0.8\textwidth,alt={a comparative boxplot}]{figures/SimpleGraphsCompBoxplotAirQualityWind-1} 
 
-\includegraphics[width=0.8\textwidth]{figures/SimpleGraphsCompBoxplot-1} \end{Schunk}
-\SVGLink{SimpleGraphsCompBoxplot-1} 
+
+
+\SVGLink{SimpleGraphsCompBoxplotAirQualityWind} 
+
 % filename SimpleGraphs015.Rnw 
 
 \end{center} 
@@ -184,7 +198,6 @@ because I didn't like the way the regular graph window presented this graph.
 \begin{Schunk}
 
 \includegraphics[width=0.8\textwidth]{figures/SimpleGraphsDotPlot-1} \end{Schunk}
-\SVGLink{SimpleGraphsDotPlot-1} 
 % filename SimpleGraphs017.Rnw 
 
 \end{center} 
@@ -209,7 +222,6 @@ Occasionally it's useful to see how a measurement changes over the time data wer
 \end{Sinput}
 
 \includegraphics[width=0.8\textwidth]{figures/SimpleGraphsLinePlot-1} \end{Schunk}
-\SVGLink{SimpleGraphsLinePlot-1} 
 % filename SimpleGraphs019.Rnw 
 
 \end{center} 
@@ -226,7 +238,6 @@ Occasionally it's useful to see how a measurement changes over the time data wer
 \end{Sinput}
 
 \includegraphics[width=0.8\textwidth]{figures/SimpleGraphsLinePlot2-1} \end{Schunk}
-\SVGLink{SimpleGraphsLinePlot2-1} 
 % filename SimpleGraphs021.Rnw 
 
 \end{center} 
@@ -258,7 +269,6 @@ If these data were normally distributed, the points on the plot would lie on a s
 \end{Sinput}
 
 \includegraphics[width=0.8\textwidth]{figures/SimpleGraphsNormPlot-1} \end{Schunk}
-\SVGLink{SimpleGraphsNormPlot-1} 
 % filename SimpleGraphs023.Rnw 
 
 \end{center} 
@@ -300,7 +310,6 @@ The tilde symbol is often read as ``\ldots is distributed as\ldots" but we might
 \end{Sinput}
 
 \includegraphics[width=0.8\textwidth]{figures/SimpleGraphsScatter-1} \end{Schunk}
-\SVGLink{SimpleGraphsScatter-1} 
 % filename SimpleGraphs029.Rnw 
 
 \end{center} 
@@ -324,7 +333,6 @@ Only four of the variables within the \Robject{air quality} data have been used 
 \end{Sinput}
 
 \includegraphics[width=0.8\textwidth]{figures/SimpleGraphsMatrixPlot-1} \end{Schunk}
-\SVGLink{SimpleGraphsMatrixPlot-1} 
 % filename SimpleGraphs031.Rnw 
 
 \end{center} 
@@ -373,7 +381,6 @@ Given this variable is a \Rclass{factor} with four levels it is well suited to p
 \end{Sinput}
 
 \includegraphics[width=0.8\textwidth]{figures/SimpleGraphsStateRegionBarChart-1} \end{Schunk}
-\SVGLink{SimpleGraphsStateRegionBarChart-1} 
 % filename SimpleGraphs035.Rnw 
 
 \end{center} 
@@ -406,7 +413,6 @@ These values are then plotted in Exhibit~\ref{StateRegionBarChart2}.
 \end{Sinput}
 
 \includegraphics[width=0.8\textwidth]{figures/SimpleGraphsStateRegionBarChart2-1} \end{Schunk}
-\SVGLink{SimpleGraphsStateRegionBarChart2-1} 
 % filename SimpleGraphs039.Rnw 
 
 \end{center} 
@@ -439,7 +445,6 @@ and re-create the bar chart accordingly (see Exhibit~\ref{StateRegionBarChartImp
 \end{Sinput}
 
 \includegraphics[width=0.8\textwidth]{figures/SimpleGraphsStateRegionBarChartImp-1} \end{Schunk}
-\SVGLink{SimpleGraphsStateRegionBarChartImp-1} 
 % filename SimpleGraphs043.Rnw 
 
 \end{center} 
@@ -462,7 +467,6 @@ The pie chart for the \Robject{state.region} data is given in Exhibit~\ref{State
 \end{Sinput}
 
 \includegraphics[width=0.8\textwidth]{figures/SimpleGraphsStateRegionPieChart-1} \end{Schunk}
-\SVGLink{SimpleGraphsStateRegionPieChart-1} 
 % filename SimpleGraphs045.Rnw 
 
 \end{center} 

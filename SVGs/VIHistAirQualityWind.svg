@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ASCII"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="504px" height="504px" viewBox="0 0 504 504" version="1.1">
   <metadata xmlns:gridsvg="http://www.stat.auckland.ac.nz/~paul/R/gridSVG/">
-    <gridsvg:generator name="gridSVG" version="1.5-1" time="2017-05-08 13:16:12"/>
+    <gridsvg:generator name="gridSVG" version="1.5-1" time="2017-05-24 15:06:08"/>
     <gridsvg:argument name="name" value="figures/VIHistAirQualityWind.svg"/>
     <gridsvg:argument name="exportCoords" value="none"/>
     <gridsvg:argument name="exportMappings" value="none"/>
@@ -155,8 +155,8 @@
             <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1.4">
               <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1::graphics-window-1-1.2">
                 <g id="graphics-plot-1-bottom-axis-line-1.1">
-                  <title id="GRID.element.214.1">the x axis</title>
-                  <desc id="GRID.element.216.1">need something much smarter in here</desc>
+                  <title id="GRID.element.337.1">the x axis</title>
+                  <desc id="GRID.element.339.1">need something much smarter in here</desc>
                   <g id="graphics-plot-1-bottom-axis-line-1.2">
                     <polyline id="graphics-plot-1-bottom-axis-line-1.2.1" points="74.4,73.44 423.49,73.44" stroke="rgb(0,0,0)" stroke-width="0.75" stroke-dasharray="none" stroke-linecap="round" stroke-miterlimit="10" stroke-linejoin="round" stroke-opacity="1" fill="none"/>
                   </g>
@@ -216,8 +216,8 @@
             <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1.5">
               <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1::graphics-window-1-1.3">
                 <g id="graphics-plot-1-left-axis-line-1.1">
-                  <title id="GRID.element.218.1">the y axis</title>
-                  <desc id="GRID.element.220.1">need something much smarter in here</desc>
+                  <title id="GRID.element.341.1">the y axis</title>
+                  <desc id="GRID.element.343.1">need something much smarter in here</desc>
                   <g id="graphics-plot-1-left-axis-line-1.2">
                     <polyline id="graphics-plot-1-left-axis-line-1.2.1" points="59.04,87.2 59.04,358.78" stroke="rgb(0,0,0)" stroke-width="0.75" stroke-dasharray="none" stroke-linecap="round" stroke-miterlimit="10" stroke-linejoin="round" stroke-opacity="1" fill="none"/>
                   </g>

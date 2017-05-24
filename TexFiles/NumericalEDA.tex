@@ -473,7 +473,7 @@ which is more long-winded than just using the \Rcmd{mean} command alone. The val
 > airquality%>% group_by(Month) %>% summarise(mean(Wind, na.rm = TRUE)) 
 \end{Sinput}
 \begin{Soutput}
-# A tibble: 5 × 2
+# A tibble: 5 x 2
   Month `mean(Wind, na.rm = TRUE)`
   <int>                      <dbl>
 1     5                     11.623
@@ -494,7 +494,7 @@ We could use other functions seen in this chapter for alternative summary statis
 > airquality%>% count(Month) 
 \end{Sinput}
 \begin{Soutput}
-# A tibble: 5 × 2
+# A tibble: 5 x 2
   Month     n
   <int> <int>
 1     5    31
@@ -518,7 +518,7 @@ As an illustration of the real power of the \stressind{pipe operator}, say we wa
 > arrange(Summarised, desc(AveTemp)) 
 \end{Sinput}
 \begin{Soutput}
-# A tibble: 5 × 2
+# A tibble: 5 x 2
   Month AveTemp
   <int>   <dbl>
 1     8   83.97
@@ -541,7 +541,7 @@ Which has stored data at each step. Note in particular that a new variable was c
    arrange(desc(AveTemp)) 
 \end{Sinput}
 \begin{Soutput}
-# A tibble: 5 × 2
+# A tibble: 5 x 2
   Month AveTemp
   <int>   <dbl>
 1     8   83.97

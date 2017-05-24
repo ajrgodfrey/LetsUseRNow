@@ -10,7 +10,7 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,2,next,mathjax,html --> 
 <meta name="src" content="LURNBlind.tex" /> 
-<meta name="date" content="2017-05-08 13:17:00" /> 
+<meta name="date" content="2017-05-24 15:07:00" /> 
 <link rel="stylesheet" type="text/css" href="LURNBlind.css" /> 
 </head><body 
 >
@@ -23,7 +23,7 @@ href="LURNBlindch10.html#tailLURNBlindch10.html" >prev-tail</a>] [<a
 href="#tailLURNBlindch11.html">tail</a>] [<a 
 href="LURNBlind.html#LURNBlindch11.html" >up</a>] </p></div>
    <h2 class="chapterHead"><span class="titlemark">Chapter&#x00A0;11</span><br /><a 
- id="x13-7900011"></a>LURN&#x2026; To Do Basic Inference</h2>
+ id="x13-8000011"></a>LURN&#x2026; To Do Basic Inference</h2>
 <!--l. 18--><p class="noindent" >This chapter is all about finding confidence intervals and performing hypothesis
 tests. While many textbooks separate these activities there is little point doing so
 when it comes time to using <span 
@@ -31,10 +31,10 @@ class="aess-12">R </span>as both are done at the same time in the majority
 of cases.
 </p>
    <h3 class="sectionHead"><span class="titlemark">11.1   </span> <a 
- id="x13-8000011.1"></a>Confidence intervals and hypothesis tests for the mean of one
+ id="x13-8100011.1"></a>Confidence intervals and hypothesis tests for the mean of one
 population</h3>
 <!--l. 23--><p class="noindent" >The <a 
- id="dx13-80001"></a><span 
+ id="dx13-81001"></a><span 
 class="aeti-12">datasets </span>package contains a set of annual precipitation values (in inches) for
 70 U.S. cities. If we could assume this set to be a random sample (and we will
 even if it is not true), then we can find a confidence interval for the mean annual
@@ -42,47 +42,47 @@ precipitation for U.S. cities on the whole.
 </p><!--l. 25--><p class="indent" >   You could use a manual approach to find the 95% confidence interval for the
 population mean (<span 
 class="cmmi-12">&#x03BC;</span>) yourself using the <a 
- id="dx13-80002"></a><span 
+ id="dx13-81002"></a><span 
 class="aett-12">mean()</span>, <a 
- id="dx13-80003"></a><span 
+ id="dx13-81003"></a><span 
 class="aett-12">sd()</span>, <a 
- id="dx13-80004"></a><span 
+ id="dx13-81004"></a><span 
 class="aett-12">length()</span>, and <a 
- id="dx13-80005"></a><span 
+ id="dx13-81005"></a><span 
 class="aett-12">qt()</span>
 commands as follows:
 </p><!--l. 29--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb232">  <a 
- id="x13-80007r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb233">  <a 
+ id="x13-81007r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;mean(precip)</span></div>
 <!--l. 32--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb233"> <a 
- id="x13-80009r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb234"> <a 
+ id="x13-81009r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1]</span><span 
 class="aett-12">&#x00A0;34.89</span></div>
 <!--l. 35--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb234"> <a 
- id="x13-80011r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb235"> <a 
+ id="x13-81011r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;sd(precip)</span></div>
 <!--l. 38--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb235"> <a 
- id="x13-80013r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb236"> <a 
+ id="x13-81013r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1]</span><span 
 class="aett-12">&#x00A0;13.71</span></div>
 <!--l. 41--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb236"> <a 
- id="x13-80015r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb237"> <a 
+ id="x13-81015r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;length(precip)</span></div>
@@ -91,36 +91,36 @@ class="aett-12">&#x00A0;length(precip)</span></div>
 
                                                                           
 </p>
-   <div class="fancyvrb" id="fancyvrb237"> <a 
- id="x13-80017r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb238"> <a 
+ id="x13-81017r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1]</span><span 
 class="aett-12">&#x00A0;70</span></div>
 <!--l. 47--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb238"> <a 
- id="x13-80019r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb239"> <a 
+ id="x13-81019r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;qt(0.975,</span><span 
 class="aett-12">&#x00A0;length(precip)-1)</span></div>
 <!--l. 50--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb239"> <a 
- id="x13-80021r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb240"> <a 
+ id="x13-81021r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1]</span><span 
 class="aett-12">&#x00A0;1.995</span></div>
 <!--l. 56--><p class="indent" >   Note the use of the <a 
- id="dx13-80022"></a><span 
+ id="dx13-81022"></a><span 
 class="aett-12">qt() </span>command here. It has two arguments; one for the
 level of confidence (95% confidence relates to an upper tail area of 0.025) and the
 degrees of freedom (based on the sample size). The 95% confidence interval is
 therefore found using
 </p><!--l. 60--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb240">  <a 
- id="x13-80024r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb241">  <a 
+ id="x13-81024r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;mean(precip)</span><span 
@@ -133,15 +133,15 @@ class="aett-12">&#x00A0;/</span><span
 class="aett-12">&#x00A0;sqrt(length(precip))</span></div>
 <!--l. 63--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb241"> <a 
- id="x13-80026r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb242"> <a 
+ id="x13-81026r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1]</span><span 
 class="aett-12">&#x00A0;31.62</span></div>
 <!--l. 66--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb242"> <a 
- id="x13-80028r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb243"> <a 
+ id="x13-81028r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;mean(precip)</span><span 
@@ -154,17 +154,17 @@ class="aett-12">&#x00A0;/</span><span
 class="aett-12">&#x00A0;sqrt(length(precip))</span></div>
 <!--l. 69--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb243"> <a 
- id="x13-80030r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb244"> <a 
+ id="x13-81030r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1]</span><span 
 class="aett-12">&#x00A0;38.15</span></div>
 <!--l. 75--><p class="indent" >   or, with a nicer (quicker) command:
 </p><!--l. 79--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb244">
+   <div class="fancyvrb" id="fancyvrb245">
 <a 
- id="x13-80032r1"></a><span 
+ id="x13-81032r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;mean(precip)</span><span 
@@ -182,8 +182,8 @@ class="aett-12">&#x00A0;sqrt(length(precip))</span></div>
 
                                                                           
 </p>
-   <div class="fancyvrb" id="fancyvrb245"> <a 
- id="x13-80034r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb246"> <a 
+ id="x13-81034r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1]</span><span 
 class="aett-12">&#x00A0;31.62</span><span 
@@ -198,8 +198,8 @@ class="cmmi-12">&#x03BC; </span><span
 class="cmr-12">= 30</span>.
 </p><!--l. 92--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb246">  <a 
- id="x13-80036r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb247">  <a 
+ id="x13-81036r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;TestStat=</span><span 
@@ -207,7 +207,7 @@ class="aett-12">&#x00A0;(mean(precip)-30)/(sd(precip)</span><span
 class="aett-12">&#x00A0;/</span><span 
 class="aett-12">&#x00A0;sqrt(length(precip)))</span>
 <br class="fancyvrb" /><a 
- id="x13-80038r2"></a><span 
+ id="x13-81038r2"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;pt(TestStat,</span><span 
@@ -215,49 +215,49 @@ class="aett-12">&#x00A0;length(precip)-1,</span><span
 class="aett-12">&#x00A0;lower.tail=FALSE)</span></div>
 <!--l. 96--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb247"> <a 
- id="x13-80040r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb248"> <a 
+ id="x13-81040r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1]</span><span 
 class="aett-12">&#x00A0;0.001976</span></div>
 <!--l. 102--><p class="indent" >   Note that the <a 
- id="dx13-80041"></a><span 
+ id="dx13-81041"></a><span 
 class="aett-12">pt() </span>command required us to think about the degrees of
 freedom and that the upper tail area was important to us. We now see that the
 null hypothesis is rejected as the <span 
 class="cmmi-12">p</span>-value is very small.
 </p><!--l. 104--><p class="indent" >   These calculations are fine, but there is a quicker way! The <a 
- id="dx13-80042"></a><span 
+ id="dx13-81042"></a><span 
 class="aett-12">t.test()</span>
 command does it all for us &#8212; both confidence interval and hypothesis
 test.
 </p><!--l. 108--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb248">  <a 
- id="x13-80044r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb249">  <a 
+ id="x13-81044r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;t.test(precip)</span></div>
 <!--l. 111--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb249"> <a 
- id="x13-80046r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb250"> <a 
+ id="x13-81046r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
- id="x13-80048r2"></a><span 
+ id="x13-81048r2"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;        One</span><span 
 class="aett-12">&#x00A0;Sample</span><span 
 class="aett-12">&#x00A0;t-test</span><br class="fancyvrb" /><a 
- id="x13-80050r3"></a><span 
+ id="x13-81050r3"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
- id="x13-80052r4"></a><span 
+ id="x13-81052r4"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;data:</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;precip</span><br class="fancyvrb" /><a 
- id="x13-80054r5"></a><span 
+ id="x13-81054r5"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;t</span><span 
 class="aett-12">&#x00A0;=</span><span 
@@ -268,7 +268,7 @@ class="aett-12">&#x00A0;69,</span><span
 class="aett-12">&#x00A0;p-value</span><span 
 class="aett-12">&#x00A0;&#x003C;2e-16</span>
 <br class="fancyvrb" /><a 
- id="x13-80056r6"></a><span 
+ id="x13-81056r6"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;alternative</span><span 
 class="aett-12">&#x00A0;hypothesis:</span><span 
@@ -279,28 +279,28 @@ class="aett-12">&#x00A0;not</span><span
 class="aett-12">&#x00A0;equal</span><span 
 class="aett-12">&#x00A0;to</span><span 
 class="aett-12">&#x00A0;0</span><br class="fancyvrb" /><a 
- id="x13-80058r7"></a><span 
+ id="x13-81058r7"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;95</span><span 
 class="aett-12">&#x00A0;percent</span><span 
 class="aett-12">&#x00A0;confidence</span><span 
 class="aett-12">&#x00A0;interval:</span>
 <br class="fancyvrb" /><a 
- id="x13-80060r8"></a><span 
+ id="x13-81060r8"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;31.62</span><span 
 class="aett-12">&#x00A0;38.15</span><br class="fancyvrb" /><a 
- id="x13-80062r9"></a><span 
+ id="x13-81062r9"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;sample</span><span 
 class="aett-12">&#x00A0;estimates:</span><br class="fancyvrb" /><a 
- id="x13-80064r10"></a><span 
+ id="x13-81064r10"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;mean</span><span 
 class="aett-12">&#x00A0;of</span><span 
 class="aett-12">&#x00A0;x</span><br class="fancyvrb" /><a 
- id="x13-80066r11"></a><span 
+ id="x13-81066r11"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -311,8 +311,8 @@ class="aett-12">&#x00A0;34.89</span></div>
 while
 </p><!--l. 131--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb250">  <a 
- id="x13-80068r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb251">  <a 
+ id="x13-81068r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;t.test(precip,</span><span 
@@ -323,24 +323,24 @@ class="aett-12">&#x00A0;alternative="greater")</span></div>
 
                                                                           
 </p>
-   <div class="fancyvrb" id="fancyvrb251"> <a 
- id="x13-80070r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb252"> <a 
+ id="x13-81070r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
- id="x13-80072r2"></a><span 
+ id="x13-81072r2"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;        One</span><span 
 class="aett-12">&#x00A0;Sample</span><span 
 class="aett-12">&#x00A0;t-test</span><br class="fancyvrb" /><a 
- id="x13-80074r3"></a><span 
+ id="x13-81074r3"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
- id="x13-80076r4"></a><span 
+ id="x13-81076r4"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;data:</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;precip</span><br class="fancyvrb" /><a 
- id="x13-80078r5"></a><span 
+ id="x13-81078r5"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;t</span><span 
 class="aett-12">&#x00A0;=</span><span 
@@ -352,7 +352,7 @@ class="aett-12">&#x00A0;p-value</span><span
 class="aett-12">&#x00A0;=</span><span 
 class="aett-12">&#x00A0;0.002</span>
 <br class="fancyvrb" /><a 
- id="x13-80080r6"></a><span 
+ id="x13-81080r6"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;alternative</span><span 
 class="aett-12">&#x00A0;hypothesis:</span><span 
@@ -362,30 +362,30 @@ class="aett-12">&#x00A0;is</span><span
 class="aett-12">&#x00A0;greater</span><span 
 class="aett-12">&#x00A0;than</span><span 
 class="aett-12">&#x00A0;30</span><br class="fancyvrb" /><a 
- id="x13-80082r7"></a><span 
+ id="x13-81082r7"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;95</span><span 
 class="aett-12">&#x00A0;percent</span><span 
 class="aett-12">&#x00A0;confidence</span><span 
 class="aett-12">&#x00A0;interval:</span>
 <br class="fancyvrb" /><a 
- id="x13-80084r8"></a><span 
+ id="x13-81084r8"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;32.15</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;Inf</span><br class="fancyvrb" /><a 
- id="x13-80086r9"></a><span 
+ id="x13-81086r9"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;sample</span><span 
 class="aett-12">&#x00A0;estimates:</span><br class="fancyvrb" /><a 
- id="x13-80088r10"></a><span 
+ id="x13-81088r10"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;mean</span><span 
 class="aett-12">&#x00A0;of</span><span 
 class="aett-12">&#x00A0;x</span><br class="fancyvrb" /><a 
- id="x13-80090r11"></a><span 
+ id="x13-81090r11"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -395,14 +395,14 @@ class="aett-12">&#x00A0;34.89</span></div>
 <!--l. 150--><p class="indent" >   gives us the results for a one-sided hypothesis test and the corresponding
 confidence interval.
 </p><!--l. 152--><p class="indent" >   The <a 
- id="dx13-80091"></a><span 
+ id="dx13-81091"></a><span 
 class="aett-12">t.test() </span>command is used for many <span 
 class="cmmi-12">t</span>-tests, notably for comparing two
 population means, whether the data are paired or not.
 </p><!--l. 154--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">11.2   </span> <a 
- id="x13-8100011.2"></a>Confidence intervals and hypothesis tests for the difference of two
+ id="x13-8200011.2"></a>Confidence intervals and hypothesis tests for the difference of two
 population means</h3>
 <!--l. 156--><p class="noindent" >The first question you must ask yourself when working with two sets of
 values you wish to compare is if they are two independent samples or
@@ -423,10 +423,10 @@ class="cmmi-12">t</span>-test using the ... data.
 </p><!--l. 160--><p class="noindent" >
 </p>
    <h4 class="subsectionHead"><span class="titlemark">11.2.1   </span> <a 
- id="x13-8200011.2.1"></a>Two paired samples</h4>
+ id="x13-8300011.2.1"></a>Two paired samples</h4>
 <!--l. 163--><p class="noindent" >The <span 
 class="aett-12">sleep </span>data that is in the <a 
- id="dx13-82001"></a><span 
+ id="dx13-83001"></a><span 
 class="aeti-12">datasets </span>package has two recordings for each of
 ten individuals. In an experimental design sense, we would think of the
 individuals as a blocking factor. In fact we will see how this is done in
@@ -434,14 +434,14 @@ Section&#x00A0;<span
 class="aebx-12">??</span>.
 </p><!--l. 165--><p class="indent" >   The data set lists the twenty observations in a single column. This is a
 little unusual for paired data that will be analyzed using the <a 
- id="dx13-82002"></a><span 
+ id="dx13-83002"></a><span 
 class="aett-12">t.test()</span>
 command. Caution must be expressed because the variable that shows
 how the observations are paired is not stated. If the observations are not
 ordered the same for each group, then the paring will be done incorrectly.
 If for any reason you cannot be sure of the ordering of the data then
 the use of the <a 
- id="dx13-82003"></a><span 
+ id="dx13-83003"></a><span 
 class="aett-12">aov() </span>command as discussed in Section&#x00A0;<span 
 class="aebx-12">??</span> is strongly
                                                                           
@@ -449,18 +449,18 @@ class="aebx-12">??</span> is strongly
                                                                           
 advised.
 </p><!--l. 167--><p class="indent" >   Using the <a 
- id="dx13-82004"></a><span 
+ id="dx13-83004"></a><span 
 class="aett-12">attach() </span>command to be able to refer to the variables directly
 speeds up this process.
 </p><!--l. 171--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb252">  <a 
- id="x13-82006r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb253">  <a 
+ id="x13-83006r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;attach(sleep)</span></div>
 <!--l. 178--><p class="indent" >   We employ the <a 
- id="dx13-82007"></a><span 
+ id="dx13-83007"></a><span 
 class="aett-12">t.test() </span>command with the <span 
 class="aett-12">paired </span>argument set to <span 
 class="aett-12">TRUE</span>.
@@ -468,8 +468,8 @@ We can use either of two approaches. Either we separate the two groups apart
 using subscripting
 </p><!--l. 182--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb253">  <a 
- id="x13-82009r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb254">  <a 
+ id="x13-83009r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;t.test(extra[group=="1"],</span><span 
@@ -477,18 +477,18 @@ class="aett-12">&#x00A0;extra[group=="2"],</span><span
 class="aett-12">&#x00A0;paired=TRUE)</span></div>
 <!--l. 185--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb254"> <a 
- id="x13-82011r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb255"> <a 
+ id="x13-83011r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
- id="x13-82013r2"></a><span 
+ id="x13-83013r2"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;        Paired</span><span 
 class="aett-12">&#x00A0;t-test</span><br class="fancyvrb" /><a 
- id="x13-82015r3"></a><span 
+ id="x13-83015r3"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
- id="x13-82017r4"></a><span 
+ id="x13-83017r4"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;data:</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -500,7 +500,7 @@ class="aett-12">&#x00A0;extra[group</span><span
 class="aett-12">&#x00A0;==</span><span 
 class="aett-12">&#x00A0;"2"]</span>
 <br class="fancyvrb" /><a 
- id="x13-82019r5"></a><span 
+ id="x13-83019r5"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;t</span><span 
 class="aett-12">&#x00A0;=</span><span 
@@ -512,7 +512,7 @@ class="aett-12">&#x00A0;p-value</span><span
 class="aett-12">&#x00A0;=</span><span 
 class="aett-12">&#x00A0;0.003</span>
 <br class="fancyvrb" /><a 
- id="x13-82021r6"></a><span 
+ id="x13-83021r6"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;alternative</span><span 
 class="aett-12">&#x00A0;hypothesis:</span><span 
@@ -526,29 +526,29 @@ class="aett-12">&#x00A0;equal</span><span
 class="aett-12">&#x00A0;to</span><span 
 class="aett-12">&#x00A0;0</span>
 <br class="fancyvrb" /><a 
- id="x13-82023r7"></a><span 
+ id="x13-83023r7"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;95</span><span 
 class="aett-12">&#x00A0;percent</span><span 
 class="aett-12">&#x00A0;confidence</span><span 
 class="aett-12">&#x00A0;interval:</span><br class="fancyvrb" /><a 
- id="x13-82025r8"></a><span 
+ id="x13-83025r8"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;-2.4599</span><span 
 class="aett-12">&#x00A0;-0.7001</span><br class="fancyvrb" /><a 
- id="x13-82027r9"></a><span 
+ id="x13-83027r9"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;sample</span><span 
 class="aett-12">&#x00A0;estimates:</span>
 <br class="fancyvrb" /><a 
- id="x13-82029r10"></a><span 
+ id="x13-83029r10"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;mean</span><span 
 class="aett-12">&#x00A0;of</span><span 
 class="aett-12">&#x00A0;the</span><span 
 class="aett-12">&#x00A0;differences</span><br class="fancyvrb" /><a 
- id="x13-82031r11"></a><span 
+ id="x13-83031r11"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -573,33 +573,33 @@ class="aett-12">&#x00A0;-1.58</span></div>
 stored using two distinct variables; or, use the formula approach:
 </p><!--l. 206--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb255">  <a 
- id="x13-82033r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb256">  <a 
+ id="x13-83033r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;t.test(extra~group,</span><span 
 class="aett-12">&#x00A0;paired=TRUE)</span></div>
 <!--l. 209--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb256"> <a 
- id="x13-82035r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb257"> <a 
+ id="x13-83035r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
- id="x13-82037r2"></a><span 
+ id="x13-83037r2"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;        Paired</span><span 
 class="aett-12">&#x00A0;t-test</span><br class="fancyvrb" /><a 
- id="x13-82039r3"></a><span 
+ id="x13-83039r3"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
- id="x13-82041r4"></a><span 
+ id="x13-83041r4"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;data:</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;extra</span><span 
 class="aett-12">&#x00A0;by</span><span 
 class="aett-12">&#x00A0;group</span><br class="fancyvrb" /><a 
- id="x13-82043r5"></a><span 
+ id="x13-83043r5"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;t</span><span 
 class="aett-12">&#x00A0;=</span><span 
@@ -611,7 +611,7 @@ class="aett-12">&#x00A0;p-value</span><span
 class="aett-12">&#x00A0;=</span><span 
 class="aett-12">&#x00A0;0.003</span>
 <br class="fancyvrb" /><a 
- id="x13-82045r6"></a><span 
+ id="x13-83045r6"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;alternative</span><span 
 class="aett-12">&#x00A0;hypothesis:</span><span 
@@ -625,29 +625,29 @@ class="aett-12">&#x00A0;equal</span><span
 class="aett-12">&#x00A0;to</span><span 
 class="aett-12">&#x00A0;0</span>
 <br class="fancyvrb" /><a 
- id="x13-82047r7"></a><span 
+ id="x13-83047r7"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;95</span><span 
 class="aett-12">&#x00A0;percent</span><span 
 class="aett-12">&#x00A0;confidence</span><span 
 class="aett-12">&#x00A0;interval:</span><br class="fancyvrb" /><a 
- id="x13-82049r8"></a><span 
+ id="x13-83049r8"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;-2.4599</span><span 
 class="aett-12">&#x00A0;-0.7001</span><br class="fancyvrb" /><a 
- id="x13-82051r9"></a><span 
+ id="x13-83051r9"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;sample</span><span 
 class="aett-12">&#x00A0;estimates:</span>
 <br class="fancyvrb" /><a 
- id="x13-82053r10"></a><span 
+ id="x13-83053r10"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;mean</span><span 
 class="aett-12">&#x00A0;of</span><span 
 class="aett-12">&#x00A0;the</span><span 
 class="aett-12">&#x00A0;differences</span><br class="fancyvrb" /><a 
- id="x13-82055r11"></a><span 
+ id="x13-83055r11"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -672,12 +672,12 @@ class="aett-12">&#x00A0;-1.58</span></div>
 to suit your needs. Experiment a little before detaching the <span 
 class="aett-12">sleep </span>data using the
 <a 
- id="dx13-82056"></a><span 
+ id="dx13-83056"></a><span 
 class="aett-12">detach() </span>command:
 </p><!--l. 230--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb257">  <a 
- id="x13-82058r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb258">  <a 
+ id="x13-83058r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;detach(sleep)</span></div>
@@ -687,32 +687,32 @@ class="aett-12">&#x00A0;detach(sleep)</span></div>
 <!--l. 238--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">11.3   </span> <a 
- id="x13-8300011.3"></a>Confidence intervals and hypothesis tests for a proportion from one
+ id="x13-8400011.3"></a>Confidence intervals and hypothesis tests for a proportion from one
 population</h3>
 <!--l. 241--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">11.4   </span> <a 
- id="x13-8400011.4"></a>Confidence intervals and hypothesis tests for the difference of two
+ id="x13-8500011.4"></a>Confidence intervals and hypothesis tests for the difference of two
 population proportions</h3>
 <!--l. 244--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">11.5   </span> <a 
- id="x13-8500011.5"></a>Hypothesis tests and confidence intervals for Correlation coefficients</h3>
+ id="x13-8600011.5"></a>Hypothesis tests and confidence intervals for Correlation coefficients</h3>
 <!--l. 246--><p class="noindent" >In Section&#x00A0;<a 
-href="LURNBlindch8.html#x10-630008.4">8.4<!--tex4ht:ref: CorrelationStructure --></a> we examined the correlation of the variables in the <span 
+href="LURNBlindch8.html#x10-640008.4">8.4<!--tex4ht:ref: CorrelationStructure --></a> we examined the correlation of the variables in the <span 
 class="aett-12">airquality</span>
 data set using the <a 
- id="dx13-85001"></a><span 
+ id="dx13-86001"></a><span 
 class="aett-12">cor() </span>command. If we require a formal hypothesis
 test for the significance of the correlation coefficient we will need to use
 the <a 
- id="dx13-85002"></a><span 
+ id="dx13-86002"></a><span 
 class="aett-12">cor.test() </span>command. The difference between the two commands is
 that we could offer the entire data set as the object to work on with the
 <a 
- id="dx13-85003"></a><span 
+ id="dx13-86003"></a><span 
 class="aett-12">cor() </span>command while we need to specify two vectors for the <a 
- id="dx13-85004"></a><span 
+ id="dx13-86004"></a><span 
 class="aett-12">cor.test()</span>
 command.
 </p><!--l. 250--><p class="indent" >   There are problems with cherry-picking one pair of variables from a set to
@@ -720,7 +720,7 @@ perform a post hoc test like this. We should probably consider finding the
 significance of all correlations of interest and adjusting the way we think about
 the likelihood of getting the set of hypothesis tests we observe as a combination
 using a <a 
- id="dx13-85005"></a><span 
+ id="dx13-86005"></a><span 
 class="aeti-12">Bonn Ferroni adjustment </span>in our analysis; that is beyond the scope of this
 exposition so for the moment just assume we are (and were before data was
 collected) interested in only the correlation that exists between a single pair of
@@ -740,39 +740,39 @@ many circumstances.
                                                                           
 
                                                                           
-   <div class="fancyvrb" id="fancyvrb258">  <a 
- id="x13-85007r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb259">  <a 
+ id="x13-86007r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;attach(airquality)</span><br class="fancyvrb" /><a 
- id="x13-85009r2"></a><span 
+ id="x13-86009r2"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;cor.test(Ozone,</span><span 
 class="aett-12">&#x00A0;Wind)</span></div>
 <!--l. 260--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb259"> <a 
- id="x13-85011r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb260"> <a 
+ id="x13-86011r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
- id="x13-85013r2"></a><span 
+ id="x13-86013r2"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;        Pearson&#8217;s</span><span 
 class="aett-12">&#x00A0;product-moment</span><span 
 class="aett-12">&#x00A0;correlation</span><br class="fancyvrb" /><a 
- id="x13-85015r3"></a><span 
+ id="x13-86015r3"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span>
 <br class="fancyvrb" /><a 
- id="x13-85017r4"></a><span 
+ id="x13-86017r4"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;data:</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;Ozone</span><span 
 class="aett-12">&#x00A0;and</span><span 
 class="aett-12">&#x00A0;Wind</span><br class="fancyvrb" /><a 
- id="x13-85019r5"></a><span 
+ id="x13-86019r5"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;t</span><span 
 class="aett-12">&#x00A0;=</span><span 
@@ -784,7 +784,7 @@ class="aett-12">&#x00A0;p-value</span><span
 class="aett-12">&#x00A0;=</span><span 
 class="aett-12">&#x00A0;9e-13</span>
 <br class="fancyvrb" /><a 
- id="x13-85021r6"></a><span 
+ id="x13-86021r6"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;alternative</span><span 
 class="aett-12">&#x00A0;hypothesis:</span><span 
@@ -796,35 +796,35 @@ class="aett-12">&#x00A0;equal</span><span
 class="aett-12">&#x00A0;to</span><span 
 class="aett-12">&#x00A0;0</span>
 <br class="fancyvrb" /><a 
- id="x13-85023r7"></a><span 
+ id="x13-86023r7"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;95</span><span 
 class="aett-12">&#x00A0;percent</span><span 
 class="aett-12">&#x00A0;confidence</span><span 
 class="aett-12">&#x00A0;interval:</span><br class="fancyvrb" /><a 
- id="x13-85025r8"></a><span 
+ id="x13-86025r8"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;-0.7064</span><span 
 class="aett-12">&#x00A0;-0.4709</span><br class="fancyvrb" /><a 
- id="x13-85027r9"></a><span 
+ id="x13-86027r9"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;sample</span><span 
 class="aett-12">&#x00A0;estimates:</span><br class="fancyvrb" /><a 
- id="x13-85029r10"></a><span 
+ id="x13-86029r10"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;cor</span><br class="fancyvrb" /><a 
- id="x13-85031r11"></a><span 
+ id="x13-86031r11"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;-0.6015</span></div>
 <!--l. 273--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb260"> <a 
- id="x13-85033r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb261"> <a 
+ id="x13-86033r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;cor.test(Ozone,</span><span 
@@ -832,8 +832,8 @@ class="aett-12">&#x00A0;Wind,</span><span
 class="aett-12">&#x00A0;method="spearman")</span></div>
 <!--l. 276--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb261"> <a 
- id="x13-85035r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb262"> <a 
+ id="x13-86035r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;Warning</span><span 
 class="aett-12">&#x00A0;in</span><span 
@@ -850,20 +850,20 @@ class="aett-12">&#x00A0;with</span><span
 class="aett-12">&#x00A0;ties</span></div>
 <!--l. 279--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb262"> <a 
- id="x13-85037r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb263"> <a 
+ id="x13-86037r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
- id="x13-85039r2"></a><span 
+ id="x13-86039r2"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;        Spearman&#8217;s</span><span 
 class="aett-12">&#x00A0;rank</span><span 
 class="aett-12">&#x00A0;correlation</span><span 
 class="aett-12">&#x00A0;rho</span><br class="fancyvrb" /><a 
- id="x13-85041r3"></a><span 
+ id="x13-86041r3"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
- id="x13-85043r4"></a><span 
+ id="x13-86043r4"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;data:</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -871,7 +871,7 @@ class="aett-12">&#x00A0;Ozone</span><span
 class="aett-12">&#x00A0;and</span><span 
 class="aett-12">&#x00A0;Wind</span>
 <br class="fancyvrb" /><a 
- id="x13-85045r5"></a><span 
+ id="x13-86045r5"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;S</span><span 
 class="aett-12">&#x00A0;=</span><span 
@@ -879,7 +879,7 @@ class="aett-12">&#x00A0;410000,</span><span
 class="aett-12">&#x00A0;p-value</span><span 
 class="aett-12">&#x00A0;=</span><span 
 class="aett-12">&#x00A0;3e-12</span><br class="fancyvrb" /><a 
- id="x13-85047r6"></a><span 
+ id="x13-86047r6"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;alternative</span><span 
 class="aett-12">&#x00A0;hypothesis:</span><span 
@@ -891,24 +891,24 @@ class="aett-12">&#x00A0;equal</span><span
 class="aett-12">&#x00A0;to</span><span 
 class="aett-12">&#x00A0;0</span>
 <br class="fancyvrb" /><a 
- id="x13-85049r7"></a><span 
+ id="x13-86049r7"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;sample</span><span 
 class="aett-12">&#x00A0;estimates:</span><br class="fancyvrb" /><a 
- id="x13-85051r8"></a><span 
+ id="x13-86051r8"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;rho</span><br class="fancyvrb" /><a 
- id="x13-85053r9"></a><span 
+ id="x13-86053r9"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;-0.5902</span></div>
 <!--l. 290--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb263"> <a 
- id="x13-85055r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb264"> <a 
+ id="x13-86055r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;detach(airquality)</span></div>
@@ -916,13 +916,13 @@ class="aett-12">&#x00A0;detach(airquality)</span></div>
 that implies that as wind increases the amount of ozone decreases and that this
 relationship is fairly linear. We will look at this relationship again when we look at
 linear regression in Chapter&#x00A0;<a 
-href="LURNBlindch12.html#x14-8800012">12<!--tex4ht:ref: Regression --></a>.
+href="LURNBlindch12.html#x14-8900012">12<!--tex4ht:ref: Regression --></a>.
 </p><!--l. 302--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">11.6   </span> <a 
- id="x13-8600011.6"></a>Testing the independence of two categorical variables</h3>
+ id="x13-8700011.6"></a>Testing the independence of two categorical variables</h3>
 <!--l. 304--><p class="noindent" >using the chisq.test command. Refer graphical representation to the <a 
- id="dx13-86001"></a><span 
+ id="dx13-87001"></a><span 
 class="aeti-12">vcd</span>
 package.
                                                                           
@@ -931,10 +931,10 @@ package.
 </p><!--l. 307--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">11.7   </span> <a 
- id="x13-8700011.7"></a>Testing the normality of a distribution</h3>
+ id="x13-8800011.7"></a>Testing the normality of a distribution</h3>
 <!--l. 310--><p class="noindent" >norm test package here.
 </p><!--l. 312--><p class="indent" >   We can use the <a 
- id="dx13-87001"></a><span 
+ id="dx13-88001"></a><span 
 class="aett-12">ks.test() </span>function for the Kolmogorov-Smirnov test. It is
 suitable for comparing two samples, or a single sample against a theoretical
 distribution.

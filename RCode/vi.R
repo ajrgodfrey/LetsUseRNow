@@ -49,3 +49,11 @@ WhereXY(x,y2, grid=c(5,5))
 WhereXY(x,y3, grid=c(5,5)) 
 WhereXY(x,y4, grid=c(5,5)) 
 
+## ----AccessGraphs1-------------------------------------------------------
+attach(airquality)
+MyScatter = ScatterPlot(Wind, Ozone)
+MyFLP = FittedLinePlot(Temp, Ozone, line.col=4)
+MyHist = hist(Ozone)
+MyBoxplot = boxplot(Wind)
+detach(airquality)
+

@@ -9,6 +9,9 @@ Temp.ts = as.ts(airquality$Temp)
 ## ----NilePlot------------------------------------------------------------
 plot(Nile, xlab="Year", ylab="Flow") 
 
+## ----NilePlotSVG---------------------------------------------------------
+TimeSeriesPlot(Nile, xlab="Year", ylab="Flow") 
+
 ## ----TSPlotsCompared-----------------------------------------------------
 plot(airquality$Temp, ylab="Temperature") 
 plot(Temp.ts, ylab="Temperature") 

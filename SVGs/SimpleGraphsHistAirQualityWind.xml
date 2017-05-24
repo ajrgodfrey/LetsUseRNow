@@ -478,7 +478,42 @@
         <sre:grouped>yaxis</sre:grouped>
         <sre:grouped>center</sre:grouped>
       </sre:children>
-      <sre:component/>
+      <sre:component>
+        <sre:active>graphics-plot-1-main-1.1</sre:active>
+        <sre:active>graphics-plot-1-xlab-1.1</sre:active>
+        <sre:passive>graphics-plot-1-bottom-axis-line-1.1</sre:passive>
+        <sre:active>graphics-plot-1-bottom-axis-labels-1.1.1</sre:active>
+        <sre:passive>graphics-plot-1-bottom-axis-ticks-1.1.1</sre:passive>
+        <sre:active>graphics-plot-1-bottom-axis-labels-1.1.2</sre:active>
+        <sre:passive>graphics-plot-1-bottom-axis-ticks-1.1.2</sre:passive>
+        <sre:active>graphics-plot-1-bottom-axis-labels-1.1.3</sre:active>
+        <sre:passive>graphics-plot-1-bottom-axis-ticks-1.1.3</sre:passive>
+        <sre:active>graphics-plot-1-bottom-axis-labels-1.1.4</sre:active>
+        <sre:passive>graphics-plot-1-bottom-axis-ticks-1.1.4</sre:passive>
+        <sre:active>graphics-plot-1-bottom-axis-labels-1.1.5</sre:active>
+        <sre:passive>graphics-plot-1-bottom-axis-ticks-1.1.5</sre:passive>
+        <sre:active>graphics-plot-1-ylab-1.1</sre:active>
+        <sre:passive>graphics-plot-1-left-axis-line-1.1</sre:passive>
+        <sre:active>graphics-plot-1-left-axis-labels-1.1.1</sre:active>
+        <sre:passive>graphics-plot-1-left-axis-ticks-1.1.1</sre:passive>
+        <sre:active>graphics-plot-1-left-axis-labels-1.1.2</sre:active>
+        <sre:passive>graphics-plot-1-left-axis-ticks-1.1.2</sre:passive>
+        <sre:active>graphics-plot-1-left-axis-labels-1.1.3</sre:active>
+        <sre:passive>graphics-plot-1-left-axis-ticks-1.1.3</sre:passive>
+        <sre:active>graphics-plot-1-left-axis-labels-1.1.4</sre:active>
+        <sre:passive>graphics-plot-1-left-axis-ticks-1.1.4</sre:passive>
+        <sre:active>graphics-plot-1-rect-1.1.1</sre:active>
+        <sre:active>graphics-plot-1-rect-1.1.2</sre:active>
+        <sre:active>graphics-plot-1-rect-1.1.3</sre:active>
+        <sre:active>graphics-plot-1-rect-1.1.4</sre:active>
+        <sre:active>graphics-plot-1-rect-1.1.5</sre:active>
+        <sre:active>graphics-plot-1-rect-1.1.6</sre:active>
+        <sre:active>graphics-plot-1-rect-1.1.7</sre:active>
+        <sre:active>graphics-plot-1-rect-1.1.8</sre:active>
+        <sre:active>graphics-plot-1-rect-1.1.9</sre:active>
+        <sre:active>graphics-plot-1-rect-1.1.10</sre:active>
+        <sre:active>graphics-plot-1-rect-1.1.11</sre:active>
+      </sre:component>
       <sre:neighbours/>
     </sre:annotation>
   </sre:annotations>

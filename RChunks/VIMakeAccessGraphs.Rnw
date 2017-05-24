@@ -1,0 +1,8 @@
+<<AccessGraphs1>>=
+attach(airquality)
+MyScatter = ScatterPlot(Wind, Ozone)
+MyFLP = FittedLinePlot(Temp, Ozone, line.col=4)
+MyHist = hist(Ozone)
+MyBoxplot = boxplot(Wind)
+detach(airquality)
+@

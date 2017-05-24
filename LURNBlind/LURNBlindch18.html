@@ -10,7 +10,7 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,2,next,mathjax,html --> 
 <meta name="src" content="LURNBlind.tex" /> 
-<meta name="date" content="2017-05-08 13:17:00" /> 
+<meta name="date" content="2017-05-24 15:07:00" /> 
 <link rel="stylesheet" type="text/css" href="LURNBlind.css" /> 
 </head><body 
 >
@@ -23,13 +23,13 @@ href="LURNBlindch17.html#tailLURNBlindch17.html" >prev-tail</a>] [<a
 href="#tailLURNBlindch18.html">tail</a>] [<a 
 href="LURNBlind.html#LURNBlindch18.html" >up</a>] </p></div>
    <h2 class="chapterHead"><span class="titlemark">Chapter&#x00A0;18</span><br /><a 
- id="x20-12800018"></a>LURN&#x2026; To Use R for Basic Calculus Tasks</h2>
+ id="x20-13000018"></a>LURN&#x2026; To Use R for Basic Calculus Tasks</h2>
 <!--l. 20--><p class="noindent" >This chapter explains how various tasks in introductory calculus can be
 undertaken using <span 
 class="aess-12">R</span>.
 </p>
    <h3 class="sectionHead"><span class="titlemark">18.1   </span> <a 
- id="x20-12900018.1"></a>Creating mathematical expressions</h3>
+ id="x20-13100018.1"></a>Creating mathematical expressions</h3>
 <!--l. 25--><p class="noindent" >Before we embark on doing those fun things we want to do, we need to learn how
 to store a mathematical expression as an object in <span 
 class="aess-12">R</span>. There are many keywords
@@ -41,30 +41,30 @@ meaning.
 </p><!--l. 27--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">18.2   </span> <a 
- id="x20-13000018.2"></a>Plotting functions</h3>
+ id="x20-13200018.2"></a>Plotting functions</h3>
 <!--l. 29--><p class="noindent" >This can be a lot of fun if you set things up right to start with. We create a
 <a 
- id="dx20-130001"></a><span 
+ id="dx20-132001"></a><span 
 class="aeti-12">function </span>to represent the mathematical expression using the <a 
- id="dx20-130002"></a><span 
+ id="dx20-132002"></a><span 
 class="aett-12">function()</span>
 command, then plot it using either the <a 
- id="dx20-130003"></a><span 
+ id="dx20-132003"></a><span 
 class="aett-12">plot.function() </span>or <a 
- id="dx20-130004"></a><span 
+ id="dx20-132004"></a><span 
 class="aett-12">curve()</span>
 commands.
 </p><!--l. 33--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb378">  <a 
- id="x20-130006r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb386">  <a 
+ id="x20-132006r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;MySine</span><span 
 class="aett-12">&#x00A0;&#x003C;-</span><span 
 class="aett-12">&#x00A0;function(x){</span><span 
 class="aett-12">&#x00A0;sin(x)}</span><br class="fancyvrb" /><a 
- id="x20-130008r2"></a><span 
+ id="x20-132008r2"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;curve(MySine,</span><span 
@@ -77,13 +77,13 @@ class="aett-12">&#x00A0;2001)</span></div>
 
                                                                           
 <!--l. 38--><p class="indent" >   <img 
-src="LURNBlind42x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt"  /><!--tex4ht:graphics  
-name="LURNBlind42x.png" src="figures/CalculusSineCurve-1.eps"  
+src="LURNBlind46x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt"  /><!--tex4ht:graphics  
+name="LURNBlind46x.png" src="figures/CalculusSineCurve-1.eps"  
 -->
 </p><!--l. 41--><p class="indent" >   <a 
 href="../SVGs/CalculusSineCurve-1.html" >link to accessible SVG file: (requires correct browser)</a>
 </p><!--l. 43--><p class="indent" >   You can use any valid mathematical expression in the <a 
- id="dx20-130009"></a><span 
+ id="dx20-132009"></a><span 
 class="aeti-12">function </span>you create. You
 might find it useful to test your idea= values for your inputs that are easy to work
 with, such as zero and one. You could then use integers, including negative
@@ -95,7 +95,7 @@ functions. For example:
 </p><!--l. 56--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">18.3   </span> <a 
- id="x20-13100018.3"></a>Differentiation</h3>
+ id="x20-13300018.3"></a>Differentiation</h3>
 <!--l. 58--><p class="noindent" >The internal code used for differentiation in <span 
 class="aess-12">R </span>is not as comprehensive as other
 mathematical software. It can handle arithmetic operators <span 
@@ -103,42 +103,42 @@ class="cmr-12">+</span>, <span
 class="cmsy-10x-x-120">-</span>, <span 
 class="cmsy-10x-x-120">*</span>, <span 
 class="cmmi-12">&#x2215; </span>and <img 
-src="LURNBlind43x.png" alt="&#x02C6;,  "  class="circ"  /> and
+src="LURNBlind47x.png" alt="&#x02C6;,  "  class="circ"  /> and
 the single-variable functions <a 
- id="dx20-131001"></a><span 
+ id="dx20-133001"></a><span 
 class="aett-12">exp()</span>, <a 
- id="dx20-131002"></a><span 
+ id="dx20-133002"></a><span 
 class="aett-12">log() </span>(natural logarithm), <a 
- id="dx20-131003"></a><span 
+ id="dx20-133003"></a><span 
 class="aett-12">sin()</span>, <a 
- id="dx20-131004"></a><span 
+ id="dx20-133004"></a><span 
 class="aett-12">cos()</span>,
 <a 
- id="dx20-131005"></a><span 
+ id="dx20-133005"></a><span 
 class="aett-12">tan()</span>, <a 
- id="dx20-131006"></a><span 
+ id="dx20-133006"></a><span 
 class="aett-12">sinh()</span>, <a 
- id="dx20-131007"></a><span 
+ id="dx20-133007"></a><span 
 class="aett-12">cosh()</span>, <a 
- id="dx20-131008"></a><span 
+ id="dx20-133008"></a><span 
 class="aett-12">sqrt()</span>, <a 
- id="dx20-131009"></a><span 
+ id="dx20-133009"></a><span 
 class="aett-12">pnorm()</span>, <a 
- id="dx20-131010"></a><span 
+ id="dx20-133010"></a><span 
 class="aett-12">dnorm()</span>, <a 
- id="dx20-131011"></a><span 
+ id="dx20-133011"></a><span 
 class="aett-12">asin() </span>(inverse sine), <a 
- id="dx20-131012"></a><span 
+ id="dx20-133012"></a><span 
 class="aett-12">acos()</span>
 (inverse cosine), <a 
- id="dx20-131013"></a><span 
+ id="dx20-133013"></a><span 
 class="aett-12">atan() </span>(inverse tangent), and various <a 
- id="dx20-131014"></a><span 
+ id="dx20-133014"></a><span 
 class="aett-12">gamma() </span>functions. The
 functions <a 
- id="dx20-131015"></a><span 
+ id="dx20-133015"></a><span 
 class="aett-12">pnorm() </span>and <a 
- id="dx20-131016"></a><span 
+ id="dx20-133016"></a><span 
 class="aett-12">dnorm() </span>are restricted to the standard normal
 distribution.
                                                                           
@@ -146,28 +146,28 @@ distribution.
                                                                           
 </p><!--l. 62--><p class="indent" >   The easiest way to find the derivative of an expression is to store the
 mathematical function using the <a 
- id="dx20-131017"></a><span 
+ id="dx20-133017"></a><span 
 class="aett-12">expression() </span>command, and then use the <a 
- id="dx20-131018"></a><span 
+ id="dx20-133018"></a><span 
 class="aett-12">D()</span>
 or <a 
- id="dx20-131019"></a><span 
+ id="dx20-133019"></a><span 
 class="aett-12">deriv() </span>commands.
 </p><!--l. 66--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb379">  <a 
- id="x20-131021r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb387">  <a 
+ id="x20-133021r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;y=expression(exp(2*x))</span><br class="fancyvrb" /><a 
- id="x20-131023r2"></a><span 
+ id="x20-133023r2"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;D(y,"x")</span></div>
 <!--l. 70--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb380"> <a 
- id="x20-131025r1"></a><span 
+   <div class="fancyvrb" id="fancyvrb388"> <a 
+ id="x20-133025r1"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;exp(2</span><span 
 class="aett-12">&#x00A0;*</span><span 
@@ -175,7 +175,7 @@ class="aett-12">&#x00A0;x)</span><span
 class="aett-12">&#x00A0;*</span><span 
 class="aett-12">&#x00A0;2</span></div>
 <!--l. 76--><p class="indent" >   The second argument to the <a 
- id="dx20-131026"></a><span 
+ id="dx20-133026"></a><span 
 class="aett-12">D() </span>function needs quote marks around
 it.
                                                                           

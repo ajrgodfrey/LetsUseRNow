@@ -1,0 +1,12 @@
+% filename VIAccessibleGraphs.Rnw  
+
+\section{Creation of graphs with an accessible interactive tool for exploration}
+
+New functions have been added to the BrailleR package in order to make accessible tools for interactive exploration of graphs. The standard commands for creation of histograms, boxplots, scatter plots and time series plots do not return the extra information needed to get the exploration tool to work. Each of the following commands creates the same graph as would be created using the commands in previous chapters. Refer to the examples found in the help pages for each of these commands to see the standard base \R{}  commands that these 
+\Rpkg{BrailleR} functions replicate.
+
+N.B. You must store the graph in a named object for later use.
+
+
+
+

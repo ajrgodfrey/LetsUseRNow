@@ -2,7 +2,12 @@
 
 \end{center} 
 \end{exhibit} 
- 
+
+\Blind{\subsection*{A note on the visual appearance of the standard histogram for blind users}
+
+\Sexpr{Describe(hist(Wind))$general}
+} 
+
 \section{Basic annotations to graphs} 
  
 \begin{exhibit} 

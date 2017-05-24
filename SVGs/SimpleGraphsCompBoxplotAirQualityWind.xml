@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<histogram xmlns:sre="http://www.chemaccess.org/sre-schema">
+<boxplot xmlns:sre="http://www.chemaccess.org/sre-schema">
   <sre:annotations>
-    <sre:annotation speech="Title: Histogram of airquality$Wind" speech2="Title: Histogram of airquality$Wind" type="Title">
+    <sre:annotation speech="Title: " speech2="Title: " type="Title">
       <sre:active>graphics-plot-1-main-1.1</sre:active>
       <sre:position>1</sre:position>
       <sre:parents>
@@ -11,7 +11,7 @@
       <sre:component/>
       <sre:neighbours/>
     </sre:annotation>
-    <sre:annotation speech="Label airquality$Wind" speech2="Label airquality$Wind" type="Label">
+    <sre:annotation speech="Label " speech2="Label " type="Label">
       <sre:active>graphics-plot-1-xlab-1.1</sre:active>
       <sre:position>1</sre:position>
       <sre:parents>
@@ -31,7 +31,7 @@
       <sre:component/>
       <sre:neighbours/>
     </sre:annotation>
-    <sre:annotation speech="Tick mark 0" speech2="0" type="Value">
+    <sre:annotation speech="Tick mark 5" speech2="5" type="Value">
       <sre:active>graphics-plot-1-bottom-axis-labels-1.1.1</sre:active>
       <sre:position>2</sre:position>
       <sre:parents>
@@ -55,7 +55,7 @@
       </sre:component>
       <sre:neighbours/>
     </sre:annotation>
-    <sre:annotation speech="Tick mark 5" speech2="5" type="Value">
+    <sre:annotation speech="Tick mark 6" speech2="6" type="Value">
       <sre:active>graphics-plot-1-bottom-axis-labels-1.1.2</sre:active>
       <sre:position>3</sre:position>
       <sre:parents>
@@ -79,7 +79,7 @@
       </sre:component>
       <sre:neighbours/>
     </sre:annotation>
-    <sre:annotation speech="Tick mark 10" speech2="10" type="Value">
+    <sre:annotation speech="Tick mark 7" speech2="7" type="Value">
       <sre:active>graphics-plot-1-bottom-axis-labels-1.1.3</sre:active>
       <sre:position>4</sre:position>
       <sre:parents>
@@ -103,7 +103,7 @@
       </sre:component>
       <sre:neighbours/>
     </sre:annotation>
-    <sre:annotation speech="Tick mark 15" speech2="15" type="Value">
+    <sre:annotation speech="Tick mark 8" speech2="8" type="Value">
       <sre:active>graphics-plot-1-bottom-axis-labels-1.1.4</sre:active>
       <sre:position>5</sre:position>
       <sre:parents>
@@ -127,7 +127,7 @@
       </sre:component>
       <sre:neighbours/>
     </sre:annotation>
-    <sre:annotation speech="Tick mark 20" speech2="20" type="Value">
+    <sre:annotation speech="Tick mark 9" speech2="9" type="Value">
       <sre:active>graphics-plot-1-bottom-axis-labels-1.1.5</sre:active>
       <sre:position>6</sre:position>
       <sre:parents>
@@ -151,7 +151,7 @@
       </sre:component>
       <sre:neighbours/>
     </sre:annotation>
-    <sre:annotation speech="x axis: airquality$Wind" speech2="x axis airquality$Wind ranges from 0 to 22" type="Axis">
+    <sre:annotation speech="x axis: " speech2="x axis with values 5, 6, 7, 8, 9" type="Axis">
       <sre:grouped>xaxis</sre:grouped>
       <sre:position>2</sre:position>
       <sre:parents>
@@ -181,7 +181,7 @@
       </sre:component>
       <sre:neighbours/>
     </sre:annotation>
-    <sre:annotation speech="Label Frequency" speech2="Label Frequency" type="Label">
+    <sre:annotation speech="Label " speech2="Label " type="Label">
       <sre:active>graphics-plot-1-ylab-1.1</sre:active>
       <sre:position>1</sre:position>
       <sre:parents>
@@ -201,7 +201,7 @@
       <sre:component/>
       <sre:neighbours/>
     </sre:annotation>
-    <sre:annotation speech="Tick mark 0" speech2="11 of the 11 bars exceed the Frequency 0" type="Value">
+    <sre:annotation speech="Tick mark 5" speech2="5" type="Value">
       <sre:active>graphics-plot-1-left-axis-labels-1.1.1</sre:active>
       <sre:position>2</sre:position>
       <sre:parents>
@@ -225,7 +225,7 @@
       </sre:component>
       <sre:neighbours/>
     </sre:annotation>
-    <sre:annotation speech="Tick mark 10" speech2="5 of the 11 bars exceed the Frequency 10" type="Value">
+    <sre:annotation speech="Tick mark 10" speech2="10" type="Value">
       <sre:active>graphics-plot-1-left-axis-labels-1.1.2</sre:active>
       <sre:position>3</sre:position>
       <sre:parents>
@@ -249,7 +249,7 @@
       </sre:component>
       <sre:neighbours/>
     </sre:annotation>
-    <sre:annotation speech="Tick mark 20" speech2="3 of the 11 bars exceed the Frequency 20" type="Value">
+    <sre:annotation speech="Tick mark 15" speech2="15" type="Value">
       <sre:active>graphics-plot-1-left-axis-labels-1.1.3</sre:active>
       <sre:position>4</sre:position>
       <sre:parents>
@@ -273,7 +273,7 @@
       </sre:component>
       <sre:neighbours/>
     </sre:annotation>
-    <sre:annotation speech="Tick mark 30" speech2="2 of the 11 bars exceed the Frequency 30" type="Value">
+    <sre:annotation speech="Tick mark 20" speech2="20" type="Value">
       <sre:active>graphics-plot-1-left-axis-labels-1.1.4</sre:active>
       <sre:position>5</sre:position>
       <sre:parents>
@@ -297,7 +297,7 @@
       </sre:component>
       <sre:neighbours/>
     </sre:annotation>
-    <sre:annotation speech="y axis: Frequency" speech2="y axis Frequency ranges from 0 to 38" type="Axis">
+    <sre:annotation speech="y axis: " speech2="y axis  ranges from 5 to 20" type="Axis">
       <sre:grouped>yaxis</sre:grouped>
       <sre:position>3</sre:position>
       <sre:parents>
@@ -324,93 +324,383 @@
       </sre:component>
       <sre:neighbours/>
     </sre:annotation>
-    <sre:annotation speech="Histogram bars" speech2="Histogram with 11 bars" type="Center">
+    <sre:annotation speech="5 boxplots vertically" speech2="5 boxplots vertically for 5, 6, 7, 8, 9" type="Center">
       <sre:grouped>center</sre:grouped>
       <sre:position>4</sre:position>
       <sre:parents>
         <sre:grouped>chart</sre:grouped>
       </sre:parents>
       <sre:children>
-        <sre:active>graphics-plot-1-rect-1.1.1</sre:active>
-        <sre:active>graphics-plot-1-rect-1.1.2</sre:active>
-        <sre:active>graphics-plot-1-rect-1.1.3</sre:active>
-        <sre:active>graphics-plot-1-rect-1.1.4</sre:active>
-        <sre:active>graphics-plot-1-rect-1.1.5</sre:active>
-        <sre:active>graphics-plot-1-rect-1.1.6</sre:active>
-        <sre:active>graphics-plot-1-rect-1.1.7</sre:active>
-        <sre:active>graphics-plot-1-rect-1.1.8</sre:active>
-        <sre:active>graphics-plot-1-rect-1.1.9</sre:active>
-        <sre:active>graphics-plot-1-rect-1.1.10</sre:active>
-        <sre:active>graphics-plot-1-rect-1.1.11</sre:active>
+        <sre:grouped>boxplot1</sre:grouped>
+        <sre:grouped>boxplot2</sre:grouped>
+        <sre:grouped>boxplot3</sre:grouped>
+        <sre:grouped>boxplot4</sre:grouped>
+        <sre:grouped>boxplot5</sre:grouped>
       </sre:children>
       <sre:component>
-        <sre:active>graphics-plot-1-rect-1.1.1</sre:active>
-        <sre:active>graphics-plot-1-rect-1.1.2</sre:active>
-        <sre:active>graphics-plot-1-rect-1.1.3</sre:active>
-        <sre:active>graphics-plot-1-rect-1.1.4</sre:active>
-        <sre:active>graphics-plot-1-rect-1.1.5</sre:active>
-        <sre:active>graphics-plot-1-rect-1.1.6</sre:active>
-        <sre:active>graphics-plot-1-rect-1.1.7</sre:active>
-        <sre:active>graphics-plot-1-rect-1.1.8</sre:active>
-        <sre:active>graphics-plot-1-rect-1.1.9</sre:active>
-        <sre:active>graphics-plot-1-rect-1.1.10</sre:active>
-        <sre:active>graphics-plot-1-rect-1.1.11</sre:active>
+        <sre:active>graphics-root.8</sre:active>
+        <sre:passive>graphics-root.10</sre:passive>
+        <sre:active>graphics-root.12</sre:active>
+        <sre:active>graphics-root.11</sre:active>
+        <sre:active>graphics-root.14</sre:active>
+        <sre:passive>graphics-root.16</sre:passive>
+        <sre:active>graphics-root.18</sre:active>
+        <sre:active>graphics-root.17</sre:active>
+        <sre:active>graphics-plot-1-points-3.1.2</sre:active>
+        <sre:active>graphics-plot-1-points-3.1.1</sre:active>
+        <sre:active>graphics-root.22</sre:active>
+        <sre:passive>graphics-root.24</sre:passive>
+        <sre:active>graphics-root.26</sre:active>
+        <sre:active>graphics-root.25</sre:active>
+        <sre:active>graphics-root.28</sre:active>
+        <sre:passive>graphics-root.30</sre:passive>
+        <sre:active>graphics-root.32</sre:active>
+        <sre:active>graphics-root.31</sre:active>
+        <sre:active>graphics-root.34</sre:active>
+        <sre:passive>graphics-root.36</sre:passive>
+        <sre:active>graphics-root.38</sre:active>
+        <sre:active>graphics-root.37</sre:active>
+        <sre:passive>graphics-plot-1-box-1.1.1</sre:passive>
       </sre:component>
       <sre:neighbours/>
     </sre:annotation>
-    <sre:annotation speech="Bar 1 at 1 with value 1" speech2="Bar 1 between x values 0 and 2  with y value 1 and density 0.00327" type="Bar">
-      <sre:active>graphics-plot-1-rect-1.1.1</sre:active>
+    <sre:annotation speech="Boxplot for 5 and quartiles in 5.7, 8.9, 11.5, 14.05, 20.1" speech2="Boxplot for 5 for 31 datapoints. Minimum 5.7, Lower quartile 8.9, Median 11.5, Upper quartile 14.05, Maximum 20.1. No outliers" type="boxplot">
+      <sre:grouped>boxplot1</sre:grouped>
       <sre:position>1</sre:position>
       <sre:parents>
         <sre:grouped>center</sre:grouped>
       </sre:parents>
+      <sre:children>
+        <sre:active>graphics-root.8</sre:active>
+        <sre:active>graphics-root.12</sre:active>
+        <sre:active>graphics-root.11</sre:active>
+      </sre:children>
+      <sre:component>
+        <sre:active>graphics-root.8</sre:active>
+        <sre:passive>graphics-root.10</sre:passive>
+        <sre:active>graphics-root.12</sre:active>
+        <sre:active>graphics-root.11</sre:active>
+      </sre:component>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation speech="Median 11.5" type="component">
+      <sre:active>graphics-root.8</sre:active>
+      <sre:position>1</sre:position>
+      <sre:parents>
+        <sre:grouped>boxplot1</sre:grouped>
+      </sre:parents>
       <sre:children/>
       <sre:component/>
       <sre:neighbours/>
     </sre:annotation>
-    <sre:annotation speech="Bar 2 at 3 with value 4" speech2="Bar 2 between x values 2 and 4  with y value 4 and density 0.0131" type="Bar">
-      <sre:active>graphics-plot-1-rect-1.1.2</sre:active>
+    <sre:annotation>
+      <sre:passive>graphics-root.10</sre:passive>
+      <sre:position>2</sre:position>
+      <sre:parents>
+        <sre:grouped>boxplot1</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component/>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation speech="Lower quartile 8.9 and Upper quartile 14.05." type="component">
+      <sre:active>graphics-root.12</sre:active>
+      <sre:position>3</sre:position>
+      <sre:parents>
+        <sre:grouped>boxplot1</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component/>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation speech="Minimum 5.7 and Maximum 20.1." type="component">
+      <sre:active>graphics-root.11</sre:active>
+      <sre:position>4</sre:position>
+      <sre:parents>
+        <sre:grouped>boxplot1</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component/>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation speech="Boxplot for 6 and quartiles in 4.6, 8, 9.7, 11.5, 16.1 and 2 outliers" speech2="Boxplot for 6 for 30 datapoints. Lower whisker 4.6, Lower quartile 8, Median 9.7, Upper quartile 11.5, Upper whisker 16.1. 2 outliers at 20.7, 1.7" type="boxplot">
+      <sre:grouped>boxplot2</sre:grouped>
       <sre:position>2</sre:position>
       <sre:parents>
         <sre:grouped>center</sre:grouped>
       </sre:parents>
+      <sre:children>
+        <sre:active>graphics-root.14</sre:active>
+        <sre:active>graphics-root.18</sre:active>
+        <sre:active>graphics-root.17</sre:active>
+        <sre:grouped>outliers2</sre:grouped>
+      </sre:children>
+      <sre:component>
+        <sre:active>graphics-root.14</sre:active>
+        <sre:passive>graphics-root.16</sre:passive>
+        <sre:active>graphics-root.18</sre:active>
+        <sre:active>graphics-root.17</sre:active>
+        <sre:active>graphics-plot-1-points-3.1.2</sre:active>
+        <sre:active>graphics-plot-1-points-3.1.1</sre:active>
+      </sre:component>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation speech="Median 9.7" type="component">
+      <sre:active>graphics-root.14</sre:active>
+      <sre:position>1</sre:position>
+      <sre:parents>
+        <sre:grouped>boxplot2</sre:grouped>
+      </sre:parents>
       <sre:children/>
       <sre:component/>
       <sre:neighbours/>
     </sre:annotation>
-    <sre:annotation speech="Bar 3 at 5 with value 11" speech2="Bar 3 between x values 4 and 6  with y value 11 and density 0.0359" type="Bar">
-      <sre:active>graphics-plot-1-rect-1.1.3</sre:active>
+    <sre:annotation>
+      <sre:passive>graphics-root.16</sre:passive>
+      <sre:position>2</sre:position>
+      <sre:parents>
+        <sre:grouped>boxplot2</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component/>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation speech="Lower quartile 8 and Upper quartile 11.5." type="component">
+      <sre:active>graphics-root.18</sre:active>
+      <sre:position>3</sre:position>
+      <sre:parents>
+        <sre:grouped>boxplot2</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component/>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation speech="Lower whisker 4.6 and Upper whisker 16.1." type="component">
+      <sre:active>graphics-root.17</sre:active>
+      <sre:position>4</sre:position>
+      <sre:parents>
+        <sre:grouped>boxplot2</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component/>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation speech="2 outliers at 20.7, 1.7" type="component">
+      <sre:grouped>outliers2</sre:grouped>
+      <sre:position>5</sre:position>
+      <sre:parents>
+        <sre:grouped>boxplot2</sre:grouped>
+      </sre:parents>
+      <sre:children>
+        <sre:active>graphics-plot-1-points-3.1.2</sre:active>
+        <sre:active>graphics-plot-1-points-3.1.1</sre:active>
+      </sre:children>
+      <sre:component>
+        <sre:active>graphics-plot-1-points-3.1.2</sre:active>
+        <sre:active>graphics-plot-1-points-3.1.1</sre:active>
+      </sre:component>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation speech="1.7" speech2="Outlier 1.7" type="point">
+      <sre:active>graphics-plot-1-points-3.1.2</sre:active>
+      <sre:position>1</sre:position>
+      <sre:parents>
+        <sre:grouped>outliers2</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component/>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation speech="20.7" speech2="Outlier 20.7" type="point">
+      <sre:active>graphics-plot-1-points-3.1.1</sre:active>
+      <sre:position>1</sre:position>
+      <sre:parents>
+        <sre:grouped>outliers2</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component/>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation speech="Boxplot for 7 and quartiles in 4.1, 6.9, 8.6, 10.9, 14.9" speech2="Boxplot for 7 for 31 datapoints. Minimum 4.1, Lower quartile 6.9, Median 8.6, Upper quartile 10.9, Maximum 14.9. No outliers" type="boxplot">
+      <sre:grouped>boxplot3</sre:grouped>
       <sre:position>3</sre:position>
       <sre:parents>
         <sre:grouped>center</sre:grouped>
       </sre:parents>
+      <sre:children>
+        <sre:active>graphics-root.22</sre:active>
+        <sre:active>graphics-root.26</sre:active>
+        <sre:active>graphics-root.25</sre:active>
+      </sre:children>
+      <sre:component>
+        <sre:active>graphics-root.22</sre:active>
+        <sre:passive>graphics-root.24</sre:passive>
+        <sre:active>graphics-root.26</sre:active>
+        <sre:active>graphics-root.25</sre:active>
+      </sre:component>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation speech="Median 8.6" type="component">
+      <sre:active>graphics-root.22</sre:active>
+      <sre:position>1</sre:position>
+      <sre:parents>
+        <sre:grouped>boxplot3</sre:grouped>
+      </sre:parents>
       <sre:children/>
       <sre:component/>
       <sre:neighbours/>
     </sre:annotation>
-    <sre:annotation speech="Bar 4 at 7 with value 38" speech2="Bar 4 between x values 6 and 8  with y value 38 and density 0.124" type="Bar">
-      <sre:active>graphics-plot-1-rect-1.1.4</sre:active>
+    <sre:annotation>
+      <sre:passive>graphics-root.24</sre:passive>
+      <sre:position>2</sre:position>
+      <sre:parents>
+        <sre:grouped>boxplot3</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component/>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation speech="Lower quartile 6.9 and Upper quartile 10.9." type="component">
+      <sre:active>graphics-root.26</sre:active>
+      <sre:position>3</sre:position>
+      <sre:parents>
+        <sre:grouped>boxplot3</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component/>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation speech="Minimum 4.1 and Maximum 14.9." type="component">
+      <sre:active>graphics-root.25</sre:active>
+      <sre:position>4</sre:position>
+      <sre:parents>
+        <sre:grouped>boxplot3</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component/>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation speech="Boxplot for 8 and quartiles in 2.3, 6.6, 8.6, 11.2, 15.5" speech2="Boxplot for 8 for 31 datapoints. Minimum 2.3, Lower quartile 6.6, Median 8.6, Upper quartile 11.2, Maximum 15.5. No outliers" type="boxplot">
+      <sre:grouped>boxplot4</sre:grouped>
       <sre:position>4</sre:position>
       <sre:parents>
         <sre:grouped>center</sre:grouped>
       </sre:parents>
+      <sre:children>
+        <sre:active>graphics-root.28</sre:active>
+        <sre:active>graphics-root.32</sre:active>
+        <sre:active>graphics-root.31</sre:active>
+      </sre:children>
+      <sre:component>
+        <sre:active>graphics-root.28</sre:active>
+        <sre:passive>graphics-root.30</sre:passive>
+        <sre:active>graphics-root.32</sre:active>
+        <sre:active>graphics-root.31</sre:active>
+      </sre:component>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation speech="Median 8.6" type="component">
+      <sre:active>graphics-root.28</sre:active>
+      <sre:position>1</sre:position>
+      <sre:parents>
+        <sre:grouped>boxplot4</sre:grouped>
+      </sre:parents>
       <sre:children/>
       <sre:component/>
       <sre:neighbours/>
     </sre:annotation>
-    <sre:annotation speech="Bar 5 at 9 with value 27" speech2="Bar 5 between x values 8 and 10  with y value 27 and density 0.0882" type="Bar">
-      <sre:active>graphics-plot-1-rect-1.1.5</sre:active>
+    <sre:annotation>
+      <sre:passive>graphics-root.30</sre:passive>
+      <sre:position>2</sre:position>
+      <sre:parents>
+        <sre:grouped>boxplot4</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component/>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation speech="Lower quartile 6.6 and Upper quartile 11.2." type="component">
+      <sre:active>graphics-root.32</sre:active>
+      <sre:position>3</sre:position>
+      <sre:parents>
+        <sre:grouped>boxplot4</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component/>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation speech="Minimum 2.3 and Maximum 15.5." type="component">
+      <sre:active>graphics-root.31</sre:active>
+      <sre:position>4</sre:position>
+      <sre:parents>
+        <sre:grouped>boxplot4</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component/>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation speech="Boxplot for 9 and quartiles in 2.8, 7.4, 10.3, 12.6, 16.6" speech2="Boxplot for 9 for 30 datapoints. Minimum 2.8, Lower quartile 7.4, Median 10.3, Upper quartile 12.6, Maximum 16.6. No outliers" type="boxplot">
+      <sre:grouped>boxplot5</sre:grouped>
       <sre:position>5</sre:position>
       <sre:parents>
         <sre:grouped>center</sre:grouped>
       </sre:parents>
+      <sre:children>
+        <sre:active>graphics-root.34</sre:active>
+        <sre:active>graphics-root.38</sre:active>
+        <sre:active>graphics-root.37</sre:active>
+      </sre:children>
+      <sre:component>
+        <sre:active>graphics-root.34</sre:active>
+        <sre:passive>graphics-root.36</sre:passive>
+        <sre:active>graphics-root.38</sre:active>
+        <sre:active>graphics-root.37</sre:active>
+      </sre:component>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation speech="Median 10.3" type="component">
+      <sre:active>graphics-root.34</sre:active>
+      <sre:position>1</sre:position>
+      <sre:parents>
+        <sre:grouped>boxplot5</sre:grouped>
+      </sre:parents>
       <sre:children/>
       <sre:component/>
       <sre:neighbours/>
     </sre:annotation>
-    <sre:annotation speech="Bar 6 at 11 with value 38" speech2="Bar 6 between x values 10 and 12  with y value 38 and density 0.124" type="Bar">
-      <sre:active>graphics-plot-1-rect-1.1.6</sre:active>
-      <sre:position>6</sre:position>
+    <sre:annotation>
+      <sre:passive>graphics-root.36</sre:passive>
+      <sre:position>2</sre:position>
+      <sre:parents>
+        <sre:grouped>boxplot5</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component/>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation speech="Lower quartile 7.4 and Upper quartile 12.6." type="component">
+      <sre:active>graphics-root.38</sre:active>
+      <sre:position>3</sre:position>
+      <sre:parents>
+        <sre:grouped>boxplot5</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component/>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation speech="Minimum 2.8 and Maximum 16.6." type="component">
+      <sre:active>graphics-root.37</sre:active>
+      <sre:position>4</sre:position>
+      <sre:parents>
+        <sre:grouped>boxplot5</sre:grouped>
+      </sre:parents>
+      <sre:children/>
+      <sre:component/>
+      <sre:neighbours/>
+    </sre:annotation>
+    <sre:annotation>
+      <sre:passive>graphics-plot-1-box-1.1.1</sre:passive>
+      <sre:position>0</sre:position>
       <sre:parents>
         <sre:grouped>center</sre:grouped>
       </sre:parents>
@@ -418,57 +708,7 @@
       <sre:component/>
       <sre:neighbours/>
     </sre:annotation>
-    <sre:annotation speech="Bar 7 at 13 with value 10" speech2="Bar 7 between x values 12 and 14  with y value 10 and density 0.0327" type="Bar">
-      <sre:active>graphics-plot-1-rect-1.1.7</sre:active>
-      <sre:position>7</sre:position>
-      <sre:parents>
-        <sre:grouped>center</sre:grouped>
-      </sre:parents>
-      <sre:children/>
-      <sre:component/>
-      <sre:neighbours/>
-    </sre:annotation>
-    <sre:annotation speech="Bar 8 at 15 with value 17" speech2="Bar 8 between x values 14 and 16  with y value 17 and density 0.0556" type="Bar">
-      <sre:active>graphics-plot-1-rect-1.1.8</sre:active>
-      <sre:position>8</sre:position>
-      <sre:parents>
-        <sre:grouped>center</sre:grouped>
-      </sre:parents>
-      <sre:children/>
-      <sre:component/>
-      <sre:neighbours/>
-    </sre:annotation>
-    <sre:annotation speech="Bar 9 at 17 with value 4" speech2="Bar 9 between x values 16 and 18  with y value 4 and density 0.0131" type="Bar">
-      <sre:active>graphics-plot-1-rect-1.1.9</sre:active>
-      <sre:position>9</sre:position>
-      <sre:parents>
-        <sre:grouped>center</sre:grouped>
-      </sre:parents>
-      <sre:children/>
-      <sre:component/>
-      <sre:neighbours/>
-    </sre:annotation>
-    <sre:annotation speech="Bar 10 at 19 with value 1" speech2="Bar 10 between x values 18 and 20  with y value 1 and density 0.00327" type="Bar">
-      <sre:active>graphics-plot-1-rect-1.1.10</sre:active>
-      <sre:position>10</sre:position>
-      <sre:parents>
-        <sre:grouped>center</sre:grouped>
-      </sre:parents>
-      <sre:children/>
-      <sre:component/>
-      <sre:neighbours/>
-    </sre:annotation>
-    <sre:annotation speech="Bar 11 at 21 with value 2" speech2="Bar 11 between x values 20 and 22  with y value 2 and density 0.00654" type="Bar">
-      <sre:active>graphics-plot-1-rect-1.1.11</sre:active>
-      <sre:position>11</sre:position>
-      <sre:parents>
-        <sre:grouped>center</sre:grouped>
-      </sre:parents>
-      <sre:children/>
-      <sre:component/>
-      <sre:neighbours/>
-    </sre:annotation>
-    <sre:annotation speech="Histogram of airquality$Wind" speech2="Histogram showing  11 bars for  airquality$Wind over the range 0 to 22 and Frequency from 0 to 38" type="Histogram">
+    <sre:annotation speech="5 boxplots for " speech2="5 boxplots for  5, 6, 7, 8, 9" type="BoxPlot">
       <sre:grouped>chart</sre:grouped>
       <sre:position>1</sre:position>
       <sre:parents/>
@@ -502,19 +742,31 @@
         <sre:passive>graphics-plot-1-left-axis-ticks-1.1.3</sre:passive>
         <sre:active>graphics-plot-1-left-axis-labels-1.1.4</sre:active>
         <sre:passive>graphics-plot-1-left-axis-ticks-1.1.4</sre:passive>
-        <sre:active>graphics-plot-1-rect-1.1.1</sre:active>
-        <sre:active>graphics-plot-1-rect-1.1.2</sre:active>
-        <sre:active>graphics-plot-1-rect-1.1.3</sre:active>
-        <sre:active>graphics-plot-1-rect-1.1.4</sre:active>
-        <sre:active>graphics-plot-1-rect-1.1.5</sre:active>
-        <sre:active>graphics-plot-1-rect-1.1.6</sre:active>
-        <sre:active>graphics-plot-1-rect-1.1.7</sre:active>
-        <sre:active>graphics-plot-1-rect-1.1.8</sre:active>
-        <sre:active>graphics-plot-1-rect-1.1.9</sre:active>
-        <sre:active>graphics-plot-1-rect-1.1.10</sre:active>
-        <sre:active>graphics-plot-1-rect-1.1.11</sre:active>
+        <sre:active>graphics-root.8</sre:active>
+        <sre:passive>graphics-root.10</sre:passive>
+        <sre:active>graphics-root.12</sre:active>
+        <sre:active>graphics-root.11</sre:active>
+        <sre:active>graphics-root.14</sre:active>
+        <sre:passive>graphics-root.16</sre:passive>
+        <sre:active>graphics-root.18</sre:active>
+        <sre:active>graphics-root.17</sre:active>
+        <sre:active>graphics-plot-1-points-3.1.2</sre:active>
+        <sre:active>graphics-plot-1-points-3.1.1</sre:active>
+        <sre:active>graphics-root.22</sre:active>
+        <sre:passive>graphics-root.24</sre:passive>
+        <sre:active>graphics-root.26</sre:active>
+        <sre:active>graphics-root.25</sre:active>
+        <sre:active>graphics-root.28</sre:active>
+        <sre:passive>graphics-root.30</sre:passive>
+        <sre:active>graphics-root.32</sre:active>
+        <sre:active>graphics-root.31</sre:active>
+        <sre:active>graphics-root.34</sre:active>
+        <sre:passive>graphics-root.36</sre:passive>
+        <sre:active>graphics-root.38</sre:active>
+        <sre:active>graphics-root.37</sre:active>
+        <sre:passive>graphics-plot-1-box-1.1.1</sre:passive>
       </sre:component>
       <sre:neighbours/>
     </sre:annotation>
   </sre:annotations>
-</histogram>
+</boxplot>

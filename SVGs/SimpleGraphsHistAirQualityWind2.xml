@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <histogram xmlns:sre="http://www.chemaccess.org/sre-schema">
   <sre:annotations>
-    <sre:annotation speech="Title: " speech2="Title: " type="Title">
+    <sre:annotation speech="Title: Histogram of Wind" speech2="Title: Histogram of Wind" type="Title">
       <sre:active>graphics-plot-1-main-1.1</sre:active>
       <sre:position>1</sre:position>
       <sre:parents>
@@ -11,7 +11,7 @@
       <sre:component/>
       <sre:neighbours/>
     </sre:annotation>
-    <sre:annotation speech="Label Average wind speed (mph)" speech2="Label Average wind speed (mph)" type="Label">
+    <sre:annotation speech="Label Wind" speech2="Label Wind" type="Label">
       <sre:active>graphics-plot-1-xlab-1.1</sre:active>
       <sre:position>1</sre:position>
       <sre:parents>
@@ -151,7 +151,7 @@
       </sre:component>
       <sre:neighbours/>
     </sre:annotation>
-    <sre:annotation speech="x axis: Average wind speed (mph)" speech2="x axis Average wind speed (mph) ranges from 0 to 22" type="Axis">
+    <sre:annotation speech="x axis: Wind" speech2="x axis Wind ranges from 0 to 22" type="Axis">
       <sre:grouped>xaxis</sre:grouped>
       <sre:position>2</sre:position>
       <sre:parents>
@@ -468,7 +468,7 @@
       <sre:component/>
       <sre:neighbours/>
     </sre:annotation>
-    <sre:annotation speech="Histogram of Average wind speed (mph)" speech2="Histogram showing  11 bars for  Average wind speed (mph) over the range 0 to 22 and Frequency from 0 to 38" type="Histogram">
+    <sre:annotation speech="Histogram of Wind" speech2="Histogram showing  11 bars for  Wind over the range 0 to 22 and Frequency from 0 to 38" type="Histogram">
       <sre:grouped>chart</sre:grouped>
       <sre:position>1</sre:position>
       <sre:parents/>
@@ -478,7 +478,42 @@
         <sre:grouped>yaxis</sre:grouped>
         <sre:grouped>center</sre:grouped>
       </sre:children>
-      <sre:component/>
+      <sre:component>
+        <sre:active>graphics-plot-1-main-1.1</sre:active>
+        <sre:active>graphics-plot-1-xlab-1.1</sre:active>
+        <sre:passive>graphics-plot-1-bottom-axis-line-1.1</sre:passive>
+        <sre:active>graphics-plot-1-bottom-axis-labels-1.1.1</sre:active>
+        <sre:passive>graphics-plot-1-bottom-axis-ticks-1.1.1</sre:passive>
+        <sre:active>graphics-plot-1-bottom-axis-labels-1.1.2</sre:active>
+        <sre:passive>graphics-plot-1-bottom-axis-ticks-1.1.2</sre:passive>
+        <sre:active>graphics-plot-1-bottom-axis-labels-1.1.3</sre:active>
+        <sre:passive>graphics-plot-1-bottom-axis-ticks-1.1.3</sre:passive>
+        <sre:active>graphics-plot-1-bottom-axis-labels-1.1.4</sre:active>
+        <sre:passive>graphics-plot-1-bottom-axis-ticks-1.1.4</sre:passive>
+        <sre:active>graphics-plot-1-bottom-axis-labels-1.1.5</sre:active>
+        <sre:passive>graphics-plot-1-bottom-axis-ticks-1.1.5</sre:passive>
+        <sre:active>graphics-plot-1-ylab-1.1</sre:active>
+        <sre:passive>graphics-plot-1-left-axis-line-1.1</sre:passive>
+        <sre:active>graphics-plot-1-left-axis-labels-1.1.1</sre:active>
+        <sre:passive>graphics-plot-1-left-axis-ticks-1.1.1</sre:passive>
+        <sre:active>graphics-plot-1-left-axis-labels-1.1.2</sre:active>
+        <sre:passive>graphics-plot-1-left-axis-ticks-1.1.2</sre:passive>
+        <sre:active>graphics-plot-1-left-axis-labels-1.1.3</sre:active>
+        <sre:passive>graphics-plot-1-left-axis-ticks-1.1.3</sre:passive>
+        <sre:active>graphics-plot-1-left-axis-labels-1.1.4</sre:active>
+        <sre:passive>graphics-plot-1-left-axis-ticks-1.1.4</sre:passive>
+        <sre:active>graphics-plot-1-rect-1.1.1</sre:active>
+        <sre:active>graphics-plot-1-rect-1.1.2</sre:active>
+        <sre:active>graphics-plot-1-rect-1.1.3</sre:active>
+        <sre:active>graphics-plot-1-rect-1.1.4</sre:active>
+        <sre:active>graphics-plot-1-rect-1.1.5</sre:active>
+        <sre:active>graphics-plot-1-rect-1.1.6</sre:active>
+        <sre:active>graphics-plot-1-rect-1.1.7</sre:active>
+        <sre:active>graphics-plot-1-rect-1.1.8</sre:active>
+        <sre:active>graphics-plot-1-rect-1.1.9</sre:active>
+        <sre:active>graphics-plot-1-rect-1.1.10</sre:active>
+        <sre:active>graphics-plot-1-rect-1.1.11</sre:active>
+      </sre:component>
       <sre:neighbours/>
     </sre:annotation>
   </sre:annotations>

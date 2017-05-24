@@ -1,0 +1,14 @@
+% filename: VIWhatElse.Rnw
+ 
+\section{What else?} 
+ 
+Future developments in the BrailleR package will be made to meet demand. If you do want some additional functionality that you think is likely to be wanted by others then please do add to the wish list. Current ideas on the wish list include: 
+\begin{itemize} 
+\item Easier to interpret multiple regression output. 
+\item Easier to interpret principal component analysis output. 
+\item More graph types being described using the \Rcmd{VI} command. 
+\item Easier to interpret factor analysis output. 
+\end{itemize} 
+ 
+ 
+ 
