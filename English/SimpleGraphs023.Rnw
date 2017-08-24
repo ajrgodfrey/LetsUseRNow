@@ -2,7 +2,9 @@
 
 \end{center} 
 \end{exhibit} 
- 
+
+\Blind{There are numerous formal hypothesis tests that can ascertain the variable's normality. Some of them are  discussed in Section~\ref{NormalityTests} and it is a fairly simple task to complete.}
+
 \section{Scatter plots} 
  
 Scatter plots are created using the \Rcmd{plot} command by one of two methods. Exhibit~\ref{AirQualityScatterTempWind} was created using 

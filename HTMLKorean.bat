@@ -1,4 +1,4 @@
-htlatex LURN.tex "xhtml,2,next,charset=utf-8"
+htlatex LURN.tex "xhtml,2,next,charset=utf-8" " -cunihtf -utf8"
 
 del LURN.4ct
 del LURN.4tc

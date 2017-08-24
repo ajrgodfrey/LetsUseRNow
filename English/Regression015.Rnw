@@ -3,5 +3,7 @@
 \end{center} 
 \end{exhibit} 
 These plots are enhanced by \R{} to add more information than the basic user is familiar with. Additional lines are added to three of the plots to assist in diagnosing problems. We can see from this plot that the model is inadequate as there is a nonlinear relationship between the response and predictor, and further that the residuals might not have very constant variance. 
+
+\Blind{There are non-graphical substitutes for the standard residuals analysis graphs that show the presence of non-constant variance;  they are seldom taught as part of the standard introduction to regression analysis. A formal hypothesis test for non-constant variance can be conducted using either the Breusch-Pagan test found using the \Rcmd{bptest} function, the Goldfeld-Quandt test found using the \Rcmd{gqtest} function, both from the \Rpkg{lmtest} package, or the Non-constant Variance test found using the \Rcmd{ncvTest} from the \Rpkg{car} package. These tests are simple to use if you are comfortable with hypothesis testing, but you will need to have the corresponding add-on package installed before proceeding.}
  
 It might be easier to extract just the information we want, so we can build simpler plots ourselves. We need to find the residuals, fitted values and leverages for the model. These are found using the \Rcmd{resid}, \Rcmd{fitted}, and \Rcmd{hatvalues} commands respectively. 

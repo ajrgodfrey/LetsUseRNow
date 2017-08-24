@@ -1,0 +1,8 @@
+% filename BasicInference026NormTests.Rnw
+
+<<NormalityTests>>= 
+attach(airquality) 
+ks.test(Ozone)
+shapiro.test(Ozone)
+detach(airquality) 
+@

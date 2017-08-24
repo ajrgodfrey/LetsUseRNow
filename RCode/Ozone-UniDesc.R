@@ -17,6 +17,9 @@ Quantiles=quantile(Ozone, na.rm=TRUE)
 QList=c("Minimum", "Lower Quartile", "Median", "Upper Quartile", "Maximum")
 Results=data.frame(Quantile=QList, Value=Quantiles[1:5])
 
+## ----QuantilesPrint, eval=FALSE------------------------------------------
+Results
+
 ## ----Hist, fig.cap="The histogram", fig.height=5-------------------------
 VI(hist(Ozone, xlab="Ozone", main="Histogram of Ozone"))
 
