@@ -4,13 +4,16 @@
 Please include the following details when citing this publication as a single volume. \begin{center}
 \begin{tabular}{lp{10cm}}
 Author:&Godfrey, A. Jonathan R.\\
-Year:&2010\\
-Title:& LURN: Let's Use R Now\\
+Year:& \Sighted{2010} \Blind{2016} \\
+Title:& LURN: Let's Use R Now \Blind{(Blind edition)}\\
 Publisher:&Institute of Fundamental Sciences, Massey University\\
 Location:&Palmerston North, New Zealand\\
-&ISBN 978-0-473-17650-1\\
+&ISBN \Sighted{978-0-473-17650-1} \Blind{978-0-473-41491-7 (pdf version) 978-0-473-41492-4 (online version)} \\
 \end{tabular}
 \end{center}
 
 This e-text is made available for education purposes without any claim for financial recompense from the author. It is however intended that any use of the e-text, whether wholly or in part, be done with all parties being aware that the work is made available to any third party under the same conditions as placed on this volume.
 
+
+
+This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. To view a copy of this license, visit \url{http://creativecommons.org/licenses/by-nc-nd/4.0/} or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
