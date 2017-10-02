@@ -6,4 +6,4 @@
 Note that we needed to convert the species names to numbers using the \Rcmd{as.numeric} command to get the symbols to be plotted. 
 %check them 
  
-\R{} seesm to have converted the species names to numbers when we called for different colours, starting with 1 for black, 2 for red, and 3 for green. As an aside, the colour can be specified by name or by a number. There are well over 600 named colours to choose from so the full list is therefore not printed here. Type 
+\R{} seems to have converted the species names to numbers when we called for different colours, starting with 1 for black, 2 for red, and 3 for green. As an aside, the colour can be specified by name or by a number. There are well over 600 named colours to choose from so the full list is therefore not printed here. Type 

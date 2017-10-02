@@ -7,7 +7,7 @@
  
 Notice that we have altered the range of values covered by the $y$-axis using a specific command. The \Rarg{ylim} has a corresponding \Rarg{xlim} to create limits for the $x$-axis. Adding one more argument to the \Rcmd{plot} command will change the plotting from points to lines (shown in Exhibit~\ref{AirQualityLinePlotTemp2}). Combinations of points and lines can be obtained (not shown); the user can also alter the style of the points and lines being printed. 
  
-There is a simpler way to generate time series plots which we demonstrate in Chapter~\ref{TimeSeries}. It is easier to augment this line plot than the time series plot and in so doing, we will gain an insight into how other plots like the time series plot are created. 
+There is a simpler way to generate time series plots which we demonstrate in Chapter~\ref{TimeSeries}. It is easier to augment this line plot than the time series plot, and in so doing we will gain an insight into how other plots like the time series plot are created. 
  
  
 \section{Quantile-quantile plots} 

@@ -1,0 +1,21 @@
+find the section being referred to in the plotting of hte polynomial curve
+
+accessible versions of scatter plots and time series graphs.
+
+two sample t test
+
+two sample test of proportions
+
+
+
+chi square test not done properly yet
+
+
+normtest package
+
+incomplete indicator example in regression
+
+adding points to an existing graph. needs content
+
+% filename ComplexGraphs019.Rnw 
+missing example

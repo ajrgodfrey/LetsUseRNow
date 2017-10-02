@@ -27,6 +27,7 @@ The following code will result in a graph similar to that given in Exhibit~\ref{
 \begin{center} 
 \caption{Histogram of 10,000 random numbers drawn from a standard normal distribution. \label{HistStandNormRandValues}} 
 \includegraphics[width=10cm]{figures/StoreResultsHistRand10000Z-1} 
+
 \SVGLink{StoreResultsHistRand10000Z-1} 
 \end{center} 
 \end{exhibit} 

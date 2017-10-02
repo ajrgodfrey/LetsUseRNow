@@ -3,7 +3,7 @@
 The \Rcmd{detach} command undoes the \Rcmd{attach} command. To remove the ``attachment", you will issue the command \code{detach(airquality)}. 
  
 You could look at the help file for this data if you wanted to learn its complete story using \code{?airquality}. It tells us that the data are for daily readings of the following air quality values for May 1, 1973 (a 
-Tuesday) to September 30, 1973. 
+Tuesday) to September 30, 1973 (a Sunday). 
 \begin{itemize} 
 \item \code{Ozone}: Mean ozone in parts per 
 billion from 1300 to 1500 hours at Roosevelt Island 

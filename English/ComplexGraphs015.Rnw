@@ -7,7 +7,7 @@ if you are really keen to know what they all are. If this list is still not suff
  
 \section{Using lines instead of points} \label{LinesInsteadOfPoints}  
  
-The default action for any scatter plot is to mark each point. If the set of $x$-values are ordered we can create a line plot. This is often seen as a time series plot. We create a time series plot very easily using the \Rcmd{plot} command on an object that has been stored as a time series. There are many examples of time series i the \Rpackage{datasets} package. We use the \Robject{ldeaths} series which counts the number of deaths due to lung diseases in the United Kingdom, and its associated series for male and female deaths. 
+The default action for any scatter plot is to mark each point. If the set of $x$-values are ordered we can create a line plot. This is often seen as a time series plot. We create a time series plot very easily using the \Rcmd{plot} command on an object that has been stored as a time series. There are many examples of time series in the \Rpackage{datasets} package. We use the \Robject{ldeaths} series which counts the number of deaths due to lung diseases in the United Kingdom, and its associated series for male and female deaths. 
  
 In Exhibit~\ref{LungsNoLegend}, we see a set of three commands. The first plots a time series on a set of axes and the axis labels. The second and third each add a set of line segments from the other two series using the \Rcmd{lines} command. 
  

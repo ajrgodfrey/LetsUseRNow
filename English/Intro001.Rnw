@@ -4,6 +4,6 @@
 \chapter{What's this all about?} 
 \label{Intro} 
  
-<<SetupMonths>>=
+<<SetupMonths, include=FALSE>>=
 Months = c("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December")  
 @ 

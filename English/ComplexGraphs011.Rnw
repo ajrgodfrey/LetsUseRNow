@@ -1,10 +1,11 @@
 % filename ComplexGraphs011.Rnw 
 
+
 \SVGLink{ComplexGraphsIrisInColour-1} 
 \end{center} 
 \end{exhibit} 
  
 \begin{exhibit} 
 \begin{center} 
-\caption{} 
+\caption{Petal length and width plotted using different symbols for representing species. } 
 \label{IrisInSymbols} 

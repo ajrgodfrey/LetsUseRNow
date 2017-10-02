@@ -10,9 +10,9 @@ Note that the way the points have been plotted and the way the text appears in t
  
 We show how to create a graph with different colours and symbols without passing judgement on the suitability of the colours or symbols used. The important feature to remember when you are about to create such a graph is that the reader will not necessarily see the difference in colour as you do. Similarly, the selection of symbol should be thought out carefully. We do not want a solid symbol to appear bigger than a hollow one or vice versa. 
  
-The \Robject{iris} data supplied with \R{} for this example. It has five variables in all; four are for numeric measurements and the fifth is the species. In Exhibit~\ref{IrisInColour} we use three colours for the species and in Exhibit~\ref{IrisInSymbols} we use different symbols. There is no reason why you might not use both arguments in combination to use different colours for the different symbols. 
+We use the \Robject{iris} data supplied with \R{} for this example. It has five variables in all; four are for numeric measurements and the fifth is the species. In Exhibit~\ref{IrisInColour} we use three colours for the species and in Exhibit~\ref{IrisInSymbols} we use different symbols. There is no reason why you might not use both arguments in combination to use different colours for the different symbols. 
  
 \begin{exhibit} 
 \begin{center} 
-\caption{} 
+\caption{Sepal length and width plotted using different colours for representing species. } 
 \label{IrisInColour} 

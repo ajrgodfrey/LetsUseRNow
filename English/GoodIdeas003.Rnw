@@ -17,9 +17,10 @@ The following is useful as a Windows user of \R{}. As an additional step towards
  
 \section{Batch processing commands} 
  
-When your \R{} program gets to have a lot of commands that must be processed in order, it's a good idea to use the \R{} script window or a text editor to create a file with the commands in it. Keeping your commands in a text file means you can share them with colleagues very easily. 
+When your \R{} work gets too many commands that must be processed in order, it's a good idea to use the \R{} script window or a text editor to create a file with the commands in it. Keeping your commands in a text file means you can share them with colleagues very easily. 
  
-If you choose to use the \R{} script window, then the commands are typed up and are not executed until you specifically request for them to be executed. This is achieved using the pull down menus. 
+If you choose to use the \R{} script window, then the commands are typed up and are not executed until you specifically request for them to be executed. This is achieved using the pull down menus.  \Blind{After highlighting the lines of the script window you want to run, you can use the hot key \code{Ctrl+R} instead of the pull-down menus.}
+
  
 If you have saved the commands in a text file, and this text file is placed in your working directory, you will be able to execute the commands using the \Rcmd{source} command. 
  
@@ -47,7 +48,7 @@ So let's start by creating a text file in the chosen working directory. Do this 
 \verb+"C:\Program Files\R\R-+\Sexpr{version$major}.\Sexpr{version$minor}\verb+\bin\Rterm.exe" < mycommands.R > myoutput.txt+ 
 \end{center} 
  
-This single command has three parts; the first part in quotes is the full path to the program we want to run, and the quotes are essential. The second is the set of commands we want executed in that program, and the last is the file where we want the results to be saved. The symbols between the three parts are essential and the direction is important. This process is often called ``piping". The contents of the commands file are piped into \R{}., and the results are piped out to another file. 
+This single command has three parts; the first part in quotes is the full path to the program we want to run, and the quotes are essential. The second is the set of commands we want executed in that program, and the last is the file where we want the results to be saved. The symbols between the three parts are essential and the direction is important. This process is often called ``piping". The contents of the commands file are piped into \R{}, and the results are piped out to another file. 
  
 Save the text file and change its filename so that the extension is \file{bat}. Run the file. If the full path to the \file{rterm.exe} was correct for your machine, and the file of commands \file{mycommands.R} exists in the current directory, you should see that a new text file called \file{myoutput.txt} has been created. You can open this file to see what happened. 
  
@@ -72,7 +73,7 @@ We need to make a batch file again, just like in the example on piping. This bat
  
 Now look for an \R{} script and select the default program to open it again. This time, browse for the batch file you just created. Now every time you click on an \R{} script, it will be processed by \R{}. All output including commands will be put into a file of the same name with an extension that has the three extra letters ``\code{out}" on the end. Use the process for file associations again to get this file opened automatically; use the viewer of your choice, whether  that be a text editor or a browser. 
  
-The use of the two arguments \code{vanilla} and \code{quiet} ensure you have a fresh workspace and that the normal announcements of version number etc are not included in the output file. You might want to include these welcome messages so remove the \code{quiet} argument if you want. Another argument that might be useful is the \code{save} argument. Add that in if you want to be able to open \R{} again in interactive mode later and be able ot continue from where you left off. 
+The use of the two arguments \code{vanilla} and \code{quiet} ensure you have a fresh workspace and that the normal announcements of version number etc are not included in the output file. You might want to include these welcome messages so remove the \code{quiet} argument if you want. Another argument that might be useful is the \code{save} argument. Add that in if you want to be able to open \R{} again in interactive mode later and be able to continue from where you left off. 
  
 You might want to go back now and re-assign the default program for an \R{} script to be the text editor, and use the ``open with" menu item to have it processed using your batch process. 
  

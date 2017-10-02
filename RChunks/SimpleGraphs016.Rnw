@@ -1,6 +1,6 @@
 % filename SimpleGraphs016.Rnw 
 
-<<DotPlot, echo=FALSE, fig.width=7, fig.height=2.5, eval=-1>>= 
+<<DotPlot, fig.width=7, fig.height=2.5, eval=-1>>= 
 windows(7, 2.5) 
 dotchart(Wind) 
 @ 

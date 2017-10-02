@@ -1,6 +1,6 @@
 % filename NumericalEDA011.Rnw 
 
  
-It used to be possible to ask \R{} to use the \Rcmd{median}, in a command like this, but as of version 2-14-0, an error message was returned instead of an answer. 
+It used to be possible to ask \R{} to use the \Rcmd{median}, in a command like this, but as of version 2.14.0, an error message was returned instead of an answer. 
  
 We will need to see how to get the relevant medians, minima, and maxima for the columns separately later in this chapter, but for now let's see how the relevant summary measures can be obtained for a single column of the \Robject{air quality} data. The \Rcmd{attach} command allows us direct access to the variables by name. 

@@ -9,7 +9,7 @@ Some people find the standard dotplot that \R{} creates a little artificial. The
  
 \subsection{Simple line plots} 
  
-Occasionally it's useful to see how a measurement changes over the time data were collected. \R{} does this very simply using the \Rcmd{plot} command as shown in Exhibit~\ref{AirQualityLinePlotTemp} which is for the maximum daily air temperatures at LaGuardia airport from 1 May to 30 September 1973. We can see periods of time where the maximum temperatures were fairly consistent and periods where it was fairly volatile. The middle of the graph is for the month of July which is the height of summer in New York and as a consequence we expect to see few points nearer the lower part of the graph during this period. 
+Occasionally it's useful to see how a measurement changes over the time the data were collected. \R{} does this very simply using the \Rcmd{plot} command as shown in Exhibit~\ref{AirQualityLinePlotTemp} which is for the maximum daily air temperatures at LaGuardia airport from 1 May to 30 September 1973. We can see periods of time where the maximum temperatures were fairly consistent and periods where it was fairly volatile. The middle of the graph is for the month of July which is the height of summer in New York and as a consequence we expect to see few points nearer the lower part of the graph during this period. 
 \begin{exhibit} 
 \begin{center} 
 \caption{Line plot of the maximum daily temperatures from 1 May to 30 September 1973, measured in degrees Fahrenheit, at LaGuardia Airport. Data were obtained from the \Robject{air quality} data set.} 

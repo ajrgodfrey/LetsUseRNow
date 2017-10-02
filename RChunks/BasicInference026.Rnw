@@ -1,4 +1,0 @@
-<<cleanup, include=FALSE>>= 
-rm(list = ls()) 
-@ 
-copy ./EnglishBasicInference001.Rnw + ./RChunks/BasicInference002.Rnw + ./EnglishBasicInference003.Rnw + ./RChunks/BasicInference004.Rnw + ./EnglishBasicInference005.Rnw + ./RChunks/BasicInference006.Rnw + ./EnglishBasicInference007.Rnw + ./RChunks/BasicInference008.Rnw + ./EnglishBasicInference009.Rnw + ./RChunks/BasicInference010.Rnw + ./EnglishBasicInference011.Rnw + ./RChunks/BasicInference012.Rnw + ./EnglishBasicInference013.Rnw + ./RChunks/BasicInference014.Rnw + ./EnglishBasicInference015.Rnw + ./RChunks/BasicInference016.Rnw + ./EnglishBasicInference017.Rnw + ./RChunks/BasicInference018.Rnw + ./EnglishBasicInference019.Rnw + ./RChunks/BasicInference020.Rnw + ./EnglishBasicInference021.Rnw + ./RChunks/BasicInference022.Rnw + ./EnglishBasicInference023.Rnw + ./RChunks/BasicInference024.Rnw + ./EnglishBasicInference025.Rnw + ./RChunks/BasicInference026.Rnw BasicInference.Rnw

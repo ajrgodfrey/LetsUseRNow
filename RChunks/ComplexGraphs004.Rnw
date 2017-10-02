@@ -5,3 +5,4 @@ par(mfrow=c(4,3))
 for(Counter in 1:12){ 
 hist(rnorm(100), main=paste("Sample", Counter))} 
 @ 
+
