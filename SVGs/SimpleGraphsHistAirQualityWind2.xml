@@ -11,7 +11,7 @@
       <sre:component/>
       <sre:neighbours/>
     </sre:annotation>
-    <sre:annotation speech="Label Wind" speech2="Label Wind" type="Label">
+    <sre:annotation speech="Label Wind" speech2="x axis Wind ranges from 0 to 22" type="Label">
       <sre:active>graphics-plot-1-xlab-1.1</sre:active>
       <sre:position>1</sre:position>
       <sre:parents>
@@ -181,7 +181,7 @@
       </sre:component>
       <sre:neighbours/>
     </sre:annotation>
-    <sre:annotation speech="Label Frequency" speech2="Label Frequency" type="Label">
+    <sre:annotation speech="Label Frequency" speech2="y axis Frequency ranges from 0 to 38" type="Label">
       <sre:active>graphics-plot-1-ylab-1.1</sre:active>
       <sre:position>1</sre:position>
       <sre:parents>

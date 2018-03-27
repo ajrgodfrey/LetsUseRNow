@@ -1,0 +1,91 @@
+% filename GenericSettings.Rnw 
+
+
+
+% filename Multivariate001.Rnw 
+
+%\setcounter{chapter}{} 
+\chapter{LURN\ldots{} To Conduct Multivariate Analyses} 
+\label{Multivariate} 
+ 
+% filename Multivariate002.Rnw 
+
+
+% filename Multivariate003.Rnw 
+
+ 
+This chapter explains the commands needed to conduct a number of multivariate analyses. Little of the theory behind the various techniques is given here and the reader is assumed to know that the analysis they wish to conduct is actually appropriate for their objectives. 
+ 
+\section{Exploring multivariate data} 
+ 
+ 
+\section{} 
+ 
+ 
+\section{Rescaling your data} 
+ 
+It is common to find that one or more of the variables in your multivariate data set dominate the others in terms of the variability, just because they are on a different scale. Scaling the variables so they all have mean of zero and variance of one is common prior to a number of the techniques that follow in this chapter. 
+ 
+The Rcmd{scale} command returns a matrix (check)  
+ 
+\section{Cluster analysis} 
+ 
+\section{Principal component analysis (PCA)} 
+ 
+Kaiser's criterion 
+ 
+\section{Factor analysis} 
+ 
+\section{Linear discriminant analysis (LDA)} 
+ 
+The \Rpackage{MASS} package is required for producing a \stressind{linear discriminant analysis (LDA)}. It is part of the base installation of \R{} so we only need to load it before issuing any commands in this section. 
+% filename Multivariate004.Rnw 
+
+\begin{Schunk}
+\begin{Sinput}
+> require(MASS) 
+\end{Sinput}
+\begin{Soutput}
+Loading required package: MASS
+\end{Soutput}
+\begin{Soutput}
+
+Attaching package: 'MASS'
+\end{Soutput}
+\begin{Soutput}
+The following object is masked from 'package:dplyr':
+
+    select
+\end{Soutput}
+\end{Schunk}
+% filename Multivariate005.Rnw 
+
+ 
+\section{Multidimensional scaling} 
+ 
+\section{Multivariate analysis of variance (MANOVA)} 
+ 
+ 
+\section{} 
+ 
+ 
+\section{} 
+ 
+ 
+\section{} 
+ 
+ 
+\section{} 
+ 
+ 
+\section{} 
+ 
+ 
+\section{} 
+ 
+ 
+ 
+% filename CleanUp.Rnw 
+
+
+

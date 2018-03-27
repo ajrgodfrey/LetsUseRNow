@@ -28,12 +28,12 @@ The \Rarg{mfrow} argument in the \Rcmd{par} command tells \R{} how to divide up 
  
 To illustrate creation of a lot of graphs and the efficiency of managing them as a single graph window, we will create the histograms of twelve distinct random samples of size 100, taken from the standard normal distribution. 
  
-The final graph appears in Exhibit~\ref{Hist12Z}, but there are a couple of functions that need explaining. First, the \Rcmd{par} command with the \Rarg{mfrow} argument opens a graphing window and splits it into twelve sections. The second line uses the \Rcmd{for} command to create a loop which is just a set of commands that are grouped together and run over and over until the end of the loop. In this case, the loop is run a total of twelve times with an arbitrary lable given to the counter used. A loop's counter is often not used in the processing of the code so is given a meaningless name; in this instance, the word \code{Counter} is used to point out where the counter appears in the code. The third line creates a histogram with the \Rcmd{hist} command, of a set of 100 random values taken from the standard normal distribution, found using the \Rcmd{rnorm} command. Note the code also adds a title to each of the distinct graphs. This is done using the \Rcmd{paste} command which joins some text with the counter number to form the title that will, as a consequence, change for each graph. If there had been two or more commands inside the loop, they would need to be grouped together using curly braces. Ignoring the braces would mean only the first line of the set would be issued. The braces are included here as an example of good practice. 
+The final graph appears in Exhibit~\ref{Hist12Z}, but there are a couple of functions that need explaining. First, the \Rcmd{par} command with the \Rarg{mfrow} argument opens a graphing window and splits it into twelve sections. The second line uses the \Rcmd{for} command to create a loop which is just a set of commands that are grouped together and run over and over until the end of the loop. In this case, the loop is run a total of twelve times with an arbitrary label given to the counter used. A loop's counter is often not used in the processing of the code so is given a meaningless name; in this instance, the word \code{Counter} is used to point out where the counter appears in the code. The third line creates a histogram with the \Rcmd{hist} command, of a set of 100 random values taken from the standard normal distribution, found using the \Rcmd{rnorm} command. Note the code also adds a title to each of the distinct graphs. This is done using the \Rcmd{paste} command which joins some text with the counter number to form the title that will, as a consequence, change for each graph. If there had been two or more commands inside the loop, they would need to be grouped together using curly braces. Ignoring the braces would mean only the first line of the set would be issued. The braces are included here as an example of good practice. 
  
 \begin{exhibit} 
 \begin{center} 
 \caption{Twelve samples of size 100 drawn from the standard normal distribution, plotted using separate histograms in a single window} 
-\label{Hists12Z} 
+\label{Hist12Z}
 % filename ComplexGraphs004.Rnw 
 
 \begin{Schunk}
@@ -44,7 +44,9 @@ The final graph appears in Exhibit~\ref{Hist12Z}, but there are a couple of func
 \end{Sinput}
 
 \includegraphics[width=0.7\textwidth]{figures/ComplexGraphsHists12Z-1} \end{Schunk}
+
 % filename ComplexGraphs005.Rnw 
+
 
 \SVGLink{ComplexGraphsHists12Z-1} 
 \end{center} 
@@ -115,11 +117,11 @@ Note that the way the points have been plotted and the way the text appears in t
  
 We show how to create a graph with different colours and symbols without passing judgement on the suitability of the colours or symbols used. The important feature to remember when you are about to create such a graph is that the reader will not necessarily see the difference in colour as you do. Similarly, the selection of symbol should be thought out carefully. We do not want a solid symbol to appear bigger than a hollow one or vice versa. 
  
-The \Robject{iris} data supplied with \R{} for this example. It has five variables in all; four are for numeric measurements and the fifth is the species. In Exhibit~\ref{IrisInColour} we use three colours for the species and in Exhibit~\ref{IrisInSymbols} we use different symbols. There is no reason why you might not use both arguments in combination to use different colours for the different symbols. 
+We use the \Robject{iris} data supplied with \R{} for this example. It has five variables in all; four are for numeric measurements and the fifth is the species. In Exhibit~\ref{IrisInColour} we use three colours for the species and in Exhibit~\ref{IrisInSymbols} we use different symbols. There is no reason why you might not use both arguments in combination to use different colours for the different symbols. 
  
 \begin{exhibit} 
 \begin{center} 
-\caption{} 
+\caption{Sepal length and width plotted using different colours for representing species. } 
 \label{IrisInColour} 
 % filename ComplexGraphs010.Rnw 
 
@@ -131,13 +133,14 @@ The \Robject{iris} data supplied with \R{} for this example. It has five variabl
 \includegraphics[width=0.7\textwidth]{figures/ComplexGraphsIrisInColour-1} \end{Schunk}
 % filename ComplexGraphs011.Rnw 
 
+
 \SVGLink{ComplexGraphsIrisInColour-1} 
 \end{center} 
 \end{exhibit} 
  
 \begin{exhibit} 
 \begin{center} 
-\caption{} 
+\caption{Petal length and width plotted using different symbols for representing species. } 
 \label{IrisInSymbols} 
 % filename ComplexGraphs012.Rnw 
 
@@ -155,7 +158,7 @@ The \Robject{iris} data supplied with \R{} for this example. It has five variabl
 Note that we needed to convert the species names to numbers using the \Rcmd{as.numeric} command to get the symbols to be plotted. 
 %check them 
  
-\R{} seesm to have converted the species names to numbers when we called for different colours, starting with 1 for black, 2 for red, and 3 for green. As an aside, the colour can be specified by name or by a number. There are well over 600 named colours to choose from so the full list is therefore not printed here. Type 
+\R{} seems to have converted the species names to numbers when we called for different colours, starting with 1 for black, 2 for red, and 3 for green. As an aside, the colour can be specified by name or by a number. There are well over 600 named colours to choose from so the full list is therefore not printed here. Type 
 % filename ComplexGraphs014.Rnw 
 
 \begin{Schunk}
@@ -172,7 +175,7 @@ if you are really keen to know what they all are. If this list is still not suff
  
 \section{Using lines instead of points} \label{LinesInsteadOfPoints}  
  
-The default action for any scatter plot is to mark each point. If the set of $x$-values are ordered we can create a line plot. This is often seen as a time series plot. We create a time series plot very easily using the \Rcmd{plot} command on an object that has been stored as a time series. There are many examples of time series i the \Rpackage{datasets} package. We use the \Robject{ldeaths} series which counts the number of deaths due to lung diseases in the United Kingdom, and its associated series for male and female deaths. 
+The default action for any scatter plot is to mark each point. If the set of $x$-values are ordered we can create a line plot. This is often seen as a time series plot. We create a time series plot very easily using the \Rcmd{plot} command on an object that has been stored as a time series. There are many examples of time series in the \Rpackage{datasets} package. We use the \Robject{ldeaths} series which counts the number of deaths due to lung diseases in the United Kingdom, and its associated series for male and female deaths. 
  
 In Exhibit~\ref{LungsNoLegend}, we see a set of three commands. The first plots a time series on a set of axes and the axis labels. The second and third each add a set of line segments from the other two series using the \Rcmd{lines} command. 
  
@@ -315,7 +318,7 @@ To create an example, we will first create a list of frequencies of outcomes and
 \end{Schunk}
 % filename ComplexGraphs027.Rnw 
 
-To create the two types of bar chart, we need to create a matrix for the counts to be used in the graphs. In this instance, this is done using the \Rcmd{tapply} command The actual plotting is done using the \Rcmd{barplot} command which recognizes it is working on this matrix and acts accordingly, including the ability to generate a legend for the graphs. 
+To create the two types of bar chart, we need to create a matrix for the counts to be used in the graphs. In this instance, this is done using the \Rcmd{tapply} command. The actual plotting is done using the \Rcmd{barplot} command which recognizes it is working on this matrix and acts accordingly, including the ability to generate a legend for the graphs. 
 \begin{exhibit} 
 \begin{center} 
 \caption{An example of a cluster bar chart} 

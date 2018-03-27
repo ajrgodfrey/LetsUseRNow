@@ -175,51 +175,41 @@ X-squared = 120, df = 20, p-value = 1e-15
 \end{Schunk}
 % filename TimeSeries015.Rnw 
 
-while several other tests exist in add-on packages which can be accessed by loading the  Rpkg{tseries} and \Rpkgforecast} packages. 
+while several other tests exist in add-on packages which can be accessed by loading the  Rpkg{tseries} and \Rpkg{forecast} packages. 
 % filename TimeSeries016.Rnw 
 
 \begin{Schunk}
 \begin{Sinput}
 > library(tseries) 
+\end{Sinput}
+\begin{Soutput}
+Error: package or namespace load failed for 'tseries':
+ package 'quadprog' was installed by an R version with different internals; it needs to be reinstalled for use with this R version
+\end{Soutput}
+\begin{Sinput}
 > library(forecast) 
+\end{Sinput}
+\begin{Soutput}
+Error: package or namespace load failed for 'forecast':
+ package 'forecast' was installed by an R version with different internals; it needs to be reinstalled for use with this R version
+\end{Soutput}
+\begin{Sinput}
 > adf.test(Nile) 
 \end{Sinput}
 \begin{Soutput}
-
-	Augmented Dickey-Fuller Test
-
-data:  Nile
-Dickey-Fuller = -3.4, Lag order = 4, p-value = 0.06
-alternative hypothesis: stationary
+Error in adf.test(Nile): could not find function "adf.test"
 \end{Soutput}
 \begin{Sinput}
 > pp.test(Nile) 
 \end{Sinput}
 \begin{Soutput}
-Warning in pp.test(Nile): p-value smaller than printed p-value
-\end{Soutput}
-\begin{Soutput}
-
-	Phillips-Perron Unit Root Test
-
-data:  Nile
-Dickey-Fuller Z(alpha) = -65, Truncation lag
-parameter = 3, p-value = 0.01
-alternative hypothesis: stationary
+Error in pp.test(Nile): could not find function "pp.test"
 \end{Soutput}
 \begin{Sinput}
 > kpss.test(Nile) 
 \end{Sinput}
 \begin{Soutput}
-Warning in kpss.test(Nile): p-value smaller than printed p-value
-\end{Soutput}
-\begin{Soutput}
-
-	KPSS Test for Level Stationarity
-
-data:  Nile
-KPSS Level = 1.3, Truncation lag parameter = 2,
-p-value = 0.01
+Error in kpss.test(Nile): could not find function "kpss.test"
 \end{Soutput}
 \end{Schunk}
 % filename TimeSeries017.Rnw 

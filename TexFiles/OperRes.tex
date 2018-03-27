@@ -38,6 +38,15 @@ x_{ij} &\in \{0,1\} \quad \forall i,j\\
 \begin{Schunk}
 \begin{Sinput}
 > require(lpSolve)
+\end{Sinput}
+\begin{Soutput}
+Loading required package: lpSolve
+\end{Soutput}
+\begin{Soutput}
+Error: package or namespace load failed for 'lpSolve':
+ package 'lpSolve' was installed by an R version with different internals; it needs to be reinstalled for use with this R version
+\end{Soutput}
+\begin{Sinput}
 > set.seed(3010)
 > APCost.mat = matrix(sample(10:100, 16), nrow=4)
 > APCost.mat
@@ -51,38 +60,33 @@ x_{ij} &\in \{0,1\} \quad \forall i,j\\
 \end{Soutput}
 \begin{Sinput}
 > Sol = lp.assign(APCost.mat)
+\end{Sinput}
+\begin{Soutput}
+Error in lp.assign(APCost.mat): could not find function "lp.assign"
+\end{Soutput}
+\begin{Sinput}
 > names(Sol)
 \end{Sinput}
 \begin{Soutput}
- [1] "direction"      "rcount"         "ccount"        
- [4] "costs"          "rsigns"         "rrhs"          
- [7] "csigns"         "crhs"           "objval"        
-[10] "int.count"      "integers"       "solution"      
-[13] "presolve"       "compute.sens"   "sens.coef.from"
-[16] "sens.coef.to"   "duals"          "duals.from"    
-[19] "duals.to"       "status"        
+Error in eval(expr, envir, enclos): object 'Sol' not found
 \end{Soutput}
 \begin{Sinput}
 > Sol$solution
 \end{Sinput}
 \begin{Soutput}
-     [,1] [,2] [,3] [,4]
-[1,]    0    1    0    0
-[2,]    1    0    0    0
-[3,]    0    0    0    1
-[4,]    0    0    1    0
+Error in eval(expr, envir, enclos): object 'Sol' not found
 \end{Soutput}
 \begin{Sinput}
 > Sol$objval
 \end{Sinput}
 \begin{Soutput}
-[1] 88
+Error in eval(expr, envir, enclos): object 'Sol' not found
 \end{Soutput}
 \begin{Sinput}
 > Sol
 \end{Sinput}
 \begin{Soutput}
-Success: the objective function is 88 
+Error in eval(expr, envir, enclos): object 'Sol' not found
 \end{Soutput}
 \end{Schunk}
 % filename OperRes005.rnw 
@@ -107,6 +111,15 @@ x_{ij} \ge 0& \quad \forall i,j\\
 \begin{Schunk}
 \begin{Sinput}
 > require(lpSolve)
+\end{Sinput}
+\begin{Soutput}
+Loading required package: lpSolve
+\end{Soutput}
+\begin{Soutput}
+Error: package or namespace load failed for 'lpSolve':
+ package 'lpSolve' was installed by an R version with different internals; it needs to be reinstalled for use with this R version
+\end{Soutput}
+\begin{Sinput}
 > set.seed(3010)
 > TPCost.mat = matrix(sample(10:100, 30), nrow = 5)
 > TPCost.mat
@@ -137,15 +150,15 @@ x_{ij} \ge 0& \quad \forall i,j\\
 \end{Soutput}
 \begin{Sinput}
 > Sol = lp.transport (TPCost.mat, "min", SupplySigns, SupplyLimits, DemandSigns, DemandLimits, compute.sens=0)
+\end{Sinput}
+\begin{Soutput}
+Error in lp.transport(TPCost.mat, "min", SupplySigns, SupplyLimits, DemandSigns, : could not find function "lp.transport"
+\end{Soutput}
+\begin{Sinput}
 > Sol$solution
 \end{Sinput}
 \begin{Soutput}
-     [,1] [,2] [,3] [,4] [,5] [,6]
-[1,]    0    0    0    0    0   59
-[2,]  201  133   42    0    0    0
-[3,]    0    0    0    0    0    0
-[4,]    0   52    0    0   80    0
-[5,]    0    0  103  207    0    0
+Error in eval(expr, envir, enclos): object 'Sol' not found
 \end{Soutput}
 \end{Schunk}
 % filename CleanUp.Rnw 

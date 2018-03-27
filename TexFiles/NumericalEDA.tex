@@ -113,7 +113,7 @@ The \Rcmd{min} and \Rcmd{max} commands all work on the data by assuming we want 
 % filename NumericalEDA011.Rnw 
 
  
-It used to be possible to ask \R{} to use the \Rcmd{median}, in a command like this, but as of version 2-14-0, an error message was returned instead of an answer. 
+It used to be possible to ask \R{} to use the \Rcmd{median}, in a command like this, but as of version 2.14.0, an error message was returned instead of an answer. 
  
 We will need to see how to get the relevant medians, minima, and maxima for the columns separately later in this chapter, but for now let's see how the relevant summary measures can be obtained for a single column of the \Robject{air quality} data. The \Rcmd{attach} command allows us direct access to the variables by name. 
 % filename AttachAirquality.Rnw 
@@ -176,9 +176,9 @@ Knowing how these commands work on simple sets of numbers is very useful for the
  
 When preparing reports it is unlikely that we would want a single statistic all that often. Rather, we are usually interested in exposing patterns or differences within the data. We do this graphically but we may need to extract the exact quantities plotted in the graph as well. 
  
-The \Rcmd{tapply} and \Rcmd{aggregate} commands are very useful for creating tables of results, sometimes referred to as \stressind{pivot tables}. The \Rcmd{tapply} command has three arguments; the main variable of interest, the grouping variable(s), and the function we want performed on each group within the data. In contrast, the \Rcmd{aggregate} command has a slightly different way of relating the response variable to one or more grouping variables. It is of course, easier to show how these commands work in action so we'll use the air quality data again and present various alternatives and the slightly different resulting output. 
+The \Rcmd{tapply} and \Rcmd{aggregate} commands are very useful for creating tables of results, sometimes referred to as \stressind{pivot tables}. The \Rcmd{tapply} command has three arguments; the main variable of interest, the grouping variable(s), and the function we want performed on each group within the data. In contrast, the \Rcmd{aggregate} command has a slightly different way of relating the response variable to one or more grouping variables. It is easier to show how these commands work in action so we'll use the air quality data again and present various alternatives and the slightly different resulting output. 
  
-Let's say we want to know the \Rcmd{mean} Wind speed over the five months data were collected. We could use 
+Let's say we want to know the \Rcmd{mean} wind speed over the five months data were collected. We could use 
 % filename NumericalEDA016a.Rnw 
 
 \begin{Schunk}
@@ -476,11 +476,11 @@ which is more long-winded than just using the \Rcmd{mean} command alone. The val
 # A tibble: 5 x 2
   Month `mean(Wind, na.rm = TRUE)`
   <int>                      <dbl>
-1     5                     11.623
-2     6                     10.267
-3     7                      8.942
-4     8                      8.794
-5     9                     10.180
+1     5                      11.6 
+2     6                      10.3 
+3     7                       8.94
+4     8                       8.79
+5     9                      10.2 
 \end{Soutput}
 \end{Schunk}
 % filename NumericalEDA045.Rnw 
@@ -521,11 +521,11 @@ As an illustration of the real power of the \stressind{pipe operator}, say we wa
 # A tibble: 5 x 2
   Month AveTemp
   <int>   <dbl>
-1     8   83.97
-2     7   83.90
-3     6   79.10
-4     9   76.90
-5     5   65.55
+1     8    84.0
+2     7    83.9
+3     6    79.1
+4     9    76.9
+5     5    65.5
 \end{Soutput}
 \end{Schunk}
 % filename NumericalEDA049.Rnw 
@@ -544,11 +544,11 @@ Which has stored data at each step. Note in particular that a new variable was c
 # A tibble: 5 x 2
   Month AveTemp
   <int>   <dbl>
-1     8   83.97
-2     7   83.90
-3     6   79.10
-4     9   76.90
-5     5   65.55
+1     8    84.0
+2     7    83.9
+3     6    79.1
+4     9    76.9
+5     5    65.5
 \end{Soutput}
 \end{Schunk}
 % filename NumericalEDA051.Rnw 

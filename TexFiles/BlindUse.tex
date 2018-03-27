@@ -42,7 +42,7 @@ The standard \R{} application window is not accessible to the blind user. We can
 
 Obviously, it's not all bad news. \R{} does come with a terminal window system and this is accessible; it's actually what the Linux user gets anyway! This terminal has the look and feel of a standard command prompt window that many users will be familiar with. This window is where all text is entered and where all non-graphical output will be printed. Your screen reader will speak the contents of the terminal window as output is added.
 
-The default installation of \R{} places a shortcut on the desktop. Once you've installed \R{} in the default way, you will need to edit this shortcut's properties. Find it, hit ``ALT+Enter" and make sure you are on the dialogue box that is for the target file. The full path is given here and the last element is ``rgui.exe". Change this last bit to read ``rterm.exe" and hit OK.
+The default installation of \R{} places a shortcut on the desktop. Once you've installed \R{} in the default way, you will need to edit this shortcut's properties. Find it, hit \code{ALT+Enter} and make sure you are on the dialogue box that is for the target file. The full path is given here and the last element is ``rgui.exe". Change this last bit to read ``rterm.exe" and hit OK.
 
 Test it now. The shortcut should run \R{} in a terminal window which looks like a DOS window. You will hear an introduction message about \R{} and ultimately the prompt which is a greater than symbol. To get out of \R{}, we need to type \code{q()} and answer a question about saving the workspace. This should all be heard if things are going correctly. Note: your answer needs to be followed by hitting the enter key.
 
@@ -61,14 +61,14 @@ In January 2014, Dr Robert Erhardt (Assistant Professor of Mathematics at Wake F
 
 \subsection{Super fast default installation of \R{}}
 
-In May 2014 I learnt how to install \R{} from a command line. Having downloaded the installation file, I created a batch file with the single line \code{R-3.1.0-win.exe /silent} that I put in the same folder. This single line is what could be typed in at a command prompt to get \R{} installed silently. Usin a batch file means that when the next version of \R{} comes out, I will only need to change the version number in the filename.
+In May 2014 I learnt how to install \R{} from a command line. Having downloaded the installation file, I created a batch file with the single line \code{R-3.1.0-win.exe /silent} that I put in the same folder. This single line is what could be typed in at a command prompt to get \R{} installed silently. Using a batch file means that when the next version of \R{} comes out, I will only need to change the version number in the filename.
 
 
 
 \section{Setting up \R{} as a blind Mac user}
 
-If you're reading this section I assume you know how to work using a Mac. The following instructions were provided to me by Bram Duvigneau%%%
-(a blind Mac user himself) at the Summer University in 2011, who had read this document and then given me some pointers to share. 
+If you're reading this section I assume you know how to work using a Mac. The following instructions were provided to me by Bram Duvigneau %%%
+ (a blind Mac user himself) at the Summer University in 2011, who had read this document and then given me some pointers to share. 
 
 Like Windows users, Mac users will find the screen reader for Mac works better if you use the terminal version of \R{} instead of the GUI version. Having obtained the installer for the Mac from CRAN, follow the following steps: \begin{enumerate}
 \item Install \R{} using the .pkg installer package you downloaded. 
@@ -107,7 +107,7 @@ The result is that the output appears in the sink file if the command was succes
 
 Sometimes we will want to run a series of commands. Typing out lots of commands can prove tedious and to be honest no sighted \R{} user does it by issuing commands via the command line one at a time.
 
-\R{} does have its own script window that the GUI version uses. In that window users edit the set of commands they want to run. Sometimes it's easier to obtain the code we want from another \R{} program we used before, or by copying commands from an alternate source. \R{} users often share programs and re-run them locally. Opening a \R{} program in the script window of the GUI version of \R{}, is an option available to the blind user but the outputs from running commands all gets pumped into the main console window where the screen reader may not be able to read it all.
+\R{} does have its own script window that the GUI version uses. In that window users edit the set of commands they want to run. Sometimes it's easier to obtain the code we want from another \R{} program we used before, or by copying commands from an alternate source. \R{} users often share programs and re-run them locally. Opening a \R{} program in the script window of the GUI version of \R{} is an option available to the blind user, but the outputs from running commands all gets pumped into the main console window where the screen reader may not be able to read it all.
 
 The most advanced users of \R{} who have large jobs to run will run them on another computer, and it is from this approach that my favourite method of running my \R{} programs was developed.
 

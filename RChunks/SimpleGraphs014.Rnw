@@ -6,8 +6,6 @@ boxplot(Wind~Month, xlab="Month", ylab="Wind speed (mph)")
 \includegraphics[width=0.8\textwidth,alt={a comparative boxplot}]{figures/SimpleGraphsCompBoxplotAirQualityWind-1} 
 
 <<CompBoxplotAirQualityWindSVG, echo=FALSE, include=FALSE, messages=FALSE, warnings=FALSE, results="hide", fig.show="hide">>= 
-MakeAccessibleSVG(boxplot(Wind~Month, xlab="Month", ylab="Wind speed (mph)"), "figures/SimpleGraphsCompBoxplotAirQualityWind") 
+#MakeAccessibleSVG(boxplot(Wind~Month, xlab="Month", ylab="Wind speed (mph)"), "figures/SimpleGraphsCompBoxplotAirQualityWind") 
 @ 
-
 \SVGLink{SimpleGraphsCompBoxplotAirQualityWind} 
-

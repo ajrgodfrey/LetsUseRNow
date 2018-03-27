@@ -1,17 +1,17 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
   "http://www.w3.org/TR/html4/loose.dtd">  
 <html > 
-<head><title>14 Extending R beyond the base installation</title> 
+<head><title>14 LURN... To Perform Times Series Analyses</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
 <!-- html,2,next --> 
 <meta name="src" content="LURN.tex"> 
-<meta name="date" content="2017-10-02 10:32:00"> 
+<meta name="date" content="2018-03-28 12:00:00"> 
 <link rel="stylesheet" type="text/css" href="LURN.css"> 
 </head><body 
 >
-   <!--l. 8--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 10--><div class="crosslinks"><p class="noindent">[<a 
 href="../LURNblind/LURNBlindch14.html">Version for blind users</a>] [<a 
 
 href="LURNch15.html" >next</a>] [<a 
@@ -20,165 +20,2541 @@ href="LURNch13.html#tailLURNch13.html" >prev-tail</a>] [<a
 href="#tailLURNch14.html">tail</a>] [<a 
 href="LURN.html#LURNch14.html" >up</a>] </p></div>
    <h2 class="chapterHead"><span class="titlemark">Chapter&#x00A0;14</span><br /><a 
- id="x16-10900014"></a>Extending <span 
-class="aess-12">R </span>beyond the base installation</h2>
-<!--l. 17--><p class="noindent" >This chapter explains how you do some tasks that are not part of the basic
-installation of <span 
-class="aess-12">R</span>. This includes instructions on how to add extra functionality via
-add-on packages and pointers to some user interfaces.
-   <h3 class="sectionHead"><span class="titlemark">14.1   </span> <a 
- id="x16-11000014.1"></a>Installing additional packages</h3>
-<!--l. 22--><p class="noindent" >Many <span 
-class="aess-12">R </span>users find that the vast range of functions that are built into the basic <span 
-class="aess-12">R</span>
-installation are not enough to meet their specific needs. <span 
-class="aess-12">R </span>is relatively easy to
-adapt to meet their needs because additional functions are easily created to
-perform specific tasks.
-<!--l. 24--><p class="indent" >   In order to let others use their creations, <span 
-class="aess-12">R </span>users often make their
-functions available in add-on packages that can be downloaded by any <span 
-class="aess-12">R </span>user.
-The network of servers that store these packages is known as CRAN,
-which is short for Comprehensive R Archive Network. There are over 8000
-add-on packages currently available via CRAN as well as others that do
-not meet the CRAN criteria. To make it to CRAN, an add-on package
-must meet standards of presentation, quality of documentation, and be
-available for all operating systems. Add-on packages that do not meet
-these criteria do exist, especially those that are specific to one operating
-system.
-<!--l. 26--><p class="indent" >   Installing an add-on package requires two actions. First, you must ask <span 
-class="aess-12">R </span>to
-install a package of a certain name, either using the <a 
- id="dx16-110001"></a><span 
-class="aett-12">install.packages()</span>
-command or the Packages pull-down menu item.
-<!--l. 28--><p class="indent" >   The second task is necessary only once in each <span 
-class="aess-12">R </span>session. When you
-go to install a package from CRAN, <span 
-class="aess-12">R </span>will ask you to select a <a 
- id="dx16-110002"></a><span 
-class="aeti-12">CRAN</span>
-<span 
-class="aeti-12">mirror</span>. This just wants you to choose which one of the servers scattered
-around the world is the one you should point your internet connection
-towards.
-<!--l. 30--><p class="indent" >   These tasks are most commonly achieved by selecting the menu items and
-associated dialogue boxes. If you do not want to use the dialogue box approach
-for selecting a CRAN mirror, there is a text based alternative. If you
-type
-<!--l. 34--><p class="indent" >
-   <div class="fancyvrb" id="fancyvrb328">  <a 
- id="x16-110004r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
-class="aett-12">&#x00A0;chooseCRANmirror(FALSE)</span></div>
-<!--l. 40--><p class="indent" >   you will be given a list of the available CRAN mirrors and a different prompt.
-Type in the number linked to the CRAN mirror you prefer and press
-the Enter key. If you want to choose the first item on the list (which is
-                                                                          
-
-                                                                          
-a cloud-based server anyway) then you could avoid reviewing the list
-using:
-<!--l. 44--><p class="indent" >
-   <div class="fancyvrb" id="fancyvrb329">  <a 
- id="x16-110006r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
-class="aett-12">&#x00A0;chooseCRANmirror(ind=1)</span></div>
-<!--l. 51--><p class="indent" >   Installation of individual packages can be achieved using the <a 
- id="dx16-110007"></a><span 
-class="aett-12">install.packages()</span>
-command. Investigate its help page to ensure you get the most out of its
-use.
-<!--l. 53--><p class="indent" >   One key argument for this command is <span 
-class="aett-12">dependencies</span>. There are many
-packages that rely on the work of other packages for their success. It&#8217;s probably a
-good idea to get into the habit of installing all dependent packages. For
-example:
-<!--l. 57--><p class="indent" >
-   <div class="fancyvrb" id="fancyvrb330">  <a 
- id="x16-110009r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
-class="aett-12">&#x00A0;install.packages("Dodge",</span><span 
-class="aett-12">&#x00A0;dependencies=TRUE)</span></div>
-<!--l. 63--><p class="indent" >   which will install the <a 
- id="dx16-110010"></a><span 
-class="aeti-12">Dodge </span>package. If this package used another package that
-was not currently installed on your machine, that package would also have been
-downloaded and installed.
-<!--l. 65--><p class="noindent" >
-   <h3 class="sectionHead"><span class="titlemark">14.2   </span> <a 
- id="x16-11100014.2"></a>Updating add-on packages</h3>
-<!--l. 67--><p class="noindent" >If you want to be sure you have the latest version of the packages you have
-downloaded are being used, then every once in a while you should issue the
-command
-<!--l. 71--><p class="indent" >
-   <div class="fancyvrb" id="fancyvrb331">  <a 
- id="x16-111002r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
-class="aett-12">&#x00A0;update.packages(ask=FALSE)</span></div>
-<!--l. 77--><p class="indent" >   Note that the <span 
-class="aett-12">ask </span>argument is set to <span 
-class="aett-12">FALSE </span>here. The default action is to ask
-the user if they want a particular package updated. I find this frustrating,
-especially if it&#8217;s been a while since I updated my packages.
-<!--l. 79--><p class="indent" >   You do not need to do this task very often. I would recommend doing it after
-installing a new version of <span 
-class="aess-12">R</span>, or if you see a warning message about the version of
-a package you use.
-<!--l. 81--><p class="indent" >   Finally, note that if you have not established a connection with a CRAN
-mirror in the current <span 
-class="aess-12">R </span>session, then you will be prompted to do so before
-anything is downloaded.
-                                                                          
-
-                                                                          
-<!--l. 83--><p class="noindent" >
-   <h3 class="sectionHead"><span class="titlemark">14.3   </span> <a 
- id="x16-11200014.3"></a>Using an enhanced graphical interface</h3>
-<!--l. 85--><p class="noindent" >The base installation of <span 
-class="aess-12">R </span>doesn&#8217;t offer much statistical functionality in its menu
-system (assuming you use one!). Various projects are under development that
-enhance the way users can interact with <span 
+ id="x16-10800014"></a>LURN&#x2026; To Perform Times Series Analyses</h2>
+<!--l. 19--><p class="noindent" >This chapter focuses on some simple time series approaches for univariate time
+series. At this stage multivariate time series are not included, but could be in
+future depending on demand. In any case, the methods shown here are certainly
+not meant to be a comprehensive elucidation of all time series methods. Dealing
+with just the most commonly taught (and therefore the simplest) methods takes
+up enough space.
+<!--l. 21--><p class="indent" >   You will need to refer to a standard time series analysis textbook for more
+complete guidance; many of these are now written with <span 
+class="aess-12">R </span>as the chosen software
+to support the material in the book.
+<!--l. 23--><p class="indent" >   Given this proliferation of textbooks on the topic of time series analysis, it is
+no surprise that there are a number of add-on packages written to support them.
+In this chapter we do not extend beyond the functionality offered by the base
+distribution of <span 
 class="aess-12">R</span>.
-<!--l. 87--><p class="indent" >   Perhaps the most well-known is the <span 
-class="aess-12">R </span>Commander project. This interface
-has been given a lot of development over a number of years now and
-can support the needs of most introductory level statistical analyses. Its
-implementation is via the <a 
- id="dx16-112001"></a><span 
-class="aeti-12">Rcmdr </span>add-on package downloadable from
-CRAN.
-<!--l. 89--><p class="indent" >   I don&#8217;t use this package as it is more suited to novice to intermediate <span 
-class="aess-12">R </span>users.
-It also creates a host of new functions that improve on similar functions included
-in base <span 
-class="aess-12">R </span>that I don&#8217;t need. The idea of working with mouse clicks is
-counter-intuitive to reproducible research ideas that most medium to advanced <span 
-class="aess-12">R</span>
-users like.
-<!--l. 91--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">14.1   </span> <a 
+ id="x16-10900014.1"></a>Time series objects in <span 
+class="aess-12">R</span></h3>
+<!--l. 27--><p class="noindent" >The basic univariate time series, with no missing data is stored in <span 
+class="aess-12">R </span>as a time
+series object. This is marginally different to a vector in that it has a time stamp or
+index associated with each observation in the series.
+<!--l. 29--><p class="indent" >   We will use several time series data sets that are available within the default
+installation of <span 
+class="aess-12">R</span>.
+<!--l. 33--><p class="indent" >
+   <div class="fancyvrb" id="fancyvrb309">  <a 
+ id="x16-109002r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;str(LakeHuron)</span></div>
+<!--l. 36--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb310"> <a 
+ id="x16-109004r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Time-Series</span><span 
+class="aett-12">&#x00A0;[1:98]</span><span 
+class="aett-12">&#x00A0;from</span><span 
+class="aett-12">&#x00A0;1875</span><span 
+class="aett-12">&#x00A0;to</span><span 
+class="aett-12">&#x00A0;1972:</span><span 
+class="aett-12">&#x00A0;580</span><span 
+class="aett-12">&#x00A0;582</span><span 
+class="aett-12">&#x00A0;581</span><span 
+class="aett-12">&#x00A0;581</span><span 
+class="aett-12">&#x00A0;580</span><span 
+class="aett-12">&#x00A0;...</span></div>
+<!--l. 39--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb311"> <a 
+ id="x16-109006r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;str(lynx)</span></div>
+<!--l. 42--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb312"> <a 
+ id="x16-109008r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Time-Series</span><span 
+class="aett-12">&#x00A0;[1:114]</span><span 
+class="aett-12">&#x00A0;from</span><span 
+class="aett-12">&#x00A0;1821</span><span 
+class="aett-12">&#x00A0;to</span><span 
+class="aett-12">&#x00A0;1934:</span><span 
+class="aett-12">&#x00A0;269</span><span 
+class="aett-12">&#x00A0;321</span><span 
+class="aett-12">&#x00A0;585</span><span 
+class="aett-12">&#x00A0;871</span><span 
+class="aett-12">&#x00A0;1475</span><span 
+class="aett-12">&#x00A0;...</span></div>
+<!--l. 45--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb313"> <a 
+ id="x16-109010r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;str(Nile)</span></div>
+<!--l. 48--><p class="noindent" >
+                                                                          
+
+                                                                          
+   <div class="fancyvrb" id="fancyvrb314">
+<a 
+ id="x16-109012r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Time-Series</span><span 
+class="aett-12">&#x00A0;[1:100]</span><span 
+class="aett-12">&#x00A0;from</span><span 
+class="aett-12">&#x00A0;1871</span><span 
+class="aett-12">&#x00A0;to</span><span 
+class="aett-12">&#x00A0;1970:</span><span 
+class="aett-12">&#x00A0;1120</span><span 
+class="aett-12">&#x00A0;1160</span><span 
+class="aett-12">&#x00A0;963</span><span 
+class="aett-12">&#x00A0;1210</span><span 
+class="aett-12">&#x00A0;1160</span><span 
+class="aett-12">&#x00A0;1160</span><span 
+class="aett-12">&#x00A0;813</span><span 
+class="aett-12">&#x00A0;1230</span><span 
+class="aett-12">&#x00A0;1370</span><span 
+class="aett-12">&#x00A0;1140</span><span 
+class="aett-12">&#x00A0;...</span></div>
+<!--l. 54--><p class="indent" >   The first is for the level of Lake Huron; the second is the number of lynx that
+were trapped in Canada; and the third is the flow of the River Nile. More detailed
+information for all of these series is available using the relevant help function for
+the series.
+<!--l. 56--><p class="indent" >   You can use the Rcmdas.ts command to convert a vector of observations to a
+time series object. For example, the Robjectairquality data is recorded in time
+order. We might want to treat the observed temperatures as a time series by
+converting it using:
+<!--l. 60--><p class="indent" >
+   <div class="fancyvrb" id="fancyvrb315">  <a 
+ id="x16-109014r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;Temp.ts</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;as.ts(airquality$Temp)</span></div>
+<!--l. 67--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">14.2   </span> <a 
+ id="x16-11000014.2"></a>Time series plots</h3>
+<!--l. 69--><p class="noindent" >We have seen the flexibility of the <a 
+ id="dx16-110001"></a><span 
+class="aett-12">plot() </span>command in previous chapters, and
+now we see another use. Applying the <a 
+ id="dx16-110002"></a><span 
+class="aett-12">plot() </span>command to a time series object
+generates a time series plot, as seen in Exhibit&#x00A0;<a 
+href="#x16-110003r1">14.1<!--tex4ht:ref: NileTSPlot --></a>.
+                                                                          
+
+                                                                          
+<!--l. 71--><p class="indent" >   <a 
+ id="x16-110003r1"></a><hr class="float"><div class="float" 
+>
+                                                                          
+
+                                                                          
+<div class="center" 
+>
+<!--l. 71--><p class="noindent" >
+<br /> <div class="caption" 
+><span class="id">Exhibit 14.1: </span><span  
+class="content">Time series plot for the annual flow of the River Nile.</span></div><!--tex4ht:label?: x16-110003r1 -->
+<div class="fancyvrb" id="fancyvrb316"> <a 
+ id="x16-110005r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;plot(Nile,</span><span 
+class="aett-12">&#x00A0;xlab="Year",</span><span 
+class="aett-12">&#x00A0;ylab="Flow")</span></div>
+<!--l. 81--><p class="noindent" ><img 
+src="LURN21x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt" ><!--tex4ht:graphics  
+name="LURN21x.png" src="figures/TimeSeriesNilePlot-1.eps"  
+-->
+<div class="fancyvrb" id="fancyvrb317"> <a 
+ id="x16-110007r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;TimeSeriesPlot(Nile,</span><span 
+class="aett-12">&#x00A0;xlab="Year",</span><span 
+class="aett-12">&#x00A0;ylab="Flow")</span></div>
+                                                                          
+
+                                                                          
+<!--l. 88--><p class="noindent" ><img 
+src="LURN22x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt" ><!--tex4ht:graphics  
+name="LURN22x.png" src="figures/TimeSeriesNilePlotSVG-1.eps"  
+-->
+<!--l. 91--><p class="noindent" ><a 
+href="../svgs/TimeSeriesNilePlot-1.html" >link to SVG file: TimeSeriesNilePlot-1.svg</a></div>
+                                                                          
+
+                                                                          
+   </div><hr class="endfloat" />
+<!--l. 96--><p class="indent" >   Having the class assigned to our data means the plot was enhanced slightly.
+Check this by comparing the results for the two plots in Exhibit&#x00A0;<a 
+href="#x16-110008r2">14.2<!--tex4ht:ref: TSPlotsCompared --></a>.
+                                                                          
+
+                                                                          
+<!--l. 98--><p class="indent" >   <a 
+ id="x16-110008r2"></a><hr class="float"><div class="float" 
+>
+                                                                          
+
+                                                                          
+<div class="center" 
+>
+<!--l. 98--><p class="noindent" >
+<br /> <div class="caption" 
+><span class="id">Exhibit 14.2: </span><span  
+class="content">Comparison of use of <a 
+ id="dx16-110009"></a><span 
+class="aett-12">plot() </span>on a vector and a time series
+object.</span></div><!--tex4ht:label?: x16-110008r2 -->
+<div class="fancyvrb" id="fancyvrb318"> <a 
+ id="x16-110011r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;plot(airquality$Temp,</span><span 
+class="aett-12">&#x00A0;ylab="Temperature")</span></div>
+<!--l. 108--><p class="noindent" ><img 
+src="LURN23x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt" ><!--tex4ht:graphics  
+name="LURN23x.png" src="figures/TimeSeriesTSPlotsCompared-1.eps"  
+-->
+<div class="fancyvrb" id="fancyvrb319"> <a 
+ id="x16-110013r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;plot(Temp.ts,</span><span 
+class="aett-12">&#x00A0;ylab="Temperature")</span></div>
+                                                                          
+
+                                                                          
+<!--l. 112--><p class="noindent" ><img 
+src="LURN24x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt" ><!--tex4ht:graphics  
+name="LURN24x.png" src="figures/TimeSeriesTSPlotsCompared-2.eps"  
+-->
+<!--l. 115--><p class="noindent" ><a 
+href="../svgs/TSPlotsCompared-1.html" >link to SVG file: TSPlotsCompared-1.svg</a> <a 
+href="../svgs/TSPlotsCompared-2.html" >link to SVG file: TSPlotsCompared-2.svg</a></div>
+                                                                          
+
+                                                                          
+   </div><hr class="endfloat" />
+   <h3 class="sectionHead"><span class="titlemark">14.3   </span> <a 
+ id="x16-11100014.3"></a>Smoothing of a time series using moving averages</h3>
+<!--l. 122--><p class="noindent" >One simple method for smoothing out a time series in order to expose
+its behaviour is to smooth out the observed data using the <a 
+ id="dx16-111001"></a><span 
+class="aett-12">filter()</span>
+command to create a moving average. A moving average is often centred,
+(using the argument <span 
+class="aett-12">sides=2</span>) but if the series is expected to have no
+trend, then a backwards only (<span 
+class="aett-12">sides=1</span>) focus can be taken. We must
+determine the width of the moving average, usually using odd-numbered
+widths.
+<!--l. 125--><p class="indent" >   Exhibit&#x00A0;<a 
+href="#x16-111002r3">14.3<!--tex4ht:ref: FilterExample --></a> shows how different amounts of data can be averaged to change
+the amount of smoothing.
+                                                                          
+
+                                                                          
+<!--l. 127--><p class="indent" >   <a 
+ id="x16-111002r3"></a><hr class="float"><div class="float" 
+>
+                                                                          
+
+                                                                          
+<div class="center" 
+>
+<!--l. 127--><p class="noindent" >
+<br /> <div class="caption" 
+><span class="id">Exhibit 14.3: </span><span  
+class="content">Comparison of different amounts of smoothing a time series.</span></div><!--tex4ht:label?: x16-111002r3 -->
+<div class="fancyvrb" id="fancyvrb320"> <a 
+ id="x16-111004r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;plot(Nile)</span></div>
+<!--l. 137--><p class="noindent" ><img 
+src="LURN25x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt" ><!--tex4ht:graphics  
+name="LURN25x.png" src="figures/TimeSeriesFilterExample-1.eps"  
+-->
+<div class="fancyvrb" id="fancyvrb321"> <a 
+ id="x16-111006r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;for(i</span><span 
+class="aett-12">&#x00A0;in</span><span 
+class="aett-12">&#x00A0;1:4){</span><br class="fancyvrb" /><a 
+ id="x16-111008r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;w=4*i-1</span><span 
+class="aett-12">&#x00A0;#</span><span 
+class="aett-12">&#x00A0;choose</span><span 
+class="aett-12">&#x00A0;the</span><span 
+class="aett-12">&#x00A0;window</span><span 
+class="aett-12">&#x00A0;(3,</span><span 
+class="aett-12">&#x00A0;7,11,15)</span>
+<br class="fancyvrb" /><a 
+ id="x16-111010r3"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;lines(</span><span 
+class="aett-12">&#x00A0;(start(Nile)[1]):end(Nile)[1],</span><span 
+class="aett-12">&#x00A0;filter(Nile,</span><span 
+class="aett-12">&#x00A0;rep(1/w,</span><span 
+class="aett-12">&#x00A0;w),</span><span 
+class="aett-12">&#x00A0;sides=1),</span><span 
+class="aett-12">&#x00A0;col=i+2)</span>
+<br class="fancyvrb" /><a 
+ id="x16-111012r4"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;}</span></div>
+<div class="fancyvrb" id="fancyvrb322"> <a 
+ id="x16-111014r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Error:</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="tctt-1200">&#8216;</span><span 
+class="aett-12">.data</span><span 
+class="tctt-1200">&#8216;</span><span 
+class="aett-12">&#x00A0;must</span><span 
+class="aett-12">&#x00A0;be</span><span 
+class="aett-12">&#x00A0;a</span><span 
+class="aett-12">&#x00A0;data</span><span 
+class="aett-12">&#x00A0;source,</span><span 
+class="aett-12">&#x00A0;not</span><span 
+class="aett-12">&#x00A0;a</span><span 
+class="aett-12">&#x00A0;ts</span><span 
+class="aett-12">&#x00A0;object,</span><span 
+class="aett-12">&#x00A0;do</span><span 
+class="aett-12">&#x00A0;you</span><span 
+class="aett-12">&#x00A0;want</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="tctt-1200">&#8216;</span><span 
+class="aett-12">stats::filter()</span><span 
+class="tctt-1200">&#8216;</span><span 
+class="aett-12">?</span></div>
+<!--l. 149--><p class="noindent" ><a 
+href="../svgs/FilterExample-1.html" >link to SVG file: FilterExample-1.svg</a></div>
+                                                                          
+
+                                                                          
+   </div><hr class="endfloat" />
    <h3 class="sectionHead"><span class="titlemark">14.4   </span> <a 
- id="x16-11300014.4"></a>Use of an integrated development environment (IDE)</h3>
-<!--l. 93--><p class="noindent" >The best integrated development environment (IDE) for <span 
-class="aess-12">R </span>users is <span 
-class="aess-12">R </span>Studio. Some
-people find this way of working to be a bewildering experience. Others
-love the convenience of having each project contained in a structured
-environment.
-<!--l. 95--><p class="indent" >   My advice for anyone wanting to use RStudio or any new IDE is to find
-someone to give you a hands-on demonstration. Perhaps watching videos from the
-internet are a useful alternative, but you need to know that this tool is what you
-need before investing time in its use.
-<!--l. 97--><p class="indent" >   Be warned: RStudio is a very powerful and useful tool for even the
-most advanced <span 
-class="aess-12">R </span>users. As such, it can be too much for the novice <span 
-class="aess-12">R</span>
-user.
+ id="x16-11200014.4"></a>Checking for stationarity</h3>
+<!--l. 155--><p class="noindent" ><span 
+class="aeti-12">Stationarity </span>is important for modelling time series. Some descriptive methods also
+need it. The simplest form of <a 
+ id="dx16-112001"></a>stationarity is when the mean of the series and
+the variance of the series both remain roughly constant over time, or
+as explained by Hyndman and Athana-sopou-los (2013), "[a] stationary
+time series is one whose properties do not depend on the time at which
+the series is observed". (their book is called Forecasting: Principles and
+Practice.)
+<!--l. 158--><p class="indent" >   A <a 
+ id="dx16-112002"></a><span 
+class="aeti-12">white noise </span>series of normally distributed data with mean zero and constant
+variance <span 
+class="cmmi-12">&#x03C3;</span><sup><span 
+class="cmr-8">2</span></sup> is the strongest form of stationarity we seek in our modelling. It is the
+desired outcome for the residuals from any model we fit to time series
+data.
+<!--l. 161--><p class="indent" >   The <a 
+ id="dx16-112003"></a><span 
+class="aett-12">Box.test() </span>function tests for non-stationarity.
+<!--l. 165--><p class="indent" >
+   <div class="fancyvrb" id="fancyvrb323">  <a 
+ id="x16-112005r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;Box.test(Nile,</span><span 
+class="aett-12">&#x00A0;lag=20)</span></div>
+<!--l. 168--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb324"> <a 
+ id="x16-112007r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
+ id="x16-112009r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;        Box-Pierce</span><span 
+class="aett-12">&#x00A0;test</span><br class="fancyvrb" /><a 
+ id="x16-112011r3"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
+ id="x16-112013r4"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;data:</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Nile</span>
+<br class="fancyvrb" /><a 
+ id="x16-112015r5"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;X-squared</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;120,</span><span 
+class="aett-12">&#x00A0;df</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;20,</span><span 
+class="aett-12">&#x00A0;p-value</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;1e-15</span></div>
+<!--l. 178--><p class="indent" >   while several other tests exist in add-on packages which can be accessed by
+loading the Rpkgtseries and <a 
+ id="dx16-112016"></a><span 
+class="aeti-12">forecast </span>packages.
+<!--l. 182--><p class="indent" >
+   <div class="fancyvrb" id="fancyvrb325">  <a 
+ id="x16-112018r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;library(tseries)</span></div>
+<!--l. 185--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb326"> <a 
+ id="x16-112020r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Error:</span><span 
+class="aett-12">&#x00A0;package</span><span 
+class="aett-12">&#x00A0;or</span><span 
+class="aett-12">&#x00A0;namespace</span><span 
+class="aett-12">&#x00A0;load</span><span 
+class="aett-12">&#x00A0;failed</span><span 
+class="aett-12">&#x00A0;for</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="tctt-1200">'</span><span 
+class="aett-12">tseries</span><span 
+class="tctt-1200">'</span><span 
+class="aett-12">:</span>
+<br class="fancyvrb" /><a 
+ id="x16-112022r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;package</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="tctt-1200">'</span><span 
+class="aett-12">quadprog</span><span 
+class="tctt-1200">'</span><span 
+class="aett-12">&#x00A0;was</span><span 
+class="aett-12">&#x00A0;installed</span><span 
+class="aett-12">&#x00A0;by</span><span 
+class="aett-12">&#x00A0;an</span><span 
+class="aett-12">&#x00A0;R</span><span 
+class="aett-12">&#x00A0;version</span><span 
+class="aett-12">&#x00A0;with</span><span 
+class="aett-12">&#x00A0;different</span><span 
+class="aett-12">&#x00A0;internals;</span><span 
+class="aett-12">&#x00A0;it</span><span 
+class="aett-12">&#x00A0;needs</span><span 
+class="aett-12">&#x00A0;to</span><span 
+class="aett-12">&#x00A0;be</span><span 
+class="aett-12">&#x00A0;reinstalled</span><span 
+class="aett-12">&#x00A0;for</span><span 
+class="aett-12">&#x00A0;use</span><span 
+class="aett-12">&#x00A0;with</span><span 
+class="aett-12">&#x00A0;this</span><span 
+class="aett-12">&#x00A0;R</span><span 
+class="aett-12">&#x00A0;version</span></div>
+<!--l. 189--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb327"> <a 
+ id="x16-112024r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;library(forecast)</span></div>
+<!--l. 192--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb328"> <a 
+ id="x16-112026r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Error:</span><span 
+class="aett-12">&#x00A0;package</span><span 
+class="aett-12">&#x00A0;or</span><span 
+class="aett-12">&#x00A0;namespace</span><span 
+class="aett-12">&#x00A0;load</span><span 
+class="aett-12">&#x00A0;failed</span><span 
+class="aett-12">&#x00A0;for</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="tctt-1200">'</span><span 
+class="aett-12">forecast</span><span 
+class="tctt-1200">'</span><span 
+class="aett-12">:</span>
+<br class="fancyvrb" /><a 
+ id="x16-112028r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;package</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="tctt-1200">'</span><span 
+class="aett-12">forecast</span><span 
+class="tctt-1200">'</span><span 
+class="aett-12">&#x00A0;was</span><span 
+class="aett-12">&#x00A0;installed</span><span 
+class="aett-12">&#x00A0;by</span><span 
+class="aett-12">&#x00A0;an</span><span 
+class="aett-12">&#x00A0;R</span><span 
+class="aett-12">&#x00A0;version</span><span 
+class="aett-12">&#x00A0;with</span><span 
+class="aett-12">&#x00A0;different</span><span 
+class="aett-12">&#x00A0;internals;</span><span 
+class="aett-12">&#x00A0;it</span><span 
+class="aett-12">&#x00A0;needs</span><span 
+class="aett-12">&#x00A0;to</span><span 
+class="aett-12">&#x00A0;be</span><span 
+class="aett-12">&#x00A0;reinstalled</span><span 
+class="aett-12">&#x00A0;for</span><span 
+class="aett-12">&#x00A0;use</span><span 
+class="aett-12">&#x00A0;with</span><span 
+class="aett-12">&#x00A0;this</span><span 
+class="aett-12">&#x00A0;R</span><span 
+class="aett-12">&#x00A0;version</span></div>
+                                                                          
+
+                                                                          
+<!--l. 196--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb329"> <a 
+ id="x16-112030r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;adf.test(Nile)</span></div>
+<!--l. 199--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb330"> <a 
+ id="x16-112032r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Error</span><span 
+class="aett-12">&#x00A0;in</span><span 
+class="aett-12">&#x00A0;adf.test(Nile):</span><span 
+class="aett-12">&#x00A0;could</span><span 
+class="aett-12">&#x00A0;not</span><span 
+class="aett-12">&#x00A0;find</span><span 
+class="aett-12">&#x00A0;function</span><span 
+class="aett-12">&#x00A0;"adf.test"</span></div>
+<!--l. 202--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb331"> <a 
+ id="x16-112034r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;pp.test(Nile)</span></div>
+<!--l. 205--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb332"> <a 
+ id="x16-112036r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Error</span><span 
+class="aett-12">&#x00A0;in</span><span 
+class="aett-12">&#x00A0;pp.test(Nile):</span><span 
+class="aett-12">&#x00A0;could</span><span 
+class="aett-12">&#x00A0;not</span><span 
+class="aett-12">&#x00A0;find</span><span 
+class="aett-12">&#x00A0;function</span><span 
+class="aett-12">&#x00A0;"pp.test"</span></div>
+<!--l. 208--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb333"> <a 
+ id="x16-112038r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;kpss.test(Nile)</span></div>
+<!--l. 211--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb334"> <a 
+ id="x16-112040r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Error</span><span 
+class="aett-12">&#x00A0;in</span><span 
+class="aett-12">&#x00A0;kpss.test(Nile):</span><span 
+class="aett-12">&#x00A0;could</span><span 
+class="aett-12">&#x00A0;not</span><span 
+class="aett-12">&#x00A0;find</span><span 
+class="aett-12">&#x00A0;function</span><span 
+class="aett-12">&#x00A0;"kpss.test"</span></div>
+<!--l. 217--><p class="indent" >   Each test is looking at a different facet of what might indicate how a series
+might not be stationary. Check out the null hypothesis and alternative for each
+test on its help page.
+<!--l. 222--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">14.5   </span> <a 
+ id="x16-11300014.5"></a>Autocorrelation and partial autocorrelation</h3>
+<!--l. 226--><p class="noindent" >The autocorrelation and partial autocorrelation function values can be obtained
+using the <a 
+ id="dx16-113001"></a><span 
+class="aett-12">acf() </span>and <a 
+ id="dx16-113002"></a><span 
+class="aett-12">pacf() </span>commands. Plotting these is a common way
+to determine if any of the values found are of interest in understanding
+the process being modelled so this is the default action performed by
+these commands. See Exhibit&#x00A0;<a 
+href="#x16-113005r4">14.4<!--tex4ht:ref: NileACF --></a> for the plot generated by the <a 
+ id="dx16-113003"></a><span 
+class="aett-12">acf()</span>
+command. The <a 
+ id="dx16-113004"></a><span 
+class="aett-12">pacf() </span>command functions in the same way so is not
+demonstrated.
+                                                                          
+
+                                                                          
+<!--l. 228--><p class="indent" >   <a 
+ id="x16-113005r4"></a><hr class="float"><div class="float" 
+>
+                                                                          
+
+                                                                          
+<div class="center" 
+>
+<!--l. 228--><p class="noindent" >
+<br /> <div class="caption" 
+><span class="id">Exhibit 14.4: </span><span  
+class="content">Autocorrelation function for the annual flow of the River Nile.</span></div><!--tex4ht:label?: x16-113005r4 -->
+<div class="fancyvrb" id="fancyvrb335"> <a 
+ id="x16-113007r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;acf(Nile)</span></div>
+<!--l. 238--><p class="noindent" ><img 
+src="LURN26x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt" ><!--tex4ht:graphics  
+name="LURN26x.png" src="figures/TimeSeriesNileACF-1.eps"  
+-->
+<!--l. 241--><p class="noindent" ><a 
+href="../svgs/TimeSeriesNileACF-1.html" >link to SVG file: TimeSeriesNileACF-1.svg</a></div>
+                                                                          
+
+                                                                          
+   </div><hr class="endfloat" />
+<!--l. 245--><p class="indent" >   To obtain the values of the autocorrelation function (or partial autocorrelation
+function) in text form, we add an argument to stop the results being
+plotted.
+   <div class="fancyvrb" id="fancyvrb336">  <a 
+ id="x16-113009r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;acf(Nile,</span><span 
+class="aett-12">&#x00A0;plot=FALSE)</span></div>
+<div class="fancyvrb" id="fancyvrb337"> <a 
+ id="x16-113011r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
+ id="x16-113013r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Autocorrelations</span><span 
+class="aett-12">&#x00A0;of</span><span 
+class="aett-12">&#x00A0;series</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="tctt-1200">'</span><span 
+class="aett-12">Nile</span><span 
+class="tctt-1200">'</span><span 
+class="aett-12">,</span><span 
+class="aett-12">&#x00A0;by</span><span 
+class="aett-12">&#x00A0;lag</span><br class="fancyvrb" /><a 
+ id="x16-113015r3"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span>
+<br class="fancyvrb" /><a 
+ id="x16-113017r4"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;2</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;3</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;4</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;5</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;6</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;7</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;8</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;9</span>
+<br class="fancyvrb" /><a 
+ id="x16-113019r5"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1.000</span><span 
+class="aett-12">&#x00A0;0.498</span><span 
+class="aett-12">&#x00A0;0.385</span><span 
+class="aett-12">&#x00A0;0.328</span><span 
+class="aett-12">&#x00A0;0.239</span><span 
+class="aett-12">&#x00A0;0.228</span><span 
+class="aett-12">&#x00A0;0.227</span><span 
+class="aett-12">&#x00A0;0.222</span><span 
+class="aett-12">&#x00A0;0.300</span><span 
+class="aett-12">&#x00A0;0.142</span>
+<br class="fancyvrb" /><a 
+ id="x16-113021r6"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;10</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;11</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;12</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;13</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;14</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;15</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;16</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;17</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;18</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;19</span>
+<br class="fancyvrb" /><a 
+ id="x16-113023r7"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.090</span><span 
+class="aett-12">&#x00A0;0.215</span><span 
+class="aett-12">&#x00A0;0.213</span><span 
+class="aett-12">&#x00A0;0.237</span><span 
+class="aett-12">&#x00A0;0.195</span><span 
+class="aett-12">&#x00A0;0.154</span><span 
+class="aett-12">&#x00A0;0.195</span><span 
+class="aett-12">&#x00A0;0.136</span><span 
+class="aett-12">&#x00A0;0.190</span><span 
+class="aett-12">&#x00A0;0.154</span><br class="fancyvrb" /><a 
+ id="x16-113025r8"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;20</span><br class="fancyvrb" /><a 
+ id="x16-113027r9"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.114</span></div>
+<div class="fancyvrb" id="fancyvrb338"> <a 
+ id="x16-113029r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;pacf(Nile,</span><span 
+class="aett-12">&#x00A0;plot=FALSE)</span></div>
+<div class="fancyvrb" id="fancyvrb339"> <a 
+ id="x16-113031r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
+ id="x16-113033r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Partial</span><span 
+class="aett-12">&#x00A0;autocorrelations</span><span 
+class="aett-12">&#x00A0;of</span><span 
+class="aett-12">&#x00A0;series</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="tctt-1200">'</span><span 
+class="aett-12">Nile</span><span 
+class="tctt-1200">'</span><span 
+class="aett-12">,</span><span 
+class="aett-12">&#x00A0;by</span><span 
+class="aett-12">&#x00A0;lag</span><br class="fancyvrb" /><a 
+ id="x16-113035r3"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span>
+<br class="fancyvrb" /><a 
+ id="x16-113037r4"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;2</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;3</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;4</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;5</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;6</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;7</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;8</span>
+<br class="fancyvrb" /><a 
+ id="x16-113039r5"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.498</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.181</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.111</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.006</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.065</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.071</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.060</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.163</span>
+<br class="fancyvrb" /><a 
+ id="x16-113041r6"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;9</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;10</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;11</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;12</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;13</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;14</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;15</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;16</span>
+<br class="fancyvrb" /><a 
+ id="x16-113043r7"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-0.148</span><span 
+class="aett-12">&#x00A0;-0.065</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.190</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.087</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.065</span><span 
+class="aett-12">&#x00A0;-0.053</span><span 
+class="aett-12">&#x00A0;-0.030</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.073</span>
+<br class="fancyvrb" /><a 
+ id="x16-113045r8"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;17</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;18</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;19</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;20</span><br class="fancyvrb" /><a 
+ id="x16-113047r9"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.017</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.115</span><span 
+class="aett-12">&#x00A0;-0.124</span><span 
+class="aett-12">&#x00A0;-0.059</span></div>
+   <h3 class="sectionHead"><span class="titlemark">14.6   </span> <a 
+ id="x16-11400014.6"></a>Decomposition into seasonal and trend components</h3>
+<!--l. 283--><p class="noindent" >The basic idea of the decompositions presented in this section is to explain the
+observed time series values <span 
+class="cmmi-12">y</span><sub><span 
+class="cmmi-8">t</span></sub> in terms of a trend <span 
+class="cmmi-12">T</span><sub><span 
+class="cmmi-8">t</span></sub>, a seasonal component <span 
+class="cmmi-12">S</span><sub><span 
+class="cmmi-8">t</span></sub> and
+residual error.
+<!--l. 285--><p class="indent" >   Obviously we need a series that has a seasonal component such as the
+Australian resident numbers measured quarterly from 1971 to 1994.
+<!--l. 289--><p class="indent" >
+   <div class="fancyvrb" id="fancyvrb340">  <a 
+ id="x16-114002r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;str(austres)</span></div>
+<!--l. 292--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb341"> <a 
+ id="x16-114004r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Time-Series</span><span 
+class="aett-12">&#x00A0;[1:89]</span><span 
+class="aett-12">&#x00A0;from</span><span 
+class="aett-12">&#x00A0;1971</span><span 
+class="aett-12">&#x00A0;to</span><span 
+class="aett-12">&#x00A0;1993:</span><span 
+class="aett-12">&#x00A0;13067</span><span 
+class="aett-12">&#x00A0;13130</span><span 
+class="aett-12">&#x00A0;13198</span><span 
+class="aett-12">&#x00A0;13254</span><span 
+class="aett-12">&#x00A0;13304</span><span 
+class="aett-12">&#x00A0;...</span></div>
+<!--l. 300--><p class="indent" >   The <a 
+ id="dx16-114005"></a><span 
+class="aett-12">decompose() </span>function can create two forms of the decomposition, one of
+which is additive and the other is multiplicative.
+<!--l. 304--><p class="indent" >
+                                                                          
+
+                                                                          
+   <div class="fancyvrb" id="fancyvrb342">  <a 
+ id="x16-114007r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;AustRes.dec1</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;decompose(austres)</span><br class="fancyvrb" /><a 
+ id="x16-114009r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;Aust.dec2</span><span 
+class="aett-12">&#x00A0;=decompose(austres,</span><span 
+class="aett-12">&#x00A0;type="mul")</span></div>
+<!--l. 311--><p class="indent" >   The Rcmdstl command uses loess smoothing to estimate the trend component
+before finding the seasonal components and the resulting error terms, and is a
+slightly more advanced process than that offered by <a 
+ id="dx16-114010"></a><span 
+class="aett-12">decompose(()</span>. N.B. there is
+an <a 
+ id="dx16-114011"></a><span 
+class="aett-12">stl() </span>command in the <a 
+ id="dx16-114012"></a><span 
+class="aeti-12">stats </span>package and another in the <a 
+ id="dx16-114013"></a><span 
+class="aeti-12">forecast </span>package. We
+use the simpler one here but need to force <span 
+class="aess-12">R </span>to do so just in case the <a 
+ id="dx16-114014"></a><span 
+class="aeti-12">forecast</span>
+package version has precedence.
+<!--l. 316--><p class="indent" >
+   <div class="fancyvrb" id="fancyvrb343">  <a 
+ id="x16-114016r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;AustRes.dec3</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;stats::stl(austres,</span><span 
+class="aett-12">&#x00A0;s.window="periodic")</span><br class="fancyvrb" /><a 
+ id="x16-114018r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;AustRes.dec3</span></div>
+<!--l. 320--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb344"> <a 
+ id="x16-114020r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Call:</span><br class="fancyvrb" /><a 
+ id="x16-114022r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;stats::stl(x</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;austres,</span><span 
+class="aett-12">&#x00A0;s.window</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;"periodic")</span><br class="fancyvrb" /><a 
+ id="x16-114024r3"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
+ id="x16-114026r4"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Components</span>
+<br class="fancyvrb" /><a 
+ id="x16-114028r5"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;seasonal</span><span 
+class="aett-12">&#x00A0;trend</span><span 
+class="aett-12">&#x00A0;remainder</span><br class="fancyvrb" /><a 
+ id="x16-114030r6"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1971</span><span 
+class="aett-12">&#x00A0;Q2</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-0.9674</span><span 
+class="aett-12">&#x00A0;13075</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-6.3062</span>
+<br class="fancyvrb" /><a 
+ id="x16-114032r7"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1971</span><span 
+class="aett-12">&#x00A0;Q3</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-8.1113</span><span 
+class="aett-12">&#x00A0;13133</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;5.3950</span><br class="fancyvrb" /><a 
+ id="x16-114034r8"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1971</span><span 
+class="aett-12">&#x00A0;Q4</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.2031</span><span 
+class="aett-12">&#x00A0;13192</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;6.5849</span>
+<br class="fancyvrb" /><a 
+ id="x16-114036r9"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1972</span><span 
+class="aett-12">&#x00A0;Q1</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;8.8756</span><span 
+class="aett-12">&#x00A0;13249</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-4.1298</span><br class="fancyvrb" /><a 
+ id="x16-114038r10"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1972</span><span 
+class="aett-12">&#x00A0;Q2</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-0.9674</span><span 
+class="aett-12">&#x00A0;13304</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.7167</span>
+<br class="fancyvrb" /><a 
+ id="x16-114040r11"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1972</span><span 
+class="aett-12">&#x00A0;Q3</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-8.1113</span><span 
+class="aett-12">&#x00A0;13357</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;5.4690</span><br class="fancyvrb" /><a 
+ id="x16-114042r12"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1972</span><span 
+class="aett-12">&#x00A0;Q4</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.2031</span><span 
+class="aett-12">&#x00A0;13407</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;2.3083</span>
+<br class="fancyvrb" /><a 
+ id="x16-114044r13"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1973</span><span 
+class="aett-12">&#x00A0;Q1</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;8.8756</span><span 
+class="aett-12">&#x00A0;13456</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-5.7763</span><br class="fancyvrb" /><a 
+ id="x16-114046r14"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1973</span><span 
+class="aett-12">&#x00A0;Q2</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-0.9674</span><span 
+class="aett-12">&#x00A0;13507</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-1.2525</span>
+<br class="fancyvrb" /><a 
+ id="x16-114048r15"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1973</span><span 
+class="aett-12">&#x00A0;Q3</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-8.1113</span><span 
+class="aett-12">&#x00A0;13559</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1.5244</span><br class="fancyvrb" /><a 
+ id="x16-114050r16"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1973</span><span 
+class="aett-12">&#x00A0;Q4</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.2031</span><span 
+class="aett-12">&#x00A0;13612</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1.6742</span>
+<br class="fancyvrb" /><a 
+ id="x16-114052r17"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1974</span><span 
+class="aett-12">&#x00A0;Q1</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;8.8756</span><span 
+class="aett-12">&#x00A0;13667</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-6.1772</span><br class="fancyvrb" /><a 
+ id="x16-114054r18"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1974</span><span 
+class="aett-12">&#x00A0;Q2</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-0.9674</span><span 
+class="aett-12">&#x00A0;13722</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1.7391</span>
+<br class="fancyvrb" /><a 
+ id="x16-114056r19"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1974</span><span 
+class="aett-12">&#x00A0;Q3</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-8.1113</span><span 
+class="aett-12">&#x00A0;13774</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;5.9067</span><br class="fancyvrb" /><a 
+ id="x16-114058r20"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1974</span><span 
+class="aett-12">&#x00A0;Q4</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.2031</span><span 
+class="aett-12">&#x00A0;13820</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;12.2123</span>
+<br class="fancyvrb" /><a 
+ id="x16-114060r21"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1975</span><span 
+class="aett-12">&#x00A0;Q1</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;8.8756</span><span 
+class="aett-12">&#x00A0;13859</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-5.4636</span><br class="fancyvrb" /><a 
+ id="x16-114062r22"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1975</span><span 
+class="aett-12">&#x00A0;Q2</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-0.9674</span><span 
+class="aett-12">&#x00A0;13895</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-1.4363</span>
+<br class="fancyvrb" /><a 
+ id="x16-114064r23"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1975</span><span 
+class="aett-12">&#x00A0;Q3</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-8.1113</span><span 
+class="aett-12">&#x00A0;13931</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;3.8638</span><br class="fancyvrb" /><a 
+ id="x16-114066r24"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1975</span><span 
+class="aett-12">&#x00A0;Q4</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.2031</span><span 
+class="aett-12">&#x00A0;13966</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;2.6435</span>
+<br class="fancyvrb" /><a 
+ id="x16-114068r25"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1976</span><span 
+class="aett-12">&#x00A0;Q1</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;8.8756</span><span 
+class="aett-12">&#x00A0;14000</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-4.5882</span><br class="fancyvrb" /><a 
+ id="x16-114070r26"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1976</span><span 
+class="aett-12">&#x00A0;Q2</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-0.9674</span><span 
+class="aett-12">&#x00A0;14036</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-1.5082</span>
+<br class="fancyvrb" /><a 
+ id="x16-114072r27"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1976</span><span 
+class="aett-12">&#x00A0;Q3</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-8.1113</span><span 
+class="aett-12">&#x00A0;14072</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1.6595</span><br class="fancyvrb" /><a 
+ id="x16-114074r28"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1976</span><span 
+class="aett-12">&#x00A0;Q4</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.2031</span><span 
+class="aett-12">&#x00A0;14111</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-1.0116</span>
+<br class="fancyvrb" /><a 
+ id="x16-114076r29"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1977</span><span 
+class="aett-12">&#x00A0;Q1</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;8.8756</span><span 
+class="aett-12">&#x00A0;14151</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-4.5138</span><br class="fancyvrb" /><a 
+ id="x16-114078r30"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1977</span><span 
+class="aett-12">&#x00A0;Q2</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-0.9674</span><span 
+class="aett-12">&#x00A0;14194</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-0.5377</span>
+<br class="fancyvrb" /><a 
+ id="x16-114080r31"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1977</span><span 
+class="aett-12">&#x00A0;Q3</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-8.1113</span><span 
+class="aett-12">&#x00A0;14237</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;2.4705</span><br class="fancyvrb" /><a 
+ id="x16-114082r32"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1977</span><span 
+class="aett-12">&#x00A0;Q4</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.2031</span><span 
+class="aett-12">&#x00A0;14280</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1.2646</span>
+<br class="fancyvrb" /><a 
+ id="x16-114084r33"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1978</span><span 
+class="aett-12">&#x00A0;Q1</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;8.8756</span><span 
+class="aett-12">&#x00A0;14321</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.1618</span><br class="fancyvrb" /><a 
+ id="x16-114086r34"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1978</span><span 
+class="aett-12">&#x00A0;Q2</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-0.9674</span><span 
+class="aett-12">&#x00A0;14361</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-0.5714</span>
+<br class="fancyvrb" /><a 
+ id="x16-114088r35"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1978</span><span 
+class="aett-12">&#x00A0;Q3</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-8.1113</span><span 
+class="aett-12">&#x00A0;14398</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;6.6065</span><br class="fancyvrb" /><a 
+ id="x16-114090r36"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1978</span><span 
+class="aett-12">&#x00A0;Q4</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.2031</span><span 
+class="aett-12">&#x00A0;14436</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-4.9187</span>
+<br class="fancyvrb" /><a 
+ id="x16-114092r37"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1979</span><span 
+class="aett-12">&#x00A0;Q1</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;8.8756</span><span 
+class="aett-12">&#x00A0;14474</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-4.9753</span><br class="fancyvrb" /><a 
+ id="x16-114094r38"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1979</span><span 
+class="aett-12">&#x00A0;Q2</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-0.9674</span><span 
+class="aett-12">&#x00A0;14516</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.2490</span>
+<br class="fancyvrb" /><a 
+ id="x16-114096r39"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1979</span><span 
+class="aett-12">&#x00A0;Q3</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-8.1113</span><span 
+class="aett-12">&#x00A0;14559</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;3.7081</span><br class="fancyvrb" /><a 
+ id="x16-114098r40"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1979</span><span 
+class="aett-12">&#x00A0;Q4</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.2031</span><span 
+class="aett-12">&#x00A0;14602</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.1959</span>
+<br class="fancyvrb" /><a 
+ id="x16-114100r41"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1980</span><span 
+class="aett-12">&#x00A0;Q1</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;8.8756</span><span 
+class="aett-12">&#x00A0;14648</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-10.3244</span><br class="fancyvrb" /><a 
+ id="x16-114102r42"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1980</span><span 
+class="aett-12">&#x00A0;Q2</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-0.9674</span><span 
+class="aett-12">&#x00A0;14698</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-1.5489</span>
+<br class="fancyvrb" /><a 
+ id="x16-114104r43"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1980</span><span 
+class="aett-12">&#x00A0;Q3</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-8.1113</span><span 
+class="aett-12">&#x00A0;14753</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;2.1397</span><br class="fancyvrb" /><a 
+ id="x16-114106r44"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1980</span><span 
+class="aett-12">&#x00A0;Q4</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.2031</span><span 
+class="aett-12">&#x00A0;14809</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-2.1222</span>
+<br class="fancyvrb" /><a 
+ id="x16-114108r45"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1981</span><span 
+class="aett-12">&#x00A0;Q1</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;8.8756</span><span 
+class="aett-12">&#x00A0;14868</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-2.1550</span><br class="fancyvrb" /><a 
+ id="x16-114110r46"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1981</span><span 
+class="aett-12">&#x00A0;Q2</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-0.9674</span><span 
+class="aett-12">&#x00A0;14929</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-4.7949</span>
+<br class="fancyvrb" /><a 
+ id="x16-114112r47"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1981</span><span 
+class="aett-12">&#x00A0;Q3</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-8.1113</span><span 
+class="aett-12">&#x00A0;14991</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;5.4915</span><br class="fancyvrb" /><a 
+ id="x16-114114r48"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1981</span><span 
+class="aett-12">&#x00A0;Q4</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.2031</span><span 
+class="aett-12">&#x00A0;15055</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-0.6364</span>
+<br class="fancyvrb" /><a 
+ id="x16-114116r49"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1982</span><span 
+class="aett-12">&#x00A0;Q1</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;8.8756</span><span 
+class="aett-12">&#x00A0;15118</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-5.2979</span><br class="fancyvrb" /><a 
+ id="x16-114118r50"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1982</span><span 
+class="aett-12">&#x00A0;Q2</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-0.9674</span><span 
+class="aett-12">&#x00A0;15180</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;5.3648</span>
+<br class="fancyvrb" /><a 
+ id="x16-114120r51"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1982</span><span 
+class="aett-12">&#x00A0;Q3</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-8.1113</span><span 
+class="aett-12">&#x00A0;15238</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;9.8432</span><br class="fancyvrb" /><a 
+ id="x16-114122r52"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1982</span><span 
+class="aett-12">&#x00A0;Q4</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.2031</span><span 
+class="aett-12">&#x00A0;15291</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-2.1066</span>
+<br class="fancyvrb" /><a 
+ id="x16-114124r53"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1983</span><span 
+class="aett-12">&#x00A0;Q1</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;8.8756</span><span 
+class="aett-12">&#x00A0;15341</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-4.1717</span><br class="fancyvrb" /><a 
+ id="x16-114126r54"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1983</span><span 
+class="aett-12">&#x00A0;Q2</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-0.9674</span><span 
+class="aett-12">&#x00A0;15392</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;2.8485</span>
+<br class="fancyvrb" /><a 
+ id="x16-114128r55"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1983</span><span 
+class="aett-12">&#x00A0;Q3</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-8.1113</span><span 
+class="aett-12">&#x00A0;15439</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;7.6489</span><br class="fancyvrb" /><a 
+ id="x16-114130r56"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1983</span><span 
+class="aett-12">&#x00A0;Q4</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.2031</span><span 
+class="aett-12">&#x00A0;15485</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-1.6301</span>
+<br class="fancyvrb" /><a 
+ id="x16-114132r57"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1984</span><span 
+class="aett-12">&#x00A0;Q1</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;8.8756</span><span 
+class="aett-12">&#x00A0;15531</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-8.5709</span><br class="fancyvrb" /><a 
+ id="x16-114134r58"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1984</span><span 
+class="aett-12">&#x00A0;Q2</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-0.9674</span><span 
+class="aett-12">&#x00A0;15580</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.4185</span>
+                                                                          
+
+                                                                          
+<br class="fancyvrb" /><a 
+ id="x16-114136r59"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1984</span><span 
+class="aett-12">&#x00A0;Q3</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-8.1113</span><span 
+class="aett-12">&#x00A0;15630</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;6.3188</span><br class="fancyvrb" /><a 
+ id="x16-114138r60"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1984</span><span 
+class="aett-12">&#x00A0;Q4</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.2031</span><span 
+class="aett-12">&#x00A0;15681</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-4.1708</span>
+<br class="fancyvrb" /><a 
+ id="x16-114140r61"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1985</span><span 
+class="aett-12">&#x00A0;Q1</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;8.8756</span><span 
+class="aett-12">&#x00A0;15733</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-5.6262</span><br class="fancyvrb" /><a 
+ id="x16-114142r62"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1985</span><span 
+class="aett-12">&#x00A0;Q2</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-0.9674</span><span 
+class="aett-12">&#x00A0;15788</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.8474</span>
+<br class="fancyvrb" /><a 
+ id="x16-114144r63"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1985</span><span 
+class="aett-12">&#x00A0;Q3</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-8.1113</span><span 
+class="aett-12">&#x00A0;15845</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;3.0458</span><br class="fancyvrb" /><a 
+ id="x16-114146r64"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1985</span><span 
+class="aett-12">&#x00A0;Q4</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.2031</span><span 
+class="aett-12">&#x00A0;15901</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-0.6827</span>
+<br class="fancyvrb" /><a 
+ id="x16-114148r65"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1986</span><span 
+class="aett-12">&#x00A0;Q1</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;8.8756</span><span 
+class="aett-12">&#x00A0;15959</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-6.4548</span><br class="fancyvrb" /><a 
+ id="x16-114150r66"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1986</span><span 
+class="aett-12">&#x00A0;Q2</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-0.9674</span><span 
+class="aett-12">&#x00A0;16019</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.1646</span>
+<br class="fancyvrb" /><a 
+ id="x16-114152r67"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1986</span><span 
+class="aett-12">&#x00A0;Q3</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-8.1113</span><span 
+class="aett-12">&#x00A0;16080</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;5.3946</span><br class="fancyvrb" /><a 
+ id="x16-114154r68"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1986</span><span 
+class="aett-12">&#x00A0;Q4</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.2031</span><span 
+class="aett-12">&#x00A0;16140</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-0.9897</span>
+<br class="fancyvrb" /><a 
+ id="x16-114156r69"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1987</span><span 
+class="aett-12">&#x00A0;Q1</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;8.8756</span><span 
+class="aett-12">&#x00A0;16201</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-7.0776</span><br class="fancyvrb" /><a 
+ id="x16-114158r70"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1987</span><span 
+class="aett-12">&#x00A0;Q2</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-0.9674</span><span 
+class="aett-12">&#x00A0;16266</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-1.3068</span>
+<br class="fancyvrb" /><a 
+ id="x16-114160r71"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1987</span><span 
+class="aett-12">&#x00A0;Q3</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-8.1113</span><span 
+class="aett-12">&#x00A0;16333</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;3.1703</span><br class="fancyvrb" /><a 
+ id="x16-114162r72"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1987</span><span 
+class="aett-12">&#x00A0;Q4</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.2031</span><span 
+class="aett-12">&#x00A0;16401</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-2.6662</span>
+<br class="fancyvrb" /><a 
+ id="x16-114164r73"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1988</span><span 
+class="aett-12">&#x00A0;Q1</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;8.8756</span><span 
+class="aett-12">&#x00A0;16472</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-2.4364</span><br class="fancyvrb" /><a 
+ id="x16-114166r74"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1988</span><span 
+class="aett-12">&#x00A0;Q2</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-0.9674</span><span 
+class="aett-12">&#x00A0;16546</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-7.0499</span>
+<br class="fancyvrb" /><a 
+ id="x16-114168r75"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1988</span><span 
+class="aett-12">&#x00A0;Q3</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-8.1113</span><span 
+class="aett-12">&#x00A0;16622</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;8.1829</span><br class="fancyvrb" /><a 
+ id="x16-114170r76"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1988</span><span 
+class="aett-12">&#x00A0;Q4</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.2031</span><span 
+class="aett-12">&#x00A0;16696</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.8982</span>
+<br class="fancyvrb" /><a 
+ id="x16-114172r77"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1989</span><span 
+class="aett-12">&#x00A0;Q1</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;8.8756</span><span 
+class="aett-12">&#x00A0;16766</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;2.2061</span><br class="fancyvrb" /><a 
+ id="x16-114174r78"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1989</span><span 
+class="aett-12">&#x00A0;Q2</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-0.9674</span><span 
+class="aett-12">&#x00A0;16833</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1.5003</span>
+<br class="fancyvrb" /><a 
+ id="x16-114176r79"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1989</span><span 
+class="aett-12">&#x00A0;Q3</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-8.1113</span><span 
+class="aett-12">&#x00A0;16896</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;3.6136</span><br class="fancyvrb" /><a 
+ id="x16-114178r80"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1989</span><span 
+class="aett-12">&#x00A0;Q4</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.2031</span><span 
+class="aett-12">&#x00A0;16958</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-1.7351</span>
+<br class="fancyvrb" /><a 
+ id="x16-114180r81"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1990</span><span 
+class="aett-12">&#x00A0;Q1</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;8.8756</span><span 
+class="aett-12">&#x00A0;17017</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-0.0670</span><br class="fancyvrb" /><a 
+ id="x16-114182r82"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1990</span><span 
+class="aett-12">&#x00A0;Q2</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-0.9674</span><span 
+class="aett-12">&#x00A0;17071</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;15.0287</span>
+<br class="fancyvrb" /><a 
+ id="x16-114184r83"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1990</span><span 
+class="aett-12">&#x00A0;Q3</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-8.1113</span><span 
+class="aett-12">&#x00A0;17123</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-8.3421</span><br class="fancyvrb" /><a 
+ id="x16-114186r84"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1990</span><span 
+class="aett-12">&#x00A0;Q4</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.2031</span><span 
+class="aett-12">&#x00A0;17175</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-5.9274</span>
+<br class="fancyvrb" /><a 
+ id="x16-114188r85"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1991</span><span 
+class="aett-12">&#x00A0;Q1</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;8.8756</span><span 
+class="aett-12">&#x00A0;17232</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-1.9143</span><br class="fancyvrb" /><a 
+ id="x16-114190r86"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1991</span><span 
+class="aett-12">&#x00A0;Q2</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-0.9674</span><span 
+class="aett-12">&#x00A0;17294</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-1.4950</span>
+<br class="fancyvrb" /><a 
+ id="x16-114192r87"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1991</span><span 
+class="aett-12">&#x00A0;Q3</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-8.1113</span><span 
+class="aett-12">&#x00A0;17352</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;10.0977</span><br class="fancyvrb" /><a 
+ id="x16-114194r88"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1991</span><span 
+class="aett-12">&#x00A0;Q4</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.2031</span><span 
+class="aett-12">&#x00A0;17402</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;12.1373</span>
+<br class="fancyvrb" /><a 
+ id="x16-114196r89"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1992</span><span 
+class="aett-12">&#x00A0;Q1</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;8.8756</span><span 
+class="aett-12">&#x00A0;17446</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-7.2696</span><br class="fancyvrb" /><a 
+ id="x16-114198r90"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1992</span><span 
+class="aett-12">&#x00A0;Q2</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-0.9674</span><span 
+class="aett-12">&#x00A0;17486</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-2.9214</span>
+<br class="fancyvrb" /><a 
+ id="x16-114200r91"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1992</span><span 
+class="aett-12">&#x00A0;Q3</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-8.1113</span><span 
+class="aett-12">&#x00A0;17529</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;5.3008</span><br class="fancyvrb" /><a 
+ id="x16-114202r92"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1992</span><span 
+class="aett-12">&#x00A0;Q4</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.2031</span><span 
+class="aett-12">&#x00A0;17573</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-4.7695</span>
+<br class="fancyvrb" /><a 
+ id="x16-114204r93"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1993</span><span 
+class="aett-12">&#x00A0;Q1</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;8.8756</span><span 
+class="aett-12">&#x00A0;17618</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.7089</span><br class="fancyvrb" /><a 
+ id="x16-114206r94"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1993</span><span 
+class="aett-12">&#x00A0;Q2</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-0.9674</span><span 
+class="aett-12">&#x00A0;17662</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.7065</span></div>
+<!--l. 416--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb345"> <a 
+ id="x16-114208r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;plot(AustRes.dec3)</span></div>
+<!--l. 420--><p class="indent" >   <img 
+src="LURN27x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt" ><!--tex4ht:graphics  
+name="LURN27x.png" src="figures/TimeSeriesSTLAustRes-1.eps"  
+-->
+                                                                          
+
+                                                                          
+<!--l. 424--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">14.7   </span> <a 
+ id="x16-11500014.7"></a>Exponential smoothing</h3>
+<!--l. 426--><p class="noindent" >Exponential smoothing is a method for making predictions of the next observation
+in a time series. The next observation is a weighted average of all observations to
+date, with the most recent given the greatest weight and the oldest ones having
+the least impact. This simple version is useful for situations with no seasonal
+component or systematic trend component.
+<!--l. 428--><p class="indent" >   Note that this is often expressed as
+   <center class="math-display" >
+<img 
+src="LURN28x.png" alt="&#x02C6;yt+1 = &#x03BB;y&#x02C6;t + (1 - &#x03BB;)yt  " class="math-display" ></center>
+Substituting for <span 
+class="cmmi-12">&#x0177;</span><sub><span 
+class="cmmi-8">t</span></sub> in terms of terms at time ***t-1*** shows how older values
+from the observed series contribute smaller and smaller amounts to the new
+prediction.
+<!--l. 431--><p class="indent" >   The <a 
+ id="dx16-115001"></a><span 
+class="aett-12">HoltWinters() </span>command is used for a wide range of models that include
+the exponential smoother above and allows for trend and seasonality components
+to be introduced. Starting with the Nile data:
+<!--l. 437--><p class="indent" >
+   <div class="fancyvrb" id="fancyvrb346">  <a 
+ id="x16-115003r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;Nile.hw1</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;HoltWinters(Nile,</span><span 
+class="aett-12">&#x00A0;beta=FALSE,</span><span 
+class="aett-12">&#x00A0;gamma</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;FALSE)</span><br class="fancyvrb" /><a 
+ id="x16-115005r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;Nile.hw1</span></div>
+<!--l. 441--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb347"> <a 
+ id="x16-115007r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Holt-Winters</span><span 
+class="aett-12">&#x00A0;exponential</span><span 
+class="aett-12">&#x00A0;smoothing</span><span 
+class="aett-12">&#x00A0;without</span><span 
+class="aett-12">&#x00A0;trend</span><span 
+class="aett-12">&#x00A0;and</span><span 
+class="aett-12">&#x00A0;without</span><span 
+class="aett-12">&#x00A0;seasonal</span><span 
+class="aett-12">&#x00A0;component.</span>
+<br class="fancyvrb" /><a 
+ id="x16-115009r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
+ id="x16-115011r3"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Call:</span><br class="fancyvrb" /><a 
+ id="x16-115013r4"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;HoltWinters(x</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;Nile,</span><span 
+class="aett-12">&#x00A0;beta</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;FALSE,</span><span 
+class="aett-12">&#x00A0;gamma</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;FALSE)</span><br class="fancyvrb" /><a 
+ id="x16-115015r5"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
+ id="x16-115017r6"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Smoothing</span><span 
+class="aett-12">&#x00A0;parameters:</span>
+<br class="fancyvrb" /><a 
+ id="x16-115019r7"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;alpha:</span><span 
+class="aett-12">&#x00A0;0.2466</span><br class="fancyvrb" /><a 
+ id="x16-115021r8"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;beta</span><span 
+class="aett-12">&#x00A0;:</span><span 
+class="aett-12">&#x00A0;FALSE</span><br class="fancyvrb" /><a 
+ id="x16-115023r9"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;gamma:</span><span 
+class="aett-12">&#x00A0;FALSE</span><br class="fancyvrb" /><a 
+ id="x16-115025r10"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
+ id="x16-115027r11"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Coefficients:</span><br class="fancyvrb" /><a 
+ id="x16-115029r12"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[,1]</span><br class="fancyvrb" /><a 
+ id="x16-115031r13"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;a</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;805</span></div>
+<!--l. 456--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb348"> <a 
+ id="x16-115033r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;plot(Nile.hw1)</span></div>
+                                                                          
+
+                                                                          
+<!--l. 460--><p class="indent" >   <img 
+src="LURN29x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt" ><!--tex4ht:graphics  
+name="LURN29x.png" src="figures/TimeSeriesNileHoltWinters-1.eps"  
+-->
+<!--l. 463--><p class="indent" >   Note that we must explicitly set <span 
+class="aett-12">beta </span>and <span 
+class="aett-12">gamma </span>to <span 
+class="aett-12">FALSE </span>to get the simple
+exponential smoother.
+<!--l. 466--><p class="indent" >   Adding a linear trend is fairly simple, but the seasonal component can be
+expressed as either an additive or a multiplicative term. The two forms would
+be
+   <center class="math-display" >
+<img 
+src="LURN30x.png" alt="yt = &#x03BC;t + &#x03B2;tt + St-p + et  " class="math-display" ></center>
+and
+                                                                          
+
+                                                                          
+   <center class="math-display" >
+<img 
+src="LURN31x.png" alt="yt = (&#x03BC;t + &#x03B2;tt)St-p + et  " class="math-display" ></center>
+respectively , where the <span 
+class="cmmi-12">&#x03BC;</span><sub><span 
+class="cmmi-8">t</span></sub> is found using a deseasonalised version of the simple
+exponential smoother
+   <center class="math-display" >
+<img 
+src="LURN32x.png" alt="&#x03BC;t = &#x03B1; (yt - St-p) + (1 - &#x03B1;)(&#x03BC;t-1 + &#x03B2;t-1)  " class="math-display" ></center> for
+the additive model and
+   <center class="math-display" >
+<img 
+src="LURN33x.png" alt="&#x03BC;t = &#x03B1; -yt--+ (1 - &#x03B1;)(&#x03BC;t-1 + &#x03B2;t-1)
+       St-p  " class="math-display" ></center> for
+the multiplicative model.
+<!--l. 479--><p class="indent" >
+   <div class="fancyvrb" id="fancyvrb349">  <a 
+ id="x16-115035r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;AustRes.hw1</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;HoltWinters(austres)</span><br class="fancyvrb" /><a 
+ id="x16-115037r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;AustRes.hw1</span></div>
+<!--l. 483--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb350"> <a 
+ id="x16-115039r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Holt-Winters</span><span 
+class="aett-12">&#x00A0;exponential</span><span 
+class="aett-12">&#x00A0;smoothing</span><span 
+class="aett-12">&#x00A0;with</span><span 
+class="aett-12">&#x00A0;trend</span><span 
+class="aett-12">&#x00A0;and</span><span 
+class="aett-12">&#x00A0;additive</span><span 
+class="aett-12">&#x00A0;seasonal</span><span 
+class="aett-12">&#x00A0;component.</span>
+<br class="fancyvrb" /><a 
+ id="x16-115041r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
+ id="x16-115043r3"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Call:</span><br class="fancyvrb" /><a 
+ id="x16-115045r4"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;HoltWinters(x</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;austres)</span><br class="fancyvrb" /><a 
+ id="x16-115047r5"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
+ id="x16-115049r6"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Smoothing</span><span 
+class="aett-12">&#x00A0;parameters:</span><br class="fancyvrb" /><a 
+ id="x16-115051r7"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;alpha:</span><span 
+class="aett-12">&#x00A0;0.9672</span>
+<br class="fancyvrb" /><a 
+ id="x16-115053r8"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;beta</span><span 
+class="aett-12">&#x00A0;:</span><span 
+class="aett-12">&#x00A0;0.2585</span><br class="fancyvrb" /><a 
+ id="x16-115055r9"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;gamma:</span><span 
+class="aett-12">&#x00A0;1</span><br class="fancyvrb" /><a 
+ id="x16-115057r10"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
+ id="x16-115059r11"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Coefficients:</span><br class="fancyvrb" /><a 
+ id="x16-115061r12"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[,1]</span><br class="fancyvrb" /><a 
+ id="x16-115063r13"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;a</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;17662.6967</span>
+<br class="fancyvrb" /><a 
+ id="x16-115065r14"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;b</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;45.7125</span><br class="fancyvrb" /><a 
+ id="x16-115067r15"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;s1</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-4.3828</span><br class="fancyvrb" /><a 
+ id="x16-115069r16"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;s2</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;0.5476</span><br class="fancyvrb" /><a 
+ id="x16-115071r17"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;s3</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;3.8737</span><br class="fancyvrb" /><a 
+ id="x16-115073r18"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;s4</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;-1.1967</span></div>
+<!--l. 503--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb351"> <a 
+ id="x16-115075r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;plot(AustRes.hw1)</span></div>
+                                                                          
+
+                                                                          
+<!--l. 507--><p class="indent" >   <img 
+src="LURN34x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt" ><!--tex4ht:graphics  
+name="LURN34x.png" src="figures/TimeSeriesAustResHW-1.eps"  
+-->
+   <div class="fancyvrb" id="fancyvrb352">  <a 
+ id="x16-115077r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;AustRes.hw2</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;HoltWinters(austres,</span><span 
+class="aett-12">&#x00A0;seasonal="mult")</span><br class="fancyvrb" /><a 
+ id="x16-115079r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;AustRes.hw2</span></div>
+<!--l. 511--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb353"> <a 
+ id="x16-115081r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Holt-Winters</span><span 
+class="aett-12">&#x00A0;exponential</span><span 
+class="aett-12">&#x00A0;smoothing</span><span 
+class="aett-12">&#x00A0;with</span><span 
+class="aett-12">&#x00A0;trend</span><span 
+class="aett-12">&#x00A0;and</span><span 
+class="aett-12">&#x00A0;multiplicative</span><span 
+class="aett-12">&#x00A0;seasonal</span><span 
+class="aett-12">&#x00A0;component.</span>
+<br class="fancyvrb" /><a 
+ id="x16-115083r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
+ id="x16-115085r3"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Call:</span><br class="fancyvrb" /><a 
+ id="x16-115087r4"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;HoltWinters(x</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;austres,</span><span 
+class="aett-12">&#x00A0;seasonal</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;"mult")</span><br class="fancyvrb" /><a 
+ id="x16-115089r5"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
+ id="x16-115091r6"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Smoothing</span><span 
+class="aett-12">&#x00A0;parameters:</span>
+<br class="fancyvrb" /><a 
+ id="x16-115093r7"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;alpha:</span><span 
+class="aett-12">&#x00A0;0.9622</span><br class="fancyvrb" /><a 
+ id="x16-115095r8"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;beta</span><span 
+class="aett-12">&#x00A0;:</span><span 
+class="aett-12">&#x00A0;0.2593</span><br class="fancyvrb" /><a 
+ id="x16-115097r9"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;gamma:</span><span 
+class="aett-12">&#x00A0;1</span><br class="fancyvrb" /><a 
+ id="x16-115099r10"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
+ id="x16-115101r11"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;Coefficients:</span><br class="fancyvrb" /><a 
+ id="x16-115103r12"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;[,1]</span>
+<br class="fancyvrb" /><a 
+ id="x16-115105r13"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;a</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;1.766e+04</span><br class="fancyvrb" /><a 
+ id="x16-115107r14"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;b</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;4.564e+01</span><br class="fancyvrb" /><a 
+ id="x16-115109r15"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;s1</span><span 
+class="aett-12">&#x00A0;9.997e-01</span><br class="fancyvrb" /><a 
+ id="x16-115111r16"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;s2</span><span 
+class="aett-12">&#x00A0;1.000e+00</span><br class="fancyvrb" /><a 
+ id="x16-115113r17"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;s3</span><span 
+class="aett-12">&#x00A0;1.000e+00</span><br class="fancyvrb" /><a 
+ id="x16-115115r18"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;s4</span><span 
+class="aett-12">&#x00A0;9.999e-01</span></div>
+<!--l. 531--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb354"> <a 
+ id="x16-115117r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;plot(AustRes.hw2)</span></div>
+                                                                          
+
+                                                                          
+<!--l. 535--><p class="indent" >   <img 
+src="LURN35x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt" ><!--tex4ht:graphics  
+name="LURN35x.png" src="figures/TimeSeriesAustResHW-2.eps"  
+-->
+<!--l. 544--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">14.8   </span> <a 
+ id="x16-11600014.8"></a>Autoregressive models</h3>
+<!--l. 546--><p class="noindent" >ar()
+<!--l. 548--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">14.9   </span> <a 
+ id="x16-11700014.9"></a>Basic ARIMA models</h3>
+<!--l. 550--><p class="noindent" >ARIMA models require the autoregressive and moving average components to be
+built on a stationary series. We often need to create a stationary series using
+differencing as seen in Section&#x00A0;<a 
+href="#x16-11200014.4">14.4<!--tex4ht:ref: Stationarity --></a> above. arima()
+<!--l. 553--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">14.10   </span> <a 
+ id="x16-11800014.10"></a>Seasonality and ARIMA modelling</h3>
                                                                           
 
                                                                           

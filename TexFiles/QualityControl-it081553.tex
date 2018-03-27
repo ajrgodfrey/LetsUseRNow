@@ -1,0 +1,54 @@
+% filename GenericSettings.Rnw 
+
+
+
+% filename QualityControl001.Rnw 
+
+%\setcounter{chapter}{} 
+\chapter{LURN\ldots{} To Analyze Quality Control Data} 
+\label{QualityControl} 
+ 
+% filename QualityControl002.Rnw 
+
+
+% filename QualityControl003.Rnw 
+
+ 
+This chapter takes a basic look at the methods of quality control. This material is not always taught in first year statistics courses and is often one of those topics that some people think can be ignored. I guess you can tell what I think given the inclusion of this topic in this document. Like many other topics, you'll need to consult a suitable textbook for a thorough examination of the topic. Some would call quality control or quality improvement a discipline not just a topic. 
+ 
+As quality control methods are not yet implemented in the base distribution of \R{}, you will need to obtain the \Rpackage{qcc} package from CRAN, and install it. This can be done using the menus, command lines, or using file management techniques from within your operating system. 
+ 
+Once it is installed properly, you can access the contents of the package by issuing the command 
+% filename QualityControl004.Rnw 
+
+\begin{Schunk}
+\begin{Sinput}
+> library(qcc) 
+\end{Sinput}
+\begin{Soutput}
+Package 'qcc' version 2.7
+\end{Soutput}
+\begin{Soutput}
+Type 'citation("qcc")' for citing this R package in publications.
+\end{Soutput}
+\end{Schunk}
+% filename QualityControl005.Rnw 
+
+ 
+I've used version 2.7 of the \Rpkg{qcc} package for the work in this chapter. Please note that other packages have been developed that will also produce control charts and other quality improvement analyses. 
+ 
+ 
+\section{Data} 
+ 
+\section{Monitoring a process mean} 
+ 
+\section{Monitoring process variance} 
+ 
+\section{Monitoring a process using proportions} 
+ 
+ 
+\section{Monitoring a process using count data} 
+ 
+% filename QualityControl006.Rnw 
+
+

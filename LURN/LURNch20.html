@@ -1,887 +1,185 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
   "http://www.w3.org/TR/html4/loose.dtd">  
 <html > 
-<head><title>20 LURN... To Solve Operations Research Problems</title> 
+<head><title>20 LURN... To Use R for Basic Calculus Tasks</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
 <meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
 <!-- html,2,next --> 
 <meta name="src" content="LURN.tex"> 
-<meta name="date" content="2017-10-02 10:32:00"> 
+<meta name="date" content="2018-03-28 12:00:00"> 
 <link rel="stylesheet" type="text/css" href="LURN.css"> 
 </head><body 
 >
-   <!--l. 8--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 11--><div class="crosslinks"><p class="noindent">[<a 
 href="../LURNblind/LURNBlindch20.html">Version for blind users</a>] [<a 
 
-href="LURNli2.html" >next</a>] [<a 
+href="LURNch21.html" >next</a>] [<a 
 href="LURNch19.html" >prev</a>] [<a 
 href="LURNch19.html#tailLURNch19.html" >prev-tail</a>] [<a 
 href="#tailLURNch20.html">tail</a>] [<a 
 href="LURN.html#LURNch20.html" >up</a>] </p></div>
    <h2 class="chapterHead"><span class="titlemark">Chapter&#x00A0;20</span><br /><a 
- id="x22-14100020"></a>LURN&#x2026; To Solve Operations Research Problems</h2>
-<!--l. 16--><p class="noindent" >This chapter explains how to find solutions to several problems in Operations
-Research. More specifically, they are problems in Linear Programming
-(LP) and Integer Programming (IP) where the solution is found as the
-optimal value of an objective function subject to the existence of various
-constraints, all of which are expressed as linear functions. The difference
-between LP and IP is the possible values for the decision variables under
-consideration.
-<!--l. 18--><p class="indent" >   To benefit the most from this chapter, you ought to be familiar with basic
-manipulation of vectors and matrices, as seen in Chapter&#x00A0;<a 
-href="LURNch19.html#x21-13300019">19<!--tex4ht:ref: Algebra --></a> and be ready to
-install an additional package using the methods outlined in Chapter&#x00A0;<a 
-href="LURNch14.html#x16-10900014">14<!--tex4ht:ref: Additional --></a>. You will
-need to install the <a 
- id="dx22-141001"></a><span 
-class="aeti-12">lpSolve </span>package and make sure it is ready for use by
-calling the <a 
- id="dx22-141002"></a><span 
-class="aett-12">require() </span>command as seen in the examples in this chapter.
-Note that this need only be done once, but the command is repeated as a
-reminder.
-<!--l. 20--><p class="indent" >   Note that all examples are intentionally made reproducible through use of
-random number generation. You will need to make sure you reset the random
-number generator&#8217;s seed value using the <a 
- id="dx22-141003"></a><span 
-class="aett-12">set.seed() </span>commands that appear in
-the examples.
+ id="x22-15100020"></a>LURN&#x2026; To Use R for Basic Calculus Tasks</h2>
+<!--l. 20--><p class="noindent" >This chapter explains how various tasks in introductory calculus can be
+undertaken using <span 
+class="aess-12">R</span>.
    <h3 class="sectionHead"><span class="titlemark">20.1   </span> <a 
- id="x22-14200020.1"></a>The Assignment Problem</h3>
-<!--l. 25--><p class="noindent" >The assignment problem assigns <span 
-class="cmmi-12">n </span>tasks to <span 
-class="cmmi-12">n </span>people. The objective function is
-often described in tabular or matrix form as a set of costs to be minimised. The
-constraints are that all tasks must be assigned and no person can complete more
-than one task. &#8220;Dummy" tasks or people are added to the matrix if the number of
-tasks is not equal to the number of people.
-<!--l. 27--><p class="indent" >   The mathematical programming representation for the assignment problem
-has the objective function:
-   <table 
-class="equation"><tr><td>
-   <center class="math-display" >
-<img 
-src="LURN48x.png" alt="    &#x2211;n  &#x2211;n
-min         cijxij    i,j = 1,...,n
-     i=1 j=1
-" class="math-display" ><a 
- id="x22-142001r1"></a></center></td><td class="equation-label">(20.1)</td></tr></table>
-<!--l. 29--><p class="nopar" >
-subject to the constraints: <div class="eqnarray">
-   <center class="math-display" >
-<img 
-src="LURN49x.png" alt="&#x2211;n
-    xij  = 1,  &#x2200;i = 1,...,n
-j=1
- n
-&#x2211;   x   =  1,  &#x2200;j = 1, ...,n
-     ij
- i=1
-    xij    &#x2208; {0, 1}  &#x2200;i,j
-" class="math-display" ></center>
-</div>
-<!--l. 39--><p class="indent" >
-   <div class="fancyvrb" id="fancyvrb450"> <a 
- id="x22-142004r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
-class="aett-12">&#x00A0;require(lpSolve)</span><br class="fancyvrb" /><a 
- id="x22-142006r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
-class="aett-12">&#x00A0;set.seed(3010)</span>
-<br class="fancyvrb" /><a 
- id="x22-142008r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
-class="aett-12">&#x00A0;APCost.mat</span><span 
-class="aett-12">&#x00A0;=</span><span 
-class="aett-12">&#x00A0;matrix(sample(10:100,</span><span 
-class="aett-12">&#x00A0;16),</span><span 
-class="aett-12">&#x00A0;nrow=4)</span><br class="fancyvrb" /><a 
- id="x22-142010r4"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
-class="aett-12">&#x00A0;APCost.mat</span></div>
-<!--l. 45--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb451"> <a 
- id="x22-142012r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[,1]</span><span 
-class="aett-12">&#x00A0;[,2]</span><span 
-class="aett-12">&#x00A0;[,3]</span><span 
-class="aett-12">&#x00A0;[,4]</span><br class="fancyvrb" /><a 
- id="x22-142014r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1,]</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;24</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;45</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;25</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;31</span>
-<br class="fancyvrb" /><a 
- id="x22-142016r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[2,]</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;21</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;46</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;86</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;55</span><br class="fancyvrb" /><a 
- id="x22-142018r4"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[3,]</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;87</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;35</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;99</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;12</span><br class="fancyvrb" /><a 
- id="x22-142020r5"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[4,]</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;60</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;88</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;10</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;97</span></div>
-<!--l. 52--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb452"> <a 
- id="x22-142022r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
-class="aett-12">&#x00A0;Sol</span><span 
-class="aett-12">&#x00A0;=</span><span 
-class="aett-12">&#x00A0;lp.assign(APCost.mat)</span><br class="fancyvrb" /><a 
- id="x22-142024r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
-class="aett-12">&#x00A0;names(Sol)</span></div>
-<!--l. 56--><p class="noindent" >
-                                                                          
-
-                                                                          
-   <div class="fancyvrb" id="fancyvrb453"> <a 
- id="x22-142026r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1]</span><span 
-class="aett-12">&#x00A0;"direction"</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;"rcount"</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;"ccount"</span>
-<br class="fancyvrb" /><a 
- id="x22-142028r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[4]</span><span 
-class="aett-12">&#x00A0;"costs"</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;"rsigns"</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;"rrhs"</span>
-<br class="fancyvrb" /><a 
- id="x22-142030r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[7]</span><span 
-class="aett-12">&#x00A0;"csigns"</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;"crhs"</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;"objval"</span>
-<br class="fancyvrb" /><a 
- id="x22-142032r4"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[10]</span><span 
-class="aett-12">&#x00A0;"int.count"</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;"integers"</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;"solution"</span>
-<br class="fancyvrb" /><a 
- id="x22-142034r5"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[13]</span><span 
-class="aett-12">&#x00A0;"presolve"</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;"compute.sens"</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;"sens.coef.from"</span>
-<br class="fancyvrb" /><a 
- id="x22-142036r6"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[16]</span><span 
-class="aett-12">&#x00A0;"sens.coef.to"</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;"duals"</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;"duals.from"</span><br class="fancyvrb" /><a 
- id="x22-142038r7"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[19]</span><span 
-class="aett-12">&#x00A0;"duals.to"</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;"status"</span></div>
-<!--l. 65--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb454"> <a 
- id="x22-142040r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
-class="aett-12">&#x00A0;Sol$solution</span></div>
-<!--l. 68--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb455"> <a 
- id="x22-142042r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[,1]</span><span 
-class="aett-12">&#x00A0;[,2]</span><span 
-class="aett-12">&#x00A0;[,3]</span><span 
-class="aett-12">&#x00A0;[,4]</span><br class="fancyvrb" /><a 
- id="x22-142044r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1,]</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;0</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;1</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;0</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;0</span>
-<br class="fancyvrb" /><a 
- id="x22-142046r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[2,]</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;1</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;0</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;0</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;0</span><br class="fancyvrb" /><a 
- id="x22-142048r4"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[3,]</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;0</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;0</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;0</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;1</span><br class="fancyvrb" /><a 
- id="x22-142050r5"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[4,]</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;0</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;0</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;1</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;0</span></div>
-<!--l. 75--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb456"> <a 
- id="x22-142052r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
-class="aett-12">&#x00A0;Sol$objval</span></div>
-<!--l. 78--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb457"> <a 
- id="x22-142054r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1]</span><span 
-class="aett-12">&#x00A0;88</span></div>
-<!--l. 81--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb458"> <a 
- id="x22-142056r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
-class="aett-12">&#x00A0;Sol</span></div>
-<!--l. 84--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb459"> <a 
- id="x22-142058r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;Success:</span><span 
-class="aett-12">&#x00A0;the</span><span 
-class="aett-12">&#x00A0;objective</span><span 
-class="aett-12">&#x00A0;function</span><span 
-class="aett-12">&#x00A0;is</span><span 
-class="aett-12">&#x00A0;88</span></div>
-<!--l. 90--><p class="indent" >   Note that the print out of the solution didn&#8217;t actually tell us which task was to
-be completed by which person so we needed to look for the matrix of the final
-values for the decision variables. There are plenty of additional items stored as
-part of the solution, many of which you may never need. It is assumed that if
-your needs run to the advanced ideas using these items that you will
-now know where to find the necessary information to solve your own
-problems.
-                                                                          
-
-                                                                          
-<!--l. 92--><p class="noindent" >
+ id="x22-15200020.1"></a>Creating mathematical expressions</h3>
+<!--l. 25--><p class="noindent" >Before we embark on doing those fun things we want to do, we need to learn how
+to store a mathematical expression as an object in <span 
+class="aess-12">R</span>. There are many keywords
+that appear in these expressions which are translated to symbols when seen
+printed in a graph window but remain in ordinary text in <span 
+class="aess-12">R </span>commands.
+Such symbols include Greek letters, hats and bars, all of which have a
+meaning.
+<!--l. 27--><p class="noindent" >
    <h3 class="sectionHead"><span class="titlemark">20.2   </span> <a 
- id="x22-14300020.2"></a>The transportation problem</h3>
-<!--l. 94--><p class="noindent" >The transportation problem aims to satisfy the demands of a set of customers by
-optimising the selection of the supplier who will meet each customer&#8217;s demands.
-The mathematical program for this problem has a cost matrix and upper bounds
-on supply and lower bounds on demands. The optimisation is a minimisation
-exercise so the demand is kept as low as is required so the lower bounds are (in
-essence) equality constraints as a consequence.
-<!--l. 96--><p class="indent" >   The objective function is:
-   <table 
-class="equation"><tr><td>
-   <center class="math-display" >
-<img 
-src="LURN50x.png" alt="    &#x2211;m  &#x2211;n
-min        cijxij
-    i=1 j=1
-" class="math-display" ><a 
- id="x22-143001r2"></a></center></td><td class="equation-label">(20.2)</td></tr></table>
-<!--l. 99--><p class="nopar" >
-and the constraints are: <div class="eqnarray">
-   <center class="math-display" >
-<img 
-src="LURN51x.png" alt=" n
-&#x2211;
-    xij &#x2264; si   &#x2200;i = 1,...,m
-j=1
-&#x2211;m
-   xij &#x2265; dj    &#x2200;j =  1,...,n
-i=1
-    x   &#x2265; 0         &#x2200;i,j
-      ij
-" class="math-display" ></center>
+ id="x22-15300020.2"></a>Plotting functions</h3>
+<!--l. 29--><p class="noindent" >This can be a lot of fun if you set things up right to start with. We create a
+<a 
+ id="dx22-153001"></a><span 
+class="aeti-12">function </span>to represent the mathematical expression using the <a 
+ id="dx22-153002"></a><span 
+class="aett-12">function()</span>
+command, then plot it using either the <a 
+ id="dx22-153003"></a><span 
+class="aett-12">plot.function() </span>or <a 
+ id="dx22-153004"></a><span 
+class="aett-12">curve()</span>
+commands.
+<!--l. 33--><p class="indent" >
+   <div class="fancyvrb" id="fancyvrb457">  <a 
+ id="x22-153006r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;MySine</span><span 
+class="aett-12">&#x00A0;&#x003C;-</span><span 
+class="aett-12">&#x00A0;function(x){</span><span 
+class="aett-12">&#x00A0;sin(x)}</span><br class="fancyvrb" /><a 
+ id="x22-153008r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;curve(MySine,</span><span 
+class="aett-12">&#x00A0;-4*pi,</span><span 
+class="aett-12">&#x00A0;2*pi,</span><span 
+class="aett-12">&#x00A0;n</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;2001)</span></div>
                                                                           
 
                                                                           
-</div>
-<!--l. 108--><p class="indent" >
-   <div class="fancyvrb" id="fancyvrb460"> <a 
- id="x22-143004r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
-class="aett-12">&#x00A0;require(lpSolve)</span><br class="fancyvrb" /><a 
- id="x22-143006r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
-class="aett-12">&#x00A0;set.seed(3010)</span>
-<br class="fancyvrb" /><a 
- id="x22-143008r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
-class="aett-12">&#x00A0;TPCost.mat</span><span 
-class="aett-12">&#x00A0;=</span><span 
-class="aett-12">&#x00A0;matrix(sample(10:100,</span><span 
-class="aett-12">&#x00A0;30),</span><span 
-class="aett-12">&#x00A0;nrow</span><span 
-class="aett-12">&#x00A0;=</span><span 
-class="aett-12">&#x00A0;5)</span><br class="fancyvrb" /><a 
- id="x22-143010r4"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
-class="aett-12">&#x00A0;TPCost.mat</span></div>
-<!--l. 114--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb461"> <a 
- id="x22-143012r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[,1]</span><span 
-class="aett-12">&#x00A0;[,2]</span><span 
-class="aett-12">&#x00A0;[,3]</span><span 
-class="aett-12">&#x00A0;[,4]</span><span 
-class="aett-12">&#x00A0;[,5]</span><span 
-class="aett-12">&#x00A0;[,6]</span><br class="fancyvrb" /><a 
- id="x22-143014r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1,]</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;24</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;46</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;99</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;97</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;85</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;19</span>
-<br class="fancyvrb" /><a 
- id="x22-143016r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[2,]</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;21</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;35</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;10</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;47</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;93</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;91</span><br class="fancyvrb" /><a 
- id="x22-143018r4"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[3,]</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;87</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;88</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;31</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;59</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;95</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;64</span>
-<br class="fancyvrb" /><a 
- id="x22-143020r5"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[4,]</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;60</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;25</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;55</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;40</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;48</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;27</span><br class="fancyvrb" /><a 
- id="x22-143022r6"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[5,]</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;45</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;86</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;12</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;11</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;61</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;81</span></div>
-<!--l. 122--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb462"> <a 
- id="x22-143024r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
-class="aett-12">&#x00A0;DemandSigns</span><span 
-class="aett-12">&#x00A0;=</span><span 
-class="aett-12">&#x00A0;rep</span><span 
-class="aett-12">&#x00A0;("&#x003E;",</span><span 
-class="aett-12">&#x00A0;6)</span><br class="fancyvrb" /><a 
- id="x22-143026r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
-class="aett-12">&#x00A0;DemandLimits</span><span 
-class="aett-12">&#x00A0;=</span><span 
-class="aett-12">&#x00A0;sample(50:300,</span><span 
-class="aett-12">&#x00A0;6)</span><br class="fancyvrb" /><a 
- id="x22-143028r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
-class="aett-12">&#x00A0;DemandLimits</span></div>
-<!--l. 127--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb463"> <a 
- id="x22-143030r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1]</span><span 
-class="aett-12">&#x00A0;201</span><span 
-class="aett-12">&#x00A0;185</span><span 
-class="aett-12">&#x00A0;145</span><span 
-class="aett-12">&#x00A0;207</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;80</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;59</span></div>
-<!--l. 130--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb464"> <a 
- id="x22-143032r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
-class="aett-12">&#x00A0;SupplySigns</span><span 
-class="aett-12">&#x00A0;=</span><span 
-class="aett-12">&#x00A0;rep</span><span 
-class="aett-12">&#x00A0;("&#x003C;",</span><span 
-class="aett-12">&#x00A0;5)</span><br class="fancyvrb" /><a 
- id="x22-143034r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
-class="aett-12">&#x00A0;SupplyLimits</span><span 
-class="aett-12">&#x00A0;=</span><span 
-class="aett-12">&#x00A0;sample(100:500,</span><span 
-class="aett-12">&#x00A0;5)</span><br class="fancyvrb" /><a 
- id="x22-143036r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
-class="aett-12">&#x00A0;SupplyLimits</span></div>
-<!--l. 135--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb465"> <a 
- id="x22-143038r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1]</span><span 
-class="aett-12">&#x00A0;457</span><span 
-class="aett-12">&#x00A0;376</span><span 
-class="aett-12">&#x00A0;351</span><span 
-class="aett-12">&#x00A0;132</span><span 
-class="aett-12">&#x00A0;388</span></div>
-<!--l. 138--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb466"> <a 
- id="x22-143040r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
-class="aett-12">&#x00A0;Sol</span><span 
-class="aett-12">&#x00A0;=</span><span 
-class="aett-12">&#x00A0;lp.transport</span><span 
-class="aett-12">&#x00A0;(TPCost.mat,</span><span 
-class="aett-12">&#x00A0;"min",</span><span 
-class="aett-12">&#x00A0;SupplySigns,</span><span 
-class="aett-12">&#x00A0;SupplyLimits,</span><span 
-class="aett-12">&#x00A0;DemandSigns,</span><span 
-class="aett-12">&#x00A0;DemandLimits,</span><span 
-class="aett-12">&#x00A0;compute.sens=0)</span>
-<br class="fancyvrb" /><a 
- id="x22-143042r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
-class="aett-12">&#x00A0;Sol$solution</span></div>
-<!--l. 142--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb467"> <a 
- id="x22-143044r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[,1]</span><span 
-class="aett-12">&#x00A0;[,2]</span><span 
-class="aett-12">&#x00A0;[,3]</span><span 
-class="aett-12">&#x00A0;[,4]</span><span 
-class="aett-12">&#x00A0;[,5]</span><span 
-class="aett-12">&#x00A0;[,6]</span><br class="fancyvrb" /><a 
- id="x22-143046r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1,]</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;0</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;0</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;0</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;0</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;0</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;59</span>
-<br class="fancyvrb" /><a 
- id="x22-143048r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[2,]</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;201</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;133</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;42</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;0</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;0</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;0</span><br class="fancyvrb" /><a 
- id="x22-143050r4"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[3,]</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;0</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;0</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;0</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;0</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;0</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;0</span>
-<br class="fancyvrb" /><a 
- id="x22-143052r5"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[4,]</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;0</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;52</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;0</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;0</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;80</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;0</span><br class="fancyvrb" /><a 
- id="x22-143054r6"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[5,]</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;0</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;0</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;103</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;207</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;0</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;0</span></div>
+<!--l. 38--><p class="indent" >   <img 
+src="LURN58x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt" ><!--tex4ht:graphics  
+name="LURN58x.png" src="figures/CalculusSineCurve-1.eps"  
+-->
+<!--l. 41--><p class="indent" >   <a 
+href="../svgs/CalculusSineCurve-1.html" >link to SVG file: CalculusSineCurve-1.svg</a>
+<!--l. 43--><p class="indent" >   You can use any valid mathematical expression in the <a 
+ id="dx22-153009"></a><span 
+class="aeti-12">function </span>you create. You
+might find it useful to test your idea= values for your inputs that are easy to work
+with, such as zero and one. You could then use integers, including negative
+integers, but it could be easier to test your functions using values that lead to
+identifiable results such as multiples of <span 
+class="cmmi-12">&#x03C0; </span>when working with trignometric
+functions. For example:
+<!--l. 46--><p class="indent" >   «EvalMySine» MySine(c((0:4)*pi/2)) @
+<!--l. 56--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">20.3   </span> <a 
+ id="x22-15400020.3"></a>Differentiation</h3>
+<!--l. 58--><p class="noindent" >The internal code used for differentiation in <span 
+class="aess-12">R </span>is not as comprehensive as other
+mathematical software. It can handle arithmetic operators <span 
+class="cmr-12">+</span>, <span 
+class="cmsy-10x-x-120">-</span>, <span 
+class="cmsy-10x-x-120">*</span>, <span 
+class="cmmi-12">&#x2215; </span>and <img 
+src="LURN59x.png" alt="&#x02C6;,  "  class="circ" > and
+the single-variable functions <a 
+ id="dx22-154001"></a><span 
+class="aett-12">exp()</span>, <a 
+ id="dx22-154002"></a><span 
+class="aett-12">log() </span>(natural logarithm), <a 
+ id="dx22-154003"></a><span 
+class="aett-12">sin()</span>, <a 
+ id="dx22-154004"></a><span 
+class="aett-12">cos()</span>,
+<a 
+ id="dx22-154005"></a><span 
+class="aett-12">tan()</span>, <a 
+ id="dx22-154006"></a><span 
+class="aett-12">sinh()</span>, <a 
+ id="dx22-154007"></a><span 
+class="aett-12">cosh()</span>, <a 
+ id="dx22-154008"></a><span 
+class="aett-12">sqrt()</span>, <a 
+ id="dx22-154009"></a><span 
+class="aett-12">pnorm()</span>, <a 
+ id="dx22-154010"></a><span 
+class="aett-12">dnorm()</span>, <a 
+ id="dx22-154011"></a><span 
+class="aett-12">asin() </span>(inverse sine), <a 
+ id="dx22-154012"></a><span 
+class="aett-12">acos()</span>
+(inverse cosine), <a 
+ id="dx22-154013"></a><span 
+class="aett-12">atan() </span>(inverse tangent), and various <a 
+ id="dx22-154014"></a><span 
+class="aett-12">gamma() </span>functions. The
+functions <a 
+ id="dx22-154015"></a><span 
+class="aett-12">pnorm() </span>and <a 
+ id="dx22-154016"></a><span 
+class="aett-12">dnorm() </span>are restricted to the standard normal
+distribution.
+<!--l. 62--><p class="indent" >   The easiest way to find the derivative of an expression is to store the
                                                                           
 
                                                                           
-   <!--l. 1--><div class="crosslinks"><p class="noindent">[<a 
+mathematical function using the <a 
+ id="dx22-154017"></a><span 
+class="aett-12">expression() </span>command, and then use the <a 
+ id="dx22-154018"></a><span 
+class="aett-12">D()</span>
+or <a 
+ id="dx22-154019"></a><span 
+class="aett-12">deriv() </span>commands.
+<!--l. 66--><p class="indent" >
+   <div class="fancyvrb" id="fancyvrb458">  <a 
+ id="x22-154021r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;y=expression(exp(2*x))</span><br class="fancyvrb" /><a 
+ id="x22-154023r2"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x00A0;D(y,"x")</span></div>
+<!--l. 70--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb459"> <a 
+ id="x22-154025r1"></a><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;exp(2</span><span 
+class="aett-12">&#x00A0;*</span><span 
+class="aett-12">&#x00A0;x)</span><span 
+class="aett-12">&#x00A0;*</span><span 
+class="aett-12">&#x00A0;2</span></div>
+<!--l. 76--><p class="indent" >   The second argument to the <a 
+ id="dx22-154026"></a><span 
+class="aett-12">D() </span>function needs quote marks around
+it.
+                                                                          
+
+                                                                          
+   <!--l. 10--><div class="crosslinks"><p class="noindent">[<a 
 href="../LURNblind/LURNBlindch20.html">Version for blind users</a>] [<a 
 
-href="LURNli2.html" >next</a>] [<a 
+href="LURNch21.html" >next</a>] [<a 
 href="LURNch19.html" >prev</a>] [<a 
 href="LURNch19.html#tailLURNch19.html" >prev-tail</a>] [<a 
 href="LURNch20.html" >front</a>] [<a 
 href="LURN.html#LURNch20.html" >up</a>] </p></div>
-<!--l. 1--><p class="indent" >   <a 
+<!--l. 10--><p class="indent" >   <a 
  id="tailLURNch20.html"></a>   
 </body></html> 

@@ -10,7 +10,7 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
 <!-- xhtml,2,next,mathjax,html --> 
 <meta name="src" content="LURNBlind.tex" /> 
-<meta name="date" content="2017-10-02 10:32:00" /> 
+<meta name="date" content="2018-03-28 12:01:00" /> 
 <link rel="stylesheet" type="text/css" href="LURNBlind.css" /> 
 </head><body 
 >
@@ -120,14 +120,14 @@ normal distribution. </span></div><!--tex4ht:label?: x11-70004r1 -->
 <img 
 src="LURNBlind15x.png" alt="PIC" class="graphics" width="284.52756pt" height="284.53224pt"  /><!--tex4ht:graphics  
 name="LURNBlind15x.png" src="figures/StoreResultsHistRand10000Z-1.eps"  
---> <a 
-href="../SVGs/StoreResultsHistRand10000Z-1.html" >link to
-accessible SVG file: (requires correct browser)</a></div>
+-->
+<!--l. 45--><p class="noindent" ><a 
+href="../SVGs/StoreResultsHistRand10000Z-1.html" >link to accessible SVG file: (requires correct browser)</a></p></div>
                                                                           
 
                                                                           
    </div><hr class="endfloat" />
-<!--l. 53--><p class="indent" >   It should be fairly obvious what each command does so the only one that
+<!--l. 54--><p class="indent" >   It should be fairly obvious what each command does so the only one that
 really needs further explanation is the <a 
  id="dx11-70005"></a><span 
 class="aett-12">savePlot() </span>command. The first argument
@@ -139,7 +139,7 @@ class="aett-12">figures</span><span
 class="cmsy-10x-x-120">\\</span><span 
 class="aett-12">HistRandValsStandNorm.eps</span>
 has a path, a filename and the extension.
-</p><!--l. 55--><p class="indent" >   The <span 
+</p><!--l. 56--><p class="indent" >   The <span 
 class="cmmi-12">.</span><span 
 class="cmsy-10x-x-120">\\</span><span 
 class="aett-12">figures</span><span 
@@ -158,7 +158,7 @@ include &#8220;jpg", &#8220;bmp", and &#8220;pdf". See the help on the <a
  id="dx11-70006"></a><span 
 class="aett-12">savePlot() </span>command for a
 complete listing.
-</p><!--l. 58--><p class="indent" >   The <a 
+</p><!--l. 59--><p class="indent" >   The <a 
  id="dx11-70007"></a><span 
 class="aett-12">x11() </span>command can be replaced by a number of others which are all
 aliased with one another. The example above doesn&#8217;t supply any arguments to
@@ -176,14 +176,14 @@ inappropriate.
 </p>
    <h3 class="sectionHead"><span class="titlemark">9.4   </span> <a 
  id="x11-710009.4"></a>Saving output in a text file</h3>
-<!--l. 62--><p class="noindent" >One simple way to redirect the output from the main <span 
+<!--l. 63--><p class="noindent" >One simple way to redirect the output from the main <span 
 class="aess-12">R </span>window is to use the
 <a 
  id="dx11-71001"></a><span 
 class="aett-12">sink() </span>command. In this case, you will type in or execute commands as per
 normal but not see any of the output as this is appended to a separate text file.
 Try the following code on for size.
-</p><!--l. 67--><p class="indent" >
+</p><!--l. 68--><p class="indent" >
 </p>
    <div class="fancyvrb" id="fancyvrb223">  <a 
  id="x11-71003r1"></a><span 
@@ -194,7 +194,7 @@ class="aett-12">&#x00A0;x=1:20</span><br class="fancyvrb" /><a
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;x</span></div>
-<!--l. 71--><p class="noindent" >
+<!--l. 72--><p class="noindent" >
                                                                           
 
                                                                           
@@ -236,7 +236,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;[19]</span><span 
 class="aett-12">&#x00A0;19</span><span 
 class="aett-12">&#x00A0;20</span></div>
-<!--l. 79--><p class="indent" >
+<!--l. 80--><p class="indent" >
 </p>
    <div class="fancyvrb" id="fancyvrb225"> <a 
  id="x11-71011r1"></a><span 
@@ -252,7 +252,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;##</span><span 
 class="aett-12">&#x00A0;sink()</span></div>
-<!--l. 88--><p class="indent" >   This creates a text file called <span 
+<!--l. 89--><p class="indent" >   This creates a text file called <span 
 class="aett-12">JustPrintX.txt</span> in a subfolder called <span 
 class="aett-12">other</span>,
 within the current working directory (which I created earlier). The file is worth
@@ -261,7 +261,7 @@ class="aess-12">R</span>
 window if the sink were not active. Note that the second use of <span 
 class="aett-12">sink() </span>stops the
 sink from being active.
-</p><!--l. 90--><p class="indent" >   Just typing the name of an object implicitly calls the relevant <a 
+</p><!--l. 91--><p class="indent" >   Just typing the name of an object implicitly calls the relevant <a 
  id="dx11-71016"></a><span 
 class="aett-12">print()</span>
 function for that object type. This does not work when a sink is active however, so
@@ -269,7 +269,7 @@ we must use the <a
  id="dx11-71017"></a><span 
 class="aett-12">print() </span>command explicitly to get the output into our sink file.
 For example
-</p><!--l. 94--><p class="indent" >
+</p><!--l. 95--><p class="indent" >
 </p>
    <div class="fancyvrb" id="fancyvrb226">  <a 
  id="x11-71019r1"></a><span 
@@ -280,7 +280,7 @@ class="aett-12">&#x00A0;sink(".\\other\\JustPrintX2.txt")</span><br class="fancy
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;print(x)</span></div>
-<!--l. 98--><p class="noindent" >
+<!--l. 99--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb227"> <a 
  id="x11-71023r1"></a><span 
@@ -319,7 +319,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;[19]</span><span 
 class="aett-12">&#x00A0;19</span><span 
 class="aett-12">&#x00A0;20</span></div>
-<!--l. 102--><p class="noindent" >
+<!--l. 103--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb228"> <a 
  id="x11-71027r1"></a><span 
@@ -327,14 +327,14 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;##</span><span 
 class="aett-12">&#x00A0;sink()</span></div>
-<!--l. 108--><p class="indent" >   Check this file out and note the contents are what we might expect. It&#8217;s
+<!--l. 109--><p class="indent" >   Check this file out and note the contents are what we might expect. It&#8217;s
 cleaner to use the <a 
  id="dx11-71028"></a><span 
 class="aett-12">cat() </span>command in place of the <a 
  id="dx11-71029"></a><span 
 class="aett-12">print() </span>command here though.
 For example
-</p><!--l. 112--><p class="indent" >
+</p><!--l. 113--><p class="indent" >
 </p>
    <div class="fancyvrb" id="fancyvrb229">  <a 
  id="x11-71031r1"></a><span 
@@ -345,7 +345,7 @@ class="aett-12">&#x00A0;sink(".\\other\\JustPrintX3.txt")</span><br class="fancy
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;cat(x)</span></div>
-<!--l. 116--><p class="noindent" >
+<!--l. 117--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb230"> <a 
  id="x11-71035r1"></a><span 
@@ -373,7 +373,7 @@ class="aett-12">&#x00A0;20</span></div>
                                                                           
 
                                                                           
-<!--l. 119--><p class="noindent" >
+<!--l. 120--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb231"> <a 
  id="x11-71037r1"></a><span 
@@ -381,11 +381,11 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;##</span><span 
 class="aett-12">&#x00A0;sink()</span></div>
-<!--l. 125--><p class="indent" >   An even quicker method useful for a single result is to use the <a 
+<!--l. 126--><p class="indent" >   An even quicker method useful for a single result is to use the <a 
  id="dx11-71038"></a><span 
 class="aett-12">cat()</span>
 command&#8217;s full potential:
-</p><!--l. 129--><p class="indent" >
+</p><!--l. 130--><p class="indent" >
 </p>
    <div class="fancyvrb" id="fancyvrb232">  <a 
  id="x11-71040r1"></a><span 
@@ -393,21 +393,21 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;cat(x,</span><span 
 class="aett-12">&#x00A0;file=".\\other\\JustCatX.txt")</span></div>
-<!--l. 137--><p class="noindent" >
+<!--l. 138--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">9.5   </span> <a 
  id="x11-720009.5"></a>Saving the entire <span 
 class="aess-12">R </span>Console</h3>
-<!--l. 139--><p class="noindent" >Windows users of <span 
+<!--l. 140--><p class="noindent" >Windows users of <span 
 class="aess-12">R </span>who use the RConsole have an option to save the entire
 console using the menus. At present, however, this is not an option that can be
 invoked via the command line.
-</p><!--l. 141--><p class="indent" >   It is possible to save the history of commands using the <a 
+</p><!--l. 142--><p class="indent" >   It is possible to save the history of commands using the <a 
  id="dx11-72001"></a><span 
 class="aett-12">savehistory()</span>
 command, and of course your data and command history can be saved at the end
 of a session.
-</p><!--l. 143--><p class="indent" >   You&#8217;ll soon see that you do not need to save a copy of the <span 
+</p><!--l. 144--><p class="indent" >   You&#8217;ll soon see that you do not need to save a copy of the <span 
 class="aess-12">R </span>console as it takes
 so little time to re-run a set of commands and re-generate the output
 desired.

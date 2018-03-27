@@ -23,7 +23,25 @@ After installing the packages, load them into your \R{} session using:
 \begin{Schunk}
 \begin{Sinput}
 > library(maps) 
+\end{Sinput}
+\begin{Soutput}
+Error: package or namespace load failed for 'maps':
+ package 'maps' was installed by an R version with different internals; it needs to be reinstalled for use with this R version
+\end{Soutput}
+\begin{Sinput}
 > library(mapdata) 
+\end{Sinput}
+\begin{Soutput}
+Loading required package: maps
+\end{Soutput}
+\begin{Soutput}
+Error: package or namespace load failed for 'maps':
+ package 'maps' was installed by an R version with different internals; it needs to be reinstalled for use with this R version
+\end{Soutput}
+\begin{Soutput}
+Error: package 'maps' could not be loaded
+\end{Soutput}
+\begin{Sinput}
 > library(ggmap) 
 \end{Sinput}
 \begin{Soutput}
@@ -37,6 +55,10 @@ Attaching package: 'ggplot2'
 The following objects are masked from 'package:BrailleR':
 
     xlab, ylab
+\end{Soutput}
+\begin{Soutput}
+Error: package or namespace load failed for 'ggmap':
+ package 'png' was installed by an R version with different internals; it needs to be reinstalled for use with this R version
 \end{Soutput}
 \end{Schunk}
 % filename Maps005.Rnw 
@@ -56,11 +78,23 @@ I first created a map when I wanted a map of New Zealand (my home country) for a
 \begin{Schunk}
 \begin{Sinput}
 > map("nzHires", ylim=c(-48,-34), xlim=c(166,179), fill=T, col=3) 
+\end{Sinput}
+\begin{Soutput}
+Error in map("nzHires", ylim = c(-48, -34), xlim = c(166, 179), fill = T, : could not find function "map"
+\end{Soutput}
+\begin{Sinput}
 > box() 
+\end{Sinput}
+\begin{Soutput}
+Error in box(): plot.new has not been called yet
+\end{Soutput}
+\begin{Sinput}
 > polygon(x=c(172, 179, 179, 172), y=c(-42,-42, -39,-39), border=1, lty=2) 
 \end{Sinput}
-
-\includegraphics[width=0.7\textwidth]{figures/MapsWholeNZ-1} \end{Schunk}
+\begin{Soutput}
+Error in polygon(x = c(172, 179, 179, 172), y = c(-42, -42, -39, -39), : plot.new has not been called yet
+\end{Soutput}
+\end{Schunk}
 % filename Maps007.Rnw 
 
 \SVGLink{MapsWholeNZ-1} 
@@ -82,12 +116,29 @@ The \Rcmd{map.cities} function extracts data from a database of the world's citi
 \begin{Schunk}
 \begin{Sinput}
 > map("nzHires", ylim=c(-42,-39), xlim=c(172,179), fill=T, col=3) 
+\end{Sinput}
+\begin{Soutput}
+Error in map("nzHires", ylim = c(-42, -39), xlim = c(172, 179), fill = T, : could not find function "map"
+\end{Soutput}
+\begin{Sinput}
 > box() 
+\end{Sinput}
+\begin{Soutput}
+Error in box(): plot.new has not been called yet
+\end{Soutput}
+\begin{Sinput}
 > map.cities(minpop=70000,maxpop=80000, pch=16, col=2, cex=2) 
+\end{Sinput}
+\begin{Soutput}
+Error in map.cities(minpop = 70000, maxpop = 80000, pch = 16, col = 2, : could not find function "map.cities"
+\end{Soutput}
+\begin{Sinput}
 > map.cities(capitals=1, col=4, pch=19) 
 \end{Sinput}
-
-\includegraphics[width=0.7\textwidth]{figures/MapsPartNZ-1} \end{Schunk}
+\begin{Soutput}
+Error in map.cities(capitals = 1, col = 4, pch = 19): could not find function "map.cities"
+\end{Soutput}
+\end{Schunk}
 % filename Maps009.Rnw 
 
 \SVGLink{MapsPartNZ-1} 
@@ -116,26 +167,33 @@ In mid-2015, I will attend the UseR conference in Aalborg, which is in Denmark. 
 > Places = geocode(location=c("Aalborg", "Copenhagen")) 
 \end{Sinput}
 \begin{Soutput}
-Information from URL : http://maps.googleapis.com/maps/api/geocode/json?address=Aalborg&sensor=false
-\end{Soutput}
-\begin{Soutput}
-Information from URL : http://maps.googleapis.com/maps/api/geocode/json?address=Copenhagen&sensor=false
+Error in geocode(location = c("Aalborg", "Copenhagen")): could not find function "geocode"
 \end{Soutput}
 \begin{Sinput}
 > Places 
 \end{Sinput}
 \begin{Soutput}
-     lon   lat
-1  9.922 57.05
-2 12.568 55.68
+Error in eval(expr, envir, enclos): object 'Places' not found
 \end{Soutput}
 \begin{Sinput}
 > map('worldHires', 'Denmark') 
+\end{Sinput}
+\begin{Soutput}
+Error in map("worldHires", "Denmark"): could not find function "map"
+\end{Soutput}
+\begin{Sinput}
 > title('Denmark') 
+\end{Sinput}
+\begin{Soutput}
+Error in title("Denmark"): plot.new has not been called yet
+\end{Soutput}
+\begin{Sinput}
 > points(Places, pch=16) 
 \end{Sinput}
-
-\includegraphics[width=0.7\textwidth]{figures/MapsDenmark-1} \end{Schunk}
+\begin{Soutput}
+Error in points(Places, pch = 16): object 'Places' not found
+\end{Soutput}
+\end{Schunk}
 % filename CleanUp.Rnw 
 
 

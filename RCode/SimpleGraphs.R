@@ -21,15 +21,15 @@ windows(7, 5)
 boxplot(Wind, horizontal=TRUE, xlab="Wind speed (mph)") 
 
 ## ----BoxplotAirQualityWindSVG, echo=FALSE, include=FALSE, messages=FALSE, warnings=FALSE, results="hide", fig.show="hide"----
-MakeAccessibleSVG(boxplot(Wind, horizontal=TRUE, xlab="Wind speed (mph)"), "figures/SimpleGraphsBoxplotAirQualityWind")
+#MakeAccessibleSVG(boxplot(Wind, horizontal=TRUE, xlab="Wind speed (mph)"), "figures/SimpleGraphsBoxplotAirQualityWind")
 
 ## ----CompBoxplotAirQualityWind, fig.show="hide"--------------------------
 boxplot(Wind~Month, xlab="Month", ylab="Wind speed (mph)") 
 
 ## ----CompBoxplotAirQualityWindSVG, echo=FALSE, include=FALSE, messages=FALSE, warnings=FALSE, results="hide", fig.show="hide"----
-MakeAccessibleSVG(boxplot(Wind~Month, xlab="Month", ylab="Wind speed (mph)"), "figures/SimpleGraphsCompBoxplotAirQualityWind") 
+#MakeAccessibleSVG(boxplot(Wind~Month, xlab="Month", ylab="Wind speed (mph)"), "figures/SimpleGraphsCompBoxplotAirQualityWind") 
 
-## ----DotPlot, echo=FALSE, fig.width=7, fig.height=2.5, eval=-1-----------
+## ----DotPlot, fig.width=7, fig.height=2.5, eval=-1-----------------------
 windows(7, 2.5) 
 dotchart(Wind) 
 

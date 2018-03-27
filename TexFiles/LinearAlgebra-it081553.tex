@@ -1,0 +1,438 @@
+% filename GenericSettings.Rnw 
+
+
+
+% filename LinearAlgebra001.Rnw 
+
+% trace, found using sum(eigen) 
+ 
+%\setcounter{chapter}{} 
+\chapter{LURN\ldots{} To Use R for Linear Algebra} 
+\label{Algebra} 
+ 
+% filename LinearAlgebra002.Rnw 
+
+
+% filename LinearAlgebra003.Rnw 
+
+ 
+This chapter explains how some tasks commonly taught in introductory algebra courses can be undertaken using \R{}. The functionality is built into \R{} because so many tasks in statistical analyses require manipulation of vectors and matrices, although much of this work is hidden behind other commands and functions. 
+ 
+\section{Basic notes on storage of vectors and matrices} 
+ 
+We will concern ourselves with only numeric valued vectors and matrices in this chapter. Other types of data can be stored in vectors and matrices (as well as other data structures) but they have little relevance for linear algebra at this time. 
+ 
+In linear algebra, a vector is a one dimensional set of numbers. It is usually referred to as a row vector or a column vector to indicate its orientation. This orientation does matter for the ability to perform certain tasks when working with two or more vectors and matrices.  
+ 
+A matrix is a two-dimensional array of numbers, having a number of rows and columns. Many mathematical software applications do not explicitly distinguish a vector from a matrix because they store a row vector as if it were a matrix having just one row. Similarly, a column vector is stored as a matrix having just one column. 
+ 
+\R{} does distinguish betweena vector and a matrix, but it does not state whether a vector is a row or column vector. This does have its advantages, and probably some disadvantages as well. If for any reason you need to force the orientation of a vector, then create it as a matrix with one of its dimensions set equal to one. For example, we create a simple vector: 
+% filename LinearAlgebra004.Rnw 
+
+\begin{Schunk}
+\begin{Sinput}
+> x=1:4 
+> x 
+\end{Sinput}
+\begin{Soutput}
+[1] 1 2 3 4
+\end{Soutput}
+\begin{Sinput}
+> class(x) 
+\end{Sinput}
+\begin{Soutput}
+[1] "integer"
+\end{Soutput}
+\end{Schunk}
+% filename LinearAlgebra005.Rnw 
+
+We can convert this to a column matrix using 
+% filename LinearAlgebra006.Rnw 
+
+\begin{Schunk}
+\begin{Sinput}
+> X=matrix(x, ncol=1) 
+> class(X) 
+\end{Sinput}
+\begin{Soutput}
+[1] "matrix"
+\end{Soutput}
+\begin{Sinput}
+> X 
+\end{Sinput}
+\begin{Soutput}
+     [,1]
+[1,]    1
+[2,]    2
+[3,]    3
+[4,]    4
+\end{Soutput}
+\end{Schunk}
+% filename LinearAlgebra007.Rnw 
+
+Notice that I've used a capital letter for the matrix version of the same set of numbers here which is possible because \R{} is case sensitive. The \Rarg{ncol} argument can be replaced by using the \Rarg{nrow} argument if a row vector is required. 
+ 
+\section{Creating some simple matrix structures} 
+ 
+The \stressind{identity matrix} is a diagonal matrix so we use the \Rcmd{diag} command to create it. For example 
+% filename LinearAlgebra008.Rnw 
+
+\begin{Schunk}
+\begin{Sinput}
+> I3=diag(3) 
+> I3 
+\end{Sinput}
+\begin{Soutput}
+     [,1] [,2] [,3]
+[1,]    1    0    0
+[2,]    0    1    0
+[3,]    0    0    1
+\end{Soutput}
+\end{Schunk}
+% filename LinearAlgebra009.Rnw 
+
+ 
+We often need to find the \nostressind{transpose of a matrix}. The \Rcmd{t} command does this. 
+% filename LinearAlgebra010.Rnw 
+
+\begin{Schunk}
+\begin{Sinput}
+> M=matrix(1:6,nrow=2) 
+> M 
+\end{Sinput}
+\begin{Soutput}
+     [,1] [,2] [,3]
+[1,]    1    3    5
+[2,]    2    4    6
+\end{Soutput}
+\begin{Sinput}
+> t(M) 
+\end{Sinput}
+\begin{Soutput}
+     [,1] [,2]
+[1,]    1    2
+[2,]    3    4
+[3,]    5    6
+\end{Soutput}
+\end{Schunk}
+% filename LinearAlgebra011.Rnw 
+
+ 
+A \stressind{Hilbert matrix} can be created using a formula. The \Rcmd{row} and \Rcmd{col} commands use the size of the argument to create objects of the same size. 
+% filename LinearAlgebra012.Rnw 
+
+\begin{Schunk}
+\begin{Sinput}
+> row(I3) 
+\end{Sinput}
+\begin{Soutput}
+     [,1] [,2] [,3]
+[1,]    1    1    1
+[2,]    2    2    2
+[3,]    3    3    3
+\end{Soutput}
+\begin{Sinput}
+> Hilb3=row(I3)+col(I3)-1 
+\end{Sinput}
+\end{Schunk}
+% filename LinearAlgebra013.Rnw 
+
+Notice that the Hilbert matrix is created by adding two matrices together and then a constant is subtracted from all elements of the result. 
+ 
+\section{Matrix and vector calculations} 
+ 
+We saw a simple addition of elements of two matrices of the same size as well as a subtraction in the previous section. \R{} uses the standard arithmetic operators on pairs of matrices (or vectors) on an element-by-element basis.  
+ 
+Addition of a constant to a vector or matrix is effected on all elements 
+% filename LinearAlgebra014.Rnw 
+
+\begin{Schunk}
+\begin{Sinput}
+> x+2 
+\end{Sinput}
+\begin{Soutput}
+[1] 3 4 5 6
+\end{Soutput}
+\begin{Sinput}
+> 2+x 
+\end{Sinput}
+\begin{Soutput}
+[1] 3 4 5 6
+\end{Soutput}
+\end{Schunk}
+% filename LinearAlgebra015.Rnw 
+
+Similarly, we can multiply a vector or matrix by a scalar using: 
+% filename LinearAlgebra016.Rnw 
+
+\begin{Schunk}
+\begin{Sinput}
+> 5*x 
+\end{Sinput}
+\begin{Soutput}
+[1]  5 10 15 20
+\end{Soutput}
+\begin{Sinput}
+> x*5 
+\end{Sinput}
+\begin{Soutput}
+[1]  5 10 15 20
+\end{Soutput}
+\begin{Sinput}
+> 5*X 
+\end{Sinput}
+\begin{Soutput}
+     [,1]
+[1,]    5
+[2,]   10
+[3,]   15
+[4,]   20
+\end{Soutput}
+\end{Schunk}
+% filename LinearAlgebra017.Rnw 
+
+which retains the size of the vector or matrix. Also note that pre-multiplying by a scalar is equivalent to post-multiplying by a scalar, as should have been expected. This is of course different to matrix multiplication. 
+ 
+Matrix operations use different symbols from simple arithmetic operators to distinguish the different results that might be desired. For example, 
+% filename LinearAlgebra018.Rnw 
+
+\begin{Schunk}
+\begin{Sinput}
+> A=matrix(1:4, nrow=2) 
+> B=matrix(7:10, nrow=2) 
+> A*B 
+\end{Sinput}
+\begin{Soutput}
+     [,1] [,2]
+[1,]    7   27
+[2,]   16   40
+\end{Soutput}
+\end{Schunk}
+% filename LinearAlgebra019.Rnw 
+
+creates a matrix with elements based on simple multiplication of the paired elements, not those based on proper matrix multiplication. 
+ 
+If we want to multiply two matrices, the order is important. 
+% filename LinearAlgebra020.Rnw 
+
+\begin{Schunk}
+\begin{Sinput}
+> A%*%B 
+\end{Sinput}
+\begin{Soutput}
+     [,1] [,2]
+[1,]   31   39
+[2,]   46   58
+\end{Soutput}
+\begin{Sinput}
+> B%*%A 
+\end{Sinput}
+\begin{Soutput}
+     [,1] [,2]
+[1,]   25   57
+[2,]   28   64
+\end{Soutput}
+\end{Schunk}
+% filename LinearAlgebra021.Rnw 
+
+ 
+Multiplying a matrix by a vector is easily achieved, and \R{} will orient the vector to conform to the rules of matrix multiplication as required. 
+% filename LinearAlgebra022.Rnw 
+
+\begin{Schunk}
+\begin{Sinput}
+> y=c(3,4) 
+> A%*%y 
+\end{Sinput}
+\begin{Soutput}
+     [,1]
+[1,]   15
+[2,]   22
+\end{Soutput}
+\begin{Sinput}
+> y%*%A 
+\end{Sinput}
+\begin{Soutput}
+     [,1] [,2]
+[1,]   11   25
+\end{Soutput}
+\end{Schunk}
+% filename LinearAlgebra023.Rnw 
+
+ 
+\section{Inverting a matrix} 
+ 
+The inverse of a matrix is used in many statistical procedures. The \Rcmd{solve} command inverts a square matrix. 
+% filename LinearAlgebra024.Rnw 
+
+\begin{Schunk}
+\begin{Sinput}
+> A 
+\end{Sinput}
+\begin{Soutput}
+     [,1] [,2]
+[1,]    1    3
+[2,]    2    4
+\end{Soutput}
+\begin{Sinput}
+> solve(A) 
+\end{Sinput}
+\begin{Soutput}
+     [,1] [,2]
+[1,]   -2  1.5
+[2,]    1 -0.5
+\end{Soutput}
+\end{Schunk}
+% filename LinearAlgebra025.Rnw 
+
+ 
+For matrices that are not square, a generalised inverse can be found using the \Rcmd{ginv} command found in the \Rpackage{MASS} package that is part of the standard \R{} distribution. 
+% filename LinearAlgebra026.Rnw 
+
+\begin{Schunk}
+\begin{Sinput}
+> M 
+\end{Sinput}
+\begin{Soutput}
+     [,1] [,2] [,3]
+[1,]    1    3    5
+[2,]    2    4    6
+\end{Soutput}
+\begin{Sinput}
+> require(MASS) 
+> ginv(M) 
+\end{Sinput}
+\begin{Soutput}
+        [,1]    [,2]
+[1,] -1.3333  1.0833
+[2,] -0.3333  0.3333
+[3,]  0.6667 -0.4167
+\end{Soutput}
+\end{Schunk}
+% filename LinearAlgebra027.Rnw 
+
+Of course, the product of the matrix and its generalised inverse should be an identity matrix.  
+% filename LinearAlgebra028.Rnw 
+
+\begin{Schunk}
+\begin{Sinput}
+> M%*%ginv(M) 
+\end{Sinput}
+\begin{Soutput}
+          [,1]      [,2]
+[1,] 1.000e+00 -2.22e-16
+[2,] 6.661e-16  1.00e+00
+\end{Soutput}
+\end{Schunk}
+% filename LinearAlgebra029.Rnw 
+
+Like many other applications, \R{} does not recognize the number zero very well. This is due to the way decimal numbers are stored. 
+ 
+ 
+\section{Solving a set of linear equations} 
+ 
+If we want to solve the set of equations, represented in matrix form as $Ax=b$, we use the \Rcmd{solve} command 
+% filename LinearAlgebra030.Rnw 
+
+\begin{Schunk}
+\begin{Sinput}
+> A 
+\end{Sinput}
+\begin{Soutput}
+     [,1] [,2]
+[1,]    1    3
+[2,]    2    4
+\end{Soutput}
+\begin{Sinput}
+> b=c(5,7) 
+> solve(A,b) 
+\end{Sinput}
+\begin{Soutput}
+[1] 0.5 1.5
+\end{Soutput}
+\end{Schunk}
+% filename LinearAlgebra031.Rnw 
+
+ 
+\section{Determinants and traces} 
+ 
+The \Rcmd{det} command is used for finding the determinant of a matrix. 
+% filename LinearAlgebra032.Rnw 
+
+\begin{Schunk}
+\begin{Sinput}
+> A 
+\end{Sinput}
+\begin{Soutput}
+     [,1] [,2]
+[1,]    1    3
+[2,]    2    4
+\end{Soutput}
+\begin{Sinput}
+> det(A) 
+\end{Sinput}
+\begin{Soutput}
+[1] -2
+\end{Soutput}
+\end{Schunk}
+% filename LinearAlgebra033.Rnw 
+
+ 
+The trace of a matrix is not so easily found. There is a command that is called \Rcmd{trace} but this is not an algebraic function. If you want the trace of the matrix, you will need to sum the eigenvalues of the matrix. 
+ 
+\section{Eigenvalues and eigenvectors} 
+ 
+Calculation of eigenvalues and their associated eigenvalues is fairly simple, but extracting the elements required might pose a little difficulty. 
+ Let's create a 4$\times$4 Hilbert matrix and find its eigenvalues: 
+% filename LinearAlgebra034.Rnw 
+
+\begin{Schunk}
+\begin{Sinput}
+> H4=matrix(-1,nrow=4, ncol=4) 
+> H4=H4+row(H4)+col(H4) 
+> H4 
+\end{Sinput}
+\begin{Soutput}
+     [,1] [,2] [,3] [,4]
+[1,]    1    2    3    4
+[2,]    2    3    4    5
+[3,]    3    4    5    6
+[4,]    4    5    6    7
+\end{Soutput}
+\begin{Sinput}
+> eigen(H4) 
+\end{Sinput}
+\begin{Soutput}
+eigen() decomposition
+$values
+[1]  1.717e+01  4.441e-16 -3.522e-16 -1.165e+00
+
+$vectors
+        [,1]    [,2]    [,3]     [,4]
+[1,] -0.3147 -0.5477  0.0000  0.77521
+[2,] -0.4275  0.7303  0.4082  0.34244
+[3,] -0.5402  0.1826 -0.8165 -0.09032
+[4,] -0.6530 -0.3651  0.4082 -0.52309
+\end{Soutput}
+\end{Schunk}
+% filename LinearAlgebra035.Rnw 
+
+If we only wanted the eigenvalues, we could add the argument \Rarg{only.values=TRUE}; if the eigenvectors were of interest, then we would need to extract the second element of the above result: 
+% filename LinearAlgebra036.Rnw 
+
+\begin{Schunk}
+\begin{Sinput}
+> eigen(H4)$vectors 
+\end{Sinput}
+\begin{Soutput}
+        [,1]    [,2]    [,3]     [,4]
+[1,] -0.3147 -0.5477  0.0000  0.77521
+[2,] -0.4275  0.7303  0.4082  0.34244
+[3,] -0.5402  0.1826 -0.8165 -0.09032
+[4,] -0.6530 -0.3651  0.4082 -0.52309
+\end{Soutput}
+\end{Schunk}
+% filename CleanUp.Rnw 
+
+
+

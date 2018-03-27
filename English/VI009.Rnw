@@ -2,7 +2,7 @@
 
 In fact this command starts several files, one for the complete console and one for the issued commands. The command actually runs the \Rcmd{txtStart} command but specifies particular options for the user's convenience. If you are happy to use the defalt filename then you just need to hit <enter>, but if you want to specify the filename, you type the name, and then hit <Enter> twice (once for your file and once to get out of the filename requesting prompt). 
  
-See the help page for the \Rcmd{txtOut} command as it includes the history of the command and its relatives. The other related commands add comments to the text file or stop the processing entirely. Also note that the help page mentions how to get the packages needed for other file formats. 
+See the help page for the \Rcmd{txtOut} command as it includes the history of the command and its relatives. The other related commands add comments to the text file while \Rcmd{txtStop} stops the processing entirely. Also note that the help page mentions how to get the packages needed for other file formats. 
  
  
 You can open the text file that is being created and modified as you work in any browser. Once you have the file open and have done some work, you must  refresh your browser to see the latest changes. Keep the browser open as you work and remember to refresh often to keep on top of what is happening with complete access via your screen reader. 
