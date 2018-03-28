@@ -1,10 +1,14 @@
 % filename SimpleGraphs008.Rnw 
-
 <<HistAirQualityWind, fig.show="hide">>= 
 hist(Wind) 
 @
 \includegraphics[width=0.8\textwidth,alt={a histogram}]{figures/SimpleGraphsHistAirQualityWind-1} 
 <<HistAirQualityWindSVG, echo=FALSE, include=FALSE, messages=FALSE, warnings=FALSE, results="hide", fig.show="hide">>= 
-MakeAccessibleSVG(hist(Wind), "figures/SimpleGraphsHistAirQualityWind")
+MyHist = hist(Wind) 
+MakeAccessibleSVG(MyHist, "figures/SimpleGraphsHistAirQualityWind")
+@
+<<echo=FALSE>>=
+if(file.exists("AddBlind.txt")){
+    VI(MyHist)}
 @
 \SVGLink{SimpleGraphsHistAirQualityWind} 

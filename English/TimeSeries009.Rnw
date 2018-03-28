@@ -1,5 +1,4 @@
 % filename TimeSeries009.Rnw 
-
 \SVGLink{TimeSeriesNilePlot-1} 
 \end{center} 
 \end{exhibit} 
@@ -8,5 +7,5 @@
 Having the class assigned to our data means the plot was enhanced slightly. Check this by comparing the results for the two plots in Exhibit~\ref{TSPlotsCompared}. 
 \begin{exhibit} 
 \begin{center} 
-\caption{Comparison of use of \Rcmd{plot} on a vector and a time series object.} 
+\caption{Comparison of use of plot on a vector and a time series object.} 
 \label{TSPlotsCompared} 

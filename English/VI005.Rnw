@@ -21,6 +21,6 @@ There are three types of content printed in the console window.\begin{enumerate}
 \item Any error or warning messages that arise from our commands. 
 \end{enumerate} 
  
-The \Rcmd{sink} command does not currently record the commands or the errors and warning messages. It is therefore a valuable tool for those \R{} users that are confident about the validity of their scripts. 
+The \Rcmd{sink} command does not currently record the commands or the errors and warning messages. It is therefore a valuable tool for those \R{} users that are confident about the validity of their scripts. Similarly, the \Rcmd{history} command shows a list of all issued commands, even those that contain errors. N.B. The \Rpkg{BrailleR} package has its own \Rcmd{history} command that opens the contents of the command history in a text editor so that it can be read using screen-reading software.
  
-Saving the commands typed into an \R{} session can be achieved using the \Rcmd{savehistory} command. For example 
+Saving the commands typed into an \R{} session can be achieved using the \Rcmd{savehistory} command, but again, this will include the commands that generated errors. For example 

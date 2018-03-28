@@ -1,5 +1,4 @@
 % filename VI018.Rnw 
-
 <<VIDotplot>>= 
-VI(dotplot(x)) 
-@ 
+VI(dotplot(airquality$Wind, xlab="Average wind speed (mph)")) 
+@

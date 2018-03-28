@@ -6,15 +6,14 @@
 > 
 <head><title>19 LURN... To Use R as a Scientific Calculator</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
-<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
-<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
 <!-- xhtml,2,next,mathjax,html --> 
 <meta name="src" content="LURNBlind.tex" /> 
-<meta name="date" content="2018-03-28 12:01:00" /> 
 <link rel="stylesheet" type="text/css" href="LURNBlind.css" /> 
 </head><body 
 >
-   <!--l. 8--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 6--><div class="crosslinks"><p class="noindent">[<a 
 href="../LURN/LURNch19.html">Version for sighted users</a>] [<a 
 
 href="LURNBlindch20.html" >next</a>] [<a 
@@ -24,63 +23,57 @@ href="#tailLURNBlindch19.html">tail</a>] [<a
 href="LURNBlind.html#LURNBlindch19.html" >up</a>] </p></div>
    <h2 class="chapterHead"><span class="titlemark">Chapter&#x00A0;19</span><br /><a 
  id="x21-14900019"></a>LURN&#x2026; To Use R as a Scientific Calculator</h2>
-<!--l. 17--><p class="noindent" >This chapter explains how to use <span 
+<!--l. 15--><p class="noindent" >This chapter explains how to use <span 
 class="aess-12">R </span>as a scientific calculator, including its use of
 trigonometric functions. We&#8217;ll also plot some of the functions for illustrative
 purposes.
 </p>
    <h3 class="sectionHead"><span class="titlemark">19.1   </span> <a 
  id="x21-15000019.1"></a>Trigonometric functions</h3>
-<!--l. 21--><p class="noindent" ><span 
+<!--l. 19--><p class="noindent" ><span 
 class="aess-12">R </span>has a series of commands that all perform quite similarly. The only real issue is
 to find out what actual commands get what we want. First of all, we need to know
 how <span 
 class="aess-12">R </span>will work with degrees or radians.
-</p><!--l. 25--><p class="indent" >
+</p><!--l. 23--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb451">  <a 
+   <div class="fancyvrb" id="fancyvrb453">  <a 
  id="x21-150002r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;pi</span></div>
-<!--l. 28--><p class="noindent" >
-</p>
-   <div class="fancyvrb" id="fancyvrb452"> <a 
- id="x21-150004r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1]</span><span 
-class="aett-12">&#x00A0;3.142</span></div>
-<!--l. 31--><p class="noindent" >
-</p>
-   <div class="fancyvrb" id="fancyvrb453"> <a 
- id="x21-150006r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
-class="aett-12">&#x00A0;sin(pi/6)</span></div>
-<!--l. 34--><p class="noindent" >
+<!--l. 26--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb454"> <a 
- id="x21-150008r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1]</span><span 
-class="aett-12">&#x00A0;0.5</span></div>
-<!--l. 37--><p class="noindent" >
+ id="x21-150004r1"></a><span 
+class="aett-12">[1]</span><span 
+class="aett-12">&#x00A0;3.142</span></div>
+<!--l. 29--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb455"> <a 
- id="x21-150010r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
-class="aett-12">&#x00A0;sin(30)</span></div>
-<!--l. 40--><p class="noindent" >
+ id="x21-150006r1"></a><span 
+class="aett-12">&#x003E;</span><span 
+class="aett-12">&#x00A0;sin(pi/6)</span></div>
+<!--l. 32--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb456"> <a 
+ id="x21-150008r1"></a><span 
+class="aett-12">[1]</span><span 
+class="aett-12">&#x00A0;0.5</span></div>
+<!--l. 35--><p class="noindent" >
+</p>
+   <div class="fancyvrb" id="fancyvrb457"> <a 
+ id="x21-150010r1"></a><span 
+class="aett-12">&#x003E;</span><span 
+class="aett-12">&#x00A0;sin(30)</span></div>
+<!--l. 38--><p class="noindent" >
+</p>
+   <div class="fancyvrb" id="fancyvrb458"> <a 
  id="x21-150012r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">[1]</span><span 
 class="aett-12">&#x00A0;-0.988</span></div>
-<!--l. 46--><p class="indent" >   So our experiment shows us that <span 
+<!--l. 44--><p class="indent" >   So our experiment shows us that <span 
 class="aess-12">R </span>is working in radians.
-</p><!--l. 48--><p class="indent" >   The functions <a 
+</p><!--l. 46--><p class="indent" >   The functions <a 
  id="dx21-150013"></a><span 
 class="aett-12">sin()</span>, <a 
  id="dx21-150014"></a><span 
@@ -103,14 +96,14 @@ before the command named here.
                                                                           
 
                                                                           
-</p><!--l. 50--><p class="noindent" >
+</p><!--l. 48--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">19.2   </span> <a 
  id="x21-15100019.2"></a>Graphs of trigonometric functions</h3>
                                                                           
 
                                                                           
-   <!--l. 11--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 9--><div class="crosslinks"><p class="noindent">[<a 
 href="../LURN/LURNch19.html">Version for sighted users</a>] [<a 
 
 href="LURNBlindch20.html" >next</a>] [<a 
@@ -118,6 +111,6 @@ href="LURNBlindch18.html" >prev</a>] [<a
 href="LURNBlindch18.html#tailLURNBlindch18.html" >prev-tail</a>] [<a 
 href="LURNBlindch19.html" >front</a>] [<a 
 href="LURNBlind.html#LURNBlindch19.html" >up</a>] </p></div>
-<!--l. 11--><p class="indent" >   <a 
+<!--l. 9--><p class="indent" >   <a 
  id="tailLURNBlindch19.html"></a>  </p> 
 </body></html> 

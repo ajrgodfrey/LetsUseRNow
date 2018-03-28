@@ -6,15 +6,14 @@
 > 
 <head><title>22 LURN... To Solve Operations Research Problems</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
-<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
-<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
 <!-- xhtml,2,next,mathjax,html --> 
 <meta name="src" content="LURNBlind.tex" /> 
-<meta name="date" content="2018-03-28 12:01:00" /> 
 <link rel="stylesheet" type="text/css" href="LURNBlind.css" /> 
 </head><body 
 >
-   <!--l. 8--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 6--><div class="crosslinks"><p class="noindent">[<a 
 href="../LURN/LURNch22.html">Version for sighted users</a>] [<a 
 
 href="LURNBlindli2.html" >next</a>] [<a 
@@ -24,14 +23,14 @@ href="#tailLURNBlindch22.html">tail</a>] [<a
 href="LURNBlind.html#LURNBlindch22.html" >up</a>] </p></div>
    <h2 class="chapterHead"><span class="titlemark">Chapter&#x00A0;22</span><br /><a 
  id="x24-16400022"></a>LURN&#x2026; To Solve Operations Research Problems</h2>
-<!--l. 16--><p class="noindent" >This chapter explains how to find solutions to several problems in Operations
+<!--l. 14--><p class="noindent" >This chapter explains how to find solutions to several problems in Operations
 Research. More specifically, they are problems in Linear Programming
 (LP) and Integer Programming (IP) where the solution is found as the
 optimal value of an objective function subject to the existence of various
 constraints, all of which are expressed as linear functions. The difference
 between LP and IP is the possible values for the decision variables under
 consideration.
-</p><!--l. 18--><p class="indent" >   To benefit the most from this chapter, you ought to be familiar with basic
+</p><!--l. 16--><p class="indent" >   To benefit the most from this chapter, you ought to be familiar with basic
 manipulation of vectors and matrices, as seen in Chapter&#x00A0;<a 
 href="LURNBlindch21.html#x23-15600021">21<!--tex4ht:ref: Algebra --></a> and be ready to
 install an additional package using the methods outlined in Chapter&#x00A0;<a 
@@ -44,7 +43,7 @@ calling the <a
 class="aett-12">require() </span>command as seen in the examples in this chapter.
 Note that this need only be done once, but the command is repeated as a
 reminder.
-</p><!--l. 20--><p class="indent" >   Note that all examples are intentionally made reproducible through use of
+</p><!--l. 18--><p class="indent" >   Note that all examples are intentionally made reproducible through use of
 random number generation. You will need to make sure you reset the random
 number generator&#8217;s seed value using the <a 
  id="dx24-164003"></a><span 
@@ -53,30 +52,30 @@ the examples.
 </p>
    <h3 class="sectionHead"><span class="titlemark">22.1   </span> <a 
  id="x24-16500022.1"></a>The Assignment Problem</h3>
-<!--l. 25--><p class="noindent" >The assignment problem assigns <span 
+<!--l. 23--><p class="noindent" >The assignment problem assigns <span 
 class="cmmi-12">n </span>tasks to <span 
 class="cmmi-12">n </span>people. The objective function is
 often described in tabular or matrix form as a set of costs to be minimised. The
 constraints are that all tasks must be assigned and no person can complete more
 than one task. &#8220;Dummy" tasks or people are added to the matrix if the number of
 tasks is not equal to the number of people.
-</p><!--l. 27--><p class="indent" >   The mathematical programming representation for the assignment problem
+</p><!--l. 25--><p class="indent" >   The mathematical programming representation for the assignment problem
 has the objective function:
 </p>
    <table 
 class="equation"><tr><td>
    <center class="math-display" >
 <img 
-src="LURNBlind60x.png" alt="    &#x2211;n  &#x2211;n
+src="LURNBlind61x.png" alt="    &#x2211;n  &#x2211;n
 min         cijxij    i,j = 1,...,n
      i=1 j=1
 " class="math-display"  /><a 
  id="x24-165001r1"></a></center></td><td class="equation-label">(22.1)</td></tr></table>
-<!--l. 29--><p class="nopar" >
+<!--l. 27--><p class="nopar" >
 subject to the constraints: </p><div class="eqnarray">
    <center class="math-display" >
 <img 
-src="LURNBlind61x.png" alt="&#x2211;n
+src="LURNBlind62x.png" alt="&#x2211;n
     xij  = 1,  &#x2200;i = 1,...,n
 j=1
  n
@@ -86,28 +85,25 @@ j=1
     xij    &#x2208; {0, 1}  &#x2200;i,j
 " class="math-display"  /></center>
 </div>
-<!--l. 39--><p class="indent" >
+<!--l. 37--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb521"> <a 
+   <div class="fancyvrb" id="fancyvrb523"> <a 
  id="x24-165004r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;require(lpSolve)</span></div>
-<!--l. 42--><p class="noindent" >
+<!--l. 40--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb522"> <a 
+   <div class="fancyvrb" id="fancyvrb524"> <a 
  id="x24-165006r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;Loading</span><span 
+class="aett-12">Loading</span><span 
 class="aett-12">&#x00A0;required</span><span 
 class="aett-12">&#x00A0;package:</span><span 
 class="aett-12">&#x00A0;lpSolve</span></div>
-<!--l. 45--><p class="noindent" >
+<!--l. 43--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb523"> <a 
+   <div class="fancyvrb" id="fancyvrb525"> <a 
  id="x24-165008r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;Error:</span><span 
+class="aett-12">Error:</span><span 
 class="aett-12">&#x00A0;package</span><span 
 class="aett-12">&#x00A0;or</span><span 
 class="aett-12">&#x00A0;namespace</span><span 
@@ -117,8 +113,6 @@ class="aett-12">&#x00A0;for</span><span
 class="aett-12">&#x00A0;&#8217;lpSolve&#8217;:</span>
 <br class="fancyvrb" /><a 
  id="x24-165010r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;package</span><span 
 class="aett-12">&#x00A0;&#8217;lpSolve&#8217;</span><span 
 class="aett-12">&#x00A0;was</span><span 
@@ -141,34 +135,29 @@ class="aett-12">&#x00A0;with</span><span
 class="aett-12">&#x00A0;this</span><span 
 class="aett-12">&#x00A0;R</span><span 
 class="aett-12">&#x00A0;version</span></div>
-<!--l. 49--><p class="noindent" >
+<!--l. 47--><p class="noindent" >
                                                                           
 
                                                                           
 </p>
-   <div class="fancyvrb" id="fancyvrb524"> <a 
+   <div class="fancyvrb" id="fancyvrb526"> <a 
  id="x24-165012r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;set.seed(3010)</span><br class="fancyvrb" /><a 
  id="x24-165014r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;APCost.mat</span><span 
 class="aett-12">&#x00A0;=</span><span 
 class="aett-12">&#x00A0;matrix(sample(10:100,</span><span 
 class="aett-12">&#x00A0;16),</span><span 
 class="aett-12">&#x00A0;nrow=4)</span><br class="fancyvrb" /><a 
  id="x24-165016r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;APCost.mat</span></div>
-<!--l. 54--><p class="noindent" >
+<!--l. 52--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb525"> <a 
+   <div class="fancyvrb" id="fancyvrb527"> <a 
  id="x24-165018r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -178,8 +167,7 @@ class="aett-12">&#x00A0;[,2]</span><span
 class="aett-12">&#x00A0;[,3]</span><span 
 class="aett-12">&#x00A0;[,4]</span><br class="fancyvrb" /><a 
  id="x24-165020r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1,]</span><span 
+class="aett-12">[1,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;24</span><span 
@@ -194,8 +182,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;31</span>
 <br class="fancyvrb" /><a 
  id="x24-165022r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[2,]</span><span 
+class="aett-12">[2,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;21</span><span 
@@ -209,8 +196,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;55</span><br class="fancyvrb" /><a 
  id="x24-165024r4"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[3,]</span><span 
+class="aett-12">[3,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;87</span><span 
@@ -224,8 +210,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;12</span><br class="fancyvrb" /><a 
  id="x24-165026r5"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[4,]</span><span 
+class="aett-12">[4,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;60</span><span 
@@ -238,21 +223,19 @@ class="aett-12">&#x00A0;10</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;97</span></div>
-<!--l. 61--><p class="noindent" >
+<!--l. 59--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb526"> <a 
+   <div class="fancyvrb" id="fancyvrb528"> <a 
  id="x24-165028r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;Sol</span><span 
 class="aett-12">&#x00A0;=</span><span 
 class="aett-12">&#x00A0;lp.assign(APCost.mat)</span></div>
-<!--l. 64--><p class="noindent" >
+<!--l. 62--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb527"> <a 
+   <div class="fancyvrb" id="fancyvrb529"> <a 
  id="x24-165030r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;Error</span><span 
+class="aett-12">Error</span><span 
 class="aett-12">&#x00A0;in</span><span 
 class="aett-12">&#x00A0;lp.assign(APCost.mat):</span><span 
 class="aett-12">&#x00A0;could</span><span 
@@ -260,40 +243,17 @@ class="aett-12">&#x00A0;not</span><span
 class="aett-12">&#x00A0;find</span><span 
 class="aett-12">&#x00A0;function</span><span 
 class="aett-12">&#x00A0;"lp.assign"</span></div>
-<!--l. 67--><p class="noindent" >
-</p>
-   <div class="fancyvrb" id="fancyvrb528"> <a 
- id="x24-165032r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
-class="aett-12">&#x00A0;names(Sol)</span></div>
-<!--l. 70--><p class="noindent" >
-</p>
-   <div class="fancyvrb" id="fancyvrb529"> <a 
- id="x24-165034r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;Error</span><span 
-class="aett-12">&#x00A0;in</span><span 
-class="aett-12">&#x00A0;eval(expr,</span><span 
-class="aett-12">&#x00A0;envir,</span><span 
-class="aett-12">&#x00A0;enclos):</span><span 
-class="aett-12">&#x00A0;object</span><span 
-class="aett-12">&#x00A0;&#8217;Sol&#8217;</span><span 
-class="aett-12">&#x00A0;not</span><span 
-class="aett-12">&#x00A0;found</span></div>
-<!--l. 73--><p class="noindent" >
+<!--l. 65--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb530"> <a 
- id="x24-165036r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
-class="aett-12">&#x00A0;Sol$solution</span></div>
-<!--l. 76--><p class="noindent" >
+ id="x24-165032r1"></a><span 
+class="aett-12">&#x003E;</span><span 
+class="aett-12">&#x00A0;names(Sol)</span></div>
+<!--l. 68--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb531"> <a 
- id="x24-165038r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;Error</span><span 
+ id="x24-165034r1"></a><span 
+class="aett-12">Error</span><span 
 class="aett-12">&#x00A0;in</span><span 
 class="aett-12">&#x00A0;eval(expr,</span><span 
 class="aett-12">&#x00A0;envir,</span><span 
@@ -302,19 +262,36 @@ class="aett-12">&#x00A0;object</span><span
 class="aett-12">&#x00A0;&#8217;Sol&#8217;</span><span 
 class="aett-12">&#x00A0;not</span><span 
 class="aett-12">&#x00A0;found</span></div>
-<!--l. 79--><p class="noindent" >
+<!--l. 71--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb532"> <a 
- id="x24-165040r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
-class="aett-12">&#x00A0;Sol$objval</span></div>
-<!--l. 82--><p class="noindent" >
+ id="x24-165036r1"></a><span 
+class="aett-12">&#x003E;</span><span 
+class="aett-12">&#x00A0;Sol$solution</span></div>
+<!--l. 74--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb533"> <a 
+ id="x24-165038r1"></a><span 
+class="aett-12">Error</span><span 
+class="aett-12">&#x00A0;in</span><span 
+class="aett-12">&#x00A0;eval(expr,</span><span 
+class="aett-12">&#x00A0;envir,</span><span 
+class="aett-12">&#x00A0;enclos):</span><span 
+class="aett-12">&#x00A0;object</span><span 
+class="aett-12">&#x00A0;&#8217;Sol&#8217;</span><span 
+class="aett-12">&#x00A0;not</span><span 
+class="aett-12">&#x00A0;found</span></div>
+<!--l. 77--><p class="noindent" >
+</p>
+   <div class="fancyvrb" id="fancyvrb534"> <a 
+ id="x24-165040r1"></a><span 
+class="aett-12">&#x003E;</span><span 
+class="aett-12">&#x00A0;Sol$objval</span></div>
+<!--l. 80--><p class="noindent" >
+</p>
+   <div class="fancyvrb" id="fancyvrb535"> <a 
  id="x24-165042r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;Error</span><span 
+class="aett-12">Error</span><span 
 class="aett-12">&#x00A0;in</span><span 
 class="aett-12">&#x00A0;eval(expr,</span><span 
 class="aett-12">&#x00A0;envir,</span><span 
@@ -326,19 +303,17 @@ class="aett-12">&#x00A0;found</span></div>
                                                                           
 
                                                                           
-<!--l. 85--><p class="noindent" >
+<!--l. 83--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb534"> <a 
+   <div class="fancyvrb" id="fancyvrb536"> <a 
  id="x24-165044r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;Sol</span></div>
-<!--l. 88--><p class="noindent" >
+<!--l. 86--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb535"> <a 
+   <div class="fancyvrb" id="fancyvrb537"> <a 
  id="x24-165046r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;Error</span><span 
+class="aett-12">Error</span><span 
 class="aett-12">&#x00A0;in</span><span 
 class="aett-12">&#x00A0;eval(expr,</span><span 
 class="aett-12">&#x00A0;envir,</span><span 
@@ -347,30 +322,30 @@ class="aett-12">&#x00A0;object</span><span
 class="aett-12">&#x00A0;&#8217;Sol&#8217;</span><span 
 class="aett-12">&#x00A0;not</span><span 
 class="aett-12">&#x00A0;found</span></div>
-<!--l. 94--><p class="indent" >   Note that the print out of the solution didn&#8217;t actually tell us which task was to
+<!--l. 92--><p class="indent" >   Note that the print out of the solution didn&#8217;t actually tell us which task was to
 be completed by which person so we needed to look for the matrix of the final
 values for the decision variables. There are plenty of additional items stored as
 part of the solution, many of which you may never need. It is assumed that if
 your needs run to the advanced ideas using these items that you will
 now know where to find the necessary information to solve your own
 problems.
-</p><!--l. 96--><p class="noindent" >
+</p><!--l. 94--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">22.2   </span> <a 
  id="x24-16600022.2"></a>The transportation problem</h3>
-<!--l. 98--><p class="noindent" >The transportation problem aims to satisfy the demands of a set of customers by
+<!--l. 96--><p class="noindent" >The transportation problem aims to satisfy the demands of a set of customers by
 optimising the selection of the supplier who will meet each customer&#8217;s demands.
 The mathematical program for this problem has a cost matrix and upper bounds
 on supply and lower bounds on demands. The optimisation is a minimisation
 exercise so the demand is kept as low as is required so the lower bounds are (in
 essence) equality constraints as a consequence.
-</p><!--l. 100--><p class="indent" >   The objective function is:
+</p><!--l. 98--><p class="indent" >   The objective function is:
 </p>
    <table 
 class="equation"><tr><td>
    <center class="math-display" >
 <img 
-src="LURNBlind62x.png" alt="     m   n
+src="LURNBlind63x.png" alt="     m   n
     &#x2211;   &#x2211;
 min        cijxij
     i=1 j=1
@@ -379,42 +354,39 @@ min        cijxij
                                                                           
 
                                                                           
-<!--l. 103--><p class="nopar" >
+<!--l. 101--><p class="nopar" >
 and the constraints are: </p><div class="eqnarray">
    <center class="math-display" >
 <img 
-src="LURNBlind63x.png" alt=" n
-&#x2211;   x  &#x2264; s     &#x2200;i = 1,...,m
-     ij   i
+src="LURNBlind64x.png" alt="&#x2211;n
+    xij &#x2264; si   &#x2200;i = 1,...,m
 j=1
 &#x2211;m
    xij &#x2265; dj    &#x2200;j =  1,...,n
 i=1
-    xij &#x2265; 0         &#x2200;i,j
+    x   &#x2265; 0         &#x2200;i,j
+      ij
 " class="math-display"  /></center>
 </div>
-<!--l. 112--><p class="indent" >
+<!--l. 110--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb536"> <a 
+   <div class="fancyvrb" id="fancyvrb538"> <a 
  id="x24-166004r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;require(lpSolve)</span></div>
-<!--l. 115--><p class="noindent" >
+<!--l. 113--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb537"> <a 
+   <div class="fancyvrb" id="fancyvrb539"> <a 
  id="x24-166006r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;Loading</span><span 
+class="aett-12">Loading</span><span 
 class="aett-12">&#x00A0;required</span><span 
 class="aett-12">&#x00A0;package:</span><span 
 class="aett-12">&#x00A0;lpSolve</span></div>
-<!--l. 118--><p class="noindent" >
+<!--l. 116--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb538"> <a 
+   <div class="fancyvrb" id="fancyvrb540"> <a 
  id="x24-166008r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;Error:</span><span 
+class="aett-12">Error:</span><span 
 class="aett-12">&#x00A0;package</span><span 
 class="aett-12">&#x00A0;or</span><span 
 class="aett-12">&#x00A0;namespace</span><span 
@@ -424,8 +396,6 @@ class="aett-12">&#x00A0;for</span><span
 class="aett-12">&#x00A0;&#8217;lpSolve&#8217;:</span>
 <br class="fancyvrb" /><a 
  id="x24-166010r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;package</span><span 
 class="aett-12">&#x00A0;&#8217;lpSolve&#8217;</span><span 
 class="aett-12">&#x00A0;was</span><span 
@@ -448,37 +418,31 @@ class="aett-12">&#x00A0;with</span><span
 class="aett-12">&#x00A0;this</span><span 
 class="aett-12">&#x00A0;R</span><span 
 class="aett-12">&#x00A0;version</span></div>
-<!--l. 122--><p class="noindent" >
+<!--l. 120--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb539"> <a 
+   <div class="fancyvrb" id="fancyvrb541"> <a 
  id="x24-166012r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;set.seed(3010)</span><br class="fancyvrb" /><a 
  id="x24-166014r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;TPCost.mat</span><span 
 class="aett-12">&#x00A0;=</span><span 
 class="aett-12">&#x00A0;matrix(sample(10:100,</span><span 
 class="aett-12">&#x00A0;30),</span><span 
 class="aett-12">&#x00A0;nrow</span><span 
 class="aett-12">&#x00A0;=</span><span 
-class="aett-12">&#x00A0;5)</span>
-<br class="fancyvrb" /><a 
+class="aett-12">&#x00A0;5)</span><br class="fancyvrb" /><a 
  id="x24-166016r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;TPCost.mat</span></div>
-<!--l. 127--><p class="noindent" >
+<!--l. 125--><p class="noindent" >
                                                                           
 
                                                                           
 </p>
-   <div class="fancyvrb" id="fancyvrb540"> <a 
+   <div class="fancyvrb" id="fancyvrb542"> <a 
  id="x24-166018r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -490,8 +454,7 @@ class="aett-12">&#x00A0;[,4]</span><span
 class="aett-12">&#x00A0;[,5]</span><span 
 class="aett-12">&#x00A0;[,6]</span><br class="fancyvrb" /><a 
  id="x24-166020r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1,]</span><span 
+class="aett-12">[1,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;24</span><span 
@@ -512,8 +475,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;19</span>
 <br class="fancyvrb" /><a 
  id="x24-166022r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[2,]</span><span 
+class="aett-12">[2,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;21</span><span 
@@ -533,8 +495,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;91</span><br class="fancyvrb" /><a 
  id="x24-166024r4"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[3,]</span><span 
+class="aett-12">[3,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;87</span><span 
@@ -555,8 +516,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;64</span>
 <br class="fancyvrb" /><a 
  id="x24-166026r5"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[4,]</span><span 
+class="aett-12">[4,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;60</span><span 
@@ -576,8 +536,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;27</span><br class="fancyvrb" /><a 
  id="x24-166028r6"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[5,]</span><span 
+class="aett-12">[5,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;45</span><span 
@@ -596,34 +555,30 @@ class="aett-12">&#x00A0;61</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;81</span></div>
-<!--l. 135--><p class="noindent" >
+<!--l. 133--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb541"> <a 
+   <div class="fancyvrb" id="fancyvrb543"> <a 
  id="x24-166030r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;DemandSigns</span><span 
 class="aett-12">&#x00A0;=</span><span 
 class="aett-12">&#x00A0;rep</span><span 
 class="aett-12">&#x00A0;("&#x003E;",</span><span 
 class="aett-12">&#x00A0;6)</span><br class="fancyvrb" /><a 
  id="x24-166032r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;DemandLimits</span><span 
 class="aett-12">&#x00A0;=</span><span 
 class="aett-12">&#x00A0;sample(50:300,</span><span 
 class="aett-12">&#x00A0;6)</span><br class="fancyvrb" /><a 
  id="x24-166034r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;DemandLimits</span></div>
-<!--l. 140--><p class="noindent" >
+<!--l. 138--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb542"> <a 
+   <div class="fancyvrb" id="fancyvrb544"> <a 
  id="x24-166036r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">[1]</span><span 
 class="aett-12">&#x00A0;201</span><span 
 class="aett-12">&#x00A0;185</span><span 
 class="aett-12">&#x00A0;145</span><span 
@@ -632,45 +587,40 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;80</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;59</span></div>
-<!--l. 143--><p class="noindent" >
+<!--l. 141--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb543"> <a 
+   <div class="fancyvrb" id="fancyvrb545"> <a 
  id="x24-166038r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;SupplySigns</span><span 
 class="aett-12">&#x00A0;=</span><span 
 class="aett-12">&#x00A0;rep</span><span 
 class="aett-12">&#x00A0;("&#x003C;",</span><span 
 class="aett-12">&#x00A0;5)</span><br class="fancyvrb" /><a 
  id="x24-166040r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;SupplyLimits</span><span 
 class="aett-12">&#x00A0;=</span><span 
 class="aett-12">&#x00A0;sample(100:500,</span><span 
 class="aett-12">&#x00A0;5)</span><br class="fancyvrb" /><a 
  id="x24-166042r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;SupplyLimits</span></div>
-<!--l. 148--><p class="noindent" >
+<!--l. 146--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb544"> <a 
+   <div class="fancyvrb" id="fancyvrb546"> <a 
  id="x24-166044r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">[1]</span><span 
 class="aett-12">&#x00A0;457</span><span 
 class="aett-12">&#x00A0;376</span><span 
 class="aett-12">&#x00A0;351</span><span 
 class="aett-12">&#x00A0;132</span><span 
 class="aett-12">&#x00A0;388</span></div>
-<!--l. 151--><p class="noindent" >
+<!--l. 149--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb545"> <a 
+   <div class="fancyvrb" id="fancyvrb547"> <a 
  id="x24-166046r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;Sol</span><span 
 class="aett-12">&#x00A0;=</span><span 
 class="aett-12">&#x00A0;lp.transport</span><span 
@@ -681,12 +631,11 @@ class="aett-12">&#x00A0;SupplyLimits,</span><span
 class="aett-12">&#x00A0;DemandSigns,</span><span 
 class="aett-12">&#x00A0;DemandLimits,</span><span 
 class="aett-12">&#x00A0;compute.sens=0)</span></div>
-<!--l. 154--><p class="noindent" >
+<!--l. 152--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb546"> <a 
+   <div class="fancyvrb" id="fancyvrb548"> <a 
  id="x24-166048r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;Error</span><span 
+class="aett-12">Error</span><span 
 class="aett-12">&#x00A0;in</span><span 
 class="aett-12">&#x00A0;lp.transport(TPCost.mat,</span><span 
 class="aett-12">&#x00A0;"min",</span><span 
@@ -699,19 +648,17 @@ class="aett-12">&#x00A0;not</span><span
 class="aett-12">&#x00A0;find</span><span 
 class="aett-12">&#x00A0;function</span><span 
 class="aett-12">&#x00A0;"lp.transport"</span></div>
-<!--l. 157--><p class="noindent" >
+<!--l. 155--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb547"> <a 
+   <div class="fancyvrb" id="fancyvrb549"> <a 
  id="x24-166050r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;Sol$solution</span></div>
-<!--l. 160--><p class="noindent" >
+<!--l. 158--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb548"> <a 
+   <div class="fancyvrb" id="fancyvrb550"> <a 
  id="x24-166052r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;Error</span><span 
+class="aett-12">Error</span><span 
 class="aett-12">&#x00A0;in</span><span 
 class="aett-12">&#x00A0;eval(expr,</span><span 
 class="aett-12">&#x00A0;envir,</span><span 

@@ -8,7 +8,12 @@ attach(airquality)
 hist(Wind) 
 
 ## ----HistAirQualityWindSVG, echo=FALSE, include=FALSE, messages=FALSE, warnings=FALSE, results="hide", fig.show="hide"----
-MakeAccessibleSVG(hist(Wind), "figures/SimpleGraphsHistAirQualityWind")
+MyHist = hist(Wind) 
+MakeAccessibleSVG(MyHist, "figures/SimpleGraphsHistAirQualityWind")
+
+## ----echo=FALSE----------------------------------------------------------
+if(file.exists("AddBlind.txt")){
+    VI(MyHist)}
 
 ## ----HistAirQualityWind2, fig.show="hide"--------------------------------
 hist(Wind, xlab="Average wind speed (mph)", main="") 

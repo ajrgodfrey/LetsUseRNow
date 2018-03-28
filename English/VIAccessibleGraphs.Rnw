@@ -6,7 +6,3 @@ New functions have been added to the BrailleR package in order to make accessibl
 \Rpkg{BrailleR} functions replicate.
 
 N.B. You must store the graph in a named object for later use.
-
-
-
-

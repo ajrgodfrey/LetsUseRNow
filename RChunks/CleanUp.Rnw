@@ -1,6 +1,4 @@
 % filename CleanUp.Rnw 
-
-
 <<cleanup, include=FALSE, purl=FALSE>>=
 rm(list = ls())
 @

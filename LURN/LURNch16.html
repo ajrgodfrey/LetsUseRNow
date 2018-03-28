@@ -3,15 +3,14 @@
 <html > 
 <head><title>16 Extending R beyond the base installation</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
-<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
-<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
 <!-- html,2,next --> 
 <meta name="src" content="LURN.tex"> 
-<meta name="date" content="2018-03-28 12:00:00"> 
 <link rel="stylesheet" type="text/css" href="LURN.css"> 
 </head><body 
 >
-   <!--l. 8--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 6--><div class="crosslinks"><p class="noindent">[<a 
 href="../LURNblind/LURNBlindch16.html">Version for blind users</a>] [<a 
 
 href="LURNch17.html" >next</a>] [<a 
@@ -22,20 +21,20 @@ href="LURN.html#LURNch16.html" >up</a>] </p></div>
    <h2 class="chapterHead"><span class="titlemark">Chapter&#x00A0;16</span><br /><a 
  id="x18-13100016"></a>Extending <span 
 class="aess-12">R </span>beyond the base installation</h2>
-<!--l. 17--><p class="noindent" >This chapter explains how you do some tasks that are not part of the basic
+<!--l. 15--><p class="noindent" >This chapter explains how you do some tasks that are not part of the basic
 installation of <span 
 class="aess-12">R</span>. This includes instructions on how to add extra functionality via
 add-on packages and pointers to some user interfaces.
    <h3 class="sectionHead"><span class="titlemark">16.1   </span> <a 
  id="x18-13200016.1"></a>Installing additional packages</h3>
-<!--l. 22--><p class="noindent" >Many <span 
+<!--l. 20--><p class="noindent" >Many <span 
 class="aess-12">R </span>users find that the vast range of functions that are built into the basic <span 
 class="aess-12">R</span>
 installation are not enough to meet their specific needs. <span 
 class="aess-12">R </span>is relatively easy to
 adapt to meet their needs because additional functions are easily created to
 perform specific tasks.
-<!--l. 24--><p class="indent" >   In order to let others use their creations, <span 
+<!--l. 22--><p class="indent" >   In order to let others use their creations, <span 
 class="aess-12">R </span>users often make their
 functions available in add-on packages that can be downloaded by any <span 
 class="aess-12">R </span>user.
@@ -47,13 +46,13 @@ must meet standards of presentation, quality of documentation, and be
 available for all operating systems. Add-on packages that do not meet
 these criteria do exist, especially those that are specific to one operating
 system.
-<!--l. 26--><p class="indent" >   Installing an add-on package requires two actions. First, you must ask <span 
+<!--l. 24--><p class="indent" >   Installing an add-on package requires two actions. First, you must ask <span 
 class="aess-12">R </span>to
 install a package of a certain name, either using the <a 
  id="dx18-132001"></a><span 
 class="aett-12">install.packages()</span>
 command or the Packages pull-down menu item.
-<!--l. 28--><p class="indent" >   The second task is necessary only once in each <span 
+<!--l. 26--><p class="indent" >   The second task is necessary only once in each <span 
 class="aess-12">R </span>session. When you
 go to install a package from CRAN, <span 
 class="aess-12">R </span>will ask you to select a <a 
@@ -63,17 +62,16 @@ class="aeti-12">CRAN</span>
 class="aeti-12">mirror</span>. This just wants you to choose which one of the servers scattered
 around the world is the one you should point your internet connection
 towards.
-<!--l. 30--><p class="indent" >   These tasks are most commonly achieved by selecting the menu items and
+<!--l. 28--><p class="indent" >   These tasks are most commonly achieved by selecting the menu items and
 associated dialogue boxes. If you do not want to use the dialogue box approach
 for selecting a CRAN mirror, there is a text based alternative. If you
 type
-<!--l. 34--><p class="indent" >
-   <div class="fancyvrb" id="fancyvrb376">  <a 
+<!--l. 32--><p class="indent" >
+   <div class="fancyvrb" id="fancyvrb377">  <a 
  id="x18-132004r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;chooseCRANmirror(FALSE)</span></div>
-<!--l. 40--><p class="indent" >   you will be given a list of the available CRAN mirrors and a different prompt.
+<!--l. 38--><p class="indent" >   you will be given a list of the available CRAN mirrors and a different prompt.
 Type in the number linked to the CRAN mirror you prefer and press
 the Enter key. If you want to choose the first item on the list (which is
                                                                           
@@ -81,71 +79,68 @@ the Enter key. If you want to choose the first item on the list (which is
                                                                           
 a cloud-based server anyway) then you could avoid reviewing the list
 using:
-<!--l. 44--><p class="indent" >
-   <div class="fancyvrb" id="fancyvrb377">  <a 
+<!--l. 42--><p class="indent" >
+   <div class="fancyvrb" id="fancyvrb378">  <a 
  id="x18-132006r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;chooseCRANmirror(ind=1)</span></div>
-<!--l. 51--><p class="indent" >   Installation of individual packages can be achieved using the <a 
+<!--l. 49--><p class="indent" >   Installation of individual packages can be achieved using the <a 
  id="dx18-132007"></a><span 
 class="aett-12">install.packages()</span>
 command. Investigate its help page to ensure you get the most out of its
 use.
-<!--l. 53--><p class="indent" >   One key argument for this command is <span 
+<!--l. 51--><p class="indent" >   One key argument for this command is <span 
 class="aett-12">dependencies</span>. There are many
 packages that rely on the work of other packages for their success. It&#8217;s probably a
 good idea to get into the habit of installing all dependent packages. For
 example:
-<!--l. 57--><p class="indent" >
-   <div class="fancyvrb" id="fancyvrb378">  <a 
+<!--l. 55--><p class="indent" >
+   <div class="fancyvrb" id="fancyvrb379">  <a 
  id="x18-132009r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;install.packages("Dodge",</span><span 
 class="aett-12">&#x00A0;dependencies=TRUE)</span></div>
-<!--l. 63--><p class="indent" >   which will install the <a 
+<!--l. 61--><p class="indent" >   which will install the <a 
  id="dx18-132010"></a><span 
 class="aeti-12">Dodge </span>package. If this package used another package that
 was not currently installed on your machine, that package would also have been
 downloaded and installed.
-<!--l. 65--><p class="noindent" >
+<!--l. 63--><p class="noindent" >
    <h3 class="sectionHead"><span class="titlemark">16.2   </span> <a 
  id="x18-13300016.2"></a>Updating add-on packages</h3>
-<!--l. 67--><p class="noindent" >If you want to be sure you have the latest version of the packages you have
+<!--l. 65--><p class="noindent" >If you want to be sure you have the latest version of the packages you have
 downloaded are being used, then every once in a while you should issue the
 command
-<!--l. 71--><p class="indent" >
-   <div class="fancyvrb" id="fancyvrb379">  <a 
+<!--l. 69--><p class="indent" >
+   <div class="fancyvrb" id="fancyvrb380">  <a 
  id="x18-133002r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;update.packages(ask=FALSE)</span></div>
-<!--l. 77--><p class="indent" >   Note that the <span 
+<!--l. 75--><p class="indent" >   Note that the <span 
 class="aett-12">ask </span>argument is set to <span 
 class="aett-12">FALSE </span>here. The default action is to ask
 the user if they want a particular package updated. I find this frustrating,
 especially if it&#8217;s been a while since I updated my packages.
-<!--l. 79--><p class="indent" >   You do not need to do this task very often. I would recommend doing it after
+<!--l. 77--><p class="indent" >   You do not need to do this task very often. I would recommend doing it after
 installing a new version of <span 
 class="aess-12">R</span>, or if you see a warning message about the version of
 a package you use.
-<!--l. 81--><p class="indent" >   Finally, note that if you have not established a connection with a CRAN
+<!--l. 79--><p class="indent" >   Finally, note that if you have not established a connection with a CRAN
 mirror in the current <span 
 class="aess-12">R </span>session, then you will be prompted to do so before
 anything is downloaded.
                                                                           
 
                                                                           
-<!--l. 83--><p class="noindent" >
+<!--l. 81--><p class="noindent" >
    <h3 class="sectionHead"><span class="titlemark">16.3   </span> <a 
  id="x18-13400016.3"></a>Using an enhanced graphical interface</h3>
-<!--l. 85--><p class="noindent" >The base installation of <span 
+<!--l. 83--><p class="noindent" >The base installation of <span 
 class="aess-12">R </span>doesn&#8217;t offer much statistical functionality in its menu
 system (assuming you use one!). Various projects are under development that
 enhance the way users can interact with <span 
 class="aess-12">R</span>.
-<!--l. 87--><p class="indent" >   Perhaps the most well-known is the <span 
+<!--l. 85--><p class="indent" >   Perhaps the most well-known is the <span 
 class="aess-12">R </span>Commander project. This interface
 has been given a lot of development over a number of years now and
 can support the needs of most introductory level statistical analyses. Its
@@ -153,7 +148,7 @@ implementation is via the <a
  id="dx18-134001"></a><span 
 class="aeti-12">Rcmdr </span>add-on package downloadable from
 CRAN.
-<!--l. 89--><p class="indent" >   I don&#8217;t use this package as it is more suited to novice to intermediate <span 
+<!--l. 87--><p class="indent" >   I don&#8217;t use this package as it is more suited to novice to intermediate <span 
 class="aess-12">R </span>users.
 It also creates a host of new functions that improve on similar functions included
 in base <span 
@@ -161,20 +156,20 @@ class="aess-12">R </span>that I don&#8217;t need. The idea of working with mouse
 counter-intuitive to reproducible research ideas that most medium to advanced <span 
 class="aess-12">R</span>
 users like.
-<!--l. 91--><p class="noindent" >
+<!--l. 89--><p class="noindent" >
    <h3 class="sectionHead"><span class="titlemark">16.4   </span> <a 
  id="x18-13500016.4"></a>Use of an integrated development environment (IDE)</h3>
-<!--l. 93--><p class="noindent" >The best integrated development environment (IDE) for <span 
+<!--l. 91--><p class="noindent" >The best integrated development environment (IDE) for <span 
 class="aess-12">R </span>users is <span 
 class="aess-12">R </span>Studio. Some
 people find this way of working to be a bewildering experience. Others
 love the convenience of having each project contained in a structured
 environment.
-<!--l. 95--><p class="indent" >   My advice for anyone wanting to use RStudio or any new IDE is to find
+<!--l. 93--><p class="indent" >   My advice for anyone wanting to use RStudio or any new IDE is to find
 someone to give you a hands-on demonstration. Perhaps watching videos from the
 internet are a useful alternative, but you need to know that this tool is what you
 need before investing time in its use.
-<!--l. 97--><p class="indent" >   Be warned: RStudio is a very powerful and useful tool for even the
+<!--l. 95--><p class="indent" >   Be warned: RStudio is a very powerful and useful tool for even the
 most advanced <span 
 class="aess-12">R </span>users. As such, it can be too much for the novice <span 
 class="aess-12">R</span>
@@ -182,7 +177,7 @@ user.
                                                                           
 
                                                                           
-   <!--l. 8--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 5--><div class="crosslinks"><p class="noindent">[<a 
 href="../LURNblind/LURNBlindch16.html">Version for blind users</a>] [<a 
 
 href="LURNch17.html" >next</a>] [<a 
@@ -190,6 +185,6 @@ href="LURNch15.html" >prev</a>] [<a
 href="LURNch15.html#tailLURNch15.html" >prev-tail</a>] [<a 
 href="LURNch16.html" >front</a>] [<a 
 href="LURN.html#LURNch16.html" >up</a>] </p></div>
-<!--l. 8--><p class="indent" >   <a 
+<!--l. 5--><p class="indent" >   <a 
  id="tailLURNch16.html"></a>   
 </body></html> 

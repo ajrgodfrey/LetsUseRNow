@@ -3,15 +3,14 @@
 <html > 
 <head><title>7 LURN... To Create Simple Graphs</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
-<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
-<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
 <!-- html,2,next --> 
 <meta name="src" content="LURN.tex"> 
-<meta name="date" content="2018-03-28 12:00:00"> 
 <link rel="stylesheet" type="text/css" href="LURN.css"> 
 </head><body 
 >
-   <!--l. 8--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 6--><div class="crosslinks"><p class="noindent">[<a 
 href="../LURNblind/LURNBlindch7.html">Version for blind users</a>] [<a 
 
 href="LURNch8.html" >next</a>] [<a 
@@ -21,14 +20,14 @@ href="#tailLURNch7.html">tail</a>] [<a
 href="LURN.html#LURNch7.html" >up</a>] </p></div>
    <h2 class="chapterHead"><span class="titlemark">Chapter&#x00A0;7</span><br /><a 
  id="x9-440007"></a>LURN&#x2026; To Create Simple Graphs</h2>
-<!--l. 19--><p class="noindent" >This chapter illustrates the construction of some basic exploratory data analysis
+<!--l. 16--><p class="noindent" >This chapter illustrates the construction of some basic exploratory data analysis
 graphs. More complex graphs are considered in Chapter&#x00A0;<a 
 href="LURNch15.html#x17-11900015">15<!--tex4ht:ref: ComplexGraphs --></a>, although at times we
 will see graphs presented in conjunction with particular statistical analysis
 techniques in other chapters. In this chapter, we concentrate on data taking
 continuous values initially, but a short section on graphs for discrete valued
 variables is also included.
-<!--l. 21--><p class="indent" >   There are many ways to create statistical graphs. The traditional method uses
+<!--l. 18--><p class="indent" >   There are many ways to create statistical graphs. The traditional method uses
 one of the base <span 
 class="aess-12">R </span>packages, but in recent years, the <a 
  id="dx9-44001"></a><span 
@@ -41,13 +40,10 @@ for use in your <span
 class="aess-12">R </span>session by issuing the command:
    <div class="fancyvrb" id="fancyvrb131">  <a 
  id="x9-44004r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;str(airquality)</span></div>
 <div class="fancyvrb" id="fancyvrb132"> <a 
  id="x9-44006r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="tctt-1200">'</span><span 
 class="aett-12">data.frame</span><span 
 class="tctt-1200">'</span><span 
@@ -59,8 +55,6 @@ class="aett-12">&#x00A0;6</span><span
 class="aett-12">&#x00A0;variables:</span>
 <br class="fancyvrb" /><a 
  id="x9-44008r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;$</span><span 
 class="aett-12">&#x00A0;Ozone</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -80,8 +74,6 @@ class="aett-12">&#x00A0;NA</span><span
 class="aett-12">&#x00A0;...</span>
 <br class="fancyvrb" /><a 
  id="x9-44010r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;$</span><span 
 class="aett-12">&#x00A0;Solar.R:</span><span 
 class="aett-12">&#x00A0;int</span><span 
@@ -99,8 +91,6 @@ class="aett-12">&#x00A0;194</span><span
 class="aett-12">&#x00A0;...</span>
 <br class="fancyvrb" /><a 
  id="x9-44012r4"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;$</span><span 
 class="aett-12">&#x00A0;Wind</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -121,8 +111,6 @@ class="aett-12">&#x00A0;8.6</span><span
 class="aett-12">&#x00A0;...</span>
 <br class="fancyvrb" /><a 
  id="x9-44014r5"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;$</span><span 
 class="aett-12">&#x00A0;Temp</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -143,8 +131,6 @@ class="aett-12">&#x00A0;69</span><span
 class="aett-12">&#x00A0;...</span>
 <br class="fancyvrb" /><a 
  id="x9-44016r6"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;$</span><span 
 class="aett-12">&#x00A0;Month</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -163,8 +149,6 @@ class="aett-12">&#x00A0;5</span><span
 class="aett-12">&#x00A0;5</span><span 
 class="aett-12">&#x00A0;...</span><br class="fancyvrb" /><a 
  id="x9-44018r7"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;$</span><span 
 class="aett-12">&#x00A0;Day</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -184,21 +168,20 @@ class="aett-12">&#x00A0;8</span><span
 class="aett-12">&#x00A0;9</span><span 
 class="aett-12">&#x00A0;10</span><span 
 class="aett-12">&#x00A0;...</span></div>
-<!--l. 40--><p class="indent" >   It is common for <span 
+<!--l. 36--><p class="indent" >   It is common for <span 
 class="aess-12">R </span>users to access the variables after issuing the command
    <div class="fancyvrb" id="fancyvrb133">  <a 
  id="x9-44020r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;attach(airquality)</span></div>
-<!--l. 50--><p class="indent" >   The <a 
+<!--l. 45--><p class="indent" >   The <a 
  id="dx9-44021"></a><span 
 class="aett-12">detach() </span>command undoes the <a 
  id="dx9-44022"></a><span 
 class="aett-12">attach() </span>command. To remove the
 &#8220;attachment", you will issue the command <span 
 class="aett-12">detach(airquality)</span>.
-<!--l. 52--><p class="indent" >   You could look at the help file for this data if you wanted to learn its complete
+<!--l. 47--><p class="indent" >   You could look at the help file for this data if you wanted to learn its complete
 story using <span 
 class="aett-12">?airquality</span>. It tells us that the data are for daily readings of the
 following air quality values for May 1, 1973 (a Tuesday) to September 30, 1973 (a
@@ -222,12 +205,12 @@ class="aett-12">Wind</span>: Average wind speed in miles per hour at 0700 and 10
       <li class="itemize"><span 
 class="aett-12">Temp</span>: Maximum daily temperature in degrees Fahrenheit at La Guardia
       Airport.</li></ul>
-<!--l. 66--><p class="indent" >   This data suits our purposes for the majority of examples in this chapter but
+<!--l. 61--><p class="indent" >   This data suits our purposes for the majority of examples in this chapter but
 we will also need to look at another data set for the discussion of graphs for
 discrete valued variables.
    <h3 class="sectionHead"><span class="titlemark">7.1   </span> <a 
  id="x9-450007.1"></a>Histograms</h3>
-<!--l. 70--><p class="noindent" >Like many graphical functions in <span 
+<!--l. 65--><p class="noindent" >Like many graphical functions in <span 
 class="aess-12">R</span>, the <a 
  id="dx9-45001"></a><span 
 class="aett-12">hist() </span>command will attempt to make a
@@ -237,7 +220,7 @@ href="#x9-45003r1">7.1<!--tex4ht:ref: AirQualityHistWind --></a> shows what resu
  id="dx9-45002"></a><span 
 class="aett-12">hist()</span>
 command.
-<!--l. 72--><p class="indent" >   Note that the figure created has default settings for the main title, axis labels
+<!--l. 67--><p class="indent" >   Note that the figure created has default settings for the main title, axis labels
 and that the number of classes (also called bins) and the cutoffs between them
 have been chosen automatically. Various methods exist for these choices, but it is
 my recommendation that the user find out what happens when the default
@@ -250,7 +233,7 @@ href="#x9-46001r2">7.2<!--tex4ht:ref: AirQualityHistWind2 --></a>.
                                                                           
 
                                                                           
-<!--l. 75--><p class="indent" >   <a 
+<!--l. 70--><p class="indent" >   <a 
  id="x9-45003r1"></a><hr class="float"><div class="float" 
 >
                                                                           
@@ -258,7 +241,7 @@ href="#x9-46001r2">7.2<!--tex4ht:ref: AirQualityHistWind2 --></a>.
                                                                           
 <div class="center" 
 >
-<!--l. 75--><p class="noindent" >
+<!--l. 70--><p class="noindent" >
 <br /> <div class="caption" 
 ><span class="id">Exhibit 7.1: </span><span  
 class="content">Histogram of Average wind speed in miles per hour at 0700 and
@@ -266,16 +249,195 @@ class="content">Histogram of Average wind speed in miles per hour at 0700 and
 class="aett-12">air quality </span>data set.</span></div><!--tex4ht:label?: x9-45003r1 -->
 <div class="fancyvrb" id="fancyvrb134"> <a 
  id="x9-45005r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;hist(Wind)</span></div>
-<!--l. 85--><p class="noindent" ><img 
-src="LURN1x.png" alt="a histogram" class="graphics" width="312.00119pt" height="312.00511pt" ><!--tex4ht:graphics  
+<!--l. 79--><p class="noindent" ><img 
+src="LURN1x.png" alt="a histogram" class="graphics" width="312" height="312" ><!--tex4ht:graphics  
 name="LURN1x.png" src="figures/SimpleGraphsHistAirQualityWind-1.eps"  
 -->
-<!--l. 87--><p class="noindent" ><a 
-href="../svgs/SimpleGraphsHistAirQualityWind.html" >link to SVG file: SimpleGraphsHistAirQualityWind.svg</a>
-</div>
+<div class="fancyvrb" id="fancyvrb135"> <a 
+ id="x9-45007r1"></a><span 
+class="aett-12">This</span><span 
+class="aett-12">&#x00A0;is</span><span 
+class="aett-12">&#x00A0;a</span><span 
+class="aett-12">&#x00A0;histogram,</span><span 
+class="aett-12">&#x00A0;with</span><span 
+class="aett-12">&#x00A0;the</span><span 
+class="aett-12">&#x00A0;title:</span><span 
+class="aett-12">&#x00A0;Histogram</span><span 
+class="aett-12">&#x00A0;of</span><span 
+class="aett-12">&#x00A0;Wind</span>
+<br class="fancyvrb" /><a 
+ id="x9-45009r2"></a><span 
+class="aett-12">"Wind"</span><span 
+class="aett-12">&#x00A0;is</span><span 
+class="aett-12">&#x00A0;marked</span><span 
+class="aett-12">&#x00A0;on</span><span 
+class="aett-12">&#x00A0;the</span><span 
+class="aett-12">&#x00A0;x-axis.</span><br class="fancyvrb" /><a 
+ id="x9-45011r3"></a><span 
+class="aett-12">Tick</span><span 
+class="aett-12">&#x00A0;marks</span><span 
+class="aett-12">&#x00A0;for</span><span 
+class="aett-12">&#x00A0;the</span><span 
+class="aett-12">&#x00A0;x-axis</span><span 
+class="aett-12">&#x00A0;are</span><span 
+class="aett-12">&#x00A0;at:</span><span 
+class="aett-12">&#x00A0;0,</span><span 
+class="aett-12">&#x00A0;5,</span><span 
+class="aett-12">&#x00A0;10,</span><span 
+class="aett-12">&#x00A0;15,</span><span 
+class="aett-12">&#x00A0;and</span><span 
+class="aett-12">&#x00A0;20</span>
+<br class="fancyvrb" /><a 
+ id="x9-45013r4"></a><span 
+class="aett-12">There</span><span 
+class="aett-12">&#x00A0;are</span><span 
+class="aett-12">&#x00A0;a</span><span 
+class="aett-12">&#x00A0;total</span><span 
+class="aett-12">&#x00A0;of</span><span 
+class="aett-12">&#x00A0;153</span><span 
+class="aett-12">&#x00A0;elements</span><span 
+class="aett-12">&#x00A0;for</span><span 
+class="aett-12">&#x00A0;this</span><span 
+class="aett-12">&#x00A0;variable.</span>
+<br class="fancyvrb" /><a 
+ id="x9-45015r5"></a><span 
+class="aett-12">Tick</span><span 
+class="aett-12">&#x00A0;marks</span><span 
+class="aett-12">&#x00A0;for</span><span 
+class="aett-12">&#x00A0;the</span><span 
+class="aett-12">&#x00A0;y-axis</span><span 
+class="aett-12">&#x00A0;are</span><span 
+class="aett-12">&#x00A0;at:</span><span 
+class="aett-12">&#x00A0;0,</span><span 
+class="aett-12">&#x00A0;10,</span><span 
+class="aett-12">&#x00A0;20,</span><span 
+class="aett-12">&#x00A0;and</span><span 
+class="aett-12">&#x00A0;30</span>
+<br class="fancyvrb" /><a 
+ id="x9-45017r6"></a><span 
+class="aett-12">It</span><span 
+class="aett-12">&#x00A0;has</span><span 
+class="aett-12">&#x00A0;11</span><span 
+class="aett-12">&#x00A0;bins</span><span 
+class="aett-12">&#x00A0;with</span><span 
+class="aett-12">&#x00A0;equal</span><span 
+class="aett-12">&#x00A0;widths,</span><span 
+class="aett-12">&#x00A0;starting</span><span 
+class="aett-12">&#x00A0;at</span><span 
+class="aett-12">&#x00A0;0</span><span 
+class="aett-12">&#x00A0;and</span><span 
+class="aett-12">&#x00A0;ending</span><span 
+class="aett-12">&#x00A0;at</span><span 
+class="aett-12">&#x00A0;22</span><span 
+class="aett-12">&#x00A0;.</span>
+<br class="fancyvrb" /><a 
+ id="x9-45019r7"></a><span 
+class="aett-12">The</span><span 
+class="aett-12">&#x00A0;mids</span><span 
+class="aett-12">&#x00A0;and</span><span 
+class="aett-12">&#x00A0;counts</span><span 
+class="aett-12">&#x00A0;for</span><span 
+class="aett-12">&#x00A0;the</span><span 
+class="aett-12">&#x00A0;bins</span><span 
+class="aett-12">&#x00A0;are:</span><br class="fancyvrb" /><a 
+ id="x9-45021r8"></a><span 
+class="aett-12">mid</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;1</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;count</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;1</span><br class="fancyvrb" /><a 
+ id="x9-45023r9"></a><span 
+class="aett-12">mid</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;3</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;count</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;4</span>
+<br class="fancyvrb" /><a 
+ id="x9-45025r10"></a><span 
+class="aett-12">mid</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;5</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;count</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;11</span><br class="fancyvrb" /><a 
+ id="x9-45027r11"></a><span 
+class="aett-12">mid</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;7</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;count</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;38</span><br class="fancyvrb" /><a 
+ id="x9-45029r12"></a><span 
+class="aett-12">mid</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;9</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;count</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;27</span>
+<br class="fancyvrb" /><a 
+ id="x9-45031r13"></a><span 
+class="aett-12">mid</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;11</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;count</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;38</span><br class="fancyvrb" /><a 
+ id="x9-45033r14"></a><span 
+class="aett-12">mid</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;13</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;count</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;10</span><br class="fancyvrb" /><a 
+ id="x9-45035r15"></a><span 
+class="aett-12">mid</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;15</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;count</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;17</span>
+<br class="fancyvrb" /><a 
+ id="x9-45037r16"></a><span 
+class="aett-12">mid</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;17</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;count</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;4</span><br class="fancyvrb" /><a 
+ id="x9-45039r17"></a><span 
+class="aett-12">mid</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;19</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;count</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;1</span><br class="fancyvrb" /><a 
+ id="x9-45041r18"></a><span 
+class="aett-12">mid</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;21</span><span 
+class="aett-12">&#x00A0;</span><span 
+class="aett-12">&#x00A0;count</span><span 
+class="aett-12">&#x00A0;=</span><span 
+class="aett-12">&#x00A0;2</span></div>
+                                                                          
+
+                                                                          
+<!--l. 103--><p class="noindent" ><a 
+href="../svgs/SimpleGraphsHistAirQualityWind.html" >link to SVG file: SimpleGraphsHistAirQualityWind.svg</a></div>
                                                                           
 
                                                                           
@@ -285,7 +447,7 @@ href="../svgs/SimpleGraphsHistAirQualityWind.html" >link to SVG file: SimpleGrap
                                                                           
 
                                                                           
-<!--l. 101--><p class="indent" >   <a 
+<!--l. 116--><p class="indent" >   <a 
  id="x9-46001r2"></a><hr class="float"><div class="float" 
 >
                                                                           
@@ -293,34 +455,33 @@ href="../svgs/SimpleGraphsHistAirQualityWind.html" >link to SVG file: SimpleGrap
                                                                           
 <div class="center" 
 >
-<!--l. 101--><p class="noindent" >
+<!--l. 116--><p class="noindent" >
 <br /> <div class="caption" 
 ><span class="id">Exhibit 7.2: </span><span  
 class="content">Histogram of Average wind speed at 0700 and 1000 hours at
 New York&#8217;s LaGuardia Airport. Obtained from the <span 
 class="aett-12">air quality </span>data set.</span></div><!--tex4ht:label?: x9-46001r2 -->
-<div class="fancyvrb" id="fancyvrb135"> <a 
+<div class="fancyvrb" id="fancyvrb136"> <a 
  id="x9-46003r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;hist(Wind,</span><span 
 class="aett-12">&#x00A0;xlab="Average</span><span 
 class="aett-12">&#x00A0;wind</span><span 
 class="aett-12">&#x00A0;speed</span><span 
 class="aett-12">&#x00A0;(mph)",</span><span 
 class="aett-12">&#x00A0;main="")</span></div>
-<!--l. 111--><p class="noindent" ><img 
-src="LURN2x.png" alt="a histogram" class="graphics" width="312.00119pt" height="312.00511pt" ><!--tex4ht:graphics  
+<!--l. 125--><p class="noindent" ><img 
+src="LURN2x.png" alt="a histogram" class="graphics" width="312" height="312" ><!--tex4ht:graphics  
 name="LURN2x.png" src="figures/SimpleGraphsHistAirQualityWind2-1.eps"  
 -->
-<!--l. 113--><p class="noindent" ><a 
+<!--l. 127--><p class="noindent" ><a 
 href="../svgs/SimpleGraphsHistAirQualityWind2.html" >link to SVG file: SimpleGraphsHistAirQualityWind2.svg</a>
 </div>
                                                                           
 
                                                                           
    </div><hr class="endfloat" />
-<!--l. 119--><p class="noindent" >Variable names should be informative but aren&#8217;t always what we want to see in
+<!--l. 133--><p class="noindent" >Variable names should be informative but aren&#8217;t always what we want to see in
 graphs. Notice that in Exhibit&#x00A0;<a 
 href="#x9-46001r2">7.2<!--tex4ht:ref: AirQualityHistWind2 --></a>, I&#8217;ve made the x-axis label more informative by
 indicating the units of measurement for the wind speed. As I already have a
@@ -329,7 +490,7 @@ argument <span
 class="aett-12">main="" </span>to the <a 
  id="dx9-46004"></a><span 
 class="aett-12">hist() </span>command.
-<!--l. 121--><p class="indent" >   Aside from the alteration of the default axis label and the change in the main
+<!--l. 135--><p class="indent" >   Aside from the alteration of the default axis label and the change in the main
 title for our histograms, we could make quite a number of changes. The <a 
  id="dx9-46005"></a><span 
 class="aett-12">hist()</span>
@@ -341,7 +502,7 @@ class="aett-12">?hist </span>to get to the help for the
 <a 
  id="dx9-46006"></a><span 
 class="aett-12">hist() </span>function.
-<!--l. 123--><p class="indent" >   Other graphs we create will show points marked with small hollow circles; we
+<!--l. 137--><p class="indent" >   Other graphs we create will show points marked with small hollow circles; we
 may wish to make these circles smaller, joined by line segments, filled in, a
 different colour or combinations of these attributes. The <a 
  id="dx9-46007"></a><span 
@@ -355,29 +516,29 @@ using <span
 class="aett-12">?par </span>but be warned, there are lots of adjustments that can be made.
 Experimenting is really the only option when it comes time to get your graph
 looking perfect.
-<!--l. 125--><p class="indent" >   Additional text and/or lines can be added to some graph types. It may prove
+<!--l. 139--><p class="indent" >   Additional text and/or lines can be added to some graph types. It may prove
 useful to show the line of best fit along with the data (illustrated in Chapter&#x00A0;<a 
 href="LURNch12.html#x14-8800012">12<!--tex4ht:ref: Regression --></a>)
 for example. We&#8217;ll see how to do the fancy things in Chapter&#x00A0;<a 
 href="LURNch15.html#x17-11900015">15<!--tex4ht:ref: ComplexGraphs --></a>.
    <h3 class="sectionHead"><span class="titlemark">7.3   </span> <a 
  id="x9-470007.3"></a>Other univariate summary graphs</h3>
-<!--l. 129--><p class="noindent" >Histograms aren&#8217;t the &#8220;be all and end all" for univariate summary graphs. As a
+<!--l. 143--><p class="noindent" >Histograms aren&#8217;t the &#8220;be all and end all" for univariate summary graphs. As a
 case in point, they aren&#8217;t at all useful for small sample sizes. Various other graphs
 appear in introductory statistics courses and that is why they appear here. I
 don&#8217;t mean to support one over another at all &#8212; that&#8217;s up to you to
 determine.
-<!--l. 131--><p class="noindent" >
+<!--l. 145--><p class="noindent" >
    <h4 class="subsectionHead"><span class="titlemark">7.3.1   </span> <a 
  id="x9-480007.3.1"></a>Boxplots</h4>
-<!--l. 133--><p class="noindent" >Boxplots show us quickly the shape of the distribution of a sample. They show the
+<!--l. 147--><p class="noindent" >Boxplots show us quickly the shape of the distribution of a sample. They show the
 median, lower and upper quartiles, and the minimum and maximum of a sample.
                                                                           
 
                                                                           
 They will also identify points as outliers if these points are too far from the bulk
 of values in the sample.
-<!--l. 135--><p class="indent" >   Exhibit&#x00A0;<a 
+<!--l. 149--><p class="indent" >   Exhibit&#x00A0;<a 
 href="#x9-48006r3">7.3<!--tex4ht:ref: AirQualityBoxplot --></a> shows us the boxplot for the average wind speed at LaGuardia
 airport. Notice that I have added an additional command to set up the size of the
 graph window. The <a 
@@ -399,7 +560,7 @@ href="#x9-48006r3">7.3<!--tex4ht:ref: AirQualityBoxplot --></a>
                                                                           
 
                                                                           
-<!--l. 138--><p class="indent" >   <a 
+<!--l. 152--><p class="indent" >   <a 
  id="x9-48006r3"></a><hr class="float"><div class="float" 
 >
                                                                           
@@ -407,39 +568,37 @@ href="#x9-48006r3">7.3<!--tex4ht:ref: AirQualityBoxplot --></a>
                                                                           
 <div class="center" 
 >
-<!--l. 138--><p class="noindent" >
+<!--l. 152--><p class="noindent" >
 <br /> <div class="caption" 
 ><span class="id">Exhibit 7.3: </span><span  
 class="content">Boxplot of Average wind speed in miles per hour at 0700 and
 1000 hours at LaGuardia Airport. Obtained from the <span 
 class="aett-12">air quality </span>data set.</span></div><!--tex4ht:label?: x9-48006r3 -->
-<div class="fancyvrb" id="fancyvrb136"> <a 
+<div class="fancyvrb" id="fancyvrb137"> <a 
  id="x9-48008r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;##</span><span 
 class="aett-12">&#x00A0;windows(7,</span><span 
 class="aett-12">&#x00A0;5)</span><br class="fancyvrb" /><a 
  id="x9-48010r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;boxplot(Wind,</span><span 
 class="aett-12">&#x00A0;horizontal=TRUE,</span><span 
 class="aett-12">&#x00A0;xlab="Wind</span><span 
 class="aett-12">&#x00A0;speed</span><span 
 class="aett-12">&#x00A0;(mph)")</span></div>
-<!--l. 149--><p class="noindent" ><img 
-src="LURN3x.png" alt="a boxplot" class="graphics" width="312.00119pt" height="222.8608pt" ><!--tex4ht:graphics  
+<!--l. 162--><p class="noindent" ><img 
+src="LURN3x.png" alt="a boxplot" class="graphics" width="312" height="222" ><!--tex4ht:graphics  
 name="LURN3x.png" src="figures/SimpleGraphsBoxplotAirQualityWind-1.eps"  
 -->
-<!--l. 151--><p class="noindent" ><a 
+<!--l. 164--><p class="noindent" ><a 
 href="../svgs/SimpleGraphsBoxplotAirQualityWind.html" >link to SVG file: SimpleGraphsBoxplotAirQualityWind.svg</a>
 </div>
                                                                           
 
                                                                           
    </div><hr class="endfloat" />
-<!--l. 158--><p class="indent" >   Notice that I&#8217;ve changed the default orientation of the boxplot by adding the
+<!--l. 170--><p class="indent" >   Notice that I&#8217;ve changed the default orientation of the boxplot by adding the
 argument <span 
 class="aett-12">horizontal=TRUE </span>to the <a 
  id="dx9-48011"></a><span 
@@ -449,17 +608,17 @@ class="aett-12">xlab </span>argument in
 the command.
    <h4 class="subsectionHead"><span class="titlemark">7.3.2   </span> <a 
  id="x9-490007.3.2"></a>Comparative boxplots</h4>
-<!--l. 162--><p class="noindent" >Boxplots are often useful for comparing several small samples at once. We must
+<!--l. 174--><p class="noindent" >Boxplots are often useful for comparing several small samples at once. We must
 ensure that the same axis is used for the units of measure of interest and the
 easiest way to ensure this is to put the various samples into the same graphic with
 only one axis rather than having a series of single boxplots each having their own
 axis.
-<!--l. 164--><p class="indent" >   For the purposes of illustration, I want to show the distribution of the daily
+<!--l. 176--><p class="indent" >   For the purposes of illustration, I want to show the distribution of the daily
 average wind speeds for the five months separately.
                                                                           
 
                                                                           
-<!--l. 166--><p class="indent" >   <a 
+<!--l. 178--><p class="indent" >   <a 
  id="x9-49001r4"></a><hr class="float"><div class="float" 
 >
                                                                           
@@ -467,7 +626,7 @@ average wind speeds for the five months separately.
                                                                           
 <div class="center" 
 >
-<!--l. 166--><p class="noindent" >
+<!--l. 178--><p class="noindent" >
 <br /> <div class="caption" 
 ><span class="id">Exhibit 7.4: </span><span  
 class="content">Comparative boxplots for the Average wind speed in miles per
@@ -476,27 +635,26 @@ for the months of May to September 1973. Data was Obtained from the <span
 class="aett-12">air</span>
 <span 
 class="aett-12">quality </span>data set.</span></div><!--tex4ht:label?: x9-49001r4 -->
-<div class="fancyvrb" id="fancyvrb137"> <a 
+<div class="fancyvrb" id="fancyvrb138"> <a 
  id="x9-49003r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;boxplot(Wind~Month,</span><span 
 class="aett-12">&#x00A0;xlab="Month",</span><span 
 class="aett-12">&#x00A0;ylab="Wind</span><span 
 class="aett-12">&#x00A0;speed</span><span 
 class="aett-12">&#x00A0;(mph)")</span></div>
-<!--l. 176--><p class="noindent" ><img 
-src="LURN4x.png" alt="a comparative boxplot" class="graphics" width="312.00119pt" height="312.00511pt" ><!--tex4ht:graphics  
+<!--l. 187--><p class="noindent" ><img 
+src="LURN4x.png" alt="a comparative boxplot" class="graphics" width="312" height="312" ><!--tex4ht:graphics  
 name="LURN4x.png" src="figures/SimpleGraphsCompBoxplotAirQualityWind-1.eps"  
 -->
-<!--l. 179--><p class="noindent" ><a 
+<!--l. 189--><p class="noindent" ><a 
 href="../svgs/SimpleGraphsCompBoxplotAirQualityWind.html" >link to SVG file: SimpleGraphsCompBoxplotAirQualityWind.svg</a>
 </div>
                                                                           
 
                                                                           
    </div><hr class="endfloat" />
-<!--l. 184--><p class="indent" >   The comparative boxplot is created using a formula to describe the
+<!--l. 194--><p class="indent" >   The comparative boxplot is created using a formula to describe the
 relationship between the two variables that are referred to in our graph. The use
 of the tilde symbol between <span 
 class="aett-12">Wind </span>and <span 
@@ -507,7 +665,7 @@ relationship to exist that may be exposed through use of the comparative
 boxplot.
    <h4 class="subsectionHead"><span class="titlemark">7.3.3   </span> <a 
  id="x9-500007.3.3"></a>Dotplots</h4>
-<!--l. 188--><p class="noindent" >Dotplots aren&#8217;t everyone&#8217;s cup of tea but they are frequently offered as substitutes
+<!--l. 198--><p class="noindent" >Dotplots aren&#8217;t everyone&#8217;s cup of tea but they are frequently offered as substitutes
 for boxplots and histograms. Again, I chose to alter the default window size for
 the example given in Exhibit&#x00A0;<a 
 href="#x9-50001r5">7.5<!--tex4ht:ref: AirQualityDotPlotWind --></a> because I didn&#8217;t like the way the regular graph
@@ -515,7 +673,7 @@ window presented this graph.
                                                                           
 
                                                                           
-<!--l. 191--><p class="indent" >   <a 
+<!--l. 201--><p class="indent" >   <a 
  id="x9-50001r5"></a><hr class="float"><div class="float" 
 >
                                                                           
@@ -523,26 +681,24 @@ window presented this graph.
                                                                           
 <div class="center" 
 >
-<!--l. 191--><p class="noindent" >
+<!--l. 201--><p class="noindent" >
 <br /> <div class="caption" 
 ><span class="id">Exhibit 7.5: </span><span  
 class="content">Dotplot of the Average wind speed in miles per hour at 0700
 and 1000 hours at LaGuardia Airport. Obtained from the <span 
 class="aett-12">air quality </span>data
 set.</span></div><!--tex4ht:label?: x9-50001r5 -->
-<div class="fancyvrb" id="fancyvrb138"> <a 
+<div class="fancyvrb" id="fancyvrb139"> <a 
  id="x9-50003r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;##</span><span 
 class="aett-12">&#x00A0;windows(7,</span><span 
 class="aett-12">&#x00A0;2.5)</span><br class="fancyvrb" /><a 
  id="x9-50005r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;dotchart(Wind)</span></div>
-<!--l. 202--><p class="noindent" ><img 
-src="LURN5x.png" alt="PIC" class="graphics" width="312.00119pt" height="111.43039pt" ><!--tex4ht:graphics  
+<!--l. 212--><p class="noindent" ><img 
+src="LURN5x.png" alt="PIC" class="graphics" width="312" height="111" ><!--tex4ht:graphics  
 name="LURN5x.png" src="figures/SimpleGraphsDotPlot-1.eps"  
 -->
 </div>
@@ -550,7 +706,7 @@ name="LURN5x.png" src="figures/SimpleGraphsDotPlot-1.eps"
 
                                                                           
    </div><hr class="endfloat" />
-<!--l. 208--><p class="indent" >   Some people find the standard dotplot that <span 
+<!--l. 218--><p class="indent" >   Some people find the standard dotplot that <span 
 class="aess-12">R </span>creates a little artificial. The
 spacing between points horizontally and vertically is captured by the human eye,
 but this graph is a single dimensional representation. Adding jitter to the data
@@ -565,7 +721,7 @@ If there were a large number of ties, we would have used the command
 class="aett-12">dotchart(jitter(Wind))</span>.
    <h4 class="subsectionHead"><span class="titlemark">7.3.4   </span> <a 
  id="x9-510007.3.4"></a>Simple line plots</h4>
-<!--l. 214--><p class="noindent" >Occasionally it&#8217;s useful to see how a measurement changes over the time the data
+<!--l. 224--><p class="noindent" >Occasionally it&#8217;s useful to see how a measurement changes over the time the data
 were collected. <span 
 class="aess-12">R </span>does this very simply using the <a 
  id="dx9-51001"></a><span 
@@ -581,7 +737,7 @@ period.
                                                                           
 
                                                                           
-<!--l. 216--><p class="indent" >   <a 
+<!--l. 226--><p class="indent" >   <a 
  id="x9-51002r6"></a><hr class="float"><div class="float" 
 >
                                                                           
@@ -589,21 +745,20 @@ period.
                                                                           
 <div class="center" 
 >
-<!--l. 216--><p class="noindent" >
+<!--l. 226--><p class="noindent" >
 <br /> <div class="caption" 
 ><span class="id">Exhibit 7.6: </span><span  
 class="content">Line plot of the maximum daily temperatures from 1 May to
 30 September 1973, measured in degrees Fahrenheit, at LaGuardia Airport.
 Data were obtained from the <span 
 class="aett-12">air quality </span>data set.</span></div><!--tex4ht:label?: x9-51002r6 -->
-<div class="fancyvrb" id="fancyvrb139"> <a 
+<div class="fancyvrb" id="fancyvrb140"> <a 
  id="x9-51004r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;plot(Temp,</span><span 
 class="aett-12">&#x00A0;ylim=c(50,100))</span></div>
-<!--l. 226--><p class="noindent" ><img 
-src="LURN6x.png" alt="PIC" class="graphics" width="312.00119pt" height="312.00511pt" ><!--tex4ht:graphics  
+<!--l. 236--><p class="noindent" ><img 
+src="LURN6x.png" alt="PIC" class="graphics" width="312" height="312" ><!--tex4ht:graphics  
 name="LURN6x.png" src="figures/SimpleGraphsLinePlot-1.eps"  
 -->
 </div>
@@ -614,7 +769,7 @@ name="LURN6x.png" src="figures/SimpleGraphsLinePlot-1.eps"
                                                                           
 
                                                                           
-<!--l. 232--><p class="indent" >   <a 
+<!--l. 242--><p class="indent" >   <a 
  id="x9-51005r7"></a><hr class="float"><div class="float" 
 >
                                                                           
@@ -622,22 +777,21 @@ name="LURN6x.png" src="figures/SimpleGraphsLinePlot-1.eps"
                                                                           
 <div class="center" 
 >
-<!--l. 232--><p class="noindent" >
+<!--l. 242--><p class="noindent" >
 <br /> <div class="caption" 
 ><span class="id">Exhibit 7.7: </span><span  
 class="content">Line plot of the maximum daily temperatures from 1 May to
 30 September 1973, measured in degrees Fahrenheit, at LaGuardia Airport.
 Data were obtained from the <span 
 class="aett-12">air quality </span>data set.</span></div><!--tex4ht:label?: x9-51005r7 -->
-<div class="fancyvrb" id="fancyvrb140"> <a 
+<div class="fancyvrb" id="fancyvrb141"> <a 
  id="x9-51007r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;plot(Temp,</span><span 
 class="aett-12">&#x00A0;ylim=c(50,100),</span><span 
 class="aett-12">&#x00A0;type="l")</span></div>
-<!--l. 242--><p class="noindent" ><img 
-src="LURN7x.png" alt="PIC" class="graphics" width="312.00119pt" height="312.00511pt" ><!--tex4ht:graphics  
+<!--l. 252--><p class="noindent" ><img 
+src="LURN7x.png" alt="PIC" class="graphics" width="312" height="312" ><!--tex4ht:graphics  
 name="LURN7x.png" src="figures/SimpleGraphsLinePlot2-1.eps"  
 -->
 </div>
@@ -645,7 +799,7 @@ name="LURN7x.png" src="figures/SimpleGraphsLinePlot2-1.eps"
 
                                                                           
    </div><hr class="endfloat" />
-<!--l. 250--><p class="indent" >   Notice that we have altered the range of values covered by the <span 
+<!--l. 260--><p class="indent" >   Notice that we have altered the range of values covered by the <span 
 class="cmmi-12">y</span>-axis using a
 specific command. The <span 
 class="aett-12">ylim </span>has a corresponding <span 
@@ -658,14 +812,14 @@ plotting from points to lines (shown in Exhibit&#x00A0;<a
 href="#x9-51005r7">7.7<!--tex4ht:ref: AirQualityLinePlotTemp2 --></a>). Combinations of points and
 lines can be obtained (not shown); the user can also alter the style of the points
 and lines being printed.
-<!--l. 252--><p class="indent" >   There is a simpler way to generate time series plots which we demonstrate in
+<!--l. 262--><p class="indent" >   There is a simpler way to generate time series plots which we demonstrate in
 Chapter&#x00A0;<a 
 href="LURNch14.html#x16-10800014">14<!--tex4ht:ref: TimeSeries --></a>. It is easier to augment this line plot than the time series plot, and in
 so doing we will gain an insight into how other plots like the time series plot are
 created.
    <h3 class="sectionHead"><span class="titlemark">7.4   </span> <a 
  id="x9-520007.4"></a>Quantile-quantile plots</h3>
-<!--l. 257--><p class="noindent" >The most common quantile-quantile plot we might wish to create is used to
+<!--l. 267--><p class="noindent" >The most common quantile-quantile plot we might wish to create is used to
 investigate the usefulness of the normal distribution to model a variable&#8217;s
 distribution. Normal quantiles are created automatically for the normal quantile
 plot when it is generated using the <a 
@@ -673,7 +827,7 @@ plot when it is generated using the <a
 class="aett-12">qqnorm() </span>command. The default plot for this
 is shown in Exhibit&#x00A0;<a 
 href="#x9-52003r8">7.8<!--tex4ht:ref: AirQualityNormPlotWind --></a>.
-<!--l. 259--><p class="indent" >   If these data were normally distributed, the points on the plot would lie on a
+<!--l. 269--><p class="indent" >   If these data were normally distributed, the points on the plot would lie on a
 straight line. The <a 
  id="dx9-52002"></a><span 
 class="aett-12">qqline() </span>command adds the straight line to the plot to assist
@@ -681,7 +835,7 @@ with determining the linearity of the points.
                                                                           
 
                                                                           
-<!--l. 262--><p class="indent" >   <a 
+<!--l. 272--><p class="indent" >   <a 
  id="x9-52003r8"></a><hr class="float"><div class="float" 
 >
                                                                           
@@ -689,7 +843,7 @@ with determining the linearity of the points.
                                                                           
 <div class="center" 
 >
-<!--l. 262--><p class="noindent" >
+<!--l. 272--><p class="noindent" >
 <br /> <div class="caption" 
 ><span class="id">Exhibit 7.8: </span><span  
 class="content">Normal probability plot of the Average wind speed in miles per
@@ -697,17 +851,15 @@ hour at 0700 and 1000 hours at LaGuardia Airport. Obtained from the <span
 class="aett-12">air</span>
 <span 
 class="aett-12">quality </span>data set.</span></div><!--tex4ht:label?: x9-52003r8 -->
-<div class="fancyvrb" id="fancyvrb141"> <a 
+<div class="fancyvrb" id="fancyvrb142"> <a 
  id="x9-52005r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;qqnorm(Wind)</span><br class="fancyvrb" /><a 
  id="x9-52007r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;qqline(Wind)</span></div>
-<!--l. 273--><p class="noindent" ><img 
-src="LURN8x.png" alt="PIC" class="graphics" width="312.00119pt" height="312.00511pt" ><!--tex4ht:graphics  
+<!--l. 283--><p class="noindent" ><img 
+src="LURN8x.png" alt="PIC" class="graphics" width="312" height="312" ><!--tex4ht:graphics  
 name="LURN8x.png" src="figures/SimpleGraphsNormPlot-1.eps"  
 -->
 </div>
@@ -717,37 +869,35 @@ name="LURN8x.png" src="figures/SimpleGraphsNormPlot-1.eps"
    </div><hr class="endfloat" />
    <h3 class="sectionHead"><span class="titlemark">7.5   </span> <a 
  id="x9-530007.5"></a>Scatter plots</h3>
-<!--l. 283--><p class="noindent" >Scatter plots are created using the <a 
+<!--l. 293--><p class="noindent" >Scatter plots are created using the <a 
  id="dx9-53001"></a><span 
 class="aett-12">plot() </span>command by one of two methods.
 Exhibit&#x00A0;<a 
 href="#x9-53007r9">7.9<!--tex4ht:ref: AirQualityScatterTempWind --></a> was created using
-<!--l. 287--><p class="indent" >
-   <div class="fancyvrb" id="fancyvrb142">  <a 
+<!--l. 297--><p class="indent" >
+   <div class="fancyvrb" id="fancyvrb143">  <a 
  id="x9-53003r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;plot(Wind,</span><span 
 class="aett-12">&#x00A0;Temp)</span></div>
-<!--l. 293--><p class="indent" >   but the same plot can be generated using what is known as a formula. In this
+<!--l. 303--><p class="indent" >   but the same plot can be generated using what is known as a formula. In this
 case, only one argument is given to the <a 
  id="dx9-53004"></a><span 
 class="aett-12">plot() </span>command but both variables of
 interest are in that argument.
-<!--l. 297--><p class="indent" >
-   <div class="fancyvrb" id="fancyvrb143">  <a 
+<!--l. 307--><p class="indent" >
+   <div class="fancyvrb" id="fancyvrb144">  <a 
  id="x9-53006r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;plot(Temp~Wind)</span></div>
-<!--l. 303--><p class="indent" >   The tilde symbol is often read as &#8220;&#x2026;is distributed as&#x2026;" but we might simplify
+<!--l. 313--><p class="indent" >   The tilde symbol is often read as &#8220;&#x2026;is distributed as&#x2026;" but we might simplify
 this to be read as &#8220;follows". This makes some sense as we generally create a scatter
 plot to see if one variable follows the other; in this case we are seeing if
 temperature depends on wind speed in some way.
                                                                           
 
                                                                           
-<!--l. 306--><p class="indent" >   <a 
+<!--l. 316--><p class="indent" >   <a 
  id="x9-53007r9"></a><hr class="float"><div class="float" 
 >
                                                                           
@@ -755,21 +905,20 @@ temperature depends on wind speed in some way.
                                                                           
 <div class="center" 
 >
-<!--l. 306--><p class="noindent" >
+<!--l. 316--><p class="noindent" >
 <br /> <div class="caption" 
 ><span class="id">Exhibit 7.9: </span><span  
 class="content">Scatter plot of the maximum daily temperature against the
 Average wind speed at 0700 and 1000 hours, both recorded at LaGuardia
 Airport. Data were obtained from the <span 
 class="aett-12">air quality </span>data set.</span></div><!--tex4ht:label?: x9-53007r9 -->
-<div class="fancyvrb" id="fancyvrb144"> <a 
+<div class="fancyvrb" id="fancyvrb145"> <a 
  id="x9-53009r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;plot(Wind,</span><span 
 class="aett-12">&#x00A0;Temp)</span></div>
-<!--l. 316--><p class="noindent" ><img 
-src="LURN9x.png" alt="PIC" class="graphics" width="312.00119pt" height="312.00511pt" ><!--tex4ht:graphics  
+<!--l. 326--><p class="noindent" ><img 
+src="LURN9x.png" alt="PIC" class="graphics" width="312" height="312" ><!--tex4ht:graphics  
 name="LURN9x.png" src="figures/SimpleGraphsScatter-1.eps"  
 -->
 </div>
@@ -779,7 +928,7 @@ name="LURN9x.png" src="figures/SimpleGraphsScatter-1.eps"
    </div><hr class="endfloat" />
    <h3 class="sectionHead"><span class="titlemark">7.6   </span> <a 
  id="x9-540007.6"></a>Scatter plot matrices</h3>
-<!--l. 325--><p class="noindent" >A scatter plot matrix is just a matrix of scatter plots where each variable is
+<!--l. 335--><p class="noindent" >A scatter plot matrix is just a matrix of scatter plots where each variable is
 plotted against all other variables. This graphic is therefore very useful for a
 preliminary look at multivariate data. In <span 
 class="aess-12">R</span>, we obtain this graphic using the
@@ -787,7 +936,7 @@ class="aess-12">R</span>, we obtain this graphic using the
  id="dx9-54001"></a><span 
 class="aett-12">pairs() </span>command as illustrated in Exhibit&#x00A0;<a 
 href="#x9-54005r10">7.10<!--tex4ht:ref: AirQualityScatterPlotMatrix --></a>.
-<!--l. 327--><p class="indent" >   Only four of the variables within the <span 
+<!--l. 337--><p class="indent" >   Only four of the variables within the <span 
 class="aett-12">air quality </span>data have been used in this
 example because the variables for the month and day take discrete values and
 therefore do not suit scatter plots &#8212; take a look for yourself if you must but it&#8217;s
@@ -804,7 +953,7 @@ class="aett-12">pairs() </span>command.
                                                                           
 
                                                                           
-<!--l. 329--><p class="indent" >   <a 
+<!--l. 339--><p class="indent" >   <a 
  id="x9-54005r10"></a><hr class="float"><div class="float" 
 >
                                                                           
@@ -812,23 +961,22 @@ class="aett-12">pairs() </span>command.
                                                                           
 <div class="center" 
 >
-<!--l. 329--><p class="noindent" >
+<!--l. 339--><p class="noindent" >
 <br /> <div class="caption" 
 ><span class="id">Exhibit 7.10: </span><span  
 class="content">A scatter plot matrix of the numeric variables within the
 <span 
 class="aett-12">airquality </span>data set.</span></div><!--tex4ht:label?: x9-54005r10 -->
-<!--l. 331--><p class="noindent" >.
-<div class="fancyvrb" id="fancyvrb145"> <a 
+<!--l. 341--><p class="noindent" >.
+<div class="fancyvrb" id="fancyvrb146"> <a 
  id="x9-54007r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;pairs(data.frame(Ozone,</span><span 
 class="aett-12">&#x00A0;Solar.R,</span><span 
 class="aett-12">&#x00A0;Wind,</span><span 
 class="aett-12">&#x00A0;Temp))</span></div>
-<!--l. 339--><p class="noindent" ><img 
-src="LURN10x.png" alt="PIC" class="graphics" width="312.00119pt" height="312.00511pt" ><!--tex4ht:graphics  
+<!--l. 349--><p class="noindent" ><img 
+src="LURN10x.png" alt="PIC" class="graphics" width="312" height="312" ><!--tex4ht:graphics  
 name="LURN10x.png" src="figures/SimpleGraphsMatrixPlot-1.eps"  
 -->
 </div>
@@ -836,19 +984,19 @@ name="LURN10x.png" src="figures/SimpleGraphsMatrixPlot-1.eps"
 
                                                                           
    </div><hr class="endfloat" />
-<!--l. 345--><p class="indent" >   Note that the names of the variables appear in the spaces on the leading
+<!--l. 355--><p class="indent" >   Note that the names of the variables appear in the spaces on the leading
 diagonal and that the graphs on either side of the diagonal plot the same
 data but with the axes reversed. Sometimes the human eye will pick up a
 relationship when the data are presented one way better than the other
 way.
    <h3 class="sectionHead"><span class="titlemark">7.7   </span> <a 
  id="x9-550007.7"></a>Graphs for discrete valued variables</h3>
-<!--l. 349--><p class="noindent" ><span 
+<!--l. 359--><p class="noindent" ><span 
 class="aess-12">R </span>does not contain many graphs for discrete valued variables.
-<!--l. 351--><p class="noindent" >
+<!--l. 361--><p class="noindent" >
    <h4 class="subsectionHead"><span class="titlemark">7.7.1   </span> <a 
  id="x9-560007.7.1"></a>Bar charts</h4>
-<!--l. 354--><p class="noindent" >If a variable is considered by <span 
+<!--l. 364--><p class="noindent" >If a variable is considered by <span 
 class="aess-12">R </span>to be a <a 
  id="dx9-56001"></a><span 
 class="aeti-12">factor</span>, then the default action of the
@@ -859,17 +1007,14 @@ which is part of the default installation of <span
 class="aess-12">R </span>called <span 
 class="aett-12">state.region </span>examined
 using
-<!--l. 358--><p class="indent" >
-   <div class="fancyvrb" id="fancyvrb146">  <a 
+<!--l. 368--><p class="indent" >
+   <div class="fancyvrb" id="fancyvrb147">  <a 
  id="x9-56004r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;str(state.region)</span></div>
-<!--l. 361--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb147"> <a 
+<!--l. 371--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb148"> <a 
  id="x9-56006r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;Factor</span><span 
 class="aett-12">&#x00A0;w/</span><span 
 class="aett-12">&#x00A0;4</span><span 
@@ -886,17 +1031,15 @@ class="aett-12">&#x00A0;2</span><span
 class="aett-12">&#x00A0;2</span><span 
 class="aett-12">&#x00A0;2</span><span 
 class="aett-12">&#x00A0;...</span></div>
-<!--l. 364--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb148"> <a 
- id="x9-56008r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
-class="aett-12">&#x00A0;levels(state.region)</span></div>
-<!--l. 367--><p class="noindent" >
+<!--l. 374--><p class="noindent" >
    <div class="fancyvrb" id="fancyvrb149"> <a 
+ id="x9-56008r1"></a><span 
+class="aett-12">&#x003E;</span><span 
+class="aett-12">&#x00A0;levels(state.region)</span></div>
+<!--l. 377--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb150"> <a 
  id="x9-56010r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">[1]</span><span 
 class="aett-12">&#x00A0;"Northeast"</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -914,10 +1057,9 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;"North</span><span 
 class="aett-12">&#x00A0;Central"</span><br class="fancyvrb" /><a 
  id="x9-56012r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[4]</span><span 
+class="aett-12">[4]</span><span 
 class="aett-12">&#x00A0;"West"</span></div>
-<!--l. 374--><p class="indent" >   Given this variable is a <a 
+<!--l. 384--><p class="indent" >   Given this variable is a <a 
  id="dx9-56013"></a><span 
 class="aeti-12">factor </span>with four levels it is well suited to presentation
 in a bar chart, as seen in Exhibit&#x00A0;<a 
@@ -925,7 +1067,7 @@ href="#x9-56014r11">7.11<!--tex4ht:ref: StateRegionBarChart --></a>.
                                                                           
 
                                                                           
-<!--l. 377--><p class="indent" >   <a 
+<!--l. 387--><p class="indent" >   <a 
  id="x9-56014r11"></a><hr class="float"><div class="float" 
 >
                                                                           
@@ -933,18 +1075,17 @@ href="#x9-56014r11">7.11<!--tex4ht:ref: StateRegionBarChart --></a>.
                                                                           
 <div class="center" 
 >
-<!--l. 377--><p class="noindent" >
+<!--l. 387--><p class="noindent" >
 <br /> <div class="caption" 
 ><span class="id">Exhibit 7.11: </span><span  
 class="content">A bar chart showing which of the regions each of the fifty U.S.
 states belongs</span></div><!--tex4ht:label?: x9-56014r11 -->
-<div class="fancyvrb" id="fancyvrb150"> <a 
+<div class="fancyvrb" id="fancyvrb151"> <a 
  id="x9-56016r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;plot(state.region)</span></div>
-<!--l. 387--><p class="noindent" ><img 
-src="LURN11x.png" alt="PIC" class="graphics" width="312.00119pt" height="312.00511pt" ><!--tex4ht:graphics  
+<!--l. 397--><p class="noindent" ><img 
+src="LURN11x.png" alt="PIC" class="graphics" width="312" height="312" ><!--tex4ht:graphics  
 name="LURN11x.png" src="figures/SimpleGraphsStateRegionBarChart-1.eps"  
 -->
 </div>
@@ -952,7 +1093,7 @@ name="LURN11x.png" src="figures/SimpleGraphsStateRegionBarChart-1.eps"
 
                                                                           
    </div><hr class="endfloat" />
-<!--l. 393--><p class="indent" >   This figure was created from the raw data, that is the regions for each of
+<!--l. 403--><p class="indent" >   This figure was created from the raw data, that is the regions for each of
 the fifty states in the U.S. If we had summary data with counts for each
 of the categories, we would need to use the <a 
  id="dx9-56017"></a><span 
@@ -961,15 +1102,12 @@ class="aett-12">barplot() </span>command. The
  id="dx9-56018"></a><span 
 class="aett-12">summary() </span>command shows us how many states fall into each category in this
 instance.
-   <div class="fancyvrb" id="fancyvrb151">  <a 
+   <div class="fancyvrb" id="fancyvrb152">  <a 
  id="x9-56020r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;summary(state.region)</span></div>
-<div class="fancyvrb" id="fancyvrb152"> <a 
+<div class="fancyvrb" id="fancyvrb153"> <a 
  id="x9-56022r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -997,8 +1135,6 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;West</span>
 <br class="fancyvrb" /><a 
  id="x9-56024r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1047,12 +1183,12 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;13</span></div>
-<!--l. 407--><p class="indent" >   These values are then plotted in Exhibit&#x00A0;<a 
+<!--l. 417--><p class="indent" >   These values are then plotted in Exhibit&#x00A0;<a 
 href="#x9-56025r12">7.12<!--tex4ht:ref: StateRegionBarChart2 --></a>.
                                                                           
 
                                                                           
-<!--l. 409--><p class="indent" >   <a 
+<!--l. 419--><p class="indent" >   <a 
  id="x9-56025r12"></a><hr class="float"><div class="float" 
 >
                                                                           
@@ -1060,18 +1196,17 @@ href="#x9-56025r12">7.12<!--tex4ht:ref: StateRegionBarChart2 --></a>.
                                                                           
 <div class="center" 
 >
-<!--l. 409--><p class="noindent" >
+<!--l. 419--><p class="noindent" >
 <br /> <div class="caption" 
 ><span class="id">Exhibit 7.12: </span><span  
 class="content">A bar chart showing which of the regions each of the fifty U.S.
 states belongs</span></div><!--tex4ht:label?: x9-56025r12 -->
-<div class="fancyvrb" id="fancyvrb153"> <a 
+<div class="fancyvrb" id="fancyvrb154"> <a 
  id="x9-56027r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;barplot(summary(state.region))</span></div>
-<!--l. 419--><p class="noindent" ><img 
-src="LURN12x.png" alt="PIC" class="graphics" width="312.00119pt" height="312.00511pt" ><!--tex4ht:graphics  
+<!--l. 429--><p class="noindent" ><img 
+src="LURN12x.png" alt="PIC" class="graphics" width="312" height="312" ><!--tex4ht:graphics  
 name="LURN12x.png" src="figures/SimpleGraphsStateRegionBarChart2-1.eps"  
 -->
 </div>
@@ -1079,21 +1214,18 @@ name="LURN12x.png" src="figures/SimpleGraphsStateRegionBarChart2-1.eps"
 
                                                                           
    </div><hr class="endfloat" />
-<!--l. 425--><p class="indent" >   While this data set is rather trivial, it is useful for demonstrating one more
+<!--l. 435--><p class="indent" >   While this data set is rather trivial, it is useful for demonstrating one more
 feature. Note that both in the output above and in Exhibit&#x00A0;<a 
 href="#x9-56014r11">7.11<!--tex4ht:ref: StateRegionBarChart --></a>, the Western
 region is the last category. To reorder the regions in the bar chart is actually fairly
 straight forward. All we need to do is make a small addition to the existing
 commands.
-   <div class="fancyvrb" id="fancyvrb154">  <a 
+   <div class="fancyvrb" id="fancyvrb155">  <a 
  id="x9-56029r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;summary(state.region)[c(4,2,3,1)]</span></div>
-<div class="fancyvrb" id="fancyvrb155"> <a 
+<div class="fancyvrb" id="fancyvrb156"> <a 
  id="x9-56031r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1121,8 +1253,6 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;Northeast</span>
 <br class="fancyvrb" /><a 
  id="x9-56033r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1171,12 +1301,12 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;9</span></div>
-<!--l. 439--><p class="indent" >   and re-create the bar chart accordingly (see Exhibit&#x00A0;<a 
+<!--l. 449--><p class="indent" >   and re-create the bar chart accordingly (see Exhibit&#x00A0;<a 
 href="#x9-56034r13">7.13<!--tex4ht:ref: StateRegionBarChartImp --></a>).
                                                                           
 
                                                                           
-<!--l. 441--><p class="indent" >   <a 
+<!--l. 451--><p class="indent" >   <a 
  id="x9-56034r13"></a><hr class="float"><div class="float" 
 >
                                                                           
@@ -1184,18 +1314,17 @@ href="#x9-56034r13">7.13<!--tex4ht:ref: StateRegionBarChartImp --></a>).
                                                                           
 <div class="center" 
 >
-<!--l. 441--><p class="noindent" >
+<!--l. 451--><p class="noindent" >
 <br /> <div class="caption" 
 ><span class="id">Exhibit 7.13: </span><span  
 class="content">An improved bar chart showing which of the regions each of
 the fifty U.S. states belongs</span></div><!--tex4ht:label?: x9-56034r13 -->
-<div class="fancyvrb" id="fancyvrb156"> <a 
+<div class="fancyvrb" id="fancyvrb157"> <a 
  id="x9-56036r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;barplot(summary(state.region)[c(4,2,3,1)])</span></div>
-<!--l. 451--><p class="noindent" ><img 
-src="LURN13x.png" alt="PIC" class="graphics" width="312.00119pt" height="312.00511pt" ><!--tex4ht:graphics  
+<!--l. 461--><p class="noindent" ><img 
+src="LURN13x.png" alt="PIC" class="graphics" width="312" height="312" ><!--tex4ht:graphics  
 name="LURN13x.png" src="figures/SimpleGraphsStateRegionBarChartImp-1.eps"  
 -->
 </div>
@@ -1205,7 +1334,7 @@ name="LURN13x.png" src="figures/SimpleGraphsStateRegionBarChartImp-1.eps"
    </div><hr class="endfloat" />
    <h4 class="subsectionHead"><span class="titlemark">7.7.2   </span> <a 
  id="x9-570007.7.2"></a>Pie charts</h4>
-<!--l. 459--><p class="noindent" >OK, if you must do so, make a pie chart using the <a 
+<!--l. 469--><p class="noindent" >OK, if you must do so, make a pie chart using the <a 
  id="dx9-57001"></a><span 
 class="aett-12">pie() </span>command. Even
 the help for this command says they are a bad representation for data,
@@ -1213,13 +1342,13 @@ stating &#8220;Pie charts are a very bad way of displaying information. The eye
 is good at judging linear measures and bad at judging relative areas.
 A bar chart or dot chart is a preferable way of displaying this type of
 data."
-<!--l. 461--><p class="indent" >   The pie chart for the <span 
+<!--l. 471--><p class="indent" >   The pie chart for the <span 
 class="aett-12">state.region </span>data is given in Exhibit&#x00A0;<a 
 href="#x9-57002r14">7.14<!--tex4ht:ref: StateRegionPieChart --></a>.
                                                                           
 
                                                                           
-<!--l. 463--><p class="indent" >   <a 
+<!--l. 473--><p class="indent" >   <a 
  id="x9-57002r14"></a><hr class="float"><div class="float" 
 >
                                                                           
@@ -1227,18 +1356,17 @@ href="#x9-57002r14">7.14<!--tex4ht:ref: StateRegionPieChart --></a>.
                                                                           
 <div class="center" 
 >
-<!--l. 463--><p class="noindent" >
+<!--l. 473--><p class="noindent" >
 <br /> <div class="caption" 
 ><span class="id">Exhibit 7.14: </span><span  
 class="content">A pie chart showing which of the regions each of the fifty U.S.
 states belongs</span></div><!--tex4ht:label?: x9-57002r14 -->
-<div class="fancyvrb" id="fancyvrb157"> <a 
+<div class="fancyvrb" id="fancyvrb158"> <a 
  id="x9-57004r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;pie(summary(state.region))</span></div>
-<!--l. 473--><p class="noindent" ><img 
-src="LURN14x.png" alt="PIC" class="graphics" width="312.00119pt" height="312.00511pt" ><!--tex4ht:graphics  
+<!--l. 483--><p class="noindent" ><img 
+src="LURN14x.png" alt="PIC" class="graphics" width="312" height="312" ><!--tex4ht:graphics  
 name="LURN14x.png" src="figures/SimpleGraphsStateRegionPieChart-1.eps"  
 -->
 </div>
@@ -1248,20 +1376,18 @@ name="LURN14x.png" src="figures/SimpleGraphsStateRegionPieChart-1.eps"
    </div><hr class="endfloat" />
    <h3 class="sectionHead"><span class="titlemark">7.8   </span> <a 
  id="x9-580007.8"></a>Closing</h3>
-<!--l. 482--><p class="noindent" >If you are carrying on working with <span 
+<!--l. 492--><p class="noindent" >If you are carrying on working with <span 
 class="aess-12">R </span>you might wish to remove direct
 access to the data sets we used in this chapter by issuing the following
 commands
-<!--l. 486--><p class="indent" >
-   <div class="fancyvrb" id="fancyvrb158">  <a 
+   <div class="fancyvrb" id="fancyvrb159">  <a 
  id="x9-58002r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;detach(airquality)</span></div>
                                                                           
 
                                                                           
-   <!--l. 9--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 7--><div class="crosslinks"><p class="noindent">[<a 
 href="../LURNblind/LURNBlindch7.html">Version for blind users</a>] [<a 
 
 href="LURNch8.html" >next</a>] [<a 
@@ -1269,6 +1395,6 @@ href="LURNch6.html" >prev</a>] [<a
 href="LURNch6.html#tailLURNch6.html" >prev-tail</a>] [<a 
 href="LURNch7.html" >front</a>] [<a 
 href="LURN.html#LURNch7.html" >up</a>] </p></div>
-<!--l. 9--><p class="indent" >   <a 
+<!--l. 7--><p class="indent" >   <a 
  id="tailLURNch7.html"></a>   
 </body></html> 

@@ -6,15 +6,14 @@
 > 
 <head><title>5 LURN... To Manipulate your Datasets</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
-<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
-<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
 <!-- xhtml,2,next,mathjax,html --> 
 <meta name="src" content="LURNBlind.tex" /> 
-<meta name="date" content="2018-03-28 12:01:00" /> 
 <link rel="stylesheet" type="text/css" href="LURNBlind.css" /> 
 </head><body 
 >
-   <!--l. 13--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 11--><div class="crosslinks"><p class="noindent">[<a 
 href="../LURN/LURNch5.html">Version for sighted users</a>] [<a 
 
 href="LURNBlindch6.html" >next</a>] [<a 
@@ -24,9 +23,9 @@ href="#tailLURNBlindch5.html">tail</a>] [<a
 href="LURNBlind.html#LURNBlindch5.html" >up</a>] </p></div>
    <h2 class="chapterHead"><span class="titlemark">Chapter&#x00A0;5</span><br /><a 
  id="x7-360005"></a>LURN&#x2026; To Manipulate your Datasets</h2>
-<!--l. 22--><p class="noindent" >This chapter explains how to rearrange your data to meet your needs. Basic
+<!--l. 20--><p class="noindent" >This chapter explains how to rearrange your data to meet your needs. Basic
 sorting, data extraction and re-combination are discussed.
-</p><!--l. 24--><p class="indent" >   To get the most of this chapter, you should have worked through Chapter&#x00A0;<a 
+</p><!--l. 22--><p class="indent" >   To get the most of this chapter, you should have worked through Chapter&#x00A0;<a 
 href="LURNBlindch3.html#x5-150003">3<!--tex4ht:ref: DataEntry --></a> on
 entering data manually. You do not need to have completely read through
 Chapter&#x00A0;<a 
@@ -34,7 +33,7 @@ href="LURNBlindch4.html#x6-280004">4<!--tex4ht:ref: ImportData --></a> on import
 Ultimately, you will want to use the material in Chapter&#x00A0;<a 
 href="LURNBlindch4.html#x6-280004">4<!--tex4ht:ref: ImportData --></a> in conjunction with
 what follows here.
-</p><!--l. 27--><p class="indent" >   This chapter starts using the functionality that is built into <span 
+</p><!--l. 25--><p class="indent" >   This chapter starts using the functionality that is built into <span 
 class="aess-12">R</span>, but we also take
 a look at an add-on package called <a 
  id="dx7-36001"></a><span 
@@ -43,27 +42,23 @@ commonly used.
 </p>
    <h3 class="sectionHead"><span class="titlemark">5.1   </span> <a 
  id="x7-370005.1"></a>Sorting the data into a different order</h3>
-<!--l. 31--><p class="noindent" >The <a 
+<!--l. 29--><p class="noindent" >The <a 
  id="dx7-37001"></a><span 
 class="aett-12">sort() </span>command is illustrated in this section. It works for sorting a single
 vector of numeric values into ascending or descending order.
-</p><!--l. 35--><p class="indent" >
+</p><!--l. 33--><p class="indent" >
 </p>
    <div class="fancyvrb" id="fancyvrb81">  <a 
  id="x7-37003r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;x=round(rnorm(10),2)</span><br class="fancyvrb" /><a 
  id="x7-37005r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;sort(x)</span></div>
-<!--l. 39--><p class="noindent" >
+<!--l. 37--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb82"> <a 
  id="x7-37007r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1]</span><span 
 class="aett-12">&#x00A0;-0.89</span><span 
 class="aett-12">&#x00A0;-0.67</span><span 
@@ -80,24 +75,20 @@ class="aett-12">&#x00A0;0.11</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0.16</span><br class="fancyvrb" /><a 
  id="x7-37009r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[10]</span><span 
+class="aett-12">[10]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0.23</span></div>
-<!--l. 43--><p class="noindent" >
+<!--l. 41--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb83"> <a 
  id="x7-37011r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;sort(x,</span><span 
 class="aett-12">&#x00A0;decreasing=TRUE)</span></div>
-<!--l. 46--><p class="noindent" >
+<!--l. 44--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb84"> <a 
  id="x7-37013r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0.23</span><span 
@@ -115,10 +106,9 @@ class="aett-12">&#x00A0;-0.40</span><span
 class="aett-12">&#x00A0;-0.54</span><span 
 class="aett-12">&#x00A0;-0.67</span><br class="fancyvrb" /><a 
  id="x7-37015r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[10]</span><span 
+class="aett-12">[10]</span><span 
 class="aett-12">&#x00A0;-0.89</span></div>
-<!--l. 55--><p class="indent" >   We use the <a 
+<!--l. 53--><p class="indent" >   We use the <a 
  id="dx7-37016"></a><span 
 class="aett-12">order() </span>command to work with data that are non-numeric
 vectors, as well as data in <a 
@@ -128,48 +118,43 @@ class="aeti-12">matrix </span>or <a
 class="aeti-12">data.frame </span>format. For example, we first sort
 the names of me and my three children initially given in descending order of
 age.
-</p><!--l. 59--><p class="indent" >
+</p><!--l. 57--><p class="indent" >
                                                                           
 
                                                                           
 </p>
    <div class="fancyvrb" id="fancyvrb85">  <a 
  id="x7-37020r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;Home=c("Jonathan",</span><span 
 class="aett-12">&#x00A0;"Callum",</span><span 
 class="aett-12">&#x00A0;"Annabelle",</span><span 
 class="aett-12">&#x00A0;"Cordelia",</span><span 
 class="aett-12">&#x00A0;"Hershey")</span><br class="fancyvrb" /><a 
  id="x7-37022r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;order(Home)</span></div>
-<!--l. 63--><p class="noindent" >
+<!--l. 61--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb86"> <a 
  id="x7-37024r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">[1]</span><span 
 class="aett-12">&#x00A0;3</span><span 
 class="aett-12">&#x00A0;2</span><span 
 class="aett-12">&#x00A0;4</span><span 
 class="aett-12">&#x00A0;5</span><span 
 class="aett-12">&#x00A0;1</span></div>
-<!--l. 66--><p class="noindent" >
+<!--l. 64--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb87"> <a 
  id="x7-37026r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;Home[order(Home)]</span></div>
-<!--l. 69--><p class="noindent" >
+<!--l. 67--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb88"> <a 
  id="x7-37028r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">[1]</span><span 
 class="aett-12">&#x00A0;"Annabelle"</span><span 
 class="aett-12">&#x00A0;"Callum"</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -179,22 +164,20 @@ class="aett-12">&#x00A0;"Cordelia"</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;"Hershey"</span><br class="fancyvrb" /><a 
  id="x7-37030r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[5]</span><span 
+class="aett-12">[5]</span><span 
 class="aett-12">&#x00A0;"Jonathan"</span></div>
-<!--l. 77--><p class="indent" >   So we see that the <a 
+<!--l. 75--><p class="indent" >   So we see that the <a 
  id="dx7-37031"></a><span 
 class="aett-12">order() </span>command doesn&#8217;t actually do the re-ordering after
 all, but that we need to use the subscripts to extract the elements (the full set)
 from the pre-existing set.
-</p><!--l. 79--><p class="indent" >   We do need to take note of how the upper and lower case letters will be
+</p><!--l. 77--><p class="indent" >   We do need to take note of how the upper and lower case letters will be
 ordered.
-</p><!--l. 83--><p class="indent" >
+</p><!--l. 81--><p class="indent" >
 </p>
    <div class="fancyvrb" id="fancyvrb89">  <a 
  id="x7-37033r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;SomeLetters=c("A",</span><span 
 class="aett-12">&#x00A0;"B",</span><span 
 class="aett-12">&#x00A0;"a",</span><span 
@@ -202,45 +185,39 @@ class="aett-12">&#x00A0;"c",</span><span
 class="aett-12">&#x00A0;"b",</span><span 
 class="aett-12">&#x00A0;"C")</span><br class="fancyvrb" /><a 
  id="x7-37035r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;SomeLetters[order(SomeLetters)]</span></div>
-<!--l. 87--><p class="noindent" >
+<!--l. 85--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb90"> <a 
  id="x7-37037r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">[1]</span><span 
 class="aett-12">&#x00A0;"a"</span><span 
 class="aett-12">&#x00A0;"A"</span><span 
 class="aett-12">&#x00A0;"b"</span><span 
 class="aett-12">&#x00A0;"B"</span><span 
 class="aett-12">&#x00A0;"c"</span><span 
 class="aett-12">&#x00A0;"C"</span></div>
-<!--l. 94--><p class="indent" >   The <a 
+<!--l. 92--><p class="indent" >   The <a 
  id="dx7-37038"></a><span 
 class="aett-12">order() </span>command can prove a useful method of re-ordering experimental
 data if the run order has been stored as a variable. To illustrate this point we
 create a <a 
  id="dx7-37039"></a><span 
 class="aeti-12">data.frame </span>with two elements.
-</p><!--l. 98--><p class="indent" >
+</p><!--l. 96--><p class="indent" >
 </p>
    <div class="fancyvrb" id="fancyvrb91">  <a 
  id="x7-37041r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;x=round(rnorm(10),2)</span><br class="fancyvrb" /><a 
  id="x7-37043r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;x</span></div>
-<!--l. 102--><p class="noindent" >
+<!--l. 100--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb92"> <a 
  id="x7-37045r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1]</span><span 
 class="aett-12">&#x00A0;-0.35</span><span 
 class="aett-12">&#x00A0;-1.14</span><span 
@@ -255,36 +232,31 @@ class="aett-12">&#x00A0;0.56</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0.50</span><br class="fancyvrb" /><a 
  id="x7-37047r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[10]</span><span 
+class="aett-12">[10]</span><span 
 class="aett-12">&#x00A0;-0.73</span></div>
                                                                           
 
                                                                           
-<!--l. 106--><p class="noindent" >
+<!--l. 104--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb93"> <a 
  id="x7-37049r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;RunOrder=sample(10)</span></div>
-<!--l. 113--><p class="indent" >   Note that the <a 
+<!--l. 111--><p class="indent" >   Note that the <a 
  id="dx7-37050"></a><span 
 class="aett-12">sample() </span>command used here has created a random
 permutation of the numbers one to ten.
-</p><!--l. 117--><p class="indent" >
+</p><!--l. 115--><p class="indent" >
 </p>
    <div class="fancyvrb" id="fancyvrb94">  <a 
  id="x7-37052r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;RunOrder</span></div>
-<!--l. 120--><p class="noindent" >
+<!--l. 118--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb95"> <a 
  id="x7-37054r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[1]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;9</span><span 
@@ -305,18 +277,16 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;1</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;7</span></div>
-<!--l. 123--><p class="noindent" >
+<!--l. 121--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb96"> <a 
  id="x7-37056r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;Data=data.frame(x,RunOrder)</span><br class="fancyvrb" /><a 
  id="x7-37058r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;Data[order(RunOrder),]</span></div>
-<!--l. 127--><p class="noindent" >
+<!--l. 125--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb97"> <a 
  id="x7-37060r1"></a><span 
@@ -326,13 +296,10 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;x</span><span 
 class="aett-12">&#x00A0;RunOrder</span><br class="fancyvrb" /><a 
  id="x7-37062r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;9</span><span 
+class="aett-12">9</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0.50</span><span 
@@ -345,8 +312,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;1</span><br class="fancyvrb" /><a 
  id="x7-37064r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;5</span><span 
+class="aett-12">5</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;-0.02</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -356,11 +322,9 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;2</span>
-<br class="fancyvrb" /><a 
+class="aett-12">&#x00A0;2</span><br class="fancyvrb" /><a 
  id="x7-37066r4"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;4</span><span 
+class="aett-12">4</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;-0.46</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -370,10 +334,10 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;3</span><br class="fancyvrb" /><a 
+class="aett-12">&#x00A0;3</span>
+<br class="fancyvrb" /><a 
  id="x7-37068r5"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;2</span><span 
+class="aett-12">2</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;-1.14</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -385,8 +349,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;4</span><br class="fancyvrb" /><a 
  id="x7-37070r6"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;7</span><span 
+class="aett-12">7</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;-0.05</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -398,8 +361,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;5</span><br class="fancyvrb" /><a 
  id="x7-37072r7"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;6</span><span 
+class="aett-12">6</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;-1.13</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -409,11 +371,9 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;6</span>
-<br class="fancyvrb" /><a 
+class="aett-12">&#x00A0;6</span><br class="fancyvrb" /><a 
  id="x7-37074r8"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;10</span><span 
+class="aett-12">10</span><span 
 class="aett-12">&#x00A0;-0.73</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -422,10 +382,10 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;7</span><br class="fancyvrb" /><a 
+class="aett-12">&#x00A0;7</span>
+<br class="fancyvrb" /><a 
  id="x7-37076r9"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;8</span><span 
+class="aett-12">8</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0.56</span><span 
@@ -438,8 +398,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;8</span><br class="fancyvrb" /><a 
  id="x7-37078r10"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;1</span><span 
+class="aett-12">1</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;-0.35</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -451,8 +410,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;9</span><br class="fancyvrb" /><a 
  id="x7-37080r11"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;3</span><span 
+class="aett-12">3</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0.53</span><span 
@@ -463,34 +421,33 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;10</span></div>
-<!--l. 144--><p class="noindent" >
+<!--l. 142--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">5.2   </span> <a 
  id="x7-380005.2"></a>Extracting data using information on one variable</h3>
-<!--l. 147--><p class="noindent" >To illustrate the extraction of a set of observations from a <a 
+<!--l. 145--><p class="noindent" >To illustrate the extraction of a set of observations from a <a 
  id="dx7-38001"></a><span 
 class="aeti-12">data.frame</span>, we make
 use of one of the internal datasets provided with the base installation of <span 
 class="aess-12">R</span>. We
 retreiv the <span 
 class="aett-12">airquality </span>dat using:
-</p><!--l. 151--><p class="indent" >
+</p><!--l. 149--><p class="indent" >
 </p>
    <div class="fancyvrb" id="fancyvrb98">  <a 
  id="x7-38003r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;data(airquality)</span></div>
                                                                           
 
                                                                           
-<!--l. 157--><p class="indent" >   An explanation of this command is given in Section&#x00A0;<a 
+<!--l. 155--><p class="indent" >   An explanation of this command is given in Section&#x00A0;<a 
 href="LURNBlindch4.html#x6-330004.5">4.5<!--tex4ht:ref: DataFromPackages --></a>. This data set has
 its own help page that can be viewed by typing <span 
 class="aett-12">?airquality </span>at the <span 
 class="aess-12">R</span>
 prompt.
-</p><!--l. 160--><p class="indent" >   We can ask for the rows of this data that match specified details using
+</p><!--l. 158--><p class="indent" >   We can ask for the rows of this data that match specified details using
 subscripting. Various operators exist for numerical comparisons; the simplest of
 which are <span 
 class="aett-12">&#x003C; </span>and <span 
@@ -503,35 +460,31 @@ the wind speed was less than ten miles per hour and then the temperature was
 less than <span 
 class="cmr-12">60</span> <span 
 class="cmr-12">deg</span>F.
-</p><!--l. 165--><p class="indent" >
+</p><!--l. 163--><p class="indent" >
 </p>
    <div class="fancyvrb" id="fancyvrb99">  <a 
  id="x7-38006r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;nrow(airquality[airquality$Wind&#x003C;10,])</span></div>
-<!--l. 168--><p class="noindent" >
+<!--l. 166--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb100"> <a 
  id="x7-38008r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">[1]</span><span 
 class="aett-12">&#x00A0;81</span></div>
-<!--l. 171--><p class="noindent" >
+<!--l. 169--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb101"> <a 
  id="x7-38010r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;nrow(airquality[airquality$Temp&#x003C;60,])</span></div>
-<!--l. 174--><p class="noindent" >
+<!--l. 172--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb102"> <a 
  id="x7-38012r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">[1]</span><span 
 class="aett-12">&#x00A0;8</span></div>
-<!--l. 181--><p class="indent" >   If we want to know how many observations have an exact value, we
+<!--l. 179--><p class="indent" >   If we want to know how many observations have an exact value, we
 use <span 
 class="aett-12">== </span>not a single equals sign because it has a different meaning in <span 
 class="aess-12">R</span>.
@@ -540,28 +493,26 @@ number of days when the temperature was recorded as <span
 class="cmr-12">69</span> <span 
 class="cmr-12">deg</span>F can be found
 using:
-</p><!--l. 185--><p class="indent" >
+</p><!--l. 183--><p class="indent" >
 </p>
    <div class="fancyvrb" id="fancyvrb103">  <a 
  id="x7-38014r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;nrow(airquality[airquality$Temp==69,])</span></div>
-<!--l. 188--><p class="noindent" >
+<!--l. 186--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb104"> <a 
  id="x7-38016r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">[1]</span><span 
 class="aett-12">&#x00A0;3</span></div>
                                                                           
 
                                                                           
-<!--l. 197--><p class="noindent" >
+<!--l. 195--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">5.3   </span> <a 
  id="x7-390005.3"></a>Extracting data using information on more than one variable</h3>
-<!--l. 199--><p class="noindent" >To print out the rows of the <span 
+<!--l. 197--><p class="noindent" >To print out the rows of the <span 
 class="aett-12">airquality</span> <a 
  id="dx7-39001"></a><span 
 class="aeti-12">data.frame </span>where the temperature was
@@ -569,19 +520,16 @@ less than 60 degrees and the wind was less than ten miles per hour, we would use
 the <span 
 class="aett-12">&amp; </span>operator between the two conditions that identify which rows are
 required.
-</p><!--l. 203--><p class="indent" >
+</p><!--l. 201--><p class="indent" >
 </p>
    <div class="fancyvrb" id="fancyvrb105">  <a 
  id="x7-39003r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;airquality[airquality$Wind&#x003C;10&amp;airquality$Temp&#x003C;60,]</span></div>
-<!--l. 206--><p class="noindent" >
+<!--l. 204--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb106"> <a 
  id="x7-39005r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;Ozone</span><span 
@@ -591,8 +539,7 @@ class="aett-12">&#x00A0;Temp</span><span
 class="aett-12">&#x00A0;Month</span><span 
 class="aett-12">&#x00A0;Day</span><br class="fancyvrb" /><a 
  id="x7-39007r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;21</span><span 
+class="aett-12">21</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -619,8 +566,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;21</span>
 <br class="fancyvrb" /><a 
  id="x7-39009r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;27</span><span 
+class="aett-12">27</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -643,11 +589,11 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;5</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;27</span></div>
-<!--l. 216--><p class="noindent" >
+<!--l. 214--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">5.4   </span> <a 
  id="x7-400005.4"></a>Use of dplyr for data manipulation</h3>
-<!--l. 219--><p class="noindent" >The <a 
+<!--l. 217--><p class="noindent" >The <a 
  id="dx7-40001"></a><span 
 class="aeti-12">dplyr </span>package is an alternative to the basic <span 
 class="aess-12">R </span>functionality shown in this
@@ -670,72 +616,58 @@ class="aett-12">mutate()</span>, and
 class="aett-12">transmute() </span>are discussed here, while the others will be discussed in Section&#x00A0;<a 
 href="LURNBlindch8.html#x10-650008.5">8.5<!--tex4ht:ref: DPlyRDataSummarisation --></a>
 where they are more relevant.
-</p><!--l. 221--><p class="indent" >   You&#8217;ll need to install the package (see Section&#x00A0;<a 
+</p><!--l. 219--><p class="indent" >   You&#8217;ll need to install the package (see Section&#x00A0;<a 
 href="LURNBlindch16.html#x18-13300016.1">16.1<!--tex4ht:ref: InstallPackages --></a> for instructions) before
 running the function
-</p><!--l. 225--><p class="indent" >
+</p><!--l. 223--><p class="indent" >
 </p>
    <div class="fancyvrb" id="fancyvrb107">  <a 
  id="x7-40009r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;library(dplyr)</span></div>
-<!--l. 228--><p class="noindent" >
+<!--l. 226--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb108"> <a 
- id="x7-40011r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
+ id="x7-40011r1"></a><br class="fancyvrb" /><a 
  id="x7-40013r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;Attaching</span><span 
+class="aett-12">Attaching</span><span 
 class="aett-12">&#x00A0;package:</span><span 
 class="aett-12">&#x00A0;&#8217;dplyr&#8217;</span></div>
-<!--l. 232--><p class="noindent" >
+<!--l. 230--><p class="noindent" >
                                                                           
 
                                                                           
 </p>
    <div class="fancyvrb" id="fancyvrb109"> <a 
  id="x7-40015r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;The</span><span 
+class="aett-12">The</span><span 
 class="aett-12">&#x00A0;following</span><span 
 class="aett-12">&#x00A0;objects</span><span 
 class="aett-12">&#x00A0;are</span><span 
 class="aett-12">&#x00A0;masked</span><span 
 class="aett-12">&#x00A0;from</span><span 
 class="aett-12">&#x00A0;&#8217;package:stats&#8217;:</span><br class="fancyvrb" /><a 
- id="x7-40017r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
+ id="x7-40017r2"></a><br class="fancyvrb" /><a 
  id="x7-40019r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;filter,</span><span 
 class="aett-12">&#x00A0;lag</span></div>
-<!--l. 237--><p class="noindent" >
+<!--l. 235--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb110"> <a 
  id="x7-40021r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;The</span><span 
+class="aett-12">The</span><span 
 class="aett-12">&#x00A0;following</span><span 
 class="aett-12">&#x00A0;objects</span><span 
 class="aett-12">&#x00A0;are</span><span 
 class="aett-12">&#x00A0;masked</span><span 
 class="aett-12">&#x00A0;from</span><span 
 class="aett-12">&#x00A0;&#8217;package:base&#8217;:</span><br class="fancyvrb" /><a 
- id="x7-40023r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span>
+ id="x7-40023r2"></a>
 <br class="fancyvrb" /><a 
  id="x7-40025r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -743,7 +675,7 @@ class="aett-12">&#x00A0;intersect,</span><span
 class="aett-12">&#x00A0;setdiff,</span><span 
 class="aett-12">&#x00A0;setequal,</span><span 
 class="aett-12">&#x00A0;union</span></div>
-<!--l. 245--><p class="indent" >   to gain access to the commands just listed. Note that the <a 
+<!--l. 243--><p class="indent" >   to gain access to the commands just listed. Note that the <a 
  id="dx7-40026"></a><span 
 class="aett-12">head() </span>command is
 used in many of the following examples to ensure that only a handful of rows are
@@ -755,43 +687,37 @@ quality data that is the same as the original except for being made ready for us
 with the <a 
  id="dx7-40028"></a><span 
 class="aeti-12">dplyr </span>functions.
-</p><!--l. 249--><p class="indent" >
+</p><!--l. 247--><p class="indent" >
 </p>
    <div class="fancyvrb" id="fancyvrb111">  <a 
  id="x7-40030r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;airquality2</span><span 
 class="aett-12">&#x00A0;=</span><span 
 class="aett-12">&#x00A0;tbl_df(airquality)</span></div>
-<!--l. 255--><p class="indent" >   and then see the structure of the data using the <a 
+<!--l. 253--><p class="indent" >   and then see the structure of the data using the <a 
  id="dx7-40031"></a><span 
 class="aett-12">glimpse() </span>function that is a
 substitute for the <a 
  id="dx7-40032"></a><span 
 class="aett-12">str() </span>command we&#8217;ve used previously.
-</p><!--l. 259--><p class="indent" >
+</p><!--l. 257--><p class="indent" >
 </p>
    <div class="fancyvrb" id="fancyvrb112">  <a 
  id="x7-40034r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;glimpse(airquality)</span></div>
-<!--l. 262--><p class="noindent" >
+<!--l. 260--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb113"> <a 
  id="x7-40036r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;Observations:</span><span 
+class="aett-12">Observations:</span><span 
 class="aett-12">&#x00A0;153</span><br class="fancyvrb" /><a 
  id="x7-40038r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;Variables:</span><span 
-class="aett-12">&#x00A0;6</span>
-<br class="fancyvrb" /><a 
+class="aett-12">Variables:</span><span 
+class="aett-12">&#x00A0;6</span><br class="fancyvrb" /><a 
  id="x7-40040r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;$</span><span 
+class="aett-12">$</span><span 
 class="aett-12">&#x00A0;Ozone</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -809,8 +735,7 @@ class="aett-12">&#x00A0;NA,</span><span
 class="aett-12">&#x00A0;...</span>
 <br class="fancyvrb" /><a 
  id="x7-40042r4"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;$</span><span 
+class="aett-12">$</span><span 
 class="aett-12">&#x00A0;Solar.R</span><span 
 class="aett-12">&#x00A0;&#x003C;int&#x003E;</span><span 
 class="aett-12">&#x00A0;190,</span><span 
@@ -824,8 +749,7 @@ class="aett-12">&#x00A0;99,</span><span
 class="aett-12">&#x00A0;19...</span>
 <br class="fancyvrb" /><a 
  id="x7-40044r5"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;$</span><span 
+class="aett-12">$</span><span 
 class="aett-12">&#x00A0;Wind</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -841,8 +765,7 @@ class="aett-12">&#x00A0;8.6,</span><span
 class="aett-12">&#x00A0;...</span>
 <br class="fancyvrb" /><a 
  id="x7-40046r6"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;$</span><span 
+class="aett-12">$</span><span 
 class="aett-12">&#x00A0;Temp</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -860,8 +783,7 @@ class="aett-12">&#x00A0;61,</span><span
 class="aett-12">&#x00A0;69,...</span>
 <br class="fancyvrb" /><a 
  id="x7-40048r7"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;$</span><span 
+class="aett-12">$</span><span 
 class="aett-12">&#x00A0;Month</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -882,8 +804,7 @@ class="aett-12">&#x00A0;5,</span><span
 class="aett-12">&#x00A0;...</span>
 <br class="fancyvrb" /><a 
  id="x7-40050r8"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;$</span><span 
+class="aett-12">$</span><span 
 class="aett-12">&#x00A0;Day</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -903,7 +824,7 @@ class="aett-12">&#x00A0;10,</span><span
 class="aett-12">&#x00A0;11,</span><span 
 class="aett-12">&#x00A0;12,</span><span 
 class="aett-12">&#x00A0;...</span></div>
-<!--l. 275--><p class="indent" >   The <a 
+<!--l. 273--><p class="indent" >   The <a 
  id="dx7-40051"></a><span 
 class="aett-12">glimpse() </span>command works on a <a 
  id="dx7-40052"></a><span 
@@ -911,7 +832,7 @@ class="aeti-12">data.frame </span>or the new structure called a
 <a 
  id="dx7-40053"></a><span 
 class="aeti-12">tbl_df  </span>equally well.
-</p><!--l. 277--><p class="indent" >   The <a 
+</p><!--l. 275--><p class="indent" >   The <a 
  id="dx7-40054"></a><span 
 class="aett-12">filter() </span>and <a 
  id="dx7-40055"></a><span 
@@ -922,23 +843,20 @@ class="aett-12">filter() </span>command is for extraction,
 while <a 
  id="dx7-40057"></a><span 
 class="aett-12">arrange() </span>is for rearrangement. For example,
-</p><!--l. 281--><p class="indent" >
+</p><!--l. 279--><p class="indent" >
                                                                           
 
                                                                           
 </p>
    <div class="fancyvrb" id="fancyvrb114">  <a 
  id="x7-40059r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;filter(airquality,</span><span 
 class="aett-12">&#x00A0;Wind&#x003C;10&amp;Temp&#x003C;60)</span></div>
-<!--l. 284--><p class="noindent" >
+<!--l. 282--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb115"> <a 
  id="x7-40061r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;Ozone</span><span 
 class="aett-12">&#x00A0;Solar.R</span><span 
@@ -947,8 +865,7 @@ class="aett-12">&#x00A0;Temp</span><span
 class="aett-12">&#x00A0;Month</span><span 
 class="aett-12">&#x00A0;Day</span><br class="fancyvrb" /><a 
  id="x7-40063r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;1</span><span 
+class="aett-12">1</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -975,8 +892,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;21</span>
 <br class="fancyvrb" /><a 
  id="x7-40065r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;2</span><span 
+class="aett-12">2</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -999,7 +915,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;5</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;27</span></div>
-<!--l. 292--><p class="indent" >   extracts the rows of the <span 
+<!--l. 290--><p class="indent" >   extracts the rows of the <span 
 class="aett-12">airquality </span>data that meet the combinations of
 conditions specified. Use of <a 
  id="dx7-40066"></a><span 
@@ -1011,28 +927,25 @@ don&#8217;t need the square brackets for common subscripting tasks. We could hav
 stored the outcome in a new <a 
  id="dx7-40068"></a><span 
 class="aeti-12">data.frame </span>if we wished.
-</p><!--l. 295--><p class="indent" >   Perhaps the greatest gift of the <a 
+</p><!--l. 293--><p class="indent" >   Perhaps the greatest gift of the <a 
  id="dx7-40069"></a><span 
 class="aeti-12">dplyr </span>package is its popularising a different
 way of combining commands, called the <a 
  id="dx7-40070"></a><span 
 class="aeti-12">pipe operator</span>. The last command issued
 can be re-written as:
-</p><!--l. 299--><p class="indent" >
+</p><!--l. 297--><p class="indent" >
 </p>
    <div class="fancyvrb" id="fancyvrb116">  <a 
  id="x7-40072r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;airquality</span><span 
 class="aett-12">&#x00A0;%&#x003E;%</span><span 
 class="aett-12">&#x00A0;filter(Wind&#x003C;10&amp;Temp&#x003C;60)</span></div>
-<!--l. 302--><p class="noindent" >
+<!--l. 300--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb117"> <a 
  id="x7-40074r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;Ozone</span><span 
 class="aett-12">&#x00A0;Solar.R</span><span 
@@ -1041,8 +954,7 @@ class="aett-12">&#x00A0;Temp</span><span
 class="aett-12">&#x00A0;Month</span><span 
 class="aett-12">&#x00A0;Day</span><br class="fancyvrb" /><a 
  id="x7-40076r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;1</span><span 
+class="aett-12">1</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1069,8 +981,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;21</span>
 <br class="fancyvrb" /><a 
  id="x7-40078r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;2</span><span 
+class="aett-12">2</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1093,7 +1004,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;5</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;27</span></div>
-<!--l. 310--><p class="indent" >   This way of presenting commands is considered to be easier to read by many
+<!--l. 308--><p class="indent" >   This way of presenting commands is considered to be easier to read by many
 users which helps with the popularity of the <a 
  id="dx7-40079"></a><span 
 class="aeti-12">dplyr </span>package. The <a 
@@ -1110,7 +1021,7 @@ offers so I have tried to use the <a
  id="dx7-40083"></a><span 
 class="aeti-12">pipe operator </span>as often as I can from here
 on.
-</p><!--l. 313--><p class="indent" >   The <a 
+</p><!--l. 311--><p class="indent" >   The <a 
  id="dx7-40084"></a><span 
 class="aett-12">filter() </span>command is useful if we know the values a variable takes, but
 at times we just want to know more about the observations that are best or worst
@@ -1121,32 +1032,28 @@ class="aett-12">arrange() </span>command instead of the <a
  id="dx7-40086"></a><span 
 class="aett-12">order() </span>command seen
 earlier.
-</p><!--l. 317--><p class="indent" >
+</p><!--l. 315--><p class="indent" >
 </p>
    <div class="fancyvrb" id="fancyvrb118">  <a 
  id="x7-40088r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;airquality2</span><span 
 class="aett-12">&#x00A0;%&#x003E;%</span><span 
 class="aett-12">&#x00A0;arrange(desc(Temp))</span></div>
                                                                           
 
                                                                           
-<!--l. 320--><p class="noindent" >
+<!--l. 318--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb119"> <a 
  id="x7-40090r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;#</span><span 
+class="aett-12">#</span><span 
 class="aett-12">&#x00A0;A</span><span 
 class="aett-12">&#x00A0;tibble:</span><span 
 class="aett-12">&#x00A0;153</span><span 
 class="aett-12">&#x00A0;x</span><span 
 class="aett-12">&#x00A0;6</span><br class="fancyvrb" /><a 
  id="x7-40092r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;Ozone</span><span 
@@ -1163,8 +1070,6 @@ class="aett-12">&#x00A0;Day</span>
  id="x7-40094r3"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003C;int&#x003E;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1174,8 +1079,6 @@ class="aett-12">&#x00A0;&#x003C;int&#x003E;</span><span
 class="aett-12">&#x00A0;&#x003C;int&#x003E;</span><span 
 class="aett-12">&#x00A0;&#x003C;int&#x003E;</span><br class="fancyvrb" /><a 
  id="x7-40096r4"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;1</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1203,8 +1106,6 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;28</span>
 <br class="fancyvrb" /><a 
  id="x7-40098r5"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;2</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1231,8 +1132,6 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;30</span><br class="fancyvrb" /><a 
  id="x7-40100r6"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;3</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1259,8 +1158,6 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;29</span>
 <br class="fancyvrb" /><a 
  id="x7-40102r7"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;4</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1287,8 +1184,6 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;31</span><br class="fancyvrb" /><a 
  id="x7-40104r8"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;5</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1316,8 +1211,6 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;11</span>
 <br class="fancyvrb" /><a 
  id="x7-40106r9"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;6</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1345,8 +1238,6 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;3</span><br class="fancyvrb" /><a 
  id="x7-40108r10"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;7</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1375,8 +1266,6 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;4</span>
 <br class="fancyvrb" /><a 
  id="x7-40110r11"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;8</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1403,8 +1292,6 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;12</span><br class="fancyvrb" /><a 
  id="x7-40112r12"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;9</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1433,8 +1320,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;8</span>
 <br class="fancyvrb" /><a 
  id="x7-40114r13"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;10</span><span 
+class="aett-12">10</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1461,17 +1347,16 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;9</span><br class="fancyvrb" /><a 
  id="x7-40116r14"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;#</span><span 
+class="aett-12">#</span><span 
 class="aett-12">&#x00A0;...</span><span 
 class="aett-12">&#x00A0;with</span><span 
 class="aett-12">&#x00A0;143</span><span 
 class="aett-12">&#x00A0;more</span><span 
 class="aett-12">&#x00A0;rows</span></div>
-<!--l. 339--><p class="indent" >   We can add more variables to sort the data by if we like. We used the <span 
+<!--l. 337--><p class="indent" >   We can add more variables to sort the data by if we like. We used the <span 
 class="aett-12">desc </span>to
 get the temperatures to be in descending order in this example.
-</p><!--l. 341--><p class="indent" >   The temperatures just listed are measured on the Fahrenheit scale. I live in a
+</p><!--l. 339--><p class="indent" >   The temperatures just listed are measured on the Fahrenheit scale. I live in a
 country that uses the centigrade scale so a conversion is needed to make
 these results more interpretable. Enter the <a 
  id="dx7-40117"></a><span 
@@ -1479,12 +1364,11 @@ class="aett-12">mutate() </span>and <a
  id="dx7-40118"></a><span 
 class="aett-12">transmute()</span>
 commands.
-</p><!--l. 347--><p class="indent" >
+</p><!--l. 345--><p class="indent" >
 </p>
    <div class="fancyvrb" id="fancyvrb120">  <a 
  id="x7-40120r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;airquality</span><span 
 class="aett-12">&#x00A0;%&#x003E;%</span><span 
 class="aett-12">&#x00A0;mutate(TempC</span><span 
@@ -1498,12 +1382,10 @@ class="aett-12">&#x00A0;/</span><span
 class="aett-12">&#x00A0;9)</span><span 
 class="aett-12">&#x00A0;%&#x003E;%</span><span 
 class="aett-12">&#x00A0;head()</span></div>
-<!--l. 350--><p class="noindent" >
+<!--l. 348--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb121"> <a 
  id="x7-40122r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;Ozone</span><span 
 class="aett-12">&#x00A0;Solar.R</span><span 
@@ -1514,8 +1396,7 @@ class="aett-12">&#x00A0;Day</span><span
 class="aett-12">&#x00A0;TempC</span>
 <br class="fancyvrb" /><a 
  id="x7-40124r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;1</span><span 
+class="aett-12">1</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1540,8 +1421,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;1</span><span 
 class="aett-12">&#x00A0;19.44</span><br class="fancyvrb" /><a 
  id="x7-40126r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;2</span><span 
+class="aett-12">2</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1567,8 +1447,7 @@ class="aett-12">&#x00A0;2</span><span
 class="aett-12">&#x00A0;22.22</span>
 <br class="fancyvrb" /><a 
  id="x7-40128r4"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;3</span><span 
+class="aett-12">3</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1592,8 +1471,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;3</span><span 
 class="aett-12">&#x00A0;23.33</span><br class="fancyvrb" /><a 
  id="x7-40130r5"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;4</span><span 
+class="aett-12">4</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1618,8 +1496,7 @@ class="aett-12">&#x00A0;4</span><span
 class="aett-12">&#x00A0;16.67</span>
 <br class="fancyvrb" /><a 
  id="x7-40132r6"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;5</span><span 
+class="aett-12">5</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1644,8 +1521,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;5</span><span 
 class="aett-12">&#x00A0;13.33</span><br class="fancyvrb" /><a 
  id="x7-40134r7"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;6</span><span 
+class="aett-12">6</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1669,16 +1545,15 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;6</span><span 
 class="aett-12">&#x00A0;18.89</span></div>
-<!--l. 362--><p class="indent" >   will create a new column in the returned data. N.B. the new data was not
+<!--l. 360--><p class="indent" >   will create a new column in the returned data. N.B. the new data was not
 stored in a new object so this command&#8217;s effect was purely temporary.
-</p><!--l. 364--><p class="indent" >   Again, notice that we didn&#8217;t need to do all that much to add a new column
+</p><!--l. 362--><p class="indent" >   Again, notice that we didn&#8217;t need to do all that much to add a new column
 and that this code is perhaps a little simpler than the alternative:
-</p><!--l. 368--><p class="indent" >
+</p><!--l. 366--><p class="indent" >
 </p>
    <div class="fancyvrb" id="fancyvrb122">  <a 
  id="x7-40136r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;airquality$TempC</span><span 
 class="aett-12">&#x00A0;=</span><span 
 class="aett-12">&#x00A0;(airquality$Temp</span><span 
@@ -1688,23 +1563,22 @@ class="aett-12">&#x00A0;*</span><span
 class="aett-12">&#x00A0;5</span><span 
 class="aett-12">&#x00A0;/</span><span 
 class="aett-12">&#x00A0;9</span></div>
-<!--l. 374--><p class="indent" >   which we saw earlier. The main difference between the two commands is that
+<!--l. 372--><p class="indent" >   which we saw earlier. The main difference between the two commands is that
 this one will add the new colun to the original <a 
  id="dx7-40137"></a><span 
 class="aeti-12">data.frame</span>. In this instance the
 difference is probably fairly trivial, but when we use much larger data sets,
 the storage of results is important because of speed and memory usage
 concerns.
-</p><!--l. 377--><p class="indent" >   The command
-</p><!--l. 381--><p class="indent" >
+</p><!--l. 375--><p class="indent" >   The command
+</p><!--l. 379--><p class="indent" >
                                                                           
 
                                                                           
 </p>
    <div class="fancyvrb" id="fancyvrb123">  <a 
  id="x7-40139r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;airquality2</span><span 
 class="aett-12">&#x00A0;%&#x003E;%</span><span 
 class="aett-12">&#x00A0;transmute(TempC</span><span 
@@ -1716,12 +1590,11 @@ class="aett-12">&#x00A0;*</span><span
 class="aett-12">&#x00A0;5</span><span 
 class="aett-12">&#x00A0;/</span><span 
 class="aett-12">&#x00A0;9)</span></div>
-<!--l. 384--><p class="noindent" >
+<!--l. 382--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb124"> <a 
  id="x7-40141r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;#</span><span 
+class="aett-12">#</span><span 
 class="aett-12">&#x00A0;A</span><span 
 class="aett-12">&#x00A0;tibble:</span><span 
 class="aett-12">&#x00A0;153</span><span 
@@ -1730,86 +1603,62 @@ class="aett-12">&#x00A0;1</span><br class="fancyvrb" /><a
  id="x7-40143r2"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;TempC</span><br class="fancyvrb" /><a 
  id="x7-40145r3"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003C;dbl&#x003E;</span><br class="fancyvrb" /><a 
  id="x7-40147r4"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;1</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;19.4</span><br class="fancyvrb" /><a 
  id="x7-40149r5"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;2</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;22.2</span><br class="fancyvrb" /><a 
  id="x7-40151r6"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;3</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;23.3</span><br class="fancyvrb" /><a 
  id="x7-40153r7"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;4</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;16.7</span>
 <br class="fancyvrb" /><a 
  id="x7-40155r8"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;5</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;13.3</span><br class="fancyvrb" /><a 
  id="x7-40157r9"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;6</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;18.9</span><br class="fancyvrb" /><a 
  id="x7-40159r10"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;7</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;18.3</span><br class="fancyvrb" /><a 
  id="x7-40161r11"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;8</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;15.0</span><br class="fancyvrb" /><a 
  id="x7-40163r12"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;9</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;16.1</span><br class="fancyvrb" /><a 
  id="x7-40165r13"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;10</span><span 
+class="aett-12">10</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;20.6</span><br class="fancyvrb" /><a 
  id="x7-40167r14"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;#</span><span 
+class="aett-12">#</span><span 
 class="aett-12">&#x00A0;...</span><span 
 class="aett-12">&#x00A0;with</span><span 
 class="aett-12">&#x00A0;143</span><span 
 class="aett-12">&#x00A0;more</span><span 
 class="aett-12">&#x00A0;rows</span></div>
-<!--l. 403--><p class="indent" >   creates the new variable as a stand alone object. It hasn&#8217;t been stored as an
+<!--l. 401--><p class="indent" >   creates the new variable as a stand alone object. It hasn&#8217;t been stored as an
 object so is only temporarily available.
-</p><!--l. 405--><p class="indent" >   Finally, the <a 
+</p><!--l. 403--><p class="indent" >   Finally, the <a 
  id="dx7-40168"></a><span 
 class="aeti-12">dplyr </span>package also gives users two simple ways to extract
 a random sample from a <a 
@@ -1821,21 +1670,18 @@ class="aett-12">sample_n() </span>and
  id="dx7-40171"></a><span 
 class="aett-12">sample_frac() </span>extract a sample of a predetermined size and a specified fraction
 respectively. For example:
-</p><!--l. 410--><p class="indent" >
+</p><!--l. 408--><p class="indent" >
 </p>
    <div class="fancyvrb" id="fancyvrb125">  <a 
  id="x7-40173r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;airquality</span><span 
 class="aett-12">&#x00A0;%&#x003E;%</span><span 
 class="aett-12">&#x00A0;sample_n(4)</span></div>
-<!--l. 413--><p class="noindent" >
+<!--l. 411--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb126"> <a 
  id="x7-40175r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1846,8 +1692,7 @@ class="aett-12">&#x00A0;Temp</span><span
 class="aett-12">&#x00A0;Month</span><span 
 class="aett-12">&#x00A0;Day</span><br class="fancyvrb" /><a 
  id="x7-40177r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;145</span><span 
+class="aett-12">145</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1872,8 +1717,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;22</span>
 <br class="fancyvrb" /><a 
  id="x7-40179r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;122</span><span 
+class="aett-12">122</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1896,8 +1740,7 @@ class="aett-12">&#x00A0;8</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;30</span><br class="fancyvrb" /><a 
  id="x7-40181r4"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;38</span><span 
+class="aett-12">38</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1923,8 +1766,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;7</span>
 <br class="fancyvrb" /><a 
  id="x7-40183r5"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;18</span><span 
+class="aett-12">18</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1948,22 +1790,19 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;5</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;18</span></div>
-<!--l. 423--><p class="indent" >   and
-</p><!--l. 427--><p class="indent" >
+<!--l. 420--><p class="noindent" >and
+</p><!--l. 423--><p class="indent" >
 </p>
    <div class="fancyvrb" id="fancyvrb127">  <a 
  id="x7-40185r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;airquality</span><span 
 class="aett-12">&#x00A0;%&#x003E;%</span><span 
 class="aett-12">&#x00A0;sample_frac(0.05)</span></div>
-<!--l. 430--><p class="noindent" >
+<!--l. 426--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb128"> <a 
  id="x7-40187r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1974,8 +1813,7 @@ class="aett-12">&#x00A0;Temp</span><span
 class="aett-12">&#x00A0;Month</span><span 
 class="aett-12">&#x00A0;Day</span><br class="fancyvrb" /><a 
  id="x7-40189r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;41</span><span 
+class="aett-12">41</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1999,8 +1837,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;10</span>
 <br class="fancyvrb" /><a 
  id="x7-40191r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;39</span><span 
+class="aett-12">39</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -2025,8 +1862,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;8</span><br class="fancyvrb" /><a 
  id="x7-40193r4"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;108</span><span 
+class="aett-12">108</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -2050,8 +1886,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;16</span>
 <br class="fancyvrb" /><a 
  id="x7-40195r5"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;111</span><span 
+class="aett-12">111</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -2073,8 +1908,7 @@ class="aett-12">&#x00A0;8</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;19</span><br class="fancyvrb" /><a 
  id="x7-40197r6"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;110</span><span 
+class="aett-12">110</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -2098,8 +1932,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;18</span>
 <br class="fancyvrb" /><a 
  id="x7-40199r7"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;101</span><span 
+class="aett-12">101</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;110</span><span 
@@ -2122,8 +1955,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;9</span><br class="fancyvrb" /><a 
  id="x7-40201r8"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;31</span><span 
+class="aett-12">31</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -2148,8 +1980,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;31</span>
 <br class="fancyvrb" /><a 
  id="x7-40203r9"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;68</span><span 
+class="aett-12">68</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -2173,7 +2004,7 @@ class="aett-12">&#x00A0;7</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;7</span></div>
-<!--l. 445--><p class="indent" >   The <a 
+<!--l. 441--><p class="indent" >   The <a 
  id="dx7-40204"></a><span 
 class="aeti-12">dplyr </span>package is under active development and so we should expect more
 functionality to become available, but there is also work being done to
@@ -2183,7 +2014,7 @@ sets.
 
                                                                           
 </p>
-   <!--l. 7--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 5--><div class="crosslinks"><p class="noindent">[<a 
 href="../LURN/LURNch5.html">Version for sighted users</a>] [<a 
 
 href="LURNBlindch6.html" >next</a>] [<a 
@@ -2191,6 +2022,6 @@ href="LURNBlindch4.html" >prev</a>] [<a
 href="LURNBlindch4.html#tailLURNBlindch4.html" >prev-tail</a>] [<a 
 href="LURNBlindch5.html" >front</a>] [<a 
 href="LURNBlind.html#LURNBlindch5.html" >up</a>] </p></div>
-<!--l. 7--><p class="indent" >   <a 
+<!--l. 5--><p class="indent" >   <a 
  id="tailLURNBlindch5.html"></a>  </p> 
 </body></html> 

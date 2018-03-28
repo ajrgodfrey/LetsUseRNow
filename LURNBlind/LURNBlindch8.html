@@ -6,15 +6,14 @@
 > 
 <head><title>8 LURN... To Examine Data Numerically</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
-<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
-<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
 <!-- xhtml,2,next,mathjax,html --> 
 <meta name="src" content="LURNBlind.tex" /> 
-<meta name="date" content="2018-03-28 12:01:00" /> 
 <link rel="stylesheet" type="text/css" href="LURNBlind.css" /> 
 </head><body 
 >
-   <!--l. 9--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 7--><div class="crosslinks"><p class="noindent">[<a 
 href="../LURN/LURNch8.html">Version for sighted users</a>] [<a 
 
 href="LURNBlindch9.html" >next</a>] [<a 
@@ -24,14 +23,14 @@ href="#tailLURNBlindch8.html">tail</a>] [<a
 href="LURNBlind.html#LURNBlindch8.html" >up</a>] </p></div>
    <h2 class="chapterHead"><span class="titlemark">Chapter&#x00A0;8</span><br /><a 
  id="x10-600008"></a>LURN&#x2026; To Examine Data Numerically</h2>
-<!--l. 18--><p class="noindent" >In this chapter we see how to obtain and present simple numerical summaries
+<!--l. 16--><p class="noindent" >In this chapter we see how to obtain and present simple numerical summaries
 suitable for describing data. The same data set used in Chapter&#x00A0;<a 
 href="LURNBlindch7.html#x9-440007">7<!--tex4ht:ref: SimpleGraphs --></a> on creating
 graphs is used again.
 </p>
    <h3 class="sectionHead"><span class="titlemark">8.1   </span> <a 
  id="x10-610008.1"></a>Obtaining basic numerical summaries of data</h3>
-<!--l. 22--><p class="noindent" >The <a 
+<!--l. 20--><p class="noindent" >The <a 
  id="dx10-61001"></a><span 
 class="aett-12">summary() </span>command is a very useful tool. It behaves differently for <span 
 class="aess-12">R </span>objects
@@ -45,37 +44,32 @@ class="aess-12">R </span>what class the object is using the <a
  id="dx10-61003"></a><span 
 class="aett-12">class()</span>
 command
-</p><!--l. 26--><p class="indent" >
+</p><!--l. 24--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb159">  <a 
+   <div class="fancyvrb" id="fancyvrb160">  <a 
  id="x10-61005r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;class(airquality)</span></div>
-<!--l. 29--><p class="noindent" >
+<!--l. 27--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb160"> <a 
+   <div class="fancyvrb" id="fancyvrb161"> <a 
  id="x10-61007r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">[1]</span><span 
 class="aett-12">&#x00A0;"data.frame"</span></div>
-<!--l. 36--><p class="indent" >   Applying the <a 
+<!--l. 34--><p class="indent" >   Applying the <a 
  id="dx10-61008"></a><span 
 class="aett-12">summary() </span>command to the <span 
 class="aett-12">air quality </span>data gives:
-</p><!--l. 40--><p class="indent" >
+</p><!--l. 38--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb161">  <a 
+   <div class="fancyvrb" id="fancyvrb162">  <a 
  id="x10-61010r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;summary(airquality)</span></div>
-<!--l. 43--><p class="noindent" >
+<!--l. 41--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb162"> <a 
+   <div class="fancyvrb" id="fancyvrb163"> <a 
  id="x10-61012r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -99,11 +93,8 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;Wind</span>
-<br class="fancyvrb" /><a 
+class="aett-12">&#x00A0;Wind</span><br class="fancyvrb" /><a 
  id="x10-61014r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;Min.</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -127,8 +118,6 @@ class="aett-12">&#x00A0;:</span><span
 class="aett-12">&#x00A0;1.70</span>
 <br class="fancyvrb" /><a 
  id="x10-61016r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;1st</span><span 
 class="aett-12">&#x00A0;Qu.:</span><span 
 class="aett-12">&#x00A0;18.0</span><span 
@@ -140,11 +129,8 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;1st</span><span 
 class="aett-12">&#x00A0;Qu.:</span><span 
-class="aett-12">&#x00A0;7.40</span>
-<br class="fancyvrb" /><a 
+class="aett-12">&#x00A0;7.40</span><br class="fancyvrb" /><a 
  id="x10-61018r4"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;Median</span><span 
 class="aett-12">&#x00A0;:</span><span 
 class="aett-12">&#x00A0;31.5</span><span 
@@ -159,8 +145,6 @@ class="aett-12">&#x00A0;:</span><span
 class="aett-12">&#x00A0;9.70</span>
 <br class="fancyvrb" /><a 
  id="x10-61020r5"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;Mean</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -178,11 +162,8 @@ class="aett-12">&#x00A0;Mean</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;:</span><span 
-class="aett-12">&#x00A0;9.96</span>
-<br class="fancyvrb" /><a 
+class="aett-12">&#x00A0;9.96</span><br class="fancyvrb" /><a 
  id="x10-61022r6"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;3rd</span><span 
 class="aett-12">&#x00A0;Qu.:</span><span 
 class="aett-12">&#x00A0;63.2</span><span 
@@ -196,8 +177,6 @@ class="aett-12">&#x00A0;3rd</span><span
 class="aett-12">&#x00A0;Qu.:11.50</span>
 <br class="fancyvrb" /><a 
  id="x10-61024r7"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;Max.</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -215,8 +194,6 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;:20.70</span><br class="fancyvrb" /><a 
  id="x10-61026r8"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;NA&#8217;s</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -232,8 +209,6 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;:7</span>
 <br class="fancyvrb" /><a 
  id="x10-61028r9"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -262,8 +237,6 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;Day</span><br class="fancyvrb" /><a 
  id="x10-61030r10"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;Min.</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -283,8 +256,6 @@ class="aett-12">&#x00A0;:</span><span
 class="aett-12">&#x00A0;1.0</span>
 <br class="fancyvrb" /><a 
  id="x10-61032r11"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;1st</span><span 
 class="aett-12">&#x00A0;Qu.:72.0</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -295,11 +266,8 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;1st</span><span 
 class="aett-12">&#x00A0;Qu.:</span><span 
-class="aett-12">&#x00A0;8.0</span>
-<br class="fancyvrb" /><a 
+class="aett-12">&#x00A0;8.0</span><br class="fancyvrb" /><a 
  id="x10-61034r12"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;Median</span><span 
 class="aett-12">&#x00A0;:79.0</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -310,13 +278,8 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;Median</span><span 
 class="aett-12">&#x00A0;:16.0</span>
-                                                                          
-
-                                                                          
 <br class="fancyvrb" /><a 
  id="x10-61036r13"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;Mean</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -332,11 +295,8 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;Mean</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;:15.8</span>
-<br class="fancyvrb" /><a 
+class="aett-12">&#x00A0;:15.8</span><br class="fancyvrb" /><a 
  id="x10-61038r14"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;3rd</span><span 
 class="aett-12">&#x00A0;Qu.:85.0</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -349,8 +309,6 @@ class="aett-12">&#x00A0;3rd</span><span
 class="aett-12">&#x00A0;Qu.:23.0</span>
 <br class="fancyvrb" /><a 
  id="x10-61040r15"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;Max.</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -367,10 +325,11 @@ class="aett-12">&#x00A0;Max.</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;:31.0</span><br class="fancyvrb" /><a 
- id="x10-61042r16"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span></div>
-<!--l. 64--><p class="indent" >   The <a 
+ id="x10-61042r16"></a></div>
+                                                                          
+
+                                                                          
+<!--l. 62--><p class="indent" >   The <a 
  id="dx10-61043"></a><span 
 class="aett-12">summary() </span>command finds the common numeric summary statistics for
 the continuous-valued variables and does a particulary useless job on the
@@ -380,7 +339,7 @@ need to be stored numerically, but in any case we got what we asked for!
 It&#8217;s not <span 
 class="aess-12">R</span>&#8217;s fault we asked to be told what the minimum day number
 was!
-</p><!--l. 66--><p class="indent" >   Notice that the <a 
+</p><!--l. 64--><p class="indent" >   Notice that the <a 
  id="dx10-61044"></a><span 
 class="aett-12">summary() </span>command extracted the minimum, maximum,
 median and mean for the variables in the <a 
@@ -405,19 +364,16 @@ but it is better practice to use the more specific <a
  id="dx10-61052"></a><span 
 class="aett-12">colMeans() </span>command
 instead.
-</p><!--l. 70--><p class="indent" >
+</p><!--l. 68--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb163">  <a 
+   <div class="fancyvrb" id="fancyvrb164">  <a 
  id="x10-61054r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;colMeans(airquality[,1:4])</span></div>
-<!--l. 73--><p class="noindent" >
+<!--l. 71--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb164"> <a 
+   <div class="fancyvrb" id="fancyvrb165"> <a 
  id="x10-61056r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;Ozone</span><span 
 class="aett-12">&#x00A0;Solar.R</span><span 
@@ -434,8 +390,6 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;NA</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -448,20 +402,17 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;9.958</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;77.882</span></div>
-<!--l. 77--><p class="noindent" >
-</p>
-   <div class="fancyvrb" id="fancyvrb165"> <a 
- id="x10-61060r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
-class="aett-12">&#x00A0;colMeans(airquality[,1:4],</span><span 
-class="aett-12">&#x00A0;na.rm=TRUE)</span></div>
-<!--l. 80--><p class="noindent" >
+<!--l. 75--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb166"> <a 
+ id="x10-61060r1"></a><span 
+class="aett-12">&#x003E;</span><span 
+class="aett-12">&#x00A0;colMeans(airquality[,1:4],</span><span 
+class="aett-12">&#x00A0;na.rm=TRUE)</span></div>
+<!--l. 78--><p class="noindent" >
+</p>
+   <div class="fancyvrb" id="fancyvrb167"> <a 
  id="x10-61062r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;Ozone</span><span 
 class="aett-12">&#x00A0;Solar.R</span><span 
@@ -474,8 +425,6 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;Temp</span><br class="fancyvrb" /><a 
  id="x10-61064r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;42.129</span><span 
 class="aett-12">&#x00A0;185.932</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -483,25 +432,23 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;9.958</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;77.882</span></div>
-<!--l. 84--><p class="noindent" >
-</p>
-   <div class="fancyvrb" id="fancyvrb167"> <a 
- id="x10-61066r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
-class="aett-12">&#x00A0;mean(airquality[,1],</span><span 
-class="aett-12">&#x00A0;na.rm=TRUE)</span></div>
-<!--l. 87--><p class="noindent" >
+<!--l. 82--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb168"> <a 
+ id="x10-61066r1"></a><span 
+class="aett-12">&#x003E;</span><span 
+class="aett-12">&#x00A0;mean(airquality[,1],</span><span 
+class="aett-12">&#x00A0;na.rm=TRUE)</span></div>
+<!--l. 85--><p class="noindent" >
+</p>
+   <div class="fancyvrb" id="fancyvrb169"> <a 
  id="x10-61068r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">[1]</span><span 
 class="aett-12">&#x00A0;42.13</span></div>
                                                                           
 
                                                                           
-<!--l. 93--><p class="indent" >   Note that I&#8217;ve told <span 
+<!--l. 91--><p class="indent" >   Note that I&#8217;ve told <span 
 class="aess-12">R </span>which columns of the <span 
 class="aett-12">air quality</span> <a 
  id="dx10-61069"></a><span 
@@ -518,55 +465,50 @@ class="aett-12">summary() </span>command did tell us how many values for each
 variable were missing. Recall that missing values are represented by a
 &#8220;<span 
 class="aett-12">NA</span>".
-</p><!--l. 95--><p class="indent" >   The <a 
+</p><!--l. 93--><p class="indent" >   The <a 
  id="dx10-61071"></a><span 
 class="aett-12">min() </span>and <a 
  id="dx10-61072"></a><span 
 class="aett-12">max() </span>commands all work on the data by assuming we
 want the statistic for the whole list of numbers over all columns. For
 example
-</p><!--l. 99--><p class="indent" >
+</p><!--l. 97--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb169">  <a 
+   <div class="fancyvrb" id="fancyvrb170">  <a 
  id="x10-61074r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;#median(airquality[,1:4],</span><span 
 class="aett-12">&#x00A0;na.rm=TRUE)</span><br class="fancyvrb" /><a 
  id="x10-61076r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;min(airquality[,1:4],</span><span 
 class="aett-12">&#x00A0;na.rm=TRUE)</span></div>
-<!--l. 103--><p class="noindent" >
-</p>
-   <div class="fancyvrb" id="fancyvrb170"> <a 
- id="x10-61078r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1]</span><span 
-class="aett-12">&#x00A0;1</span></div>
-<!--l. 106--><p class="noindent" >
+<!--l. 101--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb171"> <a 
- id="x10-61080r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
-class="aett-12">&#x00A0;max(airquality[,1:4],</span><span 
-class="aett-12">&#x00A0;na.rm=TRUE)</span></div>
-<!--l. 109--><p class="noindent" >
+ id="x10-61078r1"></a><span 
+class="aett-12">[1]</span><span 
+class="aett-12">&#x00A0;1</span></div>
+<!--l. 104--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb172"> <a 
+ id="x10-61080r1"></a><span 
+class="aett-12">&#x003E;</span><span 
+class="aett-12">&#x00A0;max(airquality[,1:4],</span><span 
+class="aett-12">&#x00A0;na.rm=TRUE)</span></div>
+<!--l. 107--><p class="noindent" >
+</p>
+   <div class="fancyvrb" id="fancyvrb173"> <a 
  id="x10-61082r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">[1]</span><span 
 class="aett-12">&#x00A0;334</span></div>
-<!--l. 116--><p class="indent" >   It used to be possible to ask <span 
+<!--l. 114--><p class="indent" >   It used to be possible to ask <span 
 class="aess-12">R </span>to use the <a 
  id="dx10-61083"></a><span 
 class="aett-12">median()</span>, in a command like this,
 but as of version 2.14.0, an error message was returned instead of an
 answer.
-</p><!--l. 118--><p class="indent" >   We will need to see how to get the relevant medians, minima, and maxima for
+</p><!--l. 116--><p class="indent" >   We will need to see how to get the relevant medians, minima, and maxima for
 the columns separately later in this chapter, but for now let&#8217;s see how the relevant
 summary measures can be obtained for a single column of the <span 
 class="aett-12">air quality</span>
@@ -574,102 +516,90 @@ data. The <a
  id="dx10-61084"></a><span 
 class="aett-12">attach() </span>command allows us direct access to the variables by
 name.
-</p><!--l. 122--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb173">  <a 
+   <div class="fancyvrb" id="fancyvrb174">  <a 
  id="x10-61086r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;attach(airquality)</span></div>
-<!--l. 129--><p class="indent" >
+<!--l. 126--><p class="indent" >
+</p>
+   <div class="fancyvrb" id="fancyvrb175"> <a 
+ id="x10-61088r1"></a><span 
+class="aett-12">&#x003E;</span><span 
+class="aett-12">&#x00A0;min(Temp)</span></div>
                                                                           
 
                                                                           
-</p>
-   <div class="fancyvrb" id="fancyvrb174"> <a 
- id="x10-61088r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
-class="aett-12">&#x00A0;min(Temp)</span></div>
-<!--l. 132--><p class="noindent" >
-</p>
-   <div class="fancyvrb" id="fancyvrb175"> <a 
- id="x10-61090r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1]</span><span 
-class="aett-12">&#x00A0;56</span></div>
-<!--l. 135--><p class="noindent" >
+<!--l. 129--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb176"> <a 
- id="x10-61092r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
-class="aett-12">&#x00A0;max(Wind)</span></div>
-<!--l. 138--><p class="noindent" >
+ id="x10-61090r1"></a><span 
+class="aett-12">[1]</span><span 
+class="aett-12">&#x00A0;56</span></div>
+<!--l. 132--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb177"> <a 
- id="x10-61094r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1]</span><span 
-class="aett-12">&#x00A0;20.7</span></div>
-<!--l. 141--><p class="noindent" >
+ id="x10-61092r1"></a><span 
+class="aett-12">&#x003E;</span><span 
+class="aett-12">&#x00A0;max(Wind)</span></div>
+<!--l. 135--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb178"> <a 
- id="x10-61096r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
-class="aett-12">&#x00A0;median(Solar.R)</span></div>
-<!--l. 144--><p class="noindent" >
+ id="x10-61094r1"></a><span 
+class="aett-12">[1]</span><span 
+class="aett-12">&#x00A0;20.7</span></div>
+<!--l. 138--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb179"> <a 
- id="x10-61098r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1]</span><span 
-class="aett-12">&#x00A0;NA</span></div>
-<!--l. 147--><p class="noindent" >
+ id="x10-61096r1"></a><span 
+class="aett-12">&#x003E;</span><span 
+class="aett-12">&#x00A0;median(Solar.R)</span></div>
+<!--l. 141--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb180"> <a 
- id="x10-61100r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
-class="aett-12">&#x00A0;median(Solar.R,</span><span 
-class="aett-12">&#x00A0;na.rm=TRUE)</span></div>
-<!--l. 150--><p class="noindent" >
+ id="x10-61098r1"></a><span 
+class="aett-12">[1]</span><span 
+class="aett-12">&#x00A0;NA</span></div>
+<!--l. 144--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb181"> <a 
+ id="x10-61100r1"></a><span 
+class="aett-12">&#x003E;</span><span 
+class="aett-12">&#x00A0;median(Solar.R,</span><span 
+class="aett-12">&#x00A0;na.rm=TRUE)</span></div>
+<!--l. 147--><p class="noindent" >
+</p>
+   <div class="fancyvrb" id="fancyvrb182"> <a 
  id="x10-61102r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">[1]</span><span 
 class="aett-12">&#x00A0;205</span></div>
-<!--l. 156--><p class="indent" >   Notice that a consequence of missing values in our data is that some functions
+<!--l. 153--><p class="indent" >   Notice that a consequence of missing values in our data is that some functions
 will return the <span 
 class="aett-12">NA </span>value. If we want the quantity returned to be estimated using
 the available data we simply add the argument <span 
 class="aett-12">na.rm=TRUE </span>which removes the
 values denoted with the <span 
 class="aett-12">NA</span>.
-</p><!--l. 158--><p class="indent" >   The first and third quartiles are not so easily extracted however. We
+</p><!--l. 155--><p class="indent" >   The first and third quartiles are not so easily extracted however. We
 can get the first and third quartiles from the five number summary by
 extracting elements of the output returned by the <a 
  id="dx10-61103"></a><span 
 class="aett-12">fivenum() </span>command. For
 example
-</p><!--l. 162--><p class="indent" >
+</p><!--l. 159--><p class="indent" >
+</p>
+   <div class="fancyvrb" id="fancyvrb183">  <a 
+ id="x10-61105r1"></a><span 
+class="aett-12">&#x003E;</span><span 
+class="aett-12">&#x00A0;fivenum(Ozone)</span></div>
                                                                           
 
                                                                           
+<!--l. 162--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb182">  <a 
- id="x10-61105r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
-class="aett-12">&#x00A0;fivenum(Ozone)</span></div>
-<!--l. 165--><p class="noindent" >
-</p>
-   <div class="fancyvrb" id="fancyvrb183"> <a 
+   <div class="fancyvrb" id="fancyvrb184"> <a 
  id="x10-61107r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">[1]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;1.0</span><span 
@@ -680,7 +610,7 @@ class="aett-12">&#x00A0;31.5</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;63.5</span><span 
 class="aett-12">&#x00A0;168.0</span></div>
-<!--l. 171--><p class="indent" >   There are some minor differences between the methods used by the <a 
+<!--l. 168--><p class="indent" >   There are some minor differences between the methods used by the <a 
  id="dx10-61108"></a><span 
 class="aett-12">summary()</span>
 and <a 
@@ -688,17 +618,17 @@ and <a
 class="aett-12">fivenum() </span>commands for the first and third quartiles. See the relevant help
 page using <span 
 class="aett-12">?fivenum </span>for an explanation.
-</p><!--l. 173--><p class="indent" >   Knowing how these commands work on simple sets of numbers is very useful
+</p><!--l. 170--><p class="indent" >   Knowing how these commands work on simple sets of numbers is very useful
 for the more elegant presentations in the following sections.
-</p><!--l. 175--><p class="noindent" >
+</p><!--l. 172--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">8.2   </span> <a 
  id="x10-620008.2"></a>Obtaining slightly more elegant summaries</h3>
-<!--l. 177--><p class="noindent" >When preparing reports it is unlikely that we would want a single statistic all that
+<!--l. 174--><p class="noindent" >When preparing reports it is unlikely that we would want a single statistic all that
 often. Rather, we are usually interested in exposing patterns or differences within
 the data. We do this graphically but we may need to extract the exact quantities
 plotted in the graph as well.
-</p><!--l. 179--><p class="indent" >   The <a 
+</p><!--l. 176--><p class="indent" >   The <a 
  id="dx10-62001"></a><span 
 class="aett-12">tapply() </span>and <a 
  id="dx10-62002"></a><span 
@@ -717,25 +647,22 @@ the response variable to one or more grouping variables. It is easier to
 show how these commands work in action so we&#8217;ll use the air quality data
 again and present various alternatives and the slightly different resulting
 output.
-</p><!--l. 181--><p class="indent" >   Let&#8217;s say we want to know the <a 
+</p><!--l. 178--><p class="indent" >   Let&#8217;s say we want to know the <a 
  id="dx10-62006"></a><span 
 class="aett-12">mean() </span>wind speed over the five months data
 were collected. We could use
-</p><!--l. 185--><p class="indent" >
+</p><!--l. 182--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb184">  <a 
+   <div class="fancyvrb" id="fancyvrb185">  <a 
  id="x10-62008r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;tapply(Wind,</span><span 
 class="aett-12">&#x00A0;Month,</span><span 
 class="aett-12">&#x00A0;mean)</span></div>
-<!--l. 188--><p class="noindent" >
+<!--l. 185--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb185"> <a 
+   <div class="fancyvrb" id="fancyvrb186"> <a 
  id="x10-62010r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -766,41 +693,36 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;9</span><br class="fancyvrb" /><a 
  id="x10-62012r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;11.623</span><span 
+class="aett-12">11.623</span><span 
 class="aett-12">&#x00A0;10.267</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;8.942</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;8.794</span><span 
 class="aett-12">&#x00A0;10.180</span></div>
+<!--l. 191--><p class="noindent" >or
+</p><!--l. 194--><p class="indent" >
                                                                           
 
                                                                           
-<!--l. 195--><p class="indent" >   or
-</p><!--l. 199--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb186">  <a 
+   <div class="fancyvrb" id="fancyvrb187">  <a 
  id="x10-62014r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;aggregate(Wind~Month,</span><span 
 class="aett-12">&#x00A0;data=airquality,</span><span 
 class="aett-12">&#x00A0;mean)</span></div>
-<!--l. 202--><p class="noindent" >
+<!--l. 197--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb187"> <a 
+   <div class="fancyvrb" id="fancyvrb188"> <a 
  id="x10-62016r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;Month</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;Wind</span><br class="fancyvrb" /><a 
  id="x10-62018r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;1</span><span 
+class="aett-12">1</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -808,8 +730,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;5</span><span 
 class="aett-12">&#x00A0;11.623</span><br class="fancyvrb" /><a 
  id="x10-62020r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;2</span><span 
+class="aett-12">2</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -817,19 +738,16 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;6</span><span 
 class="aett-12">&#x00A0;10.267</span><br class="fancyvrb" /><a 
  id="x10-62022r4"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;3</span><span 
+class="aett-12">3</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;7</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;8.942</span>
-<br class="fancyvrb" /><a 
+class="aett-12">&#x00A0;8.942</span><br class="fancyvrb" /><a 
  id="x10-62024r5"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;4</span><span 
+class="aett-12">4</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -838,15 +756,14 @@ class="aett-12">&#x00A0;8</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;8.794</span><br class="fancyvrb" /><a 
  id="x10-62026r6"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;5</span><span 
+class="aett-12">5</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;9</span><span 
 class="aett-12">&#x00A0;10.180</span></div>
-<!--l. 213--><p class="indent" >   These commands do the job very nicely; choose the one that delivers the
+<!--l. 208--><p class="indent" >   These commands do the job very nicely; choose the one that delivers the
 output in the way you want it. We could ask for other quantities such as the
 minimum, maximum, or standard deviation within each month by referring to the
 relevant <span 
@@ -865,7 +782,7 @@ class="aett-12">attach() </span>and <a
  id="dx10-62031"></a><span 
 class="aett-12">detach()</span>
 commands.
-</p><!--l. 215--><p class="indent" >   If we had multiple response variables of interest, we would need to repeat the
+</p><!--l. 210--><p class="indent" >   If we had multiple response variables of interest, we would need to repeat the
 command for each one. If we had more than one way of asking for the grouping
 though, the <a 
  id="dx10-62032"></a><span 
@@ -879,30 +796,26 @@ class="aett-12">tapply() </span>and <a
  id="dx10-62034"></a><span 
 class="aett-12">aggregate() </span>commands generate quite different
 outcomes.
-</p><!--l. 219--><p class="indent" >
+</p><!--l. 214--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb188">  <a 
+   <div class="fancyvrb" id="fancyvrb189">  <a 
  id="x10-62036r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;Day15</span><span 
 class="aett-12">&#x00A0;=</span><span 
 class="aett-12">&#x00A0;Day</span><span 
 class="aett-12">&#x00A0;&#x003E;</span><span 
 class="aett-12">&#x00A0;15</span><br class="fancyvrb" /><a 
  id="x10-62038r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;tapply(Wind,</span><span 
 class="aett-12">&#x00A0;list(Month,</span><span 
 class="aett-12">&#x00A0;Day15),</span><span 
 class="aett-12">&#x00A0;mean)</span></div>
-<!--l. 223--><p class="noindent" >
+<!--l. 218--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb189"> <a 
+   <div class="fancyvrb" id="fancyvrb190"> <a 
  id="x10-62040r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;FALSE</span><span 
@@ -910,43 +823,37 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;TRUE</span><br class="fancyvrb" /><a 
  id="x10-62042r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;5</span><span 
+class="aett-12">5</span><span 
 class="aett-12">&#x00A0;11.313</span><span 
 class="aett-12">&#x00A0;11.912</span><br class="fancyvrb" /><a 
  id="x10-62044r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;6</span><span 
+class="aett-12">6</span><span 
 class="aett-12">&#x00A0;10.787</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;9.747</span><br class="fancyvrb" /><a 
  id="x10-62046r4"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;7</span><span 
+class="aett-12">7</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;9.360</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;8.550</span>
 <br class="fancyvrb" /><a 
  id="x10-62048r5"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;8</span><span 
+class="aett-12">8</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;8.907</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;8.688</span><br class="fancyvrb" /><a 
  id="x10-62050r6"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;9</span><span 
+class="aett-12">9</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;9.547</span><span 
 class="aett-12">&#x00A0;10.813</span></div>
-<!--l. 231--><p class="noindent" >
+<!--l. 226--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb190"> <a 
+   <div class="fancyvrb" id="fancyvrb191"> <a 
  id="x10-62052r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;aggregate(Wind</span><span 
 class="aett-12">&#x00A0;~</span><span 
 class="aett-12">&#x00A0;Month</span><span 
@@ -954,15 +861,10 @@ class="aett-12">&#x00A0;+</span><span
 class="aett-12">&#x00A0;Day15,</span><span 
 class="aett-12">&#x00A0;data=airquality,</span><span 
 class="aett-12">&#x00A0;mean)</span></div>
-<!--l. 234--><p class="noindent" >
-                                                                          
-
-                                                                          
+<!--l. 229--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb191"> <a 
+   <div class="fancyvrb" id="fancyvrb192"> <a 
  id="x10-62054r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;Month</span><span 
@@ -971,8 +873,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;Wind</span><br class="fancyvrb" /><a 
  id="x10-62056r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;1</span><span 
+class="aett-12">1</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -982,8 +883,7 @@ class="aett-12">&#x00A0;5</span><span
 class="aett-12">&#x00A0;FALSE</span><span 
 class="aett-12">&#x00A0;11.313</span><br class="fancyvrb" /><a 
  id="x10-62058r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;2</span><span 
+class="aett-12">2</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -994,8 +894,7 @@ class="aett-12">&#x00A0;FALSE</span><span
 class="aett-12">&#x00A0;10.787</span>
 <br class="fancyvrb" /><a 
  id="x10-62060r4"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;3</span><span 
+class="aett-12">3</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1006,8 +905,7 @@ class="aett-12">&#x00A0;FALSE</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;9.360</span><br class="fancyvrb" /><a 
  id="x10-62062r5"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;4</span><span 
+class="aett-12">4</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1018,8 +916,7 @@ class="aett-12">&#x00A0;FALSE</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;8.907</span><br class="fancyvrb" /><a 
  id="x10-62064r6"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;5</span><span 
+class="aett-12">5</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1028,11 +925,9 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;9</span><span 
 class="aett-12">&#x00A0;FALSE</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;9.547</span>
-<br class="fancyvrb" /><a 
+class="aett-12">&#x00A0;9.547</span><br class="fancyvrb" /><a 
  id="x10-62066r7"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;6</span><span 
+class="aett-12">6</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1041,10 +936,10 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;5</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;TRUE</span><span 
-class="aett-12">&#x00A0;11.912</span><br class="fancyvrb" /><a 
+class="aett-12">&#x00A0;11.912</span>
+<br class="fancyvrb" /><a 
  id="x10-62068r8"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;7</span><span 
+class="aett-12">7</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1056,8 +951,7 @@ class="aett-12">&#x00A0;TRUE</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;9.747</span><br class="fancyvrb" /><a 
  id="x10-62070r9"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;8</span><span 
+class="aett-12">8</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1067,11 +961,9 @@ class="aett-12">&#x00A0;7</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;TRUE</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;8.550</span>
-<br class="fancyvrb" /><a 
+class="aett-12">&#x00A0;8.550</span><br class="fancyvrb" /><a 
  id="x10-62072r10"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;9</span><span 
+class="aett-12">9</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1083,8 +975,7 @@ class="aett-12">&#x00A0;TRUE</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;8.688</span><br class="fancyvrb" /><a 
  id="x10-62074r11"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;10</span><span 
+class="aett-12">10</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1093,30 +984,29 @@ class="aett-12">&#x00A0;9</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;TRUE</span><span 
 class="aett-12">&#x00A0;10.813</span></div>
-<!--l. 251--><p class="indent" >   If we wanted more than one statistic of interest, we would need to repeat the
+                                                                          
+
+                                                                          
+<!--l. 246--><p class="indent" >   If we wanted more than one statistic of interest, we would need to repeat the
 command and change the function being referenced in the third argument.
 We can use the <a 
  id="dx10-62075"></a><span 
 class="aett-12">summary() </span>command here though as it gives us more
 quantities.
-</p><!--l. 255--><p class="indent" >
+</p><!--l. 250--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb192">  <a 
+   <div class="fancyvrb" id="fancyvrb193">  <a 
  id="x10-62077r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;tapply(Wind,</span><span 
 class="aett-12">&#x00A0;Month,</span><span 
 class="aett-12">&#x00A0;summary)</span></div>
-<!--l. 258--><p class="noindent" >
+<!--l. 253--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb193"> <a 
+   <div class="fancyvrb" id="fancyvrb194"> <a 
  id="x10-62079r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;$&#8216;5&#8216;</span><br class="fancyvrb" /><a 
+class="aett-12">$&#8216;5&#8216;</span><br class="fancyvrb" /><a 
  id="x10-62081r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;Min.</span><span 
@@ -1136,8 +1026,6 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;Max.</span>
 <br class="fancyvrb" /><a 
  id="x10-62083r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1163,16 +1051,11 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;20.1</span><br class="fancyvrb" /><a 
- id="x10-62085r4"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span>
+ id="x10-62085r4"></a>
 <br class="fancyvrb" /><a 
  id="x10-62087r5"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;$&#8216;6&#8216;</span><br class="fancyvrb" /><a 
+class="aett-12">$&#8216;6&#8216;</span><br class="fancyvrb" /><a 
  id="x10-62089r6"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;Min.</span><span 
@@ -1192,8 +1075,6 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;Max.</span>
 <br class="fancyvrb" /><a 
  id="x10-62091r7"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1220,16 +1101,11 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;20.7</span><br class="fancyvrb" /><a 
- id="x10-62093r8"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span>
+ id="x10-62093r8"></a>
 <br class="fancyvrb" /><a 
  id="x10-62095r9"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;$&#8216;7&#8216;</span><br class="fancyvrb" /><a 
+class="aett-12">$&#8216;7&#8216;</span><br class="fancyvrb" /><a 
  id="x10-62097r10"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;Min.</span><span 
@@ -1251,8 +1127,6 @@ class="aett-12">&#x00A0;Max.</span>
  id="x10-62099r11"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;4.10</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1272,16 +1146,11 @@ class="aett-12">&#x00A0;10.90</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;14.90</span><br class="fancyvrb" /><a 
- id="x10-62101r12"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span>
+ id="x10-62101r12"></a>
 <br class="fancyvrb" /><a 
  id="x10-62103r13"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;$&#8216;8&#8216;</span><br class="fancyvrb" /><a 
+class="aett-12">$&#8216;8&#8216;</span><br class="fancyvrb" /><a 
  id="x10-62105r14"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;Min.</span><span 
@@ -1303,8 +1172,6 @@ class="aett-12">&#x00A0;Max.</span>
  id="x10-62107r15"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;2.30</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1324,16 +1191,11 @@ class="aett-12">&#x00A0;11.20</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;15.50</span><br class="fancyvrb" /><a 
- id="x10-62109r16"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span>
+ id="x10-62109r16"></a>
 <br class="fancyvrb" /><a 
  id="x10-62111r17"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;$&#8216;9&#8216;</span><br class="fancyvrb" /><a 
+class="aett-12">$&#8216;9&#8216;</span><br class="fancyvrb" /><a 
  id="x10-62113r18"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;Min.</span><span 
@@ -1355,8 +1217,6 @@ class="aett-12">&#x00A0;Max.</span>
  id="x10-62115r19"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;2.80</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1374,11 +1234,11 @@ class="aett-12">&#x00A0;12.32</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;16.60</span></div>
-<!--l. 283--><p class="indent" >   This printout isn&#8217;t particularly attractive, but it is quick and informative.
+<!--l. 278--><p class="indent" >   This printout isn&#8217;t particularly attractive, but it is quick and informative.
 If presentation was more important than getting results efficiently, we
 would look to improve the appearance &#8212; this means more difficult coding
 though.
-</p><!--l. 285--><p class="indent" >   There is one more feature of the <a 
+</p><!--l. 280--><p class="indent" >   There is one more feature of the <a 
  id="dx10-62116"></a><span 
 class="aett-12">tapply() </span>command that must be pointed
 out. The simple commands shown thus far use the default settings of the relevant
@@ -1386,24 +1246,18 @@ functions. In particular, the <a
  id="dx10-62117"></a><span 
 class="aett-12">mean() </span>command does not ignore missing values by
 default.
-</p><!--l. 289--><p class="indent" >
+</p><!--l. 284--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb194">  <a 
+   <div class="fancyvrb" id="fancyvrb195">  <a 
  id="x10-62119r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;tapply(Ozone,</span><span 
 class="aett-12">&#x00A0;Month,</span><span 
 class="aett-12">&#x00A0;mean)</span></div>
-<!--l. 292--><p class="noindent" >
-                                                                          
-
-                                                                          
+<!--l. 287--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb195"> <a 
+   <div class="fancyvrb" id="fancyvrb196"> <a 
  id="x10-62121r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;5</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;6</span><span 
@@ -1414,32 +1268,31 @@ class="aett-12">&#x00A0;8</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;9</span><br class="fancyvrb" /><a 
  id="x10-62123r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;NA</span><span 
+class="aett-12">NA</span><span 
 class="aett-12">&#x00A0;NA</span><span 
 class="aett-12">&#x00A0;NA</span><span 
 class="aett-12">&#x00A0;NA</span><span 
 class="aett-12">&#x00A0;NA</span></div>
-<!--l. 299--><p class="indent" >   We now know that there are missing <span 
+<!--l. 294--><p class="indent" >   We now know that there are missing <span 
 class="aett-12">Ozone </span>observations in each month. We
 can add a fourth argument to the command which will be passed on to the
 function mentioned in the third argument.
-</p><!--l. 303--><p class="indent" >
+</p><!--l. 298--><p class="indent" >
+                                                                          
+
+                                                                          
 </p>
-   <div class="fancyvrb" id="fancyvrb196">  <a 
+   <div class="fancyvrb" id="fancyvrb197">  <a 
  id="x10-62125r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;tapply(Ozone,</span><span 
 class="aett-12">&#x00A0;Month,</span><span 
 class="aett-12">&#x00A0;mean,</span><span 
 class="aett-12">&#x00A0;na.rm=TRUE)</span></div>
-<!--l. 306--><p class="noindent" >
+<!--l. 301--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb197"> <a 
+   <div class="fancyvrb" id="fancyvrb198"> <a 
  id="x10-62127r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1465,18 +1318,17 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;9</span><br class="fancyvrb" /><a 
  id="x10-62129r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;23.62</span><span 
+class="aett-12">23.62</span><span 
 class="aett-12">&#x00A0;29.44</span><span 
 class="aett-12">&#x00A0;59.12</span><span 
 class="aett-12">&#x00A0;59.96</span><span 
 class="aett-12">&#x00A0;31.45</span></div>
-<!--l. 313--><p class="indent" >   gives us the means of the observed data.
-</p><!--l. 315--><p class="noindent" >
+<!--l. 308--><p class="indent" >   gives us the means of the observed data.
+</p><!--l. 310--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">8.3   </span> <a 
  id="x10-630008.3"></a>Getting things printed how we want them</h3>
-<!--l. 317--><p class="noindent" >We will often need to watch the way <span 
+<!--l. 312--><p class="noindent" >We will often need to watch the way <span 
 class="aess-12">R </span>chooses to print out results. When a direct
 reference to data is sought, the order of the data is maintained. In our example
 using the <a 
@@ -1484,7 +1336,7 @@ using the <a
 class="aett-12">tapply() </span>command above, the months were numeric values.
 The order was probably the most logical one as it was in chronological
 order.
-</p><!--l. 319--><p class="indent" >   If we had a long list of results and it was the extremes we wanted to focus
+</p><!--l. 314--><p class="indent" >   If we had a long list of results and it was the extremes we wanted to focus
 attention towards, the <a 
  id="dx10-63002"></a><span 
 class="aett-12">sort() </span>and <a 
@@ -1492,21 +1344,18 @@ class="aett-12">sort() </span>and <a
 class="aett-12">rev() </span>commands would be most useful. For
 example, say we want to order the monthly average wind speeds found above in
 ascending order, then we would use
-</p><!--l. 323--><p class="indent" >
+</p><!--l. 318--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb198">  <a 
+   <div class="fancyvrb" id="fancyvrb199">  <a 
  id="x10-63005r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;sort(tapply(Wind,</span><span 
 class="aett-12">&#x00A0;Month,</span><span 
 class="aett-12">&#x00A0;mean))</span></div>
-<!--l. 326--><p class="noindent" >
+<!--l. 321--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb199"> <a 
+   <div class="fancyvrb" id="fancyvrb200"> <a 
  id="x10-63007r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1537,35 +1386,30 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;5</span><br class="fancyvrb" /><a 
  id="x10-63009r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;8.794</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;8.942</span><span 
 class="aett-12">&#x00A0;10.180</span><span 
 class="aett-12">&#x00A0;10.267</span><span 
 class="aett-12">&#x00A0;11.623</span></div>
-<!--l. 333--><p class="indent" >   So we now know that August has the smallest average wind speed and that
+<!--l. 328--><p class="indent" >   So we now know that August has the smallest average wind speed and that
 May is the windiest month.
-</p><!--l. 335--><p class="indent" >   To get the data listed in reverse chronological order we would use:
-</p><!--l. 339--><p class="indent" >
+</p><!--l. 330--><p class="indent" >   To get the data listed in reverse chronological order we would use:
+</p><!--l. 334--><p class="indent" >
+</p>
+   <div class="fancyvrb" id="fancyvrb201">  <a 
+ id="x10-63011r1"></a><span 
+class="aett-12">&#x003E;</span><span 
+class="aett-12">&#x00A0;rev(tapply(Wind,</span><span 
+class="aett-12">&#x00A0;Month,</span><span 
+class="aett-12">&#x00A0;mean))</span></div>
+<!--l. 337--><p class="noindent" >
                                                                           
 
                                                                           
 </p>
-   <div class="fancyvrb" id="fancyvrb200">  <a 
- id="x10-63011r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
-class="aett-12">&#x00A0;rev(tapply(Wind,</span><span 
-class="aett-12">&#x00A0;Month,</span><span 
-class="aett-12">&#x00A0;mean))</span></div>
-<!--l. 342--><p class="noindent" >
-</p>
-   <div class="fancyvrb" id="fancyvrb201"> <a 
+   <div class="fancyvrb" id="fancyvrb202"> <a 
  id="x10-63013r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1596,31 +1440,27 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;5</span><br class="fancyvrb" /><a 
  id="x10-63015r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;10.180</span><span 
+class="aett-12">10.180</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;8.794</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;8.942</span><span 
 class="aett-12">&#x00A0;10.267</span><span 
 class="aett-12">&#x00A0;11.623</span></div>
-<!--l. 349--><p class="indent" >   and we can combine both commands to get the months ordered from windiest
+<!--l. 344--><p class="indent" >   and we can combine both commands to get the months ordered from windiest
 to least windy using:
-</p><!--l. 353--><p class="indent" >
+</p><!--l. 348--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb202">  <a 
+   <div class="fancyvrb" id="fancyvrb203">  <a 
  id="x10-63017r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;rev(sort(tapply(Wind,</span><span 
 class="aett-12">&#x00A0;Month,</span><span 
 class="aett-12">&#x00A0;mean)))</span></div>
-<!--l. 356--><p class="noindent" >
+<!--l. 351--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb203"> <a 
+   <div class="fancyvrb" id="fancyvrb204"> <a 
  id="x10-63019r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1651,43 +1491,39 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;8</span><br class="fancyvrb" /><a 
  id="x10-63021r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;11.623</span><span 
+class="aett-12">11.623</span><span 
 class="aett-12">&#x00A0;10.267</span><span 
 class="aett-12">&#x00A0;10.180</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;8.942</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;8.794</span></div>
-<!--l. 364--><p class="noindent" >
+<!--l. 359--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">8.4   </span> <a 
  id="x10-640008.4"></a>Correlation structure within a data set</h3>
-<!--l. 367--><p class="noindent" >The summaries given thus far in this chapter all refer to variables as single
+<!--l. 362--><p class="noindent" >The summaries given thus far in this chapter all refer to variables as single
 objects. Often we have multivariate data and want to know more about it.
 Looking for inter-relationships among variables can be achieved using correlation
 coefficients; this gives us a numerical equivalent to the scatter plot matrices shown
 in Section&#x00A0;<a 
 href="LURNBlindch7.html#x9-550007.6">7.6<!--tex4ht:ref: ScatterPlotMatrices --></a>.
-</p><!--l. 369--><p class="indent" >   In fact, the commands used here resemble those used to generate the scatter
+</p><!--l. 364--><p class="indent" >   In fact, the commands used here resemble those used to generate the scatter
 plot matrix. I like to do this to save effort. My ability to copy and paste is better
 than my typing!
-</p><!--l. 373--><p class="indent" >
+</p><!--l. 368--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb204">  <a 
+   <div class="fancyvrb" id="fancyvrb205">  <a 
  id="x10-64002r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;cor(data.frame(Ozone,</span><span 
 class="aett-12">&#x00A0;Solar.R,</span><span 
 class="aett-12">&#x00A0;Wind,</span><span 
 class="aett-12">&#x00A0;Temp))</span></div>
-<!--l. 376--><p class="noindent" >
+<!--l. 371--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb205"> <a 
+   <div class="fancyvrb" id="fancyvrb206"> <a 
  id="x10-64004r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1704,8 +1540,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;Temp</span><br class="fancyvrb" /><a 
  id="x10-64006r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;Ozone</span><span 
+class="aett-12">Ozone</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1731,8 +1566,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;NA</span>
 <br class="fancyvrb" /><a 
  id="x10-64008r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;Solar.R</span><span 
+class="aett-12">Solar.R</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1755,8 +1589,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;NA</span><br class="fancyvrb" /><a 
  id="x10-64010r4"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;Wind</span><span 
+class="aett-12">Wind</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1775,8 +1608,7 @@ class="aett-12">&#x00A0;1.000</span><span
 class="aett-12">&#x00A0;-0.458</span>
 <br class="fancyvrb" /><a 
  id="x10-64012r5"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;Temp</span><span 
+class="aett-12">Temp</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1793,17 +1625,16 @@ class="aett-12">&#x00A0;NA</span><span
 class="aett-12">&#x00A0;-0.458</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;1.000</span></div>
+<!--l. 381--><p class="indent" >   Having said this, it is now obvious that the missing values in some variables is
+causing grief. An additional argument is required.
+</p><!--l. 385--><p class="indent" >
                                                                           
 
                                                                           
-<!--l. 386--><p class="indent" >   Having said this, it is now obvious that the missing values in some variables is
-causing grief. An additional argument is required.
-</p><!--l. 390--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb206">  <a 
+   <div class="fancyvrb" id="fancyvrb207">  <a 
  id="x10-64014r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;cor(data.frame(Ozone,</span><span 
 class="aett-12">&#x00A0;Solar.R,</span><span 
 class="aett-12">&#x00A0;Wind,</span><span 
@@ -1811,17 +1642,13 @@ class="aett-12">&#x00A0;Temp),</span><br class="fancyvrb" /><a
  id="x10-64016r2"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;use</span><span 
 class="aett-12">&#x00A0;=</span><span 
 class="aett-12">&#x00A0;"pairwise.complete.obs")</span></div>
-<!--l. 394--><p class="noindent" >
+<!--l. 389--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb207"> <a 
+   <div class="fancyvrb" id="fancyvrb208"> <a 
  id="x10-64018r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1845,8 +1672,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;Temp</span>
 <br class="fancyvrb" /><a 
  id="x10-64020r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;Ozone</span><span 
+class="aett-12">Ozone</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1857,8 +1683,7 @@ class="aett-12">&#x00A0;-0.60155</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0.6984</span><br class="fancyvrb" /><a 
  id="x10-64022r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;Solar.R</span><span 
+class="aett-12">Solar.R</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0.3483</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1868,8 +1693,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;0.2758</span>
 <br class="fancyvrb" /><a 
  id="x10-64024r4"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;Wind</span><span 
+class="aett-12">Wind</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1879,8 +1703,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;1.00000</span><span 
 class="aett-12">&#x00A0;-0.4580</span><br class="fancyvrb" /><a 
  id="x10-64026r5"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;Temp</span><span 
+class="aett-12">Temp</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1891,7 +1714,7 @@ class="aett-12">&#x00A0;0.27584</span><span
 class="aett-12">&#x00A0;-0.45799</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;1.0000</span></div>
-<!--l. 404--><p class="indent" >   Often, <span 
+<!--l. 399--><p class="indent" >   Often, <span 
 class="aess-12">R </span>will allow arguments to be abbreviated. Unfortunately, this isn&#8217;t the
 case for this additional argument. It is the case for choosing the preferred
 correlation measure to be found though. The default is to calculate Pearson&#8217;s
@@ -1903,20 +1726,17 @@ places is unnecessary so have restricted the output using the <a
  id="dx10-64027"></a><span 
 class="aett-12">round()</span>
 command.
-</p><!--l. 408--><p class="indent" >
+</p><!--l. 403--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb208">  <a 
+   <div class="fancyvrb" id="fancyvrb209">  <a 
  id="x10-64029r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;round(cor(data.frame(Ozone,</span><span 
 class="aett-12">&#x00A0;Solar.R,</span><span 
 class="aett-12">&#x00A0;Wind,</span><span 
 class="aett-12">&#x00A0;Temp),</span>
 <br class="fancyvrb" /><a 
  id="x10-64031r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;use</span><span 
@@ -1926,12 +1746,10 @@ class="aett-12">&#x00A0;method</span><span
 class="aett-12">&#x00A0;=</span><span 
 class="aett-12">&#x00A0;"s"),</span><span 
 class="aett-12">&#x00A0;3)</span></div>
-<!--l. 412--><p class="noindent" >
+<!--l. 407--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb209"> <a 
+   <div class="fancyvrb" id="fancyvrb210"> <a 
  id="x10-64033r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1949,8 +1767,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;Temp</span><br class="fancyvrb" /><a 
  id="x10-64035r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;Ozone</span><span 
+class="aett-12">Ozone</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1963,8 +1780,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;0.774</span>
 <br class="fancyvrb" /><a 
  id="x10-64037r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;Solar.R</span><span 
+class="aett-12">Solar.R</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0.348</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1974,8 +1790,7 @@ class="aett-12">&#x00A0;-0.001</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0.207</span><br class="fancyvrb" /><a 
  id="x10-64039r4"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;Wind</span><span 
+class="aett-12">Wind</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1987,8 +1802,7 @@ class="aett-12">&#x00A0;1.000</span><span
 class="aett-12">&#x00A0;-0.447</span>
 <br class="fancyvrb" /><a 
  id="x10-64041r5"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;Temp</span><span 
+class="aett-12">Temp</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -2000,14 +1814,11 @@ class="aett-12">&#x00A0;0.207</span><span
 class="aett-12">&#x00A0;-0.447</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;1.000</span></div>
-<!--l. 426--><p class="noindent" >
+<!--l. 421--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">8.5   </span> <a 
  id="x10-650008.5"></a>Use of dplyr for data summarisation</h3>
-                                                                          
-
-                                                                          
-<!--l. 430--><p class="noindent" >In Section&#x00A0;<a 
+<!--l. 425--><p class="noindent" >In Section&#x00A0;<a 
 href="LURNBlindch5.html#x7-400005.4">5.4<!--tex4ht:ref: DPlyRDataManipulation --></a>, we saw how the <a 
  id="dx10-65001"></a><span 
 class="aeti-12">dplyr </span>package offers an alternative to base <span 
@@ -2021,17 +1832,19 @@ class="aett-12">group_by()</span>,
 class="aett-12">summarise()</span>, and <a 
  id="dx10-65004"></a><span 
 class="aett-12">count()</span>.
-</p><!--l. 432--><p class="indent" >   You&#8217;ll need to install the package (see Section&#x00A0;<a 
+</p><!--l. 427--><p class="indent" >   You&#8217;ll need to install the package (see Section&#x00A0;<a 
 href="LURNBlindch16.html#x18-13300016.1">16.1<!--tex4ht:ref: InstallPackages --></a> for instructions) before
 running the function
-</p><!--l. 436--><p class="indent" >
+</p><!--l. 431--><p class="indent" >
+                                                                          
+
+                                                                          
 </p>
-   <div class="fancyvrb" id="fancyvrb210">  <a 
+   <div class="fancyvrb" id="fancyvrb211">  <a 
  id="x10-65006r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;library(dplyr)</span></div>
-<!--l. 442--><p class="indent" >   to gain access to the commands just listed. We will also make use of the
+<!--l. 437--><p class="indent" >   to gain access to the commands just listed. We will also make use of the
 <a 
  id="dx10-65007"></a><span 
 class="aeti-12">dplyr </span>data structure called a <a 
@@ -2040,14 +1853,13 @@ class="aeti-12">tbl_df  </span>instead of the common <a
  id="dx10-65009"></a><span 
 class="aeti-12">data.frame</span>
 using:
-</p><!--l. 446--><p class="indent" >
+</p><!--l. 441--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb211">  <a 
+   <div class="fancyvrb" id="fancyvrb212">  <a 
  id="x10-65011r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;airquality2=tbl_df(airquality)</span></div>
-<!--l. 454--><p class="indent" >   The <a 
+<!--l. 449--><p class="indent" >   The <a 
  id="dx10-65012"></a><span 
 class="aett-12">summarise() </span>and <a 
  id="dx10-65013"></a><span 
@@ -2057,32 +1869,28 @@ class="aett-12">group_by() </span>commands can be used instead of the
 class="aett-12">tapply() </span>command introduced earlier in this chapter. To get the overall average
 wind speed from the <span 
 class="aett-12">airquality </span>data, we could use:
-</p><!--l. 458--><p class="indent" >
+</p><!--l. 453--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb212">  <a 
+   <div class="fancyvrb" id="fancyvrb213">  <a 
  id="x10-65016r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;airquality</span><span 
 class="aett-12">&#x00A0;%&#x003E;%</span><span 
 class="aett-12">&#x00A0;summarise(mean(Wind,</span><span 
 class="aett-12">&#x00A0;na.rm</span><span 
 class="aett-12">&#x00A0;=</span><span 
 class="aett-12">&#x00A0;TRUE))</span></div>
-<!--l. 461--><p class="noindent" >
+<!--l. 456--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb213"> <a 
+   <div class="fancyvrb" id="fancyvrb214"> <a 
  id="x10-65018r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;mean(Wind,</span><span 
 class="aett-12">&#x00A0;na.rm</span><span 
 class="aett-12">&#x00A0;=</span><span 
 class="aett-12">&#x00A0;TRUE)</span><br class="fancyvrb" /><a 
  id="x10-65020r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;1</span><span 
+class="aett-12">1</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -2103,19 +1911,18 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;9.958</span></div>
-<!--l. 468--><p class="indent" >   which is more long-winded than just using the <a 
+<!--l. 463--><p class="indent" >   which is more long-winded than just using the <a 
  id="dx10-65021"></a><span 
 class="aett-12">mean() </span>command alone. The
 value of <a 
  id="dx10-65022"></a><span 
 class="aett-12">summarise() </span>becomes more evident when we seek the means for groups
 within our data, such as:
-</p><!--l. 472--><p class="indent" >
+</p><!--l. 467--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb214">  <a 
+   <div class="fancyvrb" id="fancyvrb215">  <a 
  id="x10-65024r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;airquality%&#x003E;%</span><span 
 class="aett-12">&#x00A0;group_by(Month)</span><span 
 class="aett-12">&#x00A0;%&#x003E;%</span><span 
@@ -2123,20 +1930,17 @@ class="aett-12">&#x00A0;summarise(mean(Wind,</span><span
 class="aett-12">&#x00A0;na.rm</span><span 
 class="aett-12">&#x00A0;=</span><span 
 class="aett-12">&#x00A0;TRUE))</span></div>
-<!--l. 475--><p class="noindent" >
+<!--l. 470--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb215"> <a 
+   <div class="fancyvrb" id="fancyvrb216"> <a 
  id="x10-65026r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;#</span><span 
+class="aett-12">#</span><span 
 class="aett-12">&#x00A0;A</span><span 
 class="aett-12">&#x00A0;tibble:</span><span 
 class="aett-12">&#x00A0;5</span><span 
 class="aett-12">&#x00A0;x</span><span 
 class="aett-12">&#x00A0;2</span><br class="fancyvrb" /><a 
  id="x10-65028r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;Month</span><span 
 class="aett-12">&#x00A0;&#8216;mean(Wind,</span><span 
@@ -2145,8 +1949,6 @@ class="aett-12">&#x00A0;=</span><span
 class="aett-12">&#x00A0;TRUE)&#8216;</span>
 <br class="fancyvrb" /><a 
  id="x10-65030r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003C;int&#x003E;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -2172,8 +1974,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003C;dbl&#x003E;</span><br class="fancyvrb" /><a 
  id="x10-65032r4"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;1</span><span 
+class="aett-12">1</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -2203,8 +2004,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;11.6</span>
 <br class="fancyvrb" /><a 
  id="x10-65034r5"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;2</span><span 
+class="aett-12">2</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -2233,8 +2033,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;10.3</span><br class="fancyvrb" /><a 
  id="x10-65036r6"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;3</span><span 
+class="aett-12">3</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -2265,8 +2064,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;8.94</span>
 <br class="fancyvrb" /><a 
  id="x10-65038r7"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;4</span><span 
+class="aett-12">4</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -2296,8 +2094,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;8.79</span><br class="fancyvrb" /><a 
  id="x10-65040r8"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;5</span><span 
+class="aett-12">5</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -2325,10 +2122,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;10.2</span></div>
-                                                                          
-
-                                                                          
-<!--l. 489--><p class="indent" >   We could use other functions seen in this chapter for alternative summary
+<!--l. 484--><p class="indent" >   We could use other functions seen in this chapter for alternative summary
 statistics within these functions. A common task is to check on how much data we
 have for each group of interest. We could use <a 
  id="dx10-65041"></a><span 
@@ -2341,28 +2135,27 @@ class="aeti-12">dplyr </span>package gives us the <a
  id="dx10-65044"></a><span 
 class="aett-12">count() </span>function to make this
 even more efficient.
-</p><!--l. 493--><p class="indent" >
+</p><!--l. 488--><p class="indent" >
+                                                                          
+
+                                                                          
 </p>
-   <div class="fancyvrb" id="fancyvrb216">  <a 
+   <div class="fancyvrb" id="fancyvrb217">  <a 
  id="x10-65046r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;airquality%&#x003E;%</span><span 
 class="aett-12">&#x00A0;count(Month)</span></div>
-<!--l. 496--><p class="noindent" >
+<!--l. 491--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb217"> <a 
+   <div class="fancyvrb" id="fancyvrb218"> <a 
  id="x10-65048r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;#</span><span 
+class="aett-12">#</span><span 
 class="aett-12">&#x00A0;A</span><span 
 class="aett-12">&#x00A0;tibble:</span><span 
 class="aett-12">&#x00A0;5</span><span 
 class="aett-12">&#x00A0;x</span><span 
 class="aett-12">&#x00A0;2</span><br class="fancyvrb" /><a 
  id="x10-65050r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;Month</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -2372,13 +2165,10 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;n</span><br class="fancyvrb" /><a 
  id="x10-65052r3"></a><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003C;int&#x003E;</span><span 
 class="aett-12">&#x00A0;&#x003C;int&#x003E;</span><br class="fancyvrb" /><a 
  id="x10-65054r4"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;1</span><span 
+class="aett-12">1</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -2390,8 +2180,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;31</span>
 <br class="fancyvrb" /><a 
  id="x10-65056r5"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;2</span><span 
+class="aett-12">2</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -2402,8 +2191,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;30</span><br class="fancyvrb" /><a 
  id="x10-65058r6"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;3</span><span 
+class="aett-12">3</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -2414,8 +2202,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;31</span><br class="fancyvrb" /><a 
  id="x10-65060r7"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;4</span><span 
+class="aett-12">4</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -2426,8 +2213,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;31</span><br class="fancyvrb" /><a 
  id="x10-65062r8"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;5</span><span 
+class="aett-12">5</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -2437,7 +2223,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;30</span></div>
-<!--l. 511--><p class="indent" >   As an illustration of the real power of the <a 
+<!--l. 506--><p class="indent" >   As an illustration of the real power of the <a 
  id="dx10-65063"></a><span 
 class="aeti-12">pipe operator</span>, say we wanted to
 show the hottest months by their average temperature within the air
@@ -2445,20 +2231,18 @@ quality data. One way to do this using commands from the <a
  id="dx10-65064"></a><span 
 class="aeti-12">dplyr </span>package is
 to:
-</p><!--l. 515--><p class="indent" >
+</p><!--l. 510--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb218">  <a 
+   <div class="fancyvrb" id="fancyvrb219">  <a 
  id="x10-65066r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;Grouped</span><span 
 class="aett-12">&#x00A0;=</span><span 
 class="aett-12">&#x00A0;group_by(airquality,</span><span 
 class="aett-12">&#x00A0;Month)</span>
 <br class="fancyvrb" /><a 
  id="x10-65068r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;Summarised</span><span 
 class="aett-12">&#x00A0;=</span><span 
 class="aett-12">&#x00A0;summarise(Grouped,</span><span 
@@ -2468,16 +2252,14 @@ class="aett-12">&#x00A0;=</span><span
 class="aett-12">&#x00A0;TRUE))</span>
 <br class="fancyvrb" /><a 
  id="x10-65070r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;arrange(Summarised,</span><span 
 class="aett-12">&#x00A0;desc(AveTemp))</span></div>
-<!--l. 520--><p class="noindent" >
+<!--l. 515--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb219"> <a 
+   <div class="fancyvrb" id="fancyvrb220"> <a 
  id="x10-65072r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;#</span><span 
+class="aett-12">#</span><span 
 class="aett-12">&#x00A0;A</span><span 
 class="aett-12">&#x00A0;tibble:</span><span 
 class="aett-12">&#x00A0;5</span><span 
@@ -2485,21 +2267,16 @@ class="aett-12">&#x00A0;x</span><span
 class="aett-12">&#x00A0;2</span><br class="fancyvrb" /><a 
  id="x10-65074r2"></a><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;Month</span><span 
 class="aett-12">&#x00A0;AveTemp</span><br class="fancyvrb" /><a 
  id="x10-65076r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003C;int&#x003E;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003C;dbl&#x003E;</span><br class="fancyvrb" /><a 
  id="x10-65078r4"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;1</span><span 
+class="aett-12">1</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -2511,8 +2288,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;84.0</span>
 <br class="fancyvrb" /><a 
  id="x10-65080r5"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;2</span><span 
+class="aett-12">2</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -2523,8 +2299,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;83.9</span><br class="fancyvrb" /><a 
  id="x10-65082r6"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;3</span><span 
+class="aett-12">3</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -2535,8 +2310,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;79.1</span><br class="fancyvrb" /><a 
  id="x10-65084r7"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;4</span><span 
+class="aett-12">4</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -2547,8 +2321,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;76.9</span><br class="fancyvrb" /><a 
  id="x10-65086r8"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;5</span><span 
+class="aett-12">5</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -2558,7 +2331,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;65.5</span></div>
-<!--l. 533--><p class="indent" >   Which has stored data at each step. Note in particular that a new variable was
+<!--l. 528--><p class="indent" >   Which has stored data at each step. Note in particular that a new variable was
 created by name in the <a 
  id="dx10-65087"></a><span 
 class="aett-12">summarise() </span>command; this helps in the subsequent
@@ -2566,25 +2339,20 @@ class="aett-12">summarise() </span>command; this helps in the subsequent
  id="dx10-65088"></a><span 
 class="aett-12">arrange() </span>step. We might want to store the results at each step, but if we didn&#8217;t
 want to, then we could use piping like this:
-</p><!--l. 537--><p class="indent" >
+</p><!--l. 532--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb220">  <a 
+   <div class="fancyvrb" id="fancyvrb221">  <a 
  id="x10-65090r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;airquality2</span><span 
 class="aett-12">&#x00A0;%&#x003E;%</span><br class="fancyvrb" /><a 
  id="x10-65092r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;group_by(Month)</span><span 
 class="aett-12">&#x00A0;%&#x003E;%</span>
 <br class="fancyvrb" /><a 
  id="x10-65094r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;summarise(AveTemp</span><span 
@@ -2598,18 +2366,12 @@ class="aett-12">&#x00A0;%&#x003E;%</span><br class="fancyvrb" /><a
  id="x10-65096r4"></a><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;arrange(desc(AveTemp))</span></div>
-<!--l. 543--><p class="noindent" >
-                                                                          
-
-                                                                          
+<!--l. 538--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb221"> <a 
+   <div class="fancyvrb" id="fancyvrb222"> <a 
  id="x10-65098r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;#</span><span 
+class="aett-12">#</span><span 
 class="aett-12">&#x00A0;A</span><span 
 class="aett-12">&#x00A0;tibble:</span><span 
 class="aett-12">&#x00A0;5</span><span 
@@ -2617,21 +2379,16 @@ class="aett-12">&#x00A0;x</span><span
 class="aett-12">&#x00A0;2</span><br class="fancyvrb" /><a 
  id="x10-65100r2"></a><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;Month</span><span 
 class="aett-12">&#x00A0;AveTemp</span><br class="fancyvrb" /><a 
  id="x10-65102r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003C;int&#x003E;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;&#x003C;dbl&#x003E;</span><br class="fancyvrb" /><a 
  id="x10-65104r4"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;1</span><span 
+class="aett-12">1</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -2643,8 +2400,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;84.0</span>
 <br class="fancyvrb" /><a 
  id="x10-65106r5"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;2</span><span 
+class="aett-12">2</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -2655,8 +2411,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;83.9</span><br class="fancyvrb" /><a 
  id="x10-65108r6"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;3</span><span 
+class="aett-12">3</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -2667,8 +2422,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;79.1</span><br class="fancyvrb" /><a 
  id="x10-65110r7"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;4</span><span 
+class="aett-12">4</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -2679,8 +2433,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;76.9</span><br class="fancyvrb" /><a 
  id="x10-65112r8"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;5</span><span 
+class="aett-12">5</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -2690,30 +2443,31 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;65.5</span></div>
-<!--l. 557--><p class="indent" >   Note that commands that might be nested on one line in the standard way of
+<!--l. 552--><p class="indent" >   Note that commands that might be nested on one line in the standard way of
 combining commands can be split out onto multiple lines to make it even easier to
 see what has been managed by each command. This leaves room for comments
 to be added at the end of lines to help anyone else read the code being
 written.
-</p><!--l. 560--><p class="noindent" >
+                                                                          
+
+                                                                          
+</p><!--l. 555--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">8.6   </span> <a 
  id="x10-660008.6"></a>Closing</h3>
-<!--l. 562--><p class="noindent" >If you are carrying on working with <span 
+<!--l. 557--><p class="noindent" >If you are carrying on working with <span 
 class="aess-12">R </span>you might wish to remove direct
 access to the data sets we used in this chapter by issuing the following
 commands
-</p><!--l. 566--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb222">  <a 
+   <div class="fancyvrb" id="fancyvrb223">  <a 
  id="x10-66002r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;detach(airquality)</span></div>
                                                                           
 
                                                                           
-   <!--l. 9--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 7--><div class="crosslinks"><p class="noindent">[<a 
 href="../LURN/LURNch8.html">Version for sighted users</a>] [<a 
 
 href="LURNBlindch9.html" >next</a>] [<a 
@@ -2721,6 +2475,6 @@ href="LURNBlindch7.html" >prev</a>] [<a
 href="LURNBlindch7.html#tailLURNBlindch7.html" >prev-tail</a>] [<a 
 href="LURNBlindch8.html" >front</a>] [<a 
 href="LURNBlind.html#LURNBlindch8.html" >up</a>] </p></div>
-<!--l. 9--><p class="indent" >   <a 
+<!--l. 7--><p class="indent" >   <a 
  id="tailLURNBlindch8.html"></a>  </p> 
 </body></html> 

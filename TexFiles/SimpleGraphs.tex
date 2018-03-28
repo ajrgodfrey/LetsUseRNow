@@ -1,7 +1,5 @@
 % filename GenericSettings.Rnw 
 
-
-
 % filename SimpleGraphs001.Rnw 
 
 %\setcounter{chapter}{} 
@@ -12,7 +10,6 @@
  
 % filename SimpleGraphs002.Rnw 
 
-
 % filename SimpleGraphs003.Rnw 
 
 
@@ -20,7 +17,6 @@ This chapter illustrates the construction of some basic exploratory data analysi
 
 There are many ways to create statistical graphs. The traditional method uses one of the base \R{} packages, but in recent years, the \Rpkg{ggplot2} package has gained considerable attention. The presentation of both styles of graph are given throughout this chapter. You will need to ensure the \Rpkg{ggplot2} package is available for use in your \R{} session by issuing the command:
 % filename SimpleGraphs004.Rnw 
-
 \begin{Schunk}
 \begin{Sinput}
 > str(airquality) 
@@ -35,11 +31,10 @@ There are many ways to create statistical graphs. The traditional method uses on
  $ Day    : int  1 2 3 4 5 6 7 8 9 10 ...
 \end{Soutput}
 \end{Schunk}
-% filename SimpleGraphs005.Rnw 
+ % filename SimpleGraphs005.Rnw 
 
 It is common for \R{} users to access the variables after issuing the command 
 % filename AttachAirquality.Rnw 
-
 \begin{Schunk}
 \begin{Sinput}
 > attach(airquality) 
@@ -76,7 +71,6 @@ Note that the figure created has default settings for the main title, axis label
 \caption{Histogram of Average wind speed in miles per hour at 0700 and 1000 hours at LaGuardia Airport. Obtained from the \Robject{air quality} data set.} 
 \label{AirQualityHistWind} 
 % filename SimpleGraphs008.Rnw 
-
 \begin{Schunk}
 \begin{Sinput}
 > hist(Wind) 
@@ -84,9 +78,30 @@ Note that the figure created has default settings for the main title, axis label
 \end{Schunk}
 \includegraphics[width=0.8\textwidth,alt={a histogram}]{figures/SimpleGraphsHistAirQualityWind-1} 
 
+\begin{Schunk}
+\begin{Soutput}
+This is a histogram, with the title: Histogram of Wind
+"Wind" is marked on the x-axis.
+Tick marks for the x-axis are at: 0, 5, 10, 15, and 20 
+There are a total of 153 elements for this variable.
+Tick marks for the y-axis are at: 0, 10, 20, and 30 
+It has 11 bins with equal widths, starting at 0 and ending at 22 .
+The mids and counts for the bins are:
+mid = 1  count = 1 
+mid = 3  count = 4 
+mid = 5  count = 11 
+mid = 7  count = 38 
+mid = 9  count = 27 
+mid = 11  count = 38 
+mid = 13  count = 10 
+mid = 15  count = 17 
+mid = 17  count = 4 
+mid = 19  count = 1 
+mid = 21  count = 2
+\end{Soutput}
+\end{Schunk}
 \SVGLink{SimpleGraphsHistAirQualityWind} 
 % filename SimpleGraphs009.Rnw 
-
 \end{center} 
 \end{exhibit} 
 
@@ -102,7 +117,6 @@ A histogram uses rectangles to represent the counts or relative frequencies of o
 \caption{Histogram of Average wind speed at 0700 and 1000 hours at New York's LaGuardia Airport. Obtained from the \Robject{air quality} data set.} 
 \label{AirQualityHistWind2} 
 % filename SimpleGraphs010.Rnw 
-
 \begin{Schunk}
 \begin{Sinput}
 > hist(Wind, xlab="Average wind speed (mph)", main="") 
@@ -139,7 +153,6 @@ Exhibit~\ref{AirQualityBoxplot} shows us the boxplot for the average wind speed 
 \caption{Boxplot of Average wind speed in miles per hour at 0700 and 1000 hours at LaGuardia Airport. Obtained from the \Robject{air quality} data set.} 
 \label{AirQualityBoxplot} 
 % filename SimpleGraphs012.Rnw 
-
 \begin{Schunk}
 \begin{Sinput}
 > ## windows(7, 5)
@@ -149,7 +162,6 @@ Exhibit~\ref{AirQualityBoxplot} shows us the boxplot for the average wind speed 
 \includegraphics[width=0.8\textwidth,alt={a boxplot}]{figures/SimpleGraphsBoxplotAirQualityWind-1} 
 
 \SVGLink{SimpleGraphsBoxplotAirQualityWind} 
-
 % filename SimpleGraphs013.Rnw 
 
 \end{center} 
@@ -167,14 +179,12 @@ For the purposes of illustration, I want to show the distribution of the daily a
 \caption{Comparative boxplots for the Average wind speed in miles per hour at 0700 and 1000 hours at LaGuardia Airport separated into groups for the months of May to September 1973. Data was Obtained from the \Robject{air quality} data set.} 
 \label{AirQualityCompBoxplotWindMonth} 
 % filename SimpleGraphs014.Rnw 
-
 \begin{Schunk}
 \begin{Sinput}
 > boxplot(Wind~Month, xlab="Month", ylab="Wind speed (mph)") 
 \end{Sinput}
 \end{Schunk}
 \includegraphics[width=0.8\textwidth,alt={a comparative boxplot}]{figures/SimpleGraphsCompBoxplotAirQualityWind-1} 
-
 
 \SVGLink{SimpleGraphsCompBoxplotAirQualityWind} 
 % filename SimpleGraphs015.Rnw 
@@ -481,13 +491,10 @@ The pie chart for the \Robject{state.region} data is given in Exhibit~\ref{State
  
 If you are carrying on working with \R{} you might wish to remove direct access to the data sets we used in this chapter by issuing the following commands 
 % filename DetachAirQuality.Rnw 
-
 \begin{Schunk}
 \begin{Sinput}
 > detach(airquality) 
 \end{Sinput}
 \end{Schunk}
 % filename CleanUp.Rnw 
-
-
 

@@ -1,3 +1,4 @@
+%filename VIMakeAccessGraphs.Rnw
 <<AccessGraphs1>>=
 attach(airquality)
 MyScatter = ScatterPlot(Wind, Ozone)

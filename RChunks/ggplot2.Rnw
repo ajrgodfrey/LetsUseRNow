@@ -1,5 +1,4 @@
 % filename ggplot2.Rnw 
-
 <<loadGGPlot2>>= 
 library(ggplot2) 
 @ 

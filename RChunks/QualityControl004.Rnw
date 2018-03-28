@@ -1,5 +1,4 @@
 % filename QualityControl004.Rnw 
-
 <<GetPackage>>= 
 library(qcc) 
 @ 

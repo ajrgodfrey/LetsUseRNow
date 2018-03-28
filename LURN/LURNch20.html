@@ -3,15 +3,14 @@
 <html > 
 <head><title>20 LURN... To Use R for Basic Calculus Tasks</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
-<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
-<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
 <!-- html,2,next --> 
 <meta name="src" content="LURN.tex"> 
-<meta name="date" content="2018-03-28 12:00:00"> 
 <link rel="stylesheet" type="text/css" href="LURN.css"> 
 </head><body 
 >
-   <!--l. 11--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 9--><div class="crosslinks"><p class="noindent">[<a 
 href="../LURNblind/LURNBlindch20.html">Version for blind users</a>] [<a 
 
 href="LURNch21.html" >next</a>] [<a 
@@ -21,12 +20,12 @@ href="#tailLURNch20.html">tail</a>] [<a
 href="LURN.html#LURNch20.html" >up</a>] </p></div>
    <h2 class="chapterHead"><span class="titlemark">Chapter&#x00A0;20</span><br /><a 
  id="x22-15100020"></a>LURN&#x2026; To Use R for Basic Calculus Tasks</h2>
-<!--l. 20--><p class="noindent" >This chapter explains how various tasks in introductory calculus can be
+<!--l. 18--><p class="noindent" >This chapter explains how various tasks in introductory calculus can be
 undertaken using <span 
 class="aess-12">R</span>.
    <h3 class="sectionHead"><span class="titlemark">20.1   </span> <a 
  id="x22-15200020.1"></a>Creating mathematical expressions</h3>
-<!--l. 25--><p class="noindent" >Before we embark on doing those fun things we want to do, we need to learn how
+<!--l. 23--><p class="noindent" >Before we embark on doing those fun things we want to do, we need to learn how
 to store a mathematical expression as an object in <span 
 class="aess-12">R</span>. There are many keywords
 that appear in these expressions which are translated to symbols when seen
@@ -34,10 +33,10 @@ printed in a graph window but remain in ordinary text in <span
 class="aess-12">R </span>commands.
 Such symbols include Greek letters, hats and bars, all of which have a
 meaning.
-<!--l. 27--><p class="noindent" >
+<!--l. 25--><p class="noindent" >
    <h3 class="sectionHead"><span class="titlemark">20.2   </span> <a 
  id="x22-15300020.2"></a>Plotting functions</h3>
-<!--l. 29--><p class="noindent" >This can be a lot of fun if you set things up right to start with. We create a
+<!--l. 27--><p class="noindent" >This can be a lot of fun if you set things up right to start with. We create a
 <a 
  id="dx22-153001"></a><span 
 class="aeti-12">function </span>to represent the mathematical expression using the <a 
@@ -49,18 +48,16 @@ class="aett-12">plot.function() </span>or <a
  id="dx22-153004"></a><span 
 class="aett-12">curve()</span>
 commands.
-<!--l. 33--><p class="indent" >
-   <div class="fancyvrb" id="fancyvrb457">  <a 
+<!--l. 31--><p class="indent" >
+   <div class="fancyvrb" id="fancyvrb459">  <a 
  id="x22-153006r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;MySine</span><span 
 class="aett-12">&#x00A0;&#x003C;-</span><span 
 class="aett-12">&#x00A0;function(x){</span><span 
 class="aett-12">&#x00A0;sin(x)}</span><br class="fancyvrb" /><a 
  id="x22-153008r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;curve(MySine,</span><span 
 class="aett-12">&#x00A0;-4*pi,</span><span 
 class="aett-12">&#x00A0;2*pi,</span><span 
@@ -70,13 +67,13 @@ class="aett-12">&#x00A0;2001)</span></div>
                                                                           
 
                                                                           
-<!--l. 38--><p class="indent" >   <img 
-src="LURN58x.png" alt="PIC" class="graphics" width="272.99881pt" height="272.99965pt" ><!--tex4ht:graphics  
-name="LURN58x.png" src="figures/CalculusSineCurve-1.eps"  
+<!--l. 36--><p class="indent" >   <img 
+src="LURN59x.png" alt="PIC" class="graphics" width="272" height="272" ><!--tex4ht:graphics  
+name="LURN59x.png" src="figures/CalculusSineCurve-1.eps"  
 -->
-<!--l. 41--><p class="indent" >   <a 
+<!--l. 39--><p class="indent" >   <a 
 href="../svgs/CalculusSineCurve-1.html" >link to SVG file: CalculusSineCurve-1.svg</a>
-<!--l. 43--><p class="indent" >   You can use any valid mathematical expression in the <a 
+<!--l. 41--><p class="indent" >   You can use any valid mathematical expression in the <a 
  id="dx22-153009"></a><span 
 class="aeti-12">function </span>you create. You
 might find it useful to test your idea= values for your inputs that are easy to work
@@ -85,18 +82,18 @@ integers, but it could be easier to test your functions using values that lead t
 identifiable results such as multiples of <span 
 class="cmmi-12">&#x03C0; </span>when working with trignometric
 functions. For example:
-<!--l. 46--><p class="indent" >   «EvalMySine» MySine(c((0:4)*pi/2)) @
-<!--l. 56--><p class="noindent" >
+<!--l. 44--><p class="indent" >   «EvalMySine» MySine(c((0:4)*pi/2)) @
+<!--l. 54--><p class="noindent" >
    <h3 class="sectionHead"><span class="titlemark">20.3   </span> <a 
  id="x22-15400020.3"></a>Differentiation</h3>
-<!--l. 58--><p class="noindent" >The internal code used for differentiation in <span 
+<!--l. 56--><p class="noindent" >The internal code used for differentiation in <span 
 class="aess-12">R </span>is not as comprehensive as other
 mathematical software. It can handle arithmetic operators <span 
 class="cmr-12">+</span>, <span 
 class="cmsy-10x-x-120">-</span>, <span 
 class="cmsy-10x-x-120">*</span>, <span 
 class="cmmi-12">&#x2215; </span>and <img 
-src="LURN59x.png" alt="&#x02C6;,  "  class="circ" > and
+src="LURN60x.png" alt="&#x02C6;,  "  class="circ" > and
 the single-variable functions <a 
  id="dx22-154001"></a><span 
 class="aett-12">exp()</span>, <a 
@@ -134,7 +131,7 @@ class="aett-12">pnorm() </span>and <a
  id="dx22-154016"></a><span 
 class="aett-12">dnorm() </span>are restricted to the standard normal
 distribution.
-<!--l. 62--><p class="indent" >   The easiest way to find the derivative of an expression is to store the
+<!--l. 60--><p class="indent" >   The easiest way to find the derivative of an expression is to store the
                                                                           
 
                                                                           
@@ -146,33 +143,30 @@ class="aett-12">D()</span>
 or <a 
  id="dx22-154019"></a><span 
 class="aett-12">deriv() </span>commands.
-<!--l. 66--><p class="indent" >
-   <div class="fancyvrb" id="fancyvrb458">  <a 
+<!--l. 64--><p class="indent" >
+   <div class="fancyvrb" id="fancyvrb460">  <a 
  id="x22-154021r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;y=expression(exp(2*x))</span><br class="fancyvrb" /><a 
  id="x22-154023r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;D(y,"x")</span></div>
-<!--l. 70--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb459"> <a 
+<!--l. 68--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb461"> <a 
  id="x22-154025r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;exp(2</span><span 
+class="aett-12">exp(2</span><span 
 class="aett-12">&#x00A0;*</span><span 
 class="aett-12">&#x00A0;x)</span><span 
 class="aett-12">&#x00A0;*</span><span 
 class="aett-12">&#x00A0;2</span></div>
-<!--l. 76--><p class="indent" >   The second argument to the <a 
+<!--l. 74--><p class="indent" >   The second argument to the <a 
  id="dx22-154026"></a><span 
 class="aett-12">D() </span>function needs quote marks around
 it.
                                                                           
 
                                                                           
-   <!--l. 10--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 8--><div class="crosslinks"><p class="noindent">[<a 
 href="../LURNblind/LURNBlindch20.html">Version for blind users</a>] [<a 
 
 href="LURNch21.html" >next</a>] [<a 
@@ -180,6 +174,6 @@ href="LURNch19.html" >prev</a>] [<a
 href="LURNch19.html#tailLURNch19.html" >prev-tail</a>] [<a 
 href="LURNch20.html" >front</a>] [<a 
 href="LURN.html#LURNch20.html" >up</a>] </p></div>
-<!--l. 10--><p class="indent" >   <a 
+<!--l. 8--><p class="indent" >   <a 
  id="tailLURNch20.html"></a>   
 </body></html> 

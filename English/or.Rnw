@@ -1,3 +1,2 @@
 % filename or.Rnw 
-
-or
+ or 

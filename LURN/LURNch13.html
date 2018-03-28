@@ -3,15 +3,14 @@
 <html > 
 <head><title>13 LURN... To Perform Analyses of Variance (ANOVA)</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
-<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
-<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
 <!-- html,2,next --> 
 <meta name="src" content="LURN.tex"> 
-<meta name="date" content="2018-03-28 12:00:00"> 
 <link rel="stylesheet" type="text/css" href="LURN.css"> 
 </head><body 
 >
-   <!--l. 10--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 8--><div class="crosslinks"><p class="noindent">[<a 
 href="../LURNblind/LURNBlindch13.html">Version for blind users</a>] [<a 
 
 href="LURNch14.html" >next</a>] [<a 
@@ -21,12 +20,12 @@ href="#tailLURNch13.html">tail</a>] [<a
 href="LURN.html#LURNch13.html" >up</a>] </p></div>
    <h2 class="chapterHead"><span class="titlemark">Chapter&#x00A0;13</span><br /><a 
  id="x15-9700013"></a>LURN&#x2026; To Perform Analyses of Variance (ANOVA)</h2>
-<!--l. 20--><p class="noindent" >This chapter explains the basic use of the Analysis of variance (ANOVA) model
+<!--l. 18--><p class="noindent" >This chapter explains the basic use of the Analysis of variance (ANOVA) model
 for analyzing appropriate data. This is commonly (but not always) obtained
 through experimentation. To truly learn about the appropriate analysis of
 experimental data you will need to consult a suitable textbook on experimental
 design.
-<!--l. 22--><p class="indent" >   As there are insufficient data sets in the <a 
+<!--l. 20--><p class="indent" >   As there are insufficient data sets in the <a 
  id="dx15-97001"></a><span 
 class="aeti-12">datasets </span>package, the examples in this
 chapter draw on data supplied with the <a 
@@ -34,18 +33,18 @@ chapter draw on data supplied with the <a
 class="aeti-12">MASS </span>package. This package supports a
 very famous resource by Venables and Riply, often abbreviated to V&amp;R. The full
 reference is:
-<!--l. 24--><p class="indent" >   Venables, W.N. and Ripley, B.D. (1999) <span 
+<!--l. 22--><p class="indent" >   Venables, W.N. and Ripley, B.D. (1999) <span 
 class="aeti-12">Modern Applied Statistics with</span>
 <span 
 class="aeti-12">S-PLUS. </span>Third Edition. Springer.
-<!--l. 26--><p class="indent" >   This book is very useful for many topics in statistics and given the similarity of
+<!--l. 24--><p class="indent" >   This book is very useful for many topics in statistics and given the similarity of
 the syntax between S-PLUS and <span 
 class="aess-12">R</span>, remains a good resource for users of <span 
 class="aess-12">R</span>
 today.
    <h3 class="sectionHead"><span class="titlemark">13.1   </span> <a 
  id="x15-9800013.1"></a>Data and suitable exploratory graphs</h3>
-<!--l. 32--><p class="noindent" >The data used to fit models discussed in this chapter require a single response
+<!--l. 30--><p class="noindent" >The data used to fit models discussed in this chapter require a single response
 variable which is assumed continuous, and one or more explanatory variables that
 are discrete valued. More specifically, these explanatory variables are called
 <span 
@@ -55,13 +54,13 @@ class="aeti-12">level </span>for each
 <a 
  id="dx15-98002"></a><span 
 class="aeti-12">factor </span>under consideration.
-<!--l. 34--><p class="noindent" >
+<!--l. 32--><p class="noindent" >
    <h3 class="sectionHead"><span class="titlemark">13.2   </span> <a 
  id="x15-9900013.2"></a>One-way ANOVA</h3>
-<!--l. 36--><p class="noindent" >
+<!--l. 34--><p class="noindent" >
    <h3 class="sectionHead"><span class="titlemark">13.3   </span> <a 
  id="x15-10000013.3"></a>Model validation using diagnostic plots</h3>
-<!--l. 38--><p class="noindent" >Readers should note that the same code was used to generate the residual
+<!--l. 36--><p class="noindent" >Readers should note that the same code was used to generate the residual
 analysis plots as would be done for a linear regression model. Note that the
 <a 
  id="dx15-100001"></a><span 
@@ -73,16 +72,16 @@ object.
                                                                           
 
                                                                           
-<!--l. 40--><p class="noindent" >
+<!--l. 38--><p class="noindent" >
    <h3 class="sectionHead"><span class="titlemark">13.4   </span> <a 
  id="x15-10100013.4"></a>Two-way ANOVA</h3>
-<!--l. 42--><p class="noindent" >There are two different situations where a two-way analysis of variance is called
+<!--l. 40--><p class="noindent" >There are two different situations where a two-way analysis of variance is called
 for. First, a simple randomized complete block design and second, a factorial
 experiment with two factors.
-<!--l. 44--><p class="noindent" >
+<!--l. 42--><p class="noindent" >
    <h4 class="subsectionHead"><span class="titlemark">13.4.1   </span> <a 
  id="x15-10200013.4.1"></a>Randomized complete block designs</h4>
-<!--l. 47--><p class="noindent" >We use the <span 
+<!--l. 45--><p class="noindent" >We use the <span 
 class="aett-12">sleep </span>data used to show the analysis of paired data in Section<a 
 href="LURNch11.html#x13-8200011.2.1">11.2.1<!--tex4ht:ref: PairedSamplesTTest --></a>,
 which has two measurements on ten individuals. As the two observations on each
@@ -98,18 +97,15 @@ class="aett-12">aov() </span>command. As before,
 we use the <a 
  id="dx15-102003"></a><span 
 class="aett-12">summary() </span>method to present the analysis:
-<!--l. 51--><p class="indent" >
-   <div class="fancyvrb" id="fancyvrb307">  <a 
+<!--l. 49--><p class="indent" >
+   <div class="fancyvrb" id="fancyvrb308">  <a 
  id="x15-102005r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;summary(aov(extra~ID+group,</span><span 
 class="aett-12">&#x00A0;data=sleep))</span></div>
-<!--l. 54--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb308"> <a 
+<!--l. 52--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb309"> <a 
  id="x15-102007r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -131,8 +127,7 @@ class="aett-12">&#x00A0;value</span><span
 class="aett-12">&#x00A0;Pr(&#x003E;F)</span>
 <br class="fancyvrb" /><a 
  id="x15-102009r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;ID</span><span 
+class="aett-12">ID</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -159,8 +154,7 @@ class="aett-12">&#x00A0;0.0019</span><span
 class="aett-12">&#x00A0;**</span>
 <br class="fancyvrb" /><a 
  id="x15-102011r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;group</span><span 
+class="aett-12">group</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -181,8 +175,7 @@ class="aett-12">&#x00A0;16.50</span><span
 class="aett-12">&#x00A0;0.0028</span><span 
 class="aett-12">&#x00A0;**</span><br class="fancyvrb" /><a 
  id="x15-102013r4"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;Residuals</span><span 
+class="aett-12">Residuals</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -197,15 +190,12 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;0.76</span>
 <br class="fancyvrb" /><a 
  id="x15-102015r5"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;---</span><br class="fancyvrb" /><a 
+class="aett-12">---</span><br class="fancyvrb" /><a 
  id="x15-102017r6"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;Signif.</span><span 
+class="aett-12">Signif.</span><span 
 class="aett-12">&#x00A0;codes:</span><br class="fancyvrb" /><a 
  id="x15-102019r7"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;0</span><span 
+class="aett-12">0</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="tctt-1200">'</span><span 
 class="aett-12">***</span><span 
@@ -231,35 +221,35 @@ class="tctt-1200">'</span><span
 class="aett-12">&#x00A0;</span><span 
 class="tctt-1200">'</span><span 
 class="aett-12">&#x00A0;1</span></div>
-<!--l. 67--><p class="indent" >   The <span 
+<!--l. 65--><p class="indent" >   The <span 
 class="aett-12">group </span>variable is the treatment variable for this data set. Note that
 (depending on the level of significance required) leaving the <span 
 class="aett-12">ID </span>variable out of the
 analysis could lead to a different conclusion for this experiment. The above
 analysis shows that there were differences among the ten individuals as well as a
 significant difference between the two treatments.
-<!--l. 70--><p class="noindent" >
+<!--l. 68--><p class="noindent" >
    <h4 class="subsectionHead"><span class="titlemark">13.4.2   </span> <a 
  id="x15-10300013.4.2"></a>Factorial design with two factors</h4>
-<!--l. 74--><p class="noindent" >
+<!--l. 72--><p class="noindent" >
    <h4 class="subsectionHead"><span class="titlemark">13.4.3   </span> <a 
  id="x15-10400013.4.3"></a>Graphing the results for an experiment with two factors</h4>
                                                                           
 
                                                                           
-<!--l. 76--><p class="noindent" >
+<!--l. 74--><p class="noindent" >
    <h4 class="subsectionHead"><span class="titlemark">13.4.4   </span> <a 
  id="x15-10500013.4.4"></a>What is an interaction?</h4>
-<!--l. 78--><p class="noindent" >
+<!--l. 76--><p class="noindent" >
    <h4 class="subsectionHead"><span class="titlemark">13.4.5   </span> <a 
  id="x15-10600013.4.5"></a>Two-way ANOVA with no interaction</h4>
-<!--l. 80--><p class="noindent" >
+<!--l. 78--><p class="noindent" >
    <h4 class="subsectionHead"><span class="titlemark">13.4.6   </span> <a 
  id="x15-10700013.4.6"></a>Two-way ANOVA with an interaction</h4>
                                                                           
 
                                                                           
-   <!--l. 10--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 8--><div class="crosslinks"><p class="noindent">[<a 
 href="../LURNblind/LURNBlindch13.html">Version for blind users</a>] [<a 
 
 href="LURNch14.html" >next</a>] [<a 
@@ -267,6 +257,6 @@ href="LURNch12.html" >prev</a>] [<a
 href="LURNch12.html#tailLURNch12.html" >prev-tail</a>] [<a 
 href="LURNch13.html" >front</a>] [<a 
 href="LURN.html#LURNch13.html" >up</a>] </p></div>
-<!--l. 10--><p class="indent" >   <a 
+<!--l. 8--><p class="indent" >   <a 
  id="tailLURNch13.html"></a>    
 </body></html> 

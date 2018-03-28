@@ -1,5 +1,4 @@
 % filename SimpleGraphs009.Rnw 
-
 \end{center} 
 \end{exhibit} 
 

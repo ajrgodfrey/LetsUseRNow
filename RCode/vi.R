@@ -7,7 +7,7 @@ savehistory("WhatIDidToday.txt")
 ## ----TXTOut, eval=FALSE--------------------------------------------------
 txtOut() 
 
-## ----CreateHist----------------------------------------------------------
+## ----CreateHist, warnings=FALSE------------------------------------------
 MyHist = hist(airquality$Wind, xlab="Average wind speed (mph)", main="", plot=FALSE) 
 
 ## ----ShowPrintHist-------------------------------------------------------
@@ -25,7 +25,7 @@ MakeAccessibleSVG(hist(airquality$Wind, xlab="Average wind speed (mph)", main=""
 VI(boxplot(airquality$Wind, xlab="Average wind speed (mph)")) 
 
 ## ----VIDotplot-----------------------------------------------------------
-VI(dotplot(x)) 
+VI(dotplot(airquality$Wind, xlab="Average wind speed (mph)")) 
 
 ## ----UniDesc, eval=FALSE-------------------------------------------------
 data(airquality) 

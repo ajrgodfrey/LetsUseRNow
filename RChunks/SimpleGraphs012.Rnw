@@ -1,5 +1,4 @@
 % filename SimpleGraphs012.Rnw 
-
 <<BoxplotAirQualityWind, fig.width=7, fig.height=5, eval=-1, fig.show="hide">>= 
 windows(7, 5) 
 boxplot(Wind, horizontal=TRUE, xlab="Wind speed (mph)") 
@@ -9,4 +8,3 @@ boxplot(Wind, horizontal=TRUE, xlab="Wind speed (mph)")
 #MakeAccessibleSVG(boxplot(Wind, horizontal=TRUE, xlab="Wind speed (mph)"), "figures/SimpleGraphsBoxplotAirQualityWind")
 @ 
 \SVGLink{SimpleGraphsBoxplotAirQualityWind} 
-

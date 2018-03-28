@@ -1,7 +1,5 @@
 % filename GenericSettings.Rnw 
 
-
-
 % filename NumericalEDA001.Rnw 
 
  
@@ -117,7 +115,6 @@ It used to be possible to ask \R{} to use the \Rcmd{median}, in a command like t
  
 We will need to see how to get the relevant medians, minima, and maxima for the columns separately later in this chapter, but for now let's see how the relevant summary measures can be obtained for a single column of the \Robject{air quality} data. The \Rcmd{attach} command allows us direct access to the variables by name. 
 % filename AttachAirquality.Rnw 
-
 \begin{Schunk}
 \begin{Sinput}
 > attach(airquality) 
@@ -191,9 +188,7 @@ Let's say we want to know the \Rcmd{mean} wind speed over the five months data w
 \end{Soutput}
 \end{Schunk}
 % filename or.Rnw 
-
-or
-% filename NumericalEDA016b.Rnw 
+ or % filename NumericalEDA016b.Rnw 
 
 \begin{Schunk}
 \begin{Sinput}
@@ -561,13 +556,10 @@ Note that commands that might be nested on one line in the standard way of combi
  
 If you are carrying on working with \R{} you might wish to remove direct access to the data sets we used in this chapter by issuing the following commands 
 % filename DetachAirQuality.Rnw 
-
 \begin{Schunk}
 \begin{Sinput}
 > detach(airquality) 
 \end{Sinput}
 \end{Schunk}
 % filename CleanUp.Rnw 
-
-
 

@@ -3,15 +3,14 @@
 <html > 
 <head><title>18 LURN... To create maps</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
-<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
-<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
 <!-- html,2,next --> 
 <meta name="src" content="LURN.tex"> 
-<meta name="date" content="2018-03-28 12:00:00"> 
 <link rel="stylesheet" type="text/css" href="LURN.css"> 
 </head><body 
 >
-   <!--l. 9--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 7--><div class="crosslinks"><p class="noindent">[<a 
 href="../LURNblind/LURNBlindch18.html">Version for blind users</a>] [<a 
 
 href="LURNch19.html" >next</a>] [<a 
@@ -21,7 +20,7 @@ href="#tailLURNch18.html">tail</a>] [<a
 href="LURN.html#LURNch18.html" >up</a>] </p></div>
    <h2 class="chapterHead"><span class="titlemark">Chapter&#x00A0;18</span><br /><a 
  id="x20-14400018"></a>LURN&#x2026; To create maps</h2>
-<!--l. 18--><p class="noindent" >This chapter explains how to create simple maps using some add-on packages. You
+<!--l. 16--><p class="noindent" >This chapter explains how to create simple maps using some add-on packages. You
 will need to have installed the <a 
  id="dx20-144001"></a><span 
 class="aeti-12">maps</span>, <a 
@@ -32,17 +31,15 @@ class="aeti-12">ggmap </span>packages to complete
 the examples in this chapter. If you have not installed an add-on package before,
 you should take a look at Chapter&#x00A0;<a 
 href="LURNch16.html#x18-13100016">16<!--tex4ht:ref: Additional --></a> first.
-<!--l. 20--><p class="indent" >   After installing the packages, load them into your <span 
+<!--l. 18--><p class="indent" >   After installing the packages, load them into your <span 
 class="aess-12">R </span>session using:
-   <div class="fancyvrb" id="fancyvrb416">  <a 
+   <div class="fancyvrb" id="fancyvrb418">  <a 
  id="x20-144005r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;library(maps)</span></div>
-<div class="fancyvrb" id="fancyvrb417"> <a 
+<div class="fancyvrb" id="fancyvrb419"> <a 
  id="x20-144007r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;Error:</span><span 
+class="aett-12">Error:</span><span 
 class="aett-12">&#x00A0;package</span><span 
 class="aett-12">&#x00A0;or</span><span 
 class="aett-12">&#x00A0;namespace</span><span 
@@ -56,8 +53,6 @@ class="tctt-1200">'</span><span
 class="aett-12">:</span>
 <br class="fancyvrb" /><a 
  id="x20-144009r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;package</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="tctt-1200">'</span><span 
@@ -83,22 +78,19 @@ class="aett-12">&#x00A0;with</span><span
 class="aett-12">&#x00A0;this</span><span 
 class="aett-12">&#x00A0;R</span><span 
 class="aett-12">&#x00A0;version</span></div>
-<div class="fancyvrb" id="fancyvrb418"> <a 
+<div class="fancyvrb" id="fancyvrb420"> <a 
  id="x20-144011r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;library(mapdata)</span></div>
-<div class="fancyvrb" id="fancyvrb419"> <a 
+<div class="fancyvrb" id="fancyvrb421"> <a 
  id="x20-144013r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;Loading</span><span 
+class="aett-12">Loading</span><span 
 class="aett-12">&#x00A0;required</span><span 
 class="aett-12">&#x00A0;package:</span><span 
 class="aett-12">&#x00A0;maps</span></div>
-<div class="fancyvrb" id="fancyvrb420"> <a 
+<div class="fancyvrb" id="fancyvrb422"> <a 
  id="x20-144015r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;Error:</span><span 
+class="aett-12">Error:</span><span 
 class="aett-12">&#x00A0;package</span><span 
 class="aett-12">&#x00A0;or</span><span 
 class="aett-12">&#x00A0;namespace</span><span 
@@ -112,8 +104,6 @@ class="tctt-1200">'</span><span
 class="aett-12">:</span>
 <br class="fancyvrb" /><a 
  id="x20-144017r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;package</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="tctt-1200">'</span><span 
@@ -139,10 +129,9 @@ class="aett-12">&#x00A0;with</span><span
 class="aett-12">&#x00A0;this</span><span 
 class="aett-12">&#x00A0;R</span><span 
 class="aett-12">&#x00A0;version</span></div>
-<div class="fancyvrb" id="fancyvrb421"> <a 
+<div class="fancyvrb" id="fancyvrb423"> <a 
  id="x20-144019r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;Error:</span><span 
+class="aett-12">Error:</span><span 
 class="aett-12">&#x00A0;package</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="tctt-1200">'</span><span 
@@ -152,34 +141,28 @@ class="aett-12">&#x00A0;could</span><span
 class="aett-12">&#x00A0;not</span><span 
 class="aett-12">&#x00A0;be</span><span 
 class="aett-12">&#x00A0;loaded</span></div>
-<div class="fancyvrb" id="fancyvrb422"> <a 
+<div class="fancyvrb" id="fancyvrb424"> <a 
  id="x20-144021r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;library(ggmap)</span></div>
-<div class="fancyvrb" id="fancyvrb423"> <a 
+<div class="fancyvrb" id="fancyvrb425"> <a 
  id="x20-144023r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;Loading</span><span 
+class="aett-12">Loading</span><span 
 class="aett-12">&#x00A0;required</span><span 
 class="aett-12">&#x00A0;package:</span><span 
 class="aett-12">&#x00A0;ggplot2</span></div>
-<div class="fancyvrb" id="fancyvrb424"> <a 
- id="x20-144025r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
+<div class="fancyvrb" id="fancyvrb426"> <a 
+ id="x20-144025r1"></a><br class="fancyvrb" /><a 
  id="x20-144027r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;Attaching</span><span 
+class="aett-12">Attaching</span><span 
 class="aett-12">&#x00A0;package:</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="tctt-1200">'</span><span 
 class="aett-12">ggplot2</span><span 
 class="tctt-1200">'</span></div>
-<div class="fancyvrb" id="fancyvrb425"> <a 
+<div class="fancyvrb" id="fancyvrb427"> <a 
  id="x20-144029r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;The</span><span 
+class="aett-12">The</span><span 
 class="aett-12">&#x00A0;following</span><span 
 class="aett-12">&#x00A0;objects</span><span 
 class="aett-12">&#x00A0;are</span><span 
@@ -190,21 +173,16 @@ class="tctt-1200">'</span><span
 class="aett-12">package:BrailleR</span><span 
 class="tctt-1200">'</span><span 
 class="aett-12">:</span><br class="fancyvrb" /><a 
- id="x20-144031r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
+ id="x20-144031r2"></a><br class="fancyvrb" /><a 
  id="x20-144033r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;xlab,</span><span 
 class="aett-12">&#x00A0;ylab</span></div>
-<div class="fancyvrb" id="fancyvrb426"> <a 
+<div class="fancyvrb" id="fancyvrb428"> <a 
  id="x20-144035r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;Error:</span><span 
+class="aett-12">Error:</span><span 
 class="aett-12">&#x00A0;package</span><span 
 class="aett-12">&#x00A0;or</span><span 
 class="aett-12">&#x00A0;namespace</span><span 
@@ -218,8 +196,6 @@ class="tctt-1200">'</span><span
 class="aett-12">:</span>
 <br class="fancyvrb" /><a 
  id="x20-144037r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;package</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="tctt-1200">'</span><span 
@@ -250,11 +226,11 @@ class="aett-12">&#x00A0;version</span></div>
                                                                           
    <h3 class="sectionHead"><span class="titlemark">18.1   </span> <a 
  id="x20-14500018.1"></a>Creation of maps</h3>
-<!--l. 69--><p class="noindent" >The creation of maps is actually a simple task in <span 
+<!--l. 67--><p class="noindent" >The creation of maps is actually a simple task in <span 
 class="aess-12">R</span>, as long as the database for the
 desired land mass is available. There are a number of these data bases available as
 downloadable packages from CRAN.
-<!--l. 71--><p class="indent" >   I first created a map when I wanted a map of New Zealand (my home country)
+<!--l. 69--><p class="indent" >   I first created a map when I wanted a map of New Zealand (my home country)
 for a presentation I gave when I was overseas. I also wanted to show a portion
 of the country to highlight how far my home town is from the nation&#8217;s
 capital. The rectangle that appears on the map of New Zealand was created
@@ -273,7 +249,7 @@ country.
                                                                           
 
                                                                           
-<!--l. 73--><p class="indent" >   <a 
+<!--l. 71--><p class="indent" >   <a 
  id="x20-145004r1"></a><hr class="float"><div class="float" 
 >
                                                                           
@@ -285,21 +261,19 @@ class="content">Map of New Zealand with a rectangle marked on it that bounds
 the area used in a subsequent map.</span></div><!--tex4ht:label?: x20-145004r1 -->
 <div class="center" 
 >
-<!--l. 75--><p class="noindent" >
-<div class="fancyvrb" id="fancyvrb427"> <a 
+<!--l. 73--><p class="noindent" >
+<div class="fancyvrb" id="fancyvrb429"> <a 
  id="x20-145006r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;map("nzHires",</span><span 
 class="aett-12">&#x00A0;ylim=c(-48,-34),</span><span 
 class="aett-12">&#x00A0;xlim=c(166,179),</span><span 
 class="aett-12">&#x00A0;fill=T,</span><span 
 class="aett-12">&#x00A0;col=3)</span></div>
-<div class="fancyvrb" id="fancyvrb428">
+<div class="fancyvrb" id="fancyvrb430">
 <a 
  id="x20-145008r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;Error</span><span 
+class="aett-12">Error</span><span 
 class="aett-12">&#x00A0;in</span><span 
 class="aett-12">&#x00A0;map("nzHires",</span><span 
 class="aett-12">&#x00A0;ylim</span><span 
@@ -319,15 +293,13 @@ class="aett-12">&#x00A0;not</span><span
 class="aett-12">&#x00A0;find</span><span 
 class="aett-12">&#x00A0;function</span><span 
 class="aett-12">&#x00A0;"map"</span></div>
-<div class="fancyvrb" id="fancyvrb429"> <a 
+<div class="fancyvrb" id="fancyvrb431"> <a 
  id="x20-145010r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;box()</span></div>
-<div class="fancyvrb" id="fancyvrb430"> <a 
+<div class="fancyvrb" id="fancyvrb432"> <a 
  id="x20-145012r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;Error</span><span 
+class="aett-12">Error</span><span 
 class="aett-12">&#x00A0;in</span><span 
 class="aett-12">&#x00A0;box():</span><span 
 class="aett-12">&#x00A0;plot.new</span><span 
@@ -336,10 +308,9 @@ class="aett-12">&#x00A0;not</span><span
 class="aett-12">&#x00A0;been</span><span 
 class="aett-12">&#x00A0;called</span><span 
 class="aett-12">&#x00A0;yet</span></div>
-<div class="fancyvrb" id="fancyvrb431"> <a 
+<div class="fancyvrb" id="fancyvrb433"> <a 
  id="x20-145014r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;polygon(x=c(172,</span><span 
 class="aett-12">&#x00A0;179,</span><span 
 class="aett-12">&#x00A0;179,</span><span 
@@ -348,11 +319,10 @@ class="aett-12">&#x00A0;y=c(-42,-42,</span><span
 class="aett-12">&#x00A0;-39,-39),</span><span 
 class="aett-12">&#x00A0;border=1,</span><span 
 class="aett-12">&#x00A0;lty=2)</span></div>
-<div class="fancyvrb" id="fancyvrb432">
+<div class="fancyvrb" id="fancyvrb434">
 <a 
  id="x20-145016r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;Error</span><span 
+class="aett-12">Error</span><span 
 class="aett-12">&#x00A0;in</span><span 
 class="aett-12">&#x00A0;polygon(x</span><span 
 class="aett-12">&#x00A0;=</span><span 
@@ -373,13 +343,13 @@ class="aett-12">&#x00A0;not</span><span
 class="aett-12">&#x00A0;been</span><span 
 class="aett-12">&#x00A0;called</span><span 
 class="aett-12">&#x00A0;yet</span></div>
-<!--l. 100--><p class="noindent" ><a 
+<!--l. 98--><p class="noindent" ><a 
 href="../svgs/MapsWholeNZ-1.html" >link to SVG file: MapsWholeNZ-1.svg</a></div>
                                                                           
 
                                                                           
    </div><hr class="endfloat" />
-<!--l. 104--><p class="indent" >   The maps in these graphs are based on latitude and longitude data. The <a 
+<!--l. 102--><p class="indent" >   The maps in these graphs are based on latitude and longitude data. The <a 
  id="dx20-145017"></a><span 
 class="aett-12">map()</span>
 function ensures the aspect ratio of the resulting plot is in keeping with the actual
@@ -388,7 +358,7 @@ being plotted. Note that this rule doesn&#8217;t apply for the world map options
 exist.
    <h3 class="sectionHead"><span class="titlemark">18.2   </span> <a 
  id="x20-14600018.2"></a>Adding cities to a map</h3>
-<!--l. 108--><p class="noindent" >The <a 
+<!--l. 106--><p class="noindent" >The <a 
  id="dx20-146001"></a><span 
 class="aett-12">map.cities() </span>function extracts data from a database of the world&#8217;s cities.
 Judicious selection of the criteria for population was required to get Palmerston
@@ -399,7 +369,7 @@ plot.
                                                                           
 
                                                                           
-<!--l. 111--><p class="indent" >   <a 
+<!--l. 109--><p class="indent" >   <a 
  id="x20-146002r2"></a><hr class="float"><div class="float" 
 >
                                                                           
@@ -411,21 +381,19 @@ class="content">Map showing the central part of New Zealand in order to show
 two cities in the lower North Island.</span></div><!--tex4ht:label?: x20-146002r2 -->
 <div class="center" 
 >
-<!--l. 113--><p class="noindent" >
-<div class="fancyvrb" id="fancyvrb433"> <a 
+<!--l. 111--><p class="noindent" >
+<div class="fancyvrb" id="fancyvrb435"> <a 
  id="x20-146004r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;map("nzHires",</span><span 
 class="aett-12">&#x00A0;ylim=c(-42,-39),</span><span 
 class="aett-12">&#x00A0;xlim=c(172,179),</span><span 
 class="aett-12">&#x00A0;fill=T,</span><span 
 class="aett-12">&#x00A0;col=3)</span></div>
-<div class="fancyvrb" id="fancyvrb434">
+<div class="fancyvrb" id="fancyvrb436">
 <a 
  id="x20-146006r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;Error</span><span 
+class="aett-12">Error</span><span 
 class="aett-12">&#x00A0;in</span><span 
 class="aett-12">&#x00A0;map("nzHires",</span><span 
 class="aett-12">&#x00A0;ylim</span><span 
@@ -445,15 +413,13 @@ class="aett-12">&#x00A0;not</span><span
 class="aett-12">&#x00A0;find</span><span 
 class="aett-12">&#x00A0;function</span><span 
 class="aett-12">&#x00A0;"map"</span></div>
-<div class="fancyvrb" id="fancyvrb435"> <a 
+<div class="fancyvrb" id="fancyvrb437"> <a 
  id="x20-146008r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;box()</span></div>
-<div class="fancyvrb" id="fancyvrb436"> <a 
+<div class="fancyvrb" id="fancyvrb438"> <a 
  id="x20-146010r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;Error</span><span 
+class="aett-12">Error</span><span 
 class="aett-12">&#x00A0;in</span><span 
 class="aett-12">&#x00A0;box():</span><span 
 class="aett-12">&#x00A0;plot.new</span><span 
@@ -462,19 +428,17 @@ class="aett-12">&#x00A0;not</span><span
 class="aett-12">&#x00A0;been</span><span 
 class="aett-12">&#x00A0;called</span><span 
 class="aett-12">&#x00A0;yet</span></div>
-<div class="fancyvrb" id="fancyvrb437"> <a 
+<div class="fancyvrb" id="fancyvrb439"> <a 
  id="x20-146012r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;map.cities(minpop=70000,maxpop=80000,</span><span 
 class="aett-12">&#x00A0;pch=16,</span><span 
 class="aett-12">&#x00A0;col=2,</span><span 
 class="aett-12">&#x00A0;cex=2)</span></div>
-<div class="fancyvrb" id="fancyvrb438">
+<div class="fancyvrb" id="fancyvrb440">
 <a 
  id="x20-146014r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;Error</span><span 
+class="aett-12">Error</span><span 
 class="aett-12">&#x00A0;in</span><span 
 class="aett-12">&#x00A0;map.cities(minpop</span><span 
 class="aett-12">&#x00A0;=</span><span 
@@ -494,17 +458,15 @@ class="aett-12">&#x00A0;not</span><span
 class="aett-12">&#x00A0;find</span><span 
 class="aett-12">&#x00A0;function</span><span 
 class="aett-12">&#x00A0;"map.cities"</span></div>
-<div class="fancyvrb" id="fancyvrb439"> <a 
+<div class="fancyvrb" id="fancyvrb441"> <a 
  id="x20-146016r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;map.cities(capitals=1,</span><span 
 class="aett-12">&#x00A0;col=4,</span><span 
 class="aett-12">&#x00A0;pch=19)</span></div>
-<div class="fancyvrb" id="fancyvrb440"> <a 
+<div class="fancyvrb" id="fancyvrb442"> <a 
  id="x20-146018r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;Error</span><span 
+class="aett-12">Error</span><span 
 class="aett-12">&#x00A0;in</span><span 
 class="aett-12">&#x00A0;map.cities(capitals</span><span 
 class="aett-12">&#x00A0;=</span><span 
@@ -520,18 +482,18 @@ class="aett-12">&#x00A0;not</span><span
 class="aett-12">&#x00A0;find</span><span 
 class="aett-12">&#x00A0;function</span><span 
 class="aett-12">&#x00A0;"map.cities"</span></div>
-<!--l. 144--><p class="noindent" ><a 
+<!--l. 142--><p class="noindent" ><a 
 href="../svgs/MapsPartNZ-1.html" >link to SVG file: MapsPartNZ-1.svg</a></div>
                                                                           
 
                                                                           
    </div><hr class="endfloat" />
-<!--l. 148--><p class="indent" >   One challenge in making this graphic presentable for this document was
+<!--l. 146--><p class="indent" >   One challenge in making this graphic presentable for this document was
 assuring myself that the aspect ratio was correct. Latitudes and longitudes do not
 take up equal space especially as you move further from the tropics. <span 
 class="aess-12">R </span>will get the
 aspect ratio correct but being sure is another matter.
-<!--l. 151--><p class="indent" >   The graph I first created for this example was 5.7cm high and just over
+<!--l. 149--><p class="indent" >   The graph I first created for this example was 5.7cm high and just over
 10cm wide. Was it in proportion though? If each degree of latitude in
 the map used 1cm of space, we would expect each degree of longitude
 to take up at most 1 cm of space. An approximation for this is found
@@ -547,19 +509,19 @@ and seven degrees of longitude, so I expect my 5.7cm high graphic to
 be
    <center class="math-display" >
 <img 
-src="LURN57x.png" alt="5.7
+src="LURN58x.png" alt="5.7
  3 &#x00D7;  7 &#x00D7; 0.76 ==  10.1  " class="math-display" ></center>
 centimetres in width. This was about right.
-<!--l. 155--><p class="indent" >   You can see the way we would do this calculation using <span 
+<!--l. 153--><p class="indent" >   You can see the way we would do this calculation using <span 
 class="aess-12">R </span>in Chapter&#x00A0;<a 
 href="LURNch19.html#x21-14800019">19<!--tex4ht:ref: ScientificCalculator --></a>.
    <h3 class="sectionHead"><span class="titlemark">18.3   </span> <a 
  id="x20-14700018.3"></a>Using Google&#8217;s services to map locations of interest</h3>
-<!--l. 160--><p class="noindent" >The ability to search Google for specific locations is really useful, especially if you
+<!--l. 158--><p class="noindent" >The ability to search Google for specific locations is really useful, especially if you
 intend plotting maps with points of interest such as universities rather than just
 cities. Our first example does look for cities though, so that it builds on examples
 from previous sections in this chapter.
-<!--l. 162--><p class="indent" >   In mid-2015, I will attend the UseR conference in Aalborg, which is in
+<!--l. 160--><p class="indent" >   In mid-2015, I will attend the UseR conference in Aalborg, which is in
 Denmark. I know Denmark has a coastline and is bordered by Germany, but
 actually I don&#8217;t know much else (especially where individual cities are!). I want ot
 know where the city of Aalborg is in relation to Copenhagen (the capital of
@@ -571,21 +533,18 @@ Denmark as follows:
                                                                           
 
                                                                           
-<!--l. 166--><p class="indent" >
-   <div class="fancyvrb" id="fancyvrb441">  <a 
+<!--l. 164--><p class="indent" >
+   <div class="fancyvrb" id="fancyvrb443">  <a 
  id="x20-147003r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;Places</span><span 
 class="aett-12">&#x00A0;=</span><span 
 class="aett-12">&#x00A0;geocode(location=c("Aalborg",</span><span 
 class="aett-12">&#x00A0;"Copenhagen"))</span></div>
-<!--l. 169--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb442">
-<a 
+<!--l. 167--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb444"> <a 
  id="x20-147005r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;Error</span><span 
+class="aett-12">Error</span><span 
 class="aett-12">&#x00A0;in</span><span 
 class="aett-12">&#x00A0;geocode(location</span><span 
 class="aett-12">&#x00A0;=</span><span 
@@ -596,17 +555,15 @@ class="aett-12">&#x00A0;not</span><span
 class="aett-12">&#x00A0;find</span><span 
 class="aett-12">&#x00A0;function</span><span 
 class="aett-12">&#x00A0;"geocode"</span></div>
-<!--l. 172--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb443"> <a 
+<!--l. 170--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb445"> <a 
  id="x20-147007r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;Places</span></div>
-<!--l. 175--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb444"> <a 
+<!--l. 173--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb446"> <a 
  id="x20-147009r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;Error</span><span 
+class="aett-12">Error</span><span 
 class="aett-12">&#x00A0;in</span><span 
 class="aett-12">&#x00A0;eval(expr,</span><span 
 class="aett-12">&#x00A0;envir,</span><span 
@@ -618,11 +575,10 @@ class="aett-12">Places</span><span
 class="tctt-1200">'</span><span 
 class="aett-12">&#x00A0;not</span><span 
 class="aett-12">&#x00A0;found</span></div>
-<!--l. 178--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb445"> <a 
+<!--l. 176--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb447"> <a 
  id="x20-147011r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;map(</span><span 
 class="tctt-1200">'</span><span 
 class="aett-12">worldHires</span><span 
@@ -633,11 +589,10 @@ class="tctt-1200">'</span><span
 class="aett-12">Denmark</span><span 
 class="tctt-1200">'</span><span 
 class="aett-12">)</span></div>
-<!--l. 181--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb446"> <a 
+<!--l. 179--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb448"> <a 
  id="x20-147013r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;Error</span><span 
+class="aett-12">Error</span><span 
 class="aett-12">&#x00A0;in</span><span 
 class="aett-12">&#x00A0;map("worldHires",</span><span 
 class="aett-12">&#x00A0;"Denmark"):</span><span 
@@ -646,21 +601,19 @@ class="aett-12">&#x00A0;not</span><span
 class="aett-12">&#x00A0;find</span><span 
 class="aett-12">&#x00A0;function</span><span 
 class="aett-12">&#x00A0;"map"</span></div>
-<!--l. 184--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb447"> <a 
+<!--l. 182--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb449"> <a 
  id="x20-147015r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;title(</span><span 
 class="tctt-1200">'</span><span 
 class="aett-12">Denmark</span><span 
 class="tctt-1200">'</span><span 
 class="aett-12">)</span></div>
-<!--l. 187--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb448"> <a 
+<!--l. 185--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb450"> <a 
  id="x20-147017r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;Error</span><span 
+class="aett-12">Error</span><span 
 class="aett-12">&#x00A0;in</span><span 
 class="aett-12">&#x00A0;title("Denmark"):</span><span 
 class="aett-12">&#x00A0;plot.new</span><span 
@@ -669,18 +622,16 @@ class="aett-12">&#x00A0;not</span><span
 class="aett-12">&#x00A0;been</span><span 
 class="aett-12">&#x00A0;called</span><span 
 class="aett-12">&#x00A0;yet</span></div>
-<!--l. 190--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb449"> <a 
+<!--l. 188--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb451"> <a 
  id="x20-147019r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;points(Places,</span><span 
 class="aett-12">&#x00A0;pch=16)</span></div>
-<!--l. 193--><p class="noindent" >
-   <div class="fancyvrb" id="fancyvrb450"> <a 
+<!--l. 191--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb452"> <a 
  id="x20-147021r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;Error</span><span 
+class="aett-12">Error</span><span 
 class="aett-12">&#x00A0;in</span><span 
 class="aett-12">&#x00A0;points(Places,</span><span 
 class="aett-12">&#x00A0;pch</span><span 
@@ -696,7 +647,7 @@ class="aett-12">&#x00A0;found</span></div>
                                                                           
 
                                                                           
-   <!--l. 8--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 6--><div class="crosslinks"><p class="noindent">[<a 
 href="../LURNblind/LURNBlindch18.html">Version for blind users</a>] [<a 
 
 href="LURNch19.html" >next</a>] [<a 
@@ -704,6 +655,6 @@ href="LURNch17.html" >prev</a>] [<a
 href="LURNch17.html#tailLURNch17.html" >prev-tail</a>] [<a 
 href="LURNch18.html" >front</a>] [<a 
 href="LURN.html#LURNch18.html" >up</a>] </p></div>
-<!--l. 8--><p class="indent" >   <a 
+<!--l. 6--><p class="indent" >   <a 
  id="tailLURNch18.html"></a>   
 </body></html> 

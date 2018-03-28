@@ -6,15 +6,14 @@
 > 
 <head><title>21 LURN... To Use R for Linear Algebra</title> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
-<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
-<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)" /> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)" /> 
 <!-- xhtml,2,next,mathjax,html --> 
 <meta name="src" content="LURNBlind.tex" /> 
-<meta name="date" content="2018-03-28 12:01:00" /> 
 <link rel="stylesheet" type="text/css" href="LURNBlind.css" /> 
 </head><body 
 >
-   <!--l. 10--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 8--><div class="crosslinks"><p class="noindent">[<a 
 href="../LURN/LURNch21.html">Version for sighted users</a>] [<a 
 
 href="LURNBlindch22.html" >next</a>] [<a 
@@ -24,7 +23,7 @@ href="#tailLURNBlindch21.html">tail</a>] [<a
 href="LURNBlind.html#LURNBlindch21.html" >up</a>] </p></div>
    <h2 class="chapterHead"><span class="titlemark">Chapter&#x00A0;21</span><br /><a 
  id="x23-15600021"></a>LURN&#x2026; To Use R for Linear Algebra</h2>
-<!--l. 19--><p class="noindent" >This chapter explains how some tasks commonly taught in introductory algebra
+<!--l. 17--><p class="noindent" >This chapter explains how some tasks commonly taught in introductory algebra
 courses can be undertaken using <span 
 class="aess-12">R</span>. The functionality is built into <span 
 class="aess-12">R </span>because so
@@ -34,166 +33,147 @@ functions.
 </p>
    <h3 class="sectionHead"><span class="titlemark">21.1   </span> <a 
  id="x23-15700021.1"></a>Basic notes on storage of vectors and matrices</h3>
-<!--l. 23--><p class="noindent" >We will concern ourselves with only numeric valued vectors and matrices in this
+<!--l. 21--><p class="noindent" >We will concern ourselves with only numeric valued vectors and matrices in this
 chapter. Other types of data can be stored in vectors and matrices (as well as
 other data structures) but they have little relevance for linear algebra at this
 time.
-</p><!--l. 25--><p class="indent" >   In linear algebra, a vector is a one dimensional set of numbers. It is usually
+</p><!--l. 23--><p class="indent" >   In linear algebra, a vector is a one dimensional set of numbers. It is usually
 referred to as a row vector or a column vector to indicate its orientation. This
 orientation does matter for the ability to perform certain tasks when working with
 two or more vectors and matrices.
-</p><!--l. 27--><p class="indent" >   A matrix is a two-dimensional array of numbers, having a number of rows and
+</p><!--l. 25--><p class="indent" >   A matrix is a two-dimensional array of numbers, having a number of rows and
 columns. Many mathematical software applications do not explicitly distinguish a
 vector from a matrix because they store a row vector as if it were a matrix having
 just one row. Similarly, a column vector is stored as a matrix having just one
 column.
-</p><!--l. 29--><p class="indent" >   <span 
+</p><!--l. 27--><p class="indent" >   <span 
 class="aess-12">R </span>does distinguish betweena vector and a matrix, but it does not state whether
 a vector is a row or column vector. This does have its advantages, and probably
 some disadvantages as well. If for any reason you need to force the orientation of a
 vector, then create it as a matrix with one of its dimensions set equal to one. For
 example, we create a simple vector:
-</p><!--l. 33--><p class="indent" >
+</p><!--l. 31--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb460">  <a 
+   <div class="fancyvrb" id="fancyvrb462">  <a 
  id="x23-157002r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;x=1:4</span><br class="fancyvrb" /><a 
  id="x23-157004r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;x</span></div>
-<!--l. 37--><p class="noindent" >
+<!--l. 35--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb461"> <a 
+   <div class="fancyvrb" id="fancyvrb463"> <a 
  id="x23-157006r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">[1]</span><span 
 class="aett-12">&#x00A0;1</span><span 
 class="aett-12">&#x00A0;2</span><span 
 class="aett-12">&#x00A0;3</span><span 
 class="aett-12">&#x00A0;4</span></div>
-<!--l. 40--><p class="noindent" >
+<!--l. 38--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb462"> <a 
+   <div class="fancyvrb" id="fancyvrb464"> <a 
  id="x23-157008r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;class(x)</span></div>
                                                                           
 
                                                                           
-<!--l. 43--><p class="noindent" >
+<!--l. 41--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb463"> <a 
+   <div class="fancyvrb" id="fancyvrb465"> <a 
  id="x23-157010r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">[1]</span><span 
 class="aett-12">&#x00A0;"integer"</span></div>
-<!--l. 49--><p class="indent" >   We can convert this to a column matrix using
-</p><!--l. 53--><p class="indent" >
+<!--l. 47--><p class="indent" >   We can convert this to a column matrix using
+</p><!--l. 51--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb464">  <a 
+   <div class="fancyvrb" id="fancyvrb466">  <a 
  id="x23-157012r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;X=matrix(x,</span><span 
 class="aett-12">&#x00A0;ncol=1)</span><br class="fancyvrb" /><a 
  id="x23-157014r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;class(X)</span></div>
-<!--l. 57--><p class="noindent" >
-</p>
-   <div class="fancyvrb" id="fancyvrb465"> <a 
- id="x23-157016r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1]</span><span 
-class="aett-12">&#x00A0;"matrix"</span></div>
-<!--l. 60--><p class="noindent" >
-</p>
-   <div class="fancyvrb" id="fancyvrb466"> <a 
- id="x23-157018r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
-class="aett-12">&#x00A0;X</span></div>
-<!--l. 63--><p class="noindent" >
+<!--l. 55--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb467"> <a 
+ id="x23-157016r1"></a><span 
+class="aett-12">[1]</span><span 
+class="aett-12">&#x00A0;"matrix"</span></div>
+<!--l. 58--><p class="noindent" >
+</p>
+   <div class="fancyvrb" id="fancyvrb468"> <a 
+ id="x23-157018r1"></a><span 
+class="aett-12">&#x003E;</span><span 
+class="aett-12">&#x00A0;X</span></div>
+<!--l. 61--><p class="noindent" >
+</p>
+   <div class="fancyvrb" id="fancyvrb469"> <a 
  id="x23-157020r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[,1]</span><br class="fancyvrb" /><a 
  id="x23-157022r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1,]</span><span 
+class="aett-12">[1,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;1</span><br class="fancyvrb" /><a 
  id="x23-157024r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[2,]</span><span 
+class="aett-12">[2,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;2</span><br class="fancyvrb" /><a 
  id="x23-157026r4"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[3,]</span><span 
+class="aett-12">[3,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;3</span><br class="fancyvrb" /><a 
  id="x23-157028r5"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[4,]</span><span 
+class="aett-12">[4,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;4</span></div>
-<!--l. 73--><p class="indent" >   Notice that I&#8217;ve used a capital letter for the matrix version of the same set of
+<!--l. 71--><p class="indent" >   Notice that I&#8217;ve used a capital letter for the matrix version of the same set of
 numbers here which is possible because <span 
 class="aess-12">R </span>is case sensitive. The <span 
 class="aett-12">ncol</span>
 argument can be replaced by using the <span 
 class="aett-12">nrow </span>argument if a row vector is
 required.
-</p><!--l. 75--><p class="noindent" >
+</p><!--l. 73--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">21.2   </span> <a 
  id="x23-15800021.2"></a>Creating some simple matrix structures</h3>
-<!--l. 77--><p class="noindent" >The <a 
+<!--l. 75--><p class="noindent" >The <a 
  id="dx23-158001"></a><span 
 class="aeti-12">identity matrix </span>is a diagonal matrix so we use the <a 
  id="dx23-158002"></a><span 
 class="aett-12">diag() </span>command to create
 it. For example
-</p><!--l. 81--><p class="indent" >
+</p><!--l. 79--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb468">  <a 
+   <div class="fancyvrb" id="fancyvrb470">  <a 
  id="x23-158004r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;I3=diag(3)</span><br class="fancyvrb" /><a 
  id="x23-158006r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;I3</span></div>
-<!--l. 85--><p class="noindent" >
+<!--l. 83--><p class="noindent" >
                                                                           
 
                                                                           
 </p>
-   <div class="fancyvrb" id="fancyvrb469"> <a 
+   <div class="fancyvrb" id="fancyvrb471"> <a 
  id="x23-158008r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -202,8 +182,7 @@ class="aett-12">&#x00A0;[,1]</span><span
 class="aett-12">&#x00A0;[,2]</span><span 
 class="aett-12">&#x00A0;[,3]</span><br class="fancyvrb" /><a 
  id="x23-158010r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1,]</span><span 
+class="aett-12">[1,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -217,8 +196,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0</span><br class="fancyvrb" /><a 
  id="x23-158012r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[2,]</span><span 
+class="aett-12">[2,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -232,8 +210,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0</span><br class="fancyvrb" /><a 
  id="x23-158014r4"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[3,]</span><span 
+class="aett-12">[3,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -246,28 +223,24 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;1</span></div>
-<!--l. 95--><p class="indent" >   We often need to find the <a 
+<!--l. 93--><p class="indent" >   We often need to find the <a 
  id="dx23-158015"></a>transpose of a matrix. The <a 
  id="dx23-158016"></a><span 
 class="aett-12">t() </span>command does
 this.
-</p><!--l. 99--><p class="indent" >
+</p><!--l. 97--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb470">  <a 
+   <div class="fancyvrb" id="fancyvrb472">  <a 
  id="x23-158018r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;M=matrix(1:6,nrow=2)</span><br class="fancyvrb" /><a 
  id="x23-158020r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;M</span></div>
-<!--l. 103--><p class="noindent" >
+<!--l. 101--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb471"> <a 
+   <div class="fancyvrb" id="fancyvrb473"> <a 
  id="x23-158022r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -276,8 +249,7 @@ class="aett-12">&#x00A0;[,1]</span><span
 class="aett-12">&#x00A0;[,2]</span><span 
 class="aett-12">&#x00A0;[,3]</span><br class="fancyvrb" /><a 
  id="x23-158024r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1,]</span><span 
+class="aett-12">[1,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -291,8 +263,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;5</span><br class="fancyvrb" /><a 
  id="x23-158026r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[2,]</span><span 
+class="aett-12">[2,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -305,19 +276,16 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;6</span></div>
-<!--l. 108--><p class="noindent" >
+<!--l. 106--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb472"> <a 
+   <div class="fancyvrb" id="fancyvrb474"> <a 
  id="x23-158028r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;t(M)</span></div>
-<!--l. 111--><p class="noindent" >
+<!--l. 109--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb473"> <a 
+   <div class="fancyvrb" id="fancyvrb475"> <a 
  id="x23-158030r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -325,8 +293,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;[,1]</span><span 
 class="aett-12">&#x00A0;[,2]</span><br class="fancyvrb" /><a 
  id="x23-158032r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1,]</span><span 
+class="aett-12">[1,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -336,8 +303,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;2</span><br class="fancyvrb" /><a 
  id="x23-158034r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[2,]</span><span 
+class="aett-12">[2,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -347,8 +313,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;4</span><br class="fancyvrb" /><a 
  id="x23-158036r4"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[3,]</span><span 
+class="aett-12">[3,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -357,7 +322,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;6</span></div>
-<!--l. 121--><p class="indent" >   A <a 
+<!--l. 119--><p class="indent" >   A <a 
  id="dx23-158037"></a><span 
 class="aeti-12">Hilbert matrix </span>can be created using a formula. The <a 
  id="dx23-158038"></a><span 
@@ -366,19 +331,16 @@ class="aett-12">row() </span>and <a
 class="aett-12">col()</span>
 commands use the size of the argument to create objects of the same
 size.
-</p><!--l. 125--><p class="indent" >
+</p><!--l. 123--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb474">  <a 
+   <div class="fancyvrb" id="fancyvrb476">  <a 
  id="x23-158041r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;row(I3)</span></div>
-<!--l. 128--><p class="noindent" >
+<!--l. 126--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb475"> <a 
+   <div class="fancyvrb" id="fancyvrb477"> <a 
  id="x23-158043r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -387,8 +349,7 @@ class="aett-12">&#x00A0;[,1]</span><span
 class="aett-12">&#x00A0;[,2]</span><span 
 class="aett-12">&#x00A0;[,3]</span><br class="fancyvrb" /><a 
  id="x23-158045r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1,]</span><span 
+class="aett-12">[1,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -402,8 +363,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;1</span><br class="fancyvrb" /><a 
  id="x23-158047r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[2,]</span><span 
+class="aett-12">[2,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -417,8 +377,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;2</span><br class="fancyvrb" /><a 
  id="x23-158049r4"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[3,]</span><span 
+class="aett-12">[3,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -431,93 +390,84 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;3</span></div>
-<!--l. 134--><p class="noindent" >
+<!--l. 132--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb476"> <a 
+   <div class="fancyvrb" id="fancyvrb478"> <a 
  id="x23-158051r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;Hilb3=row(I3)+col(I3)-1</span></div>
-<!--l. 140--><p class="indent" >   Notice that the Hilbert matrix is created by adding two matrices together and
+<!--l. 138--><p class="indent" >   Notice that the Hilbert matrix is created by adding two matrices together and
 then a constant is subtracted from all elements of the result.
                                                                           
 
                                                                           
-</p><!--l. 142--><p class="noindent" >
+</p><!--l. 140--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">21.3   </span> <a 
  id="x23-15900021.3"></a>Matrix and vector calculations</h3>
-<!--l. 144--><p class="noindent" >We saw a simple addition of elements of two matrices of the same size as well as a
+<!--l. 142--><p class="noindent" >We saw a simple addition of elements of two matrices of the same size as well as a
 subtraction in the previous section. <span 
 class="aess-12">R </span>uses the standard arithmetic operators on
 pairs of matrices (or vectors) on an element-by-element basis.
-</p><!--l. 146--><p class="indent" >   Addition of a constant to a vector or matrix is effected on all elements
-</p><!--l. 150--><p class="indent" >
+</p><!--l. 144--><p class="indent" >   Addition of a constant to a vector or matrix is effected on all elements
+</p><!--l. 148--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb477">  <a 
+   <div class="fancyvrb" id="fancyvrb479">  <a 
  id="x23-159002r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;x+2</span></div>
-<!--l. 153--><p class="noindent" >
-</p>
-   <div class="fancyvrb" id="fancyvrb478"> <a 
- id="x23-159004r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1]</span><span 
-class="aett-12">&#x00A0;3</span><span 
-class="aett-12">&#x00A0;4</span><span 
-class="aett-12">&#x00A0;5</span><span 
-class="aett-12">&#x00A0;6</span></div>
-<!--l. 156--><p class="noindent" >
-</p>
-   <div class="fancyvrb" id="fancyvrb479"> <a 
- id="x23-159006r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
-class="aett-12">&#x00A0;2+x</span></div>
-<!--l. 159--><p class="noindent" >
+<!--l. 151--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb480"> <a 
- id="x23-159008r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1]</span><span 
+ id="x23-159004r1"></a><span 
+class="aett-12">[1]</span><span 
 class="aett-12">&#x00A0;3</span><span 
 class="aett-12">&#x00A0;4</span><span 
 class="aett-12">&#x00A0;5</span><span 
 class="aett-12">&#x00A0;6</span></div>
-<!--l. 165--><p class="indent" >   Similarly, we can multiply a vector or matrix by a scalar using:
-</p><!--l. 169--><p class="indent" >
+<!--l. 154--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb481">  <a 
- id="x23-159010r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
-class="aett-12">&#x00A0;5*x</span></div>
-<!--l. 172--><p class="noindent" >
+   <div class="fancyvrb" id="fancyvrb481"> <a 
+ id="x23-159006r1"></a><span 
+class="aett-12">&#x003E;</span><span 
+class="aett-12">&#x00A0;2+x</span></div>
+<!--l. 157--><p class="noindent" >
 </p>
    <div class="fancyvrb" id="fancyvrb482"> <a 
+ id="x23-159008r1"></a><span 
+class="aett-12">[1]</span><span 
+class="aett-12">&#x00A0;3</span><span 
+class="aett-12">&#x00A0;4</span><span 
+class="aett-12">&#x00A0;5</span><span 
+class="aett-12">&#x00A0;6</span></div>
+<!--l. 163--><p class="indent" >   Similarly, we can multiply a vector or matrix by a scalar using:
+</p><!--l. 167--><p class="indent" >
+</p>
+   <div class="fancyvrb" id="fancyvrb483">  <a 
+ id="x23-159010r1"></a><span 
+class="aett-12">&#x003E;</span><span 
+class="aett-12">&#x00A0;5*x</span></div>
+<!--l. 170--><p class="noindent" >
+</p>
+   <div class="fancyvrb" id="fancyvrb484"> <a 
  id="x23-159012r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">[1]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;5</span><span 
 class="aett-12">&#x00A0;10</span><span 
 class="aett-12">&#x00A0;15</span><span 
 class="aett-12">&#x00A0;20</span></div>
-<!--l. 175--><p class="noindent" >
+<!--l. 173--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb483"> <a 
+   <div class="fancyvrb" id="fancyvrb485"> <a 
  id="x23-159014r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;x*5</span></div>
-<!--l. 178--><p class="noindent" >
+<!--l. 176--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb484"> <a 
+   <div class="fancyvrb" id="fancyvrb486"> <a 
  id="x23-159016r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">[1]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;5</span><span 
 class="aett-12">&#x00A0;10</span><span 
@@ -526,77 +476,65 @@ class="aett-12">&#x00A0;20</span></div>
                                                                           
 
                                                                           
-<!--l. 181--><p class="noindent" >
+<!--l. 179--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb485"> <a 
+   <div class="fancyvrb" id="fancyvrb487"> <a 
  id="x23-159018r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;5*X</span></div>
-<!--l. 184--><p class="noindent" >
+<!--l. 182--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb486"> <a 
+   <div class="fancyvrb" id="fancyvrb488"> <a 
  id="x23-159020r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[,1]</span><br class="fancyvrb" /><a 
  id="x23-159022r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1,]</span><span 
+class="aett-12">[1,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;5</span><br class="fancyvrb" /><a 
  id="x23-159024r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[2,]</span><span 
+class="aett-12">[2,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;10</span><br class="fancyvrb" /><a 
  id="x23-159026r4"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[3,]</span><span 
+class="aett-12">[3,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;15</span><br class="fancyvrb" /><a 
  id="x23-159028r5"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[4,]</span><span 
+class="aett-12">[4,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;20</span></div>
-<!--l. 194--><p class="indent" >   which retains the size of the vector or matrix. Also note that pre-multiplying
+<!--l. 192--><p class="indent" >   which retains the size of the vector or matrix. Also note that pre-multiplying
 by a scalar is equivalent to post-multiplying by a scalar, as should have been
 expected. This is of course different to matrix multiplication.
-</p><!--l. 196--><p class="indent" >   Matrix operations use different symbols from simple arithmetic operators to
+</p><!--l. 194--><p class="indent" >   Matrix operations use different symbols from simple arithmetic operators to
 distinguish the different results that might be desired. For example,
-</p><!--l. 200--><p class="indent" >
+</p><!--l. 198--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb487">  <a 
+   <div class="fancyvrb" id="fancyvrb489">  <a 
  id="x23-159030r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;A=matrix(1:4,</span><span 
 class="aett-12">&#x00A0;nrow=2)</span><br class="fancyvrb" /><a 
  id="x23-159032r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;B=matrix(7:10,</span><span 
 class="aett-12">&#x00A0;nrow=2)</span><br class="fancyvrb" /><a 
  id="x23-159034r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;A*B</span></div>
-<!--l. 205--><p class="noindent" >
+<!--l. 203--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb488"> <a 
+   <div class="fancyvrb" id="fancyvrb490"> <a 
  id="x23-159036r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -604,8 +542,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;[,1]</span><span 
 class="aett-12">&#x00A0;[,2]</span><br class="fancyvrb" /><a 
  id="x23-159038r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1,]</span><span 
+class="aett-12">[1,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -614,30 +551,26 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;27</span><br class="fancyvrb" /><a 
  id="x23-159040r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[2,]</span><span 
+class="aett-12">[2,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;16</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;40</span></div>
-<!--l. 213--><p class="indent" >   creates a matrix with elements based on simple multiplication of the paired
+<!--l. 211--><p class="indent" >   creates a matrix with elements based on simple multiplication of the paired
 elements, not those based on proper matrix multiplication.
-</p><!--l. 215--><p class="indent" >   If we want to multiply two matrices, the order is important.
-</p><!--l. 219--><p class="indent" >
+</p><!--l. 213--><p class="indent" >   If we want to multiply two matrices, the order is important.
+</p><!--l. 217--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb489">  <a 
+   <div class="fancyvrb" id="fancyvrb491">  <a 
  id="x23-159042r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;A%*%B</span></div>
-<!--l. 222--><p class="noindent" >
+<!--l. 220--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb490"> <a 
+   <div class="fancyvrb" id="fancyvrb492"> <a 
  id="x23-159044r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -645,8 +578,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;[,1]</span><span 
 class="aett-12">&#x00A0;[,2]</span><br class="fancyvrb" /><a 
  id="x23-159046r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1,]</span><span 
+class="aett-12">[1,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;31</span><span 
@@ -654,27 +586,23 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;39</span><br class="fancyvrb" /><a 
  id="x23-159048r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[2,]</span><span 
+class="aett-12">[2,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;46</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;58</span></div>
-<!--l. 227--><p class="noindent" >
+<!--l. 225--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb491"> <a 
+   <div class="fancyvrb" id="fancyvrb493"> <a 
  id="x23-159050r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;B%*%A</span></div>
-<!--l. 230--><p class="noindent" >
+<!--l. 228--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb492"> <a 
+   <div class="fancyvrb" id="fancyvrb494"> <a 
  id="x23-159052r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -682,8 +610,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;[,1]</span><span 
 class="aett-12">&#x00A0;[,2]</span><br class="fancyvrb" /><a 
  id="x23-159054r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1,]</span><span 
+class="aett-12">[1,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;25</span><span 
@@ -691,8 +618,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;57</span><br class="fancyvrb" /><a 
  id="x23-159056r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[2,]</span><span 
+class="aett-12">[2,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;28</span><span 
@@ -702,56 +628,47 @@ class="aett-12">&#x00A0;64</span></div>
                                                                           
 
                                                                           
-<!--l. 239--><p class="indent" >   Multiplying a matrix by a vector is easily achieved, and <span 
+<!--l. 237--><p class="indent" >   Multiplying a matrix by a vector is easily achieved, and <span 
 class="aess-12">R </span>will orient the
 vector to conform to the rules of matrix multiplication as required.
-</p><!--l. 243--><p class="indent" >
+</p><!--l. 241--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb493">  <a 
+   <div class="fancyvrb" id="fancyvrb495">  <a 
  id="x23-159058r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;y=c(3,4)</span><br class="fancyvrb" /><a 
  id="x23-159060r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;A%*%y</span></div>
-<!--l. 247--><p class="noindent" >
+<!--l. 245--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb494"> <a 
+   <div class="fancyvrb" id="fancyvrb496"> <a 
  id="x23-159062r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[,1]</span><br class="fancyvrb" /><a 
  id="x23-159064r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1,]</span><span 
+class="aett-12">[1,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;15</span><br class="fancyvrb" /><a 
  id="x23-159066r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[2,]</span><span 
+class="aett-12">[2,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;22</span></div>
-<!--l. 252--><p class="noindent" >
+<!--l. 250--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb495"> <a 
+   <div class="fancyvrb" id="fancyvrb497"> <a 
  id="x23-159068r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;y%*%A</span></div>
-<!--l. 255--><p class="noindent" >
+<!--l. 253--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb496"> <a 
+   <div class="fancyvrb" id="fancyvrb498"> <a 
  id="x23-159070r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -759,35 +676,31 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;[,1]</span><span 
 class="aett-12">&#x00A0;[,2]</span><br class="fancyvrb" /><a 
  id="x23-159072r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1,]</span><span 
+class="aett-12">[1,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;11</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;25</span></div>
-<!--l. 263--><p class="noindent" >
+<!--l. 261--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">21.4   </span> <a 
  id="x23-16000021.4"></a>Inverting a matrix</h3>
-<!--l. 265--><p class="noindent" >The inverse of a matrix is used in many statistical procedures. The <a 
+<!--l. 263--><p class="noindent" >The inverse of a matrix is used in many statistical procedures. The <a 
  id="dx23-160001"></a><span 
 class="aett-12">solve()</span>
 command inverts a square matrix.
-</p><!--l. 269--><p class="indent" >
+</p><!--l. 267--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb497">  <a 
+   <div class="fancyvrb" id="fancyvrb499">  <a 
  id="x23-160003r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;A</span></div>
-<!--l. 272--><p class="noindent" >
+<!--l. 270--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb498"> <a 
+   <div class="fancyvrb" id="fancyvrb500"> <a 
  id="x23-160005r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -795,8 +708,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;[,1]</span><span 
 class="aett-12">&#x00A0;[,2]</span><br class="fancyvrb" /><a 
  id="x23-160007r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1,]</span><span 
+class="aett-12">[1,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -806,8 +718,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;3</span><br class="fancyvrb" /><a 
  id="x23-160009r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[2,]</span><span 
+class="aett-12">[2,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -816,22 +727,19 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;4</span></div>
-<!--l. 277--><p class="noindent" >
+<!--l. 275--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb499"> <a 
+   <div class="fancyvrb" id="fancyvrb501"> <a 
  id="x23-160011r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;solve(A)</span></div>
-<!--l. 280--><p class="noindent" >
+<!--l. 278--><p class="noindent" >
                                                                           
 
                                                                           
 </p>
-   <div class="fancyvrb" id="fancyvrb500"> <a 
+   <div class="fancyvrb" id="fancyvrb502"> <a 
  id="x23-160013r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -839,22 +747,20 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;[,1]</span><span 
 class="aett-12">&#x00A0;[,2]</span><br class="fancyvrb" /><a 
  id="x23-160015r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1,]</span><span 
+class="aett-12">[1,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;-2</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;1.5</span><br class="fancyvrb" /><a 
  id="x23-160017r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[2,]</span><span 
+class="aett-12">[2,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;1</span><span 
 class="aett-12">&#x00A0;-0.5</span></div>
-<!--l. 289--><p class="indent" >   For matrices that are not square, a generalised inverse can be found using the
+<!--l. 287--><p class="indent" >   For matrices that are not square, a generalised inverse can be found using the
 <a 
  id="dx23-160018"></a><span 
 class="aett-12">ginv() </span>command found in the <a 
@@ -862,19 +768,16 @@ class="aett-12">ginv() </span>command found in the <a
 class="aeti-12">MASS </span>package that is part of the standard <span 
 class="aess-12">R</span>
 distribution.
-</p><!--l. 293--><p class="indent" >
+</p><!--l. 291--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb501">  <a 
+   <div class="fancyvrb" id="fancyvrb503">  <a 
  id="x23-160021r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;M</span></div>
-<!--l. 296--><p class="noindent" >
+<!--l. 294--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb502"> <a 
+   <div class="fancyvrb" id="fancyvrb504"> <a 
  id="x23-160023r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -883,8 +786,7 @@ class="aett-12">&#x00A0;[,1]</span><span
 class="aett-12">&#x00A0;[,2]</span><span 
 class="aett-12">&#x00A0;[,3]</span><br class="fancyvrb" /><a 
  id="x23-160025r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1,]</span><span 
+class="aett-12">[1,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -898,8 +800,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;5</span><br class="fancyvrb" /><a 
  id="x23-160027r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[2,]</span><span 
+class="aett-12">[2,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -912,23 +813,19 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;6</span></div>
-<!--l. 301--><p class="noindent" >
+<!--l. 299--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb503"> <a 
+   <div class="fancyvrb" id="fancyvrb505"> <a 
  id="x23-160029r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;require(MASS)</span><br class="fancyvrb" /><a 
  id="x23-160031r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;ginv(M)</span></div>
-<!--l. 305--><p class="noindent" >
+<!--l. 303--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb504"> <a 
+   <div class="fancyvrb" id="fancyvrb506"> <a 
  id="x23-160033r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -942,39 +839,32 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[,2]</span><br class="fancyvrb" /><a 
  id="x23-160035r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1,]</span><span 
+class="aett-12">[1,]</span><span 
 class="aett-12">&#x00A0;-1.3333</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;1.0833</span><br class="fancyvrb" /><a 
  id="x23-160037r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[2,]</span><span 
+class="aett-12">[2,]</span><span 
 class="aett-12">&#x00A0;-0.3333</span><span 
 class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;0.3333</span>
-<br class="fancyvrb" /><a 
+class="aett-12">&#x00A0;0.3333</span><br class="fancyvrb" /><a 
  id="x23-160039r4"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[3,]</span><span 
+class="aett-12">[3,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0.6667</span><span 
 class="aett-12">&#x00A0;-0.4167</span></div>
-<!--l. 314--><p class="indent" >   Of course, the product of the matrix and its generalised inverse should be an
+<!--l. 312--><p class="indent" >   Of course, the product of the matrix and its generalised inverse should be an
 identity matrix.
-</p><!--l. 318--><p class="indent" >
+</p><!--l. 316--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb505">  <a 
+   <div class="fancyvrb" id="fancyvrb507">  <a 
  id="x23-160041r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;M%*%ginv(M)</span></div>
-<!--l. 321--><p class="noindent" >
+<!--l. 319--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb506"> <a 
+   <div class="fancyvrb" id="fancyvrb508"> <a 
  id="x23-160043r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -992,46 +882,41 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[,2]</span><br class="fancyvrb" /><a 
  id="x23-160045r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1,]</span><span 
+class="aett-12">[1,]</span><span 
 class="aett-12">&#x00A0;1.000e+00</span><span 
 class="aett-12">&#x00A0;-2.22e-16</span><br class="fancyvrb" /><a 
  id="x23-160047r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[2,]</span><span 
+class="aett-12">[2,]</span><span 
 class="aett-12">&#x00A0;6.661e-16</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;1.00e+00</span></div>
-<!--l. 329--><p class="indent" >   Like many other applications, <span 
+<!--l. 327--><p class="indent" >   Like many other applications, <span 
 class="aess-12">R </span>does not recognize the number zero very well.
 This is due to the way decimal numbers are stored.
                                                                           
 
                                                                           
-</p><!--l. 332--><p class="noindent" >
+</p><!--l. 330--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">21.5   </span> <a 
  id="x23-16100021.5"></a>Solving a set of linear equations</h3>
-<!--l. 334--><p class="noindent" >If we want to solve the set of equations, represented in matrix form as <span 
+<!--l. 332--><p class="noindent" >If we want to solve the set of equations, represented in matrix form as <span 
 class="cmmi-12">Ax </span><span 
 class="cmr-12">= </span><span 
 class="cmmi-12">b</span>, we
 use the <a 
  id="dx23-161001"></a><span 
 class="aett-12">solve() </span>command
-</p><!--l. 338--><p class="indent" >
+</p><!--l. 336--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb507">  <a 
+   <div class="fancyvrb" id="fancyvrb509">  <a 
  id="x23-161003r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;A</span></div>
-<!--l. 341--><p class="noindent" >
+<!--l. 339--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb508"> <a 
+   <div class="fancyvrb" id="fancyvrb510"> <a 
  id="x23-161005r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1039,8 +924,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;[,1]</span><span 
 class="aett-12">&#x00A0;[,2]</span><br class="fancyvrb" /><a 
  id="x23-161007r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1,]</span><span 
+class="aett-12">[1,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1050,8 +934,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;3</span><br class="fancyvrb" /><a 
  id="x23-161009r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[2,]</span><span 
+class="aett-12">[2,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1060,45 +943,39 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;4</span></div>
-<!--l. 346--><p class="noindent" >
+<!--l. 344--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb509"> <a 
+   <div class="fancyvrb" id="fancyvrb511"> <a 
  id="x23-161011r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;b=c(5,7)</span><br class="fancyvrb" /><a 
  id="x23-161013r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;solve(A,b)</span></div>
-<!--l. 350--><p class="noindent" >
+<!--l. 348--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb510"> <a 
+   <div class="fancyvrb" id="fancyvrb512"> <a 
  id="x23-161015r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">[1]</span><span 
 class="aett-12">&#x00A0;0.5</span><span 
 class="aett-12">&#x00A0;1.5</span></div>
-<!--l. 357--><p class="noindent" >
+<!--l. 355--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">21.6   </span> <a 
  id="x23-16200021.6"></a>Determinants and traces</h3>
-<!--l. 359--><p class="noindent" >The <a 
+<!--l. 357--><p class="noindent" >The <a 
  id="dx23-162001"></a><span 
 class="aett-12">det() </span>command is used for finding the determinant of a matrix.
-</p><!--l. 363--><p class="indent" >
+</p><!--l. 361--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb511">  <a 
+   <div class="fancyvrb" id="fancyvrb513">  <a 
  id="x23-162003r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;A</span></div>
-<!--l. 366--><p class="noindent" >
+<!--l. 364--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb512"> <a 
+   <div class="fancyvrb" id="fancyvrb514"> <a 
  id="x23-162005r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1106,8 +983,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;[,1]</span><span 
 class="aett-12">&#x00A0;[,2]</span><br class="fancyvrb" /><a 
  id="x23-162007r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1,]</span><span 
+class="aett-12">[1,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1117,8 +993,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;3</span><br class="fancyvrb" /><a 
  id="x23-162009r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[2,]</span><span 
+class="aett-12">[2,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1127,58 +1002,51 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;4</span></div>
-<!--l. 371--><p class="noindent" >
+<!--l. 369--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb513"> <a 
+   <div class="fancyvrb" id="fancyvrb515"> <a 
  id="x23-162011r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;det(A)</span></div>
                                                                           
 
                                                                           
-<!--l. 374--><p class="noindent" >
+<!--l. 372--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb514"> <a 
+   <div class="fancyvrb" id="fancyvrb516"> <a 
  id="x23-162013r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">[1]</span><span 
 class="aett-12">&#x00A0;-2</span></div>
-<!--l. 381--><p class="indent" >   The trace of a matrix is not so easily found. There is a command that is called
+<!--l. 379--><p class="indent" >   The trace of a matrix is not so easily found. There is a command that is called
 <a 
  id="dx23-162014"></a><span 
 class="aett-12">trace() </span>but this is not an algebraic function. If you want the trace of the matrix,
 you will need to sum the eigenvalues of the matrix.
-</p><!--l. 383--><p class="noindent" >
+</p><!--l. 381--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">21.7   </span> <a 
  id="x23-16300021.7"></a>Eigenvalues and eigenvectors</h3>
-<!--l. 385--><p class="noindent" >Calculation of eigenvalues and their associated eigenvalues is fairly simple, but
+<!--l. 383--><p class="noindent" >Calculation of eigenvalues and their associated eigenvalues is fairly simple, but
 extracting the elements required might pose a little difficulty. Let&#8217;s create a 4<span 
 class="cmsy-10x-x-120">&#x00D7;</span>4
 Hilbert matrix and find its eigenvalues:
-</p><!--l. 390--><p class="indent" >
+</p><!--l. 388--><p class="indent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb515">  <a 
+   <div class="fancyvrb" id="fancyvrb517">  <a 
  id="x23-163002r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;H4=matrix(-1,nrow=4,</span><span 
 class="aett-12">&#x00A0;ncol=4)</span><br class="fancyvrb" /><a 
  id="x23-163004r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;H4=H4+row(H4)+col(H4)</span><br class="fancyvrb" /><a 
  id="x23-163006r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;H4</span></div>
-<!--l. 395--><p class="noindent" >
+<!--l. 393--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb516"> <a 
+   <div class="fancyvrb" id="fancyvrb518"> <a 
  id="x23-163008r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1188,8 +1056,7 @@ class="aett-12">&#x00A0;[,2]</span><span
 class="aett-12">&#x00A0;[,3]</span><span 
 class="aett-12">&#x00A0;[,4]</span><br class="fancyvrb" /><a 
  id="x23-163010r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1,]</span><span 
+class="aett-12">[1,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1208,8 +1075,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;4</span>
 <br class="fancyvrb" /><a 
  id="x23-163012r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[2,]</span><span 
+class="aett-12">[2,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1227,8 +1093,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;5</span><br class="fancyvrb" /><a 
  id="x23-163014r4"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[3,]</span><span 
+class="aett-12">[3,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1246,8 +1111,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;6</span><br class="fancyvrb" /><a 
  id="x23-163016r5"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[4,]</span><span 
+class="aett-12">[4,]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1264,42 +1128,33 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;7</span></div>
-<!--l. 402--><p class="noindent" >
+<!--l. 400--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb517"> <a 
+   <div class="fancyvrb" id="fancyvrb519"> <a 
  id="x23-163018r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;eigen(H4)</span></div>
-<!--l. 405--><p class="noindent" >
+<!--l. 403--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb518"> <a 
+   <div class="fancyvrb" id="fancyvrb520"> <a 
  id="x23-163020r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;eigen()</span><span 
+class="aett-12">eigen()</span><span 
 class="aett-12">&#x00A0;decomposition</span><br class="fancyvrb" /><a 
  id="x23-163022r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;$values</span><br class="fancyvrb" /><a 
+class="aett-12">$values</span><br class="fancyvrb" /><a 
  id="x23-163024r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1]</span><span 
+class="aett-12">[1]</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;1.717e+01</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;4.441e-16</span><span 
 class="aett-12">&#x00A0;-3.522e-16</span><span 
-class="aett-12">&#x00A0;-1.165e+00</span>
+class="aett-12">&#x00A0;-1.165e+00</span><br class="fancyvrb" /><a 
+ id="x23-163026r4"></a>
 <br class="fancyvrb" /><a 
- id="x23-163026r4"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><br class="fancyvrb" /><a 
  id="x23-163028r5"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;$vectors</span><br class="fancyvrb" /><a 
+class="aett-12">$vectors</span><br class="fancyvrb" /><a 
  id="x23-163030r6"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1323,8 +1178,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;[,4]</span>
 <br class="fancyvrb" /><a 
  id="x23-163032r7"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1,]</span><span 
+class="aett-12">[1,]</span><span 
 class="aett-12">&#x00A0;-0.3147</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0.5477</span><span 
@@ -1333,8 +1187,7 @@ class="aett-12">&#x00A0;0.0000</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0.77521</span><br class="fancyvrb" /><a 
  id="x23-163034r8"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[2,]</span><span 
+class="aett-12">[2,]</span><span 
 class="aett-12">&#x00A0;-0.4275</span><span 
 class="aett-12">&#x00A0;-0.7303</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1343,41 +1196,36 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;0.34244</span>
 <br class="fancyvrb" /><a 
  id="x23-163036r9"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[3,]</span><span 
+class="aett-12">[3,]</span><span 
 class="aett-12">&#x00A0;-0.5402</span><span 
 class="aett-12">&#x00A0;-0.1826</span><span 
 class="aett-12">&#x00A0;-0.8165</span><span 
 class="aett-12">&#x00A0;-0.09032</span><br class="fancyvrb" /><a 
  id="x23-163038r10"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[4,]</span><span 
+class="aett-12">[4,]</span><span 
 class="aett-12">&#x00A0;-0.6530</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0.3651</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0.4082</span><span 
 class="aett-12">&#x00A0;-0.52309</span></div>
-<!--l. 420--><p class="indent" >   If we only wanted the eigenvalues, we could add the argument
+<!--l. 418--><p class="indent" >   If we only wanted the eigenvalues, we could add the argument
 <span 
 class="aett-12">only.values=TRUE</span>; if the eigenvectors were of interest, then we would need to
 extract the second element of the above result:
-</p><!--l. 424--><p class="indent" >
+</p><!--l. 422--><p class="indent" >
                                                                           
 
                                                                           
 </p>
-   <div class="fancyvrb" id="fancyvrb519">  <a 
+   <div class="fancyvrb" id="fancyvrb521">  <a 
  id="x23-163040r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;&#x003E;</span><span 
+class="aett-12">&#x003E;</span><span 
 class="aett-12">&#x00A0;eigen(H4)$vectors</span></div>
-<!--l. 427--><p class="noindent" >
+<!--l. 425--><p class="noindent" >
 </p>
-   <div class="fancyvrb" id="fancyvrb520"> <a 
+   <div class="fancyvrb" id="fancyvrb522"> <a 
  id="x23-163042r1"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1400,8 +1248,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;[,4]</span><br class="fancyvrb" /><a 
  id="x23-163044r2"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[1,]</span><span 
+class="aett-12">[1,]</span><span 
 class="aett-12">&#x00A0;-0.3147</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0.5477</span><span 
@@ -1411,8 +1258,7 @@ class="aett-12">&#x00A0;</span><span
 class="aett-12">&#x00A0;0.77521</span>
 <br class="fancyvrb" /><a 
  id="x23-163046r3"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[2,]</span><span 
+class="aett-12">[2,]</span><span 
 class="aett-12">&#x00A0;-0.4275</span><span 
 class="aett-12">&#x00A0;-0.7303</span><span 
 class="aett-12">&#x00A0;</span><span 
@@ -1420,16 +1266,14 @@ class="aett-12">&#x00A0;0.4082</span><span
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0.34244</span><br class="fancyvrb" /><a 
  id="x23-163048r4"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[3,]</span><span 
+class="aett-12">[3,]</span><span 
 class="aett-12">&#x00A0;-0.5402</span><span 
 class="aett-12">&#x00A0;-0.1826</span><span 
 class="aett-12">&#x00A0;-0.8165</span><span 
 class="aett-12">&#x00A0;-0.09032</span>
 <br class="fancyvrb" /><a 
  id="x23-163050r5"></a><span 
-class="aett-12">&#x00A0;</span><span 
-class="aett-12">&#x00A0;[4,]</span><span 
+class="aett-12">[4,]</span><span 
 class="aett-12">&#x00A0;-0.6530</span><span 
 class="aett-12">&#x00A0;</span><span 
 class="aett-12">&#x00A0;0.3651</span><span 
@@ -1439,7 +1283,7 @@ class="aett-12">&#x00A0;-0.52309</span></div>
                                                                           
 
                                                                           
-   <!--l. 8--><div class="crosslinks"><p class="noindent">[<a 
+   <!--l. 6--><div class="crosslinks"><p class="noindent">[<a 
 href="../LURN/LURNch21.html">Version for sighted users</a>] [<a 
 
 href="LURNBlindch22.html" >next</a>] [<a 
@@ -1447,6 +1291,6 @@ href="LURNBlindch20.html" >prev</a>] [<a
 href="LURNBlindch20.html#tailLURNBlindch20.html" >prev-tail</a>] [<a 
 href="LURNBlindch21.html" >front</a>] [<a 
 href="LURNBlind.html#LURNBlindch21.html" >up</a>] </p></div>
-<!--l. 8--><p class="indent" >   <a 
+<!--l. 6--><p class="indent" >   <a 
  id="tailLURNBlindch21.html"></a>  </p> 
 </body></html> 

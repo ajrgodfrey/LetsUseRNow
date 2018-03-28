@@ -1,6 +1,4 @@
 % filename GenericSettings.Rnw 
-
-
 <<setup, include=FALSE, purl=FALSE>>= 
 rm(list = ls())
 if (!file.exists("Data")) dir.create("Data")

@@ -1,13 +1,9 @@
 % filename GenericSettings.Rnw 
 
-
-
 % filename VI001.Rnw 
-
 %\setcounter{chapter}{} 
 \chapter{LURN\ldots{} To use the BrailleR add-on package} 
-\label{BrailleR} 
- 
+\label{BrailleR}  
 % filename VI002.Rnw 
 
 
@@ -54,9 +50,9 @@ There are three types of content printed in the console window.\begin{enumerate}
 \item Any error or warning messages that arise from our commands. 
 \end{enumerate} 
  
-The \Rcmd{sink} command does not currently record the commands or the errors and warning messages. It is therefore a valuable tool for those \R{} users that are confident about the validity of their scripts. 
+The \Rcmd{sink} command does not currently record the commands or the errors and warning messages. It is therefore a valuable tool for those \R{} users that are confident about the validity of their scripts. Similarly, the \Rcmd{history} command shows a list of all issued commands, even those that contain errors. N.B. The \Rpkg{BrailleR} package has its own \Rcmd{history} command that opens the contents of the command history in a text editor so that it can be read using screen-reading software.
  
-Saving the commands typed into an \R{} session can be achieved using the \Rcmd{savehistory} command. For example 
+Saving the commands typed into an \R{} session can be achieved using the \Rcmd{savehistory} command, but again, this will include the commands that generated errors. For example 
 % filename VI006.Rnw 
 
 \begin{Schunk}
@@ -94,7 +90,6 @@ Statistics is an inherently visual discipline. Many statistical analyses lead to
  
 In most circumstances, the user will create a histogram using the \Rcmd{hist} command. This command takes data and creates a number of values needed to construct the histogram. We can see what has been created by storing these values in an object. For example: 
 % filename VI010.Rnw 
-
 \begin{Schunk}
 \begin{Sinput}
 > MyHist = hist(airquality$Wind, xlab="Average wind speed (mph)", main="", plot=FALSE) 
@@ -212,7 +207,6 @@ The full print out has everything we need but is not in a friendly format. The \
  
 The \Rpackage{BrailleR} package includes a \stressind{method} for creating text interpretations in a similar way. The \Rcmd{VI} command is actually a family of commands that includes the \Rcmd{VI.histogram} command. When we issue the \Rcmd{VI} command on the \Robject{MyHist} object, the \Rcmd{VI.histogram} function does the work. Let's see what we get: 
 % filename VI014.Rnw 
-
 \begin{Schunk}
 \begin{Sinput}
 > VI(hist(airquality$Wind, xlab="Average wind speed (mph)", main="")) 
@@ -268,16 +262,24 @@ The upper whisker is 0.89 times the length of the lower whisker.
 \end{Soutput}
 \end{Schunk}
 % filename and.Rnw 
-
- and 
-% filename VI018.Rnw 
-
+ and % filename VI018.Rnw 
 \begin{Schunk}
 \begin{Sinput}
-> VI(dotplot(x)) 
+> VI(dotplot(airquality$Wind, xlab="Average wind speed (mph)")) 
 \end{Sinput}
 \begin{Soutput}
-Error in dotplot(x): object 'x' not found
+Warning in dotplot.default(airquality$Wind, xlab = "Average wind speed (mph)"): The dotplot command is a wrapper for stripchart, and is not a base R function.
+\end{Soutput}
+
+\includegraphics[width=0.7\textwidth]{figures/VIVIDotplot-1} \begin{Soutput}
+This graph has a dotplot printed horizontally
+with the title: 
+"" appears on the x-axis.
+"" appears on the y-axis.
+Tick marks for the x-axis are at: 5, 10, 15, and 20 
+the data that range from 1.7 to 20.7 has been broken into 6 bins.
+The counts are:
+: 10 44 46 35 15 3 
 \end{Soutput}
 \end{Schunk}
 % filename VI019.Rnw 
@@ -458,10 +460,7 @@ New functions have been added to the BrailleR package in order to make accessibl
 \Rpkg{BrailleR} functions replicate.
 
 N.B. You must store the graph in a named object for later use.
-
-
-
-
+%filename VIMakeAccessGraphs.Rnw
 \begin{Schunk}
 \begin{Sinput}
 > attach(airquality)
@@ -499,6 +498,4 @@ Future developments in the BrailleR package will be made to meet demand. If you 
  
  
 % filename CleanUp.Rnw 
-
-
 

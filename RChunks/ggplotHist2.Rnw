@@ -1,6 +1,11 @@
 % filename ggplotHist2.Rnw 
-
 <<GGPlotHistWind>>=
-ggplot(airquality, aes(Wind)) + geom_histogram()
+g = ggplot(airquality, aes(Wind)) + geom_histogram()
+g
 @
+\Blind{
+<<>>=
+BrailleR::VI(g)
+@
+}
 \SVGLink{SimpleGraphsGGPlotHistWind-1} 

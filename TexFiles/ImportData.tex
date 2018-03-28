@@ -1,7 +1,5 @@
 % filename GenericSettings.Rnw 
 
-
-
 % filename ImportData001.Rnw 
 
 \chapter{LURN\ldots{} To Import Data} 
@@ -64,7 +62,6 @@ There are other settings to consider which you can investigate using the help fo
  
 The working above assumed you could put the data file into the correct working directory.  So where was that? To find out where \R{} thinks you are currently working, use the \Rcmd{getwd} command. Note that the output may look a little strange to some users, especially Windows users. What do I mean? Look at the following: 
 % filename GetWD.Rnw 
-
 \begin{Schunk}
 \begin{Sinput}
 > getwd() 
@@ -73,7 +70,7 @@ The working above assumed you could put the data file into the correct working d
 [1] "C:/Users/ajgodfre/OneDrive - Massey University/Research/Publications/LetsUseRNow"
 \end{Soutput}
 \end{Schunk}
-% filename ImportData011.Rnw 
+ % filename ImportData011.Rnw 
 
  
 The full path to the working directory where this chapter was processed has been displayed, starting with the letter associated with the hard drive, followed by a colon. Then the fun begins. The folder structure is represented using forward slash signs, not the backslash used in Windows operating systems even though the processing of this work is done using a Windows machine. The rest should be as expected and you could find the right folder by looking in the appropriate place on your hard drive. The reason for \R{}'s use of the forward slash is not entirely simple to explain, but in short it is because the standard backslash symbol has a special use  in \R{}. For the moment, the choice of slash versus backslash is not important. It is important when we need to type out the path to the location of a file for ourselves. 
@@ -212,6 +209,4 @@ Data in spreadsheets is seldom ready for importing in the exact form we want it.
 
  
 % filename CleanUp.Rnw 
-
-
 

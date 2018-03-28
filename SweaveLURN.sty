@@ -1,0 +1,50 @@
+% Originally written for use in a 11 point font document with 150mm of text width
+% this means R output can be at most 88 characters wide as it is printed in 10 point font in the document
+% updated to allow for base document having 12 point font and 170mm of text width.
+
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{SweaveLURN}{}
+
+\RequirePackage{ifthen}
+\newboolean{Sweave@gin}
+\setboolean{Sweave@gin}{true}
+\newboolean{Sweave@ae}
+\setboolean{Sweave@ae}{true}
+
+\DeclareOption{nogin}{\setboolean{Sweave@gin}{false}}
+\DeclareOption{noae}{\setboolean{Sweave@ae}{false}}
+\ProcessOptions
+
+
+
+\RequirePackage{relsize}
+\RequirePackage{graphicx,fancyvrb}
+
+\IfFileExists{upquote.sty}{\RequirePackage{upquote}}{}
+
+\ifthenelse{\boolean{Sweave@gin}}{\setkeys{Gin}{width=0.95\textwidth}}{}%
+\ifthenelse{\boolean{Sweave@ae}}{%
+  \RequirePackage[T1]{fontenc}  
+  \RequirePackage{ae}
+}{}%
+
+
+
+%\DefineVerbatimEnvironment{Sinput}{Verbatim}{fontshape=sl}
+
+\DefineVerbatimEnvironment{Sinput}{Verbatim}{fontfamily=courier, fontshape=sl,fontsize=\relsize{-1}}
+\DefineVerbatimEnvironment{Soutput}{Verbatim}{fontfamily=courier, fontsize=\relsize{-1}}
+%\DefineVerbatimEnvironment{Soutput}{Verbatim}{}
+
+\DefineVerbatimEnvironment{Scode}{Verbatim}{fontshape=sl}
+
+\newenvironment{Schunk}{}{}
+\newcommand{\Sconcordance}[1]{%
+  \ifx\pdfoutput\undefined%
+  \csname newcount\endcsname\pdfoutput\fi%
+  \ifcase\pdfoutput\special{#1}%
+  \else\immediate\pdfobj{#1}\fi}
+
+% experimental suggestions from a paper by Ross Ihaka
+\fvset{listparameters={\setlength{\topsep}{0pt}}}\renewenvironment{Schunk}{\vspace{\topsep}}{\vspace{\topsep}}
