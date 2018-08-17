@@ -1,0 +1,15 @@
+<<SChart>>=
+MyChart=qcc(Yarn, type="S", add.stats=TRUE)
+@
+
+<<>>=
+summary(MyChart)
+@
+
+<<RChart>>=
+MyChart=qcc(Yarn, type="R", add.stats=TRUE)
+@
+
+<<>>=
+summary(MyChart)
+@

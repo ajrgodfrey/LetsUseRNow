@@ -1,0 +1,161 @@
+% filename GenericSettings.Rnw 
+
+% filename OperRes001.rnw 
+
+%\setcounter{chapter}{}
+\chapter{LURN\ldots{} To Solve Operations Research Problems}
+\label{OperRes}
+% filename OperRes002.Rnw 
+
+
+% filename OperRes003.rnw 
+
+
+This chapter explains how to find solutions to several problems in Operations Research. More specifically, they are problems in Linear Programming (LP) and Integer Programming (IP) where the solution is found as the optimal value of an objective function subject to the existence of various constraints, all of which are expressed as linear functions. The difference between LP and IP is the possible values for the decision variables under consideration.
+
+To benefit the most from this chapter, you ought to be familiar with basic manipulation of vectors and matrices, as seen in Chapter~\ref{Algebra}  and be ready to install an additional package using the methods outlined in Chapter~\ref{Additional}. You will need to install the \Rpkg{lpSolve} package and make sure it is ready for use by calling the \Rcmd{require} command as seen in the examples in this chapter. Note that this need only be done once, but the command is repeated as a reminder.
+
+Note that all examples are intentionally made reproducible through use of random number generation. You will need to make sure you reset the random number generator's seed value using the \Rcmd{set.seed} commands that appear in the examples.
+
+
+\section{The Assignment Problem}
+
+The assignment problem assigns $n$ tasks to $n$ people. The objective function is often described in tabular or matrix form as a set of costs to be minimised. The constraints are that all tasks must be assigned and no person can complete more than one task. ``Dummy" tasks or people are added to the matrix if the number of tasks is not equal to the number of people. 
+
+The mathematical programming representation for the assignment problem has the objective function:\begin{equation}\label{OperResAssObj}
+\min{ \sum_{i=1}^n {\sum_{j=1}^n {c_{ij}x_{ij}}}} \qquad i,j=1,\ldots,n
+\end{equation}
+subject to the constraints:
+\begin{eqnarray*}
+\sum_{j=1}^n {x_{ij}} &=1, \quad \forall  i=1,\ldots,n\\
+\sum_{i=1}^n {x_{ij}} &=1, \quad \forall j=1,\ldots,n\\
+x_{ij} &\in \{0,1\} \quad \forall i,j\\
+\end{eqnarray*}
+% filename OperResAssignment.Rnw 
+
+\begin{Schunk}
+\begin{Sinput}
+> require(lpSolve)
+\end{Sinput}
+\begin{Soutput}
+Loading required package: lpSolve
+\end{Soutput}
+\begin{Soutput}
+Warning in library(package, lib.loc = lib.loc, character.only = TRUE, logical.return = TRUE, : there is no package called 'lpSolve'
+\end{Soutput}
+\begin{Sinput}
+> set.seed(3010)
+> APCost.mat = matrix(sample(10:100, 16), nrow=4)
+> APCost.mat
+\end{Sinput}
+\begin{Soutput}
+     [,1] [,2] [,3] [,4]
+[1,]   24   45   25   31
+[2,]   21   46   86   55
+[3,]   87   35   99   12
+[4,]   60   88   10   97
+\end{Soutput}
+\begin{Sinput}
+> Sol = lp.assign(APCost.mat)
+\end{Sinput}
+\begin{Soutput}
+Error in lp.assign(APCost.mat): could not find function "lp.assign"
+\end{Soutput}
+\begin{Sinput}
+> names(Sol)
+\end{Sinput}
+\begin{Soutput}
+Error in eval(expr, envir, enclos): object 'Sol' not found
+\end{Soutput}
+\begin{Sinput}
+> Sol$solution
+\end{Sinput}
+\begin{Soutput}
+Error in eval(expr, envir, enclos): object 'Sol' not found
+\end{Soutput}
+\begin{Sinput}
+> Sol$objval
+\end{Sinput}
+\begin{Soutput}
+Error in eval(expr, envir, enclos): object 'Sol' not found
+\end{Soutput}
+\begin{Sinput}
+> Sol
+\end{Sinput}
+\begin{Soutput}
+Error in eval(expr, envir, enclos): object 'Sol' not found
+\end{Soutput}
+\end{Schunk}
+% filename OperRes005.rnw 
+
+Note that the print out of the solution didn't actually tell us which task was to be completed by which person so we needed to look for the matrix of the final values for the decision variables. There are plenty of additional items stored as part of the solution, many of which you may never need. It is assumed that if your needs run to the advanced ideas using these items that you will now know where to find the necessary information to solve your own problems.
+
+\section{The transportation problem}
+
+The transportation problem aims to satisfy the demands of a set of customers by optimising the selection of the supplier who will meet each customer's demands. The mathematical program for this problem has a cost matrix and upper bounds on supply and lower bounds on demands. The optimisation is a minimisation exercise so the demand is kept as low as is required so the lower bounds are (in essence) equality constraints as a consequence.
+
+The objective function is:\begin{equation}\label{OperResTransObj}
+\min{ \sum_{i=1}^m{ \sum_{j=1}^n{
+c_{ij}x_{ij}
+}}}\end{equation}
+and the constraints are:
+\begin{eqnarray*} \sum_{j=1}^n { x_{ij}} \le s_i& \quad \forall i=1,\ldots,m\\
+\sum_{i=1}^m { x_{ij}} \ge d_j& \quad \forall j=1,\ldots,n\\
+x_{ij} \ge 0& \quad \forall i,j\\
+\end{eqnarray*} 
+% filename OperResTransport.Rnw 
+
+\begin{Schunk}
+\begin{Sinput}
+> require(lpSolve)
+\end{Sinput}
+\begin{Soutput}
+Loading required package: lpSolve
+\end{Soutput}
+\begin{Soutput}
+Warning in library(package, lib.loc = lib.loc, character.only = TRUE, logical.return = TRUE, : there is no package called 'lpSolve'
+\end{Soutput}
+\begin{Sinput}
+> set.seed(3010)
+> TPCost.mat = matrix(sample(10:100, 30), nrow = 5)
+> TPCost.mat
+\end{Sinput}
+\begin{Soutput}
+     [,1] [,2] [,3] [,4] [,5] [,6]
+[1,]   24   46   99   97   85   19
+[2,]   21   35   10   47   93   91
+[3,]   87   88   31   59   95   64
+[4,]   60   25   55   40   48   27
+[5,]   45   86   12   11   61   81
+\end{Soutput}
+\begin{Sinput}
+> DemandSigns = rep (">", 6)
+> DemandLimits = sample(50:300, 6)
+> DemandLimits
+\end{Sinput}
+\begin{Soutput}
+[1] 201 185 145 207  80  59
+\end{Soutput}
+\begin{Sinput}
+> SupplySigns = rep ("<", 5)
+> SupplyLimits = sample(100:500, 5)
+> SupplyLimits
+\end{Sinput}
+\begin{Soutput}
+[1] 457 376 351 132 388
+\end{Soutput}
+\begin{Sinput}
+> Sol = lp.transport (TPCost.mat, "min", SupplySigns, SupplyLimits, DemandSigns, DemandLimits, compute.sens=0)
+\end{Sinput}
+\begin{Soutput}
+Error in lp.transport(TPCost.mat, "min", SupplySigns, SupplyLimits, DemandSigns, : could not find function "lp.transport"
+\end{Soutput}
+\begin{Sinput}
+> Sol$solution
+\end{Sinput}
+\begin{Soutput}
+Error in eval(expr, envir, enclos): object 'Sol' not found
+\end{Soutput}
+\end{Schunk}
+% filename CleanUp.Rnw 
+

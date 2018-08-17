@@ -1,4 +1,5 @@
 % filename Calculus009.Rnw 
 
-The second argument to the \Rcmd{D} function needs quote marks around it. 
+Nice that the answer comes out correct, albeit in a slightly different way to what we might expect, because the answer has the multiplication by 2 at the end instead of the more familiar $2e^{2x}$ wee expect to see when explicit multiplication signs are not used.
+Also note that the second argument to the \Rcmd{D} function needs quote marks around it. 
  

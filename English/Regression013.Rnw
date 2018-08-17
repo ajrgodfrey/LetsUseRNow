@@ -1,5 +1,4 @@
 % filename Regression013.Rnw 
-
 \end{center} 
 \end{exhibit} 
  

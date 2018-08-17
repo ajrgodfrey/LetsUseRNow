@@ -1,5 +1,4 @@
 % filename SimpleGraphs036.Rnw 
-
 <<SummaryState>>= 
 summary(state.region) 
 @ 

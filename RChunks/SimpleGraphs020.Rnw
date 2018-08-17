@@ -1,5 +1,5 @@
 % filename SimpleGraphs020.Rnw 
-
-<<LinePlot2>>= 
-plot(Temp, ylim=c(50,100), type="l") 
+<<LinePlot2, fig.show="hide">>= 
+plot(Temp, ylim=c(50, 100), type="l") 
 @ 
+\includegraphics[width=0.8\textwidth,alt={a line plot}]{figures/SimpleGraphsLinePlot2-1} 

@@ -1,7 +1,6 @@
 % filename Regression012.Rnw 
-
 <<OzoneTempWithLine>>= 
-plot(Temp, Ozone) 
+plot(Ozone~Temp) 
 abline(Ozone.lm2) 
 detach(airquality) 
 @ 

@@ -1,5 +1,4 @@
 % filename SimpleGraphs042.Rnw 
-
 <<StateRegionBarChartImp>>= 
 barplot(summary(state.region)[c(4,2,3,1)]) 
 @ 

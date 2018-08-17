@@ -17,11 +17,11 @@ summary(Ozone.lm1)$r.squared
 
 ## ----OzoneWindWithLine---------------------------------------------------
 attach(airquality) 
-plot(Wind, Ozone) 
+plot(Ozone~Wind) 
 abline(Ozone.lm1) 
 
 ## ----OzoneTempWithLine---------------------------------------------------
-plot(Temp, Ozone) 
+plot(Ozone~Temp) 
 abline(Ozone.lm2) 
 detach(airquality) 
 

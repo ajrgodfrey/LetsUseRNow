@@ -1,0 +1,14 @@
+
+<<CChart>>=
+MyChart=qcc(CChartData, sizes=5, type="c", rules=shewhart.rules)
+@
+<<>>=
+summary(MyChart)
+@
+<<UChart1>>=
+MyChart=qcc(UChartData, sizes=5, type="u", rules=shewhart.rules)
+@
+<<>>=
+summary(MyChart)
+@
+

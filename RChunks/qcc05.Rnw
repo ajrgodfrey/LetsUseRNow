@@ -1,0 +1,12 @@
+<<PC1>>=
+MyChart=qcc(MyData, type="xbar", std.dev=.87, add.stats=TRUE)
+@
+
+<<>>=
+summary(MyChart)
+@
+
+<<PC2>>=
+process.capability(MyChart, spec.limits=c(35,41), target=38)
+@
+

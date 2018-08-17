@@ -19,32 +19,55 @@ if(file.exists("AddBlind.txt")){
 hist(Wind, xlab="Average wind speed (mph)", main="") 
 
 ## ----HistAirQualityWind2SVG, echo=FALSE, include=FALSE, messages=FALSE, warnings=FALSE, results="hide"----
-MakeAccessibleSVG(hist(Wind, xlab="Average wind speed (mph)", main="") , "figures/SimpleGraphsHistAirQualityWind2")
+MyHist = hist(Wind, xlab="Average wind speed (mph)", main="") 
+MakeAccessibleSVG(MyHist, "figures/SimpleGraphsHistAirQualityWind2")
+
+## ----echo=FALSE----------------------------------------------------------
+if(file.exists("AddBlind.txt")){
+    VI(MyHist)}
 
 ## ----BoxplotAirQualityWind, fig.width=7, fig.height=5, eval=-1, fig.show="hide"----
 windows(7, 5) 
 boxplot(Wind, horizontal=TRUE, xlab="Wind speed (mph)") 
 
 ## ----BoxplotAirQualityWindSVG, echo=FALSE, include=FALSE, messages=FALSE, warnings=FALSE, results="hide", fig.show="hide"----
-#MakeAccessibleSVG(boxplot(Wind, horizontal=TRUE, xlab="Wind speed (mph)"), "figures/SimpleGraphsBoxplotAirQualityWind")
+MyBoxplot = boxplot(Wind, horizontal=TRUE, xlab="Wind speed (mph)")
+#MakeAccessibleSVG(MyBoxplot, "figures/SimpleGraphsBoxplotAirQualityWind")
+
+## ----echo=FALSE----------------------------------------------------------
+if(file.exists("AddBlind.txt")){
+    VI(MyBoxplot)}
 
 ## ----CompBoxplotAirQualityWind, fig.show="hide"--------------------------
 boxplot(Wind~Month, xlab="Month", ylab="Wind speed (mph)") 
 
 ## ----CompBoxplotAirQualityWindSVG, echo=FALSE, include=FALSE, messages=FALSE, warnings=FALSE, results="hide", fig.show="hide"----
-#MakeAccessibleSVG(boxplot(Wind~Month, xlab="Month", ylab="Wind speed (mph)"), "figures/SimpleGraphsCompBoxplotAirQualityWind") 
+MyBoxplot = boxplot(Wind~Month, xlab="Month", ylab="Wind speed (mph)")
+#MakeAccessibleSVG(MyBoxplot, "figures/SimpleGraphsCompBoxplotAirQualityWind") 
 
-## ----DotPlot, fig.width=7, fig.height=2.5, eval=-1-----------------------
+## ----echo=FALSE----------------------------------------------------------
+if(file.exists("AddBlind.txt")){
+    VI(MyBoxplot)}
+
+## ----DotPlot, fig.width=7, fig.height=2.5, eval=-1, fig.show="hide"------
 windows(7, 2.5) 
 dotchart(Wind) 
 
-## ----LinePlot------------------------------------------------------------
-plot(Temp, ylim=c(50,100)) 
+## ----DotPlotWindSVG, echo=FALSE, include=FALSE, messages=FALSE, warnings=FALSE, results="hide", fig.show="hide"----
+MyDotplot = dotchart(Wind) 
+#MakeAccessibleSVG(MyDotplot, "figures/SimpleGraphsDotPlot") 
 
-## ----LinePlot2-----------------------------------------------------------
-plot(Temp, ylim=c(50,100), type="l") 
+## ----echo=FALSE----------------------------------------------------------
+if(file.exists("AddBlind.txt")){
+    VI(MyDotplot)}
 
-## ----NormPlot------------------------------------------------------------
+## ----LinePlot, fig.show="hide"-------------------------------------------
+plot(Temp, ylim=c(50, 100)) 
+
+## ----LinePlot2, fig.show="hide"------------------------------------------
+plot(Temp, ylim=c(50, 100), type="l") 
+
+## ----NormPlot, fig.show="hide"-------------------------------------------
 qqnorm(Wind) 
 qqline(Wind) 
 
@@ -54,7 +77,7 @@ plot(Wind, Temp)
 ## ----ScatterCode2, eval=FALSE--------------------------------------------
 plot(Temp~Wind) 
 
-## ----Scatter-------------------------------------------------------------
+## ----Scatter, fig.show="hide"--------------------------------------------
 plot(Wind, Temp) 
 
 ## ----MatrixPlot----------------------------------------------------------

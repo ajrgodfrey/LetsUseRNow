@@ -1,6 +1,16 @@
 % filename SimpleGraphs016.Rnw 
-
-<<DotPlot, fig.width=7, fig.height=2.5, eval=-1>>= 
+<<DotPlot, fig.width=7, fig.height=2.5, eval=-1, fig.show="hide">>= 
 windows(7, 2.5) 
 dotchart(Wind) 
 @ 
+\includegraphics[width=0.8\textwidth,alt={a dotplot}]{figures/SimpleGraphsDotPlot-1} 
+<<DotPlotWindSVG, echo=FALSE, include=FALSE, messages=FALSE, warnings=FALSE, results="hide", fig.show="hide">>= 
+MyDotplot = dotchart(Wind) 
+#MakeAccessibleSVG(MyDotplot, "figures/SimpleGraphsDotPlot") 
+@ 
+<<echo=FALSE>>=
+if(file.exists("AddBlind.txt")){
+#    VI(MyDotplot)
+}
+@
+\SVGLink{SimpleGraphsDotPlot} 

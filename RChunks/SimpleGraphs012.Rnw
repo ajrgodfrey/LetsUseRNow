@@ -5,6 +5,11 @@ boxplot(Wind, horizontal=TRUE, xlab="Wind speed (mph)")
 @ 
 \includegraphics[width=0.8\textwidth,alt={a boxplot}]{figures/SimpleGraphsBoxplotAirQualityWind-1} 
 <<BoxplotAirQualityWindSVG, echo=FALSE, include=FALSE, messages=FALSE, warnings=FALSE, results="hide", fig.show="hide">>= 
-#MakeAccessibleSVG(boxplot(Wind, horizontal=TRUE, xlab="Wind speed (mph)"), "figures/SimpleGraphsBoxplotAirQualityWind")
+MyBoxplot = boxplot(Wind, horizontal=TRUE, xlab="Wind speed (mph)")
+#MakeAccessibleSVG(MyBoxplot, "figures/SimpleGraphsBoxplotAirQualityWind")
 @ 
+<<echo=FALSE>>=
+if(file.exists("AddBlind.txt")){
+    VI(MyBoxplot)}
+@
 \SVGLink{SimpleGraphsBoxplotAirQualityWind} 

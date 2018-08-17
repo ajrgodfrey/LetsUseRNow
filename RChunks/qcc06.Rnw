@@ -1,0 +1,12 @@
+<<PChart>>=
+MyChart=qcc(PChartData, sizes=100, type="p")
+@
+<<>>=
+summary(MyChart)
+@
+<<NPChart>>=
+MyChart=qcc(NPChartData, sizes=100, type="np", rules =shewhart.rules)
+@
+<<>>=
+summary(MyChart)
+@

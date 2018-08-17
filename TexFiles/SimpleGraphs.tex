@@ -124,6 +124,28 @@ A histogram uses rectangles to represent the counts or relative frequencies of o
 \end{Schunk}
 \includegraphics[width=0.8\textwidth,alt={a histogram}]{figures/SimpleGraphsHistAirQualityWind2-1} 
 
+\begin{Schunk}
+\begin{Soutput}
+This is a histogram, with the title: Histogram of Wind
+"Wind" is marked on the x-axis.
+Tick marks for the x-axis are at: 0, 5, 10, 15, and 20 
+There are a total of 153 elements for this variable.
+Tick marks for the y-axis are at: 0, 10, 20, and 30 
+It has 11 bins with equal widths, starting at 0 and ending at 22 .
+The mids and counts for the bins are:
+mid = 1  count = 1 
+mid = 3  count = 4 
+mid = 5  count = 11 
+mid = 7  count = 38 
+mid = 9  count = 27 
+mid = 11  count = 38 
+mid = 13  count = 10 
+mid = 15  count = 17 
+mid = 17  count = 4 
+mid = 19  count = 1 
+mid = 21  count = 2
+\end{Soutput}
+\end{Schunk}
 \SVGLink{SimpleGraphsHistAirQualityWind2} 
 % filename SimpleGraphs011.Rnw 
 
@@ -161,6 +183,21 @@ Exhibit~\ref{AirQualityBoxplot} shows us the boxplot for the average wind speed 
 \end{Schunk}
 \includegraphics[width=0.8\textwidth,alt={a boxplot}]{figures/SimpleGraphsBoxplotAirQualityWind-1} 
 
+\begin{Schunk}
+\begin{Soutput}
+This graph has a boxplot printed horizontally
+with the title: 
+"" appears on the x-axis.
+"" appears on the y-axis.
+Tick marks for the x-axis are at: 5, 10, 15, and 20 
+This variable  has 153 values.
+An outlier is marked at: 20.1 18.4 20.7 
+The whiskers extend to 1.7 and 16.6 from the ends of the box, 
+which are at 7.4 and 11.5 
+The median, 9.7 is 56 % from the left end of the box to the right end.
+The right whisker is 0.89 times the length of the left whisker.
+\end{Soutput}
+\end{Schunk}
 \SVGLink{SimpleGraphsBoxplotAirQualityWind} 
 % filename SimpleGraphs013.Rnw 
 
@@ -186,6 +223,45 @@ For the purposes of illustration, I want to show the distribution of the daily a
 \end{Schunk}
 \includegraphics[width=0.8\textwidth,alt={a comparative boxplot}]{figures/SimpleGraphsCompBoxplotAirQualityWind-1} 
 
+\begin{Schunk}
+\begin{Soutput}
+This graph has 5 boxplots printed vertically
+with the title: 
+"" appears on the x-axis.
+"" appears on the y-axis.
+Tick marks for the y-axis are at: 5, 10, 15, and 20 
+Group 5 has 31 values.
+There are no outliers marked for this group 
+The whiskers extend to 5.7 and 20.1 from the ends of the box, 
+which are at 8.9 and 14.05 
+The median, 11.5 is 50 % from the lower end of the box to the upper end.
+The upper whisker is 1.89 times the length of the lower whisker.
+Group 6 has 30 values.
+An outlier is marked at: 20.7 1.7 
+The whiskers extend to 4.6 and 16.1 from the ends of the box, 
+which are at 8 and 11.5 
+The median, 9.7 is 49 % from the lower end of the box to the upper end.
+The upper whisker is 1.35 times the length of the lower whisker.
+Group 7 has 31 values.
+There are no outliers marked for this group 
+The whiskers extend to 4.1 and 14.9 from the ends of the box, 
+which are at 6.9 and 10.9 
+The median, 8.6 is 42 % from the lower end of the box to the upper end.
+The upper whisker is 1.43 times the length of the lower whisker.
+Group 8 has 31 values.
+There are no outliers marked for this group 
+The whiskers extend to 2.3 and 15.5 from the ends of the box, 
+which are at 6.6 and 11.2 
+The median, 8.6 is 43 % from the lower end of the box to the upper end.
+The upper whisker is 1 times the length of the lower whisker.
+Group 9 has 30 values.
+There are no outliers marked for this group 
+The whiskers extend to 2.8 and 16.6 from the ends of the box, 
+which are at 7.4 and 12.6 
+The median, 10.3 is 56 % from the lower end of the box to the upper end.
+The upper whisker is 0.87 times the length of the lower whisker.
+\end{Soutput}
+\end{Schunk}
 \SVGLink{SimpleGraphsCompBoxplotAirQualityWind} 
 % filename SimpleGraphs015.Rnw 
 
@@ -202,14 +278,26 @@ because I didn't like the way the regular graph window presented this graph.
 \caption{Dotplot of the Average wind speed in miles per hour at 0700 and 1000 hours at LaGuardia Airport. Obtained from the \Robject{air quality} data set.} 
 \label{AirQualityDotPlotWind} 
 % filename SimpleGraphs016.Rnw 
-
 \begin{Schunk}
 \begin{Sinput}
 > ## windows(7, 2.5)
 > dotchart(Wind)
 \end{Sinput}
+\end{Schunk}
+\includegraphics[width=0.8\textwidth,alt={a dotplot}]{figures/SimpleGraphsDotPlot-1} 
 
-\includegraphics[width=0.8\textwidth]{figures/SimpleGraphsDotPlot-1} \end{Schunk}
+\begin{Schunk}
+\begin{Soutput}
+There is no specific method written for  this type of object.
+\end{Soutput}
+\begin{Soutput}
+You might try to use the print() function on the object or the str() command to investigate its contents.
+\end{Soutput}
+\begin{Soutput}
+NULL
+\end{Soutput}
+\end{Schunk}
+\SVGLink{SimpleGraphsDotPlot} 
 % filename SimpleGraphs017.Rnw 
 
 \end{center} 
@@ -227,13 +315,12 @@ Occasionally it's useful to see how a measurement changes over the time the data
 \caption{Line plot of the maximum daily temperatures from 1 May to 30 September 1973, measured in degrees Fahrenheit, at LaGuardia Airport. Data were obtained from the \Robject{air quality} data set.} 
 \label{AirQualityLinePlotTemp} 
 % filename SimpleGraphs018.Rnw 
-
 \begin{Schunk}
 \begin{Sinput}
-> plot(Temp, ylim=c(50,100)) 
+> plot(Temp, ylim=c(50, 100)) 
 \end{Sinput}
-
-\includegraphics[width=0.8\textwidth]{figures/SimpleGraphsLinePlot-1} \end{Schunk}
+\end{Schunk}
+\includegraphics[width=0.8\textwidth,alt={a line plot}]{figures/SimpleGraphsLinePlot-1} 
 % filename SimpleGraphs019.Rnw 
 
 \end{center} 
@@ -243,13 +330,12 @@ Occasionally it's useful to see how a measurement changes over the time the data
 \caption{Line plot of the maximum daily temperatures from 1 May to 30 September 1973, measured in degrees Fahrenheit, at LaGuardia Airport. Data were obtained from the \Robject{air quality} data set.} 
 \label{AirQualityLinePlotTemp2} 
 % filename SimpleGraphs020.Rnw 
-
 \begin{Schunk}
 \begin{Sinput}
-> plot(Temp, ylim=c(50,100), type="l") 
+> plot(Temp, ylim=c(50, 100), type="l") 
 \end{Sinput}
-
-\includegraphics[width=0.8\textwidth]{figures/SimpleGraphsLinePlot2-1} \end{Schunk}
+\end{Schunk}
+\includegraphics[width=0.8\textwidth,alt={a line plot}]{figures/SimpleGraphsLinePlot2-1} 
 % filename SimpleGraphs021.Rnw 
 
 \end{center} 
@@ -273,14 +359,13 @@ If these data were normally distributed, the points on the plot would lie on a s
 \caption{Normal probability plot of the Average wind speed in miles per hour at 0700 and 1000 hours at LaGuardia Airport. Obtained from the \Robject{air quality} data set.} 
 \label{AirQualityNormPlotWind} 
 % filename SimpleGraphs022.Rnw 
-
 \begin{Schunk}
 \begin{Sinput}
 > qqnorm(Wind) 
 > qqline(Wind) 
 \end{Sinput}
-
-\includegraphics[width=0.8\textwidth]{figures/SimpleGraphsNormPlot-1} \end{Schunk}
+\end{Schunk}
+\includegraphics[width=0.8\textwidth,alt={a normal quantile-quantile  plot}]{figures/SimpleGraphsNormPlot-1} 
 % filename SimpleGraphs023.Rnw 
 
 \end{center} 
@@ -292,7 +377,6 @@ If these data were normally distributed, the points on the plot would lie on a s
  
 Scatter plots are created using the \Rcmd{plot} command by one of two methods. Exhibit~\ref{AirQualityScatterTempWind} was created using 
 % filename SimpleGraphs024.Rnw 
-
 \begin{Schunk}
 \begin{Sinput}
 > plot(Wind, Temp) 
@@ -302,7 +386,6 @@ Scatter plots are created using the \Rcmd{plot} command by one of two methods. E
 
 but the same plot can be generated using what is known as a formula. In this case, only one argument is given to the \Rcmd{plot} command but both variables of interest are in that argument. 
 % filename SimpleGraphs026.Rnw 
-
 \begin{Schunk}
 \begin{Sinput}
 > plot(Temp~Wind) 
@@ -317,13 +400,12 @@ The tilde symbol is often read as ``\ldots is distributed as\ldots" but we might
 \caption{Scatter plot of the maximum daily temperature against the Average wind speed at 0700 and 1000 hours, both recorded at LaGuardia Airport. Data were obtained from the \Robject{air quality} data set.} 
 \label{AirQualityScatterTempWind} 
 % filename SimpleGraphs028.Rnw 
-
 \begin{Schunk}
 \begin{Sinput}
 > plot(Wind, Temp) 
 \end{Sinput}
-
-\includegraphics[width=0.8\textwidth]{figures/SimpleGraphsScatter-1} \end{Schunk}
+\end{Schunk}
+\includegraphics[width=0.8\textwidth,alt={a scatter plot}]{figures/SimpleGraphsScatter-1} 
 % filename SimpleGraphs029.Rnw 
 
 \end{center} 
@@ -340,7 +422,6 @@ Only four of the variables within the \Robject{air quality} data have been used 
 \caption{A scatter plot matrix of the numeric variables within the \Robject{airquality} data set.} 
 \label{AirQualityScatterPlotMatrix}. 
 % filename SimpleGraphs030.Rnw 
-
 \begin{Schunk}
 \begin{Sinput}
 > pairs(data.frame(Ozone, Solar.R, Wind, Temp)) 
@@ -363,7 +444,6 @@ Note that the names of the variables appear in the spaces on the leading diagona
  
 If a variable is considered by \R{} to be a \Rclass{factor}, then the default action of the \Rcmd{plot} command is to construct a bar chart. This is illustrated using a data set which is part of the default installation of \R{} called \Robject{state.region} examined using 
 % filename SimpleGraphs032.Rnw 
-
 \begin{Schunk}
 \begin{Sinput}
 > str(state.region) 
@@ -388,7 +468,6 @@ Given this variable is a \Rclass{factor} with four levels it is well suited to p
 \caption{A bar chart showing which of the regions each of the fifty U.S. states belongs} 
 \label{StateRegionBarChart} 
 % filename SimpleGraphs034.Rnw 
-
 \begin{Schunk}
 \begin{Sinput}
 > plot(state.region) 
@@ -402,7 +481,6 @@ Given this variable is a \Rclass{factor} with four levels it is well suited to p
  
 This figure was created from the raw data, that is the regions for each of the fifty states in the U.S. If we had summary data with counts for each of the categories, we would need to use the \Rcmd{barplot} command. The \Rcmd{summary} command shows us how many states fall into each category in this instance. 
 % filename SimpleGraphs036.Rnw 
-
 \begin{Schunk}
 \begin{Sinput}
 > summary(state.region) 
@@ -420,7 +498,6 @@ These values are then plotted in Exhibit~\ref{StateRegionBarChart2}.
 \caption{A bar chart showing which of the regions each of the fifty U.S. states belongs} 
 \label{StateRegionBarChart2} 
 % filename SimpleGraphs038.Rnw 
-
 \begin{Schunk}
 \begin{Sinput}
 > barplot(summary(state.region)) 
@@ -434,7 +511,6 @@ These values are then plotted in Exhibit~\ref{StateRegionBarChart2}.
  
 While this data set is rather trivial, it is useful for demonstrating one more feature. Note that both in the output above and in Exhibit~\ref{StateRegionBarChart}, the Western region is the last category. To reorder the regions in the bar chart is actually fairly straight forward. All we need to do is make a small addition to the existing commands. 
 % filename SimpleGraphs040.Rnw 
-
 \begin{Schunk}
 \begin{Sinput}
 > summary(state.region)[c(4,2,3,1)] 
@@ -452,7 +528,6 @@ and re-create the bar chart accordingly (see Exhibit~\ref{StateRegionBarChartImp
 \caption{An improved bar chart showing which of the regions each of the fifty U.S. states belongs} 
 \label{StateRegionBarChartImp} 
 % filename SimpleGraphs042.Rnw 
-
 \begin{Schunk}
 \begin{Sinput}
 > barplot(summary(state.region)[c(4,2,3,1)]) 
@@ -474,7 +549,6 @@ The pie chart for the \Robject{state.region} data is given in Exhibit~\ref{State
 \caption{A pie chart showing which of the regions each of the fifty U.S. states belongs} 
 \label{StateRegionPieChart} 
 % filename SimpleGraphs044.Rnw 
-
 \begin{Schunk}
 \begin{Sinput}
 > pie(summary(state.region)) 

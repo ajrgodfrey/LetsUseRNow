@@ -1,12 +1,19 @@
 % filename QualityControl005.Rnw 
-
- 
 I've used version \Sexpr{packageVersion("qcc")} of the \Rpkg{qcc} package for the work in this chapter. Please note that other packages have been developed that will also produce control charts and other quality improvement analyses. 
  
  
 \section{Data} 
  
+It is common for package developers to make data available to help users test the functions of the package. The \Rpkg{qcc} package uses some example from well-regarded textbooks as well as some other sources less well-known. The context of the problems is of little value to the presentation given here so I do not intend to use much time to explain the data or the formulae needed to generate the details within each of the various charts. 
+
+The one point that is very relevant to the presentation of the rest of this chapter is the way that data are presented or stored. The commonly-used \Rclass{data.frame} with each column being a different variable works well for many of the control charts covered here but is not the easiest one to work with for the first few control charts we investigate. The other way to present data is for each row to represent a rational subgroup, and for columns to be used for elements within each subgroup. . To get a mean of a subgroup we must use the \Rcmd{rowMeans} function for example.
+
+
 \section{Monitoring a process mean} 
+
+The most common control chart for monitoring a process mean is the x-bar chart, often denoted $\bar{x}$ chart because the control statistics being plotted is the sample mean of units within a rational subgroup of data.
+
+
  
 \section{Monitoring process variance} 
  

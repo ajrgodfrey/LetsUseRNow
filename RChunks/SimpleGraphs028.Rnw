@@ -1,5 +1,5 @@
 % filename SimpleGraphs028.Rnw 
-
-<<Scatter>>= 
+<<Scatter, fig.show="hide">>= 
 plot(Wind, Temp) 
 @ 
+\includegraphics[width=0.8\textwidth,alt={a scatter plot}]{figures/SimpleGraphsScatter-1} 

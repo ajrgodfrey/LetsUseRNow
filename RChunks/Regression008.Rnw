@@ -1,5 +1,4 @@
 % filename Regression008.Rnw 
-
 <<GetDetails>>= 
 names(Ozone.lm1) 
 names(summary(Ozone.lm1)) 

@@ -1,5 +1,4 @@
 % filename Regression018.Rnw 
-
 <<Leverages>>= 
 mean(Ozone.lev1) 
 max(Ozone.lev1) 

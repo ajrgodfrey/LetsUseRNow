@@ -1,0 +1,19 @@
+
+<<IChart>>=
+MyChart=qcc(IChartData, type="xbar.one", add.stats=TRUE)
+title("Based on MRbar estimate")
+@
+
+<<>>=
+summary(MyChart)
+@
+
+Note that the qcc package uses the MR-bar estimate by default.
+
+<<IChart3>>=
+MyChart=qcc(IChartData, type="xbar.one", add.stats=TRUE, std.dev = "SD")
+title("Based on S estimate")
+@
+<<>>=
+summary(MyChart)
+@

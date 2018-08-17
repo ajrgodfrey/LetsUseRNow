@@ -1,7 +1,6 @@
 % filename Regression010.Rnw 
-
 <<OzoneWindWithLine>>= 
 attach(airquality) 
-plot(Wind, Ozone) 
+plot(Ozone~Wind) 
 abline(Ozone.lm1) 
 @ 

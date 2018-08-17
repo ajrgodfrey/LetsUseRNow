@@ -1,0 +1,4 @@
+% filename Regression004.Rnw 
+<<GetData, eval=FALSE>>= 
+data(airquality) 
+@ 

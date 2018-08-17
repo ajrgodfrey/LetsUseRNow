@@ -1,6 +1,6 @@
 % filename SimpleGraphs022.Rnw 
-
-<<NormPlot>>= 
+<<NormPlot, fig.show="hide">>= 
 qqnorm(Wind) 
 qqline(Wind) 
 @ 
+\includegraphics[width=0.8\textwidth,alt={a normal quantile-quantile  plot}]{figures/SimpleGraphsNormPlot-1} 

@@ -1,5 +1,4 @@
 % filename SimpleGraphs032.Rnw 
-
 <<IntroStateRegion>>= 
 str(state.region) 
 levels(state.region) 

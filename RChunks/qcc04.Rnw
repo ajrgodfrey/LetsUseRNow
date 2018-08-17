@@ -1,0 +1,8 @@
+
+<<EWMAChart>>=
+MyChart=ewma(EWMAChartData, lambda=0.2, nsigmas=3)
+@
+
+<<>>=
+summary(MyChart)
+@
